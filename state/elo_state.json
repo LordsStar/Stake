@@ -1,6 +1,16 @@
 {
   "schema_version": 3,
   "ratings": {
+    "volleyball:asian-championship": {
+      "north macedonia volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "georgia volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      }
+    },
     "american-football:nfl": {
       "chicago bears": {
         "elo": 1540.643052752328,
@@ -141,5162 +151,6675 @@
     },
     "cricket:all": {
       "perth scorchers": {
-        "elo": 1508.5707376518324,
+        "elo": 1510.0,
         "games": 1
       },
       "sydney sixers": {
-        "elo": 1491.4292623481676,
+        "elo": 1490.0,
         "games": 1
       },
       "hampshire": {
-        "elo": 1495.2061430628362,
+        "elo": 1496.2815850153304,
         "games": 7
       },
       "glamorgan": {
-        "elo": 1488.8239681199434,
+        "elo": 1482.1157238815945,
         "games": 5
       },
       "surrey": {
-        "elo": 1480.599222839563,
+        "elo": 1481.8344498214658,
         "games": 7
       },
       "kent": {
-        "elo": 1502.943987549489,
+        "elo": 1501.8867345397448,
         "games": 5
       },
       "durham": {
-        "elo": 1489.504987314608,
+        "elo": 1493.353141638198,
         "games": 9
       },
       "middlesex": {
-        "elo": 1527.79177668206,
+        "elo": 1524.9040812069684,
         "games": 6
       },
       "essex": {
-        "elo": 1470.5756912016727,
+        "elo": 1470.39534971707,
         "games": 6
       },
       "gloucestershire": {
-        "elo": 1488.4408493535268,
+        "elo": 1490.0265679098943,
         "games": 5
       },
       "lancashire": {
-        "elo": 1500.941124687743,
+        "elo": 1499.7613733534258,
         "games": 7
       },
       "warwickshire": {
-        "elo": 1520.3993151349039,
+        "elo": 1518.5790666240553,
         "games": 7
       },
       "leicestershire": {
-        "elo": 1517.776249019214,
+        "elo": 1518.8731945262812,
         "games": 5
       },
       "northamptonshire": {
-        "elo": 1499.5953593624704,
+        "elo": 1500.8536101764328,
         "games": 5
       },
       "nottinghamshire": {
-        "elo": 1519.4235797155386,
+        "elo": 1518.3223892269273,
         "games": 7
       },
       "somerset": {
-        "elo": 1515.60030240832,
+        "elo": 1517.0413877586973,
         "games": 7
       },
       "sussex": {
-        "elo": 1465.8620252274427,
+        "elo": 1464.6705781470296,
         "games": 5
       },
       "worcestershire": {
-        "elo": 1520.226474141374,
+        "elo": 1518.6514610372167,
         "games": 5
       },
       "derbyshire": {
-        "elo": 1481.2511698115425,
+        "elo": 1482.6938626057338,
         "games": 5
       },
       "yorkshire": {
-        "elo": 1497.6794492053364,
+        "elo": 1499.4327351810068,
         "games": 7
       },
       "jamaica kingsmen": {
-        "elo": 1482.0023156596508,
+        "elo": 1481.9116413209313,
         "games": 6
       },
       "antigua and barbuda falcons": {
-        "elo": 1515.393646497578,
+        "elo": 1518.2652911836074,
         "games": 6
       },
       "uganda": {
-        "elo": 1490.7972140658387,
+        "elo": 1489.4407353669826,
         "games": 5
       },
       "tanzania": {
-        "elo": 1492.3998999617259,
+        "elo": 1491.1446795906627,
         "games": 5
       },
       "st kitts and nevis patriots": {
-        "elo": 1501.7863563787619,
+        "elo": 1498.9255381581665,
         "games": 4
       },
       "trinbago knight riders": {
-        "elo": 1471.9241378818515,
+        "elo": 1470.6029883314652,
         "games": 3
       },
       "italy": {
-        "elo": 1549.5661153016729,
+        "elo": 1548.00266747862,
         "games": 5
       },
       "bahrain": {
-        "elo": 1495.1214885265852,
+        "elo": 1491.0943356852035,
         "games": 5
       },
       "saint lucia kings": {
-        "elo": 1479.575989360357,
+        "elo": 1482.2438700125174,
         "games": 6
       },
       "kurunegala youth cricket club": {
-        "elo": 1452.2169491453453,
+        "elo": 1453.3585435141938,
         "games": 5
       },
       "tamil union cricket and athletic club": {
-        "elo": 1491.993212501934,
+        "elo": 1490.575932345062,
         "games": 5
       },
       "nugegoda sports welfare club": {
-        "elo": 1485.5759916330642,
+        "elo": 1489.7205546302082,
         "games": 5
       },
       "moors sports club": {
-        "elo": 1528.827986315586,
+        "elo": 1527.5091049127516,
         "games": 5
       },
       "colts cricket club": {
-        "elo": 1527.9842348485301,
+        "elo": 1529.1384338021844,
         "games": 5
       },
       "sinhalese sports club": {
-        "elo": 1521.3730304521239,
+        "elo": 1518.6110317818889,
         "games": 4
       },
       "burgher recreation club": {
-        "elo": 1475.2589280249679,
+        "elo": 1480.8530664735515,
         "games": 4
       },
       "nondescripts cricket club": {
-        "elo": 1503.9791581572126,
+        "elo": 1501.584340426805,
         "games": 6
       },
       "badureliya sports club": {
-        "elo": 1451.7011561147478,
+        "elo": 1452.8627078902646,
         "games": 5
       },
       "bloomfield cricket and athletic club": {
-        "elo": 1511.2601827261167,
+        "elo": 1509.976908747607,
         "games": 5
       },
       "hong kong": {
-        "elo": 1516.1332210582555,
+        "elo": 1518.8894484438904,
         "games": 4
       },
       "barbados tridents": {
-        "elo": 1516.2837021574214,
+        "elo": 1519.1530496419498,
         "games": 2
       },
       "singapore": {
-        "elo": 1455.982061085922,
+        "elo": 1461.4281334346408,
         "games": 4
       },
       "guyana amazon warriors": {
-        "elo": 1533.0338520643795,
+        "elo": 1528.8976213513624,
         "games": 3
       },
       "colombo cricket club": {
-        "elo": 1530.0563980590973,
+        "elo": 1528.5638646115767,
         "games": 5
       },
       "ace capital cricket club": {
-        "elo": 1522.811046857999,
+        "elo": 1520.2488324859783,
         "games": 4
       },
       "police sports club": {
-        "elo": 1508.443309676301,
+        "elo": 1506.9735108776986,
         "games": 5
       },
       "the blaze": {
-        "elo": 1517.3583251624157,
+        "elo": 1520.3227076329274,
         "games": 2
       },
       "panadura sports club": {
-        "elo": 1488.5184154869742,
+        "elo": 1490.0231675002294,
         "games": 3
       }
     },
     "rugby:super-league": {
       "tarucas": {
-        "elo": 1516.1363779097485,
+        "elo": 1516.9540204627485,
         "games": 4
       },
       "selknam": {
-        "elo": 1482.8042131333289,
+        "elo": 1481.9790145989025,
         "games": 4
       },
       "yacare xv": {
-        "elo": 1471.6014790128993,
+        "elo": 1471.1312138836877,
         "games": 3
       },
       "pampas xv": {
-        "elo": 1520.9292031087116,
+        "elo": 1520.9841409174023,
         "games": 4
       },
       "capibaras xv": {
-        "elo": 1507.6162691621364,
+        "elo": 1507.9846240240176,
         "games": 3
       },
       "pe arol": {
-        "elo": 1498.2418604122224,
+        "elo": 1499.1021980901257,
         "games": 4
       },
       "dogos xv": {
-        "elo": 1519.4865852887524,
+        "elo": 1519.456570572797,
         "games": 4
       },
       "cobras": {
-        "elo": 1483.1840119722006,
+        "elo": 1482.4082174503185,
         "games": 4
+      }
+    },
+    "rugby:top-14": {
+      "alumni": {
+        "elo": 1499.2987086606454,
+        "games": 4
+      },
+      "cuba": {
+        "elo": 1482.8182374650692,
+        "games": 2
+      },
+      "hind": {
+        "elo": 1538.1471316803322,
+        "games": 4
+      },
+      "los tilos": {
+        "elo": 1491.2535927261524,
+        "games": 3
+      },
+      "newman": {
+        "elo": 1508.183298866544,
+        "games": 3
+      },
+      "buenos aires": {
+        "elo": 1490.2965401921376,
+        "games": 3
+      },
+      "san isidro club": {
+        "elo": 1528.943292596662,
+        "games": 3
+      },
+      "belgrano": {
+        "elo": 1472.055863933466,
+        "games": 3
+      },
+      "c a san isidro": {
+        "elo": 1500.2994787489788,
+        "games": 2
+      },
+      "la plata": {
+        "elo": 1479.7005212510212,
+        "games": 2
+      },
+      "regatas": {
+        "elo": 1509.003333878991,
+        "games": 1
+      }
+    },
+    "volleyball:premier-volleyball-league-women": {
+      "greece volleyball": {
+        "elo": 1488.9960129349292,
+        "games": 1
+      },
+      "sweden volleyball": {
+        "elo": 1511.0039870650708,
+        "games": 1
+      },
+      "czech republic volleyball": {
+        "elo": 1519.7430733948565,
+        "games": 2
+      },
+      "hungary volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      },
+      "romania volleyball": {
+        "elo": 1500.3124297647573,
+        "games": 2
+      },
+      "latvia volleyball": {
+        "elo": 1511.0039870650708,
+        "games": 1
+      },
+      "netherlands volleyball": {
+        "elo": 1519.7430733948565,
+        "games": 2
+      },
+      "north macedonia volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      },
+      "portugal volleyball": {
+        "elo": 1500.3124297647573,
+        "games": 2
+      },
+      "denmark volleyball": {
+        "elo": 1511.0039870650708,
+        "games": 1
+      },
+      "estonia volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "slovakia volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      },
+      "switzerland volleyball": {
+        "elo": 1500.3124297647573,
+        "games": 2
+      },
+      "spain volleyball": {
+        "elo": 1511.0039870650708,
+        "games": 1
+      },
+      "israel volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "croatia volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      },
+      "finland volleyball": {
+        "elo": 1519.7430733948565,
+        "games": 2
+      },
+      "austria volleyball": {
+        "elo": 1491.0039870650708,
+        "games": 1
+      },
+      "iceland volleyball": {
+        "elo": 1488.683583170172,
+        "games": 1
+      },
+      "kosovo volleyball": {
+        "elo": 1488.683583170172,
+        "games": 1
+      },
+      "norway volleyball": {
+        "elo": 1489.2529395400727,
+        "games": 1
+      },
+      "bosnia herzegovina volleyball": {
+        "elo": 1488.683583170172,
+        "games": 1
+      },
+      "luxembourg volleyball": {
+        "elo": 1489.2529395400727,
+        "games": 1
+      },
+      "montenegro volleyball": {
+        "elo": 1489.2529395400727,
+        "games": 1
       }
     },
     "baseball:mlb": {
       "detroit tigers": {
-        "elo": 1441.9311351934273,
-        "games": 50
+        "elo": 1448.2483181967914,
+        "games": 51
       },
       "philadelphia phillies": {
-        "elo": 1561.4629406535041,
+        "elo": 1561.6265922925645,
         "games": 50
       },
       "washington nationals": {
-        "elo": 1417.6455040227347,
+        "elo": 1418.4953924049948,
         "games": 51
       },
       "new york yankees": {
-        "elo": 1555.688324511201,
+        "elo": 1555.5493859483688,
         "games": 50
       },
       "baltimore orioles": {
-        "elo": 1488.908994374083,
-        "games": 50
+        "elo": 1495.710231266729,
+        "games": 51
       },
       "kansas city royals": {
-        "elo": 1516.0039986026695,
-        "games": 50
+        "elo": 1507.2835821203187,
+        "games": 51
       },
       "cincinnati reds": {
-        "elo": 1513.2376576584527,
+        "elo": 1514.8393479215122,
         "games": 51
       },
       "chicago cubs": {
-        "elo": 1521.4209070139416,
-        "games": 51
+        "elo": 1512.39146868095,
+        "games": 52
       },
       "miami marlins": {
-        "elo": 1461.4249264338894,
-        "games": 50
+        "elo": 1451.78924519224,
+        "games": 51
       },
       "cleveland guardians": {
-        "elo": 1503.7750523716707,
-        "games": 50
+        "elo": 1499.0678221810217,
+        "games": 51
       },
       "tampa bay rays": {
-        "elo": 1548.4297473143172,
+        "elo": 1547.6903084461785,
         "games": 52
       },
       "seattle mariners": {
-        "elo": 1458.0915628397372,
+        "elo": 1459.1036321388196,
         "games": 50
       },
       "chicago white sox": {
-        "elo": 1524.3288991606685,
+        "elo": 1524.8160945753104,
         "games": 51
       },
       "athletics": {
-        "elo": 1433.0244856694846,
+        "elo": 1429.8073700822865,
         "games": 51
       },
       "new york mets": {
-        "elo": 1514.526595825301,
-        "games": 49
+        "elo": 1527.7140065892065,
+        "games": 50
       },
       "boston red sox": {
-        "elo": 1581.9374781567135,
-        "games": 53
+        "elo": 1581.5811569342927,
+        "games": 54
       },
       "texas rangers": {
-        "elo": 1471.7035121207673,
+        "elo": 1476.1738806647932,
         "games": 51
       },
       "houston astros": {
-        "elo": 1512.8713785385316,
+        "elo": 1517.9210916067689,
         "games": 49
       },
       "minnesota twins": {
-        "elo": 1463.3101570247939,
-        "games": 49
+        "elo": 1453.291653120555,
+        "games": 50
       },
       "los angeles angels": {
-        "elo": 1403.5140514398695,
-        "games": 49
+        "elo": 1402.452253129954,
+        "games": 50
       },
       "st louis cardinals": {
-        "elo": 1492.8340895398774,
+        "elo": 1488.1508508920992,
         "games": 52
       },
       "atlanta braves": {
-        "elo": 1552.164973634105,
+        "elo": 1550.6382770434438,
         "games": 52
       },
       "san diego padres": {
-        "elo": 1537.2198539776466,
+        "elo": 1536.407957496212,
         "games": 50
       },
       "toronto blue jays": {
-        "elo": 1568.8523900243683,
+        "elo": 1566.3656504025253,
         "games": 51
       },
       "los angeles dodgers": {
-        "elo": 1515.5365024550777,
+        "elo": 1517.3765851926905,
         "games": 49
       },
       "arizona diamondbacks": {
-        "elo": 1542.9000575585244,
-        "games": 51
+        "elo": 1552.1626809741456,
+        "games": 52
       },
       "san francisco giants": {
-        "elo": 1449.0600368608323,
+        "elo": 1447.9477083690695,
         "games": 51
       },
       "colorado rockies": {
-        "elo": 1414.8704748868133,
+        "elo": 1415.7007899317296,
         "games": 48
       },
       "pittsburgh pirates": {
-        "elo": 1497.0299696148445,
+        "elo": 1497.5609736796182,
         "games": 50
       },
       "milwaukee brewers": {
-        "elo": 1536.294342522152,
-        "games": 51
+        "elo": 1542.1356925248108,
+        "games": 52
       },
       "national all stars": {
-        "elo": 1488.5707376518324,
+        "elo": 1489.4249887221547,
         "games": 1
       },
       "american all stars": {
-        "elo": 1511.4292623481676,
+        "elo": 1510.5750112778453,
         "games": 1
       }
     },
     "soccer:saudi-pro-league": {
       "dundee united": {
-        "elo": 1490.151800874112,
+        "elo": 1490.162107813303,
         "games": 4
       },
       "rangers": {
-        "elo": 1489.6395335534976,
+        "elo": 1489.6334764557578,
         "games": 2
       },
       "falkirk": {
-        "elo": 1482.869588295067,
+        "elo": 1483.0104055542913,
         "games": 3
       },
       "st mirren": {
-        "elo": 1519.9195022265021,
+        "elo": 1519.9119819626906,
         "games": 2
       },
       "aberdeen": {
-        "elo": 1499.5136723864475,
+        "elo": 1499.523430267172,
         "games": 2
       },
       "heart of midlothian": {
-        "elo": 1500.2019140148554,
+        "elo": 1500.1931575150195,
         "games": 2
       },
       "st johnstone": {
-        "elo": 1500.0804977734979,
+        "elo": 1500.0880180373094,
         "games": 2
       },
       "kilmarnock": {
-        "elo": 1469.0059333870897,
+        "elo": 1468.8522557957392,
         "games": 3
       },
       "hibernian": {
-        "elo": 1500.3604664465024,
+        "elo": 1500.3665235442422,
         "games": 2
       },
       "motherwell": {
-        "elo": 1509.3624336896225,
+        "elo": 1509.3580574369307,
         "games": 2
       },
       "celtic": {
-        "elo": 1527.281650401758,
+        "elo": 1527.15496727595,
         "games": 3
       },
       "dundee": {
-        "elo": 1511.6130069510477,
+        "elo": 1511.7456183415943,
         "games": 3
       },
       "club brugge": {
-        "elo": 1519.5136723864475,
+        "elo": 1519.523430267172,
         "games": 2
       },
       "kortrijk": {
-        "elo": 1480.4863276135525,
+        "elo": 1480.476569732828,
         "games": 2
       },
       "standard li ge": {
-        "elo": 1498.5707376518324,
+        "elo": 1498.430064953105,
         "games": 1
       },
       "cercle brugge": {
-        "elo": 1499.9195022265021,
+        "elo": 1499.9119819626906,
         "games": 2
       },
       "westerlo": {
-        "elo": 1480.0804977734979,
+        "elo": 1480.0880180373094,
         "games": 2
       },
       "union saint gilloise": {
-        "elo": 1509.9195022265021,
+        "elo": 1509.9119819626906,
         "games": 2
       },
       "sint truiden": {
-        "elo": 1500.0804977734979,
+        "elo": 1500.0880180373094,
         "games": 2
       },
       "lommel": {
-        "elo": 1501.4292623481676,
+        "elo": 1501.569935046895,
         "games": 1
       },
       "gent": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "mechelen": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "charleroi": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "oud heverlee leuven": {
-        "elo": 1480.4863276135525,
+        "elo": 1480.476569732828,
         "games": 2
       },
       "zulte waregem": {
-        "elo": 1510.0804977734979,
+        "elo": 1510.0880180373094,
         "games": 2
       },
       "genk": {
-        "elo": 1499.9195022265021,
+        "elo": 1499.9119819626906,
         "games": 2
       },
       "anderlecht": {
-        "elo": 1499.5136723864475,
+        "elo": 1499.523430267172,
         "games": 2
       },
       "raal la louvi re": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "antwerp": {
-        "elo": 1519.5136723864475,
+        "elo": 1519.523430267172,
         "games": 2
       },
       "beveren": {
-        "elo": 1500.4863276135525,
+        "elo": 1500.476569732828,
         "games": 2
       }
     },
     "cricket:test": {
       "west indies": {
-        "elo": 1488.5707376518324,
+        "elo": 1490.0,
         "games": 1
       },
       "pakistan": {
-        "elo": 1491.4471476364681,
+        "elo": 1490.0165493397121,
         "games": 3
       },
       "australia": {
-        "elo": 1500.6375663103775,
+        "elo": 1500.5750112778453,
         "games": 2
       },
       "bangladesh": {
-        "elo": 1499.3624336896225,
+        "elo": 1499.4249887221547,
         "games": 2
       },
       "india": {
-        "elo": 1506.6619529286288,
+        "elo": 1509.4249887221547,
         "games": 2
       },
       "sri lanka": {
-        "elo": 1493.3380470713712,
+        "elo": 1490.5750112778453,
         "games": 2
       },
       "england": {
-        "elo": 1519.9821147116995,
+        "elo": 1519.9834506602879,
         "games": 2
       }
     },
     "cricket:t20": {
       "southern brave": {
-        "elo": 1458.3247815100517,
+        "elo": 1459.4922467945257,
         "games": 7
       },
       "welsh fire": {
-        "elo": 1500.2801233933362,
+        "elo": 1497.837554276061,
         "games": 8
       },
       "sri lanka": {
-        "elo": 1500.3206175418784,
+        "elo": 1500.28774368332,
         "games": 2
       },
       "pakistan": {
-        "elo": 1519.6894162721492,
+        "elo": 1519.7195800394152,
         "games": 2
       },
       "london spirit": {
-        "elo": 1483.2185730917936,
+        "elo": 1483.276351853037,
         "games": 8
       },
       "sunrisers leeds": {
-        "elo": 1537.3951222853987,
+        "elo": 1538.6167328191912,
         "games": 11
       },
       "manchester super giants": {
-        "elo": 1544.1138575394036,
+        "elo": 1543.8300854225402,
         "games": 8
       },
       "birmingham phoenix": {
-        "elo": 1446.4201135055887,
+        "elo": 1446.3123339916694,
         "games": 8
       },
       "trent rockets": {
-        "elo": 1538.982985628884,
+        "elo": 1534.149130682017,
         "games": 8
       },
       "jaffna kings": {
-        "elo": 1496.9942709892985,
+        "elo": 1499.7287935411387,
         "games": 2
       },
       "galle gallants": {
-        "elo": 1514.914513733905,
+        "elo": 1510.8462177367066,
         "games": 3
       },
       "colombo kaps": {
-        "elo": 1496.6619529286288,
+        "elo": 1499.4249887221547,
         "games": 2
       },
       "kandy royals": {
-        "elo": 1491.4292623481676,
+        "elo": 1490.0,
         "games": 1
       },
       "mi london": {
-        "elo": 1491.2644430455434,
+        "elo": 1496.4855641609586,
         "games": 6
       },
       "mexico": {
-        "elo": 1489.4409931383043,
+        "elo": 1490.8539962903665,
         "games": 3
       },
       "panama": {
-        "elo": 1502.7872969244818,
+        "elo": 1500.0078200655194,
         "games": 4
       },
       "jamaica kingsmen": {
-        "elo": 1499.7426676817454,
+        "elo": 1502.3038529077264,
         "games": 8
       },
       "antigua and barbuda falcons": {
-        "elo": 1511.5009266918892,
+        "elo": 1510.5371460788076,
         "games": 7
       },
       "brazil": {
-        "elo": 1528.0046052994405,
+        "elo": 1529.41719643291,
         "games": 3
       },
       "st kitts and nevis patriots": {
-        "elo": 1483.5485015319832,
+        "elo": 1480.9168818635915,
         "games": 6
       },
       "trinbago knight riders": {
-        "elo": 1472.886688050352,
+        "elo": 1471.5417232924738,
         "games": 7
       },
       "peru": {
-        "elo": 1479.7671046377734,
+        "elo": 1479.7209872112041,
         "games": 2
       },
       "st lucia kings": {
-        "elo": 1508.497082295166,
+        "elo": 1509.7366079135963,
         "games": 7
       },
       "thailand": {
-        "elo": 1492.0994034064452,
+        "elo": 1490.5350776767714,
         "games": 5
       },
       "papua new guinea": {
-        "elo": 1499.3624336896225,
+        "elo": 1499.4249887221547,
         "games": 2
       },
       "barbados tridents": {
-        "elo": 1483.5249171300777,
+        "elo": 1487.4760920353829,
         "games": 5
       },
       "zambia": {
-        "elo": 1510.6049625786509,
+        "elo": 1511.8721093450567,
         "games": 5
       },
       "rwanda": {
-        "elo": 1503.7149833035135,
+        "elo": 1498.7116630147336,
         "games": 6
       },
       "malawi": {
-        "elo": 1485.6800541178357,
+        "elo": 1489.4162276402096,
         "games": 5
       },
       "germany": {
-        "elo": 1518.1352733422177,
+        "elo": 1524.5224257736795,
         "games": 9
       },
       "finland": {
-        "elo": 1489.940769828063,
+        "elo": 1491.3482950252549,
         "games": 5
       },
       "nugegoda sports welfare club": {
-        "elo": 1477.3315509815661,
+        "elo": 1481.1833768429487,
         "games": 5
       },
       "colombo cricket club": {
-        "elo": 1507.6306688350223,
+        "elo": 1509.1632445154044,
         "games": 5
       },
       "panadura sports club": {
-        "elo": 1505.731254783988,
+        "elo": 1510.0068473224042,
         "games": 5
       },
       "ace capital cricket club": {
-        "elo": 1507.6970821094594,
+        "elo": 1506.4311476544212,
         "games": 5
       },
       "kurunegala youth cricket club": {
-        "elo": 1460.514320412471,
+        "elo": 1461.9294417150643,
         "games": 5
       },
       "tamil union cricket and athletic club": {
-        "elo": 1561.5419782444837,
+        "elo": 1556.3250879639634,
         "games": 6
       },
       "burgher recreation club": {
-        "elo": 1471.2675582327372,
+        "elo": 1472.5375442842505,
         "games": 5
       },
       "police sports club": {
-        "elo": 1488.223470696997,
+        "elo": 1489.4652796105997,
         "games": 5
       },
       "bloomfield cricket and athletic club": {
-        "elo": 1491.2361870166528,
+        "elo": 1492.4837631737769,
         "games": 5
       },
       "badureliya sports club": {
-        "elo": 1477.3842119636276,
+        "elo": 1470.573264304192,
         "games": 5
       },
       "sinhalese sports club": {
-        "elo": 1539.2499555067704,
+        "elo": 1539.1214761685978,
         "games": 4
       },
       "colts cricket club": {
-        "elo": 1470.0237609985052,
+        "elo": 1471.444926149089,
         "games": 5
       },
       "guyana amazon warriors": {
-        "elo": 1540.2992166187867,
+        "elo": 1537.4876959084215,
         "games": 4
       },
       "spain": {
-        "elo": 1531.6866385112708,
+        "elo": 1527.485784494058,
         "games": 5
       },
       "portugal": {
-        "elo": 1546.8638095117126,
+        "elo": 1548.2493752836408,
         "games": 5
       },
       "israel": {
-        "elo": 1489.1315621203541,
+        "elo": 1490.837306732312,
         "games": 5
       },
       "luxembourg": {
-        "elo": 1490.0336375960405,
+        "elo": 1485.1594079933227,
         "games": 8
       },
       "isle of man": {
-        "elo": 1535.6099635260346,
+        "elo": 1535.6487777995424,
         "games": 8
       },
       "czech republic": {
-        "elo": 1461.9790465503231,
+        "elo": 1462.4410804380452,
         "games": 8
       },
       "greece": {
-        "elo": 1432.9211043436997,
+        "elo": 1436.756806260419,
         "games": 7
       },
       "bulgaria": {
-        "elo": 1469.7092353794844,
+        "elo": 1471.1411723506856,
         "games": 5
       },
       "nondescripts cricket club": {
-        "elo": 1508.6775476209964,
+        "elo": 1509.9385752275189,
         "games": 5
       },
       "moors sports club": {
-        "elo": 1533.4904525967224,
+        "elo": 1529.396025067769,
         "games": 5
       },
       "belgium": {
-        "elo": 1474.0020920073885,
+        "elo": 1475.9817331202478,
         "games": 4
       },
       "amsterdam flames": {
-        "elo": 1477.709407811388,
+        "elo": 1480.5750112778453,
         "games": 2
       },
       "rotterdam dockers": {
-        "elo": 1532.4474402254232,
+        "elo": 1528.31540655423,
         "games": 3
       },
       "austria": {
-        "elo": 1519.7641797873207,
+        "elo": 1519.450202909947,
         "games": 4
       },
       "turkey": {
-        "elo": 1542.015191468327,
+        "elo": 1539.1078503322487,
         "games": 4
       },
       "romania": {
-        "elo": 1496.61989342888,
+        "elo": 1499.514377821126,
         "games": 2
       },
       "guernsey": {
-        "elo": 1494.5416693584891,
+        "elo": 1490.3255532845994,
         "games": 3
       },
       "belfast wolves": {
-        "elo": 1510.934861661962,
+        "elo": 1509.416747813344,
         "games": 3
       },
       "dublin guardians": {
-        "elo": 1462.1725436015072,
+        "elo": 1462.2581796028942,
         "games": 4
       },
       "glasgow cosmic": {
-        "elo": 1486.1955892979806,
+        "elo": 1490.28774368332,
         "games": 3
       },
       "edinburgh castle rockers": {
-        "elo": 1530.540157401739,
+        "elo": 1529.1469110683663,
         "games": 3
       },
       "sweden": {
-        "elo": 1520.6054145230028,
+        "elo": 1520.7425543306238,
         "games": 2
       },
       "denmark": {
-        "elo": 1495.634088210364,
+        "elo": 1491.7302550706036,
         "games": 3
       },
       "hong kong": {
-        "elo": 1491.4472333830372,
+        "elo": 1490.0165501398476,
         "games": 1
       },
       "namibia": {
-        "elo": 1499.4251891852648,
+        "elo": 1499.4167345713752,
         "games": 2
       },
       "south africa": {
-        "elo": 1511.511833238142,
+        "elo": 1510.2879675539398,
         "games": 3
       },
       "united arab emirates": {
-        "elo": 1488.250120109954,
+        "elo": 1489.71225631668,
         "games": 1
       },
       "norway": {
-        "elo": 1490.8064305070275,
+        "elo": 1489.5570409796437,
         "games": 3
       },
       "zimbabwe": {
-        "elo": 1489.0629775765933,
+        "elo": 1490.295297874685,
         "games": 3
       },
       "india": {
-        "elo": 1508.8307755969136,
+        "elo": 1510.3038034218112,
         "games": 1
       },
       "bangladesh": {
-        "elo": 1508.5707376518324,
+        "elo": 1510.0,
         "games": 1
       },
       "indonesia": {
-        "elo": 1491.4292623481676,
+        "elo": 1490.0,
         "games": 1
       }
     },
     "cricket:odi": {
       "scotland": {
-        "elo": 1537.9575573617801,
+        "elo": 1537.7538438643355,
         "games": 4
       },
       "canada": {
-        "elo": 1475.236957906669,
+        "elo": 1471.1461054250356,
         "games": 3
       },
       "united arab emirates": {
-        "elo": 1497.4577638839683,
+        "elo": 1500.2794617562658,
         "games": 2
       },
       "thailand": {
-        "elo": 1527.1415612542235,
+        "elo": 1528.3114337474124,
         "games": 3
       },
       "papua new guinea": {
-        "elo": 1472.8584387457765,
+        "elo": 1471.6885662525876,
         "games": 3
       },
       "netherlands": {
-        "elo": 1489.3477208475827,
+        "elo": 1490.820588954363,
         "games": 1
       },
       "ireland": {
-        "elo": 1488.5707376518324,
+        "elo": 1490.0,
         "games": 1
       },
       "england": {
-        "elo": 1511.4292623481676,
+        "elo": 1510.0,
+        "games": 1
+      }
+    },
+    "aussie-rules:afl-women": {
+      "st kilda saints women": {
+        "elo": 1480.0,
+        "games": 2
+      },
+      "carlton blues women": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "hawthorn hawks women": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "melbourne demons women": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "north melbourne kangaroos women": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "geelong cats women": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "gold coast suns women": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "western bulldogs bulldogs women": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "richmond tigers women": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "collingwood magpies women": {
+        "elo": 1480.0,
+        "games": 2
+      },
+      "essendon bombers women": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "brisbane lions women": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "adelaide crows women": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "sydney swans women": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "fremantle dockers women": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "port adelaide power women": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "greater western sydney giants women": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "west coast eagles women": {
+        "elo": 1480.0,
+        "games": 2
+      }
+    },
+    "soccer:championship": {
+      "wolverhampton wanderers": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "blackburn rovers": {
+        "elo": 1501.569935046895,
+        "games": 1
+      },
+      "bolton wanderers": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "preston north end": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "bristol city": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "millwall": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "middlesbrough": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "lincoln city": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "norwich city": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "west bromwich albion": {
+        "elo": 1511.569935046895,
         "games": 1
       }
     },
     "soccer:prva-liga": {
       "deportivo alav s": {
-        "elo": 1509.5136723864475,
+        "elo": 1509.523430267172,
         "games": 2
       },
       "getafe": {
-        "elo": 1500.2019140148554,
+        "elo": 1500.1931575150195,
         "games": 2
       },
       "sevilla": {
-        "elo": 1519.757547957298,
+        "elo": 1519.7624853435607,
         "games": 2
       },
       "rayo vallecano": {
-        "elo": 1490.4863276135525,
+        "elo": 1490.476569732828,
         "games": 2
       },
       "racing de santander": {
-        "elo": 1489.7980859851446,
+        "elo": 1489.8068424849805,
         "games": 2
       },
       "villarreal": {
-        "elo": 1503.0592559772342,
+        "elo": 1503.3318339480709,
         "games": 2
       },
       "espanyol": {
-        "elo": 1496.900726577608,
+        "elo": 1496.6244175313184,
         "games": 2
       },
       "levante": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "deportivo de a coru a": {
-        "elo": 1499.7980859851446,
+        "elo": 1499.8068424849805,
         "games": 2
       },
       "elche": {
-        "elo": 1489.9597267817346,
+        "elo": 1489.9559588859129,
         "games": 2
       },
       "atl tico madrid": {
-        "elo": 1506.9407440227658,
+        "elo": 1506.6681660519291,
         "games": 2
       },
       "m laga": {
-        "elo": 1490.2019140148554,
+        "elo": 1490.1931575150195,
         "games": 2
       },
       "real betis": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "real sociedad": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "athletic bilbao": {
-        "elo": 1488.8131896945345,
+        "elo": 1488.6675796095444,
         "games": 1
       },
       "valencia": {
-        "elo": 1498.5707376518324,
+        "elo": 1498.430064953105,
         "games": 1
       },
       "celta vigo": {
-        "elo": 1501.4292623481676,
+        "elo": 1501.569935046895,
         "games": 1
       },
       "real madrid": {
-        "elo": 1511.6700110742242,
+        "elo": 1511.8056474217867,
         "games": 1
       },
       "barcelona": {
-        "elo": 1511.469535566433,
+        "elo": 1511.613976160982,
         "games": 1
       }
     },
     "soccer:latvia-virsliga": {
       "vllaznia shkod r": {
-        "elo": 1488.288526373384,
+        "elo": 1488.1491212009385,
         "games": 3
       },
       "sk nderbeu kor": {
-        "elo": 1481.9143086374045,
+        "elo": 1482.0446296891055,
         "games": 3
       },
       "partizani tirana": {
-        "elo": 1498.9334467037786,
+        "elo": 1498.7990267425812,
         "games": 3
       },
       "teuta durr s": {
-        "elo": 1521.1564646782076,
+        "elo": 1521.2983877704503,
         "games": 3
       },
       "la i": {
-        "elo": 1498.5628240965239,
+        "elo": 1498.422222664758,
         "games": 3
       },
       "elbasani": {
-        "elo": 1491.3611950131751,
+        "elo": 1491.4946746901403,
         "games": 3
       },
       "dinamo city": {
-        "elo": 1508.9187736598294,
+        "elo": 1508.7838308167925,
         "games": 3
       },
       "vora": {
-        "elo": 1490.872739940729,
+        "elo": 1491.0157944890923,
         "games": 3
       },
       "egnatia": {
-        "elo": 1527.805722689591,
+        "elo": 1527.6768648039617,
         "games": 3
       },
       "tirana": {
-        "elo": 1492.185998207377,
+        "elo": 1492.3154471321798,
         "games": 3
       }
     },
     "soccer:super-league-1": {
       "arsenal": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "coventry city": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "hull city": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "manchester united": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "everton": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "crystal palace": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "ipswich town": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "sunderland": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "nottingham forest": {
-        "elo": 1488.5707376518324,
+        "elo": 1488.430064953105,
         "games": 1
       },
       "leeds united": {
-        "elo": 1511.4292623481676,
+        "elo": 1511.569935046895,
         "games": 1
       },
       "aek athens": {
-        "elo": 1518.6159157020802,
+        "elo": 1518.4787072484999,
         "games": 3
       },
       "iraklis 1908": {
-        "elo": 1492.8585246963353,
+        "elo": 1493.1398700937898,
         "games": 2
       },
       "kalamata": {
-        "elo": 1480.5586735860174,
+        "elo": 1480.5558214288137,
         "games": 2
       },
       "aris": {
-        "elo": 1511.0611344817198,
+        "elo": 1511.1957600577514,
         "games": 3
       },
       "olympiacos": {
-        "elo": 1520.1026338847803,
+        "elo": 1520.255393456591,
         "games": 3
       },
       "atromitos": {
-        "elo": 1480.4863276135525,
+        "elo": 1480.476569732828,
         "games": 2
       },
       "ofi": {
-        "elo": 1500.0804977734979,
+        "elo": 1500.0880180373094,
         "games": 2
       },
       "volos": {
-        "elo": 1489.4110385016672,
+        "elo": 1489.268036810581,
         "games": 3
       },
       "paok": {
-        "elo": 1519.5136723864475,
+        "elo": 1519.523430267172,
         "games": 2
       },
       "levadiakos": {
-        "elo": 1480.242452042702,
+        "elo": 1480.2375146564393,
         "games": 2
       },
       "panetolikos": {
-        "elo": 1516.5828017176473,
+        "elo": 1516.3043084773965,
         "games": 2
       },
       "asteras tripolis": {
-        "elo": 1480.4863276135525,
+        "elo": 1480.476569732828,
         "games": 2
       },
       "kifisia": {
-        "elo": 1498.8131896945345,
+        "elo": 1498.6675796095444,
         "games": 1
       },
       "panathinaikos": {
-        "elo": 1511.1868103054655,
+        "elo": 1511.3324203904556,
         "games": 1
+      }
+    },
+    "soccer:brasileiro-serie-a": {
+      "udinese": {
+        "elo": 1509.8068424849805,
+        "games": 2
+      },
+      "como": {
+        "elo": 1501.569935046895,
+        "games": 1
+      },
+      "inter milan": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "monza": {
+        "elo": 1480.1931575150195,
+        "games": 2
+      },
+      "genoa": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "napoli": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "parma": {
+        "elo": 1480.6419425630693,
+        "games": 2
+      },
+      "cagliari": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "frosinone": {
+        "elo": 1500.0880180373094,
+        "games": 2
+      },
+      "juventus": {
+        "elo": 1519.3580574369307,
+        "games": 2
+      },
+      "venezia": {
+        "elo": 1480.6419425630693,
+        "games": 2
+      },
+      "lecce": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "atalanta": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "sassuolo": {
+        "elo": 1499.9119819626906,
+        "games": 2
+      },
+      "torino": {
+        "elo": 1480.0880180373094,
+        "games": 2
+      },
+      "ac milan": {
+        "elo": 1519.3580574369307,
+        "games": 2
+      },
+      "bologna": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "lazio": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "roma": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "fiorentina": {
+        "elo": 1479.9119819626906,
+        "games": 2
+      }
+    },
+    "handball:damehandboldligaen": {
+      "gog h ndbold": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "skjern h ndbold": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "skanderborg aarhus h ndbold": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "tms ringsted": {
+        "elo": 1470.0,
+        "games": 3
+      },
+      "nordsj lland h ndbold": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "fredericia hk": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "ribe esbjerg hh": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "mors thy h ndbold": {
+        "elo": 1500.5750112778453,
+        "games": 2
+      },
+      "kif kolding": {
+        "elo": 1499.4249887221547,
+        "games": 2
+      },
+      "skive fh": {
+        "elo": 1490.0,
+        "games": 3
+      },
+      "s nderjyske h ndbold": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "aalborg h ndbold": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "tth holstebro": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "bjerringbro silkeborg h ndbold": {
+        "elo": 1480.0,
+        "games": 2
       }
     },
     "soccer:women-bundesliga": {
       "bayern munich": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "stuttgart": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "mainz": {
-        "elo": 1498.5707376518324,
+        "elo": 1498.430064953105,
         "games": 1
       },
       "paderborn": {
-        "elo": 1501.4292623481676,
+        "elo": 1501.569935046895,
         "games": 1
       },
       "rb leipzig": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "borussia m nchengladbach": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       },
       "union berlin": {
-        "elo": 1498.5707376518324,
+        "elo": 1498.430064953105,
         "games": 1
       },
       "eintracht frankfurt": {
-        "elo": 1501.4292623481676,
+        "elo": 1501.569935046895,
         "games": 1
       },
       "borussia dortmund": {
-        "elo": 1508.5707376518324,
+        "elo": 1508.430064953105,
         "games": 1
       },
       "hamburg": {
-        "elo": 1491.4292623481676,
+        "elo": 1491.569935046895,
         "games": 1
       }
     },
     "dota-2:all": {
       "level up esports": {
-        "elo": 1509.4772112865112,
+        "elo": 1492.7918217026772,
         "games": 16
       },
       "team lynx": {
-        "elo": 1508.784659452148,
+        "elo": 1506.6246646649392,
         "games": 16
       },
       "yakult brothers": {
-        "elo": 1508.111844326836,
+        "elo": 1509.4580889111862,
         "games": 3
       },
       "team resilience": {
-        "elo": 1491.888155673164,
+        "elo": 1490.5419110888138,
         "games": 3
       },
       "execration": {
-        "elo": 1480.6375663103775,
+        "elo": 1480.5750112778453,
         "games": 2
       },
       "team nemesis": {
-        "elo": 1519.3624336896225,
+        "elo": 1519.4249887221547,
         "games": 2
       },
       "team synapse": {
-        "elo": 1501.509666053004,
+        "elo": 1510.5187059979992,
         "games": 16
       },
       "inner circle x insanity": {
-        "elo": 1483.527244853704,
+        "elo": 1487.612732467253,
         "games": 13
       },
       "mouz": {
-        "elo": 1492.8726054848257,
+        "elo": 1494.6785579226114,
         "games": 5
       },
       "natus vincere": {
-        "elo": 1543.1159623395768,
+        "elo": 1537.9669945593141,
         "games": 4
       },
       "4ikibamboni": {
-        "elo": 1482.8645642798967,
+        "elo": 1484.7714445305885,
         "games": 10
       },
       "powerrangers": {
-        "elo": 1477.8480862503338,
+        "elo": 1485.0350781546174,
         "games": 12
       },
       "pibbles corp": {
-        "elo": 1527.6124385402486,
+        "elo": 1528.8673697795948,
         "games": 3
       },
       "chandogs": {
-        "elo": 1480.2294707660162,
+        "elo": 1480.2721462088032,
         "games": 4
       },
       "the blacklist": {
-        "elo": 1508.5707376518324,
+        "elo": 1510.0,
         "games": 1
       },
       "ing fieles": {
-        "elo": 1491.4292623481676,
+        "elo": 1490.0,
         "games": 1
       },
       "dynasty": {
-        "elo": 1459.478301765114,
+        "elo": 1461.4993458427532,
         "games": 12
       },
       "klim sani4": {
-        "elo": 1573.2432972725933,
+        "elo": 1576.8527364478398,
         "games": 13
       },
       "capibarbas": {
-        "elo": 1488.5707376518324,
+        "elo": 1490.0,
         "games": 1
       },
       "salchipapa": {
-        "elo": 1491.2853690355357,
+        "elo": 1490.0165493397121,
         "games": 3
       },
       "lindorfitos": {
-        "elo": 1520.143893312632,
+        "elo": 1519.9834506602879,
         "games": 2
       },
       "zero tenacity": {
-        "elo": 1502.982042983844,
+        "elo": 1508.6758434391825,
         "games": 11
       },
       "puckchamp": {
-        "elo": 1413.396068658156,
+        "elo": 1413.950956810734,
         "games": 10
       },
       "pipsqueak 4": {
-        "elo": 1563.6360237952679,
-        "games": 13
+        "elo": 1539.6271649442117,
+        "games": 15
       },
       "team spirit academy": {
-        "elo": 1503.6832446202172,
+        "elo": 1492.576018531757,
         "games": 13
       },
       "yangon galacticos": {
-        "elo": 1497.7911284450092,
+        "elo": 1500.5750112778453,
         "games": 2
       },
       "team kinetix": {
-        "elo": 1502.2088715549908,
+        "elo": 1499.4249887221547,
         "games": 2
       },
       "amaru gaming": {
-        "elo": 1480.9582991115838,
+        "elo": 1481.1326302204052,
         "games": 2
       },
       "estar backs": {
-        "elo": 1511.1997915821514,
+        "elo": 1509.7278537911968,
         "games": 3
       },
       "huligani": {
-        "elo": 1483.5810209048075,
+        "elo": 1483.9207339644024,
         "games": 2
       },
       "teamdk": {
-        "elo": 1499.5136723864475,
-        "games": 2
+        "elo": 1509.4580889111862,
+        "games": 3
       },
       "rebeldes": {
-        "elo": 1500.4863276135525,
+        "elo": 1490.5419110888138,
+        "games": 3
+      },
+      "gamerlegion": {
+        "elo": 1522.8972000191195,
         "games": 2
+      },
+      "gior dota": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "the house esports": {
+        "elo": 1490.0,
+        "games": 1
+      }
+    },
+    "soccer:la-liga-2": {
+      "es s tif": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "es ben aknoun": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "js el biar": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "olympique akbou": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "khenchela": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "usm alger": {
+        "elo": 1501.569935046895,
+        "games": 1
+      },
+      "js kabylie": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "mb rouissat": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "cr t mouchent": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "cs constantine": {
+        "elo": 1501.569935046895,
+        "games": 1
+      },
+      "aso chlef": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "cr belouizdad": {
+        "elo": 1501.569935046895,
+        "games": 1
+      }
+    },
+    "futsal:primera-division": {
+      "carroi": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "fc santa coloma": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "esperan a d andorra": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "inter club d escaldes": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "casa de portugal": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "fc r nger s": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "sporting d escaldes": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "ordino": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "penya encarnada d andorra": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "atl tic d escaldes": {
+        "elo": 1500.0,
+        "games": 1
       }
     }
   },
   "brier": {
     "american-football:nfl": [
       {
+        "kind": "binary",
         "p": 0.5683071548273939,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6274121502563789,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5766299361211438,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.48818121526955305,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6255126578265474,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5738458368245841,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.488376985785909,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6061472980281636,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5480309041904529,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5824369348224756,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5712984979077073,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5691067365323436,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.639601586692219,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6277498953871858,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6507770666688405,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6244761041770619,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5894085359667601,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.49516175699396847,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5323793679071819,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4919229687790674,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5924537435369596,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6711496751269066,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5546448405295599,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6182060964913958,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5680149455814291,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.514293502094407,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6349803544006578,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.603663846363457,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.49902053479572156,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6385560655342972,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5208129753861414,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5049889156212576,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5293986993756472,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5224495208905162,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6635269169147023,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5617710803079223,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4833817580366987,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6272741800032223,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6900918004491647,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6293503780820784,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6473963743736719,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.47979903737085566,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.593352753682746,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5417050192070242,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5367295986689652,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6680718339687497,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5474305382596132,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6726400984349126,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5595493404328471,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4883381533991129,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5857942141189107,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5573575142281393,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7056034342414745,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5948200979607955,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5395887663036417,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5676355892220026,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.49375059221241563,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.521034387415178,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5003946887926409,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6247190605112808,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5348519202466279,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5527214490652202,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5083992142354974,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5229985163024683,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6156575150121809,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5789081781406723,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5131772898504117,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5501092322865023,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6159631490677611,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4019505794822669,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6766552327428107,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6211232899273167,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.416133379488735,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5260284434384782,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6440031151541395,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5443911802586003,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.49575798465212495,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4997081526181879,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5550896256154576,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6252452252638223,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5757343334010744,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5819016787727803,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5568864243710892,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6706488273557087,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5610644111643365,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4826258787053423,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4418388646959186,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5881235173841795,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6147466854590172,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5234396931983163,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6500560673311104,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.502018757346446,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6780007038241261,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5454758258493932,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6912683561042915,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4182753784832032,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7469156695007627,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5771300223315634,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.44956817650618985,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6657679838186128,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6237672234294098,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6093850186132301,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5297732581476436,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6630427496333742,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5825669895093155,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5954234762696909,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.3668005669305726,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5430221385063367,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.41655410551102073,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5406621876295536,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5643564738999887,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.61501394318419,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7071779732471954,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5122521926171856,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5258411039574882,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6405395249003596,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5766552388508037,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7105751985642066,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6866257088359345,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7170065708988758,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6074789691219519,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6080473853902906,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.48187388093511324,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.711407900404332,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.650246480109272,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6171720329254172,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5702903668600797,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5888211340055091,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4570045516718702,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5931037552260932,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.41697895939342966,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5070411358243757,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.48231134896095235,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6409317357262528,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.603788615049024,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.48120038048642455,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6041884966018222,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6234598194401569,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4953473486171514,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5908001514290314,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7503295295723129,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.47283223883037423,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5144498455586506,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.49861052976818965,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5540710928649034,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.44358123871854477,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5696621788122077,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6222107056673618,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6248738001022214,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.443740677415548,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5170606213028954,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.484718901310508,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5738063767786553,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.36559104261345876,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4742640147628909,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5521240084049998,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6021356314473771,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5612199607308953,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.47508202004358135,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.516767081060535,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5281705501192973,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5907508371516789,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5988832232710306,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5557293421045906,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4715986573374614,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7472778095579214,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6786050196157102,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7212694794472291,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6428109925960354,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.621405501328348,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.45910728806592555,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7462379759893791,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7049208334602893,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.727110425140982,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5753202245660018,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.49597396611897054,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6150909054248157,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6001041518382836,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5403468001971254,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6556801013149521,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.49493802535532316,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6033503105060453,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.627673893843481,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6005248161884933,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5543968968119514,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5464772976941303,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6276939126234375,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.572912490078465,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.45006613265801665,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4790143956722507,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5800833895203857,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7390682109968059,
         "y": 0.5
       },
       {
+        "kind": "binary",
         "p": 0.5826074075139166,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6358887046438066,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7438329586995408,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.46555323168698565,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.49191203904864883,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5120472676707825,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6488566774243265,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6828645999730052,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.45906126293959365,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.42105721726332257,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.45586246431789734,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5391845573124321,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.7546101348586367,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.780159384684099,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5673738220731448,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7067853952367126,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6753514953954847,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7002783873765637,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6452537837157055,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.41063562338132625,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5505057182225702,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5966525976080711,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7087120912610597,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6318960260461447,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4519587962150055,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6950794369426382,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6242757747709674,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.4349250675439311,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.3215174530016223,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.6619687596364829,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.3324655514499719,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.3635918780529618,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4988480187133557,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6739323250573841,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5006598920236518,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.5123639861121546,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5523683427500785,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6498991965232583,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.636872672356166,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.7155169063300483,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.3471986691549123,
         "y": 0.5
       },
       {
+        "kind": "binary",
         "p": 0.6187820453069467,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.6576550647128835,
         "y": 1.0
       },
       {
+        "kind": "binary",
         "p": 0.5160942677842191,
         "y": 0.0
       },
       {
+        "kind": "binary",
         "p": 0.4529827243927382,
         "y": 0.0
       }
     ],
     "baseball:mlb": [
       {
-        "p": 0.6510989112036184,
+        "kind": "binary",
+        "p": 0.6094450028388309,
         "y": 1.0
       },
       {
-        "p": 0.5261818663810968,
+        "kind": "binary",
+        "p": 0.48170177489234,
         "y": 0.0
       },
       {
-        "p": 0.6232567959700448,
+        "kind": "binary",
+        "p": 0.5803964416225491,
         "y": 0.0
       },
       {
-        "p": 0.6691206419215073,
+        "kind": "binary",
+        "p": 0.6306272182438969,
         "y": 1.0
       },
       {
-        "p": 0.5497095062568934,
+        "kind": "binary",
+        "p": 0.5053392373256239,
         "y": 1.0
       },
       {
-        "p": 0.5753434059052108,
+        "kind": "binary",
+        "p": 0.5313236375072038,
         "y": 0.0
       },
       {
-        "p": 0.47003898918751824,
+        "kind": "binary",
+        "p": 0.42605767091205915,
         "y": 0.0
       },
       {
-        "p": 0.6273878852114867,
+        "kind": "binary",
+        "p": 0.5848048495060536,
         "y": 1.0
       },
       {
-        "p": 0.5797817401084417,
+        "kind": "binary",
+        "p": 0.535892261803463,
         "y": 0.0
       },
       {
-        "p": 0.5753822942137815,
+        "kind": "binary",
+        "p": 0.5313397238496897,
         "y": 1.0
       },
       {
-        "p": 0.5753822942137815,
+        "kind": "binary",
+        "p": 0.5313397238496897,
         "y": 0.0
       },
       {
-        "p": 0.5753434059052108,
+        "kind": "binary",
+        "p": 0.5313236375072038,
         "y": 0.0
       },
       {
-        "p": 0.5183884333542297,
+        "kind": "binary",
+        "p": 0.47384014399760443,
         "y": 1.0
       },
       {
-        "p": 0.5515980124510078,
+        "kind": "binary",
+        "p": 0.5072665459977506,
         "y": 1.0
       },
       {
-        "p": 0.6001953394250127,
+        "kind": "binary",
+        "p": 0.5567004358653708,
         "y": 1.0
       },
       {
-        "p": 0.5902189144345105,
+        "kind": "binary",
+        "p": 0.5461979869281111,
         "y": 1.0
       },
       {
-        "p": 0.5960215289893491,
+        "kind": "binary",
+        "p": 0.5549275955496648,
         "y": 1.0
       },
       {
-        "p": 0.5886406864203871,
+        "kind": "binary",
+        "p": 0.5471451022653353,
         "y": 1.0
       },
       {
-        "p": 0.5379479813111878,
+        "kind": "binary",
+        "p": 0.4958664164153916,
         "y": 1.0
       },
       {
-        "p": 0.5812141271981339,
+        "kind": "binary",
+        "p": 0.5408225488404138,
         "y": 0.0
       },
       {
-        "p": 0.5811014232177252,
+        "kind": "binary",
+        "p": 0.5406835700955599,
         "y": 1.0
       },
       {
-        "p": 0.5745103992220367,
+        "kind": "binary",
+        "p": 0.5330253254470093,
         "y": 1.0
       },
       {
-        "p": 0.5918039739783048,
+        "kind": "binary",
+        "p": 0.5504750262147691,
         "y": 1.0
       },
       {
-        "p": 0.547806805247114,
+        "kind": "binary",
+        "p": 0.505976929075445,
         "y": 1.0
       },
       {
-        "p": 0.5199825285242868,
+        "kind": "binary",
+        "p": 0.4768972604642858,
         "y": 0.0
       },
       {
-        "p": 0.602121094066913,
+        "kind": "binary",
+        "p": 0.5612601925920738,
         "y": 0.0
       },
       {
-        "p": 0.6003197644828142,
+        "kind": "binary",
+        "p": 0.5593014344967254,
         "y": 1.0
       },
       {
-        "p": 0.5680221123614403,
+        "kind": "binary",
+        "p": 0.5263434378164065,
         "y": 0.0
       },
       {
-        "p": 0.6726265661173353,
+        "kind": "binary",
+        "p": 0.6334235870250012,
         "y": 0.0
       },
       {
-        "p": 0.5763402782605133,
+        "kind": "binary",
+        "p": 0.5349208299515538,
         "y": 1.0
       },
       {
-        "p": 0.5436910186703336,
+        "kind": "binary",
+        "p": 0.5017565254082473,
         "y": 1.0
       },
       {
-        "p": 0.611368398258125,
+        "kind": "binary",
+        "p": 0.5728322125167583,
         "y": 0.0
       },
       {
-        "p": 0.6182046176636019,
+        "kind": "binary",
+        "p": 0.5800752674505005,
         "y": 1.0
       },
       {
-        "p": 0.548331120229646,
+        "kind": "binary",
+        "p": 0.5097801239427752,
         "y": 0.0
       },
       {
-        "p": 0.5982672014578028,
+        "kind": "binary",
+        "p": 0.5596689959451432,
         "y": 0.0
       },
       {
-        "p": 0.6142988166376346,
+        "kind": "binary",
+        "p": 0.5759323297184192,
         "y": 0.0
       },
       {
-        "p": 0.5734483720471112,
+        "kind": "binary",
+        "p": 0.5343612205312194,
         "y": 1.0
       },
       {
-        "p": 0.490061886040172,
+        "kind": "binary",
+        "p": 0.4496001309306631,
         "y": 1.0
       },
       {
-        "p": 0.5684837034626055,
+        "kind": "binary",
+        "p": 0.5292274220047825,
         "y": 1.0
       },
       {
-        "p": 0.6221837293803577,
+        "kind": "binary",
+        "p": 0.584142436394319,
         "y": 1.0
       },
       {
-        "p": 0.5356877165602179,
+        "kind": "binary",
+        "p": 0.4960691712817789,
         "y": 1.0
       },
       {
-        "p": 0.5696148585853033,
+        "kind": "binary",
+        "p": 0.5304001892745603,
         "y": 1.0
       },
       {
-        "p": 0.6376573564183075,
+        "kind": "binary",
+        "p": 0.5989474041814524,
         "y": 1.0
       },
       {
-        "p": 0.5999649126989796,
+        "kind": "binary",
+        "p": 0.5614378485831809,
         "y": 0.0
       },
       {
-        "p": 0.564261571905865,
+        "kind": "binary",
+        "p": 0.5248660533678225,
         "y": 0.0
       },
       {
-        "p": 0.6043805870175231,
+        "kind": "binary",
+        "p": 0.5668121224080277,
         "y": 1.0
       },
       {
-        "p": 0.5802917138223702,
+        "kind": "binary",
+        "p": 0.5432625019426414,
         "y": 1.0
       },
       {
-        "p": 0.5972817218171085,
+        "kind": "binary",
+        "p": 0.5609156895051389,
         "y": 1.0
       },
       {
-        "p": 0.5621533337877356,
+        "kind": "binary",
+        "p": 0.5250566736474476,
         "y": 0.0
       },
       {
-        "p": 0.6567046601662581,
+        "kind": "binary",
+        "p": 0.6209134084843944,
         "y": 1.0
       },
       {
-        "p": 0.5663984759776797,
+        "kind": "binary",
+        "p": 0.5293969819961221,
         "y": 0.0
       },
       {
-        "p": 0.5937235098511007,
+        "kind": "binary",
+        "p": 0.5572183174103573,
         "y": 0.0
       },
       {
-        "p": 0.5774453672240942,
+        "kind": "binary",
+        "p": 0.5402915653061452,
         "y": 0.0
       },
       {
-        "p": 0.6387277130807755,
+        "kind": "binary",
+        "p": 0.6034290784531925,
         "y": 0.0
       },
       {
-        "p": 0.5320932589125424,
+        "kind": "binary",
+        "p": 0.49467306690156154,
         "y": 1.0
       },
       {
-        "p": 0.5169115685058472,
+        "kind": "binary",
+        "p": 0.4804460466276407,
         "y": 0.0
       },
       {
-        "p": 0.6259418423067975,
+        "kind": "binary",
+        "p": 0.5911210225292302,
         "y": 0.0
       },
       {
-        "p": 0.5647577678152781,
+        "kind": "binary",
+        "p": 0.5277091448507675,
         "y": 1.0
       },
       {
-        "p": 0.5926732796188389,
+        "kind": "binary",
+        "p": 0.556123127585476,
         "y": 0.0
       },
       {
-        "p": 0.5194052226290014,
+        "kind": "binary",
+        "p": 0.4811209281119195,
         "y": 0.0
       },
       {
-        "p": 0.64240613471191,
+        "kind": "binary",
+        "p": 0.6071997943222444,
         "y": 1.0
       },
       {
-        "p": 0.5892128764081781,
+        "kind": "binary",
+        "p": 0.5547049473388469,
         "y": 1.0
       },
       {
-        "p": 0.6041468113990335,
+        "kind": "binary",
+        "p": 0.5697494384970436,
         "y": 0.0
       },
       {
-        "p": 0.48716502041055826,
+        "kind": "binary",
+        "p": 0.45291926130545546,
         "y": 1.0
       },
       {
-        "p": 0.5099433616961373,
+        "kind": "binary",
+        "p": 0.45915057381625085,
         "y": 0.0
       },
       {
-        "p": 0.5793786766799444,
+        "kind": "binary",
+        "p": 0.528905278249149,
         "y": 1.0
       },
       {
-        "p": 0.6234707448520082,
+        "kind": "binary",
+        "p": 0.5820860272512867,
         "y": 0.0
       },
       {
-        "p": 0.607665279459962,
+        "kind": "binary",
+        "p": 0.5579776509960552,
         "y": 0.0
       },
       {
-        "p": 0.6027831024744911,
+        "kind": "binary",
+        "p": 0.5558222538957353,
         "y": 1.0
       },
       {
-        "p": 0.4965806624211774,
+        "kind": "binary",
+        "p": 0.4473496875709665,
         "y": 0.0
       },
       {
-        "p": 0.5138304238219229,
+        "kind": "binary",
+        "p": 0.4706966136542109,
         "y": 0.0
       },
       {
-        "p": 0.620130620322609,
+        "kind": "binary",
+        "p": 0.5700386054399563,
         "y": 0.0
       },
       {
-        "p": 0.5561168059348613,
+        "kind": "binary",
+        "p": 0.502479896595906,
         "y": 1.0
       },
       {
-        "p": 0.5429408030693285,
+        "kind": "binary",
+        "p": 0.49986619754529726,
         "y": 0.0
       },
       {
-        "p": 0.47841137903037356,
+        "kind": "binary",
+        "p": 0.4367376430404236,
         "y": 0.0
       },
       {
-        "p": 0.7094440841342933,
+        "kind": "binary",
+        "p": 0.6724784164974797,
         "y": 1.0
       },
       {
-        "p": 0.6513843234202,
+        "kind": "binary",
+        "p": 0.6035642609812456,
         "y": 0.0
       },
       {
-        "p": 0.5720825626842947,
+        "kind": "binary",
+        "p": 0.5283123542684098,
         "y": 1.0
       },
       {
-        "p": 0.6386300467176188,
+        "kind": "binary",
+        "p": 0.5958080259444392,
         "y": 0.0
       },
       {
-        "p": 0.5281170102255514,
+        "kind": "binary",
+        "p": 0.48643372361522275,
         "y": 0.0
       },
       {
-        "p": 0.5532602600134627,
+        "kind": "binary",
+        "p": 0.5023839626979529,
         "y": 1.0
       },
       {
-        "p": 0.6244635754090541,
+        "kind": "binary",
+        "p": 0.5809073961823206,
         "y": 0.0
       },
       {
-        "p": 0.46803876745139367,
+        "kind": "binary",
+        "p": 0.4220433237279451,
         "y": 1.0
       },
       {
-        "p": 0.5785241868696394,
+        "kind": "binary",
+        "p": 0.5309892906138166,
         "y": 1.0
       },
       {
-        "p": 0.4510159959965541,
+        "kind": "binary",
+        "p": 0.4121764167361134,
         "y": 0.0
       },
       {
-        "p": 0.7230394316489126,
+        "kind": "binary",
+        "p": 0.6888676313883971,
         "y": 0.0
       },
       {
-        "p": 0.4842606977073546,
+        "kind": "binary",
+        "p": 0.44380592622684056,
         "y": 0.0
       },
       {
-        "p": 0.5811813387012658,
+        "kind": "binary",
+        "p": 0.5310793560617348,
         "y": 1.0
       },
       {
-        "p": 0.5738529605307677,
+        "kind": "binary",
+        "p": 0.5260961065215277,
         "y": 0.0
       },
       {
-        "p": 0.5859656735165066,
+        "kind": "binary",
+        "p": 0.5376168917474284,
         "y": 1.0
       },
       {
-        "p": 0.6040509704022446,
+        "kind": "binary",
+        "p": 0.5623829214780764,
         "y": 1.0
       },
       {
-        "p": 0.5892211653647785,
+        "kind": "binary",
+        "p": 0.5491686792298301,
         "y": 1.0
       },
       {
-        "p": 0.6166002969845507,
+        "kind": "binary",
+        "p": 0.5698802887897143,
         "y": 0.0
       },
       {
-        "p": 0.5117904737325474,
+        "kind": "binary",
+        "p": 0.4711237546985869,
         "y": 0.0
       },
       {
-        "p": 0.4977458607935388,
+        "kind": "binary",
+        "p": 0.45852454062712694,
         "y": 1.0
       },
       {
-        "p": 0.5960141796728995,
+        "kind": "binary",
+        "p": 0.5552684340007444,
         "y": 1.0
       },
       {
-        "p": 0.6044546848233503,
+        "kind": "binary",
+        "p": 0.5578524555601707,
         "y": 1.0
       },
       {
-        "p": 0.49861728197386795,
+        "kind": "binary",
+        "p": 0.4547958940779413,
         "y": 1.0
       },
       {
-        "p": 0.6088896369226247,
+        "kind": "binary",
+        "p": 0.5639528006960025,
         "y": 0.0
       },
       {
-        "p": 0.5412694516854574,
+        "kind": "binary",
+        "p": 0.4958354108272916,
         "y": 1.0
       },
       {
-        "p": 0.6884971377998418,
+        "kind": "binary",
+        "p": 0.6538969161267741,
         "y": 1.0
       },
       {
-        "p": 0.5901896611861649,
+        "kind": "binary",
+        "p": 0.548036527965002,
         "y": 0.0
       },
       {
-        "p": 0.48233898238456396,
+        "kind": "binary",
+        "p": 0.44420486294279377,
         "y": 1.0
       },
       {
-        "p": 0.4254556037846433,
+        "kind": "binary",
+        "p": 0.389388691668747,
         "y": 0.0
       },
       {
-        "p": 0.6256368384304899,
+        "kind": "binary",
+        "p": 0.5870064302371787,
         "y": 1.0
       },
       {
-        "p": 0.6119062080836605,
+        "kind": "binary",
+        "p": 0.5747163196222048,
         "y": 1.0
       },
       {
-        "p": 0.5825293859583189,
+        "kind": "binary",
+        "p": 0.5374653861659039,
         "y": 1.0
       },
       {
-        "p": 0.526632687481706,
+        "kind": "binary",
+        "p": 0.48960035015368525,
         "y": 0.0
       },
       {
-        "p": 0.6181978128123453,
+        "kind": "binary",
+        "p": 0.5803922961968602,
         "y": 0.0
       },
       {
-        "p": 0.6019906353172821,
+        "kind": "binary",
+        "p": 0.5577683657341869,
         "y": 0.0
       },
       {
-        "p": 0.4564895407386314,
+        "kind": "binary",
+        "p": 0.41874680166488937,
         "y": 1.0
       },
       {
-        "p": 0.5840837701069287,
+        "kind": "binary",
+        "p": 0.5475418802359964,
         "y": 1.0
       },
       {
-        "p": 0.5429956986996138,
+        "kind": "binary",
+        "p": 0.5017085669115953,
         "y": 1.0
       },
       {
-        "p": 0.53101276657093,
+        "kind": "binary",
+        "p": 0.48894902413097224,
         "y": 0.0
       },
       {
-        "p": 0.4589774079007854,
+        "kind": "binary",
+        "p": 0.40900934135324507,
         "y": 1.0
       },
       {
-        "p": 0.631538488415541,
+        "kind": "binary",
+        "p": 0.5887874877550587,
         "y": 0.0
       },
       {
-        "p": 0.4829915957852759,
+        "kind": "binary",
+        "p": 0.438983061445084,
         "y": 1.0
       },
       {
-        "p": 0.5680978186347492,
+        "kind": "binary",
+        "p": 0.5248614251764543,
         "y": 0.0
       },
       {
-        "p": 0.5048050733474995,
+        "kind": "binary",
+        "p": 0.4627900056765808,
         "y": 0.0
       },
       {
-        "p": 0.538339332451848,
+        "kind": "binary",
+        "p": 0.49523010672076384,
         "y": 0.0
       },
       {
-        "p": 0.4225738871771088,
+        "kind": "binary",
+        "p": 0.36797920868101397,
         "y": 0.0
       },
       {
-        "p": 0.5311539008444547,
+        "kind": "binary",
+        "p": 0.48087616277831785,
         "y": 1.0
       },
       {
-        "p": 0.6288300924969206,
+        "kind": "binary",
+        "p": 0.5800941107320495,
         "y": 0.0
       },
       {
-        "p": 0.5689669858133274,
+        "kind": "binary",
+        "p": 0.5303551577517867,
         "y": 0.0
       },
       {
-        "p": 0.5004850768897058,
+        "kind": "binary",
+        "p": 0.46088116740829527,
         "y": 1.0
       },
       {
-        "p": 0.49003007322582004,
+        "kind": "binary",
+        "p": 0.4422632983278854,
         "y": 1.0
       },
       {
-        "p": 0.6023870000079683,
+        "kind": "binary",
+        "p": 0.5514531179703858,
         "y": 0.0
       },
       {
-        "p": 0.5971022385840472,
+        "kind": "binary",
+        "p": 0.5556143927874163,
         "y": 1.0
       },
       {
-        "p": 0.5944536764592862,
+        "kind": "binary",
+        "p": 0.5472555728865399,
         "y": 1.0
       },
       {
-        "p": 0.566391234510652,
+        "kind": "binary",
+        "p": 0.5235735213896838,
         "y": 1.0
       },
       {
-        "p": 0.535760122531462,
+        "kind": "binary",
+        "p": 0.49466869415403175,
         "y": 0.0
       },
       {
-        "p": 0.4757653101867913,
+        "kind": "binary",
+        "p": 0.43642669123400163,
         "y": 0.0
       },
       {
-        "p": 0.5074248899648542,
+        "kind": "binary",
+        "p": 0.46677127477356034,
         "y": 0.0
       },
       {
-        "p": 0.3990278423496199,
+        "kind": "binary",
+        "p": 0.348502944697339,
         "y": 1.0
       },
       {
-        "p": 0.6411692553970605,
+        "kind": "binary",
+        "p": 0.5920461020263825,
         "y": 1.0
       },
       {
-        "p": 0.5579220534869583,
+        "kind": "binary",
+        "p": 0.5107483433980363,
         "y": 0.0
       },
       {
-        "p": 0.6210272441242003,
+        "kind": "binary",
+        "p": 0.5730591665316331,
         "y": 0.0
       },
       {
-        "p": 0.5193752736030612,
+        "kind": "binary",
+        "p": 0.47413362073079046,
         "y": 1.0
       },
       {
-        "p": 0.5365915228633272,
+        "kind": "binary",
+        "p": 0.4998628372043883,
         "y": 0.0
       },
       {
-        "p": 0.6192052192801658,
+        "kind": "binary",
+        "p": 0.5807140721802216,
         "y": 0.0
       },
       {
-        "p": 0.5127436664302476,
+        "kind": "binary",
+        "p": 0.4710047318208078,
         "y": 1.0
       },
       {
-        "p": 0.5292061820593318,
+        "kind": "binary",
+        "p": 0.49183595612187214,
         "y": 0.0
       },
       {
-        "p": 0.526043096965932,
+        "kind": "binary",
+        "p": 0.4813576072620697,
         "y": 1.0
       },
       {
-        "p": 0.659948896012491,
+        "kind": "binary",
+        "p": 0.6145230857019709,
         "y": 1.0
       },
       {
-        "p": 0.5687409716956819,
+        "kind": "binary",
+        "p": 0.5198812241013376,
         "y": 1.0
       },
       {
-        "p": 0.6167528227362639,
+        "kind": "binary",
+        "p": 0.5729350839709846,
         "y": 0.0
       },
       {
-        "p": 0.5407048724381406,
+        "kind": "binary",
+        "p": 0.5014235749519982,
         "y": 0.0
       },
       {
-        "p": 0.5907301290098469,
+        "kind": "binary",
+        "p": 0.5508400204099959,
         "y": 0.0
       },
       {
-        "p": 0.5049802865893759,
+        "kind": "binary",
+        "p": 0.4662444966606789,
         "y": 1.0
       },
       {
-        "p": 0.4485418930447461,
+        "kind": "binary",
+        "p": 0.4118875089499435,
         "y": 1.0
       },
       {
-        "p": 0.4782294844599512,
+        "kind": "binary",
+        "p": 0.4401411676123062,
         "y": 0.0
       },
       {
-        "p": 0.4326276264292115,
+        "kind": "binary",
+        "p": 0.3832884773125632,
         "y": 0.0
       },
       {
-        "p": 0.5868391619363477,
+        "kind": "binary",
+        "p": 0.5405089617566582,
         "y": 1.0
       },
       {
-        "p": 0.5929121549892404,
+        "kind": "binary",
+        "p": 0.5473869229152433,
         "y": 1.0
       },
       {
-        "p": 0.5574856500488564,
+        "kind": "binary",
+        "p": 0.5192978329170794,
         "y": 1.0
       },
       {
-        "p": 0.5334261462968825,
+        "kind": "binary",
+        "p": 0.4969185487167752,
         "y": 1.0
       },
       {
-        "p": 0.4801140282203471,
+        "kind": "binary",
+        "p": 0.44503550829587485,
         "y": 0.0
       },
       {
-        "p": 0.6179025052053344,
+        "kind": "binary",
+        "p": 0.5701919178444088,
         "y": 1.0
       },
       {
-        "p": 0.6457703941468318,
+        "kind": "binary",
+        "p": 0.6049684056657987,
         "y": 1.0
       },
       {
-        "p": 0.5784396047797349,
+        "kind": "binary",
+        "p": 0.5291343815755942,
         "y": 1.0
       },
       {
-        "p": 0.4083586838328145,
+        "kind": "binary",
+        "p": 0.36265274678616566,
         "y": 0.0
       },
       {
-        "p": 0.6277949070839287,
+        "kind": "binary",
+        "p": 0.577092266338923,
         "y": 0.0
       },
       {
-        "p": 0.609699111568342,
+        "kind": "binary",
+        "p": 0.5666493583604275,
         "y": 1.0
       },
       {
-        "p": 0.5766044160795667,
+        "kind": "binary",
+        "p": 0.5336555570568615,
         "y": 0.0
       },
       {
-        "p": 0.601912188634634,
+        "kind": "binary",
+        "p": 0.5560362320537501,
         "y": 1.0
       },
       {
-        "p": 0.707355057332698,
+        "kind": "binary",
+        "p": 0.6647086138162924,
         "y": 1.0
       },
       {
-        "p": 0.6055111657356269,
+        "kind": "binary",
+        "p": 0.556699173206332,
         "y": 1.0
       },
       {
-        "p": 0.5014172373085712,
+        "kind": "binary",
+        "p": 0.4598640793610096,
         "y": 0.0
       },
       {
-        "p": 0.5743476173063833,
+        "kind": "binary",
+        "p": 0.5298664053586941,
         "y": 0.0
       },
       {
-        "p": 0.6641990015221872,
+        "kind": "binary",
+        "p": 0.6264857502562853,
         "y": 0.0
       },
       {
-        "p": 0.6384484000435507,
+        "kind": "binary",
+        "p": 0.5942592304243528,
         "y": 1.0
       },
       {
-        "p": 0.6244150403950622,
+        "kind": "binary",
+        "p": 0.5763424127729038,
         "y": 1.0
       },
       {
-        "p": 0.48308172946565164,
+        "kind": "binary",
+        "p": 0.44273306285898123,
         "y": 1.0
       },
       {
-        "p": 0.5015755669804921,
+        "kind": "binary",
+        "p": 0.45863602253950597,
         "y": 0.0
       },
       {
-        "p": 0.5006153809946834,
+        "kind": "binary",
+        "p": 0.4523904870681052,
         "y": 0.0
       },
       {
-        "p": 0.5934421210032892,
+        "kind": "binary",
+        "p": 0.5443748708711101,
         "y": 1.0
       },
       {
-        "p": 0.4846408704647949,
+        "kind": "binary",
+        "p": 0.4364431237503981,
         "y": 0.0
       },
       {
-        "p": 0.5054983196589188,
+        "kind": "binary",
+        "p": 0.455731459260515,
         "y": 0.0
       },
       {
-        "p": 0.6269879454836416,
+        "kind": "binary",
+        "p": 0.5817229254924082,
         "y": 1.0
       },
       {
-        "p": 0.5417434529881212,
+        "kind": "binary",
+        "p": 0.4994004409257526,
         "y": 1.0
       },
       {
-        "p": 0.6292791526150099,
+        "kind": "binary",
+        "p": 0.592163446376976,
         "y": 0.0
       },
       {
-        "p": 0.47641722961682675,
+        "kind": "binary",
+        "p": 0.4298470815587034,
         "y": 1.0
       },
       {
-        "p": 0.6236575834758795,
+        "kind": "binary",
+        "p": 0.5811064036064827,
         "y": 0.0
       },
       {
-        "p": 0.7211064611907285,
+        "kind": "binary",
+        "p": 0.6816907037075218,
         "y": 0.0
       },
       {
-        "p": 0.6444685258833993,
+        "kind": "binary",
+        "p": 0.5999668928391644,
         "y": 1.0
       },
       {
-        "p": 0.4725808796282507,
+        "kind": "binary",
+        "p": 0.43369839332653637,
         "y": 0.0
       },
       {
-        "p": 0.6574354372069682,
+        "kind": "binary",
+        "p": 0.6165727568233251,
         "y": 1.0
       },
       {
-        "p": 0.5439069756453696,
+        "kind": "binary",
+        "p": 0.5029868056022099,
         "y": 1.0
       },
       {
-        "p": 0.512828659846802,
+        "kind": "binary",
+        "p": 0.4745814587673974,
         "y": 1.0
       },
       {
-        "p": 0.6158160433537269,
+        "kind": "binary",
+        "p": 0.5702519777608188,
         "y": 1.0
       },
       {
-        "p": 0.45684550322055417,
+        "kind": "binary",
+        "p": 0.41190277624311883,
         "y": 0.0
       },
       {
-        "p": 0.4727296502314476,
+        "kind": "binary",
+        "p": 0.4325536678855157,
         "y": 0.0
       },
       {
-        "p": 0.4718275139734936,
+        "kind": "binary",
+        "p": 0.4267353346950216,
         "y": 0.0
       },
       {
-        "p": 0.686523435114818,
+        "kind": "binary",
+        "p": 0.6467051321015372,
         "y": 0.0
       },
       {
-        "p": 0.6749730859379082,
+        "kind": "binary",
+        "p": 0.6372189498360027,
         "y": 1.0
       },
       {
-        "p": 0.6468464009968019,
+        "kind": "binary",
+        "p": 0.6049568291243657,
         "y": 0.0
       },
       {
-        "p": 0.44556599985681106,
+        "kind": "binary",
+        "p": 0.409353114173538,
         "y": 1.0
       },
       {
-        "p": 0.5678000125725247,
+        "kind": "binary",
+        "p": 0.5281873498230689,
         "y": 0.0
       },
       {
-        "p": 0.5948926164107875,
+        "kind": "binary",
+        "p": 0.5588671043408465,
         "y": 0.0
       },
       {
-        "p": 0.5894033955821476,
+        "kind": "binary",
+        "p": 0.5482276563373569,
         "y": 1.0
       },
       {
-        "p": 0.6629964906820738,
+        "kind": "binary",
+        "p": 0.6218571078449293,
         "y": 1.0
       },
       {
-        "p": 0.5698160648174642,
+        "kind": "binary",
+        "p": 0.5315552259623487,
         "y": 0.0
       },
       {
-        "p": 0.5407844965775831,
+        "kind": "binary",
+        "p": 0.5048049020469824,
         "y": 1.0
       },
       {
-        "p": 0.4457049900351896,
+        "kind": "binary",
+        "p": 0.4082900027430989,
         "y": 1.0
       },
       {
-        "p": 0.4448622182192901,
+        "kind": "binary",
+        "p": 0.40288875601429497,
         "y": 0.0
       },
       {
-        "p": 0.5065391931028044,
+        "kind": "binary",
+        "p": 0.4622737084902718,
         "y": 1.0
       },
       {
-        "p": 0.6365192728303234,
+        "kind": "binary",
+        "p": 0.5943149857264564,
         "y": 1.0
       },
       {
-        "p": 0.43088504596138644,
+        "kind": "binary",
+        "p": 0.3891351426017057,
         "y": 0.0
       },
       {
-        "p": 0.5767125963050802,
+        "kind": "binary",
+        "p": 0.535118306480127,
         "y": 1.0
       },
       {
-        "p": 0.6980699299958019,
+        "kind": "binary",
+        "p": 0.6522049983397638,
         "y": 0.0
       },
       {
-        "p": 0.5942109714504163,
+        "kind": "binary",
+        "p": 0.5534303788882972,
         "y": 0.0
       },
       {
-        "p": 0.5702645778490176,
+        "kind": "binary",
+        "p": 0.5281517789132137,
         "y": 0.0
       },
       {
-        "p": 0.6218125189331177,
+        "kind": "binary",
+        "p": 0.5788598719291622,
         "y": 1.0
       },
       {
-        "p": 0.6719589246888372,
+        "kind": "binary",
+        "p": 0.6309423974212335,
         "y": 0.0
       },
       {
-        "p": 0.5192476928816884,
+        "kind": "binary",
+        "p": 0.47096280847765093,
         "y": 0.0
       },
       {
-        "p": 0.5997351269288342,
+        "kind": "binary",
+        "p": 0.5495059172000343,
         "y": 1.0
       },
       {
-        "p": 0.6800248465469418,
+        "kind": "binary",
+        "p": 0.635350814401995,
         "y": 1.0
       },
       {
-        "p": 0.7083783245748096,
+        "kind": "binary",
+        "p": 0.6700432466745517,
         "y": 1.0
       },
       {
-        "p": 0.6319259007395392,
+        "kind": "binary",
+        "p": 0.5833187900148623,
         "y": 0.0
       },
       {
-        "p": 0.6003102969226248,
+        "kind": "binary",
+        "p": 0.5616220978135307,
         "y": 1.0
       },
       {
-        "p": 0.6631553224368586,
+        "kind": "binary",
+        "p": 0.6174101315168241,
         "y": 1.0
       },
       {
-        "p": 0.6576809495851287,
+        "kind": "binary",
+        "p": 0.6152799679122468,
         "y": 1.0
       },
       {
-        "p": 0.6975152812982672,
+        "kind": "binary",
+        "p": 0.6624082111888837,
         "y": 1.0
       },
       {
-        "p": 0.5332544131154182,
+        "kind": "binary",
+        "p": 0.4839465496599738,
         "y": 1.0
       },
       {
-        "p": 0.5608417378035123,
+        "kind": "binary",
+        "p": 0.5217633882657621,
         "y": 1.0
       },
       {
-        "p": 0.6420630058945742,
+        "kind": "binary",
+        "p": 0.6023019634818101,
         "y": 1.0
       },
       {
-        "p": 0.5378331555495849,
+        "kind": "binary",
+        "p": 0.4977787378095994,
         "y": 1.0
       },
       {
-        "p": 0.6369924393859366,
+        "kind": "binary",
+        "p": 0.5965190682188816,
         "y": 1.0
       },
       {
-        "p": 0.4893685117493724,
+        "kind": "binary",
+        "p": 0.4440545405570023,
         "y": 0.0
       },
       {
-        "p": 0.513350410628626,
+        "kind": "binary",
+        "p": 0.4688859569482172,
         "y": 0.0
       },
       {
-        "p": 0.6216425781311585,
+        "kind": "binary",
+        "p": 0.5750302592037019,
         "y": 0.0
       },
       {
-        "p": 0.6560903891251871,
+        "kind": "binary",
+        "p": 0.6186652876755738,
         "y": 0.0
       },
       {
-        "p": 0.6607744880964719,
+        "kind": "binary",
+        "p": 0.6240183091687007,
         "y": 1.0
       },
       {
-        "p": 0.5641544883091064,
+        "kind": "binary",
+        "p": 0.5266635845900973,
         "y": 1.0
       },
       {
-        "p": 0.46127430782315026,
+        "kind": "binary",
+        "p": 0.4189780174832487,
         "y": 0.0
       },
       {
-        "p": 0.69583939066035,
+        "kind": "binary",
+        "p": 0.6545737574705536,
         "y": 1.0
       },
       {
-        "p": 0.7220532517704896,
+        "kind": "binary",
+        "p": 0.6866181741302374,
         "y": 1.0
       },
       {
-        "p": 0.5974813289299896,
+        "kind": "binary",
+        "p": 0.5503533035074187,
         "y": 0.0
       },
       {
-        "p": 0.6802560302913992,
+        "kind": "binary",
+        "p": 0.6379931745811522,
         "y": 0.0
       },
       {
-        "p": 0.622174966227843,
+        "kind": "binary",
+        "p": 0.5862994137251529,
         "y": 0.0
       },
       {
-        "p": 0.6751998411808751,
+        "kind": "binary",
+        "p": 0.6360235856723138,
         "y": 1.0
       },
       {
-        "p": 0.712005313332376,
+        "kind": "binary",
+        "p": 0.6795659801346138,
         "y": 1.0
       },
       {
-        "p": 0.5855741695112591,
+        "kind": "binary",
+        "p": 0.5491474507007515,
         "y": 1.0
       },
       {
-        "p": 0.5598828068598712,
+        "kind": "binary",
+        "p": 0.513644066381526,
         "y": 1.0
       },
       {
-        "p": 0.4838084229951359,
+        "kind": "binary",
+        "p": 0.4421151591965476,
         "y": 1.0
       },
       {
-        "p": 0.5874387950694118,
+        "kind": "binary",
+        "p": 0.5423977138094077,
         "y": 1.0
       },
       {
-        "p": 0.7104557559909991,
+        "kind": "binary",
+        "p": 0.6723300388702981,
         "y": 0.0
       },
       {
-        "p": 0.7347132467235108,
+        "kind": "binary",
+        "p": 0.7019319915496303,
         "y": 1.0
       },
       {
-        "p": 0.563998618719282,
+        "kind": "binary",
+        "p": 0.5188347724097162,
         "y": 0.0
       },
       {
-        "p": 0.6085268021806481,
+        "kind": "binary",
+        "p": 0.5746965571616169,
         "y": 1.0
       },
       {
-        "p": 0.6328482494582938,
+        "kind": "binary",
+        "p": 0.5953239047103195,
         "y": 1.0
       },
       {
-        "p": 0.5135138432781929,
+        "kind": "binary",
+        "p": 0.47399238304921304,
         "y": 0.0
       },
       {
-        "p": 0.5879577149541934,
+        "kind": "binary",
+        "p": 0.5532195638473977,
         "y": 1.0
       },
       {
-        "p": 0.6913816552611122,
+        "kind": "binary",
+        "p": 0.6551953123231797,
         "y": 1.0
       },
       {
-        "p": 0.7254097279230908,
+        "kind": "binary",
+        "p": 0.6954154247678421,
         "y": 1.0
       },
       {
-        "p": 0.5846828644343272,
+        "kind": "binary",
+        "p": 0.541548323322629,
         "y": 0.0
       },
       {
-        "p": 0.6102547612492519,
+        "kind": "binary",
+        "p": 0.5684097497826119,
         "y": 0.0
       },
       {
-        "p": 0.5633958676196226,
+        "kind": "binary",
+        "p": 0.5109059728959624,
         "y": 0.0
       },
       {
-        "p": 0.5474627035404268,
+        "kind": "binary",
+        "p": 0.5107534904902903,
         "y": 0.0
       },
       {
-        "p": 0.44395042445572347,
+        "kind": "binary",
+        "p": 0.3917140024339311,
         "y": 1.0
       },
       {
-        "p": 0.5132447989799277,
+        "kind": "binary",
+        "p": 0.4612686961173014,
         "y": 1.0
       },
       {
-        "p": 0.5634019422618988,
+        "kind": "binary",
+        "p": 0.513856646155506,
         "y": 0.0
       },
       {
-        "p": 0.8277913857640411,
+        "kind": "binary",
+        "p": 0.8024973168756333,
         "y": 1.0
       },
       {
-        "p": 0.6581320319557228,
+        "kind": "binary",
+        "p": 0.6121752581684512,
         "y": 0.0
       },
       {
-        "p": 0.5985824554498732,
+        "kind": "binary",
+        "p": 0.5662475497442389,
         "y": 0.0
       },
       {
-        "p": 0.4779262838270528,
+        "kind": "binary",
+        "p": 0.4277391769519488,
         "y": 0.0
       },
       {
-        "p": 0.5148417563306668,
+        "kind": "binary",
+        "p": 0.47071133076666927,
         "y": 1.0
       },
       {
-        "p": 0.6059594870175383,
+        "kind": "binary",
+        "p": 0.5566874646882232,
         "y": 1.0
       },
       {
-        "p": 0.5846219046902394,
+        "kind": "binary",
+        "p": 0.5331455933967953,
         "y": 0.0
       },
       {
-        "p": 0.6833581334638731,
+        "kind": "binary",
+        "p": 0.6446560800835708,
         "y": 1.0
       },
       {
-        "p": 0.4685812483694432,
+        "kind": "binary",
+        "p": 0.42667260678232516,
         "y": 0.0
       },
       {
-        "p": 0.48032458870619194,
+        "kind": "binary",
+        "p": 0.4356640102351085,
         "y": 1.0
       },
       {
-        "p": 0.5411743276137319,
+        "kind": "binary",
+        "p": 0.49220344624489476,
         "y": 1.0
       },
       {
-        "p": 0.5312721812069165,
+        "kind": "binary",
+        "p": 0.4842854062093487,
         "y": 1.0
       },
       {
-        "p": 0.8333707111057693,
+        "kind": "binary",
+        "p": 0.809606141031708,
         "y": 0.0
       },
       {
-        "p": 0.5160859989579683,
+        "kind": "binary",
+        "p": 0.4813624536997034,
         "y": 0.0
       },
       {
-        "p": 0.5312663797660127,
+        "kind": "binary",
+        "p": 0.48150603184912,
         "y": 1.0
       },
       {
-        "p": 0.4757417082096615,
+        "kind": "binary",
+        "p": 0.4255452243372142,
         "y": 1.0
       },
       {
-        "p": 0.4505623360701634,
+        "kind": "binary",
+        "p": 0.4038203740987002,
         "y": 1.0
       },
       {
-        "p": 0.5650623614129529,
+        "kind": "binary",
+        "p": 0.5339910037414722,
         "y": 1.0
       },
       {
-        "p": 0.5426700286397298,
+        "kind": "binary",
+        "p": 0.5011460651653703,
         "y": 1.0
       },
       {
-        "p": 0.6232675114558429,
+        "kind": "binary",
+        "p": 0.5782287649402065,
         "y": 1.0
       },
       {
-        "p": 0.6274027457141703,
+        "kind": "binary",
+        "p": 0.5817120372955213,
         "y": 0.0
       },
       {
-        "p": 0.5102279179809528,
+        "kind": "binary",
+        "p": 0.4678356504506895,
         "y": 0.0
       },
       {
-        "p": 0.5516060647113719,
+        "kind": "binary",
+        "p": 0.5025039265016356,
         "y": 1.0
       },
       {
-        "p": 0.6989193491134036,
+        "kind": "binary",
+        "p": 0.6631697324331397,
         "y": 0.0
       },
       {
-        "p": 0.44183067871222426,
+        "kind": "binary",
+        "p": 0.4028305448001517,
         "y": 0.0
       },
       {
-        "p": 0.5059011069243154,
+        "kind": "binary",
+        "p": 0.4581538533352706,
         "y": 1.0
       },
       {
-        "p": 0.8049958621141251,
+        "kind": "binary",
+        "p": 0.7792041074609817,
         "y": 0.0
       },
       {
-        "p": 0.5672695658414862,
+        "kind": "binary",
+        "p": 0.5214208138875597,
         "y": 0.0
       },
       {
-        "p": 0.5580270665109486,
+        "kind": "binary",
+        "p": 0.5113425567723671,
         "y": 0.0
       },
       {
-        "p": 0.4863866194274889,
+        "kind": "binary",
+        "p": 0.4537767240809018,
         "y": 1.0
       },
       {
-        "p": 0.5580324828201734,
+        "kind": "binary",
+        "p": 0.513963515441536,
         "y": 1.0
       },
       {
-        "p": 0.4820361876390707,
+        "kind": "binary",
+        "p": 0.43725835407033653,
         "y": 0.0
       },
       {
-        "p": 0.6434078959546188,
+        "kind": "binary",
+        "p": 0.6017166395730709,
         "y": 1.0
       },
       {
-        "p": 0.5894958230594063,
+        "kind": "binary",
+        "p": 0.5605702214048058,
         "y": 1.0
       },
       {
-        "p": 0.5930590206817098,
+        "kind": "binary",
+        "p": 0.548809389653924,
         "y": 1.0
       },
       {
-        "p": 0.5686635145794439,
+        "kind": "binary",
+        "p": 0.5298269516725883,
         "y": 0.0
       },
       {
-        "p": 0.48086761103425735,
+        "kind": "binary",
+        "p": 0.4411346404088341,
         "y": 0.0
       },
       {
-        "p": 0.6640120622855843,
+        "kind": "binary",
+        "p": 0.6282581165054053,
         "y": 1.0
       },
       {
-        "p": 0.41691006638512773,
+        "kind": "binary",
+        "p": 0.3807325494877371,
         "y": 0.0
       },
       {
-        "p": 0.5769849667166862,
+        "kind": "binary",
+        "p": 0.5311019157260238,
         "y": 1.0
       },
       {
-        "p": 0.4443926876567646,
+        "kind": "binary",
+        "p": 0.39367644484955916,
         "y": 1.0
       },
       {
-        "p": 0.6571209119058854,
+        "kind": "binary",
+        "p": 0.6185534466219416,
         "y": 0.0
       },
       {
-        "p": 0.5467975982795857,
+        "kind": "binary",
+        "p": 0.4949249812808551,
         "y": 1.0
       },
       {
-        "p": 0.5868962616826424,
+        "kind": "binary",
+        "p": 0.5390494796310538,
         "y": 0.0
       },
       {
-        "p": 0.49676331372525306,
+        "kind": "binary",
+        "p": 0.446506100383428,
         "y": 0.0
       },
       {
-        "p": 0.7079973244963513,
+        "kind": "binary",
+        "p": 0.6701945246840898,
         "y": 1.0
       },
       {
-        "p": 0.6079037561030666,
+        "kind": "binary",
+        "p": 0.558226019373807,
         "y": 1.0
       },
       {
-        "p": 0.3718054926626678,
+        "kind": "binary",
+        "p": 0.33175746519527766,
         "y": 0.0
       },
       {
-        "p": 0.4696321590081421,
+        "kind": "binary",
+        "p": 0.4265989963764985,
         "y": 0.0
       },
       {
-        "p": 0.554109133449405,
+        "kind": "binary",
+        "p": 0.5050640563807455,
         "y": 1.0
       },
       {
-        "p": 0.6882871953795741,
+        "kind": "binary",
+        "p": 0.6441670920516036,
         "y": 1.0
       },
       {
-        "p": 0.5424781356601388,
+        "kind": "binary",
+        "p": 0.5017416535418363,
         "y": 1.0
       },
       {
-        "p": 0.45528646197643174,
+        "kind": "binary",
+        "p": 0.4121993563651547,
         "y": 0.0
       },
       {
-        "p": 0.690323757116695,
+        "kind": "binary",
+        "p": 0.6466042996447194,
         "y": 1.0
       },
       {
-        "p": 0.4761631190759144,
+        "kind": "binary",
+        "p": 0.42744743181838746,
         "y": 1.0
       },
       {
-        "p": 0.6222671927199132,
+        "kind": "binary",
+        "p": 0.5844299321176588,
         "y": 1.0
       },
       {
-        "p": 0.5725086018125904,
+        "kind": "binary",
+        "p": 0.5239808488803912,
         "y": 0.0
       },
       {
-        "p": 0.5934427214608413,
+        "kind": "binary",
+        "p": 0.551868049111419,
         "y": 0.0
       },
       {
-        "p": 0.5537938587000721,
+        "kind": "binary",
+        "p": 0.5080982742214215,
         "y": 1.0
       },
       {
-        "p": 0.4682102129628296,
+        "kind": "binary",
+        "p": 0.4212584420179152,
         "y": 1.0
       },
       {
-        "p": 0.7217007188470541,
+        "kind": "binary",
+        "p": 0.6867579121332335,
         "y": 0.0
       },
       {
-        "p": 0.6292014938381564,
+        "kind": "binary",
+        "p": 0.5831426485031791,
         "y": 1.0
       },
       {
-        "p": 0.35203858272778504,
+        "kind": "binary",
+        "p": 0.3150451444206771,
         "y": 0.0
       },
       {
-        "p": 0.4428118880549057,
+        "kind": "binary",
+        "p": 0.40276223521517196,
         "y": 1.0
       },
       {
-        "p": 0.5793139182096738,
+        "kind": "binary",
+        "p": 0.5335047486607275,
         "y": 1.0
       },
       {
-        "p": 0.5399816099125443,
+        "kind": "binary",
+        "p": 0.49383681209336355,
         "y": 1.0
       },
       {
-        "p": 0.5790206201370252,
+        "kind": "binary",
+        "p": 0.5363508734028508,
         "y": 1.0
       },
       {
-        "p": 0.3337772426095076,
+        "kind": "binary",
+        "p": 0.29960514861445026,
         "y": 0.0
       },
       {
-        "p": 0.6871299967447302,
+        "kind": "binary",
+        "p": 0.6517802360303638,
         "y": 0.0
       },
       {
-        "p": 0.47465659861509935,
+        "kind": "binary",
+        "p": 0.43623662000419167,
         "y": 0.0
       },
       {
-        "p": 0.6488919606089302,
+        "kind": "binary",
+        "p": 0.6062730249211398,
         "y": 1.0
       },
       {
-        "p": 0.7034745073776515,
+        "kind": "binary",
+        "p": 0.6627180584464831,
         "y": 0.0
       },
       {
-        "p": 0.5684846944430063,
+        "kind": "binary",
+        "p": 0.5303862251083912,
         "y": 1.0
       },
       {
-        "p": 0.4294325238595237,
+        "kind": "binary",
+        "p": 0.38940994730507883,
         "y": 0.0
       },
       {
-        "p": 0.7053568572733705,
+        "kind": "binary",
+        "p": 0.6649692518752385,
         "y": 1.0
       },
       {
-        "p": 0.5062991772197417,
+        "kind": "binary",
+        "p": 0.45997628083789377,
         "y": 1.0
       },
       {
-        "p": 0.6424832833224726,
+        "kind": "binary",
+        "p": 0.607466275978483,
         "y": 1.0
       },
       {
-        "p": 0.5601006718265061,
+        "kind": "binary",
+        "p": 0.5202761093610823,
         "y": 1.0
       },
       {
-        "p": 0.4987795568199697,
+        "kind": "binary",
+        "p": 0.4540427477673454,
         "y": 1.0
       },
       {
-        "p": 0.6027230469848162,
+        "kind": "binary",
+        "p": 0.5601164392040261,
         "y": 1.0
       },
       {
-        "p": 0.668612759311531,
+        "kind": "binary",
+        "p": 0.6278102050538108,
         "y": 1.0
       },
       {
-        "p": 0.5926741997654018,
+        "kind": "binary",
+        "p": 0.5572052782804358,
         "y": 0.0
       },
       {
-        "p": 0.5848853750389513,
+        "kind": "binary",
+        "p": 0.5477563399804106,
         "y": 0.0
       },
       {
-        "p": 0.7192577941831702,
+        "kind": "binary",
+        "p": 0.6819314403196112,
         "y": 0.0
       },
       {
-        "p": 0.5346635199789812,
+        "kind": "binary",
+        "p": 0.49097770901914906,
         "y": 0.0
       },
       {
-        "p": 0.4053921348131148,
+        "kind": "binary",
+        "p": 0.3683136497874033,
         "y": 1.0
       },
       {
-        "p": 0.6311215484979565,
+        "kind": "binary",
+        "p": 0.5828972639162027,
         "y": 0.0
       },
       {
-        "p": 0.5276040259788459,
+        "kind": "binary",
+        "p": 0.4853446926807336,
         "y": 1.0
       },
       {
-        "p": 0.555569735716598,
+        "kind": "binary",
+        "p": 0.5077735269557372,
         "y": 0.0
       },
       {
-        "p": 0.6845530994305659,
+        "kind": "binary",
+        "p": 0.6373349653814735,
         "y": 1.0
       },
       {
-        "p": 0.6658264889431471,
+        "kind": "binary",
+        "p": 0.6200669257621376,
         "y": 1.0
       },
       {
-        "p": 0.41031777458366314,
+        "kind": "binary",
+        "p": 0.3662284412065276,
         "y": 1.0
       },
       {
-        "p": 0.6190967731370554,
+        "kind": "binary",
+        "p": 0.5703262209273736,
         "y": 0.0
       },
       {
-        "p": 0.6843606753700158,
+        "kind": "binary",
+        "p": 0.6456422200714154,
         "y": 0.0
       },
       {
-        "p": 0.40321198699770855,
+        "kind": "binary",
+        "p": 0.3566453296533288,
         "y": 0.0
       },
       {
-        "p": 0.6017302153781046,
+        "kind": "binary",
+        "p": 0.553803843300762,
         "y": 1.0
       },
       {
-        "p": 0.6205377399786272,
+        "kind": "binary",
+        "p": 0.5798857118789355,
         "y": 0.0
       },
       {
-        "p": 0.5615005237000408,
+        "kind": "binary",
+        "p": 0.5150123369721077,
         "y": 1.0
       },
       {
-        "p": 0.6926570121061615,
+        "kind": "binary",
+        "p": 0.6482755998813541,
         "y": 1.0
       },
       {
-        "p": 0.575828418685927,
+        "kind": "binary",
+        "p": 0.5415950268081913,
         "y": 0.0
       },
       {
-        "p": 0.48433442129572796,
+        "kind": "binary",
+        "p": 0.44165565554436464,
         "y": 1.0
       },
       {
-        "p": 0.5238010785433346,
+        "kind": "binary",
+        "p": 0.4785575191396937,
         "y": 1.0
       },
       {
-        "p": 0.5501809736942725,
+        "kind": "binary",
+        "p": 0.5118079684025826,
         "y": 0.0
       },
       {
-        "p": 0.5849588796603387,
+        "kind": "binary",
+        "p": 0.5378921528979145,
         "y": 0.0
       },
       {
-        "p": 0.7000235873249459,
+        "kind": "binary",
+        "p": 0.6564068266330714,
         "y": 0.0
       },
       {
-        "p": 0.5861864311080784,
+        "kind": "binary",
+        "p": 0.5428297657273436,
         "y": 1.0
       },
       {
-        "p": 0.5186708340840869,
+        "kind": "binary",
+        "p": 0.48235545916476286,
         "y": 1.0
       },
       {
-        "p": 0.6234891687283095,
+        "kind": "binary",
+        "p": 0.5790299089473061,
         "y": 1.0
       },
       {
-        "p": 0.6493777193404412,
+        "kind": "binary",
+        "p": 0.6109420523545892,
         "y": 0.0
       },
       {
-        "p": 0.6827232268922159,
+        "kind": "binary",
+        "p": 0.6404493825867461,
         "y": 0.0
       },
       {
-        "p": 0.3810857050593742,
+        "kind": "binary",
+        "p": 0.338032376702123,
         "y": 1.0
       },
       {
-        "p": 0.5966943213200938,
+        "kind": "binary",
+        "p": 0.5499481827680932,
         "y": 0.0
       },
       {
-        "p": 0.7075136522377072,
+        "kind": "binary",
+        "p": 0.6665129501016438,
         "y": 0.0
       },
       {
-        "p": 0.5863622506165882,
+        "kind": "binary",
+        "p": 0.5470554922805303,
         "y": 0.0
       },
       {
-        "p": 0.4435239029165201,
+        "kind": "binary",
+        "p": 0.4007118406259485,
         "y": 0.0
       },
       {
-        "p": 0.5510527583428082,
+        "kind": "binary",
+        "p": 0.5085601651078557,
         "y": 0.0
       },
       {
-        "p": 0.5431628726489026,
+        "kind": "binary",
+        "p": 0.51051311561464,
         "y": 1.0
       },
       {
-        "p": 0.5140097211218678,
+        "kind": "binary",
+        "p": 0.4735542467966853,
         "y": 0.0
       },
       {
-        "p": 0.6146214100714539,
+        "kind": "binary",
+        "p": 0.5770315146495029,
         "y": 0.0
       },
       {
-        "p": 0.5532800208364367,
+        "kind": "binary",
+        "p": 0.5156989493915066,
         "y": 1.0
       },
       {
-        "p": 0.418484524506162,
+        "kind": "binary",
+        "p": 0.3787711598479282,
         "y": 1.0
       },
       {
-        "p": 0.6090942226860485,
+        "kind": "binary",
+        "p": 0.568812365357013,
         "y": 0.0
       },
       {
-        "p": 0.5519301080814388,
+        "kind": "binary",
+        "p": 0.5070009265196178,
         "y": 0.0
       },
       {
-        "p": 0.6477382606970797,
+        "kind": "binary",
+        "p": 0.6058369426258129,
         "y": 0.0
       },
       {
-        "p": 0.41521878168751924,
+        "kind": "binary",
+        "p": 0.3729337775409204,
         "y": 0.0
       },
       {
-        "p": 0.6436127720256991,
+        "kind": "binary",
+        "p": 0.602459658563997,
         "y": 1.0
       },
       {
-        "p": 0.5632385856234707,
+        "kind": "binary",
+        "p": 0.5184493916659975,
         "y": 0.0
       },
       {
-        "p": 0.6651263655261139,
+        "kind": "binary",
+        "p": 0.6215610050726756,
         "y": 0.0
       },
       {
-        "p": 0.5462544252118516,
+        "kind": "binary",
+        "p": 0.5121437557600826,
         "y": 0.0
       },
       {
-        "p": 0.48442964711907605,
+        "kind": "binary",
+        "p": 0.4464754433155302,
         "y": 1.0
       },
       {
-        "p": 0.5691227585809437,
+        "kind": "binary",
+        "p": 0.538614748279164,
         "y": 0.0
       },
       {
-        "p": 0.5195002513586043,
+        "kind": "binary",
+        "p": 0.4792977675568035,
         "y": 0.0
       },
       {
-        "p": 0.6727012356450207,
+        "kind": "binary",
+        "p": 0.631576331189409,
         "y": 0.0
       },
       {
-        "p": 0.5681059614090497,
+        "kind": "binary",
+        "p": 0.5246380774571837,
         "y": 0.0
       },
       {
-        "p": 0.5806052451817584,
+        "kind": "binary",
+        "p": 0.5443166001143905,
         "y": 1.0
       },
       {
-        "p": 0.606147404832951,
+        "kind": "binary",
+        "p": 0.5632316358243091,
         "y": 1.0
       },
       {
-        "p": 0.5357679104359436,
+        "kind": "binary",
+        "p": 0.4944576797238393,
         "y": 1.0
       },
       {
-        "p": 0.5257828553425207,
+        "kind": "binary",
+        "p": 0.4799942507235323,
         "y": 0.0
       },
       {
-        "p": 0.5943732357192568,
+        "kind": "binary",
+        "p": 0.5470221618767828,
         "y": 1.0
       },
       {
-        "p": 0.4858282416618698,
+        "kind": "binary",
+        "p": 0.4439151395890688,
         "y": 1.0
       },
       {
-        "p": 0.639139962891832,
+        "kind": "binary",
+        "p": 0.5871812417666359,
         "y": 1.0
       },
       {
-        "p": 0.4580918673079916,
+        "kind": "binary",
+        "p": 0.40826564871049886,
         "y": 1.0
       },
       {
-        "p": 0.5767724386488087,
+        "kind": "binary",
+        "p": 0.5333255944212018,
         "y": 1.0
       },
       {
-        "p": 0.5858934262371074,
+        "kind": "binary",
+        "p": 0.5353566588096619,
         "y": 0.0
       },
       {
-        "p": 0.5857123967352029,
+        "kind": "binary",
+        "p": 0.535036047108023,
         "y": 0.0
       },
       {
-        "p": 0.49553936849161545,
+        "kind": "binary",
+        "p": 0.45249658021253386,
         "y": 1.0
       },
       {
-        "p": 0.6275766090456015,
+        "kind": "binary",
+        "p": 0.5877950393885073,
         "y": 1.0
       },
       {
-        "p": 0.5885562779964707,
+        "kind": "binary",
+        "p": 0.5408066958892002,
         "y": 1.0
       },
       {
-        "p": 0.5622281472880399,
+        "kind": "binary",
+        "p": 0.5235413893796748,
         "y": 0.0
       },
       {
-        "p": 0.6141614547665323,
+        "kind": "binary",
+        "p": 0.5688102441176001,
         "y": 0.0
       },
       {
-        "p": 0.6166783312977204,
+        "kind": "binary",
+        "p": 0.5727177270638182,
         "y": 1.0
       },
       {
-        "p": 0.5154176612489799,
+        "kind": "binary",
+        "p": 0.47570808461893316,
         "y": 0.0
       },
       {
-        "p": 0.6580743008245521,
+        "kind": "binary",
+        "p": 0.6100161035252153,
         "y": 1.0
       },
       {
-        "p": 0.6497459446025363,
+        "kind": "binary",
+        "p": 0.607897008800826,
         "y": 1.0
       },
       {
-        "p": 0.4891897389449159,
+        "kind": "binary",
+        "p": 0.4415465364324839,
         "y": 1.0
       },
       {
-        "p": 0.6003658088999093,
+        "kind": "binary",
+        "p": 0.5599492397292437,
         "y": 1.0
       },
       {
-        "p": 0.5815704568390777,
+        "kind": "binary",
+        "p": 0.5384931122492401,
         "y": 1.0
       },
       {
-        "p": 0.6713497508372545,
+        "kind": "binary",
+        "p": 0.624938579069022,
         "y": 0.0
       },
       {
-        "p": 0.5528289839027398,
+        "kind": "binary",
+        "p": 0.50459803224574,
         "y": 0.0
       },
       {
-        "p": 0.5245585606566004,
+        "kind": "binary",
+        "p": 0.4838752982636671,
         "y": 1.0
       },
       {
-        "p": 0.4857565796335288,
+        "kind": "binary",
+        "p": 0.44848839982460387,
         "y": 1.0
       },
       {
-        "p": 0.518584091463336,
+        "kind": "binary",
+        "p": 0.473450192986183,
         "y": 1.0
       },
       {
-        "p": 0.6222263478985739,
+        "kind": "binary",
+        "p": 0.5847446159685495,
         "y": 0.0
       },
       {
-        "p": 0.6373165644333327,
+        "kind": "binary",
+        "p": 0.5966036700684615,
         "y": 0.0
       },
       {
-        "p": 0.6473904074841701,
+        "kind": "binary",
+        "p": 0.6105848598479803,
         "y": 1.0
       },
       {
-        "p": 0.5526548419347527,
+        "kind": "binary",
+        "p": 0.5042943038691298,
         "y": 0.0
       },
       {
-        "p": 0.6112901920056343,
+        "kind": "binary",
+        "p": 0.5669268934201704,
         "y": 0.0
       },
       {
-        "p": 0.530151376842942,
+        "kind": "binary",
+        "p": 0.49342172260329764,
         "y": 1.0
       },
       {
-        "p": 0.5801582222874965,
+        "kind": "binary",
+        "p": 0.5364415750976055,
         "y": 1.0
       },
       {
-        "p": 0.6755631406003819,
+        "kind": "binary",
+        "p": 0.6311554765126791,
         "y": 1.0
       },
       {
-        "p": 0.6678710114284083,
+        "kind": "binary",
+        "p": 0.629195251953512,
         "y": 0.0
       },
       {
-        "p": 0.6048154672392314,
+        "kind": "binary",
+        "p": 0.5647699198010582,
         "y": 0.0
       },
       {
-        "p": 0.6363859309551542,
+        "kind": "binary",
+        "p": 0.5906531563512218,
         "y": 1.0
       },
       {
-        "p": 0.521190802824612,
+        "kind": "binary",
+        "p": 0.475570631152046,
         "y": 0.0
       },
       {
-        "p": 0.5569859824488366,
+        "kind": "binary",
+        "p": 0.5225669904411923,
         "y": 0.0
       },
       {
-        "p": 0.5773694477119932,
+        "kind": "binary",
+        "p": 0.5346404338000812,
         "y": 1.0
       },
       {
-        "p": 0.6035060025731289,
+        "kind": "binary",
+        "p": 0.5628565749655019,
         "y": 0.0
       },
       {
-        "p": 0.6917172801569652,
+        "kind": "binary",
+        "p": 0.6506975123044858,
         "y": 1.0
       },
       {
-        "p": 0.632925677618941,
+        "kind": "binary",
+        "p": 0.5948106005554353,
         "y": 1.0
       },
       {
-        "p": 0.6022249299212293,
+        "kind": "binary",
+        "p": 0.5541921230111092,
         "y": 0.0
       },
       {
-        "p": 0.5210250218003061,
+        "kind": "binary",
+        "p": 0.4752850541509725,
         "y": 0.0
       },
       {
-        "p": 0.5710917035248044,
+        "kind": "binary",
+        "p": 0.5325789110380706,
         "y": 1.0
       },
       {
-        "p": 0.6555300682785011,
+        "kind": "binary",
+        "p": 0.6132328152450555,
         "y": 0.0
       },
       {
-        "p": 0.5706858966150571,
+        "kind": "binary",
+        "p": 0.5272156005472944,
         "y": 1.0
       },
       {
-        "p": 0.5713609019838342,
+        "kind": "binary",
+        "p": 0.5351503316777411,
         "y": 1.0
       },
       {
-        "p": 0.5918408273593299,
+        "kind": "binary",
+        "p": 0.5452961820163652,
         "y": 1.0
       },
       {
-        "p": 0.7331438533148853,
+        "kind": "binary",
+        "p": 0.6951502522115546,
         "y": 1.0
       },
       {
-        "p": 0.5742413263788355,
+        "kind": "binary",
+        "p": 0.5334991028544197,
         "y": 1.0
       },
       {
-        "p": 0.5136533724690547,
+        "kind": "binary",
+        "p": 0.46260570811207674,
         "y": 1.0
       },
       {
-        "p": 0.5677392343261451,
+        "kind": "binary",
+        "p": 0.5200809391964356,
         "y": 1.0
       },
       {
-        "p": 0.7110247875547324,
+        "kind": "binary",
+        "p": 0.6776647052121775,
         "y": 1.0
       },
       {
-        "p": 0.5677011427139633,
+        "kind": "binary",
+        "p": 0.5259886806143621,
         "y": 1.0
       },
       {
-        "p": 0.572740244267086,
+        "kind": "binary",
+        "p": 0.527825436049759,
         "y": 1.0
       },
       {
-        "p": 0.5569880608888738,
+        "kind": "binary",
+        "p": 0.5088699414376713,
         "y": 0.0
       },
       {
-        "p": 0.643812335730801,
+        "kind": "binary",
+        "p": 0.5931780486706284,
         "y": 1.0
       },
       {
-        "p": 0.6658793348175424,
+        "kind": "binary",
+        "p": 0.6186180880989335,
         "y": 1.0
       },
       {
-        "p": 0.4545414974487575,
+        "kind": "binary",
+        "p": 0.4050932152113339,
         "y": 1.0
       },
       {
-        "p": 0.5983819234149439,
+        "kind": "binary",
+        "p": 0.5527671561239323,
         "y": 1.0
       },
       {
-        "p": 0.61433295208206,
+        "kind": "binary",
+        "p": 0.5711102219899432,
         "y": 0.0
       },
       {
-        "p": 0.5947177929603967,
+        "kind": "binary",
+        "p": 0.5542438591187004,
         "y": 1.0
       },
       {
-        "p": 0.5980175337504606,
+        "kind": "binary",
+        "p": 0.5601111702138021,
         "y": 1.0
       },
       {
-        "p": 0.5953443600296824,
+        "kind": "binary",
+        "p": 0.5616519773367143,
         "y": 1.0
       },
       {
-        "p": 0.5415570400276887,
+        "kind": "binary",
+        "p": 0.4934710268899246,
         "y": 1.0
       },
       {
-        "p": 0.5966245672900927,
+        "kind": "binary",
+        "p": 0.5548135851857553,
         "y": 0.0
       },
       {
-        "p": 0.7245022447465518,
+        "kind": "binary",
+        "p": 0.6936588211538152,
         "y": 0.0
       },
       {
-        "p": 0.5919819927591045,
+        "kind": "binary",
+        "p": 0.547573760788244,
         "y": 0.0
       },
       {
-        "p": 0.7449919115424558,
+        "kind": "binary",
+        "p": 0.7098186074414871,
         "y": 1.0
       },
       {
-        "p": 0.5919466205927726,
+        "kind": "binary",
+        "p": 0.5530974465072147,
         "y": 1.0
       },
       {
-        "p": 0.48581854076581377,
+        "kind": "binary",
+        "p": 0.4384868974154251,
         "y": 1.0
       },
       {
-        "p": 0.6203899331672444,
+        "kind": "binary",
+        "p": 0.5780653944160641,
         "y": 1.0
       },
       {
-        "p": 0.5251527113166281,
+        "kind": "binary",
+        "p": 0.47958931224629503,
         "y": 0.0
       },
       {
-        "p": 0.6623903708029889,
+        "kind": "binary",
+        "p": 0.615571478292551,
         "y": 0.0
       },
       {
-        "p": 0.6827720382318825,
+        "kind": "binary",
+        "p": 0.6391099731122267,
         "y": 1.0
       },
       {
-        "p": 0.6175775984470923,
+        "kind": "binary",
+        "p": 0.586327181423571,
         "y": 1.0
       },
       {
-        "p": 0.5676262738008379,
+        "kind": "binary",
+        "p": 0.5226133701499489,
         "y": 0.0
       },
       {
-        "p": 0.5803248885395039,
+        "kind": "binary",
+        "p": 0.5386426050458538,
         "y": 1.0
       },
       {
-        "p": 0.6200525988645236,
+        "kind": "binary",
+        "p": 0.5848951333885501,
         "y": 1.0
       },
       {
-        "p": 0.689992143925214,
+        "kind": "binary",
+        "p": 0.6587120493169767,
         "y": 0.0
       },
       {
-        "p": 0.6144309424449774,
+        "kind": "binary",
+        "p": 0.5783727059121552,
         "y": 1.0
       },
       {
-        "p": 0.5586921784409253,
+        "kind": "binary",
+        "p": 0.51619156534207,
         "y": 1.0
       },
       {
-        "p": 0.5631712326313185,
+        "kind": "binary",
+        "p": 0.5230807153399321,
         "y": 1.0
       },
       {
-        "p": 0.49494391327308895,
+        "kind": "binary",
+        "p": 0.4521177675641669,
         "y": 0.0
       },
       {
-        "p": 0.7559857459366749,
+        "kind": "binary",
+        "p": 0.7233860074138672,
         "y": 1.0
       },
       {
-        "p": 0.5154085196715957,
+        "kind": "binary",
+        "p": 0.47053119066015,
         "y": 0.0
       },
       {
-        "p": 0.6983777709492247,
+        "kind": "binary",
+        "p": 0.6580465965794539,
         "y": 1.0
       },
       {
-        "p": 0.6407479804688282,
+        "kind": "binary",
+        "p": 0.6015651141505374,
         "y": 1.0
       },
       {
-        "p": 0.6274853041261661,
+        "kind": "binary",
+        "p": 0.5815288483250256,
         "y": 1.0
       },
       {
-        "p": 0.6169974019096545,
+        "kind": "binary",
+        "p": 0.5794392486529447,
         "y": 0.0
       },
       {
-        "p": 0.42339745878317686,
+        "kind": "binary",
+        "p": 0.380511153374525,
         "y": 0.0
       },
       {
-        "p": 0.4786675630809337,
+        "kind": "binary",
+        "p": 0.4303843559992178,
         "y": 0.0
       },
       {
-        "p": 0.5821674367261243,
+        "kind": "binary",
+        "p": 0.5283419180555318,
         "y": 1.0
       },
       {
-        "p": 0.6568562414270145,
+        "kind": "binary",
+        "p": 0.6146006084656873,
         "y": 0.0
       },
       {
-        "p": 0.5274567921315022,
+        "kind": "binary",
+        "p": 0.48390538625354534,
         "y": 0.0
       },
       {
-        "p": 0.5728471324316018,
+        "kind": "binary",
+        "p": 0.5310647098628491,
         "y": 0.0
       },
       {
-        "p": 0.47860157864526753,
+        "kind": "binary",
+        "p": 0.4325991593219691,
         "y": 0.0
       },
       {
-        "p": 0.48060997415399287,
+        "kind": "binary",
+        "p": 0.432428199124935,
         "y": 1.0
       },
       {
-        "p": 0.7343403123066624,
+        "kind": "binary",
+        "p": 0.6998467732425263,
         "y": 0.0
       },
       {
-        "p": 0.47945290998983753,
+        "kind": "binary",
+        "p": 0.4330454774178094,
         "y": 1.0
       },
       {
-        "p": 0.39979179521025104,
+        "kind": "binary",
+        "p": 0.3600850234130675,
         "y": 0.0
       },
       {
-        "p": 0.4512555952846547,
+        "kind": "binary",
+        "p": 0.4062757609730218,
         "y": 1.0
       },
       {
-        "p": 0.6053689467601814,
+        "kind": "binary",
+        "p": 0.5552960493937289,
         "y": 0.0
       },
       {
-        "p": 0.6904112767841016,
+        "kind": "binary",
+        "p": 0.6464278151057745,
         "y": 0.0
       },
       {
-        "p": 0.6033939743126144,
+        "kind": "binary",
+        "p": 0.5559554450348266,
         "y": 0.0
       },
       {
-        "p": 0.5589665712203146,
+        "kind": "binary",
+        "p": 0.5109945644125965,
         "y": 1.0
       },
       {
-        "p": 0.5692110106223784,
+        "kind": "binary",
+        "p": 0.5223674001031069,
         "y": 1.0
       },
       {
-        "p": 0.6220054234692013,
+        "kind": "binary",
+        "p": 0.5805850267611827,
         "y": 1.0
       },
       {
-        "p": 0.5458828208329607,
+        "kind": "binary",
+        "p": 0.4958590489518296,
         "y": 0.0
       },
       {
-        "p": 0.49712161897016083,
+        "kind": "binary",
+        "p": 0.45615688015125755,
         "y": 0.0
       },
       {
-        "p": 0.5403058564233602,
+        "kind": "binary",
+        "p": 0.5005342309780296,
         "y": 1.0
       },
       {
-        "p": 0.4511938814330485,
+        "kind": "binary",
+        "p": 0.4083322479769788,
         "y": 1.0
       },
       {
-        "p": 0.5104971958052069,
+        "kind": "binary",
+        "p": 0.46474292881476953,
         "y": 1.0
       },
       {
-        "p": 0.7000777941482983,
+        "kind": "binary",
+        "p": 0.6649478980495396,
         "y": 0.0
       },
       {
-        "p": 0.5094053217613475,
+        "kind": "binary",
+        "p": 0.4653331507292446,
         "y": 1.0
       },
       {
-        "p": 0.4826954664686113,
+        "kind": "binary",
+        "p": 0.4396277950575473,
         "y": 0.0
       },
       {
-        "p": 0.5664600246463326,
+        "kind": "binary",
+        "p": 0.52925234835227,
         "y": 1.0
       },
       {
-        "p": 0.5375763476127222,
+        "kind": "binary",
+        "p": 0.4960554199974807,
         "y": 0.0
       },
       {
-        "p": 0.4685465552285799,
+        "kind": "binary",
+        "p": 0.4302434286644172,
         "y": 0.0
       },
       {
-        "p": 0.5385998273504905,
+        "kind": "binary",
+        "p": 0.49549631389999266,
         "y": 0.0
       },
       {
-        "p": 0.6651810824318175,
+        "kind": "binary",
+        "p": 0.6300223575852439,
         "y": 1.0
       },
       {
-        "p": 0.3779195304283596,
+        "kind": "binary",
+        "p": 0.3412097563587819,
         "y": 1.0
       },
       {
-        "p": 0.5716277578432755,
+        "kind": "binary",
+        "p": 0.5235403267811982,
         "y": 0.0
       },
       {
-        "p": 0.6554470369817863,
+        "kind": "binary",
+        "p": 0.6117153527770846,
         "y": 1.0
       },
       {
-        "p": 0.5697154604027268,
+        "kind": "binary",
+        "p": 0.524168594835559,
         "y": 1.0
       },
       {
-        "p": 0.5838311374673033,
+        "kind": "binary",
+        "p": 0.5390659661629399,
         "y": 0.0
       },
       {
-        "p": 0.5933485703013459,
+        "kind": "binary",
+        "p": 0.549712296592419,
         "y": 1.0
       },
       {
-        "p": 0.6422413181823066,
+        "kind": "binary",
+        "p": 0.6039017683047344,
         "y": 1.0
       },
       {
-        "p": 0.5145845879108595,
+        "kind": "binary",
+        "p": 0.4673614903324697,
         "y": 0.0
       },
       {
-        "p": 0.48263678284807415,
+        "kind": "binary",
+        "p": 0.4416107315290344,
         "y": 1.0
       },
       {
-        "p": 0.5391380969029435,
+        "kind": "binary",
+        "p": 0.4934207189860016,
         "y": 1.0
       },
       {
-        "p": 0.4849713846389951,
+        "kind": "binary",
+        "p": 0.44069204391350114,
         "y": 1.0
       },
       {
-        "p": 0.673136600450108,
+        "kind": "binary",
+        "p": 0.6327271399526753,
         "y": 0.0
       },
       {
-        "p": 0.5938169075278341,
+        "kind": "binary",
+        "p": 0.5513963221068564,
         "y": 0.0
       },
       {
-        "p": 0.5508457879884264,
+        "kind": "binary",
+        "p": 0.5081139088206804,
         "y": 0.0
       },
       {
-        "p": 0.6157294039708029,
+        "kind": "binary",
+        "p": 0.5752223729851524,
         "y": 1.0
       },
       {
-        "p": 0.40516379689667276,
+        "kind": "binary",
+        "p": 0.36341864499312715,
         "y": 1.0
       },
       {
-        "p": 0.6500365683765602,
+        "kind": "binary",
+        "p": 0.6071334958368382,
         "y": 0.0
       },
       {
-        "p": 0.5194057842526292,
+        "kind": "binary",
+        "p": 0.4756771514762217,
         "y": 0.0
       },
       {
-        "p": 0.49679975742994953,
+        "kind": "binary",
+        "p": 0.44759616762383714,
         "y": 1.0
       },
       {
-        "p": 0.5898657466708969,
+        "kind": "binary",
+        "p": 0.548467820639809,
         "y": 0.0
       },
       {
-        "p": 0.5483315317443077,
+        "kind": "binary",
+        "p": 0.5039222971815142,
         "y": 0.0
       },
       {
-        "p": 0.5439844195478153,
+        "kind": "binary",
+        "p": 0.4944063974176033,
         "y": 1.0
       },
       {
-        "p": 0.5203969118500946,
+        "kind": "binary",
+        "p": 0.4826034202649818,
         "y": 1.0
       },
       {
-        "p": 0.7351348533898351,
+        "kind": "binary",
+        "p": 0.7043089651357616,
         "y": 1.0
       },
       {
-        "p": 0.6240914713781143,
+        "kind": "binary",
+        "p": 0.5792199931250192,
         "y": 1.0
       },
       {
-        "p": 0.6768786578252923,
+        "kind": "binary",
+        "p": 0.6374165760758668,
         "y": 1.0
       },
       {
-        "p": 0.4772083027928372,
+        "kind": "binary",
+        "p": 0.4250158983601023,
         "y": 0.0
       },
       {
-        "p": 0.5724145603761317,
+        "kind": "binary",
+        "p": 0.5312203346300555,
         "y": 1.0
       },
       {
-        "p": 0.42043787251268994,
+        "kind": "binary",
+        "p": 0.38074675833171817,
         "y": 0.0
       },
       {
-        "p": 0.4328757968988974,
+        "kind": "binary",
+        "p": 0.3954237736033116,
         "y": 0.0
       },
       {
-        "p": 0.43855500657679686,
+        "kind": "binary",
+        "p": 0.3979585385435055,
         "y": 0.0
       },
       {
-        "p": 0.54786934580088,
+        "kind": "binary",
+        "p": 0.5123776072147973,
         "y": 0.0
       },
       {
-        "p": 0.4895176726814727,
+        "kind": "binary",
+        "p": 0.44845948442630756,
         "y": 1.0
       },
       {
-        "p": 0.4498909568386374,
+        "kind": "binary",
+        "p": 0.40129327723335373,
         "y": 0.0
       },
       {
-        "p": 0.5963223091723633,
+        "kind": "binary",
+        "p": 0.5579840779126131,
         "y": 0.0
       },
       {
-        "p": 0.6152709693107083,
+        "kind": "binary",
+        "p": 0.5733374814926975,
         "y": 1.0
       },
       {
-        "p": 0.6441694652961539,
+        "kind": "binary",
+        "p": 0.6026359423262168,
         "y": 1.0
       },
       {
-        "p": 0.525743464096197,
+        "kind": "binary",
+        "p": 0.4792139214371483,
         "y": 1.0
       },
       {
-        "p": 0.41386517550849244,
+        "kind": "binary",
+        "p": 0.3762227769887437,
         "y": 0.0
       },
       {
-        "p": 0.7468383592981356,
+        "kind": "binary",
+        "p": 0.7182884187273268,
         "y": 1.0
       },
       {
-        "p": 0.5566528755756247,
+        "kind": "binary",
+        "p": 0.5170415428020224,
         "y": 1.0
       },
       {
-        "p": 0.516911959765018,
+        "kind": "binary",
+        "p": 0.4749353056044709,
         "y": 0.0
       },
       {
-        "p": 0.5698882173408798,
+        "kind": "binary",
+        "p": 0.5234931596926625,
         "y": 1.0
       },
       {
-        "p": 0.5164725523490417,
+        "kind": "binary",
+        "p": 0.48289199156671714,
         "y": 1.0
       },
       {
-        "p": 0.6929326141626793,
+        "kind": "binary",
+        "p": 0.656482221029311,
         "y": 1.0
       },
       {
-        "p": 0.39095360304264626,
+        "kind": "binary",
+        "p": 0.35612098473381243,
         "y": 1.0
       },
       {
-        "p": 0.4085891501777185,
+        "kind": "binary",
+        "p": 0.3738771302659559,
         "y": 0.0
       },
       {
-        "p": 0.3970467717775586,
+        "kind": "binary",
+        "p": 0.3603028331959066,
         "y": 0.0
       },
       {
-        "p": 0.5528682901307237,
+        "kind": "binary",
+        "p": 0.509179759438046,
         "y": 0.0
       },
       {
-        "p": 0.5441969399330631,
+        "kind": "binary",
+        "p": 0.5126497404288863,
         "y": 1.0
       },
       {
-        "p": 0.7577004250757567,
+        "kind": "binary",
+        "p": 0.7312264301562501,
         "y": 1.0
       },
       {
-        "p": 0.662720250600668,
+        "kind": "binary",
+        "p": 0.6243273889067317,
         "y": 1.0
       },
       {
-        "p": 0.4871653893519005,
+        "kind": "binary",
+        "p": 0.4477660774195408,
         "y": 1.0
       },
       {
-        "p": 0.5188928622772401,
+        "kind": "binary",
+        "p": 0.4800356045384773,
         "y": 0.0
       },
       {
-        "p": 0.593977290648394,
+        "kind": "binary",
+        "p": 0.5507648899896408,
         "y": 1.0
       },
       {
-        "p": 0.4244083212356252,
+        "kind": "binary",
+        "p": 0.3793093915894055,
         "y": 1.0
       },
       {
-        "p": 0.7077684270572036,
+        "kind": "binary",
+        "p": 0.6740926959530675,
         "y": 0.0
       },
       {
-        "p": 0.5628793979111836,
+        "kind": "binary",
+        "p": 0.5261022343346872,
         "y": 0.0
       },
       {
-        "p": 0.5816798714600642,
+        "kind": "binary",
+        "p": 0.5447295708982093,
         "y": 0.0
       },
       {
-        "p": 0.3860653215817108,
+        "kind": "binary",
+        "p": 0.35395307209654786,
         "y": 0.0
       },
       {
-        "p": 0.3753789868603441,
+        "kind": "binary",
+        "p": 0.34141096357121015,
         "y": 0.0
       },
       {
-        "p": 0.6360152649039315,
+        "kind": "binary",
+        "p": 0.5971788170336166,
         "y": 0.0
       },
       {
-        "p": 0.7343747358785321,
+        "kind": "binary",
+        "p": 0.6973180427436437,
         "y": 0.0
       },
       {
-        "p": 0.6749795894023353,
+        "kind": "binary",
+        "p": 0.6294961415998571,
         "y": 0.0
       },
       {
-        "p": 0.5054924462348692,
+        "kind": "binary",
+        "p": 0.45911958064638425,
         "y": 0.0
       },
       {
-        "p": 0.5212282230370019,
+        "kind": "binary",
+        "p": 0.47988091686349127,
         "y": 1.0
       },
       {
-        "p": 0.6984292104820344,
+        "kind": "binary",
+        "p": 0.6551289413915795,
         "y": 1.0
       },
       {
-        "p": 0.5806644492674626,
+        "kind": "binary",
+        "p": 0.5369937033339809,
         "y": 1.0
       },
       {
-        "p": 0.5292679565617634,
+        "kind": "binary",
+        "p": 0.48161973539181197,
         "y": 1.0
       },
       {
-        "p": 0.6627671334767711,
+        "kind": "binary",
+        "p": 0.6180941004037314,
         "y": 1.0
       },
       {
-        "p": 0.5292202247061922,
+        "kind": "binary",
+        "p": 0.48348260963557405,
         "y": 1.0
       },
       {
-        "p": 0.3707684812758771,
+        "kind": "binary",
+        "p": 0.3329688235084316,
         "y": 0.0
       },
       {
-        "p": 0.34876168849763156,
+        "kind": "binary",
+        "p": 0.30990744989204283,
         "y": 1.0
       },
       {
-        "p": 0.546399815611506,
+        "kind": "binary",
+        "p": 0.5040984455555518,
         "y": 0.0
       },
       {
-        "p": 0.640002426414686,
+        "kind": "binary",
+        "p": 0.595104743607799,
         "y": 1.0
       },
       {
-        "p": 0.47641170590294313,
+        "kind": "binary",
+        "p": 0.43300438674917574,
         "y": 1.0
       },
       {
-        "p": 0.6342983106118663,
+        "kind": "binary",
+        "p": 0.5801746362906997,
         "y": 1.0
       },
       {
-        "p": 0.5130084176648527,
+        "kind": "binary",
+        "p": 0.46627835924977545,
         "y": 1.0
       },
       {
-        "p": 0.4087817320759291,
+        "kind": "binary",
+        "p": 0.3647584057589144,
         "y": 1.0
       },
       {
-        "p": 0.7128504087654638,
+        "kind": "binary",
+        "p": 0.6728428072954896,
         "y": 0.0
       },
       {
-        "p": 0.6039754129753113,
+        "kind": "binary",
+        "p": 0.5633715751385102,
         "y": 1.0
       },
       {
-        "p": 0.6970093073430507,
+        "kind": "binary",
+        "p": 0.6559547529713808,
         "y": 0.0
       },
       {
-        "p": 0.5561609845747062,
+        "kind": "binary",
+        "p": 0.5114498140790253,
         "y": 0.0
       },
       {
-        "p": 0.6798974889540437,
+        "kind": "binary",
+        "p": 0.6386255367057171,
         "y": 1.0
       },
       {
-        "p": 0.5561164056864731,
+        "kind": "binary",
+        "p": 0.513206655771945,
         "y": 0.0
       },
       {
-        "p": 0.35108029432199533,
+        "kind": "binary",
+        "p": 0.3161640492635441,
         "y": 1.0
       },
       {
-        "p": 0.38354375602742574,
+        "kind": "binary",
+        "p": 0.3448731227960376,
         "y": 0.0
       },
       {
-        "p": 0.515075830128135,
+        "kind": "binary",
+        "p": 0.4751009109476201,
         "y": 0.0
       },
       {
-        "p": 0.6306935970832813,
+        "kind": "binary",
+        "p": 0.5844147505350229,
         "y": 0.0
       },
       {
-        "p": 0.5065339759329821,
+        "kind": "binary",
+        "p": 0.46529386466709793,
         "y": 1.0
       },
       {
-        "p": 0.44204395090100335,
+        "kind": "binary",
+        "p": 0.39927175755244626,
         "y": 0.0
       },
       {
-        "p": 0.6957217190264213,
+        "kind": "binary",
+        "p": 0.6575990765286163,
         "y": 0.0
       },
       {
-        "p": 0.38583003696625584,
+        "kind": "binary",
+        "p": 0.35114779004840446,
         "y": 1.0
       },
       {
-        "p": 0.4854343753821661,
+        "kind": "binary",
+        "p": 0.44792086143520077,
         "y": 1.0
       },
       {
-        "p": 0.6781162803095236,
+        "kind": "binary",
+        "p": 0.6378727594124541,
         "y": 0.0
       },
       {
-        "p": 0.6588710273177807,
+        "kind": "binary",
+        "p": 0.6173557190083878,
         "y": 0.0
       },
       {
-        "p": 0.6536013537973894,
+        "kind": "binary",
+        "p": 0.6035212232186256,
         "y": 0.0
       },
       {
-        "p": 0.540952894150953,
+        "kind": "binary",
+        "p": 0.49695061570038274,
         "y": 0.0
       },
       {
-        "p": 0.625566921920418,
+        "kind": "binary",
+        "p": 0.5879250600508091,
         "y": 0.0
       },
       {
-        "p": 0.6620860717423659,
+        "kind": "binary",
+        "p": 0.621114046214241,
         "y": 0.0
       },
       {
-        "p": 0.5243644566770647,
+        "kind": "binary",
+        "p": 0.48201815668123493,
         "y": 0.0
       },
       {
-        "p": 0.524321975744934,
+        "kind": "binary",
+        "p": 0.48367298524583363,
         "y": 1.0
       },
       {
-        "p": 0.36288877908390416,
+        "kind": "binary",
+        "p": 0.32715909918915176,
         "y": 0.0
       },
       {
-        "p": 0.5962757023158819,
+        "kind": "binary",
+        "p": 0.5514068784755037,
         "y": 0.0
       },
       {
-        "p": 0.6187887071090161,
+        "kind": "binary",
+        "p": 0.5698386295724353,
         "y": 1.0
       },
       {
-        "p": 0.5099037955545759,
+        "kind": "binary",
+        "p": 0.46838603072477647,
         "y": 0.0
       },
       {
-        "p": 0.5515396997277611,
+        "kind": "binary",
+        "p": 0.5133861510471139,
         "y": 1.0
       },
       {
-        "p": 0.5550860202427609,
+        "kind": "binary",
+        "p": 0.5044720585934717,
         "y": 0.0
       },
       {
-        "p": 0.4941991844718694,
+        "kind": "binary",
+        "p": 0.4543903434033344,
         "y": 1.0
       },
       {
-        "p": 0.6271836357545516,
+        "kind": "binary",
+        "p": 0.5869237404698272,
         "y": 1.0
       },
       {
-        "p": 0.45121830021547155,
+        "kind": "binary",
+        "p": 0.4071404993758885,
         "y": 1.0
       },
       {
-        "p": 0.6871199861981995,
+        "kind": "binary",
+        "p": 0.6459620733042498,
         "y": 0.0
       },
       {
-        "p": 0.5628344010740222,
+        "kind": "binary",
+        "p": 0.519837221438505,
         "y": 1.0
       },
       {
-        "p": 0.6343136373609817,
+        "kind": "binary",
+        "p": 0.5991359361730447,
         "y": 1.0
       },
       {
-        "p": 0.5100709860412116,
+        "kind": "binary",
+        "p": 0.4669123899788896,
         "y": 0.0
       },
       {
-        "p": 0.7001137007799726,
+        "kind": "binary",
+        "p": 0.6508953008140371,
         "y": 1.0
       },
       {
-        "p": 0.6025208910601075,
+        "kind": "binary",
+        "p": 0.5523495342315283,
         "y": 0.0
       },
       {
-        "p": 0.523340237998756,
+        "kind": "binary",
+        "p": 0.47545218357281244,
         "y": 0.0
       },
       {
-        "p": 0.51138252201406,
+        "kind": "binary",
+        "p": 0.4586337926559999,
         "y": 0.0
       },
       {
-        "p": 0.659134025387641,
+        "kind": "binary",
+        "p": 0.6207401870034703,
         "y": 1.0
       },
       {
-        "p": 0.6523517076131583,
+        "kind": "binary",
+        "p": 0.6054160171667385,
         "y": 1.0
       },
       {
-        "p": 0.653615514333579,
+        "kind": "binary",
+        "p": 0.6210879305992787,
         "y": 1.0
       },
       {
-        "p": 0.4826600027599769,
+        "kind": "binary",
+        "p": 0.44046177919717533,
         "y": 0.0
       },
       {
-        "p": 0.570001107922365,
+        "kind": "binary",
+        "p": 0.5286524913770444,
         "y": 1.0
       },
       {
-        "p": 0.5236490422925414,
+        "kind": "binary",
+        "p": 0.47836838816107025,
         "y": 0.0
       },
       {
-        "p": 0.4844556101189078,
+        "kind": "binary",
+        "p": 0.44267330395344334,
         "y": 0.0
       },
       {
-        "p": 0.5216659311274389,
+        "kind": "binary",
+        "p": 0.4690009066882265,
         "y": 1.0
       },
       {
-        "p": 0.6521433502221259,
+        "kind": "binary",
+        "p": 0.6112568686477031,
         "y": 0.0
       },
       {
-        "p": 0.6507202423232432,
+        "kind": "binary",
+        "p": 0.604894186622205,
         "y": 1.0
       },
       {
-        "p": 0.4819547855196236,
+        "kind": "binary",
+        "p": 0.4325515895174416,
         "y": 0.0
       },
       {
-        "p": 0.6765419045483803,
+        "kind": "binary",
+        "p": 0.6410717603931191,
         "y": 0.0
       },
       {
-        "p": 0.5688705228070123,
+        "kind": "binary",
+        "p": 0.5207343928892305,
         "y": 1.0
       },
       {
-        "p": 0.6714450026811777,
+        "kind": "binary",
+        "p": 0.641393214319488,
         "y": 0.0
       },
       {
-        "p": 0.7144081458197804,
+        "kind": "binary",
+        "p": 0.6689325836413204,
         "y": 0.0
       },
       {
-        "p": 0.4807198664556791,
+        "kind": "binary",
+        "p": 0.44027287211330973,
         "y": 1.0
       },
       {
-        "p": 0.4932317411917738,
+        "kind": "binary",
+        "p": 0.4482491959129656,
         "y": 0.0
       },
       {
-        "p": 0.45499106980710874,
+        "kind": "binary",
+        "p": 0.4156374483913938,
         "y": 0.0
       },
       {
-        "p": 0.6702777418054583,
+        "kind": "binary",
+        "p": 0.6268999095190694,
         "y": 0.0
       },
       {
-        "p": 0.49352340145567314,
+        "kind": "binary",
+        "p": 0.45097578937872396,
         "y": 0.0
       },
       {
-        "p": 0.5940820935912644,
+        "kind": "binary",
+        "p": 0.5555861457296986,
         "y": 0.0
       },
       {
-        "p": 0.5490563070314394,
+        "kind": "binary",
+        "p": 0.4995278620446224,
         "y": 0.0
       },
       {
-        "p": 0.45667203738425344,
+        "kind": "binary",
+        "p": 0.41769354270817566,
         "y": 1.0
       },
       {
-        "p": 0.66877089618379,
+        "kind": "binary",
+        "p": 0.6264170767084839,
         "y": 1.0
       },
       {
-        "p": 0.6173492876868963,
+        "kind": "binary",
+        "p": 0.5773370994017561,
         "y": 0.0
       },
       {
-        "p": 0.5106008806009197,
+        "kind": "binary",
+        "p": 0.47223540005164993,
         "y": 1.0
       },
       {
-        "p": 0.5930324412998372,
+        "kind": "binary",
+        "p": 0.5481850319996513,
         "y": 0.0
       },
       {
-        "p": 0.6796997172223034,
+        "kind": "binary",
+        "p": 0.6339810216579116,
         "y": 1.0
       },
       {
-        "p": 0.46489647300484477,
+        "kind": "binary",
+        "p": 0.4228803394346015,
         "y": 0.0
       },
       {
-        "p": 0.4543310361069436,
+        "kind": "binary",
+        "p": 0.4082880726899674,
         "y": 1.0
       },
       {
-        "p": 0.6364807547399068,
+        "kind": "binary",
+        "p": 0.6067640002554964,
         "y": 1.0
       },
       {
-        "p": 0.6415608874997951,
+        "kind": "binary",
+        "p": 0.6064482182063469,
         "y": 1.0
       },
       {
-        "p": 0.5607174062788454,
+        "kind": "binary",
+        "p": 0.5238167136801918,
         "y": 0.0
       },
       {
-        "p": 0.46517005057024613,
+        "kind": "binary",
+        "p": 0.4254181730322665,
         "y": 1.0
       },
       {
-        "p": 0.429157353401592,
+        "kind": "binary",
+        "p": 0.39259617877190367,
         "y": 1.0
       },
       {
-        "p": 0.48784196138116614,
+        "kind": "binary",
+        "p": 0.4506195341725167,
         "y": 0.0
       },
       {
-        "p": 0.583258035716926,
+        "kind": "binary",
+        "p": 0.5446097173284385,
         "y": 1.0
       },
       {
-        "p": 0.517601131641572,
+        "kind": "binary",
+        "p": 0.4708059704728355,
         "y": 1.0
       },
       {
-        "p": 0.6353190274531011,
+        "kind": "binary",
+        "p": 0.5925678903418152,
         "y": 1.0
       },
       {
-        "p": 0.685442897965007,
+        "kind": "binary",
+        "p": 0.6463188270009607,
         "y": 1.0
       },
       {
-        "p": 0.5597049907242887,
+        "kind": "binary",
+        "p": 0.5167726739011815,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4453745192710335,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.7480549879077975,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.49487308924470996,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4925501137684485,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5452878999397621,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.49229938343692214,
         "y": 1.0
       }
     ],
     "cricket:t20": [
       {
-        "p": 0.6240835693634113,
+        "kind": "binary",
+        "p": 0.554240639849342,
         "y": 1.0
       },
       {
-        "p": 0.5450973328446649,
+        "kind": "binary",
+        "p": 0.47269927321118727,
         "y": 0.0
       },
       {
-        "p": 0.7033424859041533,
+        "kind": "binary",
+        "p": 0.6295684762648117,
         "y": 0.0
       },
       {
-        "p": 0.6437981913045944,
+        "kind": "binary",
+        "p": 0.575886326907691,
         "y": 0.0
       },
       {
-        "p": 0.599758966581219,
+        "kind": "binary",
+        "p": 0.5254228661933973,
         "y": 1.0
       },
       {
-        "p": 0.5197463410863047,
+        "kind": "binary",
+        "p": 0.4474313259384434,
         "y": 1.0
       },
       {
-        "p": 0.612226197265558,
+        "kind": "binary",
+        "p": 0.545937218358836,
         "y": 1.0
       },
       {
-        "p": 0.45375272646259285,
+        "kind": "binary",
+        "p": 0.3794353106958848,
         "y": 0.0
       },
       {
-        "p": 0.5199289892304835,
+        "kind": "binary",
+        "p": 0.44596431677608683,
         "y": 1.0
       },
       {
-        "p": 0.5853180976076275,
+        "kind": "binary",
+        "p": 0.5215969531655357,
         "y": 0.0
       },
       {
-        "p": 0.5977056249470372,
+        "kind": "binary",
+        "p": 0.5157518340887977,
         "y": 0.0
       },
       {
-        "p": 0.5747656212586002,
+        "kind": "binary",
+        "p": 0.5036360633348196,
         "y": 0.0
       },
       {
-        "p": 0.5761129818600685,
+        "kind": "binary",
+        "p": 0.49670833169002376,
         "y": 0.0
       }
     ],
     "cricket:all": [
       {
-        "p": 0.5420002277733219,
+        "kind": "binary",
+        "p": 0.47000522277950363,
         "y": 1.0
       },
       {
-        "p": 0.6284723398729908,
+        "kind": "binary",
+        "p": 0.5557278310666018,
         "y": 0.0
       },
       {
-        "p": 0.5439816973354992,
+        "kind": "binary",
+        "p": 0.4759202131840347,
         "y": 0.0
       },
       {
-        "p": 0.5979471943208939,
+        "kind": "binary",
+        "p": 0.5267396771342673,
         "y": 0.0
       },
       {
-        "p": 0.5742734520904468,
+        "kind": "binary",
+        "p": 0.4996080491053976,
         "y": 0.5
       },
       {
-        "p": 0.5905842140449684,
+        "kind": "binary",
+        "p": 0.5174601744405399,
         "y": 0.5
       }
     ],
     "dota-2:all": [
       {
-        "p": 0.5780253448849388,
+        "kind": "binary",
+        "p": 0.5113751994604528,
         "y": 1.0
       },
       {
-        "p": 0.5817935984946542,
+        "kind": "binary",
+        "p": 0.5040239906877879,
         "y": 1.0
       },
       {
-        "p": 0.5778924415624999,
+        "kind": "binary",
+        "p": 0.51295307024783,
         "y": 1.0
       },
       {
-        "p": 0.6014046982518133,
+        "kind": "binary",
+        "p": 0.5409010451928604,
         "y": 1.0
       },
       {
-        "p": 0.5623479176372702,
+        "kind": "binary",
+        "p": 0.501775875723234,
         "y": 0.0
       },
       {
-        "p": 0.5302657217831787,
+        "kind": "binary",
+        "p": 0.4729178728332175,
         "y": 1.0
       },
       {
-        "p": 0.5570927562079944,
+        "kind": "binary",
+        "p": 0.503232583084114,
         "y": 1.0
       },
       {
-        "p": 0.5362169895495696,
+        "kind": "binary",
+        "p": 0.46519889023040933,
         "y": 1.0
       },
       {
-        "p": 0.6374869626065099,
+        "kind": "binary",
+        "p": 0.5736110880671952,
         "y": 1.0
       },
       {
-        "p": 0.6565472460790109,
+        "kind": "binary",
+        "p": 0.5974327175020163,
         "y": 1.0
       },
       {
-        "p": 0.6238287455551307,
+        "kind": "binary",
+        "p": 0.5411214061968238,
         "y": 1.0
       },
       {
-        "p": 0.5193457490283124,
+        "kind": "binary",
+        "p": 0.4476471488002147,
         "y": 0.0
       },
       {
-        "p": 0.4894610281151143,
+        "kind": "binary",
+        "p": 0.4223201071015751,
         "y": 0.0
       },
       {
-        "p": 0.5859457551663819,
+        "kind": "binary",
+        "p": 0.5130515792335213,
         "y": 1.0
       },
       {
-        "p": 0.547688532831104,
+        "kind": "binary",
+        "p": 0.484967728559839,
         "y": 0.0
       },
       {
-        "p": 0.6249050426548345,
+        "kind": "binary",
+        "p": 0.5428484326432784,
         "y": 1.0
       },
       {
-        "p": 0.6418455159304127,
+        "kind": "binary",
+        "p": 0.5811011576371184,
         "y": 1.0
       },
       {
-        "p": 0.6605735855345392,
+        "kind": "binary",
+        "p": 0.6043803407695991,
         "y": 1.0
       },
       {
-        "p": 0.5152301979974864,
+        "kind": "binary",
+        "p": 0.43951988409997905,
         "y": 1.0
       },
       {
-        "p": 0.5994284600019139,
+        "kind": "binary",
+        "p": 0.5284830024644178,
         "y": 0.0
       },
       {
-        "p": 0.5551890700409753,
+        "kind": "binary",
+        "p": 0.49898228079635737,
         "y": 0.0
       },
       {
-        "p": 0.5234384090542163,
+        "kind": "binary",
+        "p": 0.4702935779993012,
         "y": 0.0
       },
       {
-        "p": 0.5124418919756248,
+        "kind": "binary",
+        "p": 0.42439635125614433,
         "y": 1.0
       },
       {
-        "p": 0.6019517410876034,
+        "kind": "binary",
+        "p": 0.5429473760206124,
         "y": 0.0
       },
       {
-        "p": 0.7158916151603937,
+        "kind": "binary",
+        "p": 0.6538234645851495,
         "y": 1.0
       },
       {
-        "p": 0.3979665438153574,
+        "kind": "binary",
+        "p": 0.32836293360891805,
         "y": 0.0
       },
       {
-        "p": 0.5746407931299105,
+        "kind": "binary",
+        "p": 0.5115870796830527,
         "y": 0.0
       },
       {
-        "p": 0.542024422266818,
+        "kind": "binary",
+        "p": 0.4821474273168385,
         "y": 1.0
       },
       {
-        "p": 0.568061869108192,
+        "kind": "binary",
+        "p": 0.5119475506690514,
         "y": 0.0
       },
       {
-        "p": 0.5459053260547028,
+        "kind": "binary",
+        "p": 0.4705287837748462,
         "y": 1.0
       },
       {
-        "p": 0.571248606588701,
+        "kind": "binary",
+        "p": 0.4990266052697383,
         "y": 1.0
       },
       {
-        "p": 0.5952401263834042,
+        "kind": "binary",
+        "p": 0.5278361387423891,
         "y": 0.0
       },
       {
-        "p": 0.5638916009216063,
+        "kind": "binary",
+        "p": 0.48651619747001046,
         "y": 0.0
       },
       {
-        "p": 0.6102863205596475,
+        "kind": "binary",
+        "p": 0.5413982069462157,
         "y": 1.0
       },
       {
-        "p": 0.46238256870062916,
+        "kind": "binary",
+        "p": 0.4070163597929848,
         "y": 1.0
       },
       {
-        "p": 0.4932595070093093,
+        "kind": "binary",
+        "p": 0.4403420700996078,
         "y": 1.0
       },
       {
-        "p": 0.5483521844914484,
+        "kind": "binary",
+        "p": 0.4875401924545995,
         "y": 0.0
       },
       {
-        "p": 0.5169315960057977,
+        "kind": "binary",
+        "p": 0.45956106402719676,
         "y": 1.0
       },
       {
-        "p": 0.5446266544578298,
+        "kind": "binary",
+        "p": 0.4905838222327081,
         "y": 1.0
       }
     ]
   },
   "processed": {
+    "volleyball:asian-championship": [
+      "thesportsdb:2257330"
+    ],
     "american-football:nfl": [
       "espn:401772810",
       "espn:401772936",
@@ -5756,6 +7279,40 @@
       "thesportsdb:2396060",
       "thesportsdb:2396061",
       "thesportsdb:2396062"
+    ],
+    "rugby:top-14": [
+      "thesportsdb:2446260",
+      "thesportsdb:2446261",
+      "thesportsdb:2446262",
+      "thesportsdb:2446263",
+      "thesportsdb:2446265",
+      "thesportsdb:2446266",
+      "thesportsdb:2446267",
+      "thesportsdb:2446264",
+      "thesportsdb:2446269",
+      "thesportsdb:2446270",
+      "thesportsdb:2446271",
+      "thesportsdb:2446272",
+      "thesportsdb:2446268",
+      "thesportsdb:2446273",
+      "thesportsdb:2446274"
+    ],
+    "volleyball:premier-volleyball-league-women": [
+      "thesportsdb:2446402",
+      "thesportsdb:2446400",
+      "thesportsdb:2446406",
+      "thesportsdb:2446404",
+      "thesportsdb:2446405",
+      "thesportsdb:2446408",
+      "thesportsdb:2446407",
+      "thesportsdb:2446403",
+      "thesportsdb:2446401",
+      "thesportsdb:2446414",
+      "thesportsdb:2446409",
+      "thesportsdb:2446410",
+      "thesportsdb:2446413",
+      "thesportsdb:2446412",
+      "thesportsdb:2446411"
     ],
     "baseball:mlb": [
       "espn:401816102",
@@ -6514,7 +8071,13 @@
       "espn:401816840",
       "espn:401816835",
       "espn:401816841",
-      "espn:401816843"
+      "espn:401816843",
+      "espn:401816846",
+      "espn:401816842",
+      "espn:401816844",
+      "espn:401816847",
+      "espn:401816848",
+      "espn:401816845"
     ],
     "soccer:saudi-pro-league": [
       "thesportsdb:2494410",
@@ -6743,6 +8306,30 @@
       "cricsheet:1549973",
       "cricsheet:1496552"
     ],
+    "aussie-rules:afl-women": [
+      "thesportsdb:2548962",
+      "thesportsdb:2548963",
+      "thesportsdb:2548970",
+      "thesportsdb:2548964",
+      "thesportsdb:2548965",
+      "thesportsdb:2548966",
+      "thesportsdb:2548967",
+      "thesportsdb:2548968",
+      "thesportsdb:2548969",
+      "thesportsdb:2548972",
+      "thesportsdb:2548978",
+      "thesportsdb:2548971",
+      "thesportsdb:2548973",
+      "thesportsdb:2548974",
+      "thesportsdb:2548975"
+    ],
+    "soccer:championship": [
+      "thesportsdb:2501249",
+      "thesportsdb:2501250",
+      "thesportsdb:2501251",
+      "thesportsdb:2501252",
+      "thesportsdb:2501253"
+    ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
       "thesportsdb:2506172",
@@ -6798,6 +8385,40 @@
       "thesportsdb:2539928",
       "thesportsdb:2539937",
       "thesportsdb:2539933"
+    ],
+    "soccer:brasileiro-serie-a": [
+      "thesportsdb:2482138",
+      "thesportsdb:2482144",
+      "thesportsdb:2482139",
+      "thesportsdb:2482147",
+      "thesportsdb:2482145",
+      "thesportsdb:2482146",
+      "thesportsdb:2482141",
+      "thesportsdb:2482143",
+      "thesportsdb:2482142",
+      "thesportsdb:2482140",
+      "thesportsdb:2482150",
+      "thesportsdb:2482149",
+      "thesportsdb:2482155",
+      "thesportsdb:2482157",
+      "thesportsdb:2482153"
+    ],
+    "handball:damehandboldligaen": [
+      "thesportsdb:2527511",
+      "thesportsdb:2527512",
+      "thesportsdb:2527515",
+      "thesportsdb:2527516",
+      "thesportsdb:2527517",
+      "thesportsdb:2527513",
+      "thesportsdb:2527514",
+      "thesportsdb:2527523",
+      "thesportsdb:2527518",
+      "thesportsdb:2527521",
+      "thesportsdb:2527522",
+      "thesportsdb:2527519",
+      "thesportsdb:2527520",
+      "thesportsdb:2527524",
+      "thesportsdb:2527525"
     ],
     "soccer:women-bundesliga": [
       "thesportsdb:2508333",
@@ -6908,10 +8529,33 @@
       "opendota:8987734661",
       "opendota:8987763157",
       "opendota:8987833085",
-      "opendota:8987895470"
+      "opendota:8987895470",
+      "opendota:8987965402",
+      "opendota:8988014473",
+      "opendota:8988064818",
+      "opendota:8988091750"
+    ],
+    "soccer:la-liga-2": [
+      "thesportsdb:2558871",
+      "thesportsdb:2558878",
+      "thesportsdb:2558877",
+      "thesportsdb:2558874",
+      "thesportsdb:2558876",
+      "thesportsdb:2558875"
+    ],
+    "futsal:primera-division": [
+      "thesportsdb:2572243",
+      "thesportsdb:2572244",
+      "thesportsdb:2572370",
+      "thesportsdb:2572245",
+      "thesportsdb:2572246"
     ]
   },
   "draw_stats": {
+    "volleyball:asian-championship": {
+      "total": 1,
+      "draws": 0
+    },
     "american-football:nfl": {
       "total": 320,
       "draws": 3
@@ -6924,8 +8568,16 @@
       "total": 15,
       "draws": 0
     },
+    "rugby:top-14": {
+      "total": 15,
+      "draws": 0
+    },
+    "volleyball:premier-volleyball-league-women": {
+      "total": 15,
+      "draws": 0
+    },
     "baseball:mlb": {
-      "total": 757,
+      "total": 763,
       "draws": 0
     },
     "soccer:saudi-pro-league": {
@@ -6944,6 +8596,14 @@
       "total": 9,
       "draws": 0
     },
+    "aussie-rules:afl-women": {
+      "total": 15,
+      "draws": 0
+    },
+    "soccer:championship": {
+      "total": 5,
+      "draws": 1
+    },
     "soccer:prva-liga": {
       "total": 15,
       "draws": 6
@@ -6956,13 +8616,29 @@
       "total": 20,
       "draws": 3
     },
+    "soccer:brasileiro-serie-a": {
+      "total": 15,
+      "draws": 1
+    },
+    "handball:damehandboldligaen": {
+      "total": 15,
+      "draws": 0
+    },
     "soccer:women-bundesliga": {
       "total": 5,
       "draws": 2
     },
     "dota-2:all": {
-      "total": 102,
+      "total": 106,
       "draws": 0
+    },
+    "soccer:la-liga-2": {
+      "total": 6,
+      "draws": 3
+    },
+    "futsal:primera-division": {
+      "total": 5,
+      "draws": 3
     }
   }
 }
