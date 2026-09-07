@@ -1,6 +1,7 @@
 """Genera snapshot.json desde un job cloud, sin login ni datos de usuario.
 
-Consulta todos los deportes configurados. Si Bovada bloquea al runner, lo
+Descubre todos los deportes habilitados y recorre categorías/torneos para
+evitar el endpoint limitado a 10 fixtures. Si Bovada bloquea al runner, lo
 registra explícitamente; no fabrica referencias.
 """
 
@@ -20,18 +21,13 @@ from blindado_core import (
     utc_now,
 )
 
-DEFAULT_SPORTS = [
-    "soccer", "basketball", "baseball", "ice-hockey", "tennis",
-    "american-football", "mma", "boxing", "cricket", "rugby",
-    "volleyball", "table-tennis", "counter-strike", "dota-2",
-    "league-of-legends", "valorant",
-]
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="snapshot.json")
-    parser.add_argument("--sports", nargs="*", default=DEFAULT_SPORTS)
+    parser.add_argument(
+        "--sports", nargs="*", default=None,
+        help="Slugs concretos; si se omite, descubre todos los habilitados en /sports.",
+    )
     args = parser.parse_args()
 
     output = Path(args.output)
@@ -48,8 +44,10 @@ def main() -> int:
     bovada_events, unavailable = BovadaCollector().fetch_all(keys)
 
     payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "generado_utc": utc_now().isoformat(),
+        "stake_sports": stake.sports_catalog,
+        "stake_coverage": stake.audit,
         # Solo moneyline/draw_no_bet: son las únicas claves que el motor de
         # picks evalúa (ver market_odds()/build_elo_model()). El snapshot
         # es respaldo de liquidez para el motor, no una copia de inspección
@@ -71,11 +69,17 @@ def main() -> int:
         f"Bovada no disponible: {unavailable or 'ninguno'}; "
         f"tamaño: {size_mb:.2f} MB (límite de seguridad de lectura: 25 MB)"
     )
+    print(f"Cobertura Stake: {json.dumps(stake.audit, ensure_ascii=False)}")
+    if stake.audit.get("limited_fallback_sports"):
+        print(
+            "[aviso] cobertura incompleta: falló el árbol jerárquico para "
+            + ", ".join(stake.audit["limited_fallback_sports"])
+        )
     if size_mb > 20:
         print(
             "[aviso] el snapshot está cerca del límite de 25 MB pese al filtro "
             "a moneyline/draw_no_bet. Si esto se repite, revisar volumen de "
-            "eventos por deporte en DEFAULT_SPORTS antes de tocar el límite."
+            "eventos por deporte y el historial de movimiento antes de tocar el límite."
         )
     return 0 if stake_events else 1
 

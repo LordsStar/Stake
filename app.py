@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v6. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -26,6 +26,13 @@ def config_value(name: str, default: str = "") -> str:
     return str(value or os.environ.get(name, default) or default)
 
 
+@st.cache_data(ttl=1800, show_spinner=False)
+def discover_stake_sport_slugs(api_key: str = "") -> List[str]:
+    """Una sola llamada a /sports; la lista fija es solo respaldo."""
+    collector = core.StakeSportsDataCollector(api_key=api_key)
+    return collector.available_sport_slugs()
+
+
 def load_remote_snapshot_fallback(
     selected, snapshot_repo: str, snapshot_path: str, snapshot_branch: str
 ) -> Tuple[List[core.NormalizedEvent], List[core.NormalizedEvent], List[str], Dict[str, Any]]:
@@ -45,6 +52,7 @@ def load_remote_snapshot_fallback(
         token=config_value("SNAPSHOT_GITHUB_TOKEN"),
     )
     render_estado_snapshot(snapshot)
+    st.session_state["stake_coverage"] = snapshot.get("stake_coverage", {})
     age = snapshot_antiguedad_minutos(snapshot)
     if age > 60:
         raise ValueError("Snapshot vencido (>60 min). No se habilita el análisis.")
@@ -52,7 +60,7 @@ def load_remote_snapshot_fallback(
     selected_set = set(selected)
     if "soccer" in selected_set:
         selected_set.add("football")
-    if selected_set & core.ESPORTS_SLUGS:
+    if any(core.is_esport_slug(slug) for slug in selected_set):
         selected_set.add("esports")
     stake_events = [e for e in stake_events if e.sport in selected_set]
     movement = snapshot.get("movement_history")
@@ -88,7 +96,11 @@ def render_health_panel(
 
     coverage = elo.coverage()
     results = core.load_results()
-    st.caption(f"Histórico Elo: {len(results)} resultados. Umbral de calibración Brier: ≤ {core.BRIER_MAX:.2f}.")
+    st.caption(
+        f"Histórico Elo: {len(results)} resultados. Calibración: >= {core.BRIER_MIN} predicciones maduras, "
+        f"ventana {core.BRIER_WINDOW}, skill >= {core.BRIER_SKILL_MIN:.0%} frente al baseline; "
+        f"tope binario {core.BRIER_MAX:.3f}."
+    )
     if downloaded_markets:
         st.info(
             "Stake: se descargan y muestran todos los mercados activos devueltos por la API para los fixtures recibidos. "
@@ -107,9 +119,13 @@ def render_health_panel(
             )
         for sport, info in coverage.items():
             icon = "✅" if info.get("modelo_activo") else "⛔"
+            skill = info.get("brier_skill_score")
+            skill_label = "N/D" if skill is None else f"{skill:.1%}"
             st.write(
                 f"{icon} **{sport}**: {info['equipos_calibrados']} / {info['equipos_totales']} equipos con >= "
-                f"{core.ELO_MIN_GAMES} partidos · Brier {info.get('brier')} ({info.get('predicciones_brier', 0)} predicciones)"
+                f"{core.ELO_MIN_GAMES} partidos · Brier {info.get('brier')} · baseline {info.get('baseline_brier')} · "
+                f"skill {skill_label} · {info.get('predicciones_brier', 0)} predicciones maduras · "
+                f"{info.get('motivo_calibracion')}"
             )
 
     with st.expander("Registros de estado físico (tenis/MMA/boxeo)"):
@@ -394,10 +410,11 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v6 — Gated / Stake First", layout="wide")
+    st.set_page_config(page_title="Blindado v7 — Stake completo", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
+        "BRIER_WINDOW", "BRIER_SKILL_MIN", "is_esport_slug",
     )
     missing_core = [name for name in required_core if not hasattr(core, name)]
     if missing_core:
@@ -407,7 +424,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v6 — Stake First, con Gates Obligatorios")
+    st.title("🎯 Blindado v7 — Catálogo completo de Stake, con gates obligatorios")
     st.caption(
         "Elo = único modelo estadístico válido · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -421,13 +438,21 @@ def main():
         stake_delay = st.number_input("Delay entre consultas Stake (seg)", min_value=0.0, value=0.0, step=0.05)
         stake_workers = st.slider("Consultas simultáneas Stake", min_value=1, max_value=10, value=6)
         bovada_enabled = st.checkbox("Usar Bovada como referencia", value=True)
-        selected = st.multiselect("Deportes Stake", core.STAKE_SPORT_SLUGS, default=core.STAKE_SPORT_SLUGS)
-        data_source = st.radio(
-            "Fuente de datos", ["API oficial + respaldo automático", "Snapshot remoto"], index=0,
-        )
         snapshot_repo = config_value("SNAPSHOT_REPO")
         snapshot_path = config_value("SNAPSHOT_PATH", "snapshot.json")
         snapshot_branch = config_value("SNAPSHOT_BRANCH", "main")
+        try:
+            sport_options = discover_stake_sport_slugs(config_value("STAKE_ODDS_API_KEY"))
+        except Exception:
+            sport_options = list(core.STAKE_SPORT_SLUGS)
+        selected = st.multiselect("Deportes Stake", sport_options, default=sport_options)
+        source_options = ["Snapshot remoto", "API oficial + respaldo automático"] if snapshot_repo else ["API oficial + respaldo automático"]
+        data_source = st.radio("Fuente de datos", source_options, index=0)
+        if data_source.startswith("API oficial") and len(selected) > 5:
+            st.warning(
+                "La consulta directa recorre el catálogo completo y puede tardar varios minutos. "
+                "Para todos los deportes usa el snapshot automático de GitHub Actions."
+            )
 
         st.divider()
         st.write("### Fuentes gratuitas")
@@ -439,13 +464,11 @@ def main():
     if st.button("🚀 Actualizar datos deportivos", type="primary"):
         try:
             movement: Dict[str, Any] = {}
-            datos_de_snapshot = False
             if data_source == "Snapshot remoto":
                 with st.spinner("Descargando snapshot verificado..."):
                     stake_events, bovada_events, no_disponibles, movement = load_remote_snapshot_fallback(
                         selected, snapshot_repo, snapshot_path, snapshot_branch
                     )
-                datos_de_snapshot = True
             else:
                 stake = core.StakeSportsDataCollector(
                     delay=float(stake_delay), max_workers=int(stake_workers),
@@ -455,6 +478,7 @@ def main():
                 try:
                     with st.spinner("Consultando la Sports Data API oficial de Stake..."):
                         stake_events = stake.fetch_all(selected)
+                    st.session_state["stake_coverage"] = stake.audit
                     if not stake_events:
                         raise RuntimeError("la API no devolvió eventos con mercados activos")
                     if stake.errors:
@@ -489,11 +513,9 @@ def main():
                         stake_events, bovada_events, no_disponibles, movement = load_remote_snapshot_fallback(
                             selected, snapshot_repo, snapshot_path, snapshot_branch
                         )
-                    datos_de_snapshot = True
 
             st.session_state["stake_events"] = core.dedupe_events(stake_events)
             st.session_state["bovada_events"] = core.dedupe_events(bovada_events if bovada_enabled else [])
-            st.session_state["datos_de_snapshot"] = datos_de_snapshot
             if movement:
                 core.merge_movement_history(movement)
             st.session_state["movement_history"] = core.append_movement_history(st.session_state["stake_events"])
@@ -501,6 +523,13 @@ def main():
                 f"Cargados {len(st.session_state['stake_events'])} eventos Stake y "
                 f"{len(st.session_state['bovada_events'])} referencias Bovada."
             )
+            coverage_run = st.session_state.get("stake_coverage", {})
+            if coverage_run:
+                st.info(
+                    f"Catálogo revisado: {coverage_run.get('fixtures_listed', 0)} fixtures en "
+                    f"{coverage_run.get('sports_requested', 0)} deportes; "
+                    f"{coverage_run.get('fixtures_with_markets', 0)} quedaron pre-partido con mercados."
+                )
             if no_disponibles:
                 st.error(
                     f"Bovada no disponible para: {', '.join(no_disponibles)}. "
@@ -590,14 +619,6 @@ def main():
         st.write("**Matriz de capacidad real**")
         render_capability_matrix(stake_events, elo)
         st.divider()
-        if st.session_state.get("datos_de_snapshot"):
-            st.info(
-                "Estos eventos vienen del snapshot remoto, no de la API en vivo. "
-                "Desde v6.2.1 el snapshot solo guarda moneyline/draw_no_bet (las "
-                "únicas claves que usa el motor de picks) para evitar que el "
-                "archivo supere el límite de 25 MB. Totales, hándicaps y props "
-                "completos solo se ven aquí en modo 'API oficial + respaldo automático'."
-            )
         if stake_events:
             market_counts: Dict[str, int] = {}
             rows = []

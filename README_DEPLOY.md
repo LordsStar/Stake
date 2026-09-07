@@ -1,4 +1,4 @@
-# Blindado v6 — instalación en GitHub y Streamlit Cloud
+# Blindado v7 — instalación en GitHub y Streamlit Cloud
 
 ## 1. Subir a GitHub
 
@@ -27,9 +27,13 @@ los últimos tres días. El workflow guardará `state/results/results.json` y
 
 El modelo se reconstruye completo en cada corrida. Esto mantiene el orden
 cronológico cuando una fuente descubre tarde un resultado histórico anterior.
+La migración v7 conserva el esquema Elo 3, por lo que una instalación que
+todavía tenga esquema 2 se reconstruirá automáticamente en la primera
+corrida. El esquema 3 usa predicciones maduras, ventana reciente y skill
+frente a un baseline; ya no bloquea todo con un único tope 0.23.
 
-Después de instalar v6.2, ejecútalo manualmente una vez. Detectará el formato
-anterior y reconstruirá el Elo con namespaces estables por liga/circuito.
+Después de instalar v7, ejecuta el entrenamiento manualmente una vez. Detectará
+el formato anterior y reconstruirá el Elo con namespaces estables por liga/circuito.
 
 Ejecuta también una vez `Actions > Snapshot de mercados Blindado > Run workflow`
 antes del entrenamiento. Ese archivo permite descubrir las ligas activas de
@@ -75,7 +79,7 @@ en Streamlit Secrets; nunca debe escribirse en el repositorio.
 4. Revisa el panel de salud.
 5. En tenis/MMA/boxeo registra estado físico con fuente y fecha.
 6. Confirma manualmente cualquier promoción aplicable.
-7. Ejecuta Blindado v6.
+7. Ejecuta Blindado v7.
 
 `NINGUNO` es el resultado correcto cuando Elo, Bovada, frescura, liquidez o
 los gates obligatorios no tienen evidencia suficiente.
@@ -91,25 +95,38 @@ No guardes usuario, contraseña, cookies, tier VIP ni información privada en un
 
 ### Cobertura de mercados
 
-La app conserva y muestra todos los mercados activos que la Sports Data API
-devuelve para cada fixture recibido. El motor de picks utiliza únicamente
-`moneyline` y `draw_no_bet`. Totales, hándicaps y props se muestran en la
-inspección, pero todavía no entran al modelo de selección.
+El workflow descubre `/sports` dinámicamente y recorre la jerarquía oficial
+`deporte > categoría > torneo > fixtures`. No depende de una lista fija ni
+del endpoint corto que normalmente devuelve 10 eventos. El snapshot guarda
+todos los eventos prepartido utilizables encontrados, pero solo sus mercados
+`moneyline` y `draw_no_bet` para mantenerse por debajo de 25 MB. En consulta
+directa, la pestaña de inspección muestra todos los mercados activos recibidos.
+
+El motor de picks utiliza únicamente `moneyline` y `draw_no_bet`, porque el
+Elo actual predice ganador. Totales, hándicaps y props no entran al motor hasta
+que exista un modelo estadístico específico para esas líneas.
 
 ### Cobertura deportiva gratuita
 
-Stake sigue siendo la base principal y el workflow solicita estos slugs:
-fútbol, baloncesto, béisbol, hockey, fútbol americano, tenis, MMA, boxeo,
-cricket, rugby, voleibol, tenis de mesa, Counter-Strike, Dota 2, League of
-Legends y Valorant. Para resultados se usan exclusivamente fuentes gratuitas:
+Stake sigue siendo la base principal. El workflow consulta todos los deportes
+habilitados que `/sports` reporte en ese momento, incluidos nuevos esports;
+no hay que editar Python cuando Stake añade un slug. Esto cubre el catálogo de
+apuestas deportivas, no los juegos de casino/slots. Para resultados se usan
+exclusivamente fuentes gratuitas:
 
 - ESPN para NBA, NFL, NHL y MLB.
 - TheSportsDB (API v1 pública) como ingesta multideporte por liga.
 - Cricsheet JSON para cricket reciente.
 - OpenDota para partidos profesionales de Dota 2.
 
+`state/source_coverage.json` registra qué ligas encontró o rechazó la fuente
+gratuita. Descubrir un evento de Stake no significa que automáticamente tenga
+histórico Elo: esports pequeños y ligas nicho pueden seguir sin resultados
+gratuitos verificables. En ese caso se descartan de forma explícita.
+
 El conector no equivale a prometer un pick. Cada evento todavía necesita
-resultados suficientes para ambos participantes, Brier calibrado, moneyline o
+resultados suficientes para ambos participantes, calibración superior al
+baseline en una ventana reciente, moneyline o
 DNB en Stake, una coincidencia fresca en Bovada y todos los gates aplicables.
 Cuando una fuente gratuita no cubre una liga concreta, la app muestra
 `Elo ausente o no calibrado` en vez de inventar datos.
@@ -130,6 +147,8 @@ respaldo en tu dispositivo y no lo subas al repositorio público.
 - `elo_trainer.py`: entrenamiento cronológico e idempotente.
 - `.github/workflows/elo_training.yml`: ejecución automática diaria.
 - `.github/workflows/market_snapshot.yml`: snapshot público cada 30 minutos.
+- `.github/workflows/elo_backtest.yml`: reporte semanal de calibración, sin cambiar parámetros.
 - `market_snapshot_job.py`: genera el snapshot sin login ni datos personales.
+- `elo_backtest.py`: genera el reporte que usa el workflow semanal.
 - `state/public_promotions.json`: catálogo público persistente, sin datos personales.
 - `results_schema_example.csv`: plantilla para otros deportes.

@@ -1,251 +1,73 @@
-"""
-elo_backtest.py
-================
-Backtest walk-forward OFFLINE de los parámetros del Elo (K y ventaja de
-local), usando exclusivamente el histórico real que ya existe en
-state/results/results.json.
-
-NO toca state/elo_state.json (el Elo de producción que usa la app) ni
-BRIER_MAX. Esto es deliberado: sirve para decidir CON EVIDENCIA si vale la
-pena ajustar ELO_K / ELO_HOME en blindado_core.py antes de siquiera
-considerar tocar el umbral del Brier — nunca para inventar un resultado
-que justifique bajarlo.
-
-Reutiliza elo_namespace() y TeamAliasRegistry del propio core para que la
-agrupación por competencia y la resolución de alias sea IDÉNTICA a la que
-usa el motor en producción. Lo único que cambia entre corridas del grid es
-K y la ventaja de local: nada más se toca, y ningún resultado se inventa
-o se completa — si un namespace no tiene resultados reales, simplemente
-no aparece en el reporte.
-
-Metodología (igual que EloModel.update(), reimplementada en memoria):
-  1. Ordena TODOS los resultados de la competencia cronológicamente.
-  2. Para cada partido: predice con los ratings ANTERIORES (nunca con
-     información del futuro), registra el error cuadrático, y SOLO
-     entonces actualiza los ratings con ese resultado real.
-  3. Repite para cada combinación (K, home_adv) del grid.
-  4. Reporta el Brier de cada combinación por namespace, comparado contra
-     los parámetros actuales de producción (ELO_K, ELO_HOME).
-
-Uso:
-    python elo_backtest.py
-    python elo_backtest.py --namespace american-football:nfl baseball:mlb
-    python elo_backtest.py --k-grid 10 15 20 25 30 40 --home-grid 0 25 50 75 100
-    python elo_backtest.py --min-games 5 --brier-min 8
-    python elo_backtest.py --output state/elo_backtest_report.md
-"""
+"""Genera un reporte reproducible de calibración Elo sin tocar producción."""
 
 import argparse
-import sys
-from collections import defaultdict
-from datetime import datetime, timezone
-from itertools import product
+import json
+import tempfile
 from pathlib import Path
-from typing import Any, Dict, List, Optional
 
 from blindado_core import (
+    APP_VERSION,
+    BRIER_MAX,
     BRIER_MIN,
-    ELO_HOME,
-    ELO_INITIAL,
+    BRIER_SKILL_MIN,
+    BRIER_WINDOW,
     ELO_K,
     ELO_MIN_GAMES,
+    EloModel,
     TeamAliasRegistry,
-    elo_namespace,
     load_results,
-    parse_dt,
+    train_elo_from_results,
+    utc_now,
 )
 
 
-def _ordered_results(results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    return sorted(
-        (r for r in results if parse_dt(r.get("start_time"))),
-        key=lambda r: parse_dt(r["start_time"]),
-    )
-
-
-def _home_win(row: Dict[str, Any]) -> float:
-    hs, aw = float(row["home_score"]), float(row["away_score"])
-    return 1.0 if hs > aw else (0.5 if hs == aw else 0.0)
-
-
-def backtest_namespace(
-    rows: List[Dict[str, Any]],
-    aliases: TeamAliasRegistry,
-    namespace: str,
-    k: float,
-    home_adv: float,
-    min_games: int,
-    brier_min: int,
-) -> Dict[str, Any]:
-    """Replica EloModel.update()/probability() en memoria, sin tocar disco,
-    para UNA sola combinación de parámetros y UN namespace. No comparte
-    estado entre llamadas: cada combinación del grid arranca desde
-    ELO_INITIAL, igual que arrancaría el Elo de producción desde cero."""
-    ratings: Dict[str, Dict[str, float]] = {}
-    squared_errors: List[float] = []
-    squared_errors_calibrados: List[float] = []  # solo cuando AMBOS equipos ya tenían min_games
-
-    def prob(h_elo: float, a_elo: float) -> float:
-        return 1 / (1 + 10 ** ((a_elo - (h_elo + home_adv)) / 400))
-
-    for row in rows:
-        home_id = aliases.canonical_id(namespace, row["home_name"])
-        away_id = aliases.canonical_id(namespace, row["away_name"])
-        h = ratings.setdefault(home_id, {"elo": ELO_INITIAL, "games": 0})
-        a = ratings.setdefault(away_id, {"elo": ELO_INITIAL, "games": 0})
-
-        p = prob(h["elo"], a["elo"])
-        y = _home_win(row)
-        err = (p - y) ** 2
-        squared_errors.append(err)
-        if h["games"] >= min_games and a["games"] >= min_games:
-            squared_errors_calibrados.append(err)
-
-        h["elo"] += k * (y - p)
-        a["elo"] += k * ((1 - y) - (1 - p))
-        h["games"] += 1
-        a["games"] += 1
-
-    def brier(values: List[float]) -> Optional[float]:
-        return round(sum(values) / len(values), 4) if len(values) >= brier_min else None
-
-    return {
-        "partidos": len(rows),
-        "equipos": len(ratings),
-        "equipos_calibrados": sum(1 for r in ratings.values() if r["games"] >= min_games),
-        "brier_todos": brier(squared_errors),
-        "brier_solo_calibrados": brier(squared_errors_calibrados),
-        "muestras_calibradas": len(squared_errors_calibrados),
-    }
-
-
-def _headline_brier(metrics: Dict[str, Any]) -> Optional[float]:
-    """Prioriza el Brier medido solo sobre partidos ya calibrados (más
-    representativo de lo que el gate en producción realmente evaluaría);
-    si no hay suficientes muestras calibradas todavía, usa el Brier global
-    como aproximación, dejándolo explícito en el reporte."""
-    return metrics["brier_solo_calibrados"] if metrics["brier_solo_calibrados"] is not None else metrics["brier_todos"]
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument(
-        "--namespace", nargs="*", default=None,
-        help="Namespaces Elo a probar (ej. american-football:nfl baseball:mlb). "
-             "Por defecto: todos los que ya tengan >= --brier-min partidos.",
-    )
-    parser.add_argument("--k-grid", nargs="*", type=float, default=[10, 15, 20, 25, 30, 40])
-    parser.add_argument("--home-grid", nargs="*", type=float, default=[0, 25, 50, 65, 75, 100])
-    parser.add_argument("--min-games", type=int, default=ELO_MIN_GAMES)
-    parser.add_argument("--brier-min", type=int, default=BRIER_MIN)
-    parser.add_argument(
-        "--output", default=None,
-        help="Ruta de un .md donde volcar el mismo reporte (para que un "
-             "workflow lo commitee, ej. state/elo_backtest_report.md, sin "
-             "necesidad de dejar una computadora encendida ni de correrlo "
-             "manualmente cada vez).",
-    )
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", default="state/elo_backtest_report.md")
     args = parser.parse_args()
-    lines: List[str] = []
-
-    def emit(msg: str = "") -> None:
-        print(msg)
-        lines.append(msg)
-
     results = load_results()
-    if not results:
-        emit("state/results/results.json está vacío — nada que backtestear.")
-        emit("Corre fetch_results_espn.py / fetch_results_free.py primero.")
-        _write_report(args.output, lines)
-        return 0
+    with tempfile.TemporaryDirectory(prefix="blindado-backtest-") as tmp:
+        elo = EloModel(Path(tmp) / "elo.json")
+        train_elo_from_results(elo, TeamAliasRegistry(), results)
+        coverage = elo.coverage()
 
-    aliases = TeamAliasRegistry()
-    ordered = _ordered_results(results)
-
-    by_namespace: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-    for row in ordered:
-        by_namespace[elo_namespace(row["sport"], row.get("league", ""))].append(row)
-
-    targets = args.namespace or [
-        ns for ns, rows in by_namespace.items() if len(rows) >= args.brier_min
+    lines = [
+        "# Backtest Elo Blindado",
+        "",
+        f"Generado: `{utc_now().isoformat()}`  ",
+        f"Versión: `{APP_VERSION}`  ",
+        f"Resultados: **{len(results)}**  ",
+        f"Parámetros: K={ELO_K}, mínimo por participante={ELO_MIN_GAMES}, "
+        f"muestras maduras={BRIER_MIN}, ventana={BRIER_WINDOW}, "
+        f"skill mínimo={BRIER_SKILL_MIN:.1%}, tope Brier binario={BRIER_MAX:.3f}.",
+        "",
+        "| Namespace | Equipos calibrados | Muestras | Brier | Baseline | Skill | Activo | Motivo |",
+        "|---|---:|---:|---:|---:|---:|:---:|---|",
     ]
-    if not targets:
-        emit("Ningún namespace tiene todavía >= --brier-min partidos históricos.")
-        _write_report(args.output, lines)
-        return 0
-
-    emit(f"# Backtest offline de Elo — {datetime.now(timezone.utc).isoformat()}")
-    emit()
-    emit(f"Grid: K en {args.k_grid} × ventaja_local en {args.home_grid} "
-         f"({len(args.k_grid) * len(args.home_grid)} combinaciones por namespace)")
-    emit()
-
-    for namespace in sorted(targets):
-        rows = by_namespace.get(namespace, [])
-        if len(rows) < args.brier_min:
-            emit(f"## {namespace} ({len(rows)} partidos — insuficiente para Brier, se omite)")
-            emit()
-            continue
-
-        emit(f"## {namespace} ({len(rows)} partidos históricos)")
-
-        baseline = backtest_namespace(rows, aliases, namespace, ELO_K, ELO_HOME, args.min_games, args.brier_min)
-        emit(
-            f"- **Producción actual** K={ELO_K:g} home={ELO_HOME:g} -> "
-            f"brier_todos={baseline['brier_todos']} "
-            f"brier_solo_calibrados={baseline['brier_solo_calibrados']} "
-            f"(equipos_calibrados={baseline['equipos_calibrados']}/{baseline['equipos']}, "
-            f"muestras_calibradas={baseline['muestras_calibradas']})"
+    for namespace, info in sorted(coverage.items()):
+        skill = info.get("brier_skill_score")
+        lines.append(
+            f"| {namespace} | {info.get('equipos_calibrados', 0)}/{info.get('equipos_totales', 0)} "
+            f"| {info.get('predicciones_brier', 0)} | {info.get('brier')} "
+            f"| {info.get('baseline_brier')} | {skill if skill is not None else 'N/D'} "
+            f"| {'sí' if info.get('modelo_activo') else 'no'} | {info.get('motivo_calibracion', '')} |"
         )
-
-        best = None
-        for k, home_adv in product(args.k_grid, args.home_grid):
-            metrics = backtest_namespace(rows, aliases, namespace, k, home_adv, args.min_games, args.brier_min)
-            b = _headline_brier(metrics)
-            if b is None:
-                continue
-            if best is None or b < best[0]:
-                best = (b, k, home_adv, metrics)
-
-        if best:
-            b, k, home_adv, metrics = best
-            emit(
-                f"- **Mejor del grid** K={k:g} home={home_adv:g} -> "
-                f"brier_todos={metrics['brier_todos']} "
-                f"brier_solo_calibrados={metrics['brier_solo_calibrados']} "
-                f"(equipos_calibrados={metrics['equipos_calibrados']}/{metrics['equipos']})"
-            )
-            base_b = _headline_brier(baseline)
-            if base_b is not None:
-                delta = base_b - b
-                veredicto = (
-                    "mejora real, vale la pena ajustar los parámetros"
-                    if delta > 0.003
-                    else "mejora marginal/ruido — no justifica cambiar producción"
-                )
-                emit(f"- Delta vs. producción: {delta:+.4f} -> {veredicto}")
-        else:
-            emit("- No hay suficientes muestras calibradas para comparar el grid en este namespace.")
-        emit()
-
-    emit(
-        "Este reporte NO modificó `state/elo_state.json` ni `BRIER_MAX`. Es solo "
-        "evidencia numérica para decidir si conviene ajustar `ELO_K`/`ELO_HOME` "
-        "en `blindado_core.py` — y con qué respaldo, en vez de tocar el umbral "
-        "del Brier a ciegas cada vez que sale `NINGUNO`."
-    )
-    _write_report(args.output, lines)
+    lines.extend([
+        "",
+        "## Datos estructurados",
+        "",
+        "```json",
+        json.dumps(coverage, ensure_ascii=False, indent=2),
+        "```",
+        "",
+        "Este reporte es diagnóstico: no cambia parámetros ni el estado Elo de producción.",
+    ])
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"Reporte guardado en {output} ({len(coverage)} namespaces).")
     return 0
 
 
-def _write_report(output: Optional[str], lines: List[str]) -> None:
-    if not output:
-        return
-    path = Path(output)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"\nReporte también escrito en {path}")
-
-
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

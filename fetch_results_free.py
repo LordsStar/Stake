@@ -36,7 +36,32 @@ SPORT_NAMES = {
     "dota-2": {"esports"},
     "league-of-legends": {"esports"},
     "valorant": {"esports"},
+    "badminton": {"badminton"},
+    "beach-volley": {"volleyball"},
+    "aussie-rules": {"australian football"},
+    "bandy": {"bandy"},
+    "basketball-3x3": {"basketball"},
+    "darts": {"darts"},
+    "floorball": {"floorball"},
+    "futsal": {"soccer", "futsal"},
+    "handball": {"handball"},
+    "gaelic-hurling": {"gaelic games", "hurling"},
+    "pesapallo": {"pesapallo"},
+    "snooker": {"snooker"},
+    "squash": {"squash"},
+    "waterpolo": {"water polo"},
+    "padel": {"padel"},
 }
+
+# Juegos electrónicos que Stake presenta como deportes separados. El
+# catálogo de TheSportsDB puede o no contener una liga equivalente; una
+# coincidencia ausente se registra y jamás se sustituye por otro juego.
+for _esport in (
+    "counter-strike-2-duels", "ecricket", "efootball-bots", "etouchdown",
+    "fifa", "kings-of-glory", "mobile-legends", "nba2k", "rainbow-six",
+    "rocket-league", "dota-2-duels",
+):
+    SPORT_NAMES[_esport] = {"esports"}
 
 
 def norm(value: str) -> str:
@@ -157,14 +182,19 @@ def opendota_rows(targets):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--snapshot", default="snapshot.json")
-    parser.add_argument("--max-leagues", type=int, default=40)
+    parser.add_argument(
+        "--max-leagues", type=int, default=0,
+        help="Máximo por corrida; 0 procesa todas las ligas del snapshot.",
+    )
+    parser.add_argument("--coverage-output", default="state/source_coverage.json")
     args = parser.parse_args()
     snapshot = Path(args.snapshot)
     if not snapshot.exists():
         print("Sin snapshot.json: primero ejecuta el workflow de mercados.")
         return 0
 
-    targets = load_targets(snapshot)[: max(1, args.max_leagues)]
+    all_targets = load_targets(snapshot)
+    targets = all_targets if args.max_leagues <= 0 else all_targets[:args.max_leagues]
     all_leagues = get_json("all_leagues.php").get("leagues") or []
     # El endpoint general gratuito puede devolver solo el catálogo destacado.
     # Se amplía por deporte y se deduplica por id.
@@ -177,7 +207,7 @@ def main() -> int:
         except Exception as exc:
             print(f"[aviso] catálogo {sport_name}: {exc}")
     all_leagues = list(by_id.values())
-    rows, rejected = [], []
+    rows, rejected, matched = [], [], []
     for sport, stake_league in targets:
         allowed = SPORT_NAMES[sport]
         candidates = [l for l in all_leagues if norm(l.get("strSport", "")) in allowed]
@@ -186,6 +216,10 @@ def main() -> int:
             rejected.append(f"{sport}/{stake_league}: sin liga equivalente segura")
             continue
         similarity, league = ranked[0]
+        matched.append({
+            "sport": sport, "stake_league": stake_league,
+            "source_league": league.get("strLeague"), "similarity": round(similarity, 3),
+        })
         events = []
         try:
             detail = (get_json("lookupleague.php", id=league["idLeague"]).get("leagues") or [{}])[0]
@@ -234,6 +268,19 @@ def main() -> int:
     print(f"Resultados gratuitos nuevos: {added}; rechazados por esquema: {len(errors)}")
     for message in rejected:
         print(f"[sin cobertura] {message}")
+    coverage_path = Path(args.coverage_output)
+    coverage_path.parent.mkdir(parents=True, exist_ok=True)
+    coverage_path.write_text(json.dumps({
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "targets_in_snapshot": len(all_targets),
+        "targets_processed": len(targets),
+        "matched": matched,
+        "unmatched": rejected,
+        "rows_collected": len(rows),
+        "rows_added": added,
+        "schema_rejections": errors,
+        "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica.",
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
     return 0
 
 

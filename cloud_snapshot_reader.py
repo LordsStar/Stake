@@ -132,3 +132,19 @@ def render_estado_snapshot(snapshot: Dict[str, Any]) -> None:
 
     if snapshot.get("bovada_no_disponible"):
         st.info(f"Bovada no disponible en la última corrida local para: {snapshot['bovada_no_disponible']}")
+    coverage = snapshot.get("stake_coverage")
+    if isinstance(coverage, dict):
+        discovered = coverage.get("sports_discovered", 0)
+        requested = coverage.get("sports_requested", 0)
+        listed = coverage.get("fixtures_listed", 0)
+        detailed = coverage.get("fixtures_with_markets", 0)
+        st.caption(
+            f"Cobertura oficial: {requested}/{discovered} deportes consultados · "
+            f"{listed} fixtures catalogados · {detailed} eventos pre-partido con mercados."
+        )
+        limited = coverage.get("limited_fallback_sports") or []
+        if limited:
+            st.warning(
+                "Cobertura parcial: no se pudo recorrer el catálogo completo de "
+                + ", ".join(map(str, limited))
+            )

@@ -27,9 +27,12 @@ def main() -> int:
 
     elo = EloModel()
     if args.reset or not elo.schema_is_current():
-        reason = "solicitud --reset" if args.reset else "migración a Elo separado por liga"
+        reason = "solicitud --reset" if args.reset else "migración del esquema de calibración Elo"
         print(f"Reentrenamiento completo: {reason}.")
-        elo.state = {"schema_version": ELO_SCHEMA_VERSION, "ratings": {}, "brier": {}, "processed": {}}
+        elo.state = {
+            "schema_version": ELO_SCHEMA_VERSION,
+            "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
+        }
 
     aliases = TeamAliasRegistry()
     results = load_results()

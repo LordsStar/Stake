@@ -57,11 +57,12 @@ from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+from urllib.parse import quote
 
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "6.2-free-multisport"
+APP_VERSION = "7.0-full-stake-catalog"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -81,17 +82,38 @@ ELO_SCHEMA_VERSION = 3
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
 
+# Respaldo únicamente para cuando /sports no esté disponible. En ejecución
+# normal los deportes se descubren dinámicamente; esta lista no limita la API.
 STAKE_SPORT_SLUGS = [
     "soccer", "basketball", "baseball", "ice-hockey", "tennis",
     "american-football", "mma", "boxing", "cricket", "rugby",
     "volleyball", "table-tennis", "counter-strike", "dota-2",
-    "league-of-legends", "valorant",
+    "league-of-legends", "valorant", "badminton", "beach-volley",
+    "aussie-rules", "bandy", "basketball-3x3", "counter-strike-2-duels",
+    "darts", "ecricket", "floorball", "futsal", "handball",
+    "gaelic-hurling", "kings-of-glory", "mobile-legends", "nba2k",
+    "pesapallo", "rainbow-six", "rocket-league", "snooker", "squash",
+    "waterpolo", "dota-2-duels", "fifa", "padel", "efootball-bots",
+    "etouchdown",
 ]
 
 # Slugs de esports reales usados por Stake. El chequeo anterior
 # (s.startswith("esports")) nunca hacía match con ninguno de estos —
 # todo esport caía silenciosamente en la familia "other".
-ESPORTS_SLUGS = {"counter-strike", "dota-2", "league-of-legends", "valorant", "rocket-league"}
+ESPORTS_SLUGS = {
+    "age-of-empires", "arena-of-valor", "call-of-duty", "counter-strike",
+    "counter-strike-2-duels", "crossfire", "dota-2", "dota-2-duels",
+    "ecricket", "efootball-bots", "etouchdown", "fifa", "kings-of-glory",
+    "league-of-legends", "madden", "mobile-legends", "nba2k", "overwatch-2",
+    "rainbow-six", "rocket-league", "starcraft-2", "valorant",
+}
+
+BOVADA_ESPORT_SLUG_ALIASES = {
+    "counter-strike-2": "counter-strike",
+    "cs2": "counter-strike",
+    "league-of-legends": "league-of-legends",
+    "dota-2": "dota-2",
+}
 
 ESPORT_SOURCES: Dict[str, List[str]] = {
     "counter-strike": ["https://www.hltv.org/", "https://liquipedia.net/counterstrike/"],
@@ -99,6 +121,9 @@ ESPORT_SOURCES: Dict[str, List[str]] = {
     "league-of-legends": ["https://oracleselixir.com/", "https://liquipedia.net/leagueoflegends/"],
     "dota-2": ["https://www.opendota.com/", "https://liquipedia.net/dota2/"],
     "rocket-league": ["https://octane.gg/", "https://liquipedia.net/rocketleague/"],
+    "mobile-legends": ["https://liquipedia.net/mobilelegends/"],
+    "rainbow-six": ["https://liquipedia.net/rainbowsix/"],
+    "counter-strike-2-duels": ["https://www.hltv.org/", "https://liquipedia.net/counterstrike/"],
 }
 
 BOVADA_ENDPOINTS = {
@@ -107,6 +132,10 @@ BOVADA_ENDPOINTS = {
     "icehockey_nhl": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/hockey/nhl",
     "americanfootball_nfl": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/nfl",
     "americanfootball_ncaaf": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/college-football",
+    "baseball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/baseball",
+    "basketball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/basketball",
+    "ice-hockey_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/hockey",
+    "american-football_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football",
     "soccer_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/soccer",
     "tennis_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/tennis",
     "mma_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/ufc-mma",
@@ -116,38 +145,29 @@ BOVADA_ENDPOINTS = {
     "volleyball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/volleyball",
     "table-tennis_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/table-tennis",
     "esports_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/esports",
-    # NUEVO — corrige el descarte "deporte_o_liga_no_compatible": antes solo
-    # existían claves específicas para NBA/NHL/MLB/NFL/NCAAF. Cualquier otra
-    # liga de esos MISMOS deportes (WNBA, KHL, VHL, CFL, Triple-A, Euroliga,
-    # FIBA, NCAA basketball, amistosos de clubes, etc.) caía en None sin
-    # siquiera intentar Bovada, porque no había fallback genérico "_all" para
-    # estos cuatro deportes (sí existía ya para soccer/tennis/mma/etc.).
-    # WNBA obtiene su propia clave específica porque es un mercado que Bovada
-    # sí suele publicar de forma regular; los "_all" genéricos son best-effort
-    # para el resto — pueden devolver cobertura delgada o vacía para ligas
-    # muy nicho (KHL, VHL, Triple-A), y eso es correcto: sin match, el gate de
-    # liquidez descarta el evento igual que con cualquier otro sin referencia,
-    # nunca se fabrica una referencia inexistente.
-    "basketball_wnba": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/basketball/wnba",
-    "basketball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/basketball",
-    "baseball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/baseball",
-    "ice-hockey_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/hockey",
-    "american-football_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football",
+    "badminton_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/badminton",
+    "beach-volley_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/beach-volleyball",
+    "darts_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/darts",
+    "futsal_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/futsal",
+    "handball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/handball",
+    "snooker_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/snooker",
 }
 
 BOVADA_KEY_SPORT = {
+    "baseball_all": "baseball", "basketball_all": "basketball",
+    "ice-hockey_all": "ice-hockey", "american-football_all": "american-football",
     "soccer_all": "soccer", "tennis_all": "tennis", "mma_all": "mma",
     "boxing_all": "boxing", "cricket_all": "cricket", "rugby_all": "rugby",
     "volleyball_all": "volleyball", "table-tennis_all": "table-tennis",
     "esports_all": "esports",
-    "basketball_all": "basketball", "baseball_all": "baseball",
-    "ice-hockey_all": "ice-hockey", "american-football_all": "american-football",
+    "badminton_all": "badminton", "beach-volley_all": "beach-volley",
+    "darts_all": "darts", "futsal_all": "futsal",
+    "handball_all": "handball", "snooker_all": "snooker",
 }
 
 KNOWN_LEAGUE_CODES = {
     "mlb": "mlb", "major-league-baseball": "mlb",
     "nba": "nba", "national-basketball-association": "nba",
-    "wnba": "wnba", "womens-national-basketball-association": "wnba",
     "nhl": "nhl", "national-hockey-league": "nhl",
     "nfl": "nfl", "national-football-league": "nfl",
     "ncaaf": "ncaaf", "college-football": "ncaaf",
@@ -224,16 +244,32 @@ LIQUIDITY_MAX_AGE_MIN = 120.0
 
 ELO_INITIAL = 1500.0
 ELO_K = 20.0
-ELO_HOME = 50.0
 ELO_MIN_GAMES = 5
-BRIER_MAX = 0.23
-# v6.2.3: subido de 8 a 30. Con n=8, un modelo PERFECTAMENTE calibrado a
-# p=0.58 (ventaja de local típica) mide un Brier que varía entre 0.196 y
-# 0.296 en el 90% de los casos, solo por ruido de muestra — ese rango
-# cubre casi todo el margen entre "razonable" y "peor que 50/50". Con n=30
-# el rango baja a ~[0.219, 0.267]: sigue siendo ruidoso, pero ya no puede
-# certificar ni rechazar un modelo por pura casualidad de 8 partidos.
+BRIER_MAX = 0.245
 BRIER_MIN = 30
+BRIER_WINDOW = 200
+BRIER_SKILL_MIN = 0.02
+ELO_HOME_BY_SPORT = {
+    "american-football": 50.0,
+    "basketball": 60.0,
+    "soccer": 55.0,
+    "baseball": 20.0,
+    "ice-hockey": 25.0,
+    "rugby": 35.0,
+    "volleyball": 35.0,
+    # En tenis, combate, cricket y esports el primer participante no es
+    # necesariamente un local real; aplicar +50 introducía sesgo artificial.
+    "tennis": 0.0,
+    "mma": 0.0,
+    "boxing": 0.0,
+    "cricket": 0.0,
+    "table-tennis": 0.0,
+    "counter-strike": 0.0,
+    "dota-2": 0.0,
+    "league-of-legends": 0.0,
+    "valorant": 0.0,
+    "rocket-league": 0.0,
+}
 
 BLINDADO_PROMPT = """
 PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v6 — Stake First, Gated)
@@ -254,10 +290,11 @@ REGLAS:
 
 3. SEGUNDO MODELO — ÚNICA FUENTE VÁLIDA:
    Elo interno, entrenado cronológicamente con resultados reales
-   (>= 5 partidos por equipo, Brier histórico <= 0.23 con >= 8 muestras).
+   (>= 5 partidos por participante y >= 30 predicciones maduras). La
+   calibración usa una ventana reciente de 200, exige Brier Skill Score
+   >= 2% frente al baseline y, para binarios, Brier <= 0.245.
    Si el Elo no está calibrado para ambos equipos: DESCARTAR ese evento.
-   En mercados 1X2, el Elo combina fuerza relativa con la tasa histórica
-   de empate aprendida para producir probabilidades home/draw/away.
+   En mercados 1X2 se usa Brier multiclase y una tasa de empate aprendida.
 
 4. GATES OBLIGATORIOS (todos deben cumplirse; ninguno se compensa con EV
    alto ni con confianza alta):
@@ -463,11 +500,12 @@ class HttpClient:
     en la misma corrida si varias partes del código la piden.
     """
 
-    _thread_local = threading.local()
-
     def __init__(self, timeout: int = DEFAULT_TIMEOUT, cache_ttl: float = 15.0):
         self.timeout = timeout
         self.cache_ttl = cache_ttl
+        # Debe ser por instancia. Si fuera atributo de clase, Stake y Bovada
+        # podrían reutilizar la misma sesión del hilo y perder sus headers.
+        self._thread_local = threading.local()
         self._cache: Dict[str, Tuple[float, Any]] = {}
         self._cache_lock = threading.Lock()
         self._extra_headers: Dict[str, str] = {}
@@ -592,6 +630,16 @@ class NormalizedEvent:
 
 def stake_market_key(name: str) -> str:
     n = (name or "").lower()
+    # "Map 1 Winner", "1st Set Winner", etc. no son el ganador del
+    # partido. Clasificarlos como moneyline hacía que el motor pudiera tomar
+    # accidentalmente el primer mercado parcial devuelto por la API.
+    partial_winner = bool(re.search(
+        r"\b(map|set|game|round|frame|inning|quarter|half|period|race)\s*\d*\b|"
+        r"\b\d+(?:st|nd|rd|th)\s+(?:map|set|game|round|frame|inning|quarter|half|period)\b",
+        n,
+    ))
+    if partial_winner and any(x in n for x in ["winner", "moneyline", "1x2", "3-way"]):
+        return re.sub(r"[^a-z0-9]+", "_", n).strip("_") or "market"
     if any(x in n for x in ["winner", "moneyline", "match winner", "1x2", "3-way"]):
         return "moneyline"
     if "draw no bet" in n or n == "dnb":
@@ -607,7 +655,7 @@ def event_to_dict(e: NormalizedEvent, markets_filter: Optional[Iterable[str]] = 
     markets = e.markets
     if markets_filter is not None:
         allowed = set(markets_filter)
-        markets = [m for m in markets if m.key in allowed]
+        markets = [market for market in markets if market.key in allowed]
     return {
         "event_id": e.event_id,
         "source": e.source,
@@ -630,21 +678,7 @@ PICK_ENGINE_MARKET_KEYS = ("moneyline", "draw_no_bet")
 
 
 def event_to_dict_pick_markets(e: NormalizedEvent) -> Dict[str, Any]:
-    """Serializa el evento SOLO con las claves de mercado que el motor de
-    picks realmente evalúa (moneyline/draw_no_bet). Pensado para
-    market_snapshot_job.py: el snapshot existe únicamente como respaldo de
-    liquidez/divergencia para el motor — nunca se inspecciona su árbol
-    completo de mercados desde la UI como sí pasa con los eventos Stake en
-    vivo en la pestaña "Eventos normalizados". Totales, hándicaps y props
-    de un solo evento pueden sumar cientos de líneas (un solo evento de
-    esports con props de jugador ya vale más que muchos eventos completos
-    de otros deportes juntos); multiplicado por ~150 eventos en 16
-    deportes, eso es lo que hacía que snapshot.json superara el límite de
-    seguridad de 25 MB en cloud_snapshot_reader.py y tumbara el fallback
-    de Bovada COMPLETO, incluso para deportes que no tenían nada que ver
-    con el fallo original. No se pierde nada que el motor use: tanto
-    market_odds() como build_elo_model() ya filtran a estas mismas dos
-    claves antes de este cambio."""
+    """Formato compacto del snapshot: conserva todo lo que usa el motor."""
     return event_to_dict(e, markets_filter=PICK_ENGINE_MARKET_KEYS)
 
 
@@ -696,6 +730,21 @@ class StakeSportsDataCollector:
         if key:
             self.client.set_extra_headers({"X-API-KEY": key})
         self.errors: List[str] = []
+        self.sports_catalog: List[Dict[str, Any]] = []
+        self.audit: Dict[str, Any] = {
+            "sports_discovered": 0,
+            "sports_requested": 0,
+            "categories": 0,
+            "tournaments": 0,
+            "fixtures_listed": 0,
+            "fixtures_prematch": 0,
+            "fixtures_detailed": 0,
+            "fixtures_with_markets": 0,
+            "excluded_live_or_started": 0,
+            "excluded_disabled_or_outright": 0,
+            "detail_failures": 0,
+            "limited_fallback_sports": [],
+        }
 
     def _get(self, path: str) -> Any:
         last_error: Optional[Exception] = None
@@ -705,16 +754,148 @@ class StakeSportsDataCollector:
                 if self.delay:
                     time.sleep(self.delay)
                 return data
+            except requests.exceptions.HTTPError as exc:
+                last_error = exc
+                status = exc.response.status_code if exc.response is not None else None
+                if status in (400, 401, 403, 404):
+                    raise RuntimeError(f"Stake Sports Data API respondió {status} en {path}") from exc
+                if attempt < 2:
+                    time.sleep(0.6 * (2 ** attempt))
             except Exception as exc:
                 last_error = exc
                 if attempt < 2:
                     time.sleep(0.6 * (2 ** attempt))
         raise RuntimeError(f"Stake Sports Data API falló en {path}: {last_error}")
 
-    def fetch_sport(self, sport_slug: str, first: int = 100) -> List[NormalizedEvent]:
-        listing = self._get(f"/sport/{sport_slug}/fixture")
-        fixtures = listing.get("fixture", []) if isinstance(listing, dict) else []
-        fixtures = [f for f in fixtures if isinstance(f, dict) and f.get("slug")][:first]
+    @staticmethod
+    def _slug(value: Any) -> str:
+        return quote(str(value or "").strip(), safe="-")
+
+    def discover_sports(self, enabled_only: bool = True) -> List[Dict[str, Any]]:
+        """Obtiene el catálogo completo oficial de `/sports`.
+
+        Stake puede añadir o retirar categorías sin actualizar este código;
+        por eso STAKE_SPORT_SLUGS es solo un respaldo de emergencia.
+        """
+        payload = self._get("/sports")
+        rows = payload if isinstance(payload, list) else []
+        sports = [row for row in rows if isinstance(row, dict) and row.get("slug")]
+        if enabled_only:
+            sports = [row for row in sports if row.get("enabled", True)]
+        self.sports_catalog = sports
+        self.audit["sports_discovered"] = len(sports)
+        return sports
+
+    def available_sport_slugs(self) -> List[str]:
+        try:
+            return [str(row["slug"]) for row in self.discover_sports()]
+        except Exception as exc:
+            self.errors.append(f"/sports: {exc}")
+            return list(STAKE_SPORT_SLUGS)
+
+    def _parallel_get(self, paths: Iterable[Tuple[str, Any]]) -> List[Tuple[Any, Any]]:
+        jobs_input = list(paths)
+        if not jobs_input:
+            return []
+        completed: List[Tuple[Any, Any]] = []
+        with ThreadPoolExecutor(max_workers=min(self.max_workers, len(jobs_input))) as pool:
+            jobs = {pool.submit(self._get, path): context for path, context in jobs_input}
+            for job in as_completed(jobs):
+                context = jobs[job]
+                try:
+                    completed.append((context, job.result()))
+                except Exception as exc:
+                    self.errors.append(f"{context}: {exc}")
+        return completed
+
+    def list_all_fixtures(self, sport_slug: str) -> List[Dict[str, Any]]:
+        """Recorre el árbol completo documentado deporte/categoría/torneo.
+
+        `/sport/{sport}/fixture` devuelve deliberadamente una lista limitada
+        (normalmente 10). El árbol `/sports/.../fixtures` es el endpoint que
+        la documentación define como lista completa por torneo.
+        """
+        sport = self._slug(sport_slug)
+        try:
+            category_payload = self._get(f"/sports/{sport}/categories")
+            categories = category_payload.get("categories", []) if isinstance(category_payload, dict) else []
+            categories = [c for c in categories if isinstance(c, dict) and c.get("slug") and c.get("enabled", True)]
+        except Exception as exc:
+            self.errors.append(f"{sport_slug}/categories: {exc}")
+            categories = []
+
+        self.audit["categories"] += len(categories)
+        tournament_calls = [
+            (f"/sports/{sport}/{self._slug(category['slug'])}/tournaments", category)
+            for category in categories
+        ]
+        tournament_contexts: List[Tuple[Dict[str, Any], Dict[str, Any]]] = []
+        for category, payload in self._parallel_get(tournament_calls):
+            tournaments = payload.get("tournaments", []) if isinstance(payload, dict) else []
+            for tournament in tournaments:
+                if isinstance(tournament, dict) and tournament.get("slug") and tournament.get("enabled", True):
+                    tournament_contexts.append((category, tournament))
+
+        if not categories or not tournament_contexts:
+            # Respaldo explícitamente marcado como incompleto; nunca se anuncia
+            # como cobertura total si la navegación jerárquica falla.
+            listing = self._get(f"/sport/{sport}/fixture")
+            fixtures = listing.get("fixture", []) if isinstance(listing, dict) else []
+            clean = [f for f in fixtures if isinstance(f, dict) and f.get("slug")]
+            if clean:
+                self.audit["limited_fallback_sports"].append(sport_slug)
+            self.audit["fixtures_listed"] += len(clean)
+            return clean
+
+        self.audit["tournaments"] += len(tournament_contexts)
+        fixture_calls = [
+            (
+                f"/sports/{sport}/{self._slug(category['slug'])}/{self._slug(tournament['slug'])}/fixtures",
+                (category, tournament),
+            )
+            for category, tournament in tournament_contexts
+        ]
+        fixtures_by_key: Dict[str, Dict[str, Any]] = {}
+        for context, payload in self._parallel_get(fixture_calls):
+            category, tournament = context
+            rows = payload.get("fixtures", []) if isinstance(payload, dict) else []
+            for fixture in rows:
+                if not isinstance(fixture, dict) or not fixture.get("slug"):
+                    continue
+                item = dict(fixture)
+                item.setdefault("category", category.get("slug") or category.get("name"))
+                item.setdefault("tournament", tournament.get("slug") or tournament.get("name"))
+                key = str(item.get("id") or item["slug"])
+                fixtures_by_key[key] = item
+        fixtures = list(fixtures_by_key.values())
+        self.audit["fixtures_listed"] += len(fixtures)
+        return fixtures
+
+    def fetch_sport(self, sport_slug: str, first: Optional[int] = None) -> List[NormalizedEvent]:
+        fixtures = self.list_all_fixtures(sport_slug)
+        now = utc_now()
+        eligible: List[Dict[str, Any]] = []
+        for fixture in fixtures:
+            start = parse_dt(fixture.get("startTime") or fixture.get("date"))
+            status = str(fixture.get("status") or "").lower()
+            disabled = (
+                not fixture.get("enabled", True)
+                or fixture.get("blacklisted", False)
+                or str(fixture.get("type") or "match").lower() != "match"
+                or not fixture.get("preMatchEnabled", True)
+            )
+            if disabled:
+                self.audit["excluded_disabled_or_outright"] += 1
+                continue
+            if status in {"live", "ended", "inactive"} or not start or start <= now:
+                self.audit["excluded_live_or_started"] += 1
+                continue
+            eligible.append(fixture)
+        eligible.sort(key=lambda f: parse_dt(f.get("startTime") or f.get("date")) or datetime.max.replace(tzinfo=UTC))
+        if first is not None:
+            eligible = eligible[:max(0, int(first))]
+        self.audit["fixtures_prematch"] += len(eligible)
+        fixtures = eligible
         if not fixtures:
             return []
 
@@ -729,15 +910,28 @@ class StakeSportsDataCollector:
                 try:
                     detail = job.result()
                     event = self.normalize_api_event(sport_slug, fixture, detail)
+                    self.audit["fixtures_detailed"] += 1
                     if event.event_id and event.markets:
                         events.append(event)
+                        self.audit["fixtures_with_markets"] += 1
                 except Exception as exc:
+                    self.audit["detail_failures"] += 1
                     self.errors.append(f"{sport_slug}/{fixture.get('slug', '?')}: {exc}")
         return events
 
     def fetch_all(self, slugs: Optional[Iterable[str]] = None) -> List[NormalizedEvent]:
         all_events: List[NormalizedEvent] = []
-        for slug in list(slugs or STAKE_SPORT_SLUGS):
+        if slugs is not None:
+            requested = list(slugs)
+            if not self.sports_catalog:
+                try:
+                    self.discover_sports()
+                except Exception as exc:
+                    self.errors.append(f"/sports: {exc}")
+        else:
+            requested = self.available_sport_slugs()
+        self.audit["sports_requested"] = len(requested)
+        for slug in requested:
             try:
                 all_events.extend(self.fetch_sport(slug))
             except Exception as exc:
@@ -975,16 +1169,24 @@ class BovadaCollector:
         events = []
         for e in _find_event_dicts(payload):
             home, away = _competitor_names(e)
+            if not home or not away:
+                continue
             start = parse_dt(e.get("startTime"))
             markets = _extract_bovada_markets(e)
             if not markets:
                 continue
+            normalized_sport = BOVADA_KEY_SPORT.get(sport_key, {
+                "baseball": "baseball", "basketball": "basketball",
+                "icehockey": "ice-hockey", "americanfootball": "american-football",
+            }.get(sport_key.split("_")[0], sport_key.split("_")[0]))
+            if sport_key == "esports_all":
+                link_parts = [part for part in str(e.get("link") or "").split("/") if part]
+                if len(link_parts) >= 2 and link_parts[0] == "esports":
+                    raw_game = link_parts[1].lower()
+                    normalized_sport = BOVADA_ESPORT_SLUG_ALIASES.get(raw_game, raw_game)
             events.append(NormalizedEvent(
                 event_id=f"bovada:{e.get('id', '')}", source="bovada",
-                sport=BOVADA_KEY_SPORT.get(sport_key, {
-                    "baseball": "baseball", "basketball": "basketball",
-                    "icehockey": "ice-hockey", "americanfootball": "american-football",
-                }.get(sport_key.split("_")[0], sport_key.split("_")[0])),
+                sport=normalized_sport,
                 league=sport_key,
                 home=home, away=away,
                 start_time=start.isoformat() if start else None,
@@ -1010,9 +1212,19 @@ class BovadaCollector:
 # ============================================================
 # Familias de deporte / fuentes gratuitas (CORREGIDO: esports)
 # ============================================================
+def is_esport_slug(slug: str) -> bool:
+    s = (slug or "").lower()
+    return (
+        s in ESPORTS_SLUGS
+        or s.startswith("esports")
+        or s.endswith("-duels")
+        or s.startswith(("efootball", "ecricket", "etouchdown"))
+    )
+
+
 def sport_family(event: NormalizedEvent) -> str:
     s = (event.sport or "").lower()
-    if s in ESPORTS_SLUGS or s.startswith("esports"):
+    if is_esport_slug(s):
         return "esports"
     if s in ("baseball",):
         return "mlb"
@@ -1071,7 +1283,7 @@ def elo_namespace(sport: str, league: str) -> str:
     if sport == "cricket":
         cricket_format = next((x for x in ("t20", "odi", "test") if x in code), "all")
         return f"cricket:{cricket_format}"
-    if sport in ESPORTS_SLUGS:
+    if is_esport_slug(sport):
         return f"{sport}:all"
     return f"{sport}:{code or 'all'}"
 
@@ -1092,7 +1304,7 @@ def bovada_key_for_event(event: NormalizedEvent) -> Optional[str]:
     generic = f"{event.sport}_all"
     if generic in BOVADA_ENDPOINTS:
         return generic
-    if event.sport in ESPORTS_SLUGS:
+    if is_esport_slug(event.sport):
         return "esports_all"
     return None
 
@@ -1128,6 +1340,11 @@ def match_event_scored(
     best, best_score = None, 0.0
     for r in references:
         if sport_family(stake_event) != sport_family(r):
+            continue
+        family = sport_family(stake_event)
+        if family in {"esports", "other"} and stake_event.sport != r.sport:
+            # Esports y la familia residual mezclan categorías distintas.
+            # Nombres parecidos y horarios cercanos nunca bastan para cruzarlas.
             continue
         direct = (name_similarity(stake_event.home, r.home) + name_similarity(stake_event.away, r.away)) / 2.0
         swapped = (name_similarity(stake_event.home, r.away) + name_similarity(stake_event.away, r.home)) / 2.0
@@ -1197,14 +1414,83 @@ class TeamAliasRegistry:
 class EloModel:
     def __init__(self, path: Path = ELO_FILE):
         self.path = path
-        self.state = load_json(path, {"schema_version": ELO_SCHEMA_VERSION, "ratings": {}, "brier": {}, "processed": {}})
+        self.state = load_json(path, {
+            "schema_version": ELO_SCHEMA_VERSION,
+            "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
+        })
 
     def schema_is_current(self) -> bool:
         return self.state.get("schema_version") == ELO_SCHEMA_VERSION
 
     @staticmethod
-    def probability(home_elo: float, away_elo: float) -> float:
-        return 1 / (1 + 10 ** ((away_elo - (home_elo + ELO_HOME)) / 400))
+    def home_advantage(namespace: str) -> float:
+        return ELO_HOME_BY_SPORT.get((namespace or "").split(":", 1)[0], 0.0)
+
+    @staticmethod
+    def probability(home_elo: float, away_elo: float, home_advantage: float = 0.0) -> float:
+        return 1 / (1 + 10 ** ((away_elo - (home_elo + home_advantage)) / 400))
+
+    @staticmethod
+    def _draw_probability(draw_stats: Dict[str, Any]) -> float:
+        total, draws = int(draw_stats.get("total", 0)), int(draw_stats.get("draws", 0))
+        # Prior beta equivalente a 10 partidos con 26% de empates. La liga
+        # domina progresivamente y los extremos quedan acotados.
+        return min(0.40, max(0.08, (draws + 2.6) / (total + 10.0)))
+
+    def evaluation_metrics(self, namespace: str) -> Dict[str, Any]:
+        """Métricas walk-forward sobre una ventana reciente y un baseline.
+
+        Solo entran observaciones generadas cuando ambos participantes ya
+        tenían ELO_MIN_GAMES antes del partido. Para fútbol se usa Brier
+        multiclase 1X2; para los demás, Brier binario.
+        """
+        full_hist = self.state.get("brier", {}).get(namespace, [])
+        hist = full_hist[-BRIER_WINDOW:]
+        if not hist:
+            return {
+                "kind": "multiclass" if namespace.startswith("soccer:") else "binary",
+                "samples": 0, "total_samples": len(full_hist), "brier": None,
+                "baseline_brier": None, "skill": None, "active": False,
+                "reason": f"sin predicciones maduras (mínimo {BRIER_MIN})",
+            }
+
+        kind = "multiclass" if hist[0].get("kind") == "multiclass" else "binary"
+        if kind == "multiclass":
+            labels = ("home", "draw", "away")
+            counts = {label: sum(1 for item in hist if item.get("y") == label) for label in labels}
+            frequencies = {label: counts[label] / len(hist) for label in labels}
+            model_scores, baseline_scores = [], []
+            for item in hist:
+                probs = item.get("probs") or {}
+                outcome = item.get("y")
+                model_scores.append(sum((float(probs.get(label, 0.0)) - (1.0 if outcome == label else 0.0)) ** 2 for label in labels))
+                baseline_scores.append(sum((frequencies[label] - (1.0 if outcome == label else 0.0)) ** 2 for label in labels))
+            brier = sum(model_scores) / len(model_scores)
+            baseline = sum(baseline_scores) / len(baseline_scores)
+        else:
+            ys = [float(item["y"]) for item in hist]
+            base_probability = sum(ys) / len(ys)
+            brier = sum((float(item["p"]) - float(item["y"])) ** 2 for item in hist) / len(hist)
+            baseline = sum((base_probability - y) ** 2 for y in ys) / len(ys)
+
+        skill = (1.0 - brier / baseline) if baseline > 0 else None
+        enough = len(hist) >= BRIER_MIN
+        beats_baseline = skill is not None and skill >= BRIER_SKILL_MIN
+        absolute_ok = kind == "multiclass" or brier <= BRIER_MAX
+        active = enough and beats_baseline and absolute_ok
+        if not enough:
+            reason = f"{len(hist)}/{BRIER_MIN} predicciones maduras"
+        elif not beats_baseline:
+            reason = f"skill {skill if skill is not None else 'N/D'} < {BRIER_SKILL_MIN:.0%} frente al baseline"
+        elif not absolute_ok:
+            reason = f"Brier binario {brier:.4f} > {BRIER_MAX:.3f}"
+        else:
+            reason = "calibración aprobada"
+        return {
+            "kind": kind, "samples": len(hist), "total_samples": len(full_hist),
+            "brier": brier, "baseline_brier": baseline, "skill": skill,
+            "active": active, "reason": reason,
+        }
 
     def probability_for(self, sport: str, home_id: str, away_id: str) -> Optional[float]:
         ratings = self.state.get("ratings", {}).get(sport, {})
@@ -1213,13 +1499,9 @@ class EloModel:
             return None
         if h.get("games", 0) < ELO_MIN_GAMES or a.get("games", 0) < ELO_MIN_GAMES:
             return None
-        hist = self.state.get("brier", {}).get(sport, [])
-        if len(hist) < BRIER_MIN:
+        if not self.evaluation_metrics(sport)["active"]:
             return None
-        brier = sum((x["p"] - x["y"]) ** 2 for x in hist) / len(hist)
-        if brier > BRIER_MAX:
-            return None
-        return self.probability(float(h["elo"]), float(a["elo"]))
+        return self.probability(float(h["elo"]), float(a["elo"]), self.home_advantage(sport))
 
     def probabilities_three_way(self, namespace: str, home_id: str, away_id: str) -> Optional[Dict[str, float]]:
         """Elo 1X2: fuerza relativa Elo + tasa de empate aprendida por liga."""
@@ -1227,12 +1509,9 @@ class EloModel:
         if p_home_binary is None:
             return None
         stats = self.state.get("draw_stats", {}).get(namespace, {})
-        total, draws = int(stats.get("total", 0)), int(stats.get("draws", 0))
-        if total < BRIER_MIN:
+        if int(stats.get("total", 0)) < BRIER_MIN:
             return None
-        # Prior beta equivalente a 10 partidos con 26% de empates; después
-        # la propia liga domina. Se acota para evitar extremos por muestras pequeñas.
-        p_draw = min(0.40, max(0.08, (draws + 2.6) / (total + 10.0)))
+        p_draw = self._draw_probability(stats)
         remaining = 1.0 - p_draw
         return {
             "home": p_home_binary * remaining,
@@ -1243,33 +1522,34 @@ class EloModel:
     def update(self, sport: str, home_id: str, away_id: str, home_win: float, game_id: str) -> bool:
         """Genera la predicción con los ratings PREVIOS antes de actualizar
         (anti-fuga de información) y solo entonces mueve el Elo. Devuelve
-        False si el game_id ya fue procesado (idempotente).
-
-        El Brier de calibración SOLO incorpora partidos donde AMBOS equipos
-        ya tenían >= ELO_MIN_GAMES antes de este partido (v6.2.3). Los
-        primeros partidos de cada equipo se predicen con ELO_INITIAL para
-        ambos lados (esencialmente una moneda ajustada solo por ventaja de
-        local) — incluir esos errores de arranque en frío en el Brier para
-        siempre sesgaba el gate hacia arriba de forma permanente, sin
-        relación con qué tan bueno es el Elo una vez que los equipos ya
-        tienen historial real. draw_stats NO se filtra igual a propósito:
-        su función es medir la tasa de empate real de la competencia, algo
-        que no depende de si los equipos específicos ya están calibrados."""
+        False si el game_id ya fue procesado (idempotente)."""
         processed = self.state.setdefault("processed", {}).setdefault(sport, [])
         if game_id in processed:
             return False
         ratings = self.state.setdefault("ratings", {}).setdefault(sport, {})
         h = ratings.setdefault(home_id, {"elo": ELO_INITIAL, "games": 0})
         a = ratings.setdefault(away_id, {"elo": ELO_INITIAL, "games": 0})
-        p = self.probability(h["elo"], a["elo"])  # con el rating ANTERIOR
-        ambos_calibrados_antes = h["games"] >= ELO_MIN_GAMES and a["games"] >= ELO_MIN_GAMES
+        mature_before_game = h.get("games", 0) >= ELO_MIN_GAMES and a.get("games", 0) >= ELO_MIN_GAMES
+        p = self.probability(h["elo"], a["elo"], self.home_advantage(sport))
+        draw_stats = self.state.setdefault("draw_stats", {}).setdefault(sport, {"total": 0, "draws": 0})
+        if mature_before_game:
+            history = self.state.setdefault("brier", {}).setdefault(sport, [])
+            if sport.startswith("soccer:"):
+                p_draw = self._draw_probability(draw_stats)
+                remaining = 1.0 - p_draw
+                outcome = "home" if home_win > 0.5 else ("away" if home_win < 0.5 else "draw")
+                history.append({
+                    "kind": "multiclass",
+                    "probs": {"home": p * remaining, "draw": p_draw, "away": (1.0 - p) * remaining},
+                    "y": outcome,
+                })
+            else:
+                history.append({"kind": "binary", "p": p, "y": home_win})
+            del history[: max(0, len(history) - 1000)]
         h["elo"] += ELO_K * (home_win - p)
         a["elo"] += ELO_K * ((1 - home_win) - (1 - p))
         h["games"] += 1
         a["games"] += 1
-        if ambos_calibrados_antes:
-            self.state.setdefault("brier", {}).setdefault(sport, []).append({"p": p, "y": home_win})
-        draw_stats = self.state.setdefault("draw_stats", {}).setdefault(sport, {"total": 0, "draws": 0})
         draw_stats["total"] += 1
         if home_win == 0.5:
             draw_stats["draws"] += 1
@@ -1286,16 +1566,23 @@ class EloModel:
         for sport, ratings in self.state.get("ratings", {}).items():
             total = len(ratings)
             calibrados = sum(1 for r in ratings.values() if r.get("games", 0) >= ELO_MIN_GAMES)
-            hist = self.state.get("brier", {}).get(sport, [])
-            brier = (sum((x["p"] - x["y"]) ** 2 for x in hist) / len(hist)) if hist else None
+            metrics = self.evaluation_metrics(sport)
+            calibration_reason = metrics["reason"]
+            if calibrados < 2:
+                calibration_reason = f"solo {calibrados} participantes con >= {ELO_MIN_GAMES} partidos"
             out[sport] = {
                 "equipos_totales": total,
                 "equipos_calibrados": calibrados,
-                "predicciones_brier": len(hist),
-                "brier": None if brier is None else round(brier, 4),
-                "modelo_activo": bool(
-                    calibrados >= 2 and len(hist) >= BRIER_MIN and brier is not None and brier <= BRIER_MAX
-                ),
+                "predicciones_brier": metrics["samples"],
+                "predicciones_brier_totales": metrics["total_samples"],
+                "ventana_brier": BRIER_WINDOW,
+                "tipo_brier": metrics["kind"],
+                "brier": None if metrics["brier"] is None else round(metrics["brier"], 4),
+                "baseline_brier": None if metrics["baseline_brier"] is None else round(metrics["baseline_brier"], 4),
+                "brier_skill_score": None if metrics["skill"] is None else round(metrics["skill"], 4),
+                "ventaja_local_elo": self.home_advantage(sport),
+                "motivo_calibracion": calibration_reason,
+                "modelo_activo": bool(calibrados >= 2 and metrics["active"]),
             }
         return out
 

@@ -2,3 +2,10 @@ __pycache__/
 *.py[cod]
 .DS_Store
 .streamlit/secrets.toml
+
+# Estado privado: no debe publicarse en un repositorio público.
+state/promotions.json
+state/physical_status.json
+state/team_aliases.json
+state/movement_history.json
+blindado_estado_privado.json
