@@ -1,0 +1,53 @@
+name: Backtest de parámetros Elo (Blindado)
+
+# Corre semanal (no diario: es un reporte de diagnóstico, no cambia nada en
+# producción) y también se puede disparar a mano desde "Actions". Usa el
+# GITHUB_TOKEN automático — no hace falta ningún secret nuevo. Este workflow
+# NUNCA modifica state/elo_state.json ni BRIER_MAX/ELO_K/ELO_HOME en
+# blindado_core.py: solo lee state/results/results.json (ya generado por el
+# workflow de entrenamiento) y publica un reporte para que una persona
+# decida, con evidencia, si vale la pena ajustar algo a mano.
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"  # lunes 10:00 UTC (~06:00 en Santo Domingo, GMT-4)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blindado-state-write
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v5
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias mínimas (sin streamlit: no hace falta en CI)
+        run: pip install requests
+
+      - name: Correr backtest offline (solo lectura de results.json)
+        run: |
+          if [ ! -f state/results/results.json ]; then
+            echo "No existe state/results/results.json todavía — corre primero el workflow de entrenamiento Elo."
+            exit 0
+          fi
+          python elo_backtest.py --output state/elo_backtest_report.md
+
+      - name: Commitear el reporte si cambió
+        run: |
+          git config user.name "blindado-bot"
+          git config user.email "blindado-bot@users.noreply.github.com"
+          git pull --rebase
+          git add state/elo_backtest_report.md
+          git diff --cached --quiet || git commit -m "Actualiza reporte de backtest Elo (automático, no cambia parámetros)"
+          git push
