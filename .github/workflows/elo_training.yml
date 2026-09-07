@@ -1,1 +1,51 @@
+name: Entrenamiento Elo Blindado
 
+# Corre todos los días y también se puede disparar a mano desde la pestaña
+# "Actions" del repo (workflow_dispatch). Usa el GITHUB_TOKEN que GitHub
+# inyecta automáticamente en cada corrida — no hace falta guardar ninguna
+# credencial nueva en Secrets para esto.
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # 09:00 UTC (~05:00 en Santo Domingo, GMT-4)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias mínimas (sin streamlit: no hace falta en CI)
+        run: pip install requests
+
+      - name: Descargar resultados finalizados (fase 1: NBA/NFL/NHL/MLB vía ESPN)
+        shell: bash
+        run: |
+          if [ -f state/results/results.json ]; then
+            python fetch_results_espn.py --days-back 3
+          else
+            echo "Primera corrida: creando histórico inicial para calibrar Elo."
+            python fetch_results_espn.py --sports basketball baseball ice-hockey --days-back 60
+            python fetch_results_espn.py --sports american-football --days-back 365
+          fi
+
+      - name: Entrenar Elo (cronológico, idempotente)
+        run: python elo_trainer.py
+
+      - name: Commitear state/ actualizado si hubo cambios
+        run: |
+          git config user.name "blindado-bot"
+          git config user.email "blindado-bot@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet || git commit -m "Actualiza Elo y resultados (automático)"
+          git push
