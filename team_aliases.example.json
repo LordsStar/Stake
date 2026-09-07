@@ -1,0 +1,12 @@
+{
+  "_comentario": "Formato: { deporte: { nombre_normalizado: id_canonico } }. Este archivo es solo un ejemplo — la app usa team_aliases.json (vacío al inicio). Agrega entradas aquí conforme detectes variantes de nombre entre Stake y las fuentes de resultados.",
+  "baseball": {
+    "ny yankees": "new_york_yankees",
+    "new york yankees": "new_york_yankees",
+    "nyy": "new_york_yankees"
+  },
+  "basketball": {
+    "la lakers": "los_angeles_lakers",
+    "los angeles lakers": "los_angeles_lakers"
+  }
+}
