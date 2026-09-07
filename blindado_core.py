@@ -76,7 +76,7 @@ PHYSICAL_STATUS_FILE = STATE_DIR / "physical_status.json"
 TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
-ELO_SCHEMA_VERSION = 2
+ELO_SCHEMA_VERSION = 3
 
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
@@ -227,7 +227,13 @@ ELO_K = 20.0
 ELO_HOME = 50.0
 ELO_MIN_GAMES = 5
 BRIER_MAX = 0.23
-BRIER_MIN = 8
+# v6.2.3: subido de 8 a 30. Con n=8, un modelo PERFECTAMENTE calibrado a
+# p=0.58 (ventaja de local típica) mide un Brier que varía entre 0.196 y
+# 0.296 en el 90% de los casos, solo por ruido de muestra — ese rango
+# cubre casi todo el margen entre "razonable" y "peor que 50/50". Con n=30
+# el rango baja a ~[0.219, 0.267]: sigue siendo ruidoso, pero ya no puede
+# certificar ni rechazar un modelo por pura casualidad de 8 partidos.
+BRIER_MIN = 30
 
 BLINDADO_PROMPT = """
 PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v6 — Stake First, Gated)
@@ -1237,7 +1243,18 @@ class EloModel:
     def update(self, sport: str, home_id: str, away_id: str, home_win: float, game_id: str) -> bool:
         """Genera la predicción con los ratings PREVIOS antes de actualizar
         (anti-fuga de información) y solo entonces mueve el Elo. Devuelve
-        False si el game_id ya fue procesado (idempotente)."""
+        False si el game_id ya fue procesado (idempotente).
+
+        El Brier de calibración SOLO incorpora partidos donde AMBOS equipos
+        ya tenían >= ELO_MIN_GAMES antes de este partido (v6.2.3). Los
+        primeros partidos de cada equipo se predicen con ELO_INITIAL para
+        ambos lados (esencialmente una moneda ajustada solo por ventaja de
+        local) — incluir esos errores de arranque en frío en el Brier para
+        siempre sesgaba el gate hacia arriba de forma permanente, sin
+        relación con qué tan bueno es el Elo una vez que los equipos ya
+        tienen historial real. draw_stats NO se filtra igual a propósito:
+        su función es medir la tasa de empate real de la competencia, algo
+        que no depende de si los equipos específicos ya están calibrados."""
         processed = self.state.setdefault("processed", {}).setdefault(sport, [])
         if game_id in processed:
             return False
@@ -1245,11 +1262,13 @@ class EloModel:
         h = ratings.setdefault(home_id, {"elo": ELO_INITIAL, "games": 0})
         a = ratings.setdefault(away_id, {"elo": ELO_INITIAL, "games": 0})
         p = self.probability(h["elo"], a["elo"])  # con el rating ANTERIOR
+        ambos_calibrados_antes = h["games"] >= ELO_MIN_GAMES and a["games"] >= ELO_MIN_GAMES
         h["elo"] += ELO_K * (home_win - p)
         a["elo"] += ELO_K * ((1 - home_win) - (1 - p))
         h["games"] += 1
         a["games"] += 1
-        self.state.setdefault("brier", {}).setdefault(sport, []).append({"p": p, "y": home_win})
+        if ambos_calibrados_antes:
+            self.state.setdefault("brier", {}).setdefault(sport, []).append({"p": p, "y": home_win})
         draw_stats = self.state.setdefault("draw_stats", {}).setdefault(sport, {"total": 0, "draws": 0})
         draw_stats["total"] += 1
         if home_win == 0.5:
