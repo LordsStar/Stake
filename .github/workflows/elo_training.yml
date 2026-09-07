@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalar dependencias mínimas (sin streamlit: no hace falta en CI)
+      - name: Instalar dependencias mínimas
         run: pip install requests
 
-      - name: Descargar resultados finalizados (fase 1: NBA/NFL/NHL/MLB vía ESPN)
+      - name: Descargar resultados finalizados
         shell: bash
         run: |
           if [ -f state/results/results.json ]; then
