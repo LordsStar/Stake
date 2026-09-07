@@ -48,8 +48,8 @@ jobs:
             python fetch_results_espn.py --sports american-football --days-back 365
           fi
 
-      - name: Ampliar histórico con fuente multideporte gratuita
-        run: python fetch_results_free.py --snapshot snapshot.json --max-leagues 40
+      - name: Ampliar histórico con fuentes multideporte gratuitas
+        run: python fetch_results_free.py --snapshot snapshot.json --max-leagues 0
 
       - name: Entrenar Elo (reconstrucción cronológica)
         # Una fuente nueva puede agregar un partido anterior a los ya
@@ -60,6 +60,6 @@ jobs:
         run: |
           git config user.name "blindado-bot"
           git config user.email "blindado-bot@users.noreply.github.com"
-          git add state/results/results.json state/elo_state.json
+          git add state/results/results.json state/elo_state.json state/source_coverage.json
           git diff --cached --quiet || git commit -m "Actualiza Elo y resultados (automático)"
           git push
