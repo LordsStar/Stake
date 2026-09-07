@@ -1235,8 +1235,8 @@
         "games": 1
       },
       "bristol city": {
-        "elo": 1488.430064953105,
-        "games": 1
+        "elo": 1490.3665235442422,
+        "games": 2
       },
       "millwall": {
         "elo": 1511.569935046895,
@@ -1256,6 +1256,62 @@
       },
       "west bromwich albion": {
         "elo": 1511.569935046895,
+        "games": 1
+      },
+      "stoke city": {
+        "elo": 1480.0880180373094,
+        "games": 2
+      },
+      "swansea city": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "charlton athletic": {
+        "elo": 1519.8068424849805,
+        "games": 2
+      },
+      "derby county": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "portsmouth": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "queens park rangers": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "sheffield united": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "birmingham city": {
+        "elo": 1499.6334764557578,
+        "games": 2
+      },
+      "watford": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "southampton": {
+        "elo": 1499.9119819626906,
+        "games": 2
+      },
+      "burnley": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "west ham united": {
+        "elo": 1490.1931575150195,
+        "games": 2
+      },
+      "cardiff city": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "wrexham": {
+        "elo": 1501.569935046895,
         "games": 1
       }
     },
@@ -1557,6 +1613,68 @@
       "fiorentina": {
         "elo": 1479.9119819626906,
         "games": 2
+      }
+    },
+    "soccer:iraqi-league": {
+      "brentford": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "tottenham hotspur": {
+        "elo": 1480.1931575150195,
+        "games": 2
+      },
+      "manchester city": {
+        "elo": 1519.7624853435607,
+        "games": 2
+      },
+      "bournemouth": {
+        "elo": 1490.2375146564393,
+        "games": 2
+      },
+      "brighton and hove albion": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "aston villa": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "newcastle united": {
+        "elo": 1509.8068424849805,
+        "games": 2
+      },
+      "liverpool": {
+        "elo": 1499.9559588859129,
+        "games": 2
+      },
+      "fulham": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "chelsea": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "crystal palace": {
+        "elo": 1488.6675796095444,
+        "games": 1
+      },
+      "nottingham forest": {
+        "elo": 1501.613976160982,
+        "games": 1
+      },
+      "everton": {
+        "elo": 1501.3324203904556,
+        "games": 1
+      },
+      "coventry city": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "hull city": {
+        "elo": 1511.569935046895,
+        "games": 1
       }
     },
     "handball:damehandboldligaen": {
@@ -8328,7 +8446,17 @@
       "thesportsdb:2501250",
       "thesportsdb:2501251",
       "thesportsdb:2501252",
-      "thesportsdb:2501253"
+      "thesportsdb:2501253",
+      "thesportsdb:2501254",
+      "thesportsdb:2501255",
+      "thesportsdb:2501256",
+      "thesportsdb:2501257",
+      "thesportsdb:2501258",
+      "thesportsdb:2501259",
+      "thesportsdb:2501260",
+      "thesportsdb:2501263",
+      "thesportsdb:2501261",
+      "thesportsdb:2501262"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -8402,6 +8530,18 @@
       "thesportsdb:2482155",
       "thesportsdb:2482157",
       "thesportsdb:2482153"
+    ],
+    "soccer:iraqi-league": [
+      "thesportsdb:2494005",
+      "thesportsdb:2494006",
+      "thesportsdb:2494007",
+      "thesportsdb:2494008",
+      "thesportsdb:2494009",
+      "thesportsdb:2494015",
+      "thesportsdb:2494012",
+      "thesportsdb:2494011",
+      "thesportsdb:2494019",
+      "thesportsdb:2494013"
     ],
     "handball:damehandboldligaen": [
       "thesportsdb:2527511",
@@ -8601,8 +8741,8 @@
       "draws": 0
     },
     "soccer:championship": {
-      "total": 5,
-      "draws": 1
+      "total": 15,
+      "draws": 5
     },
     "soccer:prva-liga": {
       "total": 15,
@@ -8619,6 +8759,10 @@
     "soccer:brasileiro-serie-a": {
       "total": 15,
       "draws": 1
+    },
+    "soccer:iraqi-league": {
+      "total": 10,
+      "draws": 3
     },
     "handball:damehandboldligaen": {
       "total": 15,

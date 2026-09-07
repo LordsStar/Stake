@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-07T22:25:12.779749+00:00",
-  "targets_in_snapshot": 192,
-  "targets_processed": 192,
+  "generated_at": "2026-09-07T23:00:33.507689+00:00",
+  "targets_in_snapshot": 191,
+  "targets_processed": 191,
   "matched": [
     {
       "sport": "aussie-rules",
@@ -263,6 +263,7 @@
     "darts/pdc-world-series-of-darts-finals: sin liga equivalente segura",
     "dota-2/epl-masters-ii-t8: sin liga equivalente segura",
     "dota-2-duels/berserk-dota-2-league-2026-week-37-t7: sin liga equivalente segura",
+    "ecricket/yodha-premier-league-super-over-2026-week-37-t8: sin liga equivalente segura",
     "efootball-bots/absolute-legends-efootball-1-2026-week-37-t6: sin liga equivalente segura",
     "efootball-bots/absolute-legends-efootball-2-2026-week-37-t6: sin liga equivalente segura",
     "efootball-bots/absolute-legends-efootball-3-2026-week-37-t6: sin liga equivalente segura",
@@ -274,8 +275,6 @@
     "fifa/valkyrie-cup-2026-week-37-t4: sin liga equivalente segura",
     "floorball/eliteserien: sin liga equivalente segura",
     "handball/handboldligaen: sin liga equivalente segura",
-    "kings-of-glory/king-pro-league-summer-2026-t9: sin liga equivalente segura",
-    "kings-of-glory/kpl-growth-league-summer-2026-t10: sin liga equivalente segura",
     "league-of-legends/lck-2026-season-playoffs-t3: sin liga equivalente segura",
     "league-of-legends/lck-cl-2026-season-playoffs-t5: sin liga equivalente segura",
     "league-of-legends/lcs-2026-summer-playoffs-t4: sin liga equivalente segura",
@@ -300,6 +299,7 @@
     "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
     "rugby/mitre-10-cup: sin liga equivalente segura",
     "rugby/nrl: sin liga equivalente segura",
+    "snooker/english-open: sin liga equivalente segura",
     "soccer/1-liga: sin liga equivalente segura",
     "soccer/2nd-division-league: sin liga equivalente segura",
     "soccer/3rd-liga: sin liga equivalente segura",
@@ -365,7 +365,6 @@
     "soccer/usl-league-one-cup: sin liga equivalente segura",
     "soccer/veikkausliiga: sin liga equivalente segura",
     "table-tennis/czech-liga-pro: sin liga equivalente segura",
-    "table-tennis/tt-elite-series: sin liga equivalente segura",
     "tennis/atp-challenger-cassis-france-men-singles: sin liga equivalente segura",
     "tennis/atp-challenger-genoa-italy-men-double: sin liga equivalente segura",
     "tennis/atp-challenger-genoa-italy-men-singles: sin liga equivalente segura",
@@ -388,8 +387,8 @@
     "valorant/valorant-china-evolution-series-2026-act-3-t8: sin liga equivalente segura",
     "valorant/vct-2026-game-changers-north-america-stage-2-t10: sin liga equivalente segura"
   ],
-  "rows_collected": 760,
-  "rows_added": 96,
+  "rows_collected": 828,
+  "rows_added": 20,
   "schema_rejections": [],
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
