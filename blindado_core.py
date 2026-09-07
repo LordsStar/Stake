@@ -597,7 +597,11 @@ def stake_market_key(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", n).strip("_") or "market"
 
 
-def event_to_dict(e: NormalizedEvent) -> Dict[str, Any]:
+def event_to_dict(e: NormalizedEvent, markets_filter: Optional[Iterable[str]] = None) -> Dict[str, Any]:
+    markets = e.markets
+    if markets_filter is not None:
+        allowed = set(markets_filter)
+        markets = [m for m in markets if m.key in allowed]
     return {
         "event_id": e.event_id,
         "source": e.source,
@@ -611,9 +615,31 @@ def event_to_dict(e: NormalizedEvent) -> Dict[str, Any]:
         "last_update": e.last_update,
         "markets": [
             {"key": m.key, "name": m.name, "outcomes": [asdict(o) for o in m.outcomes]}
-            for m in e.markets
+            for m in markets
         ],
     }
+
+
+PICK_ENGINE_MARKET_KEYS = ("moneyline", "draw_no_bet")
+
+
+def event_to_dict_pick_markets(e: NormalizedEvent) -> Dict[str, Any]:
+    """Serializa el evento SOLO con las claves de mercado que el motor de
+    picks realmente evalúa (moneyline/draw_no_bet). Pensado para
+    market_snapshot_job.py: el snapshot existe únicamente como respaldo de
+    liquidez/divergencia para el motor — nunca se inspecciona su árbol
+    completo de mercados desde la UI como sí pasa con los eventos Stake en
+    vivo en la pestaña "Eventos normalizados". Totales, hándicaps y props
+    de un solo evento pueden sumar cientos de líneas (un solo evento de
+    esports con props de jugador ya vale más que muchos eventos completos
+    de otros deportes juntos); multiplicado por ~150 eventos en 16
+    deportes, eso es lo que hacía que snapshot.json superara el límite de
+    seguridad de 25 MB en cloud_snapshot_reader.py y tumbara el fallback
+    de Bovada COMPLETO, incluso para deportes que no tenían nada que ver
+    con el fallo original. No se pierde nada que el motor use: tanto
+    market_odds() como build_elo_model() ya filtran a estas mismas dos
+    claves antes de este cambio."""
+    return event_to_dict(e, markets_filter=PICK_ENGINE_MARKET_KEYS)
 
 
 def dedupe_events(events: List[NormalizedEvent]) -> List[NormalizedEvent]:

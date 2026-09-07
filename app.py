@@ -439,11 +439,13 @@ def main():
     if st.button("🚀 Actualizar datos deportivos", type="primary"):
         try:
             movement: Dict[str, Any] = {}
+            datos_de_snapshot = False
             if data_source == "Snapshot remoto":
                 with st.spinner("Descargando snapshot verificado..."):
                     stake_events, bovada_events, no_disponibles, movement = load_remote_snapshot_fallback(
                         selected, snapshot_repo, snapshot_path, snapshot_branch
                     )
+                datos_de_snapshot = True
             else:
                 stake = core.StakeSportsDataCollector(
                     delay=float(stake_delay), max_workers=int(stake_workers),
@@ -487,9 +489,11 @@ def main():
                         stake_events, bovada_events, no_disponibles, movement = load_remote_snapshot_fallback(
                             selected, snapshot_repo, snapshot_path, snapshot_branch
                         )
+                    datos_de_snapshot = True
 
             st.session_state["stake_events"] = core.dedupe_events(stake_events)
             st.session_state["bovada_events"] = core.dedupe_events(bovada_events if bovada_enabled else [])
+            st.session_state["datos_de_snapshot"] = datos_de_snapshot
             if movement:
                 core.merge_movement_history(movement)
             st.session_state["movement_history"] = core.append_movement_history(st.session_state["stake_events"])
@@ -586,6 +590,14 @@ def main():
         st.write("**Matriz de capacidad real**")
         render_capability_matrix(stake_events, elo)
         st.divider()
+        if st.session_state.get("datos_de_snapshot"):
+            st.info(
+                "Estos eventos vienen del snapshot remoto, no de la API en vivo. "
+                "Desde v6.2.1 el snapshot solo guarda moneyline/draw_no_bet (las "
+                "únicas claves que usa el motor de picks) para evitar que el "
+                "archivo supere el límite de 25 MB. Totales, hándicaps y props "
+                "completos solo se ven aquí en modo 'API oficial + respaldo automático'."
+            )
         if stake_events:
             market_counts: Dict[str, int] = {}
             rows = []
