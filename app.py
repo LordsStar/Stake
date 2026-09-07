@@ -395,6 +395,18 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # ============================================================
 def main():
     st.set_page_config(page_title="Blindado v6 — Gated / Stake First", layout="wide")
+    required_core = (
+        "load_public_promotions", "pick_capability", "elo_namespace",
+        "merge_movement_history", "export_private_state", "import_private_state",
+    )
+    missing_core = [name for name in required_core if not hasattr(core, name)]
+    if missing_core:
+        st.error(
+            "Instalación incompleta: app.py es más nuevo que blindado_core.py. "
+            "Reemplaza ambos archivos usando el mismo ZIP y reinicia la app. "
+            f"Funciones ausentes: {', '.join(missing_core)}"
+        )
+        st.stop()
     st.title("🎯 Blindado v6 — Stake First, con Gates Obligatorios")
     st.caption(
         "Elo = único modelo estadístico válido · Bovada = solo referencia/liquidez · "
