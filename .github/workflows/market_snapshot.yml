@@ -1,0 +1,44 @@
+name: Snapshot de mercados Blindado
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blindado-state-writer
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Dependencias
+        run: pip install requests
+
+      - name: Actualizar rama
+        run: git pull --rebase origin main
+
+      - name: Generar snapshot público
+        run: python market_snapshot_job.py
+
+      - name: Guardar snapshot
+        run: |
+          git config user.name "blindado-bot"
+          git config user.email "blindado-bot@users.noreply.github.com"
+          git add snapshot.json
+          git diff --cached --quiet || git commit -m "Actualiza snapshot de mercados"
+          git push

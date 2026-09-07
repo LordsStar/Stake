@@ -13,20 +13,29 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: blindado-state-writer
+  cancel-in-progress: false
+
 jobs:
   train:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Instalar dependencias mínimas
         run: pip install requests
+
+      - name: Actualizar rama
+        run: git pull --rebase origin main
 
       - name: Descargar resultados finalizados
         shell: bash
@@ -39,13 +48,18 @@ jobs:
             python fetch_results_espn.py --sports american-football --days-back 365
           fi
 
-      - name: Entrenar Elo (cronológico, idempotente)
-        run: python elo_trainer.py
+      - name: Ampliar histórico con fuente multideporte gratuita
+        run: python fetch_results_free.py --snapshot snapshot.json --max-leagues 40
+
+      - name: Entrenar Elo (reconstrucción cronológica)
+        # Una fuente nueva puede agregar un partido anterior a los ya
+        # procesados; reconstruir evita aplicar ese resultado fuera de orden.
+        run: python elo_trainer.py --reset
 
       - name: Commitear state/ actualizado si hubo cambios
         run: |
           git config user.name "blindado-bot"
           git config user.email "blindado-bot@users.noreply.github.com"
-          git add state/
+          git add state/results/results.json state/elo_state.json
           git diff --cached --quiet || git commit -m "Actualiza Elo y resultados (automático)"
           git push
