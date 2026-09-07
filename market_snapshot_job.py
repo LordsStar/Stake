@@ -14,7 +14,7 @@ from blindado_core import (
     append_movement_history,
     bovada_key_for_event,
     dedupe_events,
-    event_to_dict,
+    event_to_dict_pick_markets,
     load_json,
     merge_movement_history,
     utc_now,
@@ -50,17 +50,33 @@ def main() -> int:
     payload = {
         "schema_version": 2,
         "generado_utc": utc_now().isoformat(),
-        "stake_events": [event_to_dict(e) for e in dedupe_events(stake_events)],
-        "bovada_events": [event_to_dict(e) for e in dedupe_events(bovada_events)],
+        # Solo moneyline/draw_no_bet: son las únicas claves que el motor de
+        # picks evalúa (ver market_odds()/build_elo_model()). El snapshot
+        # es respaldo de liquidez para el motor, no una copia de inspección
+        # de totales/hándicaps/props — esas líneas sobraban y hacían que el
+        # archivo superara el límite de seguridad de 25 MB en
+        # cloud_snapshot_reader.py, tumbando el fallback de Bovada COMPLETO
+        # (incluido soccer, que no tenía nada que ver con el fallo original).
+        "stake_events": [event_to_dict_pick_markets(e) for e in dedupe_events(stake_events)],
+        "bovada_events": [event_to_dict_pick_markets(e) for e in dedupe_events(bovada_events)],
         "bovada_no_disponible": unavailable,
         "stake_errors": stake.errors,
         "movement_history": movement,
     }
-    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    raw = json.dumps(payload, ensure_ascii=False, indent=2)
+    output.write_text(raw, encoding="utf-8")
+    size_mb = len(raw.encode("utf-8")) / 1_000_000
     print(
         f"Snapshot: {len(stake_events)} Stake, {len(bovada_events)} Bovada; "
-        f"Bovada no disponible: {unavailable or 'ninguno'}"
+        f"Bovada no disponible: {unavailable or 'ninguno'}; "
+        f"tamaño: {size_mb:.2f} MB (límite de seguridad de lectura: 25 MB)"
     )
+    if size_mb > 20:
+        print(
+            "[aviso] el snapshot está cerca del límite de 25 MB pese al filtro "
+            "a moneyline/draw_no_bet. Si esto se repite, revisar volumen de "
+            "eventos por deporte en DEFAULT_SPORTS antes de tocar el límite."
+        )
     return 0 if stake_events else 1
 
 
