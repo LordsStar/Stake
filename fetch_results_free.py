@@ -1,0 +1,241 @@
+"""Ingesta multideporte gratuita desde TheSportsDB v1.
+
+Lee las ligas presentes en snapshot.json, busca una liga equivalente en la
+base pública y descarga sus últimos resultados. Una coincidencia débil se
+rechaza: ampliar cobertura nunca significa mezclar ligas por aproximación.
+"""
+
+import argparse
+import difflib
+import io
+import json
+import re
+import time
+import zipfile
+from datetime import datetime, timezone
+from pathlib import Path
+
+import requests
+
+from blindado_core import merge_results
+
+BASE = "https://www.thesportsdb.com/api/v1/json/123"
+CRICSHEET_RECENT = "https://cricsheet.org/downloads/recently_played_30_json.zip"
+OPENDOTA_PRO_MATCHES = "https://api.opendota.com/api/proMatches"
+_LAST_THESPORTSDB_CALL = 0.0
+SPORT_NAMES = {
+    "soccer": {"soccer"},
+    "tennis": {"tennis"},
+    "mma": {"fighting", "mma", "mixed martial arts"},
+    "boxing": {"fighting", "boxing"},
+    "cricket": {"cricket"},
+    "rugby": {"rugby", "rugby union", "rugby league"},
+    "volleyball": {"volleyball"},
+    "table-tennis": {"table tennis"},
+    "counter-strike": {"esports"},
+    "dota-2": {"esports"},
+    "league-of-legends": {"esports"},
+    "valorant": {"esports"},
+}
+
+
+def norm(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (value or "").lower()).strip()
+
+
+def score(a: str, b: str) -> float:
+    a, b = norm(a), norm(b)
+    if not a or not b:
+        return 0.0
+    seq = difflib.SequenceMatcher(None, a, b).ratio()
+    ta, tb = set(a.split()), set(b.split())
+    jac = len(ta & tb) / len(ta | tb) if ta and tb else 0.0
+    return max(seq, jac)
+
+
+def get_json(path: str, **params):
+    global _LAST_THESPORTSDB_CALL
+    # El nivel gratuito publica 30 solicitudes/minuto. Mantener 2.1 s entre
+    # llamadas evita que un catálogo grande convierta el workflow en 429.
+    wait = 2.1 - (time.monotonic() - _LAST_THESPORTSDB_CALL)
+    if wait > 0:
+        time.sleep(wait)
+    for attempt in range(3):
+        response = requests.get(f"{BASE}/{path}", params=params, timeout=25)
+        _LAST_THESPORTSDB_CALL = time.monotonic()
+        if response.status_code != 429:
+            response.raise_for_status()
+            return response.json()
+        if attempt < 2:
+            time.sleep(60)
+    response.raise_for_status()
+
+
+def load_targets(snapshot_path: Path):
+    payload = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    targets = set()
+    for event in payload.get("stake_events", []):
+        sport, league = event.get("sport", ""), event.get("league", "")
+        if sport in SPORT_NAMES and league:
+            targets.add((sport, league))
+    return sorted(targets)
+
+
+def cricsheet_rows(targets):
+    """Resultados recientes de cricket, publicados gratis en JSON por Cricsheet."""
+    if not any(sport == "cricket" for sport, _ in targets):
+        return []
+    response = requests.get(CRICSHEET_RECENT, timeout=60)
+    response.raise_for_status()
+    rows = []
+    with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+        for filename in archive.namelist():
+            if not filename.endswith(".json"):
+                continue
+            match = json.loads(archive.read(filename))
+            info = match.get("info") or {}
+            teams = info.get("teams") or []
+            outcome = info.get("outcome") or {}
+            winner = outcome.get("winner")
+            result = str(outcome.get("result") or "").lower()
+            if len(teams) != 2 or (not winner and result not in {"tie", "draw"}):
+                continue
+            home, away = teams
+            hs, aw = ((1, 0) if winner == home else ((0, 1) if winner == away else (1, 1)))
+            dates = info.get("dates") or []
+            if not dates:
+                continue
+            match_type = str(info.get("match_type") or "all").lower()
+            event_name = str((info.get("event") or {}).get("name") or "cricket")
+            rows.append({
+                "sport": "cricket",
+                "league": f"{event_name} {match_type}",
+                "event_id": f"cricsheet:{Path(filename).stem}",
+                "start_time": f"{dates[0]}T00:00:00Z",
+                "home_name": home,
+                "away_name": away,
+                # Cricsheet declara el ganador; estos valores codifican el
+                # resultado para Elo y no pretenden ser el total de carreras.
+                "home_score": hs,
+                "away_score": aw,
+                "status": "final",
+                "source": "cricsheet",
+                "score_encoding": "winner_indicator",
+            })
+    return rows
+
+
+def opendota_rows(targets):
+    """Partidos profesionales Dota 2 recientes desde la API pública OpenDota."""
+    if not any(sport == "dota-2" for sport, _ in targets):
+        return []
+    response = requests.get(OPENDOTA_PRO_MATCHES, timeout=30)
+    response.raise_for_status()
+    rows = []
+    for match in response.json() or []:
+        radiant, dire = match.get("radiant_name"), match.get("dire_name")
+        match_id, started = match.get("match_id"), match.get("start_time")
+        if not radiant or not dire or match_id is None or started is None or match.get("radiant_win") is None:
+            continue
+        radiant_win = bool(match["radiant_win"])
+        rows.append({
+            "sport": "dota-2",
+            "league": "professional",
+            "event_id": f"opendota:{match_id}",
+            "start_time": datetime.fromtimestamp(int(started), tz=timezone.utc).isoformat(),
+            "home_name": radiant,
+            "away_name": dire,
+            "home_score": 1 if radiant_win else 0,
+            "away_score": 0 if radiant_win else 1,
+            "status": "final",
+            "source": "opendota",
+            "score_encoding": "winner_indicator",
+        })
+    return rows
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--snapshot", default="snapshot.json")
+    parser.add_argument("--max-leagues", type=int, default=40)
+    args = parser.parse_args()
+    snapshot = Path(args.snapshot)
+    if not snapshot.exists():
+        print("Sin snapshot.json: primero ejecuta el workflow de mercados.")
+        return 0
+
+    targets = load_targets(snapshot)[: max(1, args.max_leagues)]
+    all_leagues = get_json("all_leagues.php").get("leagues") or []
+    # El endpoint general gratuito puede devolver solo el catálogo destacado.
+    # Se amplía por deporte y se deduplica por id.
+    by_id = {l.get("idLeague"): l for l in all_leagues if l.get("idLeague")}
+    for sport_name in sorted({name for sport, _ in targets for name in SPORT_NAMES[sport]}):
+        try:
+            for league in get_json("search_all_leagues.php", s=sport_name.title()).get("countries") or []:
+                if league.get("idLeague"):
+                    by_id[league["idLeague"]] = league
+        except Exception as exc:
+            print(f"[aviso] catálogo {sport_name}: {exc}")
+    all_leagues = list(by_id.values())
+    rows, rejected = [], []
+    for sport, stake_league in targets:
+        allowed = SPORT_NAMES[sport]
+        candidates = [l for l in all_leagues if norm(l.get("strSport", "")) in allowed]
+        ranked = sorted(((score(stake_league, l.get("strLeague", "")), l) for l in candidates), reverse=True, key=lambda x: x[0])
+        if not ranked or ranked[0][0] < 0.55:
+            rejected.append(f"{sport}/{stake_league}: sin liga equivalente segura")
+            continue
+        similarity, league = ranked[0]
+        events = []
+        try:
+            detail = (get_json("lookupleague.php", id=league["idLeague"]).get("leagues") or [{}])[0]
+            season = detail.get("strCurrentSeason")
+            if season:
+                events = get_json("eventsseason.php", id=league["idLeague"], s=season).get("events") or []
+        except Exception:
+            events = []
+        if not events:
+            events = get_json("eventspastleague.php", id=league["idLeague"]).get("events") or []
+        accepted = 0
+        for event in events:
+            hs, aw = event.get("intHomeScore"), event.get("intAwayScore")
+            home, away = event.get("strHomeTeam"), event.get("strAwayTeam")
+            if hs in (None, "") or aw in (None, "") or not home or not away:
+                continue
+            start = event.get("strTimestamp") or f"{event.get('dateEvent', '')}T{event.get('strTime') or '00:00:00'}Z"
+            if not event.get("idEvent"):
+                continue
+            rows.append({
+                "sport": sport,
+                "league": stake_league,
+                "event_id": f"thesportsdb:{event['idEvent']}",
+                "start_time": start,
+                "home_name": home,
+                "away_name": away,
+                "home_score": hs,
+                "away_score": aw,
+                "status": "final",
+                "source": "thesportsdb",
+            })
+            accepted += 1
+        print(f"{sport}/{stake_league} -> {league['strLeague']} ({similarity:.2f}): {accepted}")
+
+    for source_name, loader in (("Cricsheet", cricsheet_rows), ("OpenDota", opendota_rows)):
+        try:
+            source_rows = loader(targets)
+            rows.extend(source_rows)
+            print(f"{source_name}: {len(source_rows)} resultados normalizados")
+        except Exception as exc:
+            # Una fuente auxiliar caída no borra ni invalida lo recogido por
+            # las otras. El evento solo pasará si finalmente existe cobertura.
+            print(f"[aviso] {source_name} no disponible: {exc}")
+
+    added, errors = merge_results(rows)
+    print(f"Resultados gratuitos nuevos: {added}; rechazados por esquema: {len(errors)}")
+    for message in rejected:
+        print(f"[sin cobertura] {message}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

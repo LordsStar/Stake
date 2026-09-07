@@ -7,6 +7,7 @@ la interfaz, botones y el flujo de datos.
 """
 
 import os
+import json
 from typing import Any, Dict, List, Tuple
 
 import streamlit as st
@@ -54,7 +55,10 @@ def load_remote_snapshot_fallback(
     if selected_set & core.ESPORTS_SLUGS:
         selected_set.add("esports")
     stake_events = [e for e in stake_events if e.sport in selected_set]
-    movement = {"timestamp": snapshot.get("generado_utc"), "movements": snapshot.get("movimientos", [])}
+    movement = snapshot.get("movement_history")
+    if not isinstance(movement, dict):
+        legacy = snapshot.get("movimientos")
+        movement = legacy if isinstance(legacy, dict) else {}
     return stake_events, bovada_events, snapshot.get("bovada_no_disponible", []), movement
 
 
@@ -69,17 +73,30 @@ def render_health_panel(
     promotions: List[Dict[str, Any]],
 ):
     st.subheader("🩺 Panel de salud")
-    cols = st.columns(5)
+    public_promotions = core.load_public_promotions(active_only=True)
+    downloaded_markets = sum(len(e.markets) for e in stake_events)
+    evaluable_markets = sum(
+        1 for e in stake_events for m in e.markets if m.key in ("moneyline", "draw_no_bet")
+    )
+    cols = st.columns(6)
     cols[0].metric("Eventos Stake", len(stake_events))
     cols[1].metric("Eventos Bovada", len(bovada_events))
+    cols[2].metric("Mercados descargados", downloaded_markets)
+    cols[3].metric("Mercados evaluables", evaluable_markets, help="Solo moneyline y draw-no-bet entran al motor Blindado.")
+    cols[4].metric("Promos públicas activas", len(public_promotions))
+    cols[5].metric("Promos personales", sum(1 for p in promotions if p.get("confirmed_eligible")))
 
     coverage = elo.coverage()
-    equipos_calibrados = sum(v.get("equipos_calibrados", 0) for v in coverage.values())
-    cols[2].metric("Equipos con Elo calibrado", equipos_calibrados)
-
     results = core.load_results()
-    cols[3].metric("Resultados en histórico", len(results))
-    cols[4].metric("Promociones confirmadas", sum(1 for p in promotions if p.get("confirmed_eligible")))
+    st.caption(f"Histórico Elo: {len(results)} resultados. Umbral de calibración Brier: ≤ {core.BRIER_MAX:.2f}.")
+    if downloaded_markets:
+        st.info(
+            "Stake: se descargan y muestran todos los mercados activos devueltos por la API para los fixtures recibidos. "
+            "Blindado usa para picks únicamente moneyline/DNB; totales, hándicaps y props no se evalúan todavía."
+        )
+
+    compatible = sum(1 for e in stake_events if core.pick_capability(e)[0])
+    st.write(f"Eventos con conector Bovada configurado: **{compatible} / {len(stake_events)}**")
 
     with st.expander("Detalle de cobertura Elo por deporte"):
         if not coverage:
@@ -89,7 +106,11 @@ def render_health_panel(
                 "en state/results/results.json."
             )
         for sport, info in coverage.items():
-            st.write(f"**{sport}**: {info['equipos_calibrados']} / {info['equipos_totales']} equipos calibrados (>= {core.ELO_MIN_GAMES} partidos)")
+            icon = "✅" if info.get("modelo_activo") else "⛔"
+            st.write(
+                f"{icon} **{sport}**: {info['equipos_calibrados']} / {info['equipos_totales']} equipos con >= "
+                f"{core.ELO_MIN_GAMES} partidos · Brier {info.get('brier')} ({info.get('predicciones_brier', 0)} predicciones)"
+            )
 
     with st.expander("Registros de estado físico (tenis/MMA/boxeo)"):
         st.write(f"Registros guardados: **{len(physical_registry.data)}**")
@@ -152,7 +173,7 @@ def render_results_manager():
     st.download_button(
         "Descargar plantilla CSV",
         data=(",".join(core.REQUIRED_RESULT_FIELDS) + ",source\n"
-              "basketball,manual:001,2026-09-01T23:00:00Z,Team A,Team B,101,98,final,manual\n"),
+              "basketball,nba,manual:001,2026-09-01T23:00:00Z,Team A,Team B,101,98,final,manual\n"),
         file_name="resultados_plantilla.csv",
         mime="text/csv",
     )
@@ -182,10 +203,14 @@ def render_results_manager():
     st.divider()
     if st.button("🧮 Reentrenar Elo ahora con el histórico actual"):
         elo = core.EloModel()
+        elo.state = {
+            "schema_version": core.ELO_SCHEMA_VERSION,
+            "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
+        }
         aliases = core.TeamAliasRegistry()
         results = core.load_results()
         updated = core.train_elo_from_results(elo, aliases, results)
-        st.success(f"Elo actualizado con {updated} partido(s) nuevo(s) (orden cronológico).")
+        st.success(f"Elo reconstruido con {updated} partido(s) en orden cronológico.")
         st.json(elo.coverage())
 
 
@@ -199,7 +224,7 @@ def render_team_aliases_manager(aliases: "core.TeamAliasRegistry"):
         "'New York Yankees') se traten como equipos distintos en el Elo."
     )
     with st.form("alias_form"):
-        sport = st.text_input("Deporte (slug, ej. 'baseball')")
+        sport = st.text_input("Namespace Elo (ej. 'baseball:mlb')")
         name = st.text_input("Nombre tal como aparece en Stake/resultados")
         canonical = st.text_input("ID canónico a usar (ej. 'new_york_yankees')")
         submitted = st.form_submit_button("Guardar alias")
@@ -213,13 +238,98 @@ def render_team_aliases_manager(aliases: "core.TeamAliasRegistry"):
             st.json(aliases.data)
 
 
+def render_private_state_manager():
+    st.write(
+        "Streamlit Cloud usa disco efímero. Descarga este respaldo después de cambiar alias, "
+        "promociones personales o estados físicos, y restáuralo si el contenedor reinicia. "
+        "El archivo queda en tu dispositivo y no se publica en GitHub."
+    )
+    payload = json.dumps(core.export_private_state(), ensure_ascii=False, indent=2)
+    st.download_button(
+        "⬇️ Descargar respaldo privado",
+        data=payload,
+        file_name="blindado_estado_privado.json",
+        mime="application/json",
+    )
+    uploaded = st.file_uploader("Restaurar respaldo privado", type=["json"], key="private_state_upload")
+    if uploaded is not None and st.button("Restaurar ahora"):
+        try:
+            core.import_private_state(json.loads(uploaded.getvalue().decode("utf-8")))
+            st.success("Estado privado restaurado correctamente.")
+            st.rerun()
+        except Exception as exc:
+            st.error(f"No se pudo restaurar: {exc}")
+
+
+def render_capability_matrix(stake_events: List[core.NormalizedEvent], elo: "core.EloModel"):
+    rows = []
+    seen = set()
+    coverage = elo.coverage()
+    for event in stake_events:
+        key = (event.sport, event.league)
+        if key in seen:
+            continue
+        seen.add(key)
+        ok, reason = core.pick_capability(event)
+        namespace = core.elo_namespace(event.sport, event.league)
+        elo_info = coverage.get(namespace, {})
+        rows.append({
+            "deporte": event.sport,
+            "liga": event.league,
+            "namespace_elo": namespace,
+            "conector_bovada": ok,
+            "elo_activo": bool(elo_info.get("modelo_activo")),
+            "diagnóstico": reason if not ok else (
+                "circuito completo listo" if elo_info.get("modelo_activo")
+                else "conector listo; falta cobertura/calibración Elo para esta competición"
+            ),
+        })
+    if rows:
+        st.dataframe(rows, use_container_width=True)
+    else:
+        st.info("Carga eventos para construir la matriz real de deportes y ligas recibidos.")
+
+
 # ============================================================
 # Gestor de promociones (esquema ampliado)
 # ============================================================
 def render_promotions_manager(promotions: List[Dict[str, Any]]):
+    public_catalog = core.load_public_promotions()
+    confirmations = st.session_state.setdefault("public_promo_confirmations", {})
+    st.subheader("Catálogo público persistente")
     st.caption(
-        "Una promoción SOLO se aplica si marcas 'confirmed_eligible' — nunca "
-        "se asume elegibilidad universal (Regla 9)."
+        "Proviene de state/public_promotions.json. Confirmar elegibilidad solo deja constancia en esta sesión: "
+        "estas promociones públicas no alteran el EV porque la probabilidad de activar el beneficio no puede inventarse."
+    )
+    for p in public_catalog:
+        status = core.public_promotion_status(p)
+        with st.expander(f"{'✅' if status == 'activa' else '⚪'} {p['name']} — {status}"):
+            st.write(p.get("summary", "Consulta los términos oficiales."))
+            details = []
+            if p.get("sport"):
+                details.append(f"Deporte: {p['sport']}")
+            if p.get("ends_on"):
+                details.append(f"Vence: {p['ends_on']}")
+            if p.get("min_bet_usd") is not None:
+                details.append(f"Mínimo: USD {p['min_bet_usd']}")
+            if p.get("max_benefit_usd") is not None:
+                details.append(f"Máximo: USD {p['max_benefit_usd']}")
+            st.write(" · ".join(details))
+            st.link_button("Ver términos oficiales", p["terms_url"])
+            confirmations[p["id"]] = st.checkbox(
+                "Confirmo que aparece y aplica a mi cuenta",
+                value=bool(confirmations.get(p["id"], False)),
+                key=f"public_promo_{p['id']}",
+                disabled=status != "activa",
+            )
+            if confirmations[p["id"]]:
+                st.success("Elegibilidad confirmada por ti. Uso informativo; EV base sin ajuste automático.")
+
+    st.divider()
+    st.subheader("Promociones personales o cuantificables")
+    st.caption(
+        "Añade manualmente solo una promoción personal que veas en tu cuenta. Solo se aplica si confirmas elegibilidad "
+        "y proporcionas sus parámetros; nunca se supone que una promoción sea universal."
     )
     with st.expander("➕ Añadir Odds Boost"):
         c1, c2 = st.columns(2)
@@ -309,10 +419,14 @@ def main():
 
         st.divider()
         st.write("### Fuentes gratuitas")
-        st.write(", ".join(sorted(set(core.FREE_SOURCES.keys()) | set(core.ESPORT_SOURCES.keys()))))
+        st.caption(
+            "Resultados: ESPN + TheSportsDB + Cricsheet + OpenDota. "
+            "Mercado secundario: Bovada. No se usa ninguna fuente de pago."
+        )
 
     if st.button("🚀 Actualizar datos deportivos", type="primary"):
         try:
+            movement: Dict[str, Any] = {}
             if data_source == "Snapshot remoto":
                 with st.spinner("Descargando snapshot verificado..."):
                     stake_events, bovada_events, no_disponibles, movement = load_remote_snapshot_fallback(
@@ -336,6 +450,20 @@ def main():
                     if bovada_enabled and bovada:
                         leagues = sorted({k for e in stake_events if (k := core.bovada_key_for_event(e))})
                         bovada_events, no_disponibles = bovada.fetch_all(leagues)
+                        if no_disponibles and snapshot_repo:
+                            st.warning(
+                                "Bovada directo falló parcialmente. Intentando recuperar únicamente la referencia "
+                                "Bovada desde el snapshot remoto."
+                            )
+                            try:
+                                _, snap_bovada, snap_unavailable, snap_movement = load_remote_snapshot_fallback(
+                                    selected, snapshot_repo, snapshot_path, snapshot_branch
+                                )
+                                bovada_events = core.dedupe_events(bovada_events + snap_bovada)
+                                no_disponibles = snap_unavailable
+                                movement = snap_movement
+                            except Exception as snap_exc:
+                                st.error(f"Fallback Bovada no disponible: {snap_exc}")
                     st.caption("Fuente utilizada: Stake Sports Data API oficial.")
                 except Exception as api_exc:
                     if not snapshot_repo:
@@ -350,13 +478,18 @@ def main():
 
             st.session_state["stake_events"] = core.dedupe_events(stake_events)
             st.session_state["bovada_events"] = core.dedupe_events(bovada_events if bovada_enabled else [])
+            if movement:
+                core.merge_movement_history(movement)
             st.session_state["movement_history"] = core.append_movement_history(st.session_state["stake_events"])
             st.success(
                 f"Cargados {len(st.session_state['stake_events'])} eventos Stake y "
                 f"{len(st.session_state['bovada_events'])} referencias Bovada."
             )
             if no_disponibles:
-                st.warning(f"Bovada no disponible para: {', '.join(no_disponibles)}")
+                st.error(
+                    f"Bovada no disponible para: {', '.join(no_disponibles)}. "
+                    "Esas ligas quedan bloqueadas y no pueden producir pick."
+                )
         except Exception as exc:
             st.session_state["stake_events"] = []
             st.session_state["bovada_events"] = []
@@ -375,7 +508,7 @@ def main():
 
     tabs = st.tabs([
         "🏆 Ejecutar Blindado", "🩹 Estado físico", "📈 Resultados / Elo",
-        "🏷️ Alias de equipos", "🎁 Promociones", "🔎 Eventos normalizados",
+        "🏷️ Alias de equipos", "🎁 Promociones", "🔎 Eventos normalizados", "💾 Estado privado",
     ])
 
     with tabs[0]:
@@ -390,7 +523,20 @@ def main():
                 st.subheader("Resultado")
                 if pick is None:
                     st.error("PICK DEL DÍA: NINGUNO")
-                    st.write("Ningún evento superó simultáneamente TODOS los gates obligatorios (modelo, frescura, liquidez, estado físico si aplica) más EV/confianza/divergencia.")
+                    st.write("Ningún evento superó simultáneamente todos los gates. Las causas exactas de esta ejecución son:")
+                    labels = {
+                        "sin_modelo": "Elo ausente o no calibrado",
+                        "sin_mercado": "sin moneyline/DNB",
+                        "frescura": "cuota desactualizada",
+                        "liquidez": "sin coincidencia Bovada fresca",
+                        "estado_fisico": "estado físico no verificado",
+                        "deporte_o_liga_no_compatible": "deporte o liga sin circuito completo",
+                        "ev_confianza_divergencia": "falló EV, confianza o divergencia",
+                        "en_vivo_o_sin_hora_valida": "en vivo, iniciado o sin hora válida",
+                        "riesgo_empate_sin_dnb": "riesgo de empate sin DNB",
+                    }
+                    for reason, count in sorted(audit.get("descartes", {}).items(), key=lambda x: x[1], reverse=True):
+                        st.write(f"- **{count}**: {labels.get(reason, reason)}")
                 else:
                     st.success("PICK DEL DÍA: 1 selección")
                     st.json(core.candidate_report(pick, float(bankroll)))
@@ -414,7 +560,7 @@ def main():
         st.divider()
         st.caption(
             "Para automatizar esto sin depender de tu computadora encendida, "
-            "usa fetch_results_espn.py + elo_trainer.py dentro de un GitHub "
+            "usa fetch_results_espn.py + fetch_results_free.py + elo_trainer.py dentro de un GitHub "
             "Action (ver .github/workflows/elo_training.yml incluido)."
         )
 
@@ -425,19 +571,33 @@ def main():
         render_promotions_manager(promotions)
 
     with tabs[5]:
+        st.write("**Matriz de capacidad real**")
+        render_capability_matrix(stake_events, elo)
+        st.divider()
         if stake_events:
+            market_counts: Dict[str, int] = {}
             rows = []
             for e in stake_events:
                 for m in e.markets:
+                    market_counts[m.key] = market_counts.get(m.key, 0) + 1
                     rows.append({
                         "sport": e.sport, "league": e.league,
                         "event": f"{e.home} vs {e.away}", "market": m.name,
                         "outcomes": ", ".join(f"{o.selection}: {o.odds:.2f}" for o in m.outcomes),
                         "start": e.start_time,
                     })
+            st.write("**Cobertura recibida por tipo de mercado**")
+            st.dataframe(
+                [{"market_key": key, "cantidad": value, "entra_al_pick": key in ("moneyline", "draw_no_bet")}
+                 for key, value in sorted(market_counts.items(), key=lambda item: item[1], reverse=True)],
+                use_container_width=True,
+            )
             st.dataframe(rows, use_container_width=True)
         else:
             st.info("No hay eventos cargados.")
+
+    with tabs[6]:
+        render_private_state_manager()
 
     st.divider()
     st.caption(

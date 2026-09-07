@@ -61,7 +61,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "6.0-gated-blindado"
+APP_VERSION = "6.2-free-multisport"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -70,11 +70,13 @@ STATE_DIR.mkdir(exist_ok=True)
 RESULTS_DIR.mkdir(exist_ok=True)
 
 PROMOTIONS_FILE = STATE_DIR / "promotions.json"
+PUBLIC_PROMOTIONS_FILE = STATE_DIR / "public_promotions.json"
 ELO_FILE = STATE_DIR / "elo_state.json"
 PHYSICAL_STATUS_FILE = STATE_DIR / "physical_status.json"
 TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
+ELO_SCHEMA_VERSION = 2
 
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
@@ -105,6 +107,30 @@ BOVADA_ENDPOINTS = {
     "icehockey_nhl": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/hockey/nhl",
     "americanfootball_nfl": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/nfl",
     "americanfootball_ncaaf": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/college-football",
+    "soccer_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/soccer",
+    "tennis_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/tennis",
+    "mma_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/ufc-mma",
+    "boxing_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/boxing",
+    "cricket_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/cricket",
+    "rugby_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/rugby-union",
+    "volleyball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/volleyball",
+    "table-tennis_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/table-tennis",
+    "esports_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/esports",
+}
+
+BOVADA_KEY_SPORT = {
+    "soccer_all": "soccer", "tennis_all": "tennis", "mma_all": "mma",
+    "boxing_all": "boxing", "cricket_all": "cricket", "rugby_all": "rugby",
+    "volleyball_all": "volleyball", "table-tennis_all": "table-tennis",
+    "esports_all": "esports",
+}
+
+KNOWN_LEAGUE_CODES = {
+    "mlb": "mlb", "major-league-baseball": "mlb",
+    "nba": "nba", "national-basketball-association": "nba",
+    "nhl": "nhl", "national-hockey-league": "nhl",
+    "nfl": "nfl", "national-football-league": "nfl",
+    "ncaaf": "ncaaf", "college-football": "ncaaf",
 }
 
 FREE_SOURCES: Dict[str, List[str]] = {
@@ -204,7 +230,8 @@ REGLAS:
    Elo interno, entrenado cronológicamente con resultados reales
    (>= 5 partidos por equipo, Brier histórico <= 0.23 con >= 8 muestras).
    Si el Elo no está calibrado para ambos equipos: DESCARTAR ese evento.
-   (Fútbol queda fuera del Elo binario actual porque no modela empate.)
+   En mercados 1X2, el Elo combina fuerza relativa con la tasa histórica
+   de empate aprendida para producir probabilidades home/draw/away.
 
 4. GATES OBLIGATORIOS (todos deben cumplirse; ninguno se compensa con EV
    alto ni con confianza alta):
@@ -356,6 +383,36 @@ def load_json(path: Path, default: Any) -> Any:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return default
+
+
+PRIVATE_STATE_FILES = {
+    "promotions": (PROMOTIONS_FILE, list),
+    "physical_status": (PHYSICAL_STATUS_FILE, dict),
+    "team_aliases": (TEAM_ALIASES_FILE, dict),
+    "movement_history": (MOVEMENT_HISTORY_FILE, dict),
+}
+
+
+def export_private_state() -> Dict[str, Any]:
+    """Crea un respaldo descargable sin incluir Elo, resultados ni credenciales."""
+    return {
+        "schema_version": 1,
+        "exported_at": utc_now().isoformat(),
+        "state": {key: load_json(path, expected()) for key, (path, expected) in PRIVATE_STATE_FILES.items()},
+    }
+
+
+def import_private_state(payload: Dict[str, Any]) -> None:
+    if not isinstance(payload, dict) or payload.get("schema_version") != 1:
+        raise ValueError("respaldo privado inválido o versión no compatible")
+    state = payload.get("state")
+    if not isinstance(state, dict):
+        raise ValueError("el respaldo no contiene 'state'")
+    for key, (path, expected) in PRIVATE_STATE_FILES.items():
+        value = state.get(key, expected())
+        if not isinstance(value, expected):
+            raise ValueError(f"sección inválida: {key}")
+        save_json(path, value)
 
 
 def config_value_env(name: str, default: str = "") -> str:
@@ -872,7 +929,11 @@ class BovadaCollector:
                 continue
             events.append(NormalizedEvent(
                 event_id=f"bovada:{e.get('id', '')}", source="bovada",
-                sport=sport_key.split("_")[0], league=sport_key,
+                sport=BOVADA_KEY_SPORT.get(sport_key, {
+                    "baseball": "baseball", "basketball": "basketball",
+                    "icehockey": "ice-hockey", "americanfootball": "american-football",
+                }.get(sport_key.split("_")[0], sport_key.split("_")[0])),
+                league=sport_key,
                 home=home, away=away,
                 start_time=start.isoformat() if start else None,
                 is_live=bool(e.get("live", False)), status=str(e.get("status", "scheduled")),
@@ -919,17 +980,69 @@ def sport_family(event: NormalizedEvent) -> str:
         return "boxing"
     if s in ("cricket",):
         return "cricket"
+    if s in ("rugby", "rugby-union", "rugby-league"):
+        return "rugby"
+    if s in ("volleyball",):
+        return "volleyball"
+    if s in ("table-tennis", "tabletennis"):
+        return "table-tennis"
     if s in ("formula-1", "f1"):
         return "f1"
     return "other"
 
 
+def league_code(raw_league: str) -> str:
+    value = re.sub(r"[^a-z0-9]+", "-", (raw_league or "").lower()).strip("-")
+    if value in KNOWN_LEAGUE_CODES:
+        return KNOWN_LEAGUE_CODES[value]
+    for token, code in KNOWN_LEAGUE_CODES.items():
+        if re.search(rf"(^|-){re.escape(token)}(-|$)", value):
+            return code
+    return value
+
+
+def elo_namespace(sport: str, league: str) -> str:
+    """Agrupa resultados en una competencia estable y comparable.
+
+    Stake puede usar el nombre del torneo puntual como liga. Eso sirve para
+    fútbol/ligas de equipo, pero fragmentaría para siempre el historial de
+    ATP/WTA, deportes de combate, cricket y esports. En esos casos usamos un
+    circuito o formato estable, sin mezclar juegos de esports entre sí.
+    """
+    sport = (sport or "other").lower()
+    code = league_code(league)
+    if sport == "tennis":
+        circuit = "wta" if "wta" in code else ("atp" if "atp" in code else "all")
+        return f"tennis:{circuit}"
+    if sport in {"mma", "boxing", "table-tennis"}:
+        return f"{sport}:all"
+    if sport == "cricket":
+        cricket_format = next((x for x in ("t20", "odi", "test") if x in code), "all")
+        return f"cricket:{cricket_format}"
+    if sport in ESPORTS_SLUGS:
+        return f"{sport}:all"
+    return f"{sport}:{code or 'all'}"
+
+
+def pick_capability(event: NormalizedEvent) -> Tuple[bool, str]:
+    if not bovada_key_for_event(event):
+        return False, "sin conector gratuito de cuota secundaria"
+    return True, "conector gratuito disponible; todavía debe superar cobertura, calibración y demás gates"
+
+
 def bovada_key_for_event(event: NormalizedEvent) -> Optional[str]:
     family = sport_family(event)
-    league = (event.league or "").lower().replace("-", "_").split("_")[-1]
+    league = league_code(event.league)
     prefixes = {"mlb": "baseball", "nba": "basketball", "nhl": "icehockey", "nfl": "americanfootball"}
     key = f"{prefixes.get(family, family)}_{league}"
-    return key if key in BOVADA_ENDPOINTS else None
+    if key in BOVADA_ENDPOINTS:
+        return key
+    generic = f"{event.sport}_all"
+    if generic in BOVADA_ENDPOINTS:
+        return generic
+    if event.sport in ESPORTS_SLUGS:
+        return "esports_all"
+    return None
 
 
 class FreeSourceRegistry:
@@ -996,7 +1109,7 @@ def normalize_team_name(name: str) -> str:
 
 
 class TeamAliasRegistry:
-    """Resuelve nombres de equipo a un ID canónico estable POR DEPORTE.
+    """Resuelve nombres a un ID canónico estable por namespace deporte:liga.
 
     No existe una base de datos gratuita y completa de IDs de equipo para
     todas las ligas del mundo, así que esto se resuelve de forma
@@ -1032,7 +1145,10 @@ class TeamAliasRegistry:
 class EloModel:
     def __init__(self, path: Path = ELO_FILE):
         self.path = path
-        self.state = load_json(path, {"ratings": {}, "brier": {}, "processed": {}})
+        self.state = load_json(path, {"schema_version": ELO_SCHEMA_VERSION, "ratings": {}, "brier": {}, "processed": {}})
+
+    def schema_is_current(self) -> bool:
+        return self.state.get("schema_version") == ELO_SCHEMA_VERSION
 
     @staticmethod
     def probability(home_elo: float, away_elo: float) -> float:
@@ -1053,6 +1169,25 @@ class EloModel:
             return None
         return self.probability(float(h["elo"]), float(a["elo"]))
 
+    def probabilities_three_way(self, namespace: str, home_id: str, away_id: str) -> Optional[Dict[str, float]]:
+        """Elo 1X2: fuerza relativa Elo + tasa de empate aprendida por liga."""
+        p_home_binary = self.probability_for(namespace, home_id, away_id)
+        if p_home_binary is None:
+            return None
+        stats = self.state.get("draw_stats", {}).get(namespace, {})
+        total, draws = int(stats.get("total", 0)), int(stats.get("draws", 0))
+        if total < BRIER_MIN:
+            return None
+        # Prior beta equivalente a 10 partidos con 26% de empates; después
+        # la propia liga domina. Se acota para evitar extremos por muestras pequeñas.
+        p_draw = min(0.40, max(0.08, (draws + 2.6) / (total + 10.0)))
+        remaining = 1.0 - p_draw
+        return {
+            "home": p_home_binary * remaining,
+            "draw": p_draw,
+            "away": (1.0 - p_home_binary) * remaining,
+        }
+
     def update(self, sport: str, home_id: str, away_id: str, home_win: float, game_id: str) -> bool:
         """Genera la predicción con los ratings PREVIOS antes de actualizar
         (anti-fuga de información) y solo entonces mueve el Elo. Devuelve
@@ -1069,20 +1204,34 @@ class EloModel:
         h["games"] += 1
         a["games"] += 1
         self.state.setdefault("brier", {}).setdefault(sport, []).append({"p": p, "y": home_win})
+        draw_stats = self.state.setdefault("draw_stats", {}).setdefault(sport, {"total": 0, "draws": 0})
+        draw_stats["total"] += 1
+        if home_win == 0.5:
+            draw_stats["draws"] += 1
         processed.append(game_id)
         return True
 
     def save(self):
         save_json(self.path, self.state)
 
-    def coverage(self) -> Dict[str, Dict[str, int]]:
+    def coverage(self) -> Dict[str, Dict[str, Any]]:
         """Para el panel de salud: cuántos equipos por deporte ya tienen
         >= ELO_MIN_GAMES partidos (es decir, cuántos PODRÍAN usarse ya)."""
         out = {}
         for sport, ratings in self.state.get("ratings", {}).items():
             total = len(ratings)
             calibrados = sum(1 for r in ratings.values() if r.get("games", 0) >= ELO_MIN_GAMES)
-            out[sport] = {"equipos_totales": total, "equipos_calibrados": calibrados}
+            hist = self.state.get("brier", {}).get(sport, [])
+            brier = (sum((x["p"] - x["y"]) ** 2 for x in hist) / len(hist)) if hist else None
+            out[sport] = {
+                "equipos_totales": total,
+                "equipos_calibrados": calibrados,
+                "predicciones_brier": len(hist),
+                "brier": None if brier is None else round(brier, 4),
+                "modelo_activo": bool(
+                    calibrados >= 2 and len(hist) >= BRIER_MIN and brier is not None and brier <= BRIER_MAX
+                ),
+            }
         return out
 
 
@@ -1091,11 +1240,19 @@ def build_elo_model(event: NormalizedEvent, elo: EloModel, aliases: TeamAliasReg
     A propósito NO tiene fallback a consenso de mercado: si el Elo no
     aplica o no está calibrado, se devuelve vacío y el evento se descarta
     aguas arriba (Regla 3 del prompt)."""
-    if sport_family(event) == "soccer":
-        return {}, False  # Elo binario actual no modela empate
-    home_id = aliases.canonical_id(event.sport, event.home)
-    away_id = aliases.canonical_id(event.sport, event.away)
-    p_home = elo.probability_for(event.sport, home_id, away_id)
+    namespace = elo_namespace(event.sport, event.league)
+    if not elo.schema_is_current():
+        return {}, False
+    home_id = aliases.canonical_id(namespace, event.home)
+    away_id = aliases.canonical_id(namespace, event.away)
+    principal = next((m for m in event.markets if m.key in ("moneyline", "draw_no_bet")), None)
+    has_draw = bool(principal and any(normalize_name(o.selection) in {"draw", "tie", "empate"} for o in principal.outcomes))
+    if has_draw:
+        probs = elo.probabilities_three_way(namespace, home_id, away_id)
+        if not probs:
+            return {}, False
+        return {event.home: probs["home"], "Draw": probs["draw"], "Empate": probs["draw"], event.away: probs["away"]}, True
+    p_home = elo.probability_for(namespace, home_id, away_id)
     if p_home is None:
         return {}, False
     return {event.home: p_home, event.away: 1 - p_home}, True
@@ -1126,7 +1283,7 @@ def market_consensus_info(stake_event: NormalizedEvent, bovada_event: Optional[N
 # ============================================================
 # Resultados normalizados + entrenamiento del Elo
 # ============================================================
-REQUIRED_RESULT_FIELDS = ["sport", "event_id", "start_time", "home_name", "away_name", "home_score", "away_score", "status"]
+REQUIRED_RESULT_FIELDS = ["sport", "league", "event_id", "start_time", "home_name", "away_name", "home_score", "away_score", "status"]
 
 
 def validate_result(row: Dict[str, Any]) -> Optional[str]:
@@ -1193,11 +1350,12 @@ def train_elo_from_results(elo: EloModel, aliases: TeamAliasRegistry, results: L
     updated = 0
     for r in ordered:
         sport = r["sport"]
-        home_id = aliases.canonical_id(sport, r["home_name"])
-        away_id = aliases.canonical_id(sport, r["away_name"])
+        namespace = elo_namespace(sport, r.get("league", ""))
+        home_id = aliases.canonical_id(namespace, r["home_name"])
+        away_id = aliases.canonical_id(namespace, r["away_name"])
         hs, aw = float(r["home_score"]), float(r["away_score"])
         home_win = 1.0 if hs > aw else (0.5 if hs == aw else 0.0)
-        if elo.update(sport, home_id, away_id, home_win, r["event_id"]):
+        if elo.update(namespace, home_id, away_id, home_win, r["event_id"]):
             updated += 1
     elo.save()
     return updated
@@ -1254,6 +1412,29 @@ class PhysicalStatusRegistry:
 # ============================================================
 # Movimiento de línea real (historial acumulado, no solo el snapshot previo)
 # ============================================================
+def merge_movement_history(incoming: Dict[str, Any], path: Path = MOVEMENT_HISTORY_FILE) -> Dict[str, Any]:
+    """Une historial remoto y local, deduplicando observaciones por tiempo/cuota."""
+    current = load_json(path, {})
+    if not isinstance(incoming, dict):
+        return current
+    for event_id, remote in incoming.items():
+        if not isinstance(remote, dict):
+            continue
+        local = current.setdefault(event_id, {
+            "home": remote.get("home", ""), "away": remote.get("away", ""), "observations": {}
+        })
+        local["home"] = remote.get("home") or local.get("home", "")
+        local["away"] = remote.get("away") or local.get("away", "")
+        for selection, observations in (remote.get("observations") or {}).items():
+            if not isinstance(observations, list):
+                continue
+            merged = (local.setdefault("observations", {}).get(selection) or []) + observations
+            unique = {(str(o.get("t")), o.get("odds")): o for o in merged if isinstance(o, dict)}
+            local["observations"][selection] = sorted(unique.values(), key=lambda o: str(o.get("t", "")))[-MOVEMENT_MAX_HISTORY:]
+    save_json(path, current)
+    return current
+
+
 def append_movement_history(events: List[NormalizedEvent], path: Path = MOVEMENT_HISTORY_FILE) -> Dict[str, Any]:
     history = load_json(path, {})
     now_iso = utc_now().isoformat()
@@ -1381,6 +1562,32 @@ def load_promotions() -> List[Dict[str, Any]]:
     return load_json(PROMOTIONS_FILE, [])
 
 
+def load_public_promotions(active_only: bool = False) -> List[Dict[str, Any]]:
+    """Carga el catálogo versionado sin asumir elegibilidad ni alterar el EV."""
+    items = load_json(PUBLIC_PROMOTIONS_FILE, [])
+    if not isinstance(items, list):
+        return []
+    valid = [p for p in items if isinstance(p, dict) and p.get("id") and p.get("name")]
+    return [p for p in valid if public_promotion_status(p) == "activa"] if active_only else valid
+
+
+def public_promotion_status(promotion: Dict[str, Any]) -> str:
+    today = utc_now().date()
+    try:
+        starts = datetime.fromisoformat(str(promotion.get("starts_on", ""))).date()
+    except ValueError:
+        starts = None
+    try:
+        ends = datetime.fromisoformat(str(promotion.get("ends_on", ""))).date()
+    except ValueError:
+        ends = None
+    if starts and today < starts:
+        return "próxima"
+    if ends and today > ends:
+        return "vencida"
+    return "activa"
+
+
 def save_promotions(items: List[Dict[str, Any]]) -> None:
     save_json(PROMOTIONS_FILE, items)
 
@@ -1422,6 +1629,8 @@ def select_promotion(
     for p in promotions:
         if not p.get("enabled", True):
             continue
+        if p.get("informational_only") or p.get("ev_enabled") is False:
+            continue  # el catálogo público nunca altera el EV por sí solo
         if not p.get("confirmed_eligible", False):
             continue  # Regla 9 del prompt: nunca asumir elegibilidad universal
         exp = parse_dt(p.get("expires_at"))
@@ -1536,6 +1745,12 @@ class BlindadoEngine:
             if not o.active or not (self.MIN_ODDS <= o.odds <= self.MAX_ODDS):
                 continue
             p = model_probs.get(o.selection)
+            if p is None:
+                if normalize_name(o.selection) in {"draw", "tie", "empate", "x"}:
+                    p = model_probs.get("Draw") or model_probs.get("Empate")
+            if p is None:
+                model_name = max(model_probs, key=lambda n: name_similarity(o.selection, n), default="")
+                p = model_probs.get(model_name) if name_similarity(o.selection, model_name) >= 0.5 else None
             if p is None or not (0 < p < 1):
                 continue
 
@@ -1599,6 +1814,11 @@ def prepare_candidates(
         start = parse_dt(e.start_time)
         if not start or start <= utc_now() or e.is_live:
             bump("en_vivo_o_sin_hora_valida")
+            continue
+
+        capable, _ = pick_capability(e)
+        if not capable:
+            bump("deporte_o_liga_no_compatible")
             continue
 
         if sport_family(e) == "soccer":

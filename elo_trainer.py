@@ -17,7 +17,7 @@ Uso:
 import argparse
 import sys
 
-from blindado_core import EloModel, TeamAliasRegistry, load_results, train_elo_from_results
+from blindado_core import ELO_SCHEMA_VERSION, EloModel, TeamAliasRegistry, load_results, train_elo_from_results
 
 
 def main() -> int:
@@ -26,8 +26,10 @@ def main() -> int:
     args = parser.parse_args()
 
     elo = EloModel()
-    if args.reset:
-        elo.state = {"ratings": {}, "brier": {}, "processed": {}}
+    if args.reset or not elo.schema_is_current():
+        reason = "solicitud --reset" if args.reset else "migración a Elo separado por liga"
+        print(f"Reentrenamiento completo: {reason}.")
+        elo.state = {"schema_version": ELO_SCHEMA_VERSION, "ratings": {}, "brier": {}, "processed": {}}
 
     aliases = TeamAliasRegistry()
     results = load_results()

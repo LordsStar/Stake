@@ -3,7 +3,7 @@ cloud_snapshot_reader.py — Este módulo SÍ corre en Streamlit Cloud.
 
 Reemplaza las llamadas directas a StakeCollector/BovadaCollector dentro de
 main() de app.py por una lectura del snapshot que
-stake_fetcher_local.py subió a GitHub. Streamlit Cloud nunca vuelve a
+market_snapshot_job.py subió a GitHub. Streamlit Cloud nunca vuelve a
 tocar stake.com ni bovada.lv directamente — evita el 403 de IP de
 datacenter por diseño, no por reintentos.
 
@@ -38,7 +38,7 @@ def construir_raw_url(repo: str, path: str, branch: str = "main") -> str:
 
 def obtener_snapshot_remoto(repo: str, path: str, branch: str = "main", timeout: int = 15, token: str = "") -> Dict[str, Any]:
     """
-    Descarga el snapshot subido por stake_fetcher_local.py. Se agrega un
+    Descarga el snapshot generado por market_snapshot_job.py. Se agrega un
     parámetro de cache-busting porque raw.githubusercontent.com cachea el
     contenido unos minutos en su CDN — sin esto, Streamlit Cloud podría
     seguir viendo una versión vieja justo después de que el fetcher local
@@ -61,7 +61,7 @@ def obtener_snapshot_remoto(repo: str, path: str, branch: str = "main", timeout:
     if r.status_code == 404:
         raise FileNotFoundError(
             f"No se encontró {path} en {repo}@{branch}. "
-            f"¿Ya corriste stake_fetcher_local.py al menos una vez?"
+            f"¿Ya ejecutaste el workflow 'Snapshot de mercados Blindado' al menos una vez?"
         )
     r.raise_for_status()
     if len(r.content) > 25_000_000:
