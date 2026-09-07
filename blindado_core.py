@@ -116,6 +116,23 @@ BOVADA_ENDPOINTS = {
     "volleyball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/volleyball",
     "table-tennis_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/table-tennis",
     "esports_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/esports",
+    # NUEVO — corrige el descarte "deporte_o_liga_no_compatible": antes solo
+    # existían claves específicas para NBA/NHL/MLB/NFL/NCAAF. Cualquier otra
+    # liga de esos MISMOS deportes (WNBA, KHL, VHL, CFL, Triple-A, Euroliga,
+    # FIBA, NCAA basketball, amistosos de clubes, etc.) caía en None sin
+    # siquiera intentar Bovada, porque no había fallback genérico "_all" para
+    # estos cuatro deportes (sí existía ya para soccer/tennis/mma/etc.).
+    # WNBA obtiene su propia clave específica porque es un mercado que Bovada
+    # sí suele publicar de forma regular; los "_all" genéricos son best-effort
+    # para el resto — pueden devolver cobertura delgada o vacía para ligas
+    # muy nicho (KHL, VHL, Triple-A), y eso es correcto: sin match, el gate de
+    # liquidez descarta el evento igual que con cualquier otro sin referencia,
+    # nunca se fabrica una referencia inexistente.
+    "basketball_wnba": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/basketball/wnba",
+    "basketball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/basketball",
+    "baseball_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/baseball",
+    "ice-hockey_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/hockey",
+    "american-football_all": "https://www.bovada.lv/services/sports/event/coupon/events/A/description/football",
 }
 
 BOVADA_KEY_SPORT = {
@@ -123,11 +140,14 @@ BOVADA_KEY_SPORT = {
     "boxing_all": "boxing", "cricket_all": "cricket", "rugby_all": "rugby",
     "volleyball_all": "volleyball", "table-tennis_all": "table-tennis",
     "esports_all": "esports",
+    "basketball_all": "basketball", "baseball_all": "baseball",
+    "ice-hockey_all": "ice-hockey", "american-football_all": "american-football",
 }
 
 KNOWN_LEAGUE_CODES = {
     "mlb": "mlb", "major-league-baseball": "mlb",
     "nba": "nba", "national-basketball-association": "nba",
+    "wnba": "wnba", "womens-national-basketball-association": "wnba",
     "nhl": "nhl", "national-hockey-league": "nhl",
     "nfl": "nfl", "national-football-league": "nfl",
     "ncaaf": "ncaaf", "college-football": "ncaaf",
