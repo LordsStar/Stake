@@ -12,7 +12,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from blindado_core import TEAM_ALIASES_FILE, elo_namespace, load_results, normalize_team_name
+from blindado_core import AUTO_TEAM_ALIASES_FILE, elo_namespace, load_results, normalize_team_name
 
 
 def similarity(a: str, b: str) -> float:
@@ -37,7 +37,7 @@ def load_json(path: Path, default):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--snapshot", default="snapshot.json")
-    parser.add_argument("--aliases", default=str(TEAM_ALIASES_FILE))
+    parser.add_argument("--aliases", default=str(AUTO_TEAM_ALIASES_FILE))
     parser.add_argument("--report", default="state/unresolved_aliases.json")
     parser.add_argument("--threshold", type=float, default=0.86)
     parser.add_argument("--margin", type=float, default=0.08)

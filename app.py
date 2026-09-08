@@ -288,8 +288,11 @@ def render_team_aliases_manager(aliases: "core.TeamAliasRegistry"):
             st.success("Alias guardado.")
             st.rerun()
 
+    if aliases.automatic_data:
+        with st.expander("Alias automáticos públicos"):
+            st.json(aliases.automatic_data)
     if aliases.data:
-        with st.expander("Alias guardados"):
+        with st.expander("Alias manuales privados"):
             st.json(aliases.data)
 
 

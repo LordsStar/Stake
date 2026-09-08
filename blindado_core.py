@@ -75,6 +75,7 @@ PUBLIC_PROMOTIONS_FILE = STATE_DIR / "public_promotions.json"
 ELO_FILE = STATE_DIR / "elo_state.json"
 PHYSICAL_STATUS_FILE = STATE_DIR / "physical_status.json"
 TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
+AUTO_TEAM_ALIASES_FILE = STATE_DIR / "auto_team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
 ELO_SCHEMA_VERSION = 4
@@ -1394,14 +1395,22 @@ class TeamAliasRegistry:
     variantes (ej. "ny yankees" -> "new_york_yankees").
     """
 
-    def __init__(self, path: Path = TEAM_ALIASES_FILE):
+    def __init__(
+        self,
+        path: Path = TEAM_ALIASES_FILE,
+        automatic_path: Path = AUTO_TEAM_ALIASES_FILE,
+    ):
         self.path = path
         self.data: Dict[str, Dict[str, str]] = load_json(path, {})
+        self.automatic_path = automatic_path
+        self.automatic_data: Dict[str, Dict[str, str]] = load_json(automatic_path, {})
 
     def canonical_id(self, sport: str, name: str) -> str:
         norm = normalize_team_name(name)
-        overrides = self.data.get(sport, {})
-        return overrides.get(norm, norm)
+        automatic = self.automatic_data.get(sport, {})
+        private = self.data.get(sport, {})
+        # El alias manual privado tiene prioridad sobre el automático público.
+        return private.get(norm, automatic.get(norm, norm))
 
     def add_alias(self, sport: str, name: str, canonical: str) -> None:
         norm = normalize_team_name(name)
@@ -1410,8 +1419,17 @@ class TeamAliasRegistry:
 
     def all_aliases(self, sport: Optional[str] = None) -> Dict[str, Dict[str, str]]:
         if sport:
-            return {sport: self.data.get(sport, {})}
-        return self.data
+            merged = dict(self.automatic_data.get(sport, {}))
+            merged.update(self.data.get(sport, {}))
+            return {sport: merged}
+        namespaces = set(self.automatic_data) | set(self.data)
+        return {
+            namespace: {
+                **self.automatic_data.get(namespace, {}),
+                **self.data.get(namespace, {}),
+            }
+            for namespace in namespaces
+        }
 
 
 # ============================================================
