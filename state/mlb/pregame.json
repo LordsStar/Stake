@@ -10,7 +10,7 @@
     "home_starter_name": "Brandon Young",
     "away_starter_id": "676440",
     "away_starter_name": "Tanner Bibee",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824228",
@@ -23,7 +23,7 @@
     "home_starter_name": "Drew Anderson",
     "away_starter_id": "665152",
     "away_starter_name": "Dean Kremer",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823414",
@@ -36,7 +36,7 @@
     "home_starter_name": "Andrew Painter",
     "away_starter_id": "669713",
     "away_starter_name": "Hayden Wesneski",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823821",
@@ -49,7 +49,7 @@
     "home_starter_name": "Sandy Alcantara",
     "away_starter_id": "640455",
     "away_starter_name": "Sean Manaea",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824714",
@@ -62,7 +62,7 @@
     "home_starter_name": "Patrick Sandoval",
     "away_starter_id": "672282",
     "away_starter_name": "Reid Detmers",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823500",
@@ -75,7 +75,7 @@
     "home_starter_name": "Cam Schlittler",
     "away_starter_id": "687312",
     "away_starter_name": "Gabriel Hughes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824875",
@@ -88,7 +88,7 @@
     "home_starter_name": "AJ Smith-Shawver",
     "away_starter_id": "642547",
     "away_starter_name": "Freddy Peralta",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824063",
@@ -101,7 +101,7 @@
     "home_starter_name": "Michael Wacha",
     "away_starter_id": "669203",
     "away_starter_name": "Corbin Burnes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824551",
@@ -114,7 +114,7 @@
     "home_starter_name": "Sean Burke",
     "away_starter_id": "696149",
     "away_starter_name": "Bubba Chandler",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823738",
@@ -127,7 +127,7 @@
     "home_starter_name": "Jacob Misiorowski",
     "away_starter_id": "656849",
     "away_starter_name": "David Peterson",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823250",
@@ -151,8 +151,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "615698",
+    "away_starter_name": "Cal Quantrill",
     "lineups_confirmed": false
   },
   {
@@ -255,8 +255,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "674003",
+    "away_starter_name": "Cody Bradford",
     "lineups_confirmed": false
   },
   {
@@ -424,8 +424,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "594798",
+    "away_starter_name": "Jacob deGrom",
     "lineups_confirmed": false
   },
   {
