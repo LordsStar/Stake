@@ -8,7 +8,6 @@ débil se rechaza: ampliar cobertura nunca significa mezclar ligas.
 import argparse
 import csv
 import difflib
-import gzip
 import io
 import json
 import re
@@ -24,11 +23,9 @@ from blindado_core import merge_results
 BASE = "https://www.thesportsdb.com/api/v1/json/123"
 CRICSHEET_RECENT = "https://cricsheet.org/downloads/recently_played_30_json.zip"
 OPENDOTA_PRO_MATCHES = "https://api.opendota.com/api/proMatches"
-TENNIS_ATP = "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_{year}.csv"
-TENNIS_WTA = "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_{year}.csv"
 LOL_DATA = (
-    "https://oracleselixir-downloadable-match-data.s3.us-west-2.amazonaws.com/"
-    "{year}_LoL_esports_match_data_from_OraclesElixir.gzip"
+    "https://oracles-elixir.s3-us-west-2.amazonaws.com/"
+    "{year}_LoL_esports_match_data_from_OraclesElixir.csv"
 )
 DEFAULT_STATE = Path("state/result_source_state.json")
 _LAST_THESPORTSDB_CALL = 0.0
@@ -143,10 +140,25 @@ def cricsheet_rows(targets):
     """Resultados recientes de cricket, publicados gratis en JSON por Cricsheet."""
     if not any(sport == "cricket" for sport, _ in targets):
         return []
-    response = requests.get(CRICSHEET_RECENT, timeout=60)
-    response.raise_for_status()
+    content = b""
+    last_error = "respuesta vacía"
+    for attempt in range(3):
+        response = requests.get(
+            CRICSHEET_RECENT,
+            params={"attempt": attempt} if attempt else None,
+            headers={"User-Agent": "BlindadoResults/7.2", "Accept": "application/zip"},
+            timeout=60,
+        )
+        response.raise_for_status()
+        content = response.content
+        if content.startswith(b"PK"):
+            break
+        last_error = f"tipo={response.headers.get('content-type')}, bytes={len(content)}"
+        time.sleep(2 * (attempt + 1))
+    if not content.startswith(b"PK"):
+        raise ValueError(f"Cricsheet no devolvió ZIP después de 3 intentos ({last_error})")
     rows = []
-    with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
         for filename in archive.namelist():
             if not filename.endswith(".json"):
                 continue
@@ -221,39 +233,6 @@ def opendota_rows(targets, pages=5):
     return rows
 
 
-def tennis_rows(targets):
-    """ATP/WTA actuales y del año anterior, sin inferir retiros ni walkovers."""
-    if not any(sport == "tennis" for sport, _ in targets):
-        return []
-    rows = []
-    now_year = datetime.now(timezone.utc).year
-    for circuit, template in (("atp", TENNIS_ATP), ("wta", TENNIS_WTA)):
-        for year in (now_year - 1, now_year):
-            response = requests.get(template.format(year=year), timeout=60)
-            if response.status_code == 404:
-                continue
-            response.raise_for_status()
-            for match in csv.DictReader(io.StringIO(response.text.lstrip("\ufeff"))):
-                winner, loser = match.get("winner_name"), match.get("loser_name")
-                event_id = f"tennis-{circuit}:{match.get('tourney_id')}:{match.get('match_num')}"
-                date = str(match.get("tourney_date") or "")
-                if not winner or not loser or not match.get("tourney_id") or len(date) != 8:
-                    continue
-                try:
-                    started = datetime.strptime(date, "%Y%m%d").replace(tzinfo=timezone.utc).isoformat()
-                except ValueError:
-                    continue
-                rows.append({
-                    "sport": "tennis", "league": circuit,
-                    "event_id": event_id, "start_time": started,
-                    "home_name": winner, "away_name": loser,
-                    "home_score": 1, "away_score": 0, "status": "final",
-                    "source": f"jeff-sackmann-{circuit}",
-                    "score_encoding": "winner_indicator",
-                })
-    return rows
-
-
 def lol_rows(targets):
     """Partidos profesionales de LoL desde el dataset gratuito Oracle's Elixir."""
     if not any(sport == "league-of-legends" for sport, _ in targets):
@@ -265,10 +244,7 @@ def lol_rows(targets):
         if response.status_code == 404:
             continue
         response.raise_for_status()
-        try:
-            decoded = gzip.decompress(response.content).decode("utf-8-sig", errors="replace")
-        except (gzip.BadGzipFile, OSError):
-            decoded = response.content.decode("utf-8-sig", errors="replace")
+        decoded = response.content.decode("utf-8-sig", errors="replace")
         games = {}
         for row in csv.DictReader(io.StringIO(decoded)):
             if str(row.get("position") or "").lower() != "team":
@@ -360,9 +336,29 @@ def main() -> int:
         events = []
         try:
             detail = (get_json("lookupleague.php", id=league["idLeague"]).get("leagues") or [{}])[0]
-            season = detail.get("strCurrentSeason")
-            if season:
-                events = get_json("eventsseason.php", id=league["idLeague"], s=season).get("events") or []
+            current_season = detail.get("strCurrentSeason")
+            seasons = []
+            if current_season:
+                seasons.append(current_season)
+            try:
+                available = get_json("search_all_seasons.php", id=league["idLeague"]).get("seasons") or []
+                values = [item.get("strSeason") for item in available if item.get("strSeason")]
+                for value in reversed(values):
+                    if value not in seasons:
+                        seasons.append(value)
+            except Exception:
+                pass
+            # Temporada actual + dos anteriores: evita que una liga recién
+            # iniciada se quede con 0 equipos calibrados.
+            seen_event_ids = set()
+            for season in seasons[:3]:
+                season_events = get_json(
+                    "eventsseason.php", id=league["idLeague"], s=season
+                ).get("events") or []
+                for item in season_events:
+                    if item.get("idEvent") not in seen_event_ids:
+                        events.append(item)
+                        seen_event_ids.add(item.get("idEvent"))
         except Exception:
             events = []
         if not events:
@@ -394,7 +390,6 @@ def main() -> int:
     auxiliary = (
         ("Cricsheet", lambda: cricsheet_rows(all_targets)),
         ("OpenDota", lambda: opendota_rows(all_targets, args.opendota_pages)),
-        ("Tenis ATP/WTA", lambda: tennis_rows(all_targets)),
         ("League of Legends", lambda: lol_rows(all_targets)),
     )
     source_counts = {}

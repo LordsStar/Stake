@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-PIPELINE_VERSION = 2
+PIPELINE_VERSION = 3
 STATE_FILE = Path("state/results_pipeline_state.json")
 
 
@@ -48,9 +48,11 @@ def main() -> int:
     state = load_state()
     initial = args.full_backfill or int(state.get("pipeline_version", 0)) < PIPELINE_VERSION
     if initial:
-        print("Backfill inicial v2: ligas ESPN principales.")
-        run("fetch_results_espn.py", "--sports", "basketball", "baseball", "ice-hockey", "--days-back", "120")
+        print("Backfill inicial v3: temporadas principales y tenis ATP/WTA.")
+        run("fetch_results_espn.py", "--sports", "basketball", "ice-hockey", "--days-back", "450")
+        run("fetch_results_espn.py", "--sports", "baseball", "--days-back", "240")
         run("fetch_results_espn.py", "--sports", "american-football", "--days-back", "730")
+        run("fetch_results_espn.py", "--sports", "tennis", "--days-back", "180")
     else:
         run("fetch_results_espn.py", "--days-back", "7")
 

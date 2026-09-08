@@ -31,6 +31,9 @@ ESPN_TARGETS = {
     "american-football": "football/nfl",
     "ice-hockey": "hockey/nhl",
     "baseball": "baseball/mlb",
+    # Tenis usa una estructura distinta (torneo > groupings > competitions)
+    # y se procesa con fetch_espn_tennis_scoreboard().
+    "tennis": "tennis",
 }
 
 
@@ -68,6 +71,50 @@ def fetch_espn_scoreboard(espn_path: str, date_str: str) -> list:
     return rows
 
 
+def _competitor_name(competitor: dict) -> str:
+    return (
+        safe_get(competitor, "athlete", "displayName")
+        or safe_get(competitor, "team", "displayName")
+        or ""
+    )
+
+
+def fetch_espn_tennis_scoreboard(circuit: str, date_str: str) -> list:
+    """Normaliza las competencias finalizadas ATP/WTA de ESPN."""
+    url = f"https://site.api.espn.com/apis/site/v2/sports/tennis/{circuit}/scoreboard"
+    resp = requests.get(url, params={"dates": date_str}, timeout=25)
+    resp.raise_for_status()
+    rows = []
+    seen = set()
+    for tournament in resp.json().get("events", []):
+        for grouping in tournament.get("groupings", []):
+            for comp in grouping.get("competitions", []):
+                status_name = safe_get(comp, "status", "type", "name") or ""
+                if status_name != "STATUS_FINAL" or comp.get("id") in seen:
+                    continue
+                competitors = comp.get("competitors") or []
+                home = next((c for c in competitors if c.get("homeAway") == "home"), None)
+                away = next((c for c in competitors if c.get("homeAway") == "away"), None)
+                if not home or not away or home.get("winner") == away.get("winner"):
+                    continue
+                home_name, away_name = _competitor_name(home), _competitor_name(away)
+                if not home_name or not away_name:
+                    continue
+                event_id = f"espn:tennis:{circuit}:{comp.get('id')}"
+                rows.append({
+                    "sport": "tennis", "league": circuit,
+                    "event_id": event_id,
+                    "start_time": comp.get("date") or tournament.get("date"),
+                    "home_name": home_name, "away_name": away_name,
+                    "home_score": 1 if home.get("winner") else 0,
+                    "away_score": 1 if away.get("winner") else 0,
+                    "status": "final", "source": "espn",
+                    "score_encoding": "winner_indicator",
+                })
+                seen.add(comp.get("id"))
+    return rows
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days-back", type=int, default=2, help="Cuántos días hacia atrás revisar (incluye hoy).")
@@ -86,13 +133,18 @@ def main() -> int:
         for d in range(max(1, args.days_back)):
             date = (datetime.now(timezone.utc) - timedelta(days=d)).strftime("%Y%m%d")
             try:
-                rows = fetch_espn_scoreboard(espn_path, date)
+                if sport == "tennis":
+                    rows = []
+                    for circuit in ("atp", "wta"):
+                        rows.extend(fetch_espn_tennis_scoreboard(circuit, date))
+                else:
+                    rows = fetch_espn_scoreboard(espn_path, date)
             except Exception as exc:
                 fallos.append(f"{sport} {date}: {exc}")
                 continue
             for row in rows:
-                row["sport"] = sport
-                row["league"] = league
+                row.setdefault("sport", sport)
+                row.setdefault("league", league)
             all_rows.extend(rows)
             print(f"  {sport} {date}: {len(rows)} finalizado(s) encontrados")
 
