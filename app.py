@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.1 / Elo schema 4. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -24,6 +24,20 @@ def config_value(name: str, default: str = "") -> str:
     except Exception:
         value = ""
     return str(value or os.environ.get(name, default) or default)
+
+
+def configured_snapshot_max_age_minutes() -> float:
+    """Límite global del snapshot.
+
+    Los gates de frescura por evento continúan siendo más estrictos
+    (10/30/120 min según la cercanía del inicio). El límite global solo decide
+    si el archivo puede cargarse para intentar el análisis.
+    """
+    try:
+        configured = float(config_value("SNAPSHOT_MAX_AGE_MINUTES", "120"))
+    except (TypeError, ValueError):
+        configured = 120.0
+    return max(60.0, min(configured, 240.0))
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
@@ -51,11 +65,14 @@ def load_remote_snapshot_fallback(
         snapshot_repo, snapshot_path, snapshot_branch,
         token=config_value("SNAPSHOT_GITHUB_TOKEN"),
     )
-    render_estado_snapshot(snapshot)
+    max_age = configured_snapshot_max_age_minutes()
+    render_estado_snapshot(snapshot, max_age_minutes=max_age)
     st.session_state["stake_coverage"] = snapshot.get("stake_coverage", {})
     age = snapshot_antiguedad_minutos(snapshot)
-    if age > 60:
-        raise ValueError("Snapshot vencido (>60 min). No se habilita el análisis.")
+    if age > max_age:
+        raise ValueError(
+            f"Snapshot vencido (>{max_age:.0f} min). No se habilita el análisis."
+        )
     stake_events, bovada_events = snapshot_a_normalized_events(snapshot)
     selected_set = set(selected)
     if "soccer" in selected_set:
@@ -98,8 +115,8 @@ def render_health_panel(
     results = core.load_results()
     st.caption(
         f"Histórico Elo: {len(results)} resultados. Calibración: >= {core.BRIER_MIN} predicciones maduras, "
-        f"ventana {core.BRIER_WINDOW}, skill >= {core.BRIER_SKILL_MIN:.0%} frente al baseline; "
-        f"tope binario {core.BRIER_MAX:.3f}."
+        f"ventana {core.BRIER_WINDOW}; se activa por Brier absoluto (binario <= {core.BRIER_MAX:.3f}, "
+        f"1X2 <= {core.BRIER_MULTICLASS_MAX:.3f}) O por skill >= {core.BRIER_SKILL_MIN:.0%} frente al baseline."
     )
     if downloaded_markets:
         st.info(
@@ -410,11 +427,12 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7 — Stake completo", layout="wide")
+    st.set_page_config(page_title="Blindado v7.1 — Stake completo / Elo 4", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
-        "BRIER_WINDOW", "BRIER_SKILL_MIN", "is_esport_slug",
+        "BRIER_WINDOW", "BRIER_SKILL_MIN", "BRIER_MULTICLASS_MAX",
+        "BRIER_GATE_MODE", "is_esport_slug",
     )
     missing_core = [name for name in required_core if not hasattr(core, name)]
     if missing_core:
@@ -424,7 +442,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7 — Catálogo completo de Stake, con gates obligatorios")
+    st.title("🎯 Blindado v7.1 — Catálogo completo de Stake / Elo schema 4")
     st.caption(
         "Elo = único modelo estadístico válido · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -560,7 +578,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v6", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.1", type="primary"):
                 candidates, audit = core.prepare_candidates(stake_events, bovada_events, promotions, float(bankroll))
                 engine = core.BlindadoEngine(float(bankroll))
                 pick = engine.choose_one(candidates)

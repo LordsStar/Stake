@@ -115,15 +115,24 @@ def snapshot_a_normalized_events(snapshot: Dict[str, Any]) -> Tuple[List[Normali
     return stake_events, bovada_events
 
 
-def render_estado_snapshot(snapshot: Dict[str, Any]) -> None:
+def render_estado_snapshot(
+    snapshot: Dict[str, Any], max_age_minutes: float = 120.0
+) -> None:
     antiguedad = snapshot_antiguedad_minutos(snapshot)
     if antiguedad == float("inf"):
         st.error("⚠️ El snapshot no trae `generado_utc` — no se puede evaluar frescura.")
         return
-    if antiguedad > 60:
+    if antiguedad > max_age_minutes:
         st.error(
             f"🔴 El snapshot tiene {antiguedad:.0f} minutos de antigüedad. "
-            f"Verifica que el fetcher local siga corriendo en tu máquina/cron."
+            f"Supera el límite configurado de {max_age_minutes:.0f} minutos. "
+            "Revisa o ejecuta el workflow de snapshot en GitHub Actions."
+        )
+    elif antiguedad > 60:
+        st.warning(
+            f"🟠 Snapshot utilizable con {antiguedad:.0f} minutos de antigüedad. "
+            "Cada evento todavía debe superar su propio gate de frescura "
+            "(10, 30 o 120 minutos según la cercanía del inicio)."
         )
     elif antiguedad > 25:
         st.warning(f"🟡 Snapshot con {antiguedad:.0f} minutos de antigüedad.")
@@ -131,7 +140,7 @@ def render_estado_snapshot(snapshot: Dict[str, Any]) -> None:
         st.success(f"🟢 Snapshot fresco — {antiguedad:.0f} minutos de antigüedad.")
 
     if snapshot.get("bovada_no_disponible"):
-        st.info(f"Bovada no disponible en la última corrida local para: {snapshot['bovada_no_disponible']}")
+        st.info(f"Bovada no disponible en la última corrida para: {snapshot['bovada_no_disponible']}")
     coverage = snapshot.get("stake_coverage")
     if isinstance(coverage, dict):
         discovered = coverage.get("sports_discovered", 0)
