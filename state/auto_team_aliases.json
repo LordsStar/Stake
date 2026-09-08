@@ -1,0 +1,15 @@
+{
+  "cricket:all": {
+    "perth scorchers srl": "perth scorchers",
+    "sydney sixers srl": "sydney sixers"
+  },
+  "dota-2:all": {
+    "power rangers": "powerrangers"
+  },
+  "aussie-rules:afl-women": {
+    "collingwood magpies": "collingwood magpies women",
+    "greater western sydney giants": "greater western sydney giants women",
+    "port adelaide power": "port adelaide power women",
+    "north melbourne kangaroos": "north melbourne kangaroos women"
+  }
+}
