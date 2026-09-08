@@ -59,7 +59,8 @@ jobs:
           git add state/results/results.json state/elo_state.json \
             state/source_coverage.json state/result_source_state.json \
             state/results_pipeline_state.json state/auto_team_aliases.json \
-            state/unresolved_aliases.json
+            state/unresolved_aliases.json state/mlb/games.json \
+            state/mlb/model.json state/mlb/pregame.json
           git diff --cached --quiet || git commit -m "Actualiza resultados, alias y Elo"
           git pull --rebase origin main
           git push

@@ -35,13 +35,16 @@ jobs:
       - name: "Instalar dependencias mínimas (sin streamlit: no hace falta en CI)"
         run: pip install requests
 
-      - name: Correr backtest offline (solo lectura de results.json)
+      - name: Correr backtests offline
         run: |
           if [ ! -f state/results/results.json ]; then
             echo "No existe state/results/results.json todavía — corre primero el workflow de entrenamiento Elo."
             exit 0
           fi
           python elo_backtest.py --output state/elo_backtest_report.md
+          if [ -f state/mlb/games.json ]; then
+            python mlb_backtest.py --output state/mlb/backtest_report.json
+          fi
 
       - name: Commitear el reporte si cambió
         run: |
@@ -49,5 +52,6 @@ jobs:
           git config user.email "blindado-bot@users.noreply.github.com"
           git pull --rebase
           git add state/elo_backtest_report.md
+          if [ -f state/mlb/backtest_report.json ]; then git add state/mlb/backtest_report.json; fi
           git diff --cached --quiet || git commit -m "Actualiza reporte de backtest Elo (automático, no cambia parámetros)"
           git push
