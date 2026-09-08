@@ -210713,5 +210713,70 @@
     "status": "final",
     "source": "opendota",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183592",
+    "start_time": "2026-09-08T12:40Z",
+    "home_name": "Guiomar Maristany Zuleta De Reales",
+    "away_name": "Marina Bassols Ribera",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183591",
+    "start_time": "2026-09-08T13:30Z",
+    "home_name": "Fiona Ferro",
+    "away_name": "Mona Barthel",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183535",
+    "start_time": "2026-09-08T11:40Z",
+    "home_name": "Ipek Oz",
+    "away_name": "Rositsa Dencheva",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183542",
+    "start_time": "2026-09-08T11:50Z",
+    "home_name": "Federica Urgesi",
+    "away_name": "Miriam Bulgaru",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183544",
+    "start_time": "2026-09-08T12:00Z",
+    "home_name": "Elena Pridankina",
+    "away_name": "Ane Mintegi Del Olmo",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
   }
 ]

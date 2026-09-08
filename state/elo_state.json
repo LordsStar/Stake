@@ -6665,8 +6665,8 @@
         "games": 2
       },
       "elena pridankina": {
-        "elo": 1550.674655984081,
-        "games": 29
+        "elo": 1539.1503337257284,
+        "games": 30
       },
       "arthur fils": {
         "elo": 1616.2609807126164,
@@ -6741,8 +6741,8 @@
         "games": 41
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1506.7961376499247,
-        "games": 14
+        "elo": 1516.998744037889,
+        "games": 15
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -6789,8 +6789,8 @@
         "games": 29
       },
       "ipek oz": {
-        "elo": 1502.2748338899714,
-        "games": 6
+        "elo": 1492.7776709207749,
+        "games": 7
       },
       "bu yunchaokete": {
         "elo": 1505.5466164460977,
@@ -6933,8 +6933,8 @@
         "games": 1
       },
       "marina bassols ribera": {
-        "elo": 1513.8363679815952,
-        "games": 30
+        "elo": 1503.6337615936309,
+        "games": 31
       },
       "jule niemeier": {
         "elo": 1472.9492900501607,
@@ -7201,8 +7201,8 @@
         "games": 9
       },
       "ane mintegi del olmo": {
-        "elo": 1497.2982726683535,
-        "games": 10
+        "elo": 1508.8225949267062,
+        "games": 11
       },
       "carmen gallardo guevara": {
         "elo": 1489.55304076046,
@@ -7373,8 +7373,8 @@
         "games": 8
       },
       "fiona ferro": {
-        "elo": 1533.4556632445597,
-        "games": 22
+        "elo": 1542.2234407457358,
+        "games": 23
       },
       "beatriz castro": {
         "elo": 1491.264696885719,
@@ -7505,8 +7505,8 @@
         "games": 8
       },
       "mona barthel": {
-        "elo": 1490.4251922213728,
-        "games": 16
+        "elo": 1481.6574147201966,
+        "games": 17
       },
       "irina camelia begu": {
         "elo": 1495.4931015560105,
@@ -7857,8 +7857,8 @@
         "games": 1
       },
       "federica urgesi": {
-        "elo": 1501.2011484171317,
-        "games": 8
+        "elo": 1490.1977572559751,
+        "games": 9
       },
       "beatrice ricci": {
         "elo": 1481.3027257604483,
@@ -7977,8 +7977,8 @@
         "games": 9
       },
       "miriam bulgaru": {
-        "elo": 1466.2220629307783,
-        "games": 10
+        "elo": 1477.2254540919348,
+        "games": 11
       },
       "tereza mrdeza": {
         "elo": 1490.022146865414,
@@ -9445,8 +9445,8 @@
         "games": 1
       },
       "rositsa dencheva": {
-        "elo": 1519.7599283951188,
-        "games": 2
+        "elo": 1529.2570913643153,
+        "games": 3
       },
       "adrienn nagy": {
         "elo": 1489.727859399778,
@@ -29089,26 +29089,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.4896454373978709,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5618057293217387,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.4926158559315827,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5059450968010281,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
         "p": 0.5255803336404952,
         "y": 1.0
       },
@@ -34084,8 +34064,28 @@
       },
       {
         "kind": "binary",
+        "p": 0.5501695580578231,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
         "p": 0.594059669614906,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5762161129176302,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4898696806017782,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5616111249411898,
+        "y": 1.0
       }
     ],
     "tennis:atp": [
@@ -56123,7 +56123,12 @@
       "espn:tennis:wta:183532",
       "espn:tennis:wta:183594",
       "espn:tennis:wta:183579",
-      "espn:tennis:wta:183576"
+      "espn:tennis:wta:183535",
+      "espn:tennis:wta:183542",
+      "espn:tennis:wta:183576",
+      "espn:tennis:wta:183544",
+      "espn:tennis:wta:183592",
+      "espn:tennis:wta:183591"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -56903,7 +56908,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5139,
+      "total": 5144,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
