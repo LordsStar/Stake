@@ -7333,8 +7333,8 @@
         "games": 8
       },
       "barbora palicova": {
-        "elo": 1472.497945058091,
-        "games": 11
+        "elo": 1482.3417218817617,
+        "games": 12
       },
       "gabriela lee": {
         "elo": 1500.0,
@@ -7753,8 +7753,8 @@
         "games": 5
       },
       "alice tubello": {
-        "elo": 1467.0697543596968,
-        "games": 14
+        "elo": 1457.2259775360262,
+        "games": 15
       },
       "hong yi cody wong": {
         "elo": 1510.3583209223518,
@@ -10213,8 +10213,8 @@
         "games": 25
       },
       "team synapse": {
-        "elo": 1530.8740981600508,
-        "games": 29
+        "elo": 1541.431219687306,
+        "games": 30
       },
       "ravage gaming": {
         "elo": 1490.0,
@@ -10333,8 +10333,8 @@
         "games": 1
       },
       "pipsqueak 4": {
-        "elo": 1550.2505463400908,
-        "games": 19
+        "elo": 1539.6934248128355,
+        "games": 20
       },
       "level up esports": {
         "elo": 1509.7556667296085,
@@ -29089,11 +29089,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.5255803336404952,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
         "p": 0.5512080375732875,
         "y": 0.0
       },
@@ -34081,6 +34076,11 @@
         "kind": "binary",
         "p": 0.4898696806017782,
         "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4921888411835328,
+        "y": 0.0
       },
       {
         "kind": "binary",
@@ -39951,6 +39951,11 @@
       {
         "kind": "binary",
         "p": 0.49904782643104506,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4721439236372378,
         "y": 1.0
       }
     ],
@@ -56128,6 +56133,7 @@
       "espn:tennis:wta:183576",
       "espn:tennis:wta:183544",
       "espn:tennis:wta:183592",
+      "espn:tennis:wta:183589",
       "espn:tennis:wta:183591"
     ],
     "volleyball:premier-volleyball-league-women": [
@@ -56725,7 +56731,8 @@
       "opendota:8988557865",
       "opendota:8988636430",
       "opendota:8988695634",
-      "opendota:8988787181"
+      "opendota:8988787181",
+      "opendota:8988904409"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -56908,7 +56915,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5144,
+      "total": 5145,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -56932,7 +56939,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 351,
+      "total": 352,
       "draws": 0
     },
     "soccer:prva-liga": {

@@ -1,50 +1,40 @@
 {
-  "schema_version": 1,
-  "trained_at": "2026-09-08T13:55:56.854760+00:00",
+  "schema_version": 2,
+  "trained_at": "2026-09-08T16:03:52.383548+00:00",
+  "last_evaluated_at": "2026-09-08T16:03:52.384616+00:00",
+  "prospective_start_after": "2026-09-08T02:05:00Z",
+  "prospective_predictions": [],
   "active": false,
-  "reason": "requiere Brier<=0.245, skill>=2% y mejora Elo>=0.001; obtuvo 0.2559, -2.70%, -0.0112",
+  "reason": "validacion prospectiva: 0/100 partidos nuevos",
   "samples": 1499,
-  "test_samples": 200,
+  "test_samples": 0,
+  "prospective_samples": 0,
+  "validation_kind": "prospective_frozen_v2",
   "feature_names": [
     "elo_diff",
-    "starter_fip_diff",
-    "bullpen_fip_diff",
-    "bullpen_workload_diff",
-    "rest_diff",
-    "form_diff"
+    "starter_fip_diff"
   ],
   "means": [
-    0.05150647881300187,
-    0.020650193162513666,
-    0.0013687310746532259,
-    -0.08104695919938423,
-    0.0020769181421606375,
-    -0.0077752117013087044
+    0.0477127623922415,
+    0.0032049118737112288
   ],
   "scales": [
-    0.16921449989851198,
-    1.0281957746714492,
-    0.6417400403365463,
-    0.7167179175197905,
-    0.294015724622842,
-    0.4215514217782325
+    0.1724981392309523,
+    1.0316482046111433
   ],
   "weights": [
-    0.09865503416657437,
-    0.08497747047196376,
-    0.07448494318664532,
-    0.052478786007944166,
-    -0.09513040455778124,
-    0.15552409858547112,
-    0.09968113475655771
+    0.10114080493656352,
+    0.15894514825094486,
+    0.10457821329688846
   ],
   "l2": 0.1,
+  "baseline_probability": 0.5250166777851901,
   "metrics": {
-    "brier": 0.2558614835296912,
-    "baseline_brier": 0.2491330691400572,
-    "elo_brier": 0.24462162732249865,
-    "skill": -0.02700731144548052,
-    "elo_gain": -0.011239856207192533
+    "brier": null,
+    "baseline_brier": null,
+    "elo_brier": null,
+    "skill": null,
+    "elo_gain": null
   },
   "feature_state": {
     "teams": {
