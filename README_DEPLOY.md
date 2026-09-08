@@ -1,4 +1,17 @@
-# Blindado v7 — instalación en GitHub y Streamlit Cloud
+# Blindado v7.2 — instalación en GitHub y Streamlit Cloud
+
+## Qué queda automatizado
+
+- Snapshot Stake/Bovada cada 30 minutos.
+- Resultados, reconciliación segura de nombres y Elo cada 6 horas.
+- Backfill inicial de las ligas ESPN principales.
+- Rotación persistente por las ligas activas de Stake.
+- ATP/WTA, Cricsheet, OpenDota, Oracle's Elixir y TheSportsDB como fuentes
+  gratuitas adicionales.
+
+En el uso diario solo se abre Streamlit y se pulsa **Ejecutar Blindado**. La
+elegibilidad de promociones personales y el estado físico de tenis/MMA/boxeo
+siguen siendo confirmaciones manuales.
 
 ## 1. Subir a GitHub
 
@@ -19,18 +32,16 @@ Selecciona **Read and write permissions** y guarda. El workflow usa el
 
 Después abre:
 
-`Actions > Entrenamiento Elo Blindado > Run workflow`
+`Actions > Resultados y entrenamiento Elo Blindado > Run workflow`
 
-La primera ejecución busca un histórico inicial. Las siguientes solo revisan
-los últimos tres días. El workflow guardará `state/results/results.json` y
-`state/elo_state.json` en el repositorio.
+La primera ejecución hace el backfill principal. Las siguientes revisan los
+últimos siete días y rotan por 24 ligas del snapshot. El workflow guarda
+resultados, Elo, alias seguros, pendientes de alias y cobertura de fuentes.
 
 El modelo se reconstruye completo en cada corrida. Esto mantiene el orden
 cronológico cuando una fuente descubre tarde un resultado histórico anterior.
-La migración v7 conserva el esquema Elo 3, por lo que una instalación que
-todavía tenga esquema 2 se reconstruirá automáticamente en la primera
-corrida. El esquema 3 usa predicciones maduras, ventana reciente y skill
-frente a un baseline; ya no bloquea todo con un único tope 0.23.
+Blindado v7.2 conserva Elo schema 4 con ventaja local por deporte. Una
+instalación anterior se reconstruye automáticamente en la primera corrida.
 
 Después de instalar v7, ejecuta el entrenamiento manualmente una vez. Detectará
 el formato anterior y reconstruirá el Elo con namespaces estables por liga/circuito.
@@ -143,9 +154,12 @@ respaldo en tu dispositivo y no lo subas al repositorio público.
 - `blindado_core.py`: Stake, Bovada, Elo, filtros y selección.
 - `cloud_snapshot_reader.py`: respaldo opcional desde snapshot.
 - `fetch_results_espn.py`: ingesta automática inicial de NBA/NFL/NHL/MLB.
-- `fetch_results_free.py`: TheSportsDB + Cricsheet + OpenDota, sin API de pago.
+- `fetch_results_free.py`: TheSportsDB + Cricsheet + OpenDota + ATP/WTA +
+  Oracle's Elixir, sin API de pago.
+- `reconcile_aliases.py`: crea alias únicamente con coincidencias fuertes.
+- `results_pipeline.py`: ejecuta resultados, alias y Elo en el orden correcto.
 - `elo_trainer.py`: entrenamiento cronológico e idempotente.
-- `.github/workflows/elo_training.yml`: ejecución automática diaria.
+- `.github/workflows/elo_training.yml`: ejecución automática cada 6 horas.
 - `.github/workflows/market_snapshot.yml`: snapshot público cada 30 minutos.
 - `.github/workflows/elo_backtest.yml`: reporte semanal de calibración, sin cambiar parámetros.
 - `market_snapshot_job.py`: genera el snapshot sin login ni datos personales.

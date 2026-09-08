@@ -44,7 +44,7 @@ def main() -> int:
     bovada_events, unavailable = BovadaCollector().fetch_all(keys)
 
     payload = {
-        "schema_version": 3,
+        "schema_version": 4,
         "generado_utc": utc_now().isoformat(),
         "stake_sports": stake.sports_catalog,
         "stake_coverage": stake.audit,

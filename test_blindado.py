@@ -74,13 +74,30 @@ class CollectorTests(unittest.TestCase):
         self.assertNotEqual(core.stake_market_key("Map 1 Winner"), "moneyline")
         self.assertNotEqual(core.stake_market_key("1st Set Winner"), "moneyline")
 
-    def test_schema_three_records_only_mature_predictions(self):
+    def test_schema_four_records_only_mature_predictions(self):
         with tempfile.TemporaryDirectory() as tmp:
             elo = core.EloModel(Path(tmp) / "elo.json")
             for i in range(8):
                 elo.update("demo:league", "a", "b", float(i % 2 == 0), f"g{i}")
-            self.assertEqual(elo.state["schema_version"], 3)
+            self.assertEqual(elo.state["schema_version"], 4)
             self.assertEqual(len(elo.state["brier"]["demo:league"]), 3)
+
+    def test_schema_four_uses_sport_home_advantage(self):
+        self.assertEqual(core.EloModel.home_advantage("basketball:nba"), 60.0)
+        self.assertEqual(core.EloModel.home_advantage("tennis:atp"), 0.0)
+
+    def test_schema_four_accepts_absolute_brier_or_skill(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            elo = core.EloModel(Path(tmp) / "elo.json")
+            # Excelente en términos absolutos, aunque ligeramente peor que
+            # el baseline de una muestra extremadamente desequilibrada.
+            elo.state["brier"] = {"demo:league": [
+                {"kind": "binary", "p": 0.1, "y": 0.0} for _ in range(29)
+            ] + [{"kind": "binary", "p": 0.1, "y": 1.0}]}
+            metrics = elo.evaluation_metrics("demo:league")
+            self.assertLess(metrics["skill"], 0.0)
+            self.assertTrue(metrics["absolute_ok"])
+            self.assertTrue(metrics["active"])
 
     def test_never_matches_different_esports_or_residual_sports(self):
         stake = self._event("stake", "fifa")

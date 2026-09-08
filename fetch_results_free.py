@@ -1,12 +1,14 @@
-"""Ingesta multideporte gratuita desde TheSportsDB v1.
+"""Ingesta multideporte desde fuentes gratuitas.
 
-Lee las ligas presentes en snapshot.json, busca una liga equivalente en la
-base pública y descarga sus últimos resultados. Una coincidencia débil se
-rechaza: ampliar cobertura nunca significa mezclar ligas por aproximación.
+Usa TheSportsDB, Cricsheet, OpenDota, históricos ATP/WTA y Oracle's Elixir.
+Lee las ligas presentes en snapshot.json y rota entre ellas. Una coincidencia
+débil se rechaza: ampliar cobertura nunca significa mezclar ligas.
 """
 
 import argparse
+import csv
 import difflib
+import gzip
 import io
 import json
 import re
@@ -22,6 +24,13 @@ from blindado_core import merge_results
 BASE = "https://www.thesportsdb.com/api/v1/json/123"
 CRICSHEET_RECENT = "https://cricsheet.org/downloads/recently_played_30_json.zip"
 OPENDOTA_PRO_MATCHES = "https://api.opendota.com/api/proMatches"
+TENNIS_ATP = "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_{year}.csv"
+TENNIS_WTA = "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_{year}.csv"
+LOL_DATA = (
+    "https://oracleselixir-downloadable-match-data.s3.us-west-2.amazonaws.com/"
+    "{year}_LoL_esports_match_data_from_OraclesElixir.gzip"
+)
+DEFAULT_STATE = Path("state/result_source_state.json")
 _LAST_THESPORTSDB_CALL = 0.0
 SPORT_NAMES = {
     "soccer": {"soccer"},
@@ -106,6 +115,30 @@ def load_targets(snapshot_path: Path):
     return sorted(targets)
 
 
+def load_state(path: Path):
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload if isinstance(payload, dict) else {}
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def save_state(path: Path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def rotating_targets(all_targets, limit: int, state):
+    """Rota por todo el catálogo; evita procesar siempre las primeras ligas."""
+    if not all_targets or limit <= 0 or limit >= len(all_targets):
+        state["league_cursor"] = 0
+        return all_targets
+    start = int(state.get("league_cursor", 0)) % len(all_targets)
+    selected = [all_targets[(start + i) % len(all_targets)] for i in range(limit)]
+    state["league_cursor"] = (start + len(selected)) % len(all_targets)
+    return selected
+
+
 def cricsheet_rows(targets):
     """Resultados recientes de cricket, publicados gratis en JSON por Cricsheet."""
     if not any(sport == "cricket" for sport, _ in targets):
@@ -150,32 +183,120 @@ def cricsheet_rows(targets):
     return rows
 
 
-def opendota_rows(targets):
+def opendota_rows(targets, pages=5):
     """Partidos profesionales Dota 2 recientes desde la API pública OpenDota."""
     if not any(sport == "dota-2" for sport, _ in targets):
         return []
-    response = requests.get(OPENDOTA_PRO_MATCHES, timeout=30)
-    response.raise_for_status()
     rows = []
-    for match in response.json() or []:
-        radiant, dire = match.get("radiant_name"), match.get("dire_name")
-        match_id, started = match.get("match_id"), match.get("start_time")
-        if not radiant or not dire or match_id is None or started is None or match.get("radiant_win") is None:
+    before = None
+    for _ in range(max(1, pages)):
+        params = {"less_than_match_id": before} if before else {}
+        response = requests.get(OPENDOTA_PRO_MATCHES, params=params, timeout=30)
+        response.raise_for_status()
+        batch = response.json() or []
+        if not batch:
+            break
+        ids = []
+        for match in batch:
+            radiant, dire = match.get("radiant_name"), match.get("dire_name")
+            match_id, started = match.get("match_id"), match.get("start_time")
+            if match_id is not None:
+                ids.append(int(match_id))
+            if not radiant or not dire or match_id is None or started is None or match.get("radiant_win") is None:
+                continue
+            radiant_win = bool(match["radiant_win"])
+            rows.append({
+                "sport": "dota-2", "league": "professional",
+                "event_id": f"opendota:{match_id}",
+                "start_time": datetime.fromtimestamp(int(started), tz=timezone.utc).isoformat(),
+                "home_name": radiant, "away_name": dire,
+                "home_score": 1 if radiant_win else 0,
+                "away_score": 0 if radiant_win else 1,
+                "status": "final", "source": "opendota",
+                "score_encoding": "winner_indicator",
+            })
+        if not ids:
+            break
+        before = min(ids)
+    return rows
+
+
+def tennis_rows(targets):
+    """ATP/WTA actuales y del año anterior, sin inferir retiros ni walkovers."""
+    if not any(sport == "tennis" for sport, _ in targets):
+        return []
+    rows = []
+    now_year = datetime.now(timezone.utc).year
+    for circuit, template in (("atp", TENNIS_ATP), ("wta", TENNIS_WTA)):
+        for year in (now_year - 1, now_year):
+            response = requests.get(template.format(year=year), timeout=60)
+            if response.status_code == 404:
+                continue
+            response.raise_for_status()
+            for match in csv.DictReader(io.StringIO(response.text.lstrip("\ufeff"))):
+                winner, loser = match.get("winner_name"), match.get("loser_name")
+                event_id = f"tennis-{circuit}:{match.get('tourney_id')}:{match.get('match_num')}"
+                date = str(match.get("tourney_date") or "")
+                if not winner or not loser or not match.get("tourney_id") or len(date) != 8:
+                    continue
+                try:
+                    started = datetime.strptime(date, "%Y%m%d").replace(tzinfo=timezone.utc).isoformat()
+                except ValueError:
+                    continue
+                rows.append({
+                    "sport": "tennis", "league": circuit,
+                    "event_id": event_id, "start_time": started,
+                    "home_name": winner, "away_name": loser,
+                    "home_score": 1, "away_score": 0, "status": "final",
+                    "source": f"jeff-sackmann-{circuit}",
+                    "score_encoding": "winner_indicator",
+                })
+    return rows
+
+
+def lol_rows(targets):
+    """Partidos profesionales de LoL desde el dataset gratuito Oracle's Elixir."""
+    if not any(sport == "league-of-legends" for sport, _ in targets):
+        return []
+    now_year = datetime.now(timezone.utc).year
+    rows = []
+    for year in (now_year - 1, now_year):
+        response = requests.get(LOL_DATA.format(year=year), timeout=120)
+        if response.status_code == 404:
             continue
-        radiant_win = bool(match["radiant_win"])
-        rows.append({
-            "sport": "dota-2",
-            "league": "professional",
-            "event_id": f"opendota:{match_id}",
-            "start_time": datetime.fromtimestamp(int(started), tz=timezone.utc).isoformat(),
-            "home_name": radiant,
-            "away_name": dire,
-            "home_score": 1 if radiant_win else 0,
-            "away_score": 0 if radiant_win else 1,
-            "status": "final",
-            "source": "opendota",
-            "score_encoding": "winner_indicator",
-        })
+        response.raise_for_status()
+        try:
+            decoded = gzip.decompress(response.content).decode("utf-8-sig", errors="replace")
+        except (gzip.BadGzipFile, OSError):
+            decoded = response.content.decode("utf-8-sig", errors="replace")
+        games = {}
+        for row in csv.DictReader(io.StringIO(decoded)):
+            if str(row.get("position") or "").lower() != "team":
+                continue
+            game_id, team = row.get("gameid"), row.get("teamname")
+            if game_id and team:
+                games.setdefault(game_id, []).append(row)
+        for game_id, teams in games.items():
+            if len(teams) != 2:
+                continue
+            ordered = sorted(teams, key=lambda x: str(x.get("side") or ""))
+            a, b = ordered
+            try:
+                ra, rb = int(float(a.get("result", ""))), int(float(b.get("result", "")))
+            except (TypeError, ValueError):
+                continue
+            if ra == rb:
+                continue
+            started = a.get("date") or b.get("date")
+            if not started:
+                continue
+            rows.append({
+                "sport": "league-of-legends", "league": a.get("league") or "professional",
+                "event_id": f"oracles-elixir:{game_id}", "start_time": started,
+                "home_name": a["teamname"], "away_name": b["teamname"],
+                "home_score": ra, "away_score": rb, "status": "final",
+                "source": "oracles-elixir", "score_encoding": "winner_indicator",
+            })
     return rows
 
 
@@ -183,10 +304,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--snapshot", default="snapshot.json")
     parser.add_argument(
-        "--max-leagues", type=int, default=0,
-        help="Máximo por corrida; 0 procesa todas las ligas del snapshot.",
+        "--max-leagues", type=int, default=24,
+        help="Ligas TheSportsDB por corrida; rota automáticamente. 0 procesa todas.",
     )
     parser.add_argument("--coverage-output", default="state/source_coverage.json")
+    parser.add_argument("--state", default=str(DEFAULT_STATE))
+    parser.add_argument("--opendota-pages", type=int, default=5)
     args = parser.parse_args()
     snapshot = Path(args.snapshot)
     if not snapshot.exists():
@@ -194,12 +317,27 @@ def main() -> int:
         return 0
 
     all_targets = load_targets(snapshot)
-    targets = all_targets if args.max_leagues <= 0 else all_targets[:args.max_leagues]
-    all_leagues = get_json("all_leagues.php").get("leagues") or []
+    state_path = Path(args.state)
+    source_state = load_state(state_path)
+    targets = rotating_targets(all_targets, args.max_leagues, source_state)
+    rows, rejected, matched = [], [], []
+    try:
+        all_leagues = get_json("all_leagues.php").get("leagues") or []
+        thesportsdb_available = True
+    except Exception as exc:
+        # TheSportsDB es solo una de varias fuentes. Una caída no debe impedir
+        # que se incorporen tenis, cricket o esports en la misma corrida.
+        all_leagues = []
+        thesportsdb_available = False
+        rejected.append(f"TheSportsDB no disponible: {exc}")
     # El endpoint general gratuito puede devolver solo el catálogo destacado.
     # Se amplía por deporte y se deduplica por id.
     by_id = {l.get("idLeague"): l for l in all_leagues if l.get("idLeague")}
-    for sport_name in sorted({name for sport, _ in targets for name in SPORT_NAMES[sport]}):
+    catalog_sports = (
+        sorted({name for sport, _ in targets for name in SPORT_NAMES[sport]})
+        if thesportsdb_available else []
+    )
+    for sport_name in catalog_sports:
         try:
             for league in get_json("search_all_leagues.php", s=sport_name.title()).get("countries") or []:
                 if league.get("idLeague"):
@@ -207,7 +345,6 @@ def main() -> int:
         except Exception as exc:
             print(f"[aviso] catálogo {sport_name}: {exc}")
     all_leagues = list(by_id.values())
-    rows, rejected, matched = [], [], []
     for sport, stake_league in targets:
         allowed = SPORT_NAMES[sport]
         candidates = [l for l in all_leagues if norm(l.get("strSport", "")) in allowed]
@@ -254,15 +391,24 @@ def main() -> int:
             accepted += 1
         print(f"{sport}/{stake_league} -> {league['strLeague']} ({similarity:.2f}): {accepted}")
 
-    for source_name, loader in (("Cricsheet", cricsheet_rows), ("OpenDota", opendota_rows)):
+    auxiliary = (
+        ("Cricsheet", lambda: cricsheet_rows(all_targets)),
+        ("OpenDota", lambda: opendota_rows(all_targets, args.opendota_pages)),
+        ("Tenis ATP/WTA", lambda: tennis_rows(all_targets)),
+        ("League of Legends", lambda: lol_rows(all_targets)),
+    )
+    source_counts = {}
+    for source_name, loader in auxiliary:
         try:
-            source_rows = loader(targets)
+            source_rows = loader()
             rows.extend(source_rows)
+            source_counts[source_name] = len(source_rows)
             print(f"{source_name}: {len(source_rows)} resultados normalizados")
         except Exception as exc:
             # Una fuente auxiliar caída no borra ni invalida lo recogido por
             # las otras. El evento solo pasará si finalmente existe cobertura.
             print(f"[aviso] {source_name} no disponible: {exc}")
+            source_counts[source_name] = f"error: {exc}"
 
     added, errors = merge_results(rows)
     print(f"Resultados gratuitos nuevos: {added}; rechazados por esquema: {len(errors)}")
@@ -270,7 +416,7 @@ def main() -> int:
         print(f"[sin cobertura] {message}")
     coverage_path = Path(args.coverage_output)
     coverage_path.parent.mkdir(parents=True, exist_ok=True)
-    coverage_path.write_text(json.dumps({
+    coverage_payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "targets_in_snapshot": len(all_targets),
         "targets_processed": len(targets),
@@ -279,8 +425,14 @@ def main() -> int:
         "rows_collected": len(rows),
         "rows_added": added,
         "schema_rejections": errors,
+        "auxiliary_sources": source_counts,
+        "next_league_cursor": source_state.get("league_cursor", 0),
         "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica.",
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    }
+    save_state(coverage_path, coverage_payload)
+    source_state["last_successful_run"] = coverage_payload["generated_at"]
+    source_state["targets_in_last_snapshot"] = len(all_targets)
+    save_state(state_path, source_state)
     return 0
 
 

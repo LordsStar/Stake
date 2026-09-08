@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.1 / Elo schema 4. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.2 / Elo schema 4. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -113,19 +113,41 @@ def render_health_panel(
 
     coverage = elo.coverage()
     results = core.load_results()
+    source_coverage = core.load_json(core.STATE_DIR / "source_coverage.json", {})
+    pipeline_state = core.load_json(core.STATE_DIR / "results_pipeline_state.json", {})
+    active_namespaces = sum(1 for info in coverage.values() if info.get("modelo_activo"))
     st.caption(
         f"Histórico Elo: {len(results)} resultados. Calibración: >= {core.BRIER_MIN} predicciones maduras, "
         f"ventana {core.BRIER_WINDOW}; se activa por Brier absoluto (binario <= {core.BRIER_MAX:.3f}, "
         f"1X2 <= {core.BRIER_MULTICLASS_MAX:.3f}) O por skill >= {core.BRIER_SKILL_MIN:.0%} frente al baseline."
     )
-    if downloaded_markets:
+    if downloaded_markets and downloaded_markets == evaluable_markets:
         st.info(
-            "Stake: se descargan y muestran todos los mercados activos devueltos por la API para los fixtures recibidos. "
-            "Blindado usa para picks únicamente moneyline/DNB; totales, hándicaps y props no se evalúan todavía."
+            "Modo snapshot: el archivo conserva únicamente moneyline/DNB, que son los mercados evaluados por Blindado. "
+            "La recolección puede inspeccionar otros mercados, pero no se transportan en el snapshot para mantenerlo compacto."
+        )
+    elif downloaded_markets:
+        st.info(
+            "Consulta directa: se recibieron mercados adicionales, pero Blindado evalúa únicamente moneyline/DNB."
         )
 
     compatible = sum(1 for e in stake_events if core.pick_capability(e)[0])
-    st.write(f"Eventos con conector Bovada configurado: **{compatible} / {len(stake_events)}**")
+    st.write(f"Eventos cuya categoría tiene ruta Bovada configurada: **{compatible} / {len(stake_events)}**")
+    st.caption(
+        "Una ruta configurada no garantiza que el evento y sus selecciones hayan sido emparejados; "
+        "esa comprobación se realiza después de superar Elo."
+    )
+
+    if isinstance(source_coverage, dict) and source_coverage:
+        processed = source_coverage.get("targets_processed", 0)
+        total_targets = source_coverage.get("targets_in_snapshot", 0)
+        st.write(
+            f"Alimentación estadística: **{active_namespaces}** circuitos Elo activos · "
+            f"última ronda procesó **{processed}/{total_targets}** ligas objetivo."
+        )
+        last_pipeline = pipeline_state.get("last_successful_run")
+        if last_pipeline:
+            st.caption(f"Último pipeline completo de resultados/Elo: {last_pipeline}")
 
     with st.expander("Detalle de cobertura Elo por deporte"):
         if not coverage:
@@ -427,7 +449,7 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.1 — Stake completo / Elo 4", layout="wide")
+    st.set_page_config(page_title="Blindado v7.2 — Stake completo / Elo 4", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
@@ -442,7 +464,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.1 — Catálogo completo de Stake / Elo schema 4")
+    st.title("🎯 Blindado v7.2 — Catálogo completo de Stake / Elo schema 4")
     st.caption(
         "Elo = único modelo estadístico válido · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -578,7 +600,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.1", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.2", type="primary"):
                 candidates, audit = core.prepare_candidates(stake_events, bovada_events, promotions, float(bankroll))
                 engine = core.BlindadoEngine(float(bankroll))
                 pick = engine.choose_one(candidates)

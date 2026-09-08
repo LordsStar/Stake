@@ -62,7 +62,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.1-schema4-full-stake-catalog"
+APP_VERSION = "7.2-schema4-automated-results"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
