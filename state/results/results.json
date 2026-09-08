@@ -210804,5 +210804,31 @@
     "status": "final",
     "source": "opendota",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183552",
+    "start_time": "2026-09-08T14:50Z",
+    "home_name": "Nastasja Schunk",
+    "away_name": "Alicia Herrero Linana",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:8989070993",
+    "start_time": "2026-09-08T15:30:58+00:00",
+    "home_name": "Team Synapse",
+    "away_name": "Pipsqueak + 4",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
   }
 ]

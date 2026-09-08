@@ -7089,8 +7089,8 @@
         "games": 8
       },
       "alicia herrero linana": {
-        "elo": 1521.1619925753546,
-        "games": 6
+        "elo": 1530.8544476354386,
+        "games": 7
       },
       "carol zhao": {
         "elo": 1442.2685170558852,
@@ -9109,8 +9109,8 @@
         "games": 1
       },
       "nastasja schunk": {
-        "elo": 1510.4734162071038,
-        "games": 3
+        "elo": 1500.7809611470198,
+        "games": 4
       },
       "ilary pistola": {
         "elo": 1491.9593508444966,
@@ -10213,8 +10213,8 @@
         "games": 25
       },
       "team synapse": {
-        "elo": 1541.431219687306,
-        "games": 30
+        "elo": 1551.3812023472547,
+        "games": 31
       },
       "ravage gaming": {
         "elo": 1490.0,
@@ -10333,8 +10333,8 @@
         "games": 1
       },
       "pipsqueak 4": {
-        "elo": 1539.6934248128355,
-        "games": 20
+        "elo": 1529.743442152887,
+        "games": 21
       },
       "level up esports": {
         "elo": 1509.7556667296085,
@@ -39957,6 +39957,11 @@
         "kind": "binary",
         "p": 0.4721439236372378,
         "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5025008670025696,
+        "y": 1.0
       }
     ],
     "aussie-rules:afl-women": [
@@ -56134,7 +56139,8 @@
       "espn:tennis:wta:183544",
       "espn:tennis:wta:183592",
       "espn:tennis:wta:183589",
-      "espn:tennis:wta:183591"
+      "espn:tennis:wta:183591",
+      "espn:tennis:wta:183552"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -56732,7 +56738,8 @@
       "opendota:8988636430",
       "opendota:8988695634",
       "opendota:8988787181",
-      "opendota:8988904409"
+      "opendota:8988904409",
+      "opendota:8989070993"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -56915,7 +56922,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5145,
+      "total": 5146,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -56939,7 +56946,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 352,
+      "total": 353,
       "draws": 0
     },
     "soccer:prva-liga": {
