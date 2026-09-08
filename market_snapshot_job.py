@@ -60,6 +60,10 @@ def main() -> int:
         "bovada_no_disponible": unavailable,
         "stake_errors": stake.errors,
         "movement_history": movement,
+        # El modelo y las variables MLB viajan junto al snapshot para que
+        # Streamlit no dependa de que un redeploy coincida con el entrenamiento.
+        "mlb_model": load_json(Path("state/mlb/model.json"), {}),
+        "mlb_pregame": load_json(Path("state/mlb/pregame.json"), []),
     }
     raw = json.dumps(payload, ensure_ascii=False, indent=2)
     output.write_text(raw, encoding="utf-8")

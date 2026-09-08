@@ -1,7 +1,8 @@
 """Modelo MLB prepartido, gratuito y sin fuga de informacion.
 
-La version 1 usa seis senales agregadas: Elo, abridor, bullpen, carga del
-bullpen, descanso y forma reciente.  Alineaciones y lesiones no se usan para
+La version 2 usa solo dos senales predefinidas: Elo y abridor. Las pruebas de
+v1 mostraron que descanso/forma introducian inestabilidad temporal y que
+bullpen/carga no mejoraban de forma robusta. Alineaciones y lesiones no se usan para
 entrenar porque no existe en este proyecto un historico fiable con la hora en
 que esa informacion se conocio; solo se registran prospectivamente como gates.
 """
@@ -24,15 +25,11 @@ MLB_DIR = BASE_DIR / "state" / "mlb"
 MLB_GAMES_FILE = MLB_DIR / "games.json"
 MLB_MODEL_FILE = MLB_DIR / "model.json"
 MLB_PREGAME_FILE = MLB_DIR / "pregame.json"
-MODEL_SCHEMA_VERSION = 1
+MODEL_SCHEMA_VERSION = 2
 
 FEATURE_NAMES = [
     "elo_diff",
     "starter_fip_diff",
-    "bullpen_fip_diff",
-    "bullpen_workload_diff",
-    "rest_diff",
-    "form_diff",
 ]
 
 
@@ -122,24 +119,10 @@ class FeatureState:
         home_starter, away_starter = self._starter_fip(hp), self._starter_fip(ap)
         if home_starter is None or away_starter is None:
             return None
-        hbp, hwork = self._bullpen_metrics(home, when)
-        abp, awork = self._bullpen_metrics(away, when)
         hs, aws = self.teams[home], self.teams[away]
-
-        def rest_days(state: TeamState) -> float:
-            previous = _dt(state.last_game)
-            return 3.0 if previous is None else max(0.0, min(4.0, (when - previous).total_seconds() / 86400.0 - 1.0))
-
-        def form(state: TeamState) -> float:
-            return sum(state.recent) / len(state.recent) if state.recent else 0.0
-
         return [
             (hs.elo + 20.0 - aws.elo) / 400.0,
             away_starter - home_starter,
-            abp - hbp,
-            awork - hwork,
-            rest_days(hs) - rest_days(aws),
-            form(hs) - form(aws),
         ]
 
     def update(self, game: Dict[str, Any]) -> None:
@@ -190,19 +173,29 @@ class FeatureState:
         return obj
 
 
-def build_dataset(games: Sequence[Dict[str, Any]]) -> Tuple[List[List[float]], List[float], List[float], FeatureState]:
+def build_observations(games: Sequence[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], FeatureState]:
     state = FeatureState()
-    xs: List[List[float]] = []
-    ys: List[float] = []
-    elo_probs: List[float] = []
+    observations: List[Dict[str, Any]] = []
     ordered = sorted((g for g in games if _dt(g.get("start_time"))), key=lambda g: _dt(g["start_time"]))
     for game in ordered:
         features = state.features(game)
         if features is not None:
-            xs.append(features)
-            ys.append(1.0 if float(game["home_score"]) > float(game["away_score"]) else 0.0)
-            elo_probs.append(1.0 / (1.0 + 10 ** (-features[0])))
+            observations.append({
+                "game_pk": str(game.get("game_pk")),
+                "start_time": game.get("start_time"),
+                "x": features,
+                "y": 1.0 if float(game["home_score"]) > float(game["away_score"]) else 0.0,
+                "elo_p": 1.0 / (1.0 + 10 ** (-features[0])),
+            })
         state.update(game)
+    return observations, state
+
+
+def build_dataset(games: Sequence[Dict[str, Any]]) -> Tuple[List[List[float]], List[float], List[float], FeatureState]:
+    observations, state = build_observations(games)
+    xs = [row["x"] for row in observations]
+    ys = [row["y"] for row in observations]
+    elo_probs = [row["elo_p"] for row in observations]
     return xs, ys, elo_probs, state
 
 
@@ -247,8 +240,10 @@ def _brier(probs: Sequence[float], ys: Sequence[float]) -> Optional[float]:
     return sum((p - y) ** 2 for p, y in zip(probs, ys)) / len(ys) if ys else None
 
 
-def train_model(games: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
-    xs, ys, elo_probs, final_state = build_dataset(games)
+def train_model(games: Sequence[Dict[str, Any]], previous_model: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    observations, final_state = build_observations(games)
+    xs = [row["x"] for row in observations]
+    ys = [row["y"] for row in observations]
     if len(xs) < 500:
         return {
             "schema_version": MODEL_SCHEMA_VERSION, "active": False,
@@ -256,49 +251,99 @@ def train_model(games: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
             "samples": len(xs), "feature_names": FEATURE_NAMES,
             "feature_state": final_state.export(),
         }
-    test_n = min(200, max(100, len(xs) // 5))
-    validation_n = min(200, max(100, len(xs) // 5))
-    train_end, validation_end = len(xs) - validation_n - test_n, len(xs) - test_n
-    means, scales = _standardize_fit(xs[:train_end])
-    z = _transform(xs, means, scales)
-    best: Optional[Tuple[float, float, List[float]]] = None
-    for l2 in (0.1, 1.0, 10.0, 50.0):
-        weights = _fit_logistic(z[:train_end], ys[:train_end], l2)
-        score = _brier(_predict(weights, z[train_end:validation_end]), ys[train_end:validation_end])
-        if score is not None and (best is None or score < best[0]):
-            best = (score, l2, weights)
-    assert best is not None
-    _, selected_l2, _ = best
-    # Tras escoger lambda solo con validacion, se ajusta una vez en train+validation.
-    means, scales = _standardize_fit(xs[:validation_end])
-    z = _transform(xs, means, scales)
-    weights = _fit_logistic(z[:validation_end], ys[:validation_end], selected_l2)
-    test_probs = _predict(weights, z[validation_end:])
-    test_y = ys[validation_end:]
-    model_brier = float(_brier(test_probs, test_y))
-    home_rate = sum(ys[:validation_end]) / validation_end
-    baseline_brier = float(_brier([home_rate] * len(test_y), test_y))
-    elo_brier = float(_brier(elo_probs[validation_end:], test_y))
-    skill = 1.0 - model_brier / baseline_brier if baseline_brier else -1.0
-    elo_gain = elo_brier - model_brier
-    active = len(test_y) >= 100 and model_brier <= 0.245 and skill >= 0.02 and elo_gain >= 0.001
-    reason = (
-        "aprobado: supera limite absoluto, baseline y Elo"
-        if active else
-        f"requiere Brier<=0.245, skill>=2% y mejora Elo>=0.001; obtuvo {model_brier:.4f}, {skill:.2%}, {elo_gain:.4f}"
+    previous = previous_model if isinstance(previous_model, dict) else {}
+    if previous.get("schema_version") == MODEL_SCHEMA_VERSION and previous.get("weights"):
+        means = list(previous["means"])
+        scales = list(previous["scales"])
+        weights = list(previous["weights"])
+        selected_l2 = float(previous.get("l2", 1.0))
+        marker = previous.get("prospective_start_after")
+        trained_at = previous.get("trained_at")
+        baseline_probability = float(previous.get("baseline_probability", 0.5))
+        prospective = list(previous.get("prospective_predictions") or [])
+    else:
+        # La arquitectura Elo+abridor queda congelada ahora. El ultimo bloque
+        # historico solo selecciona regularizacion; NO activa el modelo. La
+        # activacion se decide con partidos posteriores a marker.
+        validation_n = min(200, max(100, len(xs) // 5))
+        train_end = len(xs) - validation_n
+        means, scales = _standardize_fit(xs[:train_end])
+        z = _transform(xs, means, scales)
+        best: Optional[Tuple[float, float, List[float]]] = None
+        for l2 in (0.1, 1.0, 10.0, 50.0):
+            candidate = _fit_logistic(z[:train_end], ys[:train_end], l2)
+            score = _brier(_predict(candidate, z[train_end:]), ys[train_end:])
+            if score is not None and (best is None or score < best[0]):
+                best = (score, l2, candidate)
+        assert best is not None
+        selected_l2 = best[1]
+        means, scales = _standardize_fit(xs)
+        z = _transform(xs, means, scales)
+        weights = _fit_logistic(z, ys, selected_l2)
+        marker = observations[-1]["start_time"]
+        trained_at = datetime.now(UTC).isoformat()
+        baseline_probability = sum(ys) / len(ys)
+        prospective = []
+
+    seen = {str(row.get("game_pk")) for row in prospective}
+    marker_dt = _dt(marker)
+    for row in observations:
+        if str(row["game_pk"]) in seen or not marker_dt or _dt(row["start_time"]) <= marker_dt:
+            continue
+        zrow = [(value - means[i]) / scales[i] for i, value in enumerate(row["x"])]
+        prospective.append({
+            "game_pk": row["game_pk"], "start_time": row["start_time"],
+            "p": _predict(weights, [zrow])[0], "elo_p": row["elo_p"], "y": row["y"],
+        })
+        seen.add(str(row["game_pk"]))
+    # Se conservan todos los IDs para mantener idempotencia. Las métricas usan
+    # como máximo los 200 más recientes, igual que el gate Elo general.
+    evaluation = prospective[-200:]
+    test_y = [float(row["y"]) for row in evaluation]
+    test_probs = [float(row["p"]) for row in evaluation]
+    elo_probs = [float(row["elo_p"]) for row in evaluation]
+    model_brier = _brier(test_probs, test_y)
+    baseline_brier = _brier([baseline_probability] * len(test_y), test_y)
+    elo_brier = _brier(elo_probs, test_y)
+    skill = (1.0 - model_brier / baseline_brier) if model_brier is not None and baseline_brier else None
+    elo_gain = (elo_brier - model_brier) if model_brier is not None and elo_brier is not None else None
+    enough = len(prospective) >= 100
+    active = bool(
+        enough and model_brier is not None and model_brier <= 0.245
+        and skill is not None and skill >= 0.02
+        and elo_gain is not None and elo_gain >= 0.001
     )
+    if not enough:
+        reason = f"validacion prospectiva: {len(prospective)}/100 partidos nuevos"
+    elif active:
+        reason = "aprobado prospectivamente: supera limite absoluto, baseline y Elo"
+    else:
+        reason = (
+            f"prospectivo requiere Brier<=0.245, skill>=2% y mejora Elo>=0.001; "
+            f"obtuvo {model_brier:.4f}, {skill:.2%}, {elo_gain:.4f}"
+        )
     return {
         "schema_version": MODEL_SCHEMA_VERSION,
-        "trained_at": datetime.now(UTC).isoformat(),
-        "active": active, "reason": reason, "samples": len(xs), "test_samples": len(test_y),
+        "trained_at": trained_at,
+        "last_evaluated_at": datetime.now(UTC).isoformat(),
+        "prospective_start_after": marker,
+        "prospective_predictions": prospective,
+        "active": active, "reason": reason, "samples": len(xs),
+        "test_samples": len(evaluation), "prospective_samples": len(prospective),
+        "validation_kind": "prospective_frozen_v2",
         "feature_names": FEATURE_NAMES, "means": means, "scales": scales,
-        "weights": weights, "l2": selected_l2,
+        "weights": weights, "l2": selected_l2, "baseline_probability": baseline_probability,
         "metrics": {
             "brier": model_brier, "baseline_brier": baseline_brier,
             "elo_brier": elo_brier, "skill": skill, "elo_gain": elo_gain,
         },
         "feature_state": final_state.export(),
     }
+
+
+def _legacy_train_model_removed() -> None:
+    """Marcador intencional: v1 no puede reactivarse por accidente."""
+    return None
 
 
 class MLBPregameModel:
@@ -314,15 +359,23 @@ class MLBPregameModel:
 
     def coverage(self) -> Dict[str, Any]:
         return {
-            "modelo_activo": bool(self.model.get("active")),
+            "modelo_activo": bool(
+                self.model.get("schema_version") == MODEL_SCHEMA_VERSION
+                and self.model.get("active")
+            ),
             "muestras": self.model.get("samples", 0),
             "muestras_test": self.model.get("test_samples", 0),
+            "muestras_prospectivas_totales": self.model.get("prospective_samples", 0),
             "metricas": self.model.get("metrics", {}),
             "motivo": self.model.get("reason", "modelo MLB no entrenado"),
             "variables": self.model.get("feature_names", FEATURE_NAMES),
+            "validacion": self.model.get("validation_kind"),
+            "inicio_prospectivo": self.model.get("prospective_start_after"),
         }
 
     def probability_for_event(self, event: Any, pregame: Sequence[Dict[str, Any]]) -> Tuple[Optional[float], str]:
+        if self.model.get("schema_version") != MODEL_SCHEMA_VERSION:
+            return None, "modelo MLB anterior; falta inicializar validacion prospectiva v2"
         if not self.model.get("active"):
             return None, str(self.model.get("reason", "modelo MLB no entrenado"))
         start = _dt(getattr(event, "start_time", None))

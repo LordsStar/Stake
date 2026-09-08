@@ -197,7 +197,8 @@ def main() -> int:
         print(f"MLB pregame: {len(rows)} partidos")
         return 0
     history = fetch_history(args.days_back, args.workers)
-    model = train_model(history["games"])
+    previous_model = load_json(MLB_MODEL_FILE, {})
+    model = train_model(history["games"], previous_model=previous_model)
     save_json(MLB_MODEL_FILE, model)
     pregame = fetch_pregame(args.days_forward)
     print(

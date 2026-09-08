@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from mlb_model import MLB_GAMES_FILE, train_model
+from mlb_model import MLB_GAMES_FILE, MLB_MODEL_FILE, train_model
 
 
 def main() -> int:
@@ -15,13 +15,18 @@ def main() -> int:
         games = json.loads(MLB_GAMES_FILE.read_text(encoding="utf-8"))
     except Exception:
         games = []
-    model = train_model(games)
+    try:
+        previous = json.loads(MLB_MODEL_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        previous = {}
+    model = train_model(games, previous_model=previous)
     report = {
         "active": model.get("active", False), "reason": model.get("reason"),
         "samples": model.get("samples", 0), "test_samples": model.get("test_samples", 0),
         "features": model.get("feature_names", []), "selected_l2": model.get("l2"),
         "metrics": model.get("metrics", {}),
-        "validation": "split cronologico; lambda elegida en validacion y resultado final medido en test intacto",
+        "validation": model.get("validation_kind", "prospectiva pendiente"),
+        "prospective_start_after": model.get("prospective_start_after"),
     }
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

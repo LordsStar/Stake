@@ -2,7 +2,10 @@ import unittest
 from datetime import datetime, timedelta, timezone
 
 import blindado_core as core
-from mlb_model import FEATURE_NAMES, FeatureState, MLBPregameModel, build_dataset
+from mlb_model import (
+    FEATURE_NAMES, MODEL_SCHEMA_VERSION, FeatureState, MLBPregameModel,
+    build_dataset, train_model,
+)
 
 
 UTC = timezone.utc
@@ -25,13 +28,13 @@ def game(index, home_score=5, away_score=3):
 
 
 class MLBModelTests(unittest.TestCase):
-    def test_only_six_aggregated_features(self):
-        self.assertEqual(len(FEATURE_NAMES), 6)
+    def test_only_two_frozen_features(self):
+        self.assertEqual(FEATURE_NAMES, ["elo_diff", "starter_fip_diff"])
 
     def test_starter_requires_three_previous_games(self):
         xs, ys, elo, _ = build_dataset([game(i) for i in range(6)])
         self.assertEqual(len(xs), 3)
-        self.assertTrue(all(len(row) == 6 for row in xs))
+        self.assertTrue(all(len(row) == 2 for row in xs))
         self.assertEqual(len(xs), len(ys))
         self.assertEqual(len(xs), len(elo))
 
@@ -48,8 +51,9 @@ class MLBModelTests(unittest.TestCase):
         for i in range(3):
             state.update(game(i))
         payload = {
-            "active": True, "means": [0.0] * 6, "scales": [1.0] * 6,
-            "weights": [0.0] * 7, "feature_names": FEATURE_NAMES,
+            "schema_version": MODEL_SCHEMA_VERSION,
+            "active": True, "means": [0.0] * 2, "scales": [1.0] * 2,
+            "weights": [0.0] * 3, "feature_names": FEATURE_NAMES,
             "feature_state": state.export(), "samples": 600,
         }
         current = game(10)
@@ -65,6 +69,18 @@ class MLBModelTests(unittest.TestCase):
         self.assertTrue(active)
         self.assertAlmostEqual(probs["Home"], 0.5)
         self.assertAlmostEqual(probs["Away"], 0.5)
+
+    def test_new_schema_starts_a_fresh_prospective_window(self):
+        historical = [game(i, 5 if i % 2 else 2, 2 if i % 2 else 5) for i in range(520)]
+        first = train_model(historical, previous_model={"schema_version": 1, "active": True})
+        self.assertEqual(first["schema_version"], MODEL_SCHEMA_VERSION)
+        self.assertEqual(first["test_samples"], 0)
+        self.assertFalse(first["active"])
+        extended = historical + [
+            game(i, 5 if i % 2 else 2, 2 if i % 2 else 5) for i in range(520, 625)
+        ]
+        second = train_model(extended, previous_model=first)
+        self.assertEqual(second["test_samples"], 105)
 
 
 if __name__ == "__main__":
