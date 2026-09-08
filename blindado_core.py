@@ -1,7 +1,7 @@
 """
 blindado_core.py
 =================
-Lógica pura de Blindado v6 — SIN dependencia de Streamlit.
+Lógica pura de Blindado v7.1 / Elo schema 4 — SIN dependencia de Streamlit.
 
 Se separó del archivo de la app para que tanto la UI (Streamlit) como los
 scripts de línea de comandos (elo_trainer.py, fetch_results_espn.py, y el
@@ -62,7 +62,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.0-full-stake-catalog"
+APP_VERSION = "7.1-schema4-full-stake-catalog"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -77,7 +77,7 @@ PHYSICAL_STATUS_FILE = STATE_DIR / "physical_status.json"
 TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
-ELO_SCHEMA_VERSION = 3
+ELO_SCHEMA_VERSION = 4
 
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
@@ -245,10 +245,15 @@ LIQUIDITY_MAX_AGE_MIN = 120.0
 ELO_INITIAL = 1500.0
 ELO_K = 20.0
 ELO_MIN_GAMES = 5
+# Alias retrocompatible para herramientas antiguas; producción usa el mapa
+# por deporte definido debajo.
+ELO_HOME = 50.0
 BRIER_MAX = 0.245
+BRIER_MULTICLASS_MAX = 0.60
 BRIER_MIN = 30
 BRIER_WINDOW = 200
 BRIER_SKILL_MIN = 0.02
+BRIER_GATE_MODE = "either"
 ELO_HOME_BY_SPORT = {
     "american-football": 50.0,
     "basketball": 60.0,
@@ -272,7 +277,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v6 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.1 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -291,8 +296,9 @@ REGLAS:
 3. SEGUNDO MODELO — ÚNICA FUENTE VÁLIDA:
    Elo interno, entrenado cronológicamente con resultados reales
    (>= 5 partidos por participante y >= 30 predicciones maduras). La
-   calibración usa una ventana reciente de 200, exige Brier Skill Score
-   >= 2% frente al baseline y, para binarios, Brier <= 0.245.
+   calibración usa una ventana reciente de 200. Con suficientes muestras,
+   se acepta calidad absoluta (Brier binario <= 0.245 / 1X2 <= 0.60) O
+   Brier Skill Score >= 2% frente al baseline de la competencia.
    Si el Elo no está calibrado para ambos equipos: DESCARTAR ese evento.
    En mercados 1X2 se usa Brier multiclase y una tasa de empate aprendida.
 
@@ -1476,19 +1482,30 @@ class EloModel:
         skill = (1.0 - brier / baseline) if baseline > 0 else None
         enough = len(hist) >= BRIER_MIN
         beats_baseline = skill is not None and skill >= BRIER_SKILL_MIN
-        absolute_ok = kind == "multiclass" or brier <= BRIER_MAX
-        active = enough and beats_baseline and absolute_ok
+        absolute_limit = BRIER_MULTICLASS_MAX if kind == "multiclass" else BRIER_MAX
+        absolute_ok = brier <= absolute_limit
+        # Schema 4: los dos caminos son alternativos. Esto evita rechazar un
+        # Brier absoluto excelente solo porque el baseline de una competición
+        # muy desigual también sea excepcionalmente bajo.
+        active = enough and (beats_baseline or absolute_ok)
         if not enough:
             reason = f"{len(hist)}/{BRIER_MIN} predicciones maduras"
-        elif not beats_baseline:
-            reason = f"skill {skill if skill is not None else 'N/D'} < {BRIER_SKILL_MIN:.0%} frente al baseline"
-        elif not absolute_ok:
-            reason = f"Brier binario {brier:.4f} > {BRIER_MAX:.3f}"
+        elif absolute_ok and beats_baseline:
+            reason = "calibración aprobada por Brier absoluto y skill"
+        elif absolute_ok:
+            reason = f"calibración aprobada por Brier absoluto <= {absolute_limit:.3f}"
+        elif beats_baseline:
+            reason = f"calibración aprobada por skill >= {BRIER_SKILL_MIN:.0%}"
         else:
-            reason = "calibración aprobada"
+            reason = (
+                f"Brier {brier:.4f} > {absolute_limit:.3f} y skill "
+                f"{skill if skill is not None else 'N/D'} < {BRIER_SKILL_MIN:.0%}"
+            )
         return {
             "kind": kind, "samples": len(hist), "total_samples": len(full_hist),
             "brier": brier, "baseline_brier": baseline, "skill": skill,
+            "absolute_limit": absolute_limit, "absolute_ok": absolute_ok,
+            "beats_baseline": beats_baseline, "gate_mode": BRIER_GATE_MODE,
             "active": active, "reason": reason,
         }
 
@@ -1577,6 +1594,8 @@ class EloModel:
                 "predicciones_brier_totales": metrics["total_samples"],
                 "ventana_brier": BRIER_WINDOW,
                 "tipo_brier": metrics["kind"],
+                "limite_brier_absoluto": metrics.get("absolute_limit"),
+                "modo_gate_brier": BRIER_GATE_MODE,
                 "brier": None if metrics["brier"] is None else round(metrics["brier"], 4),
                 "baseline_brier": None if metrics["baseline_brier"] is None else round(metrics["baseline_brier"], 4),
                 "brier_skill_score": None if metrics["skill"] is None else round(metrics["skill"], 4),
