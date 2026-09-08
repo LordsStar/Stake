@@ -1,64 +1,58 @@
 {
-  "generated_at": "2026-09-08T01:59:31.168807+00:00",
+  "generated_at": "2026-09-08T02:36:01.308376+00:00",
   "targets_in_snapshot": 189,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "aussie-rules",
-      "stake_league": "afl-women",
-      "source_league": "AFL Womens",
-      "similarity": 0.947
+      "sport": "cricket",
+      "stake_league": "pakistan-super-league-srl",
+      "source_league": "Caribbean Premier League",
+      "similarity": 0.612
     },
     {
       "sport": "cricket",
-      "stake_league": "big-bash-league-srl",
-      "source_league": "Australian Big Bash League",
+      "stake_league": "premier-league-srl",
+      "source_league": "Caribbean Premier League",
       "similarity": 0.667
     },
     {
       "sport": "cricket",
-      "stake_league": "caribbean-premier-league",
+      "stake_league": "t10-german-super-league",
       "source_league": "Caribbean Premier League",
-      "similarity": 1.0
-    },
-    {
-      "sport": "cricket",
-      "stake_league": "caribbean-premier-league-women",
-      "source_league": "Caribbean Premier League",
-      "similarity": 0.889
+      "similarity": 0.596
     }
   ],
   "unmatched": [
-    "aussie-rules/afl: sin liga equivalente segura",
-    "badminton/vietnam-open-gp-mixed-doubles: sin liga equivalente segura",
-    "badminton/vietnam-open-gp-singles: sin liga equivalente segura",
-    "badminton/vietnam-open-gp-women-singles: sin liga equivalente segura",
-    "boxing/international-matchups: sin liga equivalente segura",
-    "counter-strike/cct-europe-2026-series-8-t10: sin liga equivalente segura",
-    "counter-strike/esl-challenger-league-season-52-europe-cup-6-t10: sin liga equivalente segura",
-    "counter-strike/european-pro-league-series-10-play-in-t10: sin liga equivalente segura",
-    "counter-strike/fissure-playground-3-t3: sin liga equivalente segura",
-    "counter-strike/nodwin-clutch-series-12-play-in-t10: sin liga equivalente segura",
-    "counter-strike/pgl-masters-bucharest-2026-east-asian-qualifier-t10: sin liga equivalente segura",
-    "counter-strike/pgl-masters-bucharest-2026-european-qualifier-t8: sin liga equivalente segura",
-    "counter-strike/pgl-masters-bucharest-2026-north-american-qualifier-t8: sin liga equivalente segura",
-    "counter-strike/pgl-masters-bucharest-2026-south-american-qualifier-t6: sin liga equivalente segura",
-    "counter-strike/private-club-1-t6: sin liga equivalente segura",
-    "counter-strike-2-duels/berserk-cs2-league-2026-week-37-t6: sin liga equivalente segura",
-    "cricket/county-championship: sin liga equivalente segura",
-    "cricket/european-cricket-series-t10-belgium-edition: sin liga equivalente segura",
-    "cricket/list-a-series-south-africa-a-vs-bangladesh-a: sin liga equivalente segura",
-    "cricket/major-clubs-t20-tournament: sin liga equivalente segura"
+    "cricket/odi-series-namibia-vs-south-africa: sin liga equivalente segura",
+    "cricket/sa-t20-league-srl: sin liga equivalente segura",
+    "cricket/super-smash-srl: sin liga equivalente segura",
+    "cricket/t20-afghanistan-vs-india: sin liga equivalente segura",
+    "cricket/t20-africa-continent-cup: sin liga equivalente segura",
+    "cricket/t20-asia-cup-women: sin liga equivalente segura",
+    "cricket/t20-international-srl: sin liga equivalente segura",
+    "cricket/t20-sher-e-punjab-cup: sin liga equivalente segura",
+    "cricket/test-series-england-vs-pakistan: sin liga equivalente segura",
+    "darts/modus-darts-online-live-league: sin liga equivalente segura",
+    "darts/pdc-world-series-of-darts-finals: sin liga equivalente segura",
+    "dota-2/epl-masters-ii-t8: sin liga equivalente segura",
+    "dota-2-duels/berserk-dota-2-league-2026-week-37-t7: sin liga equivalente segura",
+    "ecricket/yodha-premier-league-super-over-2026-week-37-t8: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-1-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-2-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-3-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-5-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-6-2026-week-37-t6: sin liga equivalente segura",
+    "etouchdown/valhalla-league-2026-week-37-t9: sin liga equivalente segura"
   ],
-  "rows_collected": 393,
-  "rows_added": 241,
+  "rows_collected": 482,
+  "rows_added": 30,
   "schema_rejections": [],
   "auxiliary_sources": {
-    "Cricsheet": "error: File is not a zip file",
+    "Cricsheet": "error: 415 Client Error: Unsupported Media Type for url: https://cricsheet.org/downloads/recently_played_30_json.zip",
     "OpenDota": 347,
-    "Tenis ATP/WTA": 0,
     "League of Legends": 0
   },
-  "next_league_cursor": 24,
+  "next_league_cursor": 48,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
