@@ -62,7 +62,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.3-schema4-mlb-specialized"
+APP_VERSION = "7.2-schema4-automated-results"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -278,7 +278,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.3 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.1 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -294,23 +294,18 @@ REGLAS:
    El consenso Stake+Bovada puede mostrarse como dato informativo, pero
    NUNCA se usa para calcular una probabilidad de modelo ni un EV.
 
-3. MODELO INDEPENDIENTE — FUENTES VÁLIDAS:
-   Elo interno, entrenado cronológicamente con resultados reales,
-   salvo MLB, que usa un modelo prepartido especializado de seis señales
-   agregadas (Elo, abridor, bullpen, carga, descanso y forma).
-   Para Elo se exigen
+3. SEGUNDO MODELO — ÚNICA FUENTE VÁLIDA:
+   Elo interno, entrenado cronológicamente con resultados reales
    (>= 5 partidos por participante y >= 30 predicciones maduras). La
    calibración usa una ventana reciente de 200. Con suficientes muestras,
    se acepta calidad absoluta (Brier binario <= 0.245 / 1X2 <= 0.60) O
    Brier Skill Score >= 2% frente al baseline de la competencia.
-   Si el modelo aplicable no está calibrado o faltan sus variables: DESCARTAR.
-   MLB debe superar en test cronológico Brier 0.245, baseline y Elo puro.
-   A menos de 90 minutos exige ambas alineaciones confirmadas.
+   Si el Elo no está calibrado para ambos equipos: DESCARTAR ese evento.
    En mercados 1X2 se usa Brier multiclase y una tasa de empate aprendida.
 
 4. GATES OBLIGATORIOS (todos deben cumplirse; ninguno se compensa con EV
    alto ni con confianza alta):
-   a) modelo_calibrado (Elo o MLB especializado con datos suficientes)
+   a) modelo_calibrado (Elo con datos suficientes)
    b) frescura_mercado (timestamp de Stake reciente según tiempo al inicio)
    c) liquidez_verificada (evento emparejado en Bovada, con similitud y
       antigüedad de cuota dentro de límites)
@@ -1629,30 +1624,12 @@ class EloModel:
         return out
 
 
-def build_elo_model(
-    event: NormalizedEvent,
-    elo: EloModel,
-    aliases: TeamAliasRegistry,
-    mlb_model: Any = None,
-    mlb_pregame: Optional[List[Dict[str, Any]]] = None,
-) -> Tuple[Dict[str, float], bool]:
-    """Punto de entrada del modelo independiente.
-
-    MLB usa su modelo prepartido especializado cuando esta calibrado. El
-    resto conserva Elo. Nunca existe fallback al precio de Stake/Bovada.
-    """
+def build_elo_model(event: NormalizedEvent, elo: EloModel, aliases: TeamAliasRegistry) -> Tuple[Dict[str, float], bool]:
+    """Único punto de entrada para obtener 'el modelo' de un evento.
+    A propósito NO tiene fallback a consenso de mercado: si el Elo no
+    aplica o no está calibrado, se devuelve vacío y el evento se descarta
+    aguas arriba (Regla 3 del prompt)."""
     namespace = elo_namespace(event.sport, event.league)
-    if namespace == "baseball:mlb":
-        if mlb_model is None:
-            try:
-                from mlb_model import MLBPregameModel
-                mlb_model = MLBPregameModel()
-            except Exception:
-                return {}, False
-        probability, _ = mlb_model.probability_for_event(event, mlb_pregame or [])
-        if probability is None:
-            return {}, False
-        return {event.home: probability, event.away: 1.0 - probability}, True
     if not elo.schema_is_current():
         return {}, False
     home_id = aliases.canonical_id(namespace, event.home)
@@ -2126,9 +2103,9 @@ class BlindadoEngine:
             reasons["sin_mercado"] = "sin mercado moneyline/DNB"
             return [], reasons
 
-        # --- Gate 1: modelo independiente calibrado (Elo o MLB especializado) ---
+        # --- Gate 1: modelo calibrado (Elo, única fuente válida) ---
         if not model_active or not model_probs:
-            reasons["sin_modelo"] = "sin modelo estadístico independiente calibrado o sin variables prepartido"
+            reasons["sin_modelo"] = "sin modelo estadístico independiente calibrado (Elo no disponible)"
             return [], reasons
 
         # --- Gate 2: frescura de mercado ---
@@ -2209,17 +2186,10 @@ def prepare_candidates(
     bovada_events: List[NormalizedEvent],
     promotions: List[Dict[str, Any]],
     bankroll: float,
-    mlb_model_payload: Optional[Dict[str, Any]] = None,
-    mlb_pregame: Optional[List[Dict[str, Any]]] = None,
 ) -> Tuple[List[Candidate], Dict[str, Any]]:
     engine = BlindadoEngine(bankroll)
     elo = EloModel()
     aliases = TeamAliasRegistry()
-    try:
-        from mlb_model import MLBPregameModel
-        mlb_model = MLBPregameModel(mlb_model_payload)
-    except Exception:
-        mlb_model = None
     physical_registry = PhysicalStatusRegistry()
     movement_history = append_movement_history(stake_events)
 
@@ -2247,7 +2217,7 @@ def prepare_candidates(
                 bump("riesgo_empate_sin_dnb")
                 continue
 
-        model, model_active = build_elo_model(e, elo, aliases, mlb_model, mlb_pregame)
+        model, model_active = build_elo_model(e, elo, aliases)
         bov, score = match_event_scored(e, bovada_events)
 
         cs, reasons = engine.evaluate_event(
@@ -2259,8 +2229,6 @@ def prepare_candidates(
 
     audit["qualified"] = len(candidates)
     audit["elo_coverage"] = elo.coverage()
-    if mlb_model is not None:
-        audit["mlb_model"] = mlb_model.coverage()
     return candidates, audit
 
 
@@ -2271,7 +2239,7 @@ def candidate_report(c: Candidate, bankroll: float) -> Dict[str, Any]:
         "Mercado": c.selection,
         "Stake odds": round(c.stake_odds, 3),
         "Odds efectivas": round(c.effective_odds, 3),
-        "Prob. modelo": round(c.model_prob * 100, 2),
+        "Prob. modelo (Elo)": round(c.model_prob * 100, 2),
         "Prob. referencia (Bovada)": None if c.reference_prob is None else round(c.reference_prob * 100, 2),
         "EV %": round(c.ev * 100, 2),
         "Confianza": round(c.confidence, 1),
@@ -2279,10 +2247,7 @@ def candidate_report(c: Candidate, bankroll: float) -> Dict[str, Any]:
         "Stake sugerido": stake,
         "Promoción": c.reason,
         "Fuente mercado": "Stake",
-        "Modelo estadístico": (
-            "MLB especializado calibrado" if elo_namespace(c.event.sport, c.event.league) == "baseball:mlb"
-            else "Elo interno calibrado"
-        ),
+        "Modelo estadístico": "Elo interno calibrado (única fuente válida)",
         "Referencia": "Bovada de-vigged",
     }
 

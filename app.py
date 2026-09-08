@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.3 / Elo schema 4 + modelo MLB. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.2 / Elo schema 4. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -68,8 +68,6 @@ def load_remote_snapshot_fallback(
     max_age = configured_snapshot_max_age_minutes()
     render_estado_snapshot(snapshot, max_age_minutes=max_age)
     st.session_state["stake_coverage"] = snapshot.get("stake_coverage", {})
-    st.session_state["mlb_model_payload"] = snapshot.get("mlb_model") or {}
-    st.session_state["mlb_pregame"] = snapshot.get("mlb_pregame") or []
     age = snapshot_antiguedad_minutos(snapshot)
     if age > max_age:
         raise ValueError(
@@ -168,23 +166,6 @@ def render_health_panel(
                 f"skill {skill_label} · {info.get('predicciones_brier', 0)} predicciones maduras · "
                 f"{info.get('motivo_calibracion')}"
             )
-
-    with st.expander("Modelo especializado MLB"):
-        try:
-            from mlb_model import MLBPregameModel
-            mlb = MLBPregameModel(st.session_state.get("mlb_model_payload"))
-            info = mlb.coverage()
-            icon = "✅" if info.get("modelo_activo") else "⛔"
-            st.write(f"{icon} **MLB especializado**: {info.get('motivo')}")
-            st.json({
-                "muestras": info.get("muestras"),
-                "muestras_test": info.get("muestras_test"),
-                "metricas_fuera_de_muestra": info.get("metricas"),
-                "variables_v1": info.get("variables"),
-                "alineaciones_lesiones": "gates prospectivos; no entrenadas retroactivamente",
-            })
-        except Exception as exc:
-            st.warning(f"Modelo MLB todavía no disponible: {exc}")
 
     with st.expander("Registros de estado físico (tenis/MMA/boxeo)"):
         st.write(f"Registros guardados: **{len(physical_registry.data)}**")
@@ -471,7 +452,7 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.3 — Stake / Elo 4 + MLB", layout="wide")
+    st.set_page_config(page_title="Blindado v7.2 — Stake completo / Elo 4", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
@@ -486,9 +467,9 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.3 — Stake completo / Elo 4 + modelo MLB")
+    st.title("🎯 Blindado v7.2 — Catálogo completo de Stake / Elo schema 4")
     st.caption(
-        "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
+        "Elo = único modelo estadístico válido · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
     )
 
@@ -607,15 +588,6 @@ def main():
     movement_history = st.session_state.get("movement_history", {})
     promotions = core.load_promotions()
 
-    if "mlb_model_payload" not in st.session_state or "mlb_pregame" not in st.session_state:
-        try:
-            from mlb_model import MLB_MODEL_FILE, MLB_PREGAME_FILE
-            st.session_state.setdefault("mlb_model_payload", core.load_json(MLB_MODEL_FILE, {}))
-            st.session_state.setdefault("mlb_pregame", core.load_json(MLB_PREGAME_FILE, []))
-        except Exception:
-            st.session_state.setdefault("mlb_model_payload", {})
-            st.session_state.setdefault("mlb_pregame", [])
-
     elo = core.EloModel()
     physical_registry = core.PhysicalStatusRegistry()
     aliases = core.TeamAliasRegistry()
@@ -631,12 +603,8 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.3", type="primary"):
-                candidates, audit = core.prepare_candidates(
-                    stake_events, bovada_events, promotions, float(bankroll),
-                    st.session_state.get("mlb_model_payload"),
-                    st.session_state.get("mlb_pregame", []),
-                )
+            if st.button("🧠 Ejecutar Blindado v7.2", type="primary"):
+                candidates, audit = core.prepare_candidates(stake_events, bovada_events, promotions, float(bankroll))
                 engine = core.BlindadoEngine(float(bankroll))
                 pick = engine.choose_one(candidates)
 
@@ -645,7 +613,7 @@ def main():
                     st.error("PICK DEL DÍA: NINGUNO")
                     st.write("Ningún evento superó simultáneamente todos los gates. Las causas exactas de esta ejecución son:")
                     labels = {
-                        "sin_modelo": "modelo ausente/no calibrado o variables prepartido incompletas",
+                        "sin_modelo": "Elo ausente o no calibrado",
                         "sin_mercado": "sin moneyline/DNB",
                         "frescura": "cuota desactualizada",
                         "liquidez": "sin coincidencia Bovada fresca",

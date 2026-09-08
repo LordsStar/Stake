@@ -50,5 +50,9 @@ uso diario solo abre Streamlit, actualiza los datos si corresponde y pulsa
 - Verificar estado físico reciente para tenis, MMA y boxeo.
 - Revisar alias ambiguos que aparezcan en `state/unresolved_aliases.json`.
 
+Los alias automáticos se guardan públicamente en
+`state/auto_team_aliases.json`. Tus alias manuales permanecen en
+`state/team_aliases.json`, que continúa ignorado por Git y nunca se publica.
+
 No es necesario mantener una computadora encendida ni ejecutar scripts
 localmente.

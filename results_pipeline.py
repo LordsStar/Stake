@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-PIPELINE_VERSION = 4
+PIPELINE_VERSION = 3
 STATE_FILE = Path("state/results_pipeline_state.json")
 
 
@@ -62,8 +62,6 @@ def main() -> int:
     )
     run("reconcile_aliases.py", "--snapshot", "snapshot.json")
     run("elo_trainer.py", "--reset")
-    # MLB se entrena por separado: Elo es una variable, no el modelo final.
-    run("mlb_pipeline.py", "--days-back", "240" if initial else "21")
 
     state.update({
         "pipeline_version": PIPELINE_VERSION,

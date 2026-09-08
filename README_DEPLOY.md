@@ -6,7 +6,7 @@
 - Resultados, reconciliación segura de nombres y Elo cada 6 horas.
 - Backfill inicial de las ligas ESPN principales.
 - Rotación persistente por las ligas activas de Stake.
-- ATP/WTA, Cricsheet, OpenDota, Oracle's Elixir y TheSportsDB como fuentes
+- ESPN ATP/WTA, Cricsheet, OpenDota, Oracle's Elixir y TheSportsDB como fuentes
   gratuitas adicionales.
 
 En el uso diario solo se abre Streamlit y se pulsa **Ejecutar Blindado**. La
@@ -154,8 +154,8 @@ respaldo en tu dispositivo y no lo subas al repositorio público.
 - `blindado_core.py`: Stake, Bovada, Elo, filtros y selección.
 - `cloud_snapshot_reader.py`: respaldo opcional desde snapshot.
 - `fetch_results_espn.py`: ingesta automática inicial de NBA/NFL/NHL/MLB.
-- `fetch_results_free.py`: TheSportsDB + Cricsheet + OpenDota + ATP/WTA +
-  Oracle's Elixir, sin API de pago.
+- `fetch_results_free.py`: TheSportsDB + Cricsheet + OpenDota + Oracle's
+  Elixir, sin API de pago.
 - `reconcile_aliases.py`: crea alias únicamente con coincidencias fuertes.
 - `results_pipeline.py`: ejecuta resultados, alias y Elo en el orden correcto.
 - `elo_trainer.py`: entrenamiento cronológico e idempotente.
