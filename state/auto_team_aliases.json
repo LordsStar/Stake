@@ -1,7 +1,11 @@
 {
   "cricket:all": {
     "perth scorchers srl": "perth scorchers",
-    "sydney sixers srl": "sydney sixers"
+    "sydney sixers srl": "sydney sixers",
+    "hobart hurricanes srl": "hobart hurricanes",
+    "sydney thunder srl": "sydney thunder",
+    "adelaide strikers srl": "adelaide strikers",
+    "brisbane heat srl": "brisbane heat"
   },
   "dota-2:all": {
     "power rangers": "powerrangers"
@@ -82,7 +86,8 @@
     "zantedeschi aurora": "aurora zantedeschi",
     "kaitlin qevedo": "kaitlin quevedo",
     "koike ena": "ena koike",
-    "leyre gormaz romero": "leyre romero gormaz"
+    "leyre gormaz romero": "leyre romero gormaz",
+    "anastasia tikhanova": "anastasia tikhonova"
   },
   "handball:champions-league": {
     "veszprem kc": "veszpr m kc",
@@ -93,5 +98,12 @@
   "handball:lnh-division-1": {
     "chartres metropole handball": "c chartres m tropole handball",
     "usam nimes gard": "usam n mes gard"
+  },
+  "soccer:la-liga": {
+    "espanyol": "espanol",
+    "villareal": "villarreal"
+  },
+  "soccer:eredivisie": {
+    "heerenveen": "sc heerenveen"
   }
 }

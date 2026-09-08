@@ -607,6 +607,100 @@
         "games": 2
       }
     },
+    "soccer:la-liga": {
+      "real madrid": {
+        "elo": 1499.4340520181759,
+        "games": 2
+      },
+      "ath madrid": {
+        "elo": 1490.8377685700011,
+        "games": 4
+      },
+      "sevilla": {
+        "elo": 1509.7570241200065,
+        "games": 2
+      },
+      "getafe": {
+        "elo": 1501.4301571899618,
+        "games": 3
+      },
+      "ath bilbao": {
+        "elo": 1480.698692292352,
+        "games": 4
+      },
+      "osasuna": {
+        "elo": 1500.2819252420866,
+        "games": 2
+      },
+      "espanol": {
+        "elo": 1497.5156184711207,
+        "games": 2
+      },
+      "valladolid": {
+        "elo": 1510.8216860557447,
+        "games": 3
+      },
+      "la coruna": {
+        "elo": 1497.4260778880343,
+        "games": 2
+      },
+      "almeria": {
+        "elo": 1509.0590688340621,
+        "games": 4
+      },
+      "mallorca": {
+        "elo": 1500.843086134089,
+        "games": 3
+      },
+      "levante": {
+        "elo": 1490.476569732828,
+        "games": 2
+      },
+      "murcia": {
+        "elo": 1509.523430267172,
+        "games": 2
+      },
+      "zaragoza": {
+        "elo": 1490.1931575150195,
+        "games": 2
+      },
+      "recreativo": {
+        "elo": 1510.0880180373094,
+        "games": 2
+      },
+      "betis": {
+        "elo": 1491.8574072414103,
+        "games": 3
+      },
+      "santander": {
+        "elo": 1500.126154206564,
+        "games": 4
+      },
+      "barcelona": {
+        "elo": 1499.5562121327198,
+        "games": 4
+      },
+      "valencia": {
+        "elo": 1510.929940890036,
+        "games": 4
+      },
+      "villarreal": {
+        "elo": 1512.8579448517032,
+        "games": 2
+      },
+      "malaga": {
+        "elo": 1489.3821567899038,
+        "games": 2
+      },
+      "numancia": {
+        "elo": 1508.709498941486,
+        "games": 1
+      },
+      "sp gijon": {
+        "elo": 1488.1943525782133,
+        "games": 1
+      }
+    },
     "soccer:2nd-bundesliga": {
       "bayern munich": {
         "elo": 1488.4715746065528,
@@ -807,109 +901,39 @@
         "games": 2
       }
     },
-    "soccer:chinese-super-league": {
-      "kalloni lekanopedio": {
-        "elo": 1480.6419425630693,
-        "games": 2
-      },
-      "iraklis": {
-        "elo": 1489.668193041258,
-        "games": 4
-      },
-      "panthrakikos": {
-        "elo": 1477.1420551482968,
-        "games": 2
-      },
-      "asteras tripolis": {
-        "elo": 1502.9180658853677,
-        "games": 2
-      },
-      "aek": {
-        "elo": 1509.8068424849805,
-        "games": 2
-      },
-      "platanias": {
-        "elo": 1511.4042984336006,
-        "games": 3
-      },
-      "paok": {
-        "elo": 1490.0880180373094,
-        "games": 2
-      },
-      "xanthi": {
-        "elo": 1480.7704926679874,
-        "games": 4
-      },
-      "veria": {
-        "elo": 1509.7180747579134,
-        "games": 2
-      },
-      "giannina": {
-        "elo": 1509.9119819626906,
-        "games": 2
-      },
-      "atromitos": {
-        "elo": 1487.9634520729178,
-        "games": 3
-      },
-      "levadeiakos": {
-        "elo": 1480.476569732828,
-        "games": 2
-      },
-      "olympiakos": {
-        "elo": 1519.523430267172,
-        "games": 2
-      },
-      "panionios": {
-        "elo": 1523.3347376103861,
-        "games": 4
-      },
-      "panetolikos": {
-        "elo": 1488.430064953105,
-        "games": 1
-      },
-      "panathinaikos": {
-        "elo": 1538.2075553082361,
-        "games": 4
-      },
-      "aok kerkyra": {
-        "elo": 1496.9125735344048,
-        "games": 2
-      },
-      "levadiakos": {
-        "elo": 1480.9490100330972,
-        "games": 2
-      },
-      "aek athens": {
-        "elo": 1519.5286990149452,
-        "games": 2
-      },
-      "pas giannina": {
-        "elo": 1500.8403557402228,
-        "games": 2
-      },
-      "paok thessaloniki fc": {
-        "elo": 1508.430064953105,
-        "games": 1
-      },
-      "panaitolikos": {
-        "elo": 1503.3689683175378,
-        "games": 2
-      },
-      "olympiacos": {
-        "elo": 1519.7915851275968,
-        "games": 2
-      },
-      "veria fc": {
-        "elo": 1480.4767239527264,
-        "games": 2
-      },
-      "ae larissa": {
-        "elo": 1489.696244399245,
-        "games": 2
-      }
-    },
     "cricket:all": {
+      "adelaide strikers": {
+        "elo": 1545.335280896811,
+        "games": 7
+      },
+      "melbourne stars": {
+        "elo": 1475.4274489570405,
+        "games": 7
+      },
+      "sydney sixers": {
+        "elo": 1496.2021052366442,
+        "games": 10
+      },
+      "melbourne renegades": {
+        "elo": 1471.656856204471,
+        "games": 7
+      },
+      "hobart hurricanes": {
+        "elo": 1519.9109287365545,
+        "games": 8
+      },
+      "sydney thunder": {
+        "elo": 1519.9180108497392,
+        "games": 8
+      },
+      "brisbane heat": {
+        "elo": 1451.3012065335702,
+        "games": 7
+      },
+      "perth scorchers": {
+        "elo": 1520.2481625851694,
+        "games": 8
+      },
       "trinbago knight riders": {
         "elo": 1507.30776902554,
         "games": 15
@@ -933,14 +957,6 @@
       "jamaica tallawahs": {
         "elo": 1544.4231684499578,
         "games": 9
-      },
-      "perth scorchers": {
-        "elo": 1510.0,
-        "games": 1
-      },
-      "sydney sixers": {
-        "elo": 1490.0,
-        "games": 1
       },
       "hampshire": {
         "elo": 1496.2815850153304,
@@ -1115,6 +1131,442 @@
         "games": 3
       }
     },
+    "soccer:iraqi-league": {
+      "st truiden": {
+        "elo": 1518.000619716439,
+        "games": 4
+      },
+      "club brugge": {
+        "elo": 1502.5672353882203,
+        "games": 4
+      },
+      "kortrijk": {
+        "elo": 1498.2543816584057,
+        "games": 3
+      },
+      "standard": {
+        "elo": 1510.9088532411681,
+        "games": 4
+      },
+      "kv oostende": {
+        "elo": 1516.2026878021315,
+        "games": 4
+      },
+      "mechelen": {
+        "elo": 1484.1587925383983,
+        "games": 4
+      },
+      "waregem": {
+        "elo": 1519.0941457945364,
+        "games": 4
+      },
+      "lokeren": {
+        "elo": 1491.4526290564893,
+        "games": 4
+      },
+      "genk": {
+        "elo": 1508.711024950114,
+        "games": 3
+      },
+      "oud heverlee leuven": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "westerlo": {
+        "elo": 1480.3938572835234,
+        "games": 4
+      },
+      "gent": {
+        "elo": 1511.4622061237858,
+        "games": 3
+      },
+      "anderlecht": {
+        "elo": 1519.2069572444686,
+        "games": 2
+      },
+      "waasland beveren": {
+        "elo": 1481.1721166328816,
+        "games": 4
+      },
+      "charleroi": {
+        "elo": 1538.6804007916191,
+        "games": 5
+      },
+      "mouscron peruwelz": {
+        "elo": 1459.4982554589078,
+        "games": 4
+      },
+      "eupen": {
+        "elo": 1479.444265712354,
+        "games": 2
+      },
+      "mouscron": {
+        "elo": 1489.221635559662,
+        "games": 1
+      },
+      "brentford": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "tottenham hotspur": {
+        "elo": 1480.1931575150195,
+        "games": 2
+      },
+      "manchester city": {
+        "elo": 1519.7624853435607,
+        "games": 2
+      },
+      "bournemouth": {
+        "elo": 1490.2375146564393,
+        "games": 2
+      },
+      "brighton and hove albion": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "aston villa": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "newcastle united": {
+        "elo": 1509.8068424849805,
+        "games": 2
+      },
+      "liverpool": {
+        "elo": 1499.9559588859129,
+        "games": 2
+      },
+      "fulham": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "chelsea": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "crystal palace": {
+        "elo": 1488.6675796095444,
+        "games": 1
+      },
+      "nottingham forest": {
+        "elo": 1501.613976160982,
+        "games": 1
+      },
+      "everton": {
+        "elo": 1501.3324203904556,
+        "games": 1
+      },
+      "coventry city": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "hull city": {
+        "elo": 1511.569935046895,
+        "games": 1
+      }
+    },
+    "soccer:ligue-1": {
+      "lille": {
+        "elo": 1482.4734164031308,
+        "games": 3
+      },
+      "paris sg": {
+        "elo": 1523.051601949672,
+        "games": 2
+      },
+      "marseille": {
+        "elo": 1495.980647706559,
+        "games": 3
+      },
+      "caen": {
+        "elo": 1519.2122437507333,
+        "games": 4
+      },
+      "montpellier": {
+        "elo": 1489.364659100137,
+        "games": 3
+      },
+      "angers": {
+        "elo": 1488.9686713431752,
+        "games": 4
+      },
+      "bastia": {
+        "elo": 1508.4256043350163,
+        "games": 3
+      },
+      "rennes": {
+        "elo": 1499.5193450459733,
+        "games": 4
+      },
+      "nantes": {
+        "elo": 1521.373536425828,
+        "games": 3
+      },
+      "guingamp": {
+        "elo": 1482.5693186855792,
+        "games": 3
+      },
+      "nice": {
+        "elo": 1506.5421879287112,
+        "games": 4
+      },
+      "monaco": {
+        "elo": 1506.981896266371,
+        "games": 3
+      },
+      "bordeaux": {
+        "elo": 1490.1620257616469,
+        "games": 4
+      },
+      "stade de reims": {
+        "elo": 1511.569935046895,
+        "games": 1
+      },
+      "toulouse": {
+        "elo": 1498.677331790812,
+        "games": 5
+      },
+      "st etienne": {
+        "elo": 1481.48685846223,
+        "games": 3
+      },
+      "lyon": {
+        "elo": 1540.7227654434903,
+        "games": 5
+      },
+      "lorient": {
+        "elo": 1484.4813809485406,
+        "games": 4
+      },
+      "metz": {
+        "elo": 1508.1685261599384,
+        "games": 1
+      },
+      "dijon": {
+        "elo": 1488.7144816114815,
+        "games": 1
+      },
+      "nancy": {
+        "elo": 1480.3452018174978,
+        "games": 2
+      },
+      "strasbourg": {
+        "elo": 1491.2083640165813,
+        "games": 1
+      },
+      "lens": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "auxerre": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "troyes": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "paris fc": {
+        "elo": 1501.569935046895,
+        "games": 1
+      }
+    },
+    "soccer:eredivisie": {
+      "roda jc": {
+        "elo": 1500.476918193448,
+        "games": 4
+      },
+      "sc heracles almelo": {
+        "elo": 1501.4095794548462,
+        "games": 3
+      },
+      "feyenoord": {
+        "elo": 1519.4812677543598,
+        "games": 2
+      },
+      "fc utrecht": {
+        "elo": 1482.8893970005433,
+        "games": 3
+      },
+      "az alkmaar": {
+        "elo": 1498.629842732708,
+        "games": 4
+      },
+      "ajax": {
+        "elo": 1528.17756113857,
+        "games": 4
+      },
+      "willem ii": {
+        "elo": 1463.4586358929068,
+        "games": 5
+      },
+      "vitesse": {
+        "elo": 1509.5490026128466,
+        "games": 4
+      },
+      "ado den haag": {
+        "elo": 1520.296300619302,
+        "games": 5
+      },
+      "psv eindhoven": {
+        "elo": 1518.8109740039595,
+        "games": 4
+      },
+      "sc heerenveen": {
+        "elo": 1507.1106029994567,
+        "games": 3
+      },
+      "de graafschap": {
+        "elo": 1480.1931575150195,
+        "games": 2
+      },
+      "fc groningen": {
+        "elo": 1471.2296657514728,
+        "games": 4
+      },
+      "fc twente": {
+        "elo": 1478.3420469157957,
+        "games": 3
+      },
+      "pec zwolle": {
+        "elo": 1499.1477893847555,
+        "games": 4
+      },
+      "sc cambuur": {
+        "elo": 1501.569935046895,
+        "games": 1
+      },
+      "nec nijmegen": {
+        "elo": 1495.1358264719593,
+        "games": 3
+      },
+      "excelsior": {
+        "elo": 1520.5971938165007,
+        "games": 5
+      },
+      "go ahead eagles": {
+        "elo": 1499.7113566896335,
+        "games": 2
+      },
+      "sparta": {
+        "elo": 1501.175885114298,
+        "games": 2
+      },
+      "cambuur": {
+        "elo": 1488.6918726776667,
+        "games": 1
+      },
+      "telstar": {
+        "elo": 1511.762977453071,
+        "games": 1
+      },
+      "fortuna sittard": {
+        "elo": 1502.1522107599858,
+        "games": 1
+      }
+    },
+    "soccer:chinese-super-league": {
+      "kalloni lekanopedio": {
+        "elo": 1480.6419425630693,
+        "games": 2
+      },
+      "iraklis": {
+        "elo": 1489.668193041258,
+        "games": 4
+      },
+      "panthrakikos": {
+        "elo": 1477.1420551482968,
+        "games": 2
+      },
+      "asteras tripolis": {
+        "elo": 1502.9180658853677,
+        "games": 2
+      },
+      "aek": {
+        "elo": 1509.8068424849805,
+        "games": 2
+      },
+      "platanias": {
+        "elo": 1511.4042984336006,
+        "games": 3
+      },
+      "paok": {
+        "elo": 1490.0880180373094,
+        "games": 2
+      },
+      "xanthi": {
+        "elo": 1480.7704926679874,
+        "games": 4
+      },
+      "veria": {
+        "elo": 1509.7180747579134,
+        "games": 2
+      },
+      "giannina": {
+        "elo": 1509.9119819626906,
+        "games": 2
+      },
+      "atromitos": {
+        "elo": 1487.9634520729178,
+        "games": 3
+      },
+      "levadeiakos": {
+        "elo": 1480.476569732828,
+        "games": 2
+      },
+      "olympiakos": {
+        "elo": 1519.523430267172,
+        "games": 2
+      },
+      "panionios": {
+        "elo": 1523.3347376103861,
+        "games": 4
+      },
+      "panetolikos": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "panathinaikos": {
+        "elo": 1538.2075553082361,
+        "games": 4
+      },
+      "aok kerkyra": {
+        "elo": 1496.9125735344048,
+        "games": 2
+      },
+      "levadiakos": {
+        "elo": 1480.9490100330972,
+        "games": 2
+      },
+      "aek athens": {
+        "elo": 1519.5286990149452,
+        "games": 2
+      },
+      "pas giannina": {
+        "elo": 1500.8403557402228,
+        "games": 2
+      },
+      "paok thessaloniki fc": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "panaitolikos": {
+        "elo": 1503.3689683175378,
+        "games": 2
+      },
+      "olympiacos": {
+        "elo": 1519.7915851275968,
+        "games": 2
+      },
+      "veria fc": {
+        "elo": 1480.4767239527264,
+        "games": 2
+      },
+      "ae larissa": {
+        "elo": 1489.696244399245,
+        "games": 2
+      }
+    },
     "futsal:superliga": {
       "kukesi": {
         "elo": 1451.4882307405176,
@@ -1162,6 +1614,122 @@
       },
       "dinamo tirana": {
         "elo": 1480.222029656649,
+        "games": 4
+      }
+    },
+    "soccer:primera-division": {
+      "engordany": {
+        "elo": 1480.9661860504825,
+        "games": 4
+      },
+      "fc santa coloma": {
+        "elo": 1530.8729113570375,
+        "games": 7
+      },
+      "ue santa coloma": {
+        "elo": 1516.8846973522573,
+        "games": 6
+      },
+      "atl tic d escaldes": {
+        "elo": 1524.9503444238862,
+        "games": 7
+      },
+      "sant juli": {
+        "elo": 1511.3846699453725,
+        "games": 3
+      },
+      "penya encarnada d andorra": {
+        "elo": 1498.9764225703652,
+        "games": 7
+      },
+      "inter club d escaldes": {
+        "elo": 1501.712237710526,
+        "games": 7
+      },
+      "ordino": {
+        "elo": 1473.9644442546653,
+        "games": 7
+      },
+      "esperan a d andorra": {
+        "elo": 1488.589283262957,
+        "games": 3
+      },
+      "carroi": {
+        "elo": 1498.8069532375396,
+        "games": 3
+      },
+      "atl tic am rica": {
+        "elo": 1490.6411478981029,
+        "games": 3
+      },
+      "pas de la casa": {
+        "elo": 1482.250701936808,
+        "games": 3
+      }
+    },
+    "soccer:segunda-division": {
+      "esperan a d andorra": {
+        "elo": 1498.7793524462943,
+        "games": 3
+      },
+      "encamp": {
+        "elo": 1480.5187322456402,
+        "games": 2
+      },
+      "engordany b": {
+        "elo": 1480.322993819101,
+        "games": 2
+      },
+      "fc santa coloma ii": {
+        "elo": 1460.3209380966498,
+        "games": 6
+      },
+      "la massana": {
+        "elo": 1517.3014151710615,
+        "games": 6
+      },
+      "pas de la casa": {
+        "elo": 1520.9631847639453,
+        "games": 3
+      },
+      "fc r ngers": {
+        "elo": 1498.855939405502,
+        "games": 6
+      },
+      "atl tic am rica": {
+        "elo": 1549.730370548094,
+        "games": 7
+      },
+      "carroi": {
+        "elo": 1529.1042467575649,
+        "games": 7
+      },
+      "ue santa coloma b": {
+        "elo": 1466.8431420502122,
+        "games": 11
+      },
+      "ordino ii": {
+        "elo": 1510.011403427692,
+        "games": 2
+      },
+      "atl tic club ii": {
+        "elo": 1507.941978535252,
+        "games": 3
+      },
+      "engordany": {
+        "elo": 1499.213242354537,
+        "games": 2
+      },
+      "sant juli": {
+        "elo": 1512.330079902261,
+        "games": 2
+      },
+      "city escaldes": {
+        "elo": 1486.5395208511773,
+        "games": 4
+      },
+      "fc r ngers b": {
+        "elo": 1481.2234596250155,
         "games": 4
       }
     },
@@ -1246,6 +1814,166 @@
       },
       "la plata": {
         "elo": 1463.680200802782,
+        "games": 4
+      }
+    },
+    "volleyball:asian-championship": {
+      "georgia volleyball": {
+        "elo": 1480.3035921044489,
+        "games": 2
+      },
+      "north macedonia volleyball": {
+        "elo": 1508.379991065723,
+        "games": 3
+      },
+      "kosovo volleyball": {
+        "elo": 1488.9960129349292,
+        "games": 1
+      },
+      "latvia volleyball": {
+        "elo": 1519.6875702352427,
+        "games": 2
+      },
+      "estonia volleyball": {
+        "elo": 1517.418903433012,
+        "games": 2
+      },
+      "israel volleyball": {
+        "elo": 1502.2635686910203,
+        "games": 2
+      },
+      "sweden volleyball": {
+        "elo": 1488.9960129349292,
+        "games": 1
+      },
+      "switzerland volleyball": {
+        "elo": 1519.6875702352427,
+        "games": 2
+      },
+      "hungary volleyball": {
+        "elo": 1488.9960129349292,
+        "games": 1
+      },
+      "denmark volleyball": {
+        "elo": 1519.6875702352427,
+        "games": 2
+      },
+      "austria volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "azerbaijan volleyball": {
+        "elo": 1480.2569266051435,
+        "games": 2
+      },
+      "norway volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "montenegro volleyball": {
+        "elo": 1480.2569266051435,
+        "games": 2
+      },
+      "croatia volleyball": {
+        "elo": 1480.3175278759677,
+        "games": 2
+      },
+      "belgium volleyball": {
+        "elo": 1510.7470604599273,
+        "games": 1
+      },
+      "czech republic volleyball": {
+        "elo": 1510.7470604599273,
+        "games": 1
+      },
+      "turkey volleyball": {
+        "elo": 1491.316416829828,
+        "games": 1
+      },
+      "slovakia volleyball": {
+        "elo": 1491.316416829828,
+        "games": 1
+      },
+      "spain volleyball": {
+        "elo": 1491.316416829828,
+        "games": 1
+      },
+      "greece volleyball": {
+        "elo": 1511.316416829828,
+        "games": 1
+      }
+    },
+    "aussie-rules:afl-women": {
+      "sydney swans women": {
+        "elo": 1537.5095340612086,
+        "games": 4
+      },
+      "collingwood magpies women": {
+        "elo": 1462.6840773510235,
+        "games": 6
+      },
+      "west coast eagles women": {
+        "elo": 1477.3040286712546,
+        "games": 6
+      },
+      "richmond tigers women": {
+        "elo": 1489.9991158222317,
+        "games": 5
+      },
+      "greater western sydney giants women": {
+        "elo": 1489.5056932612613,
+        "games": 5
+      },
+      "western bulldogs bulldogs women": {
+        "elo": 1490.8939816724817,
+        "games": 5
+      },
+      "essendon bombers women": {
+        "elo": 1509.960126086974,
+        "games": 5
+      },
+      "fremantle dockers women": {
+        "elo": 1507.5968458567236,
+        "games": 5
+      },
+      "gold coast suns women": {
+        "elo": 1463.2478131852815,
+        "games": 6
+      },
+      "st kilda saints women": {
+        "elo": 1488.605198822038,
+        "games": 5
+      },
+      "geelong cats women": {
+        "elo": 1482.4845110845952,
+        "games": 4
+      },
+      "melbourne demons women": {
+        "elo": 1529.7370691736373,
+        "games": 5
+      },
+      "port adelaide power women": {
+        "elo": 1500.8226794081186,
+        "games": 4
+      },
+      "adelaide crows women": {
+        "elo": 1481.3730778131526,
+        "games": 4
+      },
+      "hawthorn hawks women": {
+        "elo": 1527.7737309989286,
+        "games": 5
+      },
+      "carlton blues women": {
+        "elo": 1519.7193114889833,
+        "games": 6
+      },
+      "brisbane lions women": {
+        "elo": 1502.9273580250879,
+        "games": 6
+      },
+      "north melbourne kangaroos women": {
+        "elo": 1537.8558472170182,
         "games": 4
       }
     },
@@ -1665,16 +2393,6 @@
       "chicago blackhawks": {
         "elo": 1382.4849989438965,
         "games": 88
-      }
-    },
-    "volleyball:asian-championship": {
-      "north macedonia volleyball": {
-        "elo": 1508.9960129349292,
-        "games": 1
-      },
-      "georgia volleyball": {
-        "elo": 1491.0039870650708,
-        "games": 1
       }
     },
     "baseball:mlb": {
@@ -9357,80 +10075,6 @@
         "games": 1
       }
     },
-    "aussie-rules:afl-women": {
-      "st kilda saints women": {
-        "elo": 1480.0,
-        "games": 2
-      },
-      "carlton blues women": {
-        "elo": 1519.4249887221547,
-        "games": 2
-      },
-      "hawthorn hawks women": {
-        "elo": 1490.0,
-        "games": 1
-      },
-      "melbourne demons women": {
-        "elo": 1510.0,
-        "games": 1
-      },
-      "north melbourne kangaroos women": {
-        "elo": 1520.0,
-        "games": 2
-      },
-      "geelong cats women": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "gold coast suns women": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "western bulldogs bulldogs women": {
-        "elo": 1520.0,
-        "games": 2
-      },
-      "richmond tigers women": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "collingwood magpies women": {
-        "elo": 1480.0,
-        "games": 2
-      },
-      "essendon bombers women": {
-        "elo": 1490.0,
-        "games": 1
-      },
-      "brisbane lions women": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "adelaide crows women": {
-        "elo": 1480.5750112778453,
-        "games": 2
-      },
-      "sydney swans women": {
-        "elo": 1510.0,
-        "games": 1
-      },
-      "fremantle dockers women": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "port adelaide power women": {
-        "elo": 1510.0,
-        "games": 1
-      },
-      "greater western sydney giants women": {
-        "elo": 1510.0,
-        "games": 1
-      },
-      "west coast eagles women": {
-        "elo": 1480.0,
-        "games": 2
-      }
-    },
     "dota-2:all": {
       "team liquid": {
         "elo": 1487.5490764001818,
@@ -9569,8 +10213,8 @@
         "games": 25
       },
       "team synapse": {
-        "elo": 1540.89314163143,
-        "games": 28
+        "elo": 1530.8740981600508,
+        "games": 29
       },
       "ravage gaming": {
         "elo": 1490.0,
@@ -9689,8 +10333,8 @@
         "games": 1
       },
       "pipsqueak 4": {
-        "elo": 1540.2315028687117,
-        "games": 18
+        "elo": 1550.2505463400908,
+        "games": 19
       },
       "level up esports": {
         "elo": 1509.7556667296085,
@@ -10135,68 +10779,6 @@
         "games": 1
       }
     },
-    "soccer:iraqi-league": {
-      "brentford": {
-        "elo": 1508.430064953105,
-        "games": 1
-      },
-      "tottenham hotspur": {
-        "elo": 1480.1931575150195,
-        "games": 2
-      },
-      "manchester city": {
-        "elo": 1519.7624853435607,
-        "games": 2
-      },
-      "bournemouth": {
-        "elo": 1490.2375146564393,
-        "games": 2
-      },
-      "brighton and hove albion": {
-        "elo": 1508.430064953105,
-        "games": 1
-      },
-      "aston villa": {
-        "elo": 1491.569935046895,
-        "games": 1
-      },
-      "newcastle united": {
-        "elo": 1509.8068424849805,
-        "games": 2
-      },
-      "liverpool": {
-        "elo": 1499.9559588859129,
-        "games": 2
-      },
-      "fulham": {
-        "elo": 1488.430064953105,
-        "games": 1
-      },
-      "chelsea": {
-        "elo": 1511.569935046895,
-        "games": 1
-      },
-      "crystal palace": {
-        "elo": 1488.6675796095444,
-        "games": 1
-      },
-      "nottingham forest": {
-        "elo": 1501.613976160982,
-        "games": 1
-      },
-      "everton": {
-        "elo": 1501.3324203904556,
-        "games": 1
-      },
-      "coventry city": {
-        "elo": 1488.430064953105,
-        "games": 1
-      },
-      "hull city": {
-        "elo": 1511.569935046895,
-        "games": 1
-      }
-    },
     "soccer:women-bundesliga": {
       "bayern munich": {
         "elo": 1508.430064953105,
@@ -10336,6 +10918,51 @@
     "cricket:all": [
       {
         "kind": "binary",
+        "p": 0.44505042466438066,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.460055062647274,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.531711312736956,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5906434267463497,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.46130450181044524,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4422487816910251,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.47145503251865384,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5293694671385355,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4694891014225656,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
         "p": 0.6149182023336722,
         "y": 0.0
       },
@@ -10396,6 +11023,11 @@
       },
       {
         "kind": "binary",
+        "p": 0.5061780683479321,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
         "p": 0.3778449190097972,
         "y": 0.0
       },
@@ -10440,6 +11072,64 @@
         "kind": "binary",
         "p": 0.47435638468625974,
         "y": 1.0
+      }
+    ],
+    "soccer:primera-division": [
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.3597596122594693,
+          "draw": 0.35333333333333333,
+          "away": 0.28690705440719744
+        },
+        "y": "home"
+      },
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.35571831700109774,
+          "draw": 0.3411764705882353,
+          "away": 0.30310521241066696
+        },
+        "y": "draw"
+      },
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.3686302841049413,
+          "draw": 0.36,
+          "away": 0.2713697158950587
+        },
+        "y": "home"
+      },
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.4083285975273526,
+          "draw": 0.35,
+          "away": 0.24167140247264737
+        },
+        "y": "home"
+      }
+    ],
+    "soccer:segunda-division": [
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.5160258358944422,
+          "draw": 0.14838709677419354,
+          "away": 0.33558706733136423
+        },
+        "y": "away"
+      },
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.40171469837883017,
+          "draw": 0.17674418604651163,
+          "away": 0.4215411155746581
+        },
+        "y": "away"
       }
     ],
     "rugby:super-league": [
@@ -39257,6 +39947,18 @@
         "kind": "binary",
         "p": 0.5499882946145453,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.49904782643104506,
+        "y": 1.0
+      }
+    ],
+    "aussie-rules:afl-women": [
+      {
+        "kind": "binary",
+        "p": 0.5518064580870949,
+        "y": 0.0
       }
     ],
     "handball:damehandboldligaen": [
@@ -39478,6 +40180,38 @@
       "thesportsdb:2329382",
       "thesportsdb:2329383"
     ],
+    "soccer:la-liga": [
+      "thesportsdb:479392",
+      "thesportsdb:479393",
+      "thesportsdb:479394",
+      "thesportsdb:479395",
+      "thesportsdb:479396",
+      "thesportsdb:479397",
+      "thesportsdb:479398",
+      "thesportsdb:479399",
+      "thesportsdb:479400",
+      "thesportsdb:479401",
+      "thesportsdb:479402",
+      "thesportsdb:479403",
+      "thesportsdb:479404",
+      "thesportsdb:479405",
+      "thesportsdb:479406",
+      "thesportsdb:479012",
+      "thesportsdb:479013",
+      "thesportsdb:479014",
+      "thesportsdb:479015",
+      "thesportsdb:479016",
+      "thesportsdb:479017",
+      "thesportsdb:479018",
+      "thesportsdb:479019",
+      "thesportsdb:479020",
+      "thesportsdb:479021",
+      "thesportsdb:479022",
+      "thesportsdb:479023",
+      "thesportsdb:479024",
+      "thesportsdb:479025",
+      "thesportsdb:479026"
+    ],
     "soccer:2nd-bundesliga": [
       "thesportsdb:476894",
       "thesportsdb:476895",
@@ -39557,38 +40291,37 @@
       "thesportsdb:2482157",
       "thesportsdb:2482153"
     ],
-    "soccer:chinese-super-league": [
-      "thesportsdb:490449",
-      "thesportsdb:490451",
-      "thesportsdb:490448",
-      "thesportsdb:490452",
-      "thesportsdb:491047",
-      "thesportsdb:491119",
-      "thesportsdb:490450",
-      "thesportsdb:490447",
-      "thesportsdb:491050",
-      "thesportsdb:491120",
-      "thesportsdb:490453",
-      "thesportsdb:490454",
-      "thesportsdb:490456",
-      "thesportsdb:490457",
-      "thesportsdb:514471",
-      "thesportsdb:514472",
-      "thesportsdb:514473",
-      "thesportsdb:514474",
-      "thesportsdb:514475",
-      "thesportsdb:514476",
-      "thesportsdb:514477",
-      "thesportsdb:514478",
-      "thesportsdb:514479",
-      "thesportsdb:514480",
-      "thesportsdb:514481",
-      "thesportsdb:514482",
-      "thesportsdb:514483",
-      "thesportsdb:514484",
-      "thesportsdb:514485"
-    ],
     "cricket:all": [
+      "thesportsdb:1500180",
+      "thesportsdb:1500179",
+      "thesportsdb:1500178",
+      "thesportsdb:1500177",
+      "thesportsdb:1500176",
+      "thesportsdb:1500175",
+      "thesportsdb:1500174",
+      "thesportsdb:1500173",
+      "thesportsdb:1500172",
+      "thesportsdb:1500171",
+      "thesportsdb:1500170",
+      "thesportsdb:1500169",
+      "thesportsdb:1500168",
+      "thesportsdb:1500167",
+      "thesportsdb:1500166",
+      "thesportsdb:1500146",
+      "thesportsdb:1500145",
+      "thesportsdb:1500144",
+      "thesportsdb:1500143",
+      "thesportsdb:1500142",
+      "thesportsdb:1500141",
+      "thesportsdb:1500140",
+      "thesportsdb:1500139",
+      "thesportsdb:1500138",
+      "thesportsdb:1500137",
+      "thesportsdb:1500136",
+      "thesportsdb:1500135",
+      "thesportsdb:1500134",
+      "thesportsdb:1500133",
+      "thesportsdb:1500132",
       "thesportsdb:1500677",
       "thesportsdb:1500676",
       "thesportsdb:1500675",
@@ -39739,6 +40472,153 @@
       "cricsheet:1547437",
       "cricsheet:1547432"
     ],
+    "soccer:iraqi-league": [
+      "thesportsdb:487818",
+      "thesportsdb:487819",
+      "thesportsdb:487820",
+      "thesportsdb:487821",
+      "thesportsdb:487822",
+      "thesportsdb:487823",
+      "thesportsdb:487824",
+      "thesportsdb:487825",
+      "thesportsdb:487826",
+      "thesportsdb:487827",
+      "thesportsdb:487828",
+      "thesportsdb:487829",
+      "thesportsdb:487830",
+      "thesportsdb:487831",
+      "thesportsdb:487832",
+      "thesportsdb:510423",
+      "thesportsdb:510424",
+      "thesportsdb:510425",
+      "thesportsdb:510426",
+      "thesportsdb:510427",
+      "thesportsdb:510428",
+      "thesportsdb:510429",
+      "thesportsdb:510430",
+      "thesportsdb:510431",
+      "thesportsdb:510432",
+      "thesportsdb:512590",
+      "thesportsdb:510433",
+      "thesportsdb:510434",
+      "thesportsdb:510435",
+      "thesportsdb:510436",
+      "thesportsdb:2494005",
+      "thesportsdb:2494006",
+      "thesportsdb:2494007",
+      "thesportsdb:2494008",
+      "thesportsdb:2494009",
+      "thesportsdb:2494015",
+      "thesportsdb:2494012",
+      "thesportsdb:2494011",
+      "thesportsdb:2494019",
+      "thesportsdb:2494013"
+    ],
+    "soccer:ligue-1": [
+      "thesportsdb:485450",
+      "thesportsdb:485452",
+      "thesportsdb:485453",
+      "thesportsdb:485454",
+      "thesportsdb:485455",
+      "thesportsdb:485457",
+      "thesportsdb:485456",
+      "thesportsdb:485459",
+      "thesportsdb:485451",
+      "thesportsdb:485468",
+      "thesportsdb:485464",
+      "thesportsdb:485461",
+      "thesportsdb:485462",
+      "thesportsdb:485463",
+      "thesportsdb:485465",
+      "thesportsdb:509491",
+      "thesportsdb:509492",
+      "thesportsdb:509493",
+      "thesportsdb:509494",
+      "thesportsdb:509495",
+      "thesportsdb:509496",
+      "thesportsdb:509497",
+      "thesportsdb:509498",
+      "thesportsdb:509499",
+      "thesportsdb:509500",
+      "thesportsdb:509501",
+      "thesportsdb:509502",
+      "thesportsdb:509503",
+      "thesportsdb:509505",
+      "thesportsdb:509506",
+      "thesportsdb:2489463",
+      "thesportsdb:2489469",
+      "thesportsdb:2489464",
+      "thesportsdb:2489466",
+      "thesportsdb:2489467"
+    ],
+    "soccer:eredivisie": [
+      "thesportsdb:486385",
+      "thesportsdb:486386",
+      "thesportsdb:486387",
+      "thesportsdb:486390",
+      "thesportsdb:486384",
+      "thesportsdb:486382",
+      "thesportsdb:486389",
+      "thesportsdb:486383",
+      "thesportsdb:486388",
+      "thesportsdb:486391",
+      "thesportsdb:486392",
+      "thesportsdb:486393",
+      "thesportsdb:486394",
+      "thesportsdb:486395",
+      "thesportsdb:486396",
+      "thesportsdb:510969",
+      "thesportsdb:510970",
+      "thesportsdb:510971",
+      "thesportsdb:510972",
+      "thesportsdb:510973",
+      "thesportsdb:510974",
+      "thesportsdb:510975",
+      "thesportsdb:510976",
+      "thesportsdb:510977",
+      "thesportsdb:510978",
+      "thesportsdb:510979",
+      "thesportsdb:510980",
+      "thesportsdb:510981",
+      "thesportsdb:510982",
+      "thesportsdb:510983",
+      "thesportsdb:2489066",
+      "thesportsdb:2489067",
+      "thesportsdb:2489068",
+      "thesportsdb:2489069",
+      "thesportsdb:2489070"
+    ],
+    "soccer:chinese-super-league": [
+      "thesportsdb:490449",
+      "thesportsdb:490451",
+      "thesportsdb:490448",
+      "thesportsdb:490452",
+      "thesportsdb:491047",
+      "thesportsdb:491119",
+      "thesportsdb:490450",
+      "thesportsdb:490447",
+      "thesportsdb:491050",
+      "thesportsdb:491120",
+      "thesportsdb:490453",
+      "thesportsdb:490454",
+      "thesportsdb:490456",
+      "thesportsdb:490457",
+      "thesportsdb:514471",
+      "thesportsdb:514472",
+      "thesportsdb:514473",
+      "thesportsdb:514474",
+      "thesportsdb:514475",
+      "thesportsdb:514476",
+      "thesportsdb:514477",
+      "thesportsdb:514478",
+      "thesportsdb:514479",
+      "thesportsdb:514480",
+      "thesportsdb:514481",
+      "thesportsdb:514482",
+      "thesportsdb:514483",
+      "thesportsdb:514484",
+      "thesportsdb:514485"
+    ],
     "futsal:superliga": [
       "thesportsdb:1631300",
       "thesportsdb:1631301",
@@ -39770,6 +40650,75 @@
       "thesportsdb:1882462",
       "thesportsdb:1882461",
       "thesportsdb:1882469"
+    ],
+    "soccer:primera-division": [
+      "thesportsdb:1631188",
+      "thesportsdb:1631189",
+      "thesportsdb:1631190",
+      "thesportsdb:1631191",
+      "thesportsdb:1631192",
+      "thesportsdb:1631193",
+      "thesportsdb:1631194",
+      "thesportsdb:1631195",
+      "thesportsdb:1631199",
+      "thesportsdb:1631197",
+      "thesportsdb:1631198",
+      "thesportsdb:1631196",
+      "thesportsdb:1631200",
+      "thesportsdb:1631202",
+      "thesportsdb:1631201",
+      "thesportsdb:1882635",
+      "thesportsdb:1882631",
+      "thesportsdb:1882632",
+      "thesportsdb:1882633",
+      "thesportsdb:1882634",
+      "thesportsdb:1882639",
+      "thesportsdb:1882638",
+      "thesportsdb:1882636",
+      "thesportsdb:1882637",
+      "thesportsdb:1882640",
+      "thesportsdb:1882645",
+      "thesportsdb:1882644",
+      "thesportsdb:1882642",
+      "thesportsdb:1882643",
+      "thesportsdb:1882641"
+    ],
+    "soccer:segunda-division": [
+      "thesportsdb:1587915",
+      "thesportsdb:1587919",
+      "thesportsdb:1587916",
+      "thesportsdb:1587917",
+      "thesportsdb:1587918",
+      "thesportsdb:1587921",
+      "thesportsdb:1587923",
+      "thesportsdb:1587922",
+      "thesportsdb:1587920",
+      "thesportsdb:1587924",
+      "thesportsdb:1587928",
+      "thesportsdb:1587929",
+      "thesportsdb:1587926",
+      "thesportsdb:1587927",
+      "thesportsdb:1587925",
+      "thesportsdb:1873306",
+      "thesportsdb:1873307",
+      "thesportsdb:1873309",
+      "thesportsdb:1873308",
+      "thesportsdb:1873311",
+      "thesportsdb:1873313",
+      "thesportsdb:1873314",
+      "thesportsdb:1873316",
+      "thesportsdb:1873318",
+      "thesportsdb:1873319",
+      "thesportsdb:2116369",
+      "thesportsdb:2116368",
+      "thesportsdb:2116373",
+      "thesportsdb:2116371",
+      "thesportsdb:2116374",
+      "thesportsdb:2116376",
+      "thesportsdb:2116378",
+      "thesportsdb:2116377",
+      "thesportsdb:2116381",
+      "thesportsdb:2116380"
     ],
     "rugby:super-league": [
       "thesportsdb:1805803",
@@ -39846,6 +40795,71 @@
       "thesportsdb:2446268",
       "thesportsdb:2446273",
       "thesportsdb:2446274"
+    ],
+    "volleyball:asian-championship": [
+      "thesportsdb:2257298",
+      "thesportsdb:2257299",
+      "thesportsdb:2257300",
+      "thesportsdb:2257301",
+      "thesportsdb:2257302",
+      "thesportsdb:2257303",
+      "thesportsdb:2257304",
+      "thesportsdb:2257305",
+      "thesportsdb:2257306",
+      "thesportsdb:2257307",
+      "thesportsdb:2257308",
+      "thesportsdb:2257309",
+      "thesportsdb:2257310",
+      "thesportsdb:2257311",
+      "thesportsdb:2257312",
+      "thesportsdb:2257330"
+    ],
+    "aussie-rules:afl-women": [
+      "thesportsdb:2064088",
+      "thesportsdb:2064089",
+      "thesportsdb:2064090",
+      "thesportsdb:2064091",
+      "thesportsdb:2064092",
+      "thesportsdb:2064093",
+      "thesportsdb:2064094",
+      "thesportsdb:2064095",
+      "thesportsdb:2064096",
+      "thesportsdb:2064097",
+      "thesportsdb:2064098",
+      "thesportsdb:2064100",
+      "thesportsdb:2064099",
+      "thesportsdb:2064101",
+      "thesportsdb:2064102",
+      "thesportsdb:2262043",
+      "thesportsdb:2262044",
+      "thesportsdb:2262045",
+      "thesportsdb:2262046",
+      "thesportsdb:2262047",
+      "thesportsdb:2262048",
+      "thesportsdb:2262049",
+      "thesportsdb:2262050",
+      "thesportsdb:2262051",
+      "thesportsdb:2262052",
+      "thesportsdb:2262053",
+      "thesportsdb:2262054",
+      "thesportsdb:2262055",
+      "thesportsdb:2262056",
+      "thesportsdb:2262057",
+      "thesportsdb:2548962",
+      "thesportsdb:2548963",
+      "thesportsdb:2548970",
+      "thesportsdb:2548964",
+      "thesportsdb:2548965",
+      "thesportsdb:2548966",
+      "thesportsdb:2548967",
+      "thesportsdb:2548968",
+      "thesportsdb:2548969",
+      "thesportsdb:2548972",
+      "thesportsdb:2548978",
+      "thesportsdb:2548971",
+      "thesportsdb:2548973",
+      "thesportsdb:2548974",
+      "thesportsdb:2548975"
     ],
     "american-football:nfl": [
       "espn:401671696",
@@ -43406,9 +44420,6 @@
       "espn:401874174",
       "espn:401874175",
       "espn:401874176"
-    ],
-    "volleyball:asian-championship": [
-      "thesportsdb:2257330"
     ],
     "baseball:mlb": [
       "espn:401832869",
@@ -55358,23 +56369,6 @@
       "cricsheet:1549973",
       "cricsheet:1496552"
     ],
-    "aussie-rules:afl-women": [
-      "thesportsdb:2548962",
-      "thesportsdb:2548963",
-      "thesportsdb:2548970",
-      "thesportsdb:2548964",
-      "thesportsdb:2548965",
-      "thesportsdb:2548966",
-      "thesportsdb:2548967",
-      "thesportsdb:2548968",
-      "thesportsdb:2548969",
-      "thesportsdb:2548972",
-      "thesportsdb:2548978",
-      "thesportsdb:2548971",
-      "thesportsdb:2548973",
-      "thesportsdb:2548974",
-      "thesportsdb:2548975"
-    ],
     "dota-2:all": [
       "opendota:8944680063",
       "opendota:8944692094",
@@ -55725,7 +56719,8 @@
       "opendota:8988152817",
       "opendota:8988557865",
       "opendota:8988636430",
-      "opendota:8988695634"
+      "opendota:8988695634",
+      "opendota:8988787181"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -55783,18 +56778,6 @@
       "thesportsdb:2539937",
       "thesportsdb:2539933"
     ],
-    "soccer:iraqi-league": [
-      "thesportsdb:2494005",
-      "thesportsdb:2494006",
-      "thesportsdb:2494007",
-      "thesportsdb:2494008",
-      "thesportsdb:2494009",
-      "thesportsdb:2494015",
-      "thesportsdb:2494012",
-      "thesportsdb:2494011",
-      "thesportsdb:2494019",
-      "thesportsdb:2494013"
-    ],
     "soccer:women-bundesliga": [
       "thesportsdb:2508333",
       "thesportsdb:2508335",
@@ -55839,6 +56822,10 @@
       "total": 45,
       "draws": 7
     },
+    "soccer:la-liga": {
+      "total": 30,
+      "draws": 12
+    },
     "soccer:2nd-bundesliga": {
       "total": 30,
       "draws": 4
@@ -55847,23 +56834,51 @@
       "total": 45,
       "draws": 7
     },
+    "cricket:all": {
+      "total": 179,
+      "draws": 8
+    },
+    "soccer:iraqi-league": {
+      "total": 40,
+      "draws": 7
+    },
+    "soccer:ligue-1": {
+      "total": 35,
+      "draws": 8
+    },
+    "soccer:eredivisie": {
+      "total": 35,
+      "draws": 11
+    },
     "soccer:chinese-super-league": {
       "total": 29,
       "draws": 4
     },
-    "cricket:all": {
-      "total": 149,
-      "draws": 8
-    },
     "futsal:superliga": {
       "total": 30,
       "draws": 8
+    },
+    "soccer:primera-division": {
+      "total": 30,
+      "draws": 10
+    },
+    "soccer:segunda-division": {
+      "total": 35,
+      "draws": 5
     },
     "rugby:super-league": {
       "total": 27,
       "draws": 0
     },
     "rugby:top-14": {
+      "total": 45,
+      "draws": 0
+    },
+    "volleyball:asian-championship": {
+      "total": 16,
+      "draws": 0
+    },
+    "aussie-rules:afl-women": {
       "total": 45,
       "draws": 0
     },
@@ -55877,10 +56892,6 @@
     },
     "ice-hockey:nhl": {
       "total": 1499,
-      "draws": 0
-    },
-    "volleyball:asian-championship": {
-      "total": 1,
       "draws": 0
     },
     "baseball:mlb": {
@@ -55915,12 +56926,8 @@
       "total": 9,
       "draws": 0
     },
-    "aussie-rules:afl-women": {
-      "total": 15,
-      "draws": 0
-    },
     "dota-2:all": {
-      "total": 350,
+      "total": 351,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -55933,10 +56940,6 @@
     },
     "soccer:super-league-1": {
       "total": 20,
-      "draws": 3
-    },
-    "soccer:iraqi-league": {
-      "total": 10,
       "draws": 3
     },
     "soccer:women-bundesliga": {
