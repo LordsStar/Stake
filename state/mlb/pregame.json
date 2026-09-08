@@ -149,8 +149,8 @@
     "home_name": "Seattle Mariners",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "682243",
+    "home_starter_name": "Bryce Miller",
     "away_starter_id": "615698",
     "away_starter_name": "Cal Quantrill",
     "lineups_confirmed": false
@@ -253,8 +253,8 @@
     "home_name": "Seattle Mariners",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "807739",
+    "home_starter_name": "Kade Anderson",
     "away_starter_id": "674003",
     "away_starter_name": "Cody Bradford",
     "lineups_confirmed": false
@@ -422,8 +422,8 @@
     "home_name": "Seattle Mariners",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669302",
+    "home_starter_name": "Logan Gilbert",
     "away_starter_id": "594798",
     "away_starter_name": "Jacob deGrom",
     "lineups_confirmed": false
