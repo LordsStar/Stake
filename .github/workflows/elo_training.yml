@@ -1,14 +1,19 @@
-name: Entrenamiento Elo Blindado
-
-# Corre todos los días y también se puede disparar a mano desde la pestaña
-# "Actions" del repo (workflow_dispatch). Usa el GITHUB_TOKEN que GitHub
-# inyecta automáticamente en cada corrida — no hace falta guardar ninguna
-# credencial nueva en Secrets para esto.
+name: Resultados y entrenamiento Elo Blindado
 
 on:
   schedule:
-    - cron: "0 9 * * *"  # 09:00 UTC (~05:00 en Santo Domingo, GMT-4)
-  workflow_dispatch: {}
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      full_backfill:
+        description: "Repetir backfill histórico principal"
+        required: false
+        type: boolean
+        default: false
+      max_leagues:
+        description: "Ligas TheSportsDB a procesar en esta corrida (0=todas)"
+        required: false
+        default: "24"
 
 permissions:
   contents: write
@@ -20,8 +25,9 @@ concurrency:
 jobs:
   train:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     steps:
-      - name: Checkout del repo
+      - name: Checkout
         uses: actions/checkout@v5
         with:
           ref: main
@@ -31,35 +37,29 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalar dependencias mínimas
+      - name: Dependencias
         run: pip install requests
 
       - name: Actualizar rama
         run: git pull --rebase origin main
 
-      - name: Descargar resultados finalizados
-        shell: bash
+      - name: Resultados, alias y Elo
+        env:
+          FULL_BACKFILL: ${{ inputs.full_backfill || 'false' }}
+          MAX_LEAGUES: ${{ inputs.max_leagues || '24' }}
         run: |
-          if [ -f state/results/results.json ]; then
-            python fetch_results_espn.py --days-back 3
-          else
-            echo "Primera corrida: creando histórico inicial para calibrar Elo."
-            python fetch_results_espn.py --sports basketball baseball ice-hockey --days-back 60
-            python fetch_results_espn.py --sports american-football --days-back 365
-          fi
+          EXTRA_ARGS=""
+          if [ "$FULL_BACKFILL" = "true" ]; then EXTRA_ARGS="--full-backfill"; fi
+          python results_pipeline.py --max-leagues "$MAX_LEAGUES" $EXTRA_ARGS
 
-      - name: Ampliar histórico con fuentes multideporte gratuitas
-        run: python fetch_results_free.py --snapshot snapshot.json --max-leagues 0
-
-      - name: Entrenar Elo (reconstrucción cronológica)
-        # Una fuente nueva puede agregar un partido anterior a los ya
-        # procesados; reconstruir evita aplicar ese resultado fuera de orden.
-        run: python elo_trainer.py --reset
-
-      - name: Commitear state/ actualizado si hubo cambios
+      - name: Guardar estado público
         run: |
           git config user.name "blindado-bot"
           git config user.email "blindado-bot@users.noreply.github.com"
-          git add state/results/results.json state/elo_state.json state/source_coverage.json
-          git diff --cached --quiet || git commit -m "Actualiza Elo y resultados (automático)"
+          git add state/results/results.json state/elo_state.json \
+            state/source_coverage.json state/result_source_state.json \
+            state/results_pipeline_state.json state/team_aliases.json \
+            state/unresolved_aliases.json
+          git diff --cached --quiet || git commit -m "Actualiza resultados, alias y Elo"
+          git pull --rebase origin main
           git push
