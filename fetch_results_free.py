@@ -146,7 +146,7 @@ def cricsheet_rows(targets):
         response = requests.get(
             CRICSHEET_RECENT,
             params={"attempt": attempt} if attempt else None,
-            headers={"User-Agent": "BlindadoResults/7.2", "Accept": "application/zip"},
+            headers={"User-Agent": "BlindadoResults/7.2"},
             timeout=60,
         )
         response.raise_for_status()
