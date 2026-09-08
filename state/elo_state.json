@@ -1,6 +1,340 @@
 {
   "schema_version": 4,
   "ratings": {
+    "handball:damehandboldligaen": {
+      "aalborg h ndbold": {
+        "elo": 1510.0604061047977,
+        "games": 6
+      },
+      "bjerringbro silkeborg h ndbold": {
+        "elo": 1488.0465428565958,
+        "games": 7
+      },
+      "fck h ndbold": {
+        "elo": 1499.4898021516049,
+        "games": 4
+      },
+      "elite 3000 helsingoer": {
+        "elo": 1509.9362274051268,
+        "games": 4
+      },
+      "aarhus h ndbold": {
+        "elo": 1509.7588094512005,
+        "games": 5
+      },
+      "silkeborg voel kfum": {
+        "elo": 1480.0,
+        "games": 2
+      },
+      "viborg hk": {
+        "elo": 1528.8582301334377,
+        "games": 4
+      },
+      "kif kolding": {
+        "elo": 1500.430101691519,
+        "games": 7
+      },
+      "gog h ndbold": {
+        "elo": 1529.0708130071007,
+        "games": 9
+      },
+      "fredericia hk": {
+        "elo": 1481.6525788792467,
+        "games": 6
+      },
+      "skjern h ndbold": {
+        "elo": 1528.780094218385,
+        "games": 6
+      },
+      "tms ringsted": {
+        "elo": 1471.089762637709,
+        "games": 7
+      },
+      "tth holstebro": {
+        "elo": 1481.8840879726022,
+        "games": 6
+      },
+      "ajax k benhavn": {
+        "elo": 1480.2578904920545,
+        "games": 2
+      },
+      "mors thy h ndbold": {
+        "elo": 1491.734871708554,
+        "games": 4
+      },
+      "skanderborg aarhus h ndbold": {
+        "elo": 1500.2767614487975,
+        "games": 2
+      },
+      "nordsj lland h ndbold": {
+        "elo": 1499.6959798713178,
+        "games": 2
+      },
+      "ribe esbjerg hh": {
+        "elo": 1519.19404811234,
+        "games": 2
+      },
+      "skive fh": {
+        "elo": 1490.0606995337746,
+        "games": 3
+      },
+      "s nderjyske h ndbold": {
+        "elo": 1499.7222923238355,
+        "games": 2
+      }
+    },
+    "handball:champions-league": {
+      "gog h ndbold": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "meshkov brest": {
+        "elo": 1509.4249887221547,
+        "games": 3
+      },
+      "fc barcelona handbol": {
+        "elo": 1519.9995236717139,
+        "games": 2
+      },
+      "vardar 1961": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "sc pick szeged": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "hc dobrogea sud constan a": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "rk izvi a": {
+        "elo": 1499.983926988574,
+        "games": 4
+      },
+      "bm neptuno": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "pfadi winterthur": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "kif kolding": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "rk crvena zvezda": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "celje pivovarna la ko": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "ht tatran pre ov": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "sg flensburg handewitt": {
+        "elo": 1500.0,
+        "games": 1
+      },
+      "wis a p ock": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "sdc san antonio": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "sandefjord tif": {
+        "elo": 1470.5750112778453,
+        "games": 3
+      },
+      "tbv lemgo": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "montpellier handball": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "indeco conversano": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "rk gorenje velenje": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "chekhovskiye medvedi": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "granitas kaunas": {
+        "elo": 1509.9834506602879,
+        "games": 3
+      },
+      "veszpr m kc": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "rk ppd zagreb": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "hc ztr zaporizhzhia": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "ik s vehof": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "us cr teil handball": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "haukar handball": {
+        "elo": 1509.9834506602879,
+        "games": 3
+      },
+      "thw kiel": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "handbal volendam": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "athinaikos h c": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "stavanger if": {
+        "elo": 1480.0165493397121,
+        "games": 2
+      },
+      "handbal tongeren": {
+        "elo": 1480.0165493397121,
+        "games": 2
+      },
+      "be ikta jk handball": {
+        "elo": 1500.5750112778453,
+        "games": 2
+      },
+      "cs dinamo bucure ti": {
+        "elo": 1499.4249887221547,
+        "games": 2
+      },
+      "rk vojvodina": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "bregenz handball": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "handball club berchem": {
+        "elo": 1480.0165493397121,
+        "games": 2
+      }
+    },
+    "handball:lnh-division-1": {
+      "tremblay en france handball": {
+        "elo": 1507.6746339436618,
+        "games": 7
+      },
+      "villefranche handball beaujolais": {
+        "elo": 1500.56721209952,
+        "games": 3
+      },
+      "angers sco handball": {
+        "elo": 1489.71225631668,
+        "games": 2
+      },
+      "usam n mes gard": {
+        "elo": 1512.9285054025163,
+        "games": 6
+      },
+      "chamb ry savoie handball": {
+        "elo": 1529.6723449845665,
+        "games": 6
+      },
+      "fenix toulouse handball": {
+        "elo": 1471.900201118402,
+        "games": 5
+      },
+      "us ivry handball": {
+        "elo": 1499.178588857266,
+        "games": 4
+      },
+      "ums pontault combault hb": {
+        "elo": 1500.2633932263634,
+        "games": 4
+      },
+      "s lestat alsace handball": {
+        "elo": 1462.7297319417603,
+        "games": 6
+      },
+      "dunkerque handball grand littoral": {
+        "elo": 1518.0370348563417,
+        "games": 6
+      },
+      "paris saint germain handball": {
+        "elo": 1529.7494616288607,
+        "games": 7
+      },
+      "istres provence handball": {
+        "elo": 1507.272103675133,
+        "games": 6
+      },
+      "us cr teil handball": {
+        "elo": 1470.5988430103132,
+        "games": 4
+      },
+      "montpellier handball": {
+        "elo": 1529.4105309850934,
+        "games": 6
+      },
+      "smv handball": {
+        "elo": 1489.4492684107984,
+        "games": 2
+      },
+      "villeurbanne handball": {
+        "elo": 1490.2234742300886,
+        "games": 3
+      },
+      "hbc nantes": {
+        "elo": 1500.5747736610188,
+        "games": 1
+      },
+      "limoges handball": {
+        "elo": 1509.7142715366617,
+        "games": 2
+      },
+      "pauc handball": {
+        "elo": 1500.0082623970034,
+        "games": 2
+      },
+      "c chartres m tropole handball": {
+        "elo": 1500.278809355314,
+        "games": 2
+      },
+      "dijon bourgogne": {
+        "elo": 1480.278802742385,
+        "games": 2
+      },
+      "cesson rennes mhb": {
+        "elo": 1499.4886502904133,
+        "games": 2
+      },
+      "saint rapha l var handball": {
+        "elo": 1500.2888453298385,
+        "games": 2
+      }
+    },
     "cricket:all": {
       "trinbago knight riders": {
         "elo": 1507.30776902554,
@@ -205,6 +539,56 @@
       "panadura sports club": {
         "elo": 1490.0231675002294,
         "games": 3
+      }
+    },
+    "futsal:superliga": {
+      "kukesi": {
+        "elo": 1451.4882307405176,
+        "games": 6
+      },
+      "sk tirana": {
+        "elo": 1519.224390370908,
+        "games": 6
+      },
+      "erzeni": {
+        "elo": 1507.9029205338359,
+        "games": 7
+      },
+      "kf vllaznia shkod r": {
+        "elo": 1519.899913977709,
+        "games": 6
+      },
+      "partizani": {
+        "elo": 1538.0055618468607,
+        "games": 5
+      },
+      "egnatia": {
+        "elo": 1501.3285393650972,
+        "games": 6
+      },
+      "laci": {
+        "elo": 1491.4327996756692,
+        "games": 6
+      },
+      "ks teuta": {
+        "elo": 1481.34187819859,
+        "games": 5
+      },
+      "kf bylis": {
+        "elo": 1499.7292680549374,
+        "games": 3
+      },
+      "kastrioti": {
+        "elo": 1500.55017924498,
+        "games": 3
+      },
+      "skenderbeu": {
+        "elo": 1508.874288334246,
+        "games": 3
+      },
+      "dinamo tirana": {
+        "elo": 1480.222029656649,
+        "games": 4
       }
     },
     "american-football:nfl": {
@@ -693,8 +1077,8 @@
         "games": 172
       },
       "st louis cardinals": {
-        "elo": 1489.3907007148616,
-        "games": 172
+        "elo": 1478.4153438074932,
+        "games": 173
       },
       "washington nationals": {
         "elo": 1420.0087200657256,
@@ -713,8 +1097,8 @@
         "games": 172
       },
       "toronto blue jays": {
-        "elo": 1560.6227592938037,
-        "games": 172
+        "elo": 1546.8817960951897,
+        "games": 173
       },
       "philadelphia phillies": {
         "elo": 1579.6391417945115,
@@ -729,32 +1113,32 @@
         "games": 172
       },
       "athletics": {
-        "elo": 1404.0188907391043,
-        "games": 175
+        "elo": 1417.7598539377184,
+        "games": 176
       },
       "cleveland guardians": {
         "elo": 1490.6357789650135,
         "games": 176
       },
       "cincinnati reds": {
-        "elo": 1504.8132868181885,
-        "games": 174
+        "elo": 1496.5981434397852,
+        "games": 175
       },
       "milwaukee brewers": {
         "elo": 1568.4347297192908,
         "games": 175
       },
       "san francisco giants": {
-        "elo": 1435.395254093182,
-        "games": 173
+        "elo": 1446.3706110005505,
+        "games": 174
       },
       "los angeles angels": {
         "elo": 1386.12829766339,
         "games": 177
       },
       "los angeles dodgers": {
-        "elo": 1547.4969490468684,
-        "games": 174
+        "elo": 1555.7120924252717,
+        "games": 175
       },
       "national all stars": {
         "elo": 1489.4249887221547,
@@ -1609,8 +1993,8 @@
         "games": 24
       },
       "alexander zverev": {
-        "elo": 1700.298662896696,
-        "games": 52
+        "elo": 1706.6536312599894,
+        "games": 53
       },
       "diana shnaider": {
         "elo": 1582.8646167932548,
@@ -1781,8 +2165,8 @@
         "games": 20
       },
       "luciano darderi": {
-        "elo": 1567.554201265473,
-        "games": 38
+        "elo": 1561.1992329021796,
+        "games": 39
       },
       "cameron norrie": {
         "elo": 1530.0332543371292,
@@ -3975,8 +4359,8 @@
         "games": 20
       },
       "julieta pareja": {
-        "elo": 1503.4387361205472,
-        "games": 10
+        "elo": 1513.1127795443772,
+        "games": 11
       },
       "lanlana tararudee": {
         "elo": 1581.9125419784805,
@@ -4507,8 +4891,8 @@
         "games": 10
       },
       "francesca jones": {
-        "elo": 1600.4010581311513,
-        "games": 35
+        "elo": 1607.123036070208,
+        "games": 36
       },
       "sebastian baez": {
         "elo": 1486.0253010424467,
@@ -4663,8 +5047,8 @@
         "games": 13
       },
       "alexander zverev": {
-        "elo": 1679.3653996047378,
-        "games": 40
+        "elo": 1685.8866967572426,
+        "games": 41
       },
       "diana shnaider": {
         "elo": 1582.796091726685,
@@ -4835,8 +5219,8 @@
         "games": 28
       },
       "luciano darderi": {
-        "elo": 1553.2397560033685,
-        "games": 23
+        "elo": 1546.7184588508637,
+        "games": 24
       },
       "cameron norrie": {
         "elo": 1518.8324294687554,
@@ -4983,8 +5367,8 @@
         "games": 33
       },
       "katarzyna kawa": {
-        "elo": 1530.3769307492735,
-        "games": 33
+        "elo": 1519.269531747128,
+        "games": 34
       },
       "despina papamichail": {
         "elo": 1459.027469871898,
@@ -5259,12 +5643,12 @@
         "games": 13
       },
       "andrea lazaro garcia": {
-        "elo": 1515.3706094957088,
-        "games": 18
+        "elo": 1523.8914272617124,
+        "games": 19
       },
       "lucija ciric bagaric": {
-        "elo": 1514.2234645960878,
-        "games": 9
+        "elo": 1523.8143089265957,
+        "games": 10
       },
       "ana konjuh": {
         "elo": 1480.125190350641,
@@ -5527,8 +5911,8 @@
         "games": 5
       },
       "eva bennemann": {
-        "elo": 1491.7435041227136,
-        "games": 3
+        "elo": 1502.850903124859,
+        "games": 4
       },
       "manon leonard": {
         "elo": 1471.1480904089565,
@@ -5955,8 +6339,8 @@
         "games": 3
       },
       "alevtina ibragimova": {
-        "elo": 1534.293567615938,
-        "games": 14
+        "elo": 1542.405040877654,
+        "games": 15
       },
       "shi han": {
         "elo": 1492.120815253549,
@@ -6071,8 +6455,8 @@
         "games": 7
       },
       "raluka serban": {
-        "elo": 1482.1465369085786,
-        "games": 4
+        "elo": 1475.424558969522,
+        "games": 5
       },
       "katherine sebov": {
         "elo": 1493.2257592064575,
@@ -6167,8 +6551,8 @@
         "games": 15
       },
       "lizette cabrera": {
-        "elo": 1492.1098313602934,
-        "games": 7
+        "elo": 1482.4357879364634,
+        "games": 8
       },
       "viktoria morvayova": {
         "elo": 1488.8751058428625,
@@ -6531,8 +6915,8 @@
         "games": 2
       },
       "angela fita boluda": {
-        "elo": 1463.5987401949012,
-        "games": 6
+        "elo": 1455.0779224288976,
+        "games": 7
       },
       "lorenzo giustino": {
         "elo": 1470.476097609247,
@@ -6831,8 +7215,8 @@
         "games": 1
       },
       "julie struplova": {
-        "elo": 1467.8822484357834,
-        "games": 3
+        "elo": 1459.7707751740672,
+        "games": 4
       },
       "maria martinez vaquero": {
         "elo": 1499.990596041354,
@@ -7749,6 +8133,10 @@
       "antonia vergara rivera": {
         "elo": 1489.43324365913,
         "games": 1
+      },
+      "gabriella price": {
+        "elo": 1490.409155669492,
+        "games": 1
       }
     },
     "rugby:top-14": {
@@ -8491,8 +8879,8 @@
         "games": 7
       },
       "huligani": {
-        "elo": 1455.9511670525333,
-        "games": 10
+        "elo": 1457.491909837827,
+        "games": 12
       },
       "gamerlegion": {
         "elo": 1498.8370258806665,
@@ -8899,8 +9287,8 @@
         "games": 10
       },
       "powerrangers": {
-        "elo": 1493.8845070362709,
-        "games": 12
+        "elo": 1492.343764250977,
+        "games": 14
       },
       "the blacklist": {
         "elo": 1510.0,
@@ -9407,64 +9795,6 @@
         "games": 1
       }
     },
-    "handball:damehandboldligaen": {
-      "gog h ndbold": {
-        "elo": 1520.0,
-        "games": 2
-      },
-      "skjern h ndbold": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "skanderborg aarhus h ndbold": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "tms ringsted": {
-        "elo": 1470.0,
-        "games": 3
-      },
-      "nordsj lland h ndbold": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "fredericia hk": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "ribe esbjerg hh": {
-        "elo": 1520.0,
-        "games": 2
-      },
-      "mors thy h ndbold": {
-        "elo": 1500.5750112778453,
-        "games": 2
-      },
-      "kif kolding": {
-        "elo": 1499.4249887221547,
-        "games": 2
-      },
-      "skive fh": {
-        "elo": 1490.0,
-        "games": 3
-      },
-      "s nderjyske h ndbold": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "aalborg h ndbold": {
-        "elo": 1520.0,
-        "games": 2
-      },
-      "tth holstebro": {
-        "elo": 1500.0,
-        "games": 2
-      },
-      "bjerringbro silkeborg h ndbold": {
-        "elo": 1480.0,
-        "games": 2
-      }
-    },
     "soccer:women-bundesliga": {
       "bayern munich": {
         "elo": 1508.430064953105,
@@ -9701,6 +10031,13 @@
         "kind": "binary",
         "p": 0.5174601744405399,
         "y": 0.5
+      }
+    ],
+    "futsal:superliga": [
+      {
+        "kind": "binary",
+        "p": 0.47435638468625974,
+        "y": 1.0
       }
     ],
     "american-football:nfl": [
@@ -12548,6 +12885,18 @@
         "kind": "binary",
         "p": 0.4012770285183836,
         "y": 0.0
+      }
+    ],
+    "handball:lnh-division-1": [
+      {
+        "kind": "binary",
+        "p": 0.5127700837617947,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4774985356951141,
+        "y": 1.0
       }
     ],
     "ice-hockey:nhl": [
@@ -22557,21 +22906,6 @@
     "baseball:mlb": [
       {
         "kind": "binary",
-        "p": 0.3832045795778809,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5452558205207474,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.3965347851789004,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
         "p": 0.5676048469468534,
         "y": 1.0
       },
@@ -27554,24 +27888,24 @@
         "kind": "binary",
         "p": 0.672318252131338,
         "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4512321546315816,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5892428310798378,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.31295184006929694,
+        "y": 1.0
       }
     ],
     "tennis:wta": [
-      {
-        "kind": "binary",
-        "p": 0.5848611126460366,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.523593227860177,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5127350393220097,
-        "y": 1.0
-      },
       {
         "kind": "binary",
         "p": 0.6390191658791796,
@@ -32556,14 +32890,24 @@
         "kind": "binary",
         "p": 0.34474213610335164,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6739351423747609,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5162978288085045,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5739591116998266,
+        "y": 1.0
       }
     ],
     "tennis:atp": [
-      {
-        "kind": "binary",
-        "p": 0.5037784922792915,
-        "y": 1.0
-      },
       {
         "kind": "binary",
         "p": 0.613036724689221,
@@ -37558,6 +37902,11 @@
         "kind": "binary",
         "p": 0.3117184028346959,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6822515818353232,
+        "y": 1.0
       }
     ],
     "cricket:t20": [
@@ -38402,10 +38751,158 @@
         "kind": "binary",
         "p": 0.5926032786249356,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5543745790479063,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.47733743978321475,
+        "y": 0.0
+      }
+    ],
+    "handball:damehandboldligaen": [
+      {
+        "kind": "binary",
+        "p": 0.45787060144163927,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.512482631381135,
+        "y": 1.0
       }
     ]
   },
   "processed": {
+    "handball:damehandboldligaen": [
+      "thesportsdb:1513441",
+      "thesportsdb:1513440",
+      "thesportsdb:1513439",
+      "thesportsdb:1513438",
+      "thesportsdb:1513437",
+      "thesportsdb:1513436",
+      "thesportsdb:1513435",
+      "thesportsdb:1513434",
+      "thesportsdb:1513433",
+      "thesportsdb:1513432",
+      "thesportsdb:1513431",
+      "thesportsdb:1513430",
+      "thesportsdb:1513429",
+      "thesportsdb:1513428",
+      "thesportsdb:1513426",
+      "thesportsdb:1513252",
+      "thesportsdb:1513251",
+      "thesportsdb:1513247",
+      "thesportsdb:1513248",
+      "thesportsdb:1513249",
+      "thesportsdb:1513250",
+      "thesportsdb:1513246",
+      "thesportsdb:1513244",
+      "thesportsdb:1513245",
+      "thesportsdb:1513243",
+      "thesportsdb:1513242",
+      "thesportsdb:1513240",
+      "thesportsdb:1513241",
+      "thesportsdb:1513239",
+      "thesportsdb:1513232",
+      "thesportsdb:2527511",
+      "thesportsdb:2527512",
+      "thesportsdb:2527515",
+      "thesportsdb:2527516",
+      "thesportsdb:2527517",
+      "thesportsdb:2527513",
+      "thesportsdb:2527514",
+      "thesportsdb:2527523",
+      "thesportsdb:2527518",
+      "thesportsdb:2527521",
+      "thesportsdb:2527522",
+      "thesportsdb:2527519",
+      "thesportsdb:2527520",
+      "thesportsdb:2527524",
+      "thesportsdb:2527525"
+    ],
+    "handball:champions-league": [
+      "thesportsdb:1320800",
+      "thesportsdb:1320799",
+      "thesportsdb:1320798",
+      "thesportsdb:1320797",
+      "thesportsdb:1320796",
+      "thesportsdb:1320793",
+      "thesportsdb:1320794",
+      "thesportsdb:1320795",
+      "thesportsdb:1320791",
+      "thesportsdb:1320790",
+      "thesportsdb:1320789",
+      "thesportsdb:1320787",
+      "thesportsdb:1320788",
+      "thesportsdb:1320786",
+      "thesportsdb:1320785",
+      "thesportsdb:1320674",
+      "thesportsdb:1320673",
+      "thesportsdb:1320672",
+      "thesportsdb:1320671",
+      "thesportsdb:1320670",
+      "thesportsdb:1320669",
+      "thesportsdb:1320668",
+      "thesportsdb:1320667",
+      "thesportsdb:1320666",
+      "thesportsdb:1320665",
+      "thesportsdb:1320664",
+      "thesportsdb:1320662",
+      "thesportsdb:1320663",
+      "thesportsdb:1320661",
+      "thesportsdb:1320652"
+    ],
+    "handball:lnh-division-1": [
+      "thesportsdb:1291523",
+      "thesportsdb:1291519",
+      "thesportsdb:1291520",
+      "thesportsdb:1291521",
+      "thesportsdb:1291522",
+      "thesportsdb:1291518",
+      "thesportsdb:1291517",
+      "thesportsdb:1291512",
+      "thesportsdb:1291513",
+      "thesportsdb:1291514",
+      "thesportsdb:1291515",
+      "thesportsdb:1291516",
+      "thesportsdb:1291510",
+      "thesportsdb:1291511",
+      "thesportsdb:1291503",
+      "thesportsdb:1291341",
+      "thesportsdb:1291340",
+      "thesportsdb:1291336",
+      "thesportsdb:1291337",
+      "thesportsdb:1291338",
+      "thesportsdb:1291339",
+      "thesportsdb:1291335",
+      "thesportsdb:1291334",
+      "thesportsdb:1291332",
+      "thesportsdb:1291333",
+      "thesportsdb:1291329",
+      "thesportsdb:1291330",
+      "thesportsdb:1291331",
+      "thesportsdb:1291328",
+      "thesportsdb:1291321",
+      "thesportsdb:2329369",
+      "thesportsdb:2329370",
+      "thesportsdb:2329371",
+      "thesportsdb:2329372",
+      "thesportsdb:2329373",
+      "thesportsdb:2329374",
+      "thesportsdb:2329375",
+      "thesportsdb:2329376",
+      "thesportsdb:2329377",
+      "thesportsdb:2329378",
+      "thesportsdb:2329379",
+      "thesportsdb:2329380",
+      "thesportsdb:2329381",
+      "thesportsdb:2329382",
+      "thesportsdb:2329383"
+    ],
     "cricket:all": [
       "thesportsdb:1500677",
       "thesportsdb:1500676",
@@ -38556,6 +39053,38 @@
       "cricsheet:1547436",
       "cricsheet:1547437",
       "cricsheet:1547432"
+    ],
+    "futsal:superliga": [
+      "thesportsdb:1631300",
+      "thesportsdb:1631301",
+      "thesportsdb:1631302",
+      "thesportsdb:1631303",
+      "thesportsdb:1631304",
+      "thesportsdb:1631307",
+      "thesportsdb:1631308",
+      "thesportsdb:1631309",
+      "thesportsdb:1631306",
+      "thesportsdb:1631305",
+      "thesportsdb:1631314",
+      "thesportsdb:1631312",
+      "thesportsdb:1631313",
+      "thesportsdb:1631310",
+      "thesportsdb:1631311",
+      "thesportsdb:1882454",
+      "thesportsdb:1882453",
+      "thesportsdb:1882451",
+      "thesportsdb:1882455",
+      "thesportsdb:1882459",
+      "thesportsdb:1882457",
+      "thesportsdb:1882460",
+      "thesportsdb:1882458",
+      "thesportsdb:1882456",
+      "thesportsdb:1882463",
+      "thesportsdb:1882464",
+      "thesportsdb:1882465",
+      "thesportsdb:1882462",
+      "thesportsdb:1882461",
+      "thesportsdb:1882469"
     ],
     "american-football:nfl": [
       "espn:401671696",
@@ -44731,7 +45260,10 @@
       "espn:401816847",
       "espn:401816848",
       "espn:401816845",
-      "espn:401816852"
+      "espn:401816852",
+      "espn:401816850",
+      "espn:401816849",
+      "espn:401816851"
     ],
     "rugby:super-league": [
       "thesportsdb:2396052",
@@ -48694,7 +49226,8 @@
       "espn:tennis:atp:182527",
       "espn:tennis:atp:182688",
       "espn:tennis:atp:182692",
-      "espn:tennis:atp:182557"
+      "espn:tennis:atp:182557",
+      "espn:tennis:atp:182682"
     ],
     "tennis:wta": [
       "espn:tennis:wta:173654",
@@ -53822,7 +54355,14 @@
       "espn:tennis:wta:182692",
       "espn:tennis:wta:183619",
       "espn:tennis:wta:182557",
-      "espn:tennis:wta:183632"
+      "espn:tennis:wta:183632",
+      "espn:tennis:wta:182682",
+      "espn:tennis:wta:183617",
+      "espn:tennis:wta:183531",
+      "espn:tennis:wta:183548",
+      "espn:tennis:wta:183587",
+      "espn:tennis:wta:183597",
+      "espn:tennis:wta:183553"
     ],
     "rugby:top-14": [
       "thesportsdb:2446260",
@@ -54449,7 +54989,9 @@
       "opendota:8988014473",
       "opendota:8988064818",
       "opendota:8988091750",
-      "opendota:8988152817"
+      "opendota:8988152817",
+      "opendota:8988557865",
+      "opendota:8988636430"
     ],
     "soccer:championship": [
       "thesportsdb:2501249",
@@ -54553,23 +55095,6 @@
       "thesportsdb:2494019",
       "thesportsdb:2494013"
     ],
-    "handball:damehandboldligaen": [
-      "thesportsdb:2527511",
-      "thesportsdb:2527512",
-      "thesportsdb:2527515",
-      "thesportsdb:2527516",
-      "thesportsdb:2527517",
-      "thesportsdb:2527513",
-      "thesportsdb:2527514",
-      "thesportsdb:2527523",
-      "thesportsdb:2527518",
-      "thesportsdb:2527521",
-      "thesportsdb:2527522",
-      "thesportsdb:2527519",
-      "thesportsdb:2527520",
-      "thesportsdb:2527524",
-      "thesportsdb:2527525"
-    ],
     "soccer:women-bundesliga": [
       "thesportsdb:2508333",
       "thesportsdb:2508335",
@@ -54594,8 +55119,24 @@
     ]
   },
   "draw_stats": {
+    "handball:damehandboldligaen": {
+      "total": 45,
+      "draws": 3
+    },
+    "handball:champions-league": {
+      "total": 30,
+      "draws": 1
+    },
+    "handball:lnh-division-1": {
+      "total": 45,
+      "draws": 7
+    },
     "cricket:all": {
       "total": 149,
+      "draws": 8
+    },
+    "futsal:superliga": {
+      "total": 30,
       "draws": 8
     },
     "american-football:nfl": {
@@ -54615,7 +55156,7 @@
       "draws": 0
     },
     "baseball:mlb": {
-      "total": 2611,
+      "total": 2614,
       "draws": 21
     },
     "rugby:super-league": {
@@ -54623,11 +55164,11 @@
       "draws": 0
     },
     "tennis:atp": {
-      "total": 3944,
+      "total": 3945,
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5126,
+      "total": 5133,
       "draws": 0
     },
     "rugby:top-14": {
@@ -54659,7 +55200,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 347,
+      "total": 349,
       "draws": 0
     },
     "soccer:championship": {
@@ -54685,10 +55226,6 @@
     "soccer:iraqi-league": {
       "total": 10,
       "draws": 3
-    },
-    "handball:damehandboldligaen": {
-      "total": 15,
-      "draws": 0
     },
     "soccer:women-bundesliga": {
       "total": 5,

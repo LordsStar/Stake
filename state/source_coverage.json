@@ -1,58 +1,68 @@
 {
-  "generated_at": "2026-09-08T02:36:01.308376+00:00",
-  "targets_in_snapshot": 189,
+  "generated_at": "2026-09-08T11:30:55.069997+00:00",
+  "targets_in_snapshot": 210,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "cricket",
-      "stake_league": "pakistan-super-league-srl",
-      "source_league": "Caribbean Premier League",
-      "similarity": 0.612
-    },
-    {
-      "sport": "cricket",
-      "stake_league": "premier-league-srl",
-      "source_league": "Caribbean Premier League",
+      "sport": "futsal",
+      "stake_league": "superliga",
+      "source_league": "Albanian Superliga",
       "similarity": 0.667
     },
     {
-      "sport": "cricket",
-      "stake_league": "t10-german-super-league",
-      "source_league": "Caribbean Premier League",
-      "similarity": 0.596
+      "sport": "handball",
+      "stake_league": "champions-league",
+      "source_league": "EHF Champions League",
+      "similarity": 0.889
+    },
+    {
+      "sport": "handball",
+      "stake_league": "damehandboldligaen",
+      "source_league": "Danish Mens Handball League",
+      "similarity": 0.578
+    },
+    {
+      "sport": "handball",
+      "stake_league": "lnh-division-1",
+      "source_league": "French LNH Division 1",
+      "similarity": 0.8
+    },
+    {
+      "sport": "mma",
+      "stake_league": "oktagon-93",
+      "source_league": "Oktagon MMA",
+      "similarity": 0.762
     }
   ],
   "unmatched": [
-    "cricket/odi-series-namibia-vs-south-africa: sin liga equivalente segura",
-    "cricket/sa-t20-league-srl: sin liga equivalente segura",
-    "cricket/super-smash-srl: sin liga equivalente segura",
-    "cricket/t20-afghanistan-vs-india: sin liga equivalente segura",
-    "cricket/t20-africa-continent-cup: sin liga equivalente segura",
-    "cricket/t20-asia-cup-women: sin liga equivalente segura",
-    "cricket/t20-international-srl: sin liga equivalente segura",
-    "cricket/t20-sher-e-punjab-cup: sin liga equivalente segura",
-    "cricket/test-series-england-vs-pakistan: sin liga equivalente segura",
-    "darts/modus-darts-online-live-league: sin liga equivalente segura",
-    "darts/pdc-world-series-of-darts-finals: sin liga equivalente segura",
-    "dota-2/epl-masters-ii-t8: sin liga equivalente segura",
-    "dota-2-duels/berserk-dota-2-league-2026-week-37-t7: sin liga equivalente segura",
-    "ecricket/yodha-premier-league-super-over-2026-week-37-t8: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-1-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-2-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-3-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-5-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-6-2026-week-37-t6: sin liga equivalente segura",
-    "etouchdown/valhalla-league-2026-week-37-t9: sin liga equivalente segura"
+    "floorball/eliteserien: sin liga equivalente segura",
+    "floorball/extraliga: sin liga equivalente segura",
+    "floorball/national-league: sin liga equivalente segura",
+    "floorball/salibandyliigan: sin liga equivalente segura",
+    "floorball/unihockey-prime-league-women: sin liga equivalente segura",
+    "futsal/international-friendly-games: sin liga equivalente segura",
+    "handball/bundesliga: sin liga equivalente segura",
+    "handball/eliteserien-women: sin liga equivalente segura",
+    "handball/handboldligaen: sin liga equivalente segura",
+    "handball/hla: sin liga equivalente segura",
+    "handball/superliga-women: sin liga equivalente segura",
+    "mma/dana-whites-contender-series-season-10-week-5: sin liga equivalente segura",
+    "mma/efc-137: sin liga equivalente segura",
+    "mma/immu-fight-night: sin liga equivalente segura",
+    "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
+    "mma/ufc-332: sin liga equivalente segura",
+    "mma/ufc-333-volkanovski-vs-evloev: sin liga equivalente segura",
+    "mma/ufc-fight-night-silva-vs-delgado: sin liga equivalente segura",
+    "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura"
   ],
-  "rows_collected": 482,
-  "rows_added": 30,
+  "rows_collected": 804,
+  "rows_added": 137,
   "schema_rejections": [],
   "auxiliary_sources": {
-    "Cricsheet": "error: 415 Client Error: Unsupported Media Type for url: https://cricsheet.org/downloads/recently_played_30_json.zip",
+    "Cricsheet": 292,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 48,
+  "next_league_cursor": 72,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

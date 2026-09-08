@@ -61,7 +61,11 @@
     "harris billy": "billy harris",
     "djere laslo": "laslo djere",
     "ajdukovic duje": "duje ajdukovic",
-    "moro canas alejandro": "alejandro moro canas"
+    "moro canas alejandro": "alejandro moro canas",
+    "glinka daniil": "daniil glinka",
+    "krumich martin": "martin krumich",
+    "maestrelli francesco": "francesco maestrelli",
+    "mayot harold": "harold mayot"
   },
   "tennis:wta": {
     "feistel gina": "gina feistel",
@@ -72,6 +76,18 @@
     "burel clara": "clara burel",
     "cadence brance": "cadence brace",
     "xiaodi you": "you xiaodi",
-    "zantedeschi aurora": "aurora zantedeschi"
+    "zantedeschi aurora": "aurora zantedeschi",
+    "kaitlin qevedo": "kaitlin quevedo",
+    "koike ena": "ena koike"
+  },
+  "handball:champions-league": {
+    "veszprem kc": "veszpr m kc",
+    "cs dinamo bucuresti": "cs dinamo bucure ti",
+    "hc vardar 1961": "vardar 1961",
+    "gog handbold": "gog h ndbold"
+  },
+  "handball:lnh-division-1": {
+    "chartres metropole handball": "c chartres m tropole handball",
+    "usam nimes gard": "usam n mes gard"
   }
 }
