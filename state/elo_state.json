@@ -591,6 +591,90 @@
         "games": 4
       }
     },
+    "rugby:super-league": {
+      "pe arol": {
+        "elo": 1511.6248257110765,
+        "games": 12
+      },
+      "cobras": {
+        "elo": 1484.2835723043715,
+        "games": 12
+      },
+      "selknam": {
+        "elo": 1467.9209464412968,
+        "games": 12
+      },
+      "tarucas": {
+        "elo": 1516.9156271527402,
+        "games": 4
+      },
+      "yacare xv": {
+        "elo": 1470.740117482654,
+        "games": 3
+      },
+      "pampas xv": {
+        "elo": 1520.996858266562,
+        "games": 4
+      },
+      "capibaras xv": {
+        "elo": 1508.4211386270101,
+        "games": 3
+      },
+      "dogos xv": {
+        "elo": 1519.096914014289,
+        "games": 4
+      }
+    },
+    "rugby:top-14": {
+      "cuba": {
+        "elo": 1441.2613441993176,
+        "games": 7
+      },
+      "newman": {
+        "elo": 1491.495803025552,
+        "games": 7
+      },
+      "regatas": {
+        "elo": 1499.431254936595,
+        "games": 8
+      },
+      "belgrano": {
+        "elo": 1525.8809384713973,
+        "games": 9
+      },
+      "san luis": {
+        "elo": 1478.5380980578823,
+        "games": 6
+      },
+      "hind": {
+        "elo": 1519.7839552751257,
+        "games": 10
+      },
+      "c a san isidro": {
+        "elo": 1534.7040920311513,
+        "games": 8
+      },
+      "buenos aires": {
+        "elo": 1473.058315080573,
+        "games": 9
+      },
+      "san isidro club": {
+        "elo": 1557.310959834505,
+        "games": 8
+      },
+      "alumni": {
+        "elo": 1525.7178176078053,
+        "games": 9
+      },
+      "los tilos": {
+        "elo": 1489.1372206773135,
+        "games": 5
+      },
+      "la plata": {
+        "elo": 1463.680200802782,
+        "games": 4
+      }
+    },
     "american-football:nfl": {
       "san francisco 49ers": {
         "elo": 1543.7172492386642,
@@ -1147,40 +1231,6 @@
       "american all stars": {
         "elo": 1510.5750112778453,
         "games": 1
-      }
-    },
-    "rugby:super-league": {
-      "tarucas": {
-        "elo": 1516.9540204627485,
-        "games": 4
-      },
-      "selknam": {
-        "elo": 1481.9790145989025,
-        "games": 4
-      },
-      "yacare xv": {
-        "elo": 1471.1312138836877,
-        "games": 3
-      },
-      "pampas xv": {
-        "elo": 1520.9841409174023,
-        "games": 4
-      },
-      "capibaras xv": {
-        "elo": 1507.9846240240176,
-        "games": 3
-      },
-      "pe arol": {
-        "elo": 1499.1021980901257,
-        "games": 4
-      },
-      "dogos xv": {
-        "elo": 1519.456570572797,
-        "games": 4
-      },
-      "cobras": {
-        "elo": 1482.4082174503185,
-        "games": 4
       }
     },
     "tennis:atp": {
@@ -4291,8 +4341,8 @@
         "games": 33
       },
       "maria lourdes carle": {
-        "elo": 1506.9657388858404,
-        "games": 18
+        "elo": 1517.2999674481957,
+        "games": 19
       },
       "maria timofeeva": {
         "elo": 1592.7764054651875,
@@ -5503,8 +5553,8 @@
         "games": 2
       },
       "lola radivojevic": {
-        "elo": 1451.518816262107,
-        "games": 19
+        "elo": 1443.026991706576,
+        "games": 20
       },
       "diego dedura": {
         "elo": 1480.195599987241,
@@ -5671,8 +5721,8 @@
         "games": 8
       },
       "eva vedder": {
-        "elo": 1487.0877648371509,
-        "games": 7
+        "elo": 1497.7695998672536,
+        "games": 8
       },
       "aoi ito": {
         "elo": 1437.6262440139847,
@@ -6043,8 +6093,8 @@
         "games": 21
       },
       "lucie havlickova": {
-        "elo": 1504.321000776544,
-        "games": 14
+        "elo": 1512.8128253320751,
+        "games": 15
       },
       "kika lima": {
         "elo": 1490.0,
@@ -6355,16 +6405,16 @@
         "games": 1
       },
       "lucie nguyen tan": {
-        "elo": 1526.5694320072707,
-        "games": 7
+        "elo": 1515.806189545023,
+        "games": 8
       },
       "aran teixido garcia": {
         "elo": 1480.9164751476712,
         "games": 4
       },
       "clara burel": {
-        "elo": 1485.2732193763156,
-        "games": 12
+        "elo": 1496.2439469268606,
+        "games": 13
       },
       "wang meiling": {
         "elo": 1490.474282730321,
@@ -6479,8 +6529,8 @@
         "games": 4
       },
       "samira de stefano": {
-        "elo": 1510.8139534269237,
-        "games": 3
+        "elo": 1500.132118396821,
+        "games": 4
       },
       "giorgia pedone": {
         "elo": 1480.2993603264613,
@@ -7615,8 +7665,8 @@
         "games": 1
       },
       "gina feistel": {
-        "elo": 1518.582355392835,
-        "games": 4
+        "elo": 1508.2481268304798,
+        "games": 5
       },
       "irina fetecau": {
         "elo": 1491.0723305720408,
@@ -8123,8 +8173,8 @@
         "games": 1
       },
       "katerina tsygourova": {
-        "elo": 1519.1062882545075,
-        "games": 2
+        "elo": 1508.1355607039625,
+        "games": 3
       },
       "elsa bonelli": {
         "elo": 1489.6115141132686,
@@ -8137,51 +8187,9 @@
       "gabriella price": {
         "elo": 1490.409155669492,
         "games": 1
-      }
-    },
-    "rugby:top-14": {
-      "alumni": {
-        "elo": 1499.2987086606454,
-        "games": 4
       },
-      "cuba": {
-        "elo": 1482.8182374650692,
-        "games": 2
-      },
-      "hind": {
-        "elo": 1538.1471316803322,
-        "games": 4
-      },
-      "los tilos": {
-        "elo": 1491.2535927261524,
-        "games": 3
-      },
-      "newman": {
-        "elo": 1508.183298866544,
-        "games": 3
-      },
-      "buenos aires": {
-        "elo": 1490.2965401921376,
-        "games": 3
-      },
-      "san isidro club": {
-        "elo": 1528.943292596662,
-        "games": 3
-      },
-      "belgrano": {
-        "elo": 1472.055863933466,
-        "games": 3
-      },
-      "c a san isidro": {
-        "elo": 1500.2994787489788,
-        "games": 2
-      },
-      "la plata": {
-        "elo": 1479.7005212510212,
-        "games": 2
-      },
-      "regatas": {
-        "elo": 1509.003333878991,
+      "alina granwehr": {
+        "elo": 1510.7632424622477,
         "games": 1
       }
     },
@@ -8879,8 +8887,8 @@
         "games": 7
       },
       "huligani": {
-        "elo": 1457.491909837827,
-        "games": 12
+        "elo": 1468.491675730118,
+        "games": 13
       },
       "gamerlegion": {
         "elo": 1498.8370258806665,
@@ -9287,8 +9295,8 @@
         "games": 10
       },
       "powerrangers": {
-        "elo": 1492.343764250977,
-        "games": 14
+        "elo": 1481.3439983586861,
+        "games": 15
       },
       "the blacklist": {
         "elo": 1510.0,
@@ -10037,6 +10045,38 @@
       {
         "kind": "binary",
         "p": 0.47435638468625974,
+        "y": 1.0
+      }
+    ],
+    "rugby:super-league": [
+      {
+        "kind": "binary",
+        "p": 0.5308156621957922,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5747830080470234,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5087332865966321,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5693070831051223,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5637370033867013,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5642763818402549,
         "y": 1.0
       }
     ],
@@ -12884,6 +12924,63 @@
       {
         "kind": "binary",
         "p": 0.4012770285183836,
+        "y": 0.0
+      }
+    ],
+    "rugby:top-14": [
+      {
+        "kind": "binary",
+        "p": 0.5096839657991694,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6507181678088991,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5091350779709841,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6170296119721789,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.45931197989999156,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6321009795552938,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.6243301292914338,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.4965978120890751,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5357042822862039,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5706437229352017,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5126322425743174,
         "y": 0.0
       }
     ],
@@ -27908,11 +28005,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.6390191658791796,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
         "p": 0.5413847156279227,
         "y": 0.0
       },
@@ -32904,6 +32996,11 @@
       {
         "kind": "binary",
         "p": 0.5739591116998266,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5754087722234383,
         "y": 1.0
       }
     ],
@@ -38761,6 +38858,11 @@
         "kind": "binary",
         "p": 0.47733743978321475,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5499882946145453,
+        "y": 0.0
       }
     ],
     "handball:damehandboldligaen": [
@@ -39085,6 +39187,82 @@
       "thesportsdb:1882462",
       "thesportsdb:1882461",
       "thesportsdb:1882469"
+    ],
+    "rugby:super-league": [
+      "thesportsdb:1805803",
+      "thesportsdb:1805804",
+      "thesportsdb:1805805",
+      "thesportsdb:1805806",
+      "thesportsdb:1805807",
+      "thesportsdb:1805808",
+      "thesportsdb:1926501",
+      "thesportsdb:1926502",
+      "thesportsdb:1926503",
+      "thesportsdb:1926504",
+      "thesportsdb:1926505",
+      "thesportsdb:1926506",
+      "thesportsdb:2396052",
+      "thesportsdb:2396053",
+      "thesportsdb:2417522",
+      "thesportsdb:2396051",
+      "thesportsdb:2396054",
+      "thesportsdb:2396056",
+      "thesportsdb:2417523",
+      "thesportsdb:2396055",
+      "thesportsdb:2417524",
+      "thesportsdb:2396057",
+      "thesportsdb:2396058",
+      "thesportsdb:2396059",
+      "thesportsdb:2396060",
+      "thesportsdb:2396061",
+      "thesportsdb:2396062"
+    ],
+    "rugby:top-14": [
+      "thesportsdb:1950427",
+      "thesportsdb:1950428",
+      "thesportsdb:1950429",
+      "thesportsdb:1950430",
+      "thesportsdb:1950431",
+      "thesportsdb:1950432",
+      "thesportsdb:1950433",
+      "thesportsdb:1950434",
+      "thesportsdb:1950435",
+      "thesportsdb:1950436",
+      "thesportsdb:1950437",
+      "thesportsdb:1950438",
+      "thesportsdb:1950439",
+      "thesportsdb:1950440",
+      "thesportsdb:1950441",
+      "thesportsdb:2257990",
+      "thesportsdb:2257991",
+      "thesportsdb:2257992",
+      "thesportsdb:2257993",
+      "thesportsdb:2257994",
+      "thesportsdb:2258488",
+      "thesportsdb:2257995",
+      "thesportsdb:2257996",
+      "thesportsdb:2257997",
+      "thesportsdb:2257998",
+      "thesportsdb:2258489",
+      "thesportsdb:2257999",
+      "thesportsdb:2258000",
+      "thesportsdb:2258001",
+      "thesportsdb:2258002",
+      "thesportsdb:2446260",
+      "thesportsdb:2446261",
+      "thesportsdb:2446262",
+      "thesportsdb:2446263",
+      "thesportsdb:2446265",
+      "thesportsdb:2446266",
+      "thesportsdb:2446267",
+      "thesportsdb:2446264",
+      "thesportsdb:2446269",
+      "thesportsdb:2446270",
+      "thesportsdb:2446271",
+      "thesportsdb:2446272",
+      "thesportsdb:2446268",
+      "thesportsdb:2446273",
+      "thesportsdb:2446274"
     ],
     "american-football:nfl": [
       "espn:401671696",
@@ -45264,23 +45442,6 @@
       "espn:401816850",
       "espn:401816849",
       "espn:401816851"
-    ],
-    "rugby:super-league": [
-      "thesportsdb:2396052",
-      "thesportsdb:2396053",
-      "thesportsdb:2417522",
-      "thesportsdb:2396051",
-      "thesportsdb:2396054",
-      "thesportsdb:2396056",
-      "thesportsdb:2417523",
-      "thesportsdb:2396055",
-      "thesportsdb:2417524",
-      "thesportsdb:2396057",
-      "thesportsdb:2396058",
-      "thesportsdb:2396059",
-      "thesportsdb:2396060",
-      "thesportsdb:2396061",
-      "thesportsdb:2396062"
     ],
     "tennis:atp": [
       "espn:tennis:atp:173654",
@@ -54360,26 +54521,14 @@
       "espn:tennis:wta:183617",
       "espn:tennis:wta:183531",
       "espn:tennis:wta:183548",
+      "espn:tennis:wta:183534",
       "espn:tennis:wta:183587",
       "espn:tennis:wta:183597",
-      "espn:tennis:wta:183553"
-    ],
-    "rugby:top-14": [
-      "thesportsdb:2446260",
-      "thesportsdb:2446261",
-      "thesportsdb:2446262",
-      "thesportsdb:2446263",
-      "thesportsdb:2446265",
-      "thesportsdb:2446266",
-      "thesportsdb:2446267",
-      "thesportsdb:2446264",
-      "thesportsdb:2446269",
-      "thesportsdb:2446270",
-      "thesportsdb:2446271",
-      "thesportsdb:2446272",
-      "thesportsdb:2446268",
-      "thesportsdb:2446273",
-      "thesportsdb:2446274"
+      "espn:tennis:wta:183585",
+      "espn:tennis:wta:183553",
+      "espn:tennis:wta:183532",
+      "espn:tennis:wta:183594",
+      "espn:tennis:wta:183579"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -54991,7 +55140,8 @@
       "opendota:8988091750",
       "opendota:8988152817",
       "opendota:8988557865",
-      "opendota:8988636430"
+      "opendota:8988636430",
+      "opendota:8988695634"
     ],
     "soccer:championship": [
       "thesportsdb:2501249",
@@ -55139,6 +55289,14 @@
       "total": 30,
       "draws": 8
     },
+    "rugby:super-league": {
+      "total": 27,
+      "draws": 0
+    },
+    "rugby:top-14": {
+      "total": 45,
+      "draws": 0
+    },
     "american-football:nfl": {
       "total": 655,
       "draws": 6
@@ -55159,20 +55317,12 @@
       "total": 2614,
       "draws": 21
     },
-    "rugby:super-league": {
-      "total": 15,
-      "draws": 0
-    },
     "tennis:atp": {
       "total": 3945,
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5133,
-      "draws": 0
-    },
-    "rugby:top-14": {
-      "total": 15,
+      "total": 5138,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -55200,7 +55350,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 349,
+      "total": 350,
       "draws": 0
     },
     "soccer:championship": {

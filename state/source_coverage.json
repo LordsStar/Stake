@@ -1,51 +1,29 @@
 {
-  "generated_at": "2026-09-08T11:30:55.069997+00:00",
-  "targets_in_snapshot": 210,
+  "generated_at": "2026-09-08T12:57:59.345940+00:00",
+  "targets_in_snapshot": 220,
   "targets_processed": 24,
   "matched": [
-    {
-      "sport": "futsal",
-      "stake_league": "superliga",
-      "source_league": "Albanian Superliga",
-      "similarity": 0.667
-    },
-    {
-      "sport": "handball",
-      "stake_league": "champions-league",
-      "source_league": "EHF Champions League",
-      "similarity": 0.889
-    },
-    {
-      "sport": "handball",
-      "stake_league": "damehandboldligaen",
-      "source_league": "Danish Mens Handball League",
-      "similarity": 0.578
-    },
-    {
-      "sport": "handball",
-      "stake_league": "lnh-division-1",
-      "source_league": "French LNH Division 1",
-      "similarity": 0.8
-    },
     {
       "sport": "mma",
       "stake_league": "oktagon-93",
       "source_league": "Oktagon MMA",
       "similarity": 0.762
+    },
+    {
+      "sport": "rugby",
+      "stake_league": "super-league",
+      "source_league": "Super Liga Americana",
+      "similarity": 0.562
+    },
+    {
+      "sport": "rugby",
+      "stake_league": "top-14",
+      "source_league": "URBA Top 13",
+      "similarity": 0.588
     }
   ],
   "unmatched": [
-    "floorball/eliteserien: sin liga equivalente segura",
-    "floorball/extraliga: sin liga equivalente segura",
-    "floorball/national-league: sin liga equivalente segura",
-    "floorball/salibandyliigan: sin liga equivalente segura",
-    "floorball/unihockey-prime-league-women: sin liga equivalente segura",
-    "futsal/international-friendly-games: sin liga equivalente segura",
-    "handball/bundesliga: sin liga equivalente segura",
-    "handball/eliteserien-women: sin liga equivalente segura",
-    "handball/handboldligaen: sin liga equivalente segura",
-    "handball/hla: sin liga equivalente segura",
-    "handball/superliga-women: sin liga equivalente segura",
+    "league-of-legends/prm-1st-division-2027-promotion-t9: sin liga equivalente segura",
     "mma/dana-whites-contender-series-season-10-week-5: sin liga equivalente segura",
     "mma/efc-137: sin liga equivalente segura",
     "mma/immu-fight-night: sin liga equivalente segura",
@@ -53,16 +31,28 @@
     "mma/ufc-332: sin liga equivalente segura",
     "mma/ufc-333-volkanovski-vs-evloev: sin liga equivalente segura",
     "mma/ufc-fight-night-silva-vs-delgado: sin liga equivalente segura",
-    "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura"
+    "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura",
+    "mobile-legends/mpl-malaysia-season-18-t10: sin liga equivalente segura",
+    "mobile-legends/mpl-philippines-season-18-t9: sin liga equivalente segura",
+    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura",
+    "pesapallo/ykkospesis: sin liga equivalente segura",
+    "rainbow-six/asia-pacific-league-2026-north-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/europe-mena-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/north-america-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
+    "rugby/currie-cup: sin liga equivalente segura",
+    "rugby/mitre-10-cup: sin liga equivalente segura",
+    "rugby/nrl: sin liga equivalente segura",
+    "rugby/nrl-women: sin liga equivalente segura"
   ],
-  "rows_collected": 804,
-  "rows_added": 137,
+  "rows_collected": 711,
+  "rows_added": 43,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 292,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 72,
+  "next_league_cursor": 96,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
