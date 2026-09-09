@@ -1,78 +1,58 @@
 {
-  "generated_at": "2026-09-09T04:55:20.083733+00:00",
-  "targets_in_snapshot": 239,
+  "generated_at": "2026-09-09T11:35:48.038981+00:00",
+  "targets_in_snapshot": 236,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "rugby",
-      "stake_league": "super-league",
-      "source_league": "Super Liga Americana",
-      "similarity": 0.562
-    },
-    {
-      "sport": "rugby",
-      "stake_league": "top-14",
-      "source_league": "URBA Top 13",
-      "similarity": 0.588
-    },
-    {
       "sport": "soccer",
-      "stake_league": "2nd-bundesliga",
-      "source_league": "German Bundesliga",
-      "similarity": 0.774
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "2nd-division",
-      "source_league": "Andorran 1a Divisió",
-      "similarity": 0.6
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "arabian-gulf-league",
-      "source_league": "Algerian Ligue 1",
-      "similarity": 0.571
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "brasileiro-serie-a",
+      "stake_league": "coppa-italia-serie-c",
       "source_league": "Italian Serie A",
-      "similarity": 0.606
+      "similarity": 0.743
     },
     {
       "sport": "soccer",
-      "stake_league": "bundesliga",
-      "source_league": "German Bundesliga",
-      "similarity": 0.741
+      "stake_league": "eredivisie",
+      "source_league": "Dutch Eredivisie",
+      "similarity": 0.769
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "iraqi-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.6
     }
   ],
   "unmatched": [
-    "rainbow-six/asia-pacific-league-2026-north-stage-2-t10: sin liga equivalente segura",
-    "rainbow-six/cn-league-2026-stage-2-t10: sin liga equivalente segura",
-    "rainbow-six/north-america-league-2026-stage-2-t10: sin liga equivalente segura",
-    "rainbow-six/south-america-league-2026-stage-2-t10: sin liga equivalente segura",
-    "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
-    "rugby/currie-cup: sin liga equivalente segura",
-    "rugby/mitre-10-cup: sin liga equivalente segura",
-    "rugby/nrl: sin liga equivalente segura",
-    "rugby/nrl-women: sin liga equivalente segura",
-    "rugby/pro-d2: sin liga equivalente segura",
-    "snooker/english-open: sin liga equivalente segura",
-    "soccer/1-liga: sin liga equivalente segura",
-    "soccer/1st-deild: sin liga equivalente segura",
-    "soccer/3rd-liga: sin liga equivalente segura",
-    "soccer/a-lyga: sin liga equivalente segura",
-    "soccer/allsvenskan: sin liga equivalente segura",
-    "soccer/brasileiro-serie-b: sin liga equivalente segura"
+    "soccer/copa-division-profesional: sin liga equivalente segura",
+    "soccer/copa-federacion: sin liga equivalente segura",
+    "soccer/copa-libertadores: sin liga equivalente segura",
+    "soccer/copa-libertadores-srl: sin liga equivalente segura",
+    "soccer/copa-sudamericana: sin liga equivalente segura",
+    "soccer/copa-uruguay: sin liga equivalente segura",
+    "soccer/croatian-cup: sin liga equivalente segura",
+    "soccer/cup: sin liga equivalente segura",
+    "soccer/dbu-pokalen: sin liga equivalente segura",
+    "soccer/division-1: sin liga equivalente segura",
+    "soccer/efl-cup: sin liga equivalente segura",
+    "soccer/ekstraklasa: sin liga equivalente segura",
+    "soccer/eliteserien: sin liga equivalente segura",
+    "soccer/erovnuli-liga: sin liga equivalente segura",
+    "soccer/fa-cup: sin liga equivalente segura",
+    "soccer/ffa-cup: sin liga equivalente segura",
+    "soccer/first-division-a: sin liga equivalente segura",
+    "soccer/j-league: sin liga equivalente segura",
+    "soccer/j-league-2: sin liga equivalente segura",
+    "soccer/j-league-3: sin liga equivalente segura",
+    "soccer/j-league-cup: sin liga equivalente segura"
   ],
-  "rows_collected": 896,
-  "rows_added": 33,
+  "rows_collected": 774,
+  "rows_added": 10,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 292,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 120,
+  "next_league_cursor": 144,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

@@ -1381,40 +1381,40 @@
         "games": 3
       },
       "feyenoord": {
-        "elo": 1519.4812677543598,
-        "games": 2
+        "elo": 1530.500032411435,
+        "games": 3
       },
       "fc utrecht": {
         "elo": 1482.8893970005433,
         "games": 3
       },
       "az alkmaar": {
-        "elo": 1498.629842732708,
-        "games": 4
+        "elo": 1510.0009787453316,
+        "games": 5
       },
       "ajax": {
-        "elo": 1528.17756113857,
-        "games": 4
+        "elo": 1538.9236553573833,
+        "games": 5
       },
       "willem ii": {
-        "elo": 1463.4586358929068,
-        "games": 5
+        "elo": 1452.7883579826232,
+        "games": 6
       },
       "vitesse": {
         "elo": 1509.5490026128466,
         "games": 4
       },
       "ado den haag": {
-        "elo": 1520.296300619302,
-        "games": 5
+        "elo": 1508.3951504464796,
+        "games": 6
       },
       "psv eindhoven": {
-        "elo": 1518.8109740039595,
-        "games": 4
+        "elo": 1530.4310125702218,
+        "games": 5
       },
       "sc heerenveen": {
-        "elo": 1507.1106029994567,
-        "games": 3
+        "elo": 1515.3417195856814,
+        "games": 4
       },
       "de graafschap": {
         "elo": 1480.1931575150195,
@@ -1429,20 +1429,20 @@
         "games": 3
       },
       "pec zwolle": {
-        "elo": 1499.1477893847555,
-        "games": 4
+        "elo": 1488.401695165942,
+        "games": 5
       },
       "sc cambuur": {
         "elo": 1501.569935046895,
         "games": 1
       },
       "nec nijmegen": {
-        "elo": 1495.1358264719593,
-        "games": 3
+        "elo": 1505.806104382243,
+        "games": 4
       },
       "excelsior": {
-        "elo": 1520.5971938165007,
-        "games": 5
+        "elo": 1508.9771552502384,
+        "games": 6
       },
       "go ahead eagles": {
         "elo": 1499.7113566896335,
@@ -1453,15 +1453,31 @@
         "games": 2
       },
       "cambuur": {
-        "elo": 1488.6918726776667,
-        "games": 1
+        "elo": 1480.6372076099378,
+        "games": 2
       },
       "telstar": {
-        "elo": 1511.762977453071,
-        "games": 1
+        "elo": 1499.560905530516,
+        "games": 2
       },
       "fortuna sittard": {
-        "elo": 1502.1522107599858,
+        "elo": 1510.2068758277146,
+        "games": 2
+      },
+      "sparta rotterdam": {
+        "elo": 1501.1833072654797,
+        "games": 2
+      },
+      "groningen": {
+        "elo": 1520.3312151259274,
+        "games": 2
+      },
+      "utrecht": {
+        "elo": 1480.1987990342714,
+        "games": 2
+      },
+      "twente": {
+        "elo": 1491.7688834137753,
         "games": 1
       }
     },
@@ -3425,8 +3441,8 @@
         "games": 38
       },
       "ben shelton": {
-        "elo": 1632.699357487752,
-        "games": 38
+        "elo": 1641.8984051446243,
+        "games": 39
       },
       "lorenzo musetti": {
         "elo": 1544.9217764443902,
@@ -3589,8 +3605,8 @@
         "games": 28
       },
       "carlos alcaraz": {
-        "elo": 1604.8116850606752,
-        "games": 17
+        "elo": 1595.6126374038029,
+        "games": 18
       },
       "elise mertens": {
         "elo": 1543.5730772624095,
@@ -6479,8 +6495,8 @@
         "games": 41
       },
       "ben shelton": {
-        "elo": 1572.5632784175739,
-        "games": 22
+        "elo": 1582.4810757657265,
+        "games": 23
       },
       "lorenzo musetti": {
         "elo": 1538.3880533997553,
@@ -6643,8 +6659,8 @@
         "games": 17
       },
       "carlos alcaraz": {
-        "elo": 1569.707201437804,
-        "games": 11
+        "elo": 1559.7894040896515,
+        "games": 12
       },
       "elise mertens": {
         "elo": 1573.015084413007,
@@ -7055,8 +7071,8 @@
         "games": 40
       },
       "lina gjorcheska": {
-        "elo": 1477.7877090434677,
-        "games": 13
+        "elo": 1468.9112211766433,
+        "games": 14
       },
       "andrea lazaro garcia": {
         "elo": 1523.8914272617124,
@@ -8887,8 +8903,8 @@
         "games": 1
       },
       "aurora zantedeschi": {
-        "elo": 1516.9880166768687,
-        "games": 6
+        "elo": 1525.864504543693,
+        "games": 7
       },
       "olivia lincer": {
         "elo": 1490.9583225604247,
@@ -29167,16 +29183,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.43027539024279055,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.30142778486128163,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
         "p": 0.3913205645132555,
         "y": 0.0
       },
@@ -34164,14 +34170,19 @@
         "kind": "binary",
         "p": 0.45555337837776,
         "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5041101325923675,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.44382439334122015,
+        "y": 0.0
       }
     ],
     "tennis:atp": [
-      {
-        "kind": "binary",
-        "p": 0.41384207955752156,
-        "y": 0.0
-      },
       {
         "kind": "binary",
         "p": 0.5118773641770524,
@@ -39166,6 +39177,11 @@
         "kind": "binary",
         "p": 0.6658586274005418,
         "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5400476171563765,
+        "y": 1.0
       }
     ],
     "cricket:t20": [
@@ -40704,7 +40720,17 @@
       "thesportsdb:2489067",
       "thesportsdb:2489068",
       "thesportsdb:2489069",
-      "thesportsdb:2489070"
+      "thesportsdb:2489070",
+      "thesportsdb:2489071",
+      "thesportsdb:2489072",
+      "thesportsdb:2489073",
+      "thesportsdb:2489074",
+      "thesportsdb:2489075",
+      "thesportsdb:2489076",
+      "thesportsdb:2489077",
+      "thesportsdb:2489078",
+      "thesportsdb:2489079",
+      "thesportsdb:2489080"
     ],
     "soccer:chinese-super-league": [
       "thesportsdb:490449",
@@ -51150,7 +51176,8 @@
       "espn:tennis:atp:182682",
       "espn:tennis:atp:182533",
       "espn:tennis:atp:182777",
-      "espn:tennis:atp:182535"
+      "espn:tennis:atp:182535",
+      "espn:tennis:atp:182780"
     ],
     "tennis:wta": [
       "espn:tennis:wta:173654",
@@ -56314,7 +56341,9 @@
       "espn:tennis:wta:183637",
       "espn:tennis:wta:182535",
       "espn:tennis:wta:183627",
-      "espn:tennis:wta:183636"
+      "espn:tennis:wta:183636",
+      "espn:tennis:wta:182780",
+      "espn:tennis:wta:183551"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -57046,7 +57075,7 @@
       "draws": 8
     },
     "soccer:eredivisie": {
-      "total": 35,
+      "total": 45,
       "draws": 11
     },
     "soccer:chinese-super-league": {
@@ -57102,11 +57131,11 @@
       "draws": 21
     },
     "tennis:atp": {
-      "total": 3948,
+      "total": 3949,
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5162,
+      "total": 5164,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
