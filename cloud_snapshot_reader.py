@@ -2,8 +2,8 @@
 cloud_snapshot_reader.py — Este módulo SÍ corre en Streamlit Cloud.
 
 Reemplaza las llamadas directas a StakeCollector/BovadaCollector dentro de
-main() de app.py por una lectura del snapshot que
-market_snapshot_job.py subió a GitHub. Streamlit Cloud nunca vuelve a
+main() de app.py por una lectura del snapshot que market_snapshot_job.py
+subió a GitHub. Streamlit Cloud nunca vuelve a
 tocar stake.com ni bovada.lv directamente — evita el 403 de IP de
 datacenter por diseño, no por reintentos.
 
@@ -27,8 +27,7 @@ import streamlit as st
 
 from blindado_core import (
     NormalizedEvent,
-    NormalizedMarket,
-    NormalizedOutcome,
+    normalized_event_from_dict,
 )
 
 
@@ -73,7 +72,7 @@ def obtener_snapshot_remoto(repo: str, path: str, branch: str = "main", timeout:
 
 
 def snapshot_antiguedad_minutos(snapshot: Dict[str, Any]) -> float:
-    generado = snapshot.get("generado_utc")
+    generado = snapshot.get("snapshot_generated_at") or snapshot.get("generado_utc")
     if not generado:
         return float("inf")
     try:
@@ -84,76 +83,32 @@ def snapshot_antiguedad_minutos(snapshot: Dict[str, Any]) -> float:
     return float("inf") if age < -5 else max(0.0, age)
 
 
-def _dict_a_normalized_event(d: Dict[str, Any]) -> NormalizedEvent:
-    markets = [
-        NormalizedMarket(
-            key=m["key"],
-            name=m["name"],
-            outcomes=[NormalizedOutcome(**o) for o in m["outcomes"]],
-        )
-        for m in d.get("markets", [])
-    ]
-    return NormalizedEvent(
-        event_id=d["event_id"],
-        source=d["source"],
-        sport=d["sport"],
-        league=d["league"],
-        home=d["home"],
-        away=d["away"],
-        start_time=d.get("start_time"),
-        is_live=d.get("is_live", False),
-        status=d.get("status", "scheduled"),
-        last_update=d.get("last_update", ""),
-        markets=markets,
-        raw={},
-    )
+def _dict_a_normalized_event(d: Dict[str, Any], schema_version: int = 4) -> NormalizedEvent:
+    return normalized_event_from_dict(d, schema_version)
 
 
 def snapshot_a_normalized_events(snapshot: Dict[str, Any]) -> Tuple[List[NormalizedEvent], List[NormalizedEvent]]:
-    stake_events = [_dict_a_normalized_event(d) for d in snapshot.get("stake_events", [])]
-    bovada_events = [_dict_a_normalized_event(d) for d in snapshot.get("bovada_events", [])]
+    schema_version = int(snapshot.get("schema_version", 4) or 4)
+    stake_events = [_dict_a_normalized_event(d, schema_version) for d in snapshot.get("stake_events", [])]
+    bovada_events = [_dict_a_normalized_event(d, schema_version) for d in snapshot.get("bovada_events", [])]
     return stake_events, bovada_events
 
 
-def render_estado_snapshot(
-    snapshot: Dict[str, Any], max_age_minutes: float = 120.0
-) -> None:
+def render_estado_snapshot(snapshot: Dict[str, Any], max_age_minutes: float = 120.0) -> None:
     antiguedad = snapshot_antiguedad_minutos(snapshot)
     if antiguedad == float("inf"):
-        st.error("⚠️ El snapshot no trae `generado_utc` — no se puede evaluar frescura.")
+        st.error("⚠️ El snapshot no trae `snapshot_generated_at`/`generado_utc` — no se puede evaluar frescura.")
         return
     if antiguedad > max_age_minutes:
         st.error(
             f"🔴 El snapshot tiene {antiguedad:.0f} minutos de antigüedad. "
             f"Supera el límite configurado de {max_age_minutes:.0f} minutos. "
-            "Revisa o ejecuta el workflow de snapshot en GitHub Actions."
+            "Revisa el workflow de snapshot en GitHub Actions."
         )
-    elif antiguedad > 60:
-        st.warning(
-            f"🟠 Snapshot utilizable con {antiguedad:.0f} minutos de antigüedad. "
-            "Cada evento todavía debe superar su propio gate de frescura "
-            "(10, 30 o 120 minutos según la cercanía del inicio)."
-        )
-    elif antiguedad > 25:
+    elif antiguedad > max_age_minutes * 0.75:
         st.warning(f"🟡 Snapshot con {antiguedad:.0f} minutos de antigüedad.")
     else:
         st.success(f"🟢 Snapshot fresco — {antiguedad:.0f} minutos de antigüedad.")
 
     if snapshot.get("bovada_no_disponible"):
-        st.info(f"Bovada no disponible en la última corrida para: {snapshot['bovada_no_disponible']}")
-    coverage = snapshot.get("stake_coverage")
-    if isinstance(coverage, dict):
-        discovered = coverage.get("sports_discovered", 0)
-        requested = coverage.get("sports_requested", 0)
-        listed = coverage.get("fixtures_listed", 0)
-        detailed = coverage.get("fixtures_with_markets", 0)
-        st.caption(
-            f"Cobertura oficial: {requested}/{discovered} deportes consultados · "
-            f"{listed} fixtures catalogados · {detailed} eventos pre-partido con mercados."
-        )
-        limited = coverage.get("limited_fallback_sports") or []
-        if limited:
-            st.warning(
-                "Cobertura parcial: no se pudo recorrer el catálogo completo de "
-                + ", ".join(map(str, limited))
-            )
+        st.info(f"Bovada no disponible en la última corrida local para: {snapshot['bovada_no_disponible']}")

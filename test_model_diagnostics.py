@@ -1,9 +1,12 @@
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
 import blindado_core as core
+
+UTC = timezone.utc
 
 
 class ModelGateTests(unittest.TestCase):
@@ -95,6 +98,139 @@ class AuditDiagnosticTests(unittest.TestCase):
             audit["descartes_por_deporte"]["basketball"]["historial_insuficiente"], 1
         )
         self.assertTrue(audit["consistencia_auditoria"]["cuadra"])
+
+
+class MarketFreshnessTests(unittest.TestCase):
+    def _event(self, now, fetched_minutes=5, carried=False, flags=None, fetch_status="success"):
+        return core.NormalizedEvent(
+            event_id="market-1", source="stake", sport="basketball", league="NBA",
+            home="Home", away="Away",
+            start_time=(now + timedelta(hours=3)).isoformat(),
+            is_live=False, status="active", last_update=(now - timedelta(hours=5)).isoformat(),
+            markets=[core.NormalizedMarket("moneyline", "Moneyline", [
+                core.NormalizedOutcome("Home", 1.80), core.NormalizedOutcome("Away", 1.95),
+            ])], raw={},
+            market_fetched_at=(now - timedelta(minutes=fetched_minutes)).isoformat(),
+            source_last_update_at=(now - timedelta(hours=5)).isoformat(),
+            fetch_status=fetch_status, carried_forward=carried,
+            audit_flags=list(flags or []),
+        )
+
+    def test_relative_market_limits_are_explicit(self):
+        self.assertEqual(core.market_limit_minutes(30), 10.0)
+        self.assertEqual(core.market_limit_minutes(180), 30.0)
+        self.assertEqual(core.market_limit_minutes(1440), 120.0)
+
+    def test_fresh_stable_line_passes(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        ok, status, _ = core.market_freshness_status(
+            self._event(now, flags=["linea_estable"]), now
+        )
+        self.assertTrue(ok)
+        self.assertEqual(status, "fresh_stable")
+
+    def test_carried_forward_stale_is_not_collapsed(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        ok, status, _ = core.market_freshness_status(
+            self._event(now, fetched_minutes=40, carried=True, fetch_status="failed"), now
+        )
+        self.assertFalse(ok)
+        self.assertEqual(status, "carried_forward_stale")
+
+    def test_successful_but_expired_observation_is_distinct(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        ok, status, _ = core.market_freshness_status(
+            self._event(now, fetched_minutes=40), now
+        )
+        self.assertFalse(ok)
+        self.assertEqual(status, "market_observation_expired")
+
+    def test_failed_fetch_with_recent_observation_can_continue(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        ok, status, _ = core.market_freshness_status(
+            self._event(now, fetched_minutes=5, carried=True, fetch_status="failed"), now
+        )
+        self.assertTrue(ok)
+        self.assertEqual(status, "fetch_failed_recent_fallback")
+
+    def test_possible_cache_is_warning_not_blocker(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        ok, status, _ = core.market_freshness_status(
+            self._event(now, flags=["possible_cache_upstream"]), now
+        )
+        self.assertTrue(ok)
+        self.assertEqual(status, "possible_cache_upstream")
+
+
+class MarketCohortTests(unittest.TestCase):
+    def _event(self, event_id, now, source_time):
+        return core.NormalizedEvent(
+            event_id=event_id, source="stake", sport="basketball", league="NBA",
+            home=f"Home {event_id}", away=f"Away {event_id}",
+            start_time=(now + timedelta(hours=12)).isoformat(),
+            is_live=False, status="active", last_update=source_time.isoformat(),
+            markets=[core.NormalizedMarket("moneyline", "Moneyline", [
+                core.NormalizedOutcome(f"Home {event_id}", 1.80),
+                core.NormalizedOutcome(f"Away {event_id}", 1.95),
+            ])], raw={}, market_fetched_at=now.isoformat(),
+            source_last_update_at=source_time.isoformat(),
+        )
+
+    def test_cache_detector_requires_long_stability_and_active_cohort(self):
+        now = datetime(2026, 9, 9, 12, tzinfo=UTC)
+        old_source = now - timedelta(minutes=120)
+        previous_events = []
+        current_events = []
+        for index in range(9):
+            previous = self._event(str(index), now - timedelta(minutes=30), old_source)
+            previous.unchanged_fetches = 3
+            previous.market_last_changed_at = (now - timedelta(hours=3)).isoformat()
+            previous_events.append(core.event_to_dict_pick_markets(previous))
+            current_source = old_source if index == 0 else now - timedelta(minutes=5)
+            current_events.append(self._event(str(index), now, current_source))
+
+        diagnostic = core.annotate_market_observations(
+            current_events, previous_events, now, expected_interval_minutes=30,
+        )
+        self.assertIn("possible_cache_upstream", current_events[0].audit_flags)
+        self.assertEqual(current_events[0].unchanged_fetches, 4)
+        self.assertEqual(diagnostic["possible_cache_upstream"], 1)
+
+
+class SnapshotSchemaCompatibilityTests(unittest.TestCase):
+    def _serialized_event(self):
+        return {
+            "event_id": "legacy-1", "source": "stake", "sport": "basketball",
+            "league": "NBA", "home": "Home", "away": "Away",
+            "start_time": "2099-01-01T00:00:00Z", "is_live": False,
+            "status": "active", "last_update": "2026-09-09T12:00:00Z",
+            "markets": [{
+                "key": "moneyline", "name": "Moneyline",
+                "outcomes": [
+                    {"selection": "Home", "odds": 1.8, "active": True, "point": None},
+                    {"selection": "Away", "odds": 1.95, "active": True, "point": None},
+                ],
+            }],
+        }
+
+    def test_schema4_uses_legacy_timestamp_as_compatibility_fallback(self):
+        from cloud_snapshot_reader import snapshot_a_normalized_events
+        stake, _ = snapshot_a_normalized_events({
+            "schema_version": 4, "stake_events": [self._serialized_event()], "bovada_events": [],
+        })
+        self.assertEqual(stake[0].market_fetched_at, "2026-09-09T12:00:00Z")
+        self.assertEqual(stake[0].source_last_update_at, "2026-09-09T12:00:00Z")
+
+    def test_schema5_does_not_invent_missing_upstream_timestamp(self):
+        from cloud_snapshot_reader import snapshot_a_normalized_events
+        event = self._serialized_event()
+        event["market_fetched_at"] = "2026-09-09T12:30:00Z"
+        event["source_last_update_at"] = None
+        stake, _ = snapshot_a_normalized_events({
+            "schema_version": 5, "stake_events": [event], "bovada_events": [],
+        })
+        self.assertEqual(stake[0].market_fetched_at, "2026-09-09T12:30:00Z")
+        self.assertIsNone(stake[0].source_last_update_at)
 
 
 if __name__ == "__main__":

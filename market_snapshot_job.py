@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 
 from blindado_core import (
+    annotate_market_observations,
     BovadaCollector,
     StakeSportsDataCollector,
     append_movement_history,
@@ -18,6 +19,9 @@ from blindado_core import (
     event_to_dict_pick_markets,
     load_json,
     merge_movement_history,
+    normalized_event_from_dict,
+    parse_dt,
+    snapshot_timing,
     utc_now,
 )
 
@@ -43,9 +47,79 @@ def main() -> int:
     keys = sorted({key for event in stake_events if (key := bovada_key_for_event(event))})
     bovada_events, unavailable = BovadaCollector().fetch_all(keys)
 
+    generated_at = utc_now()
+    timing = snapshot_timing(previous, generated_at)
+    expected_interval = timing["expected_interval_minutes"]
+    stake_observability = annotate_market_observations(
+        stake_events,
+        previous.get("stake_events", []) if isinstance(previous, dict) else [],
+        generated_at,
+        expected_interval,
+    )
+    # Stake permite identificar de forma segura algunos fallos de detalle por
+    # event_id. Solo esos eventos exactos se arrastran; nunca se rellena una
+    # liga completa por aproximación de nombres.
+    carried_stake = []
+    current_stake_ids = {event.event_id for event in stake_events}
+    if stake.failed_event_ids and isinstance(previous, dict):
+        for item in previous.get("stake_events", []):
+            if not isinstance(item, dict):
+                continue
+            event_id = str(item.get("event_id", ""))
+            if event_id not in stake.failed_event_ids or event_id in current_stake_ids:
+                continue
+            start = parse_dt(item.get("start_time"))
+            if not start or start <= generated_at:
+                continue
+            event = normalized_event_from_dict(item, int(previous.get("schema_version", 4) or 4))
+            event.fetch_status = "failed"
+            event.carried_forward = True
+            event.audit_flags = [
+                flag for flag in event.audit_flags
+                if flag not in {"linea_estable", "linea_modificada", "possible_cache_upstream"}
+            ]
+            event.audit_flags.append("fetch_failed_current_run")
+            carried_stake.append(event)
+    stake_events = dedupe_events(stake_events + carried_stake)
+    stake_observability["carried_forward"] = len(carried_stake)
+    bovada_observability = annotate_market_observations(
+        bovada_events,
+        previous.get("bovada_events", []) if isinstance(previous, dict) else [],
+        generated_at,
+        expected_interval,
+    )
+    # Bovada informa qué ligas fallaron. Solo para esas ligas conservamos
+    # eventos previos y, crucialmente, NO actualizamos market_fetched_at.
+    # El motor decidirá si la última observación válida todavía es utilizable.
+    carried_bovada = []
+    current_bovada_ids = {event.event_id for event in bovada_events}
+    if unavailable and isinstance(previous, dict):
+        for item in previous.get("bovada_events", []):
+            if not isinstance(item, dict) or item.get("league") not in unavailable:
+                continue
+            if str(item.get("event_id", "")) in current_bovada_ids:
+                continue
+            start = parse_dt(item.get("start_time"))
+            if not start or start <= generated_at:
+                continue
+            event = normalized_event_from_dict(item, int(previous.get("schema_version", 4) or 4))
+            event.fetch_status = "failed"
+            event.carried_forward = True
+            event.audit_flags = [
+                flag for flag in event.audit_flags
+                if flag not in {"linea_estable", "linea_modificada", "possible_cache_upstream"}
+            ]
+            event.audit_flags.append("fetch_failed_current_run")
+            carried_bovada.append(event)
+    bovada_events = dedupe_events(bovada_events + carried_bovada)
+    bovada_observability["carried_forward"] = len(carried_bovada)
+
     payload = {
-        "schema_version": 4,
-        "generado_utc": utc_now().isoformat(),
+        "schema_version": 5,
+        "generado_utc": generated_at.isoformat(),
+        "snapshot_generated_at": generated_at.isoformat(),
+        "snapshot_history": timing["snapshot_history"],
+        "expected_fetch_interval_minutes": expected_interval,
         "stake_sports": stake.sports_catalog,
         "stake_coverage": stake.audit,
         # Solo moneyline/draw_no_bet: son las únicas claves que el motor de
@@ -59,6 +133,10 @@ def main() -> int:
         "bovada_events": [event_to_dict_pick_markets(e) for e in dedupe_events(bovada_events)],
         "bovada_no_disponible": unavailable,
         "stake_errors": stake.errors,
+        "market_observability": {
+            "stake": stake_observability,
+            "bovada": bovada_observability,
+        },
         "movement_history": movement,
         # El modelo y las variables MLB viajan junto al snapshot para que
         # Streamlit no dependa de que un redeploy coincida con el entrenamiento.

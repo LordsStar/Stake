@@ -50,6 +50,7 @@ import csv
 import io
 import json
 import re
+import statistics
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -62,7 +63,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.5-schema4-model-diagnostics"
+APP_VERSION = "7.6-schema5-market-observability"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -243,6 +244,17 @@ MOVEMENT_MAX_HISTORY = 20
 LIQUIDITY_MIN_MATCH_SCORE = 0.5
 LIQUIDITY_MAX_AGE_MIN = 120.0
 
+EXPECTED_FETCH_INTERVAL_MIN = 30.0
+SOURCE_FREEZE_MULTIPLIER = 3.0
+SOURCE_FREEZE_MIN_MIN = 90.0
+SOURCE_FREEZE_MAX_MIN = 180.0
+MIN_UNCHANGED_FETCHES = 4
+MIN_COMPARABLE_MARKETS = 8
+MIN_UPDATED_COMPARABLES = 4
+MIN_UPDATED_COMPARABLE_RATIO = 0.40
+COMPARABLE_ACTIVITY_WINDOW_MIN = 60.0
+SNAPSHOT_HISTORY_MAX = 10
+
 ELO_INITIAL = 1500.0
 ELO_K = 20.0
 ELO_MIN_GAMES = 5
@@ -284,7 +296,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.5 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.6 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -644,6 +656,13 @@ class NormalizedEvent:
     last_update: str
     markets: List[NormalizedMarket]
     raw: Dict[str, Any]
+    market_fetched_at: Optional[str] = None
+    source_last_update_at: Optional[str] = None
+    market_last_changed_at: Optional[str] = None
+    fetch_status: str = "success"
+    carried_forward: bool = False
+    unchanged_fetches: int = 0
+    audit_flags: List[str] = field(default_factory=list)
 
 
 def stake_market_key(name: str) -> str:
@@ -685,6 +704,13 @@ def event_to_dict(e: NormalizedEvent, markets_filter: Optional[Iterable[str]] = 
         "is_live": e.is_live,
         "status": e.status,
         "last_update": e.last_update,
+        "market_fetched_at": e.market_fetched_at,
+        "source_last_update_at": e.source_last_update_at,
+        "market_last_changed_at": e.market_last_changed_at,
+        "fetch_status": e.fetch_status,
+        "carried_forward": e.carried_forward,
+        "unchanged_fetches": e.unchanged_fetches,
+        "audit_flags": e.audit_flags,
         "markets": [
             {"key": m.key, "name": m.name, "outcomes": [asdict(o) for o in m.outcomes]}
             for m in markets
@@ -698,6 +724,36 @@ PICK_ENGINE_MARKET_KEYS = ("moneyline", "draw_no_bet")
 def event_to_dict_pick_markets(e: NormalizedEvent) -> Dict[str, Any]:
     """Formato compacto del snapshot: conserva todo lo que usa el motor."""
     return event_to_dict(e, markets_filter=PICK_ENGINE_MARKET_KEYS)
+
+
+def normalized_event_from_dict(data: Dict[str, Any], schema_version: int = 4) -> NormalizedEvent:
+    markets = [
+        NormalizedMarket(
+            key=str(market.get("key", "")),
+            name=str(market.get("name", "")),
+            outcomes=[NormalizedOutcome(**outcome) for outcome in market.get("outcomes", [])],
+        )
+        for market in data.get("markets", []) if isinstance(market, dict)
+    ]
+    legacy_update = data.get("last_update", "")
+    return NormalizedEvent(
+        event_id=str(data.get("event_id", "")), source=str(data.get("source", "")),
+        sport=str(data.get("sport", "")), league=str(data.get("league", "")),
+        home=str(data.get("home", "")), away=str(data.get("away", "")),
+        start_time=data.get("start_time"), is_live=bool(data.get("is_live", False)),
+        status=str(data.get("status", "scheduled")), last_update=str(legacy_update),
+        markets=markets, raw={},
+        market_fetched_at=data.get("market_fetched_at") or legacy_update,
+        source_last_update_at=(
+            data.get("source_last_update_at")
+            if schema_version >= 5 else data.get("source_last_update_at") or legacy_update
+        ),
+        market_last_changed_at=data.get("market_last_changed_at"),
+        fetch_status=str(data.get("fetch_status", "success")),
+        carried_forward=bool(data.get("carried_forward", False)),
+        unchanged_fetches=int(data.get("unchanged_fetches", 0) or 0),
+        audit_flags=list(data.get("audit_flags", []) or []),
+    )
 
 
 def dedupe_events(events: List[NormalizedEvent]) -> List[NormalizedEvent]:
@@ -748,6 +804,7 @@ class StakeSportsDataCollector:
         if key:
             self.client.set_extra_headers({"X-API-KEY": key})
         self.errors: List[str] = []
+        self.failed_event_ids: set[str] = set()
         self.sports_catalog: List[Dict[str, Any]] = []
         self.audit: Dict[str, Any] = {
             "sports_discovered": 0,
@@ -934,6 +991,9 @@ class StakeSportsDataCollector:
                         self.audit["fixtures_with_markets"] += 1
                 except Exception as exc:
                     self.audit["detail_failures"] += 1
+                    failed_id = str(fixture.get("id") or "")
+                    if failed_id:
+                        self.failed_event_ids.add(failed_id)
                     self.errors.append(f"{sport_slug}/{fixture.get('slug', '?')}: {exc}")
         return events
 
@@ -1020,15 +1080,19 @@ class StakeSportsDataCollector:
         start = parse_dt(node.get("startTime") or listing_fixture.get("startTime"))
         raw_status = str(node.get("status") or listing_fixture.get("status") or "unknown")
         is_live = raw_status.lower() in {"live", "inplay", "in-play", "in_play"}
+        fetched_at = utc_now().isoformat()
+        source_updated_at = newest_update.isoformat() if newest_update else None
         return NormalizedEvent(
             event_id=str(node.get("id") or listing_fixture.get("id", "")),
             source="stake", sport=str(sport_slug), league=str(league or ""),
             home=home, away=away,
             start_time=start.isoformat() if start else None,
             is_live=is_live, status=raw_status,
-            last_update=(newest_update or utc_now()).isoformat(),
+            last_update=source_updated_at or fetched_at,
             markets=markets,
             raw={"fixture": node, "listing": listing_fixture, "groups": detail.get("groups", [])},
+            market_fetched_at=fetched_at,
+            source_last_update_at=source_updated_at,
         )
 
 
@@ -1185,6 +1249,7 @@ class BovadaCollector:
             return [], False
 
         events = []
+        fetched_at = utc_now().isoformat()
         for e in _find_event_dicts(payload):
             home, away = _competitor_names(e)
             if not home or not away:
@@ -1202,6 +1267,7 @@ class BovadaCollector:
                 if len(link_parts) >= 2 and link_parts[0] == "esports":
                     raw_game = link_parts[1].lower()
                     normalized_sport = BOVADA_ESPORT_SLUG_ALIASES.get(raw_game, raw_game)
+            source_updated = parse_dt(e.get("lastModified"))
             events.append(NormalizedEvent(
                 event_id=f"bovada:{e.get('id', '')}", source="bovada",
                 sport=normalized_sport,
@@ -1209,8 +1275,10 @@ class BovadaCollector:
                 home=home, away=away,
                 start_time=start.isoformat() if start else None,
                 is_live=bool(e.get("live", False)), status=str(e.get("status", "scheduled")),
-                last_update=(parse_dt(e.get("lastModified")) or utc_now()).isoformat(),
+                last_update=source_updated.isoformat() if source_updated else fetched_at,
                 markets=markets, raw=e,
+                market_fetched_at=fetched_at,
+                source_last_update_at=source_updated.isoformat() if source_updated else None,
             ))
         time.sleep(self.base_delay)
         return dedupe_events(events), True
@@ -1974,6 +2042,162 @@ class PhysicalStatusRegistry:
 
 
 # ============================================================
+# Observabilidad de mercado y comparación contra el snapshot anterior
+# ============================================================
+def market_limit_minutes(minutes_to_start: Optional[float]) -> float:
+    """Límite relativo conservando los umbrales de producción anteriores."""
+    if minutes_to_start is None:
+        return 60.0
+    if minutes_to_start <= 60:
+        return 10.0
+    if minutes_to_start <= 360:
+        return 30.0
+    return 120.0
+
+
+def market_start_bucket(event: NormalizedEvent, now: Optional[datetime] = None) -> str:
+    current = now or utc_now()
+    start = parse_dt(event.start_time)
+    if not start:
+        return "unknown"
+    minutes = (start - current).total_seconds() / 60.0
+    if minutes <= 360:
+        return "0_6h"
+    if minutes <= 1440:
+        return "6_24h"
+    if minutes <= 4320:
+        return "24_72h"
+    return "72h_plus"
+
+
+def _event_market_fingerprint(event: NormalizedEvent) -> Tuple[Tuple[str, str, str, str, str], ...]:
+    rows = []
+    for market in event.markets:
+        if market.key not in PICK_ENGINE_MARKET_KEYS:
+            continue
+        for outcome in market.outcomes:
+            key = (event.source, event.event_id, market.key, normalize_name(outcome.selection))
+            rows.append((*key, format(float(outcome.odds), ".8g")))
+    return tuple(sorted(rows))
+
+
+def _dict_market_fingerprint(data: Dict[str, Any]) -> Tuple[Tuple[str, str, str, str, str], ...]:
+    rows = []
+    for market in data.get("markets", []):
+        if market.get("key") not in PICK_ENGINE_MARKET_KEYS:
+            continue
+        for outcome in market.get("outcomes", []):
+            try:
+                odds = format(float(outcome.get("odds")), ".8g")
+            except (TypeError, ValueError):
+                continue
+            key = (
+                str(data.get("source", "")), str(data.get("event_id", "")),
+                str(market.get("key", "")), normalize_name(str(outcome.get("selection", ""))),
+            )
+            rows.append((*key, odds))
+    return tuple(sorted(rows))
+
+
+def snapshot_timing(previous: Dict[str, Any], now: Optional[datetime] = None) -> Dict[str, Any]:
+    current = now or utc_now()
+    candidates = list(previous.get("snapshot_history", [])) if isinstance(previous, dict) else []
+    if isinstance(previous, dict) and previous.get("generado_utc"):
+        candidates.append(previous["generado_utc"])
+    parsed = sorted({parse_dt(value) for value in candidates if parse_dt(value)})
+    intervals = [
+        (b - a).total_seconds() / 60.0 for a, b in zip(parsed, parsed[1:])
+        if 0 < (b - a).total_seconds() / 60.0 <= 360
+    ]
+    expected = statistics.median(intervals[-SNAPSHOT_HISTORY_MAX:]) if intervals else EXPECTED_FETCH_INTERVAL_MIN
+    expected = max(15.0, min(float(expected), 60.0))
+    history = [dt.isoformat() for dt in parsed[-(SNAPSHOT_HISTORY_MAX - 1):]]
+    history.append(current.isoformat())
+    return {"expected_interval_minutes": expected, "snapshot_history": history[-SNAPSHOT_HISTORY_MAX:]}
+
+
+def annotate_market_observations(
+    events: List[NormalizedEvent],
+    previous_events: List[Dict[str, Any]],
+    observed_at: Optional[datetime] = None,
+    expected_interval_minutes: float = EXPECTED_FETCH_INTERVAL_MIN,
+) -> Dict[str, Any]:
+    """Anota fetch, estabilidad y posible caché sin bloquear mercados.
+
+    Solo recibe eventos comprobados en la corrida actual. Un pipeline que
+    arrastre datos anteriores debe conservar explícitamente fetch_status y
+    market_fetched_at; nunca debe llamar esta función sobre el fallback.
+    """
+    now = observed_at or utc_now()
+    now_iso = now.isoformat()
+    previous_by_id = {
+        (str(item.get("source", "")), str(item.get("event_id", ""))): item
+        for item in previous_events if isinstance(item, dict)
+    }
+    source_advanced: Dict[Tuple[str, str], bool] = {}
+
+    for event in events:
+        previous = previous_by_id.get((event.source, event.event_id), {})
+        event.market_fetched_at = event.market_fetched_at or now_iso
+        event.fetch_status = "success"
+        event.carried_forward = False
+        event.source_last_update_at = event.source_last_update_at or None
+        unchanged = bool(previous) and _event_market_fingerprint(event) == _dict_market_fingerprint(previous)
+        event.unchanged_fetches = int(previous.get("unchanged_fetches", 0)) + 1 if unchanged else 0
+        event.market_last_changed_at = (
+            previous.get("market_last_changed_at")
+            or previous.get("market_fetched_at")
+            or previous.get("last_update")
+        ) if unchanged else event.market_fetched_at
+        event.audit_flags = ["linea_estable" if unchanged else "linea_modificada"]
+        if not event.source_last_update_at:
+            event.audit_flags.append("source_timestamp_missing")
+
+        previous_source = parse_dt(previous.get("source_last_update_at") or previous.get("last_update"))
+        current_source = parse_dt(event.source_last_update_at)
+        source_advanced[(event.source, event.event_id)] = bool(
+            current_source and previous_source and current_source > previous_source
+            and (now - current_source).total_seconds() / 60.0 <= COMPARABLE_ACTIVITY_WINDOW_MIN
+        )
+
+    freeze_limit = max(
+        SOURCE_FREEZE_MIN_MIN,
+        min(SOURCE_FREEZE_MULTIPLIER * expected_interval_minutes, SOURCE_FREEZE_MAX_MIN),
+    )
+    cohorts: Dict[Tuple[str, str, str, str], List[NormalizedEvent]] = {}
+    for event in events:
+        cohort_key = (event.source, event.sport, league_code(event.league), market_start_bucket(event, now))
+        cohorts.setdefault(cohort_key, []).append(event)
+
+    possible_cache = 0
+    inconclusive = 0
+    for event in events:
+        source_time = parse_dt(event.source_last_update_at)
+        source_age = (now - source_time).total_seconds() / 60.0 if source_time else None
+        source_frozen = source_age is not None and source_age >= freeze_limit
+        if not source_frozen or event.unchanged_fetches < MIN_UNCHANGED_FETCHES:
+            continue
+        cohort_key = (event.source, event.sport, league_code(event.league), market_start_bucket(event, now))
+        comparable = [item for item in cohorts.get(cohort_key, []) if item.event_id != event.event_id]
+        updated = sum(1 for item in comparable if source_advanced.get((item.source, item.event_id), False))
+        ratio = updated / len(comparable) if comparable else 0.0
+        if len(comparable) < MIN_COMPARABLE_MARKETS:
+            event.audit_flags.append("cache_inconclusive_low_cohort")
+            inconclusive += 1
+        elif updated >= MIN_UPDATED_COMPARABLES and ratio >= MIN_UPDATED_COMPARABLE_RATIO:
+            event.audit_flags.append("possible_cache_upstream")
+            possible_cache += 1
+
+    return {
+        "events_observed": len(events),
+        "expected_interval_minutes": expected_interval_minutes,
+        "source_freeze_limit_minutes": freeze_limit,
+        "possible_cache_upstream": possible_cache,
+        "cache_inconclusive_low_cohort": inconclusive,
+    }
+
+
+# ============================================================
 # Movimiento de línea real (historial acumulado, no solo el snapshot previo)
 # ============================================================
 def merge_movement_history(incoming: Dict[str, Any], path: Path = MOVEMENT_HISTORY_FILE) -> Dict[str, Any]:
@@ -2082,24 +2306,69 @@ def movements_summary(history: Dict[str, Any]) -> Dict[str, Any]:
 # ============================================================
 # Frescura de mercado (aplicada también a la API en vivo)
 # ============================================================
-def market_freshness_ok(event: NormalizedEvent) -> Tuple[bool, str]:
-    """Antes este principio (Regla 4) solo se aplicaba al snapshot remoto
-    de respaldo (>60 min = vencido). La consulta directa a la API no tenía
-    ningún filtro de frescura. Ahora aplica siempre, con un límite que se
-    endurece mientras más cerca esté el evento de comenzar."""
-    last = parse_dt(event.last_update)
-    if not last:
-        return False, "sin timestamp de actualización"
-    age_min = (utc_now() - last).total_seconds() / 60.0
+def market_freshness_status(
+    event: NormalizedEvent, now: Optional[datetime] = None
+) -> Tuple[bool, str, str]:
+    """Clasifica frescura por última observación exitosa, no por movimiento.
+
+    `source_last_update_at` y `market_last_changed_at` son señales de
+    observabilidad. La única autoridad para frescura es market_fetched_at.
+    `last_update` se acepta solo como fallback para snapshots schema 4.
+    """
+    current = now or utc_now()
+    fetched = parse_dt(event.market_fetched_at or event.last_update)
+    if not fetched:
+        return False, "market_observation_expired", "sin timestamp de observación exitosa"
+    age_min = (current - fetched).total_seconds() / 60.0
+    if age_min < -5:
+        return False, "market_observation_expired", "timestamp de observación en el futuro"
+    age_min = max(0.0, age_min)
     start = parse_dt(event.start_time)
-    if start:
-        minutes_to_start = (start - utc_now()).total_seconds() / 60.0
-        limit = 10.0 if minutes_to_start <= 60 else (30.0 if minutes_to_start <= 360 else 120.0)
-    else:
-        limit = 60.0
+    minutes_to_start = (start - current).total_seconds() / 60.0 if start else None
+    limit = market_limit_minutes(minutes_to_start)
+    carried = bool(event.carried_forward or event.fetch_status != "success")
+
+    if age_min > limit and carried:
+        return False, "carried_forward_stale", (
+            f"falló la consulta actual; última cuota válida hace {age_min:.0f} min "
+            f"(límite {limit:.0f} min a esta distancia del inicio)"
+        )
     if age_min > limit:
-        return False, f"cuota con {age_min:.0f} min de antigüedad (límite {limit:.0f} min a esta distancia del inicio)"
-    return True, "ok"
+        return False, "market_observation_expired", (
+            f"cuota observada correctamente hace {age_min:.0f} min "
+            f"(límite {limit:.0f} min a esta distancia del inicio)"
+        )
+    if carried:
+        return True, "fetch_failed_recent_fallback", (
+            f"falló la consulta actual; última observación válida hace {age_min:.0f} min"
+        )
+    if "possible_cache_upstream" in event.audit_flags:
+        return True, "possible_cache_upstream", "observación fresca con posible caché upstream"
+    if "cache_inconclusive_low_cohort" in event.audit_flags:
+        return True, "cache_inconclusive_low_cohort", "observación fresca; cohorte insuficiente para evaluar caché"
+    if "source_timestamp_missing" in event.audit_flags:
+        return True, "source_timestamp_missing", "observación fresca; proveedor sin timestamp de actualización"
+    if "linea_modificada" in event.audit_flags:
+        return True, "fresh_changed", "observación fresca y cuota modificada"
+    return True, "fresh_stable", "observación fresca y cuota estable"
+
+
+def market_freshness_ok(event: NormalizedEvent) -> Tuple[bool, str]:
+    ok, _, reason = market_freshness_status(event)
+    return ok, reason
+
+
+def summarize_market_observability(events: List[NormalizedEvent]) -> Dict[str, Any]:
+    summary: Dict[str, Any] = {"total": len(events), "estados": {}, "por_proveedor_deporte": {}}
+    for event in events:
+        _, status, _ = market_freshness_status(event)
+        summary["estados"][status] = summary["estados"].get(status, 0) + 1
+        provider = event.source or "desconocido"
+        sport = event.sport or "desconocido"
+        provider_data = summary["por_proveedor_deporte"].setdefault(provider, {})
+        sport_data = provider_data.setdefault(sport, {})
+        sport_data[status] = sport_data.get(status, 0) + 1
+    return summary
 
 
 # ============================================================
@@ -2110,12 +2379,9 @@ def liquidity_status(bovada_event: Optional[NormalizedEvent], match_score: float
         return False, "sin referencia secundaria disponible (Bovada)"
     if match_score < LIQUIDITY_MIN_MATCH_SCORE:
         return False, f"coincidencia de evento débil ({match_score:.2f} < {LIQUIDITY_MIN_MATCH_SCORE})"
-    last = parse_dt(bovada_event.last_update)
-    if not last:
-        return False, "referencia secundaria sin timestamp"
-    age_min = (utc_now() - last).total_seconds() / 60.0
-    if age_min > LIQUIDITY_MAX_AGE_MIN:
-        return False, f"referencia secundaria desactualizada ({age_min:.0f} min)"
+    fresh, status, detail = market_freshness_status(bovada_event)
+    if not fresh:
+        return False, f"referencia secundaria {status}: {detail}"
     return True, "ok"
 
 
@@ -2284,9 +2550,9 @@ class BlindadoEngine:
             return [], reasons
 
         # --- Gate 2: frescura de mercado ---
-        fresh_ok, fresh_reason = market_freshness_ok(event)
+        fresh_ok, fresh_status, fresh_reason = market_freshness_status(event)
         if not fresh_ok:
-            reasons["frescura"] = fresh_reason
+            reasons[fresh_status] = fresh_reason
             return [], reasons
 
         # --- Gate 3: liquidez real (evento emparejado en Bovada, fresco) ---
@@ -2384,6 +2650,7 @@ def prepare_candidates(
         "detalle_modelo": {},
         "qualified": 0,
         "eventos_calificados": 0,
+        "observabilidad_mercados": summarize_market_observability(stake_events + bovada_events),
     }
 
     def bump(reason: str, event: NormalizedEvent, detail: Optional[str] = None):
