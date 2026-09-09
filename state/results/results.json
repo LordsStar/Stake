@@ -213139,5 +213139,31 @@
     "status": "final",
     "source": "cricsheet",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:182573",
+    "start_time": "2026-09-09T18:20Z",
+    "home_name": "Mirra Andreeva",
+    "away_name": "Coco Gauff",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:182573",
+    "start_time": "2026-09-09T18:20Z",
+    "home_name": "Mirra Andreeva",
+    "away_name": "Coco Gauff",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
   }
 ]
