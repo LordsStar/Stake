@@ -10,7 +10,7 @@
     "home_starter_name": "Keider Montero",
     "away_starter_id": "805673",
     "away_starter_name": "Zebby Matthews",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824956",
@@ -279,8 +279,8 @@
     "home_name": "Detroit Tigers",
     "away_id": "115",
     "away_name": "Colorado Rockies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "664285",
+    "home_starter_name": "Framber Valdez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -396,8 +396,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "114",
     "away_name": "Cleveland Guardians",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "671737",
+    "home_starter_name": "Taj Bradley",
     "away_starter_id": "800048",
     "away_starter_name": "Parker Messick",
     "lineups_confirmed": false

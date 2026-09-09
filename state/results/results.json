@@ -211880,5 +211880,57 @@
     "status": "final",
     "source": "opendota",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183584",
+    "start_time": "2026-09-09T13:15Z",
+    "home_name": "Tessa Johanna Brockmann",
+    "away_name": "Clara Burel",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183596",
+    "start_time": "2026-09-09T13:15Z",
+    "home_name": "Andrea Lazaro Garcia",
+    "away_name": "Anastasiia Sobolieva",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183549",
+    "start_time": "2026-09-09T12:05Z",
+    "home_name": "Alevtina Ibragimova",
+    "away_name": "Leyre Romero Gormaz",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183539",
+    "start_time": "2026-09-09T12:40Z",
+    "home_name": "Irene Burillo",
+    "away_name": "Miriam Bulgaru",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
   }
 ]

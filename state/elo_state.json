@@ -6859,8 +6859,8 @@
         "games": 35
       },
       "leyre romero gormaz": {
-        "elo": 1541.4602048332242,
-        "games": 29
+        "elo": 1531.4873993335761,
+        "games": 30
       },
       "anhelina kalinina": {
         "elo": 1560.6299973537186,
@@ -7075,8 +7075,8 @@
         "games": 14
       },
       "andrea lazaro garcia": {
-        "elo": 1523.8914272617124,
-        "games": 19
+        "elo": 1514.0251025149878,
+        "games": 20
       },
       "lucija ciric bagaric": {
         "elo": 1523.8143089265957,
@@ -7203,8 +7203,8 @@
         "games": 5
       },
       "irene burillo": {
-        "elo": 1512.2068500795758,
-        "games": 11
+        "elo": 1521.2033930864243,
+        "games": 12
       },
       "mariana isabel higuita barraza": {
         "elo": 1490.0,
@@ -7435,8 +7435,8 @@
         "games": 1
       },
       "tessa johanna brockmann": {
-        "elo": 1506.1872928889468,
-        "games": 9
+        "elo": 1495.9011784974396,
+        "games": 10
       },
       "daria kasatkina": {
         "elo": 1522.6601579747985,
@@ -7771,8 +7771,8 @@
         "games": 3
       },
       "alevtina ibragimova": {
-        "elo": 1542.405040877654,
-        "games": 15
+        "elo": 1552.3778463773021,
+        "games": 16
       },
       "shi han": {
         "elo": 1492.120815253549,
@@ -7795,8 +7795,8 @@
         "games": 4
       },
       "clara burel": {
-        "elo": 1496.2439469268606,
-        "games": 13
+        "elo": 1506.5300613183679,
+        "games": 14
       },
       "wang meiling": {
         "elo": 1490.474282730321,
@@ -8067,8 +8067,8 @@
         "games": 9
       },
       "miriam bulgaru": {
-        "elo": 1477.2254540919348,
-        "games": 11
+        "elo": 1468.2289110850863,
+        "games": 12
       },
       "tereza mrdeza": {
         "elo": 1490.022146865414,
@@ -8683,8 +8683,8 @@
         "games": 5
       },
       "anastasiia sobolieva": {
-        "elo": 1528.5360579148794,
-        "games": 7
+        "elo": 1538.402382661604,
+        "games": 8
       },
       "yuliana lizarazo": {
         "elo": 1488.353937372876,
@@ -29183,26 +29183,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.3931454235653703,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5213512381636399,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.6521661535427352,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
-        "p": 0.5338870385938632,
-        "y": 1.0
-      },
-      {
-        "kind": "binary",
         "p": 0.6030064633305975,
         "y": 0.0
       },
@@ -34179,6 +34159,26 @@
       {
         "kind": "binary",
         "p": 0.49684466999441396,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5013597250175951,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5501728496575792,
+        "y": 1.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5143057195753576,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.49331623733622737,
         "y": 0.0
       }
     ],
@@ -56349,7 +56349,11 @@
       "espn:tennis:wta:183636",
       "espn:tennis:wta:182780",
       "espn:tennis:wta:183551",
-      "espn:tennis:wta:183537"
+      "espn:tennis:wta:183537",
+      "espn:tennis:wta:183549",
+      "espn:tennis:wta:183539",
+      "espn:tennis:wta:183584",
+      "espn:tennis:wta:183596"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -57142,7 +57146,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5165,
+      "total": 5169,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -57408,8 +57412,8 @@
       "active": true,
       "pass_streak": 3,
       "fail_streak": 0,
-      "last_skill": 0.10020847305216407,
-      "last_brier": 0.22485790258426402
+      "last_skill": 0.09873822095752649,
+      "last_brier": 0.22511266086033394
     },
     "volleyball:premier-volleyball-league-women": {
       "policy_version": 1,
