@@ -1,70 +1,5 @@
 [
   {
-    "game_pk": "824226",
-    "start_time": "2026-09-09T17:10:00Z",
-    "home_id": "116",
-    "home_name": "Detroit Tigers",
-    "away_id": "142",
-    "away_name": "Minnesota Twins",
-    "home_starter_id": "672456",
-    "home_starter_name": "Keider Montero",
-    "away_starter_id": "805673",
-    "away_starter_name": "Zebby Matthews",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824956",
-    "start_time": "2026-09-09T19:05:00Z",
-    "home_id": "133",
-    "home_name": "Athletics",
-    "away_id": "141",
-    "away_name": "Toronto Blue Jays",
-    "home_starter_id": "669620",
-    "home_starter_name": "Brady Basso",
-    "away_starter_id": "680755",
-    "away_starter_name": "Braydon Fisher",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823172",
-    "start_time": "2026-09-09T19:45:00Z",
-    "home_id": "137",
-    "home_name": "San Francisco Giants",
-    "away_id": "138",
-    "away_name": "St. Louis Cardinals",
-    "home_starter_id": "694918",
-    "home_starter_name": "Blade Tidwell",
-    "away_starter_id": "669467",
-    "away_starter_name": "Andre Pallante",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823251",
-    "start_time": "2026-09-09T20:10:00Z",
-    "home_id": "135",
-    "home_name": "San Diego Padres",
-    "away_id": "120",
-    "away_name": "Washington Nationals",
-    "home_starter_id": "621111",
-    "home_starter_name": "Walker Buehler",
-    "away_starter_id": "800600",
-    "away_starter_name": "Jackson Kent",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823090",
-    "start_time": "2026-09-09T20:10:00Z",
-    "home_id": "136",
-    "home_name": "Seattle Mariners",
-    "away_id": "140",
-    "away_name": "Texas Rangers",
-    "home_starter_id": "807739",
-    "home_starter_name": "Kade Anderson",
-    "away_starter_id": "674003",
-    "away_starter_name": "Cody Bradford",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824791",
     "start_time": "2026-09-09T22:35:00Z",
     "home_id": "110",
@@ -266,8 +201,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "134",
     "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "684007",
+    "home_starter_name": "Shota Imanaga",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -320,8 +255,8 @@
     "away_name": "Baltimore Orioles",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "605135",
+    "away_starter_name": "Chris Bassitt",
     "lineups_confirmed": false
   },
   {
@@ -331,8 +266,8 @@
     "home_name": "Boston Red Sox",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "543243",
+    "home_starter_name": "Sonny Gray",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -383,8 +318,8 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "690986",
-    "home_starter_name": "Kyle Harrison",
+    "home_starter_id": "",
+    "home_starter_name": null,
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -487,8 +422,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "134",
     "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605280",
+    "home_starter_name": "Clay Holmes",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -502,8 +437,8 @@
     "away_name": "Baltimore Orioles",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "680694",
+    "away_starter_name": "Kyle Bradish",
     "lineups_confirmed": false
   },
   {
@@ -539,8 +474,8 @@
     "home_name": "Boston Red Sox",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "624133",
+    "home_starter_name": "Ranger Suarez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -554,8 +489,8 @@
     "away_name": "Cleveland Guardians",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "668909",
-    "away_starter_name": "Gavin Williams",
+    "away_starter_id": "",
+    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {
