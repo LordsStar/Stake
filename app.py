@@ -6,11 +6,13 @@ blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
 
+import base64
 import os
 import json
 from typing import Any, Dict, List, Tuple
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 import blindado_core as core
 
@@ -38,6 +40,81 @@ def configured_snapshot_max_age_minutes() -> float:
     except (TypeError, ValueError):
         configured = 120.0
     return max(60.0, min(configured, 240.0))
+
+
+def render_copy_to_clipboard_button(text: str) -> None:
+    """Renderiza un botón capaz de copiar payloads grandes sin mostrarlos dos veces.
+
+    `navigator.clipboard` puede estar bloqueado por la política del navegador o por
+    el iframe de Streamlit. En ese caso se usa `document.execCommand("copy")` sobre
+    un textarea temporal como respaldo. El contenido viaja en base64 para que datos
+    de la auditoría nunca puedan romper el HTML o el JavaScript del componente.
+    """
+    encoded = base64.b64encode(text.encode("utf-8")).decode("ascii")
+    components.html(
+        f"""
+        <div style="display:flex;align-items:center;gap:.65rem;font-family:system-ui,sans-serif;">
+          <button id="copy-audit" type="button" style="
+            border:1px solid rgba(49,51,63,.25);border-radius:.5rem;
+            background:white;color:#31333f;padding:.48rem .78rem;
+            font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            📋 Copiar auditoría completa
+          </button>
+          <span id="copy-status" role="status" aria-live="polite"
+                style="font-size:13px;color:#5f6368;"></span>
+        </div>
+        <script>
+          const encodedAudit = "{encoded}";
+          const button = document.getElementById("copy-audit");
+          const status = document.getElementById("copy-status");
+
+          function decodeAudit() {{
+            const binary = atob(encodedAudit);
+            const bytes = new Uint8Array(binary.length);
+            for (let index = 0; index < binary.length; index += 1) {{
+              bytes[index] = binary.charCodeAt(index);
+            }}
+            return new TextDecoder("utf-8").decode(bytes);
+          }}
+
+          function legacyCopy(value) {{
+            const area = document.createElement("textarea");
+            area.value = value;
+            area.setAttribute("readonly", "");
+            area.style.position = "fixed";
+            area.style.left = "-9999px";
+            area.style.top = "0";
+            document.body.appendChild(area);
+            area.focus();
+            area.select();
+            let copied = false;
+            try {{ copied = document.execCommand("copy"); }} catch (error) {{ copied = false; }}
+            document.body.removeChild(area);
+            return copied;
+          }}
+
+          button.addEventListener("click", async () => {{
+            button.disabled = true;
+            status.textContent = "Copiando…";
+            const value = decodeAudit();
+            let copied = false;
+            if (navigator.clipboard && window.isSecureContext) {{
+              try {{
+                await navigator.clipboard.writeText(value);
+                copied = true;
+              }} catch (error) {{ copied = false; }}
+            }}
+            if (!copied) copied = legacyCopy(value);
+            status.textContent = copied
+              ? "✓ Auditoría completa copiada"
+              : "El navegador bloqueó la copia; usa Descargar JSON.";
+            button.disabled = false;
+          }});
+        </script>
+        """,
+        height=48,
+        scrolling=False,
+    )
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
@@ -686,6 +763,18 @@ def main():
                     st.json(core.candidate_report(pick, float(bankroll)))
 
                 st.subheader("Auditoría (por qué se descartó cada evento)")
+                audit_payload = json.dumps(audit, ensure_ascii=False, indent=2, default=str)
+                copy_col, download_col = st.columns([2, 1])
+                with copy_col:
+                    render_copy_to_clipboard_button(audit_payload)
+                with download_col:
+                    st.download_button(
+                        "⬇️ Descargar auditoría JSON",
+                        data=audit_payload,
+                        file_name="blindado_auditoria_completa.json",
+                        mime="application/json",
+                        use_container_width=True,
+                    )
                 st.json(audit)
                 consistency = audit.get("consistencia_auditoria", {})
                 if consistency and not consistency.get("cuadra"):
