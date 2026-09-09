@@ -7471,8 +7471,8 @@
         "games": 1
       },
       "elizara yaneva": {
-        "elo": 1510.592562371066,
-        "games": 21
+        "elo": 1520.5294557709542,
+        "games": 22
       },
       "lucie havlickova": {
         "elo": 1512.8128253320751,
@@ -7687,8 +7687,8 @@
         "games": 4
       },
       "zhibek kulambayeva": {
-        "elo": 1508.3999854086987,
-        "games": 9
+        "elo": 1498.4630920088105,
+        "games": 10
       },
       "ye shiyu": {
         "elo": 1490.0,
@@ -10199,8 +10199,8 @@
         "games": 7
       },
       "huligani": {
-        "elo": 1468.491675730118,
-        "games": 13
+        "elo": 1479.5157773770438,
+        "games": 14
       },
       "gamerlegion": {
         "elo": 1509.6082346035873,
@@ -10407,8 +10407,8 @@
         "games": 4
       },
       "mouz": {
-        "elo": 1504.1977889940504,
-        "games": 10
+        "elo": 1493.1736873471245,
+        "games": 11
       },
       "yellow submarine": {
         "elo": 1480.5750112778453,
@@ -29183,11 +29183,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.3913205645132555,
-        "y": 0.0
-      },
-      {
-        "kind": "binary",
         "p": 0.3931454235653703,
         "y": 1.0
       },
@@ -34179,6 +34174,11 @@
       {
         "kind": "binary",
         "p": 0.44382439334122015,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.49684466999441396,
         "y": 0.0
       }
     ],
@@ -40085,6 +40085,11 @@
       {
         "kind": "binary",
         "p": 0.5222628810835384,
+        "y": 0.0
+      },
+      {
+        "kind": "binary",
+        "p": 0.5512050823462913,
         "y": 0.0
       }
     ],
@@ -56343,7 +56348,8 @@
       "espn:tennis:wta:183627",
       "espn:tennis:wta:183636",
       "espn:tennis:wta:182780",
-      "espn:tennis:wta:183551"
+      "espn:tennis:wta:183551",
+      "espn:tennis:wta:183537"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -56948,7 +56954,8 @@
       "opendota:8989423966",
       "opendota:8989511448",
       "opendota:8989587398",
-      "opendota:8989644322"
+      "opendota:8989644322",
+      "opendota:8990197396"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -57135,7 +57142,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5164,
+      "total": 5165,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -57159,7 +57166,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 359,
+      "total": 360,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -57185,6 +57192,320 @@
     "futsal:primera-division": {
       "total": 5,
       "draws": 3
+    }
+  },
+  "activation_state": {
+    "soccer:championship": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:canadian-premier-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "handball:damehandboldligaen": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": 0.10536265526081845,
+      "last_brier": 0.2236593361847954
+    },
+    "handball:champions-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "handball:lnh-division-1": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.07188187800365586,
+      "last_brier": 0.26797046950091397
+    },
+    "soccer:la-liga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:2nd-bundesliga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:brasileiro-serie-a": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "cricket:all": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.03044914406408572,
+      "last_brier": 0.23013364217431256
+    },
+    "soccer:iraqi-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:ligue-1": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:eredivisie": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:chinese-super-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "futsal:superliga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": 0.27630121032009936
+    },
+    "soccer:arabian-gulf-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:primera-division": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.6015826308572034,
+      "last_brier": 0.6005934865714513
+    },
+    "soccer:segunda-division": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": 0.6284869130312091
+    },
+    "rugby:super-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.064370464677306,
+      "last_brier": 0.23652676992829022
+    },
+    "rugby:top-14": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.07109478530043623,
+      "last_brier": 0.24785664453233228
+    },
+    "volleyball:asian-championship": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "aussie-rules:afl-women": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": 0.30449036718662487
+    },
+    "american-football:nfl": {
+      "policy_version": 1,
+      "active": true,
+      "pass_streak": 3,
+      "fail_streak": 0,
+      "last_skill": 0.03582828280252215,
+      "last_brier": 0.23860839571344575
+    },
+    "basketball:nba": {
+      "policy_version": 1,
+      "active": true,
+      "pass_streak": 3,
+      "fail_streak": 0,
+      "last_skill": 0.2195391177697883,
+      "last_brier": 0.19012027091127962
+    },
+    "ice-hockey:nhl": {
+      "policy_version": 1,
+      "active": true,
+      "pass_streak": 3,
+      "fail_streak": 0,
+      "last_skill": 0.04685844375235959,
+      "last_brier": 0.2381900749062852
+    },
+    "baseball:mlb": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.007600166820083576,
+      "last_brier": 0.25167333166748657
+    },
+    "tennis:atp": {
+      "policy_version": 1,
+      "active": true,
+      "pass_streak": 3,
+      "fail_streak": 0,
+      "last_skill": 0.13082788849919091,
+      "last_brier": 0.217206110664052
+    },
+    "tennis:wta": {
+      "policy_version": 1,
+      "active": true,
+      "pass_streak": 3,
+      "fail_streak": 0,
+      "last_skill": 0.10020847305216407,
+      "last_brier": 0.22485790258426402
+    },
+    "volleyball:premier-volleyball-league-women": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:saudi-pro-league": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "cricket:test": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "cricket:t20": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": -0.09727625257489358,
+      "last_brier": 0.25971035563902817
+    },
+    "cricket:odi": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "dota-2:all": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": 0.023222388437872388,
+      "last_brier": 0.2438829304378654
+    },
+    "soccer:prva-liga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:latvia-virsliga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:super-league-1": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:women-bundesliga": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:la-liga-2": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "futsal:primera-division": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
     }
   }
 }

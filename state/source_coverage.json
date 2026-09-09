@@ -1,58 +1,83 @@
 {
-  "generated_at": "2026-09-09T11:35:48.038981+00:00",
-  "targets_in_snapshot": 236,
+  "generated_at": "2026-09-09T13:23:12.123236+00:00",
+  "targets_in_snapshot": 249,
   "targets_processed": 24,
   "matched": [
     {
       "sport": "soccer",
-      "stake_league": "coppa-italia-serie-c",
-      "source_league": "Italian Serie A",
-      "similarity": 0.743
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "eredivisie",
-      "source_league": "Dutch Eredivisie",
-      "similarity": 0.769
+      "stake_league": "indonesian-super-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.683
     },
     {
       "sport": "soccer",
       "stake_league": "iraqi-league",
       "source_league": "Belgian Pro League",
       "similarity": 0.6
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "jordan-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.581
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "k-league-1",
+      "source_league": "Greek Super League 1",
+      "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "la-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "la-liga-2",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.583
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "ligue-1",
+      "source_league": "French Ligue 1",
+      "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "ligue-2",
+      "source_league": "French Ligue 1",
+      "similarity": 0.571
     }
   ],
   "unmatched": [
-    "soccer/copa-division-profesional: sin liga equivalente segura",
-    "soccer/copa-federacion: sin liga equivalente segura",
-    "soccer/copa-libertadores: sin liga equivalente segura",
-    "soccer/copa-libertadores-srl: sin liga equivalente segura",
-    "soccer/copa-sudamericana: sin liga equivalente segura",
-    "soccer/copa-uruguay: sin liga equivalente segura",
-    "soccer/croatian-cup: sin liga equivalente segura",
-    "soccer/cup: sin liga equivalente segura",
-    "soccer/dbu-pokalen: sin liga equivalente segura",
-    "soccer/division-1: sin liga equivalente segura",
-    "soccer/efl-cup: sin liga equivalente segura",
-    "soccer/ekstraklasa: sin liga equivalente segura",
-    "soccer/eliteserien: sin liga equivalente segura",
     "soccer/erovnuli-liga: sin liga equivalente segura",
     "soccer/fa-cup: sin liga equivalente segura",
-    "soccer/ffa-cup: sin liga equivalente segura",
     "soccer/first-division-a: sin liga equivalente segura",
     "soccer/j-league: sin liga equivalente segura",
     "soccer/j-league-2: sin liga equivalente segura",
-    "soccer/j-league-3: sin liga equivalente segura",
-    "soccer/j-league-cup: sin liga equivalente segura"
+    "soccer/league-cup: sin liga equivalente segura",
+    "soccer/league-one: sin liga equivalente segura",
+    "soccer/league-two: sin liga equivalente segura",
+    "soccer/liga-de-expansion-mx-apertura: sin liga equivalente segura",
+    "soccer/liga-femenina: sin liga equivalente segura",
+    "soccer/liga-nacional-apertura: sin liga equivalente segura",
+    "soccer/liga-profesional-reserves: sin liga equivalente segura",
+    "soccer/major-league-soccer: sin liga equivalente segura",
+    "soccer/mls-next-pro: sin liga equivalente segura",
+    "soccer/national: sin liga equivalente segura",
+    "soccer/national-league: sin liga equivalente segura"
   ],
-  "rows_collected": 774,
-  "rows_added": 10,
+  "rows_collected": 918,
+  "rows_added": 1,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 292,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 144,
+  "next_league_cursor": 168,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
