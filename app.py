@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.7 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.7.1 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -477,7 +477,7 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.7 — Diagnóstico de gates", layout="wide")
+    st.set_page_config(page_title="Blindado v7.7.1 — Diagnóstico del matcher", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
@@ -495,7 +495,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.7 — Diagnóstico de gates")
+    st.title("🎯 Blindado v7.7.1 — Diagnóstico del matcher")
     st.caption(
         "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -640,7 +640,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.7", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.7.1", type="primary"):
                 candidates, audit = core.prepare_candidates(
                     stake_events, bovada_events, promotions, float(bankroll),
                     st.session_state.get("mlb_model_payload"),

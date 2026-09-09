@@ -61,6 +61,33 @@ class ModelGateTests(unittest.TestCase):
         self.assertFalse(elo.refresh_activation_state("cricket:all")["active"])
         self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
 
+    def test_hysteresis_state_persists_between_process_instances(self):
+        outcomes = [1.0] * 20 + [0.0] * 10
+        good = [0.70] * 20 + [0.50] * 10
+        bad = [0.52] * 30
+        tempdir = tempfile.TemporaryDirectory()
+        self.addCleanup(tempdir.cleanup)
+        path = Path(tempdir.name) / "elo.json"
+
+        elo = core.EloModel(path)
+        elo.state["brier"]["cricket:all"] = [
+            {"kind": "binary", "p": p, "y": y} for p, y in zip(good, outcomes)
+        ]
+        self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
+        elo.state["brier"]["cricket:all"] = [
+            {"kind": "binary", "p": p, "y": y} for p, y in zip(bad, outcomes)
+        ]
+        self.assertEqual(elo.refresh_activation_state("cricket:all")["fail_streak"], 1)
+        elo.save()
+
+        elo = core.EloModel(path)
+        self.assertEqual(elo.refresh_activation_state("cricket:all")["fail_streak"], 2)
+        elo.save()
+        elo = core.EloModel(path)
+        final_state = elo.refresh_activation_state("cricket:all")
+        self.assertFalse(final_state["active"])
+        self.assertEqual(final_state["fail_streak"], 0)
+
 
 class AuditDiagnosticTests(unittest.TestCase):
     def _event(self):
@@ -250,14 +277,30 @@ class LiquiditySplitTests(unittest.TestCase):
 
     def test_liquidity_cascade_distinguishes_missing_league_and_event(self):
         stake = self._event()
-        _, _, code, _ = core.classify_bovada_liquidity(stake, [])
+        _, _, code, _, _ = core.classify_bovada_liquidity(stake, [])
         self.assertEqual(code, "bovada_sin_eventos_para_liga")
 
         unrelated = self._event(
             source="bovada", league="basketball_nba", home="Gamma", away="Delta"
         )
-        _, _, code, _ = core.classify_bovada_liquidity(stake, [unrelated])
+        _, _, code, _, diagnostic = core.classify_bovada_liquidity(stake, [unrelated])
         self.assertEqual(code, "bovada_evento_no_emparejado")
+        self.assertEqual(diagnostic["mejores_candidatos"][0]["componente_nombres"], 0.0)
+
+    def test_exact_point_25_is_time_bonus_not_fallback(self):
+        now = datetime.now(UTC)
+        start = (now + timedelta(hours=5)).isoformat()
+        stake = self._event(start_time=start)
+        unrelated = self._event(
+            source="bovada", league="basketball_nba", home="Gamma", away="Delta",
+            start_time=start,
+        )
+        _, score, code, _, diagnostic = core.classify_bovada_liquidity(stake, [unrelated])
+        components = diagnostic["mejores_candidatos"][0]
+        self.assertEqual(code, "bovada_evento_no_emparejado")
+        self.assertEqual(score, 0.25)
+        self.assertEqual(components["componente_nombres"], 0.0)
+        self.assertEqual(components["componente_horario"], 0.25)
 
     def test_liquidity_cascade_exposes_low_score_and_selection_failure(self):
         stake = self._event(start_time=None)
@@ -265,19 +308,23 @@ class LiquiditySplitTests(unittest.TestCase):
             source="bovada", league="basketball_nba",
             home="Alpha", away="Beta North Town", start_time=None,
         )
-        _, score, code, _ = core.classify_bovada_liquidity(stake, [weak])
+        _, score, code, _, diagnostic = core.classify_bovada_liquidity(stake, [weak])
         self.assertGreaterEqual(score, 0.35)
         self.assertLess(score, core.LIQUIDITY_MIN_MATCH_SCORE)
         self.assertEqual(code, "bovada_match_score_bajo")
+        self.assertIn("stake_home_normalizado", diagnostic["mejores_candidatos"][0])
+        self.assertIn("bovada_home_normalizado", diagnostic["mejores_candidatos"][0])
 
         matched_names_wrong_selections = self._event(
             source="bovada", league="basketball_nba",
             selections=[("Choice One", 1.9), ("Choice Two", 1.9)],
         )
-        _, _, code, _ = core.classify_bovada_liquidity(
+        _, _, code, _, diagnostic = core.classify_bovada_liquidity(
             stake, [matched_names_wrong_selections]
         )
         self.assertEqual(code, "bovada_seleccion_no_emparejada")
+        self.assertEqual(diagnostic["stake_selecciones_crudas"], ["Alpha United", "Beta City"])
+        self.assertEqual(diagnostic["bovada_selecciones_crudas"], ["Choice One", "Choice Two"])
 
     def test_bovada_expiration_reuses_v76_freshness_state(self):
         now = datetime.now(UTC)
@@ -286,7 +333,7 @@ class LiquiditySplitTests(unittest.TestCase):
         stale = self._event(
             source="bovada", league="basketball_nba", start_time=start, fetched_minutes=40
         )
-        _, _, code, detail = core.classify_bovada_liquidity(stake, [stale])
+        _, _, code, detail, _ = core.classify_bovada_liquidity(stake, [stale])
         self.assertEqual(code, "bovada_observacion_vencida")
         self.assertIn("market_observation_expired", detail)
 
@@ -342,6 +389,17 @@ class FinalGateSplitTests(unittest.TestCase):
         )
         self.assertEqual(list(reasons), ["ev_menor_4"])
         self.assertTrue(all(row["confianza_calculada"] is None for row in metrics))
+
+    def test_confidence_breakdown_exposes_existing_formula_without_changing_it(self):
+        engine = core.BlindadoEngine()
+        breakdown = engine._confidence_breakdown(0.081, 0.52, 0.60, {"verified": False})
+        self.assertEqual(breakdown, {
+            "base": 5.0,
+            "componente_ev": 2.0,
+            "componente_divergencia": -1.0,
+            "componente_movimiento": 0.0,
+            "total": 6.0,
+        })
 
 
 if __name__ == "__main__":

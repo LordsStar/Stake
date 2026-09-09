@@ -63,7 +63,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.7-liquidity-and-final-gate-diagnostics"
+APP_VERSION = "7.7.1-matcher-observability"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -296,7 +296,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.7 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.7.1 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -1423,7 +1423,73 @@ def name_similarity(a: str, b: str) -> float:
 def match_event_scored(
     stake_event: NormalizedEvent, references: List[NormalizedEvent]
 ) -> Tuple[Optional[NormalizedEvent], float]:
-    best, best_score = None, 0.0
+    diagnostic = match_event_diagnostics(stake_event, references)
+    best = diagnostic.get("best_event")
+    best_score = float(diagnostic.get("match_score", 0.0))
+    if best_score >= 0.35:
+        return best, best_score
+    return None, best_score
+
+
+def _match_components(
+    stake_event: NormalizedEvent, reference: NormalizedEvent
+) -> Dict[str, Any]:
+    direct_home = name_similarity(stake_event.home, reference.home)
+    direct_away = name_similarity(stake_event.away, reference.away)
+    swapped_home = name_similarity(stake_event.home, reference.away)
+    swapped_away = name_similarity(stake_event.away, reference.home)
+    direct_score = (direct_home + direct_away) / 2.0
+    swapped_score = (swapped_home + swapped_away) / 2.0
+    name_score = max(direct_score, swapped_score)
+    orientation = "directa" if direct_score >= swapped_score else "invertida"
+    minutes_delta: Optional[float] = None
+    time_component = 0.0
+    if stake_event.start_time and reference.start_time:
+        stake_start, reference_start = parse_dt(stake_event.start_time), parse_dt(reference.start_time)
+        if stake_start and reference_start:
+            minutes_delta = abs((stake_start - reference_start).total_seconds()) / 60.0
+            if minutes_delta <= 90:
+                time_component = 0.25
+            elif minutes_delta > 720:
+                time_component = -0.25
+    return {
+        "event": reference,
+        "event_id": reference.event_id,
+        "stake_home_crudo": stake_event.home,
+        "stake_away_crudo": stake_event.away,
+        "stake_home_normalizado": normalize_name(stake_event.home),
+        "stake_away_normalizado": normalize_name(stake_event.away),
+        "bovada_home_crudo": reference.home,
+        "bovada_away_crudo": reference.away,
+        "bovada_home_normalizado": normalize_name(reference.home),
+        "bovada_away_normalizado": normalize_name(reference.away),
+        "stake_start_time": stake_event.start_time,
+        "bovada_start_time": reference.start_time,
+        "diferencia_inicio_minutos": (
+            None if minutes_delta is None else round(minutes_delta, 2)
+        ),
+        "similitud_directa_home": round(direct_home, 6),
+        "similitud_directa_away": round(direct_away, 6),
+        "similitud_directa": round(direct_score, 6),
+        "similitud_invertida_home": round(swapped_home, 6),
+        "similitud_invertida_away": round(swapped_away, 6),
+        "similitud_invertida": round(swapped_score, 6),
+        "orientacion_elegida": orientation,
+        "componente_nombres": round(name_score, 6),
+        "componente_horario": time_component,
+        "match_score": round(name_score + time_component, 6),
+    }
+
+
+def match_event_diagnostics(
+    stake_event: NormalizedEvent, references: List[NormalizedEvent]
+) -> Dict[str, Any]:
+    """Devuelve el mejor candidato incluso cuando no supera 0.35.
+
+    Así la auditoría diferencia ausencia real de contraparte de un fallo de
+    extracción/normalización. `best_event` se retira antes de serializar.
+    """
+    ranked: List[Dict[str, Any]] = []
     for r in references:
         if sport_family(stake_event) != sport_family(r):
             continue
@@ -1432,22 +1498,18 @@ def match_event_scored(
             # Esports y la familia residual mezclan categorías distintas.
             # Nombres parecidos y horarios cercanos nunca bastan para cruzarlas.
             continue
-        direct = (name_similarity(stake_event.home, r.home) + name_similarity(stake_event.away, r.away)) / 2.0
-        swapped = (name_similarity(stake_event.home, r.away) + name_similarity(stake_event.away, r.home)) / 2.0
-        score = max(direct, swapped)
-        if stake_event.start_time and r.start_time:
-            a, b = parse_dt(stake_event.start_time), parse_dt(r.start_time)
-            if a and b:
-                minutes = abs((a - b).total_seconds()) / 60
-                if minutes <= 90:
-                    score += 0.25
-                elif minutes > 720:
-                    score -= 0.25
-        if score > best_score:
-            best_score, best = score, r
-    if best_score >= 0.35:
-        return best, best_score
-    return None, best_score
+        ranked.append(_match_components(stake_event, r))
+    ranked.sort(key=lambda item: item["match_score"], reverse=True)
+    best = ranked[0] if ranked else None
+    return {
+        "best_event": best.get("event") if best else None,
+        "match_score": best.get("match_score", 0.0) if best else 0.0,
+        "candidatos_comparados": len(ranked),
+        "mejores_candidatos": [
+            {key: value for key, value in item.items() if key != "event"}
+            for item in ranked[:3]
+        ],
+    }
 
 
 def match_event(stake_event: NormalizedEvent, references: List[NormalizedEvent]) -> Optional[NormalizedEvent]:
@@ -1750,6 +1812,16 @@ class EloModel:
             total = len(ratings)
             calibrados = sum(1 for r in ratings.values() if r.get("games", 0) >= ELO_MIN_GAMES)
             metrics = self.evaluation_metrics(sport)
+            hysteresis = dict(metrics.get("activation_state") or {})
+            if hysteresis:
+                active_now = bool(hysteresis.get("active"))
+                hysteresis["contador_en_uso"] = "fail_streak" if active_now else "pass_streak"
+                if active_now and int(hysteresis.get("fail_streak", 0)):
+                    hysteresis["fase"] = "desactivacion_pendiente"
+                elif not active_now and int(hysteresis.get("pass_streak", 0)):
+                    hysteresis["fase"] = "activacion_pendiente"
+                else:
+                    hysteresis["fase"] = "activo_estable" if active_now else "inactivo_estable"
             calibration_reason = metrics["reason"]
             if calibrados < 2:
                 calibration_reason = f"solo {calibrados} participantes con >= {ELO_MIN_GAMES} partidos"
@@ -1771,7 +1843,7 @@ class EloModel:
                 "brier_skill_score": None if metrics["skill"] is None else round(metrics["skill"], 4),
                 "ventaja_local_elo": self.home_advantage(sport),
                 "motivo_calibracion": calibration_reason,
-                "estado_histeresis": metrics.get("activation_state"),
+                "estado_histeresis": hysteresis or None,
                 "modelo_activo": bool(calibrados >= 2 and metrics["active"]),
             }
         return out
@@ -2387,7 +2459,7 @@ def _selection_match_exists(stake_event: NormalizedEvent, bovada_event: Normaliz
 def classify_bovada_liquidity(
     stake_event: NormalizedEvent,
     bovada_events: List[NormalizedEvent],
-) -> Tuple[Optional[NormalizedEvent], float, str, str]:
+) -> Tuple[Optional[NormalizedEvent], float, str, str, Dict[str, Any]]:
     """Aplica estructura -> evento -> score -> selección -> frescura.
 
     La frescura no se reimplementa aquí: la observación Bovada emparejada
@@ -2398,33 +2470,64 @@ def classify_bovada_liquidity(
         event for event in bovada_events
         if bovada_key and event.league == bovada_key
     ]
+    base_audit: Dict[str, Any] = {
+        "bovada_key": bovada_key,
+        "eventos_bovada_en_liga": len(league_events),
+        "stake_selecciones_crudas": list(market_odds(stake_event)),
+        "stake_selecciones_normalizadas": [
+            normalize_name(name) for name in market_odds(stake_event)
+        ],
+    }
     if not league_events:
-        return None, 0.0, "bovada_sin_eventos_para_liga", (
-            f"Bovada no devolvió eventos para {bovada_key or 'esta liga'}"
+        return (
+            None, 0.0, "bovada_sin_eventos_para_liga",
+            f"Bovada no devolvió eventos para {bovada_key or 'esta liga'}",
+            base_audit,
         )
 
-    bovada_event, match_score = match_event_scored(stake_event, league_events)
-    if bovada_event is None:
-        return None, match_score, "bovada_evento_no_emparejado", (
+    match_audit = match_event_diagnostics(stake_event, league_events)
+    best_event = match_audit.pop("best_event", None)
+    base_audit.update(match_audit)
+    match_score = float(base_audit.get("match_score", 0.0))
+    if best_event is None or match_score < 0.35:
+        return (
+            best_event, match_score, "bovada_evento_no_emparejado",
             f"ningún evento Bovada alcanzó el score mínimo de descubrimiento "
-            f"(mejor score {match_score:.2f})"
+            f"(mejor score {match_score:.2f})",
+            base_audit,
         )
+    bovada_event = best_event
+    bovada_selections = list(market_odds(bovada_event))
+    base_audit.update({
+        "bovada_selecciones_crudas": bovada_selections,
+        "bovada_selecciones_normalizadas": [
+            normalize_name(name) for name in bovada_selections
+        ],
+    })
     if match_score < LIQUIDITY_MIN_MATCH_SCORE:
-        return bovada_event, match_score, "bovada_match_score_bajo", (
-            f"coincidencia de evento débil ({match_score:.2f} < {LIQUIDITY_MIN_MATCH_SCORE})"
+        return (
+            bovada_event, match_score, "bovada_match_score_bajo",
+            f"coincidencia de evento débil ({match_score:.2f} < {LIQUIDITY_MIN_MATCH_SCORE})",
+            base_audit,
         )
     if not _selection_match_exists(stake_event, bovada_event):
-        return bovada_event, match_score, "bovada_seleccion_no_emparejada", (
+        return (
+            bovada_event, match_score, "bovada_seleccion_no_emparejada",
             "el evento coincide, pero ninguna selección principal de Stake "
-            "tiene contraparte identificable en Bovada"
+            "tiene contraparte identificable en Bovada",
+            base_audit,
         )
 
     fresh, freshness_status, freshness_detail = market_freshness_status(bovada_event)
     if not fresh:
-        return bovada_event, match_score, "bovada_observacion_vencida", (
-            f"{freshness_status}: {freshness_detail}"
+        return (
+            bovada_event, match_score, "bovada_observacion_vencida",
+            f"{freshness_status}: {freshness_detail}", base_audit,
         )
-    return bovada_event, match_score, "valido", f"{freshness_status}: {freshness_detail}"
+    return (
+        bovada_event, match_score, "valido",
+        f"{freshness_status}: {freshness_detail}", base_audit,
+    )
 
 
 def liquidity_status(bovada_event: Optional[NormalizedEvent], match_score: float) -> Tuple[bool, str]:
@@ -2567,19 +2670,36 @@ class BlindadoEngine:
         antes en evaluate_event() y descartan el evento sin llegar aquí.
         Este score solo sirve para ORDENAR entre candidatos que ya
         pasaron todos los gates obligatorios."""
+        return self._confidence_breakdown(ev, ref_p, model_prob, movement)["total"]
+
+    @staticmethod
+    def _confidence_breakdown(
+        ev: float, ref_p: float, model_prob: float, movement: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """Expone la fórmula vigente sin alterar su resultado ni sus umbrales."""
         score = 5.0
+        ev_component = 0.0
         if ev >= 0.08:
-            score += 2
+            ev_component = 2.0
         elif ev >= 0.04:
-            score += 1
+            ev_component = 1.0
+        score += ev_component
         div = abs(model_prob - ref_p)
+        divergence_component = 0.0
         if div <= 0.03:
-            score += 1
+            divergence_component = 1.0
         elif div > 0.07:
-            score -= 1
-        if movement.get("verified"):
-            score += 0.5
-        return max(0.0, min(10.0, score))
+            divergence_component = -1.0
+        score += divergence_component
+        movement_component = 0.5 if movement.get("verified") else 0.0
+        score += movement_component
+        return {
+            "base": 5.0,
+            "componente_ev": ev_component,
+            "componente_divergencia": divergence_component,
+            "componente_movimiento": movement_component,
+            "total": max(0.0, min(10.0, score)),
+        }
 
     def evaluate_event(
         self,
@@ -2700,9 +2820,10 @@ class BlindadoEngine:
             outcome = row["outcome"]
             movement = movement_status(event, outcome.selection, movement_history)
             row["movement"] = movement
-            row["confidence"] = self._confidence(
+            row["confidence_breakdown"] = self._confidence_breakdown(
                 row["ev"], row["reference_prob"], row["model_prob"], movement
             )
+            row["confidence"] = row["confidence_breakdown"]["total"]
 
         confidence_ok = [
             row for row in divergence_ok if row["confidence"] >= self.MIN_CONFIDENCE
@@ -2752,6 +2873,7 @@ class BlindadoEngine:
             "ev_calculado": row.get("ev"),
             "divergencia_calculada": row.get("divergence"),
             "confianza_calculada": row.get("confidence"),
+            "desglose_confianza": row.get("confidence_breakdown"),
         } for row in rows]
 
     def choose_one(self, candidates: List[Candidate]) -> Optional[Candidate]:
@@ -2788,6 +2910,23 @@ def prepare_candidates(
         "detalle_modelo": {},
         "detalle_liquidez": [],
         "metricas_descartes_finales": [],
+        "configuracion_confianza": {
+            "uso_actual": "gate_bloqueante_y_ordenamiento",
+            "umbral": engine.MIN_CONFIDENCE,
+            "escala": "0_a_10",
+            "formula": {
+                "base": 5.0,
+                "ev_4_a_menos_8": 1.0,
+                "ev_8_o_mas": 2.0,
+                "divergencia_3pp_o_menos": 1.0,
+                "divergencia_mas_de_7pp": -1.0,
+                "movimiento_verificado": 0.5,
+            },
+            "nota": (
+                "Se conserva sin cambios en v7.7.1; su docstring histórico decía "
+                "solo ordenamiento, pero evaluate_event la aplica como gate."
+            ),
+        },
         "qualified": 0,
         "eventos_calificados": 0,
         "observabilidad_mercados": summarize_market_observability(stake_events + bovada_events),
@@ -2843,7 +2982,7 @@ def prepare_candidates(
             bump(stake_freshness_code, e, stake_freshness_detail)
             continue
 
-        bov, score, liquidity_code, liquidity_detail = classify_bovada_liquidity(
+        bov, score, liquidity_code, liquidity_detail, match_audit = classify_bovada_liquidity(
             e, bovada_events
         )
         if liquidity_code != "valido":
@@ -2857,6 +2996,7 @@ def prepare_candidates(
                 "match_score": round(score, 4),
                 "bovada_event_id": bov.event_id if bov else None,
                 "detalle": liquidity_detail,
+                "diagnostico_matcher": match_audit,
             })
             continue
 
