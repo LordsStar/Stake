@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.7.1 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.7.2 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -124,7 +124,7 @@ def render_health_panel(
         f"(binario <= {core.BRIER_MAX:.3f}, 1X2 <= {core.BRIER_MULTICLASS_MAX:.3f}) "
         f"Y skill >= {core.BRIER_SKILL_MIN:.1%} frente al baseline. Histéresis: "
         f"no se desactiva hasta caer bajo {core.BRIER_SKILL_EXIT:.1%} durante "
-        f"{core.BRIER_HYSTERESIS_RUNS} corridas."
+        f"{core.BRIER_HYSTERESIS_RUNS} corridas con partidos nuevos en la ventana."
     )
     if downloaded_markets and downloaded_markets == evaluable_markets:
         st.info(
@@ -283,10 +283,7 @@ def render_results_manager():
     st.divider()
     if st.button("🧮 Reentrenar Elo ahora con el histórico actual"):
         elo = core.EloModel()
-        elo.state = {
-            "schema_version": core.ELO_SCHEMA_VERSION,
-            "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
-        }
+        elo.state = core.fresh_elo_state(elo.state.get("activation_state", {}))
         aliases = core.TeamAliasRegistry()
         results = core.load_results()
         updated = core.train_elo_from_results(elo, aliases, results)
@@ -477,15 +474,16 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.7.1 — Diagnóstico del matcher", layout="wide")
+    st.set_page_config(page_title="Blindado v7.7.2 — Histéresis persistente", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
         "BRIER_WINDOW", "BRIER_SKILL_MIN", "BRIER_SKILL_EXIT",
         "BRIER_HYSTERESIS_RUNS", "BRIER_MULTICLASS_MAX",
-        "BRIER_GATE_MODE", "is_esport_slug",
+        "BRIER_GATE_MODE", "BRIER_ACTIVATION_POLICY_VERSION", "ELO_SCHEMA_VERSION",
+        "is_esport_slug",
         "market_limit_minutes", "market_freshness_status",
-        "summarize_market_observability",
+        "summarize_market_observability", "fresh_elo_state",
     )
     missing_core = [name for name in required_core if not hasattr(core, name)]
     if missing_core:
@@ -495,7 +493,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.7.1 — Diagnóstico del matcher")
+    st.title("🎯 Blindado v7.7.2 — Histéresis persistente")
     st.caption(
         "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -640,7 +638,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.7.1", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.7.2", type="primary"):
                 candidates, audit = core.prepare_candidates(
                     stake_events, bovada_events, promotions, float(bankroll),
                     st.session_state.get("mlb_model_payload"),
@@ -667,6 +665,7 @@ def main():
                         "bovada_sin_eventos_para_liga": "Bovada sin eventos para la liga",
                         "bovada_evento_no_emparejado": "evento Stake no emparejado con Bovada",
                         "bovada_match_score_bajo": "emparejamiento Bovada con score insuficiente",
+                        "bovada_sin_mercado_principal": "evento Bovada sin moneyline/DNB utilizable",
                         "bovada_seleccion_no_emparejada": "selección Stake no emparejada con Bovada",
                         "bovada_observacion_vencida": "observación Bovada vencida",
                         "estado_fisico": "estado físico no verificado",

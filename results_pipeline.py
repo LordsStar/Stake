@@ -61,6 +61,9 @@ def main() -> int:
         "--max-leagues", str(max(0, args.max_leagues)), "--opendota-pages", "5",
     )
     run("reconcile_aliases.py", "--snapshot", "snapshot.json")
+    # Reconstruye ratings/Brier para eliminar dependencia del estado previo,
+    # pero elo_trainer v7.7.2 conserva activation_state y solo avanza streaks
+    # cuando cambia el fingerprint de match_id de la ventana evaluada.
     run("elo_trainer.py", "--reset")
     # MLB se entrena por separado: Elo es una variable, no el modelo final.
     run("mlb_pipeline.py", "--days-back", "240" if initial else "21")

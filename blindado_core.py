@@ -47,6 +47,7 @@ Cambios de arquitectura vs. la versión anterior (v5.1), resumidos:
 from __future__ import annotations
 
 import csv
+import hashlib
 import io
 import json
 import re
@@ -63,7 +64,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.7.1-matcher-observability"
+APP_VERSION = "7.7.2-persistent-evidence-hysteresis"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -79,7 +80,7 @@ TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
 AUTO_TEAM_ALIASES_FILE = STATE_DIR / "auto_team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
-ELO_SCHEMA_VERSION = 4
+ELO_SCHEMA_VERSION = 5
 
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
@@ -271,7 +272,7 @@ BRIER_WINDOW = 200
 BRIER_SKILL_MIN = 0.025
 BRIER_SKILL_EXIT = 0.015
 BRIER_HYSTERESIS_RUNS = 3
-BRIER_ACTIVATION_POLICY_VERSION = 1
+BRIER_ACTIVATION_POLICY_VERSION = 2
 BRIER_GATE_MODE = "all"
 ELO_HOME_BY_SPORT = {
     "american-football": 50.0,
@@ -296,7 +297,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.7.1 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.7.2 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -1576,14 +1577,30 @@ class TeamAliasRegistry:
 # ============================================================
 # Elo interno — modelo + pipeline de entrenamiento cronológico
 # ============================================================
+def fresh_elo_state(activation_state: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    """Estado vacío de entrenamiento sin borrar histéresis por omisión."""
+    durable_fields = {
+        "policy_version", "active", "pass_streak", "fail_streak",
+        "last_evidence_fingerprint",
+    }
+    preserved = {
+        str(namespace): {
+            key: value for key, value in state.items() if key in durable_fields
+        }
+        for namespace, state in (activation_state or {}).items()
+        if isinstance(state, dict)
+    }
+    return {
+        "schema_version": ELO_SCHEMA_VERSION,
+        "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
+        "activation_state": preserved,
+    }
+
+
 class EloModel:
     def __init__(self, path: Path = ELO_FILE):
         self.path = path
-        self.state = load_json(path, {
-            "schema_version": ELO_SCHEMA_VERSION,
-            "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
-            "activation_state": {},
-        })
+        self.state = load_json(path, fresh_elo_state())
 
     def schema_is_current(self) -> bool:
         return self.state.get("schema_version") == ELO_SCHEMA_VERSION
@@ -1692,17 +1709,33 @@ class EloModel:
             "active": active, "reason": reason,
         }
 
-    def refresh_activation_state(self, namespace: str) -> Dict[str, Any]:
-        """Actualiza la histéresis una vez por corrida de entrenamiento.
+    def evidence_fingerprint(self, namespace: str) -> Optional[str]:
+        """Hash estable de los partidos que forman la ventana Brier activa.
 
-        La primera migración conserva activos únicamente los modelos que ya
-        cumplen el nuevo gate estricto. Después exige tres corridas para los
-        cambios de estado y evita oscilaciones por ruido alrededor del umbral.
+        No usa Brier ni skill: dos reconstrucciones del mismo conjunto de
+        partidos deben producir la misma evidencia aunque exista ruido de
+        punto flotante. Los historiales schema 4 no tenían `match_id`; se
+        migran mediante el reentrenamiento completo de schema 5.
+        """
+        hist = self.state.get("brier", {}).get(namespace, [])[-BRIER_WINDOW:]
+        match_ids = sorted(str(item.get("match_id") or "") for item in hist)
+        if not match_ids or any(not match_id for match_id in match_ids):
+            return None
+        payload = json.dumps(match_ids, ensure_ascii=False, separators=(",", ":"))
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+    def refresh_activation_state(self, namespace: str) -> Dict[str, Any]:
+        """Actualiza histéresis solo cuando cambia la ventana de partidos.
+
+        La migración v1 -> v2 conserva el estado operativo, fija una línea
+        base de evidencia y no avanza contadores. Después exige tres ventanas
+        nuevas consecutivas para cambiar de estado.
         """
         metrics = self.evaluation_metrics(namespace, use_persisted_activation=False)
         states = self.state.setdefault("activation_state", {})
         previous = states.get(namespace)
         strict_pass = bool(metrics.get("strict_pass"))
+        fingerprint = self.evidence_fingerprint(namespace)
         skill = metrics.get("skill")
         retention_pass = bool(
             metrics.get("samples", 0) >= BRIER_MIN
@@ -1711,29 +1744,59 @@ class EloModel:
             and skill >= BRIER_SKILL_EXIT
         )
 
-        if not isinstance(previous, dict) or previous.get("policy_version") != BRIER_ACTIVATION_POLICY_VERSION:
+        if not isinstance(previous, dict):
             state = {
                 "policy_version": BRIER_ACTIVATION_POLICY_VERSION,
-                "active": strict_pass,
-                "pass_streak": BRIER_HYSTERESIS_RUNS if strict_pass else 0,
-                "fail_streak": 0 if strict_pass else 1,
+                "active": False,
+                "pass_streak": 0,
+                "fail_streak": 0,
+                "last_evidence_fingerprint": fingerprint,
+                "evidence_changed": False,
+                "migration_baseline": True,
+            }
+        elif previous.get("policy_version") != BRIER_ACTIVATION_POLICY_VERSION:
+            # Migración conservadora v1 -> v2: preserva el estado operativo,
+            # pero no inventa una confirmación con la evidencia reconstruida.
+            was_active = bool(previous.get("active"))
+            state = {
+                "policy_version": BRIER_ACTIVATION_POLICY_VERSION,
+                "active": was_active,
+                "pass_streak": 0 if was_active else int(previous.get("pass_streak", 0)),
+                "fail_streak": int(previous.get("fail_streak", 0)) if was_active else 0,
+                "last_evidence_fingerprint": fingerprint,
+                "evidence_changed": False,
+                "migration_baseline": True,
             }
         else:
             state = dict(previous)
-            if state.get("active"):
-                state["pass_streak"] = 0
-                state["fail_streak"] = 0 if retention_pass else int(state.get("fail_streak", 0)) + 1
-                if state["fail_streak"] >= BRIER_HYSTERESIS_RUNS:
-                    state["active"] = False
-                    state["fail_streak"] = 0
-            else:
-                state["fail_streak"] = 0
-                state["pass_streak"] = int(state.get("pass_streak", 0)) + 1 if strict_pass else 0
-                if state["pass_streak"] >= BRIER_HYSTERESIS_RUNS:
-                    state["active"] = True
+            evidence_changed = bool(
+                fingerprint
+                and fingerprint != state.get("last_evidence_fingerprint")
+            )
+            state["evidence_changed"] = evidence_changed
+            state["migration_baseline"] = False
+            if evidence_changed:
+                if state.get("active"):
                     state["pass_streak"] = 0
+                    state["fail_streak"] = (
+                        0 if retention_pass else int(state.get("fail_streak", 0)) + 1
+                    )
+                    if state["fail_streak"] >= BRIER_HYSTERESIS_RUNS:
+                        state["active"] = False
+                        state["fail_streak"] = 0
+                else:
+                    state["fail_streak"] = 0
+                    state["pass_streak"] = (
+                        int(state.get("pass_streak", 0)) + 1 if strict_pass else 0
+                    )
+                    if state["pass_streak"] >= BRIER_HYSTERESIS_RUNS:
+                        state["active"] = True
+                        state["pass_streak"] = 0
+                state["last_evidence_fingerprint"] = fingerprint
         state["last_skill"] = skill
         state["last_brier"] = metrics.get("brier")
+        state["evidence_samples"] = metrics.get("samples", 0)
+        state["evidence_total_samples"] = metrics.get("total_samples", 0)
         states[namespace] = state
         return state
 
@@ -1787,9 +1850,13 @@ class EloModel:
                     "kind": "multiclass",
                     "probs": {"home": p * remaining, "draw": p_draw, "away": (1.0 - p) * remaining},
                     "y": outcome,
+                    "match_id": game_id,
                 })
             else:
-                history.append({"kind": "binary", "p": p, "y": home_win})
+                history.append({
+                    "kind": "binary", "p": p, "y": home_win,
+                    "match_id": game_id,
+                })
             del history[: max(0, len(history) - 1000)]
         h["elo"] += ELO_K * (home_win - p)
         a["elo"] += ELO_K * ((1 - home_win) - (1 - p))
@@ -2047,7 +2114,7 @@ def train_elo_from_results(elo: EloModel, aliases: TeamAliasRegistry, results: L
     existían en ese momento — fuga de información)."""
     ordered = sorted(
         (r for r in results if parse_dt(r.get("start_time"))),
-        key=lambda r: parse_dt(r["start_time"]),
+        key=lambda r: (parse_dt(r["start_time"]), str(r.get("event_id", ""))),
     )
     updated = 0
     for r in ordered:
@@ -2510,6 +2577,12 @@ def classify_bovada_liquidity(
             f"coincidencia de evento débil ({match_score:.2f} < {LIQUIDITY_MIN_MATCH_SCORE})",
             base_audit,
         )
+    if not bovada_selections:
+        return (
+            bovada_event, match_score, "bovada_sin_mercado_principal",
+            "el evento coincide, pero Bovada no trae moneyline/DNB utilizable",
+            base_audit,
+        )
     if not _selection_match_exists(stake_event, bovada_event):
         return (
             bovada_event, match_score, "bovada_seleccion_no_emparejada",
@@ -2923,7 +2996,7 @@ def prepare_candidates(
                 "movimiento_verificado": 0.5,
             },
             "nota": (
-                "Se conserva sin cambios en v7.7.1; su docstring histórico decía "
+                "Se conserva sin cambios desde v7.7.1; su docstring histórico decía "
                 "solo ordenamiento, pero evaluate_event la aplica como gate."
             ),
         },

@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import blindado_core as core
+import elo_trainer
 
 UTC = timezone.utc
 
@@ -15,10 +16,17 @@ class ModelGateTests(unittest.TestCase):
         self.addCleanup(tempdir.cleanup)
         elo = core.EloModel(Path(tempdir.name) / "elo.json")
         elo.state["brier"]["cricket:all"] = [
-            {"kind": "binary", "p": p, "y": y}
-            for p, y in zip(probabilities, outcomes)
+            {"kind": "binary", "p": p, "y": y, "match_id": f"match-{index}"}
+            for index, (p, y) in enumerate(zip(probabilities, outcomes))
         ]
         return elo
+
+    @staticmethod
+    def _history(probabilities, outcomes, prefix):
+        return [
+            {"kind": "binary", "p": p, "y": y, "match_id": f"{prefix}-{index}"}
+            for index, (p, y) in enumerate(zip(probabilities, outcomes))
+        ]
 
     def test_absolute_brier_cannot_hide_negative_skill(self):
         outcomes = [1.0] * 20 + [0.0] * 10
@@ -43,23 +51,78 @@ class ModelGateTests(unittest.TestCase):
         good = [0.70] * 20 + [0.50] * 10
         bad = [0.52] * 30
         elo = self._elo_with_binary_history(good, outcomes)
-
+        elo.state["activation_state"]["cricket:all"] = {
+            "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION - 1,
+            "active": True, "pass_streak": 3, "fail_streak": 0,
+        }
+        # Primera corrida v2: migra y fija el fingerprint, sin inventar señal.
         self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
-        elo.state["brier"]["cricket:all"] = [
-            {"kind": "binary", "p": p, "y": y}
-            for p, y in zip(bad, outcomes)
-        ]
-        self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
-        self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
+        bad_history = self._history(bad, outcomes, "bad")
+        for expected_streak in (1, 2):
+            elo.state["brier"]["cricket:all"] = list(bad_history) + [{
+                "kind": "binary", "p": 0.52, "y": 1.0,
+                "match_id": f"bad-new-{expected_streak}",
+            }]
+            state = elo.refresh_activation_state("cricket:all")
+            self.assertTrue(state["active"])
+            self.assertEqual(state["fail_streak"], expected_streak)
+            bad_history = list(elo.state["brier"]["cricket:all"])
+        elo.state["brier"]["cricket:all"] = bad_history + [{
+            "kind": "binary", "p": 0.52, "y": 1.0, "match_id": "bad-new-3",
+        }]
         self.assertFalse(elo.refresh_activation_state("cricket:all")["active"])
 
-        elo.state["brier"]["cricket:all"] = [
-            {"kind": "binary", "p": p, "y": y}
-            for p, y in zip(good, outcomes)
-        ]
-        self.assertFalse(elo.refresh_activation_state("cricket:all")["active"])
-        self.assertFalse(elo.refresh_activation_state("cricket:all")["active"])
+        good_history = self._history(good, outcomes, "good")
+        for expected_streak in (1, 2):
+            elo.state["brier"]["cricket:all"] = list(good_history) + [{
+                "kind": "binary", "p": 0.70, "y": 1.0,
+                "match_id": f"good-new-{expected_streak}",
+            }]
+            state = elo.refresh_activation_state("cricket:all")
+            self.assertFalse(state["active"])
+            self.assertEqual(state["pass_streak"], expected_streak)
+            good_history = list(elo.state["brier"]["cricket:all"])
+        elo.state["brier"]["cricket:all"] = good_history + [{
+            "kind": "binary", "p": 0.70, "y": 1.0, "match_id": "good-new-3",
+        }]
         self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
+
+    def test_same_match_ids_do_not_advance_streak(self):
+        outcomes = [1.0] * 20 + [0.0] * 10
+        bad = [0.52] * 30
+        elo = self._elo_with_binary_history(bad, outcomes)
+        elo.state["activation_state"]["cricket:all"] = {
+            "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION,
+            "active": True, "pass_streak": 0, "fail_streak": 1,
+            "last_evidence_fingerprint": elo.evidence_fingerprint("cricket:all"),
+        }
+        first = elo.refresh_activation_state("cricket:all")
+        second = elo.refresh_activation_state("cricket:all")
+        self.assertEqual(first["fail_streak"], 1)
+        self.assertEqual(second["fail_streak"], 1)
+        self.assertFalse(second["evidence_changed"])
+
+    def test_new_namespace_starts_inactive_with_zero_streak(self):
+        outcomes = [1.0] * 20 + [0.0] * 10
+        good = [0.70] * 20 + [0.50] * 10
+        elo = self._elo_with_binary_history(good, outcomes)
+        state = elo.refresh_activation_state("cricket:all")
+        self.assertFalse(state["active"])
+        self.assertEqual(state["pass_streak"], 0)
+        self.assertEqual(state["fail_streak"], 0)
+        self.assertTrue(state["migration_baseline"])
+
+    def test_brier_observation_contains_match_id(self):
+        tempdir = tempfile.TemporaryDirectory()
+        self.addCleanup(tempdir.cleanup)
+        elo = core.EloModel(Path(tempdir.name) / "elo.json")
+        for index in range(core.ELO_MIN_GAMES + 1):
+            elo.update(
+                "basketball:test", "home", "away", 1.0,
+                f"game-{index}",
+            )
+        history = elo.state["brier"]["basketball:test"]
+        self.assertEqual(history[-1]["match_id"], f"game-{core.ELO_MIN_GAMES}")
 
     def test_hysteresis_state_persists_between_process_instances(self):
         outcomes = [1.0] * 20 + [0.0] * 10
@@ -70,23 +133,105 @@ class ModelGateTests(unittest.TestCase):
         path = Path(tempdir.name) / "elo.json"
 
         elo = core.EloModel(path)
-        elo.state["brier"]["cricket:all"] = [
-            {"kind": "binary", "p": p, "y": y} for p, y in zip(good, outcomes)
-        ]
+        elo.state["brier"]["cricket:all"] = self._history(good, outcomes, "good")
+        elo.state["activation_state"]["cricket:all"] = {
+            "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION - 1,
+            "active": True, "pass_streak": 3, "fail_streak": 0,
+        }
         self.assertTrue(elo.refresh_activation_state("cricket:all")["active"])
-        elo.state["brier"]["cricket:all"] = [
-            {"kind": "binary", "p": p, "y": y} for p, y in zip(bad, outcomes)
-        ]
+        elo.state["brier"]["cricket:all"] = self._history(bad, outcomes, "bad")
         self.assertEqual(elo.refresh_activation_state("cricket:all")["fail_streak"], 1)
         elo.save()
 
         elo = core.EloModel(path)
+        elo.state["brier"]["cricket:all"].append({
+            "kind": "binary", "p": 0.52, "y": 1.0, "match_id": "bad-extra-2",
+        })
         self.assertEqual(elo.refresh_activation_state("cricket:all")["fail_streak"], 2)
         elo.save()
         elo = core.EloModel(path)
+        elo.state["brier"]["cricket:all"].append({
+            "kind": "binary", "p": 0.52, "y": 1.0, "match_id": "bad-extra-3",
+        })
         final_state = elo.refresh_activation_state("cricket:all")
         self.assertFalse(final_state["active"])
         self.assertEqual(final_state["fail_streak"], 0)
+
+
+class TrainerMigrationTests(unittest.TestCase):
+    def test_rebuild_preserves_only_transition_state_not_old_metrics(self):
+        rebuilt = core.fresh_elo_state({
+            "basketball:nba": {
+                "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION,
+                "active": True, "pass_streak": 0, "fail_streak": 1,
+                "last_evidence_fingerprint": "abc",
+                "last_brier": 0.1, "last_skill": 0.9,
+            }
+        })
+        state = rebuilt["activation_state"]["basketball:nba"]
+        self.assertEqual(state["last_evidence_fingerprint"], "abc")
+        self.assertNotIn("last_brier", state)
+        self.assertNotIn("last_skill", state)
+
+    def test_schema_migration_without_manual_reset_preserves_activation_state(self):
+        tempdir = tempfile.TemporaryDirectory()
+        self.addCleanup(tempdir.cleanup)
+        elo = core.EloModel(Path(tempdir.name) / "elo.json")
+        elo.state["schema_version"] = core.ELO_SCHEMA_VERSION - 1
+        preserved = {
+            "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION - 1,
+            "active": True, "pass_streak": 3, "fail_streak": 0,
+        }
+        elo.state["activation_state"] = {"basketball:nba": dict(preserved)}
+        observed = {}
+
+        def inspect_rebuilt_state(rebuilt, aliases, results):
+            observed.update(rebuilt.state.get("activation_state", {}))
+            return 0
+
+        with (
+            patch.object(elo_trainer, "EloModel", return_value=elo),
+            patch.object(elo_trainer, "load_results", return_value=[{"event_id": "one"}]),
+            patch.object(elo_trainer, "train_elo_from_results", side_effect=inspect_rebuilt_state),
+            patch("sys.argv", ["elo_trainer.py"]),
+        ):
+            self.assertEqual(elo_trainer.main(), 0)
+
+        self.assertEqual(observed["basketball:nba"], preserved)
+        self.assertEqual(elo.state["schema_version"], core.ELO_SCHEMA_VERSION)
+
+    def test_full_rebuild_with_same_matches_does_not_advance_hysteresis(self):
+        tempdir = tempfile.TemporaryDirectory()
+        self.addCleanup(tempdir.cleanup)
+        root = Path(tempdir.name)
+        aliases = core.TeamAliasRegistry(
+            root / "aliases.json", root / "automatic_aliases.json"
+        )
+        results = [{
+            "sport": "basketball", "league": "nba", "event_id": f"game-{index}",
+            "start_time": f"2026-01-{1 + index // 24:02d}T{index % 24:02d}:00:00Z",
+            "home_name": "Home", "away_name": "Away",
+            "home_score": 100 + (index % 3), "away_score": 95,
+            "status": "final",
+        } for index in range(40)]
+
+        first = core.EloModel(root / "first.json")
+        core.train_elo_from_results(first, aliases, results)
+        namespace = "basketball:nba"
+        fingerprint = first.evidence_fingerprint(namespace)
+        preserved = {
+            "policy_version": core.BRIER_ACTIVATION_POLICY_VERSION,
+            "active": True, "pass_streak": 0, "fail_streak": 1,
+            "last_evidence_fingerprint": fingerprint,
+        }
+
+        rebuilt = core.EloModel(root / "rebuilt.json")
+        rebuilt.state["activation_state"] = {namespace: preserved}
+        core.train_elo_from_results(rebuilt, aliases, results)
+        state = rebuilt.state["activation_state"][namespace]
+        self.assertEqual(state["fail_streak"], 1)
+        self.assertFalse(state["evidence_changed"])
+        self.assertEqual(state["last_evidence_fingerprint"], fingerprint)
 
 
 class AuditDiagnosticTests(unittest.TestCase):
@@ -325,6 +470,18 @@ class LiquiditySplitTests(unittest.TestCase):
         self.assertEqual(code, "bovada_seleccion_no_emparejada")
         self.assertEqual(diagnostic["stake_selecciones_crudas"], ["Alpha United", "Beta City"])
         self.assertEqual(diagnostic["bovada_selecciones_crudas"], ["Choice One", "Choice Two"])
+
+    def test_exact_event_without_bovada_moneyline_has_own_reason(self):
+        stake = self._event(start_time=None)
+        bovada = self._event(source="bovada", league="basketball_nba", start_time=None)
+        bovada.markets = [core.NormalizedMarket("spread", "Spread", [
+            core.NormalizedOutcome("Alpha United", 1.9, point=-2.5),
+            core.NormalizedOutcome("Beta City", 1.9, point=2.5),
+        ])]
+        _, score, code, _, diagnostic = core.classify_bovada_liquidity(stake, [bovada])
+        self.assertEqual(score, 1.0)
+        self.assertEqual(code, "bovada_sin_mercado_principal")
+        self.assertEqual(diagnostic["bovada_selecciones_crudas"], [])
 
     def test_bovada_expiration_reuses_v76_freshness_state(self):
         now = datetime.now(UTC)
