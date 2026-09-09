@@ -10,7 +10,7 @@
     "home_starter_name": "Keider Montero",
     "away_starter_id": "805673",
     "away_starter_name": "Zebby Matthews",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824956",
@@ -23,7 +23,7 @@
     "home_starter_name": "Brady Basso",
     "away_starter_id": "680755",
     "away_starter_name": "Braydon Fisher",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823172",
@@ -36,7 +36,7 @@
     "home_starter_name": "Blade Tidwell",
     "away_starter_id": "669467",
     "away_starter_name": "Andre Pallante",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823251",
@@ -62,7 +62,7 @@
     "home_starter_name": "Kade Anderson",
     "away_starter_id": "674003",
     "away_starter_name": "Cody Bradford",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824791",
@@ -409,8 +409,8 @@
     "home_name": "St. Louis Cardinals",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669461",
+    "home_starter_name": "Matthew Liberatore",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -617,8 +617,8 @@
     "home_name": "St. Louis Cardinals",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "681517",
+    "home_starter_name": "Kyle Leahy",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
