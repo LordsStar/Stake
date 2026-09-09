@@ -63,7 +63,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.6-schema5-market-observability"
+APP_VERSION = "7.7-liquidity-and-final-gate-diagnostics"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -296,7 +296,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.6 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.7 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -319,8 +319,8 @@ REGLAS:
    Para Elo se exigen
    (>= 5 partidos por participante y >= 30 predicciones maduras). La
    calibración usa una ventana reciente de 200. Con suficientes muestras,
-   se acepta calidad absoluta (Brier binario <= 0.245 / 1X2 <= 0.60) O
-   Brier Skill Score >= 2% frente al baseline de la competencia.
+   se exige calidad absoluta (Brier binario <= 0.245 / 1X2 <= 0.60) Y
+   Brier Skill Score >= 2.5% frente al baseline de la competencia.
    Si el modelo aplicable no está calibrado o faltan sus variables: DESCARTAR.
    MLB debe superar en test cronológico Brier 0.245, baseline y Elo puro.
    A menos de 90 minutos exige ambas alineaciones confirmadas.
@@ -2372,9 +2372,63 @@ def summarize_market_observability(events: List[NormalizedEvent]) -> Dict[str, A
 
 
 # ============================================================
-# Liquidez real (antes: bool(bovada_event) nada más)
+# Liquidez real y diagnóstico determinístico Stake -> Bovada
 # ============================================================
+def _selection_match_exists(stake_event: NormalizedEvent, bovada_event: NormalizedEvent) -> bool:
+    stake_selections = market_odds(stake_event)
+    bovada_selections = market_odds(bovada_event)
+    return any(
+        name_similarity(stake_name, bovada_name) >= 0.5
+        for stake_name in stake_selections
+        for bovada_name in bovada_selections
+    )
+
+
+def classify_bovada_liquidity(
+    stake_event: NormalizedEvent,
+    bovada_events: List[NormalizedEvent],
+) -> Tuple[Optional[NormalizedEvent], float, str, str]:
+    """Aplica estructura -> evento -> score -> selección -> frescura.
+
+    La frescura no se reimplementa aquí: la observación Bovada emparejada
+    pasa por la misma máquina de estados de v7.6 que utiliza Stake.
+    """
+    bovada_key = bovada_key_for_event(stake_event)
+    league_events = [
+        event for event in bovada_events
+        if bovada_key and event.league == bovada_key
+    ]
+    if not league_events:
+        return None, 0.0, "bovada_sin_eventos_para_liga", (
+            f"Bovada no devolvió eventos para {bovada_key or 'esta liga'}"
+        )
+
+    bovada_event, match_score = match_event_scored(stake_event, league_events)
+    if bovada_event is None:
+        return None, match_score, "bovada_evento_no_emparejado", (
+            f"ningún evento Bovada alcanzó el score mínimo de descubrimiento "
+            f"(mejor score {match_score:.2f})"
+        )
+    if match_score < LIQUIDITY_MIN_MATCH_SCORE:
+        return bovada_event, match_score, "bovada_match_score_bajo", (
+            f"coincidencia de evento débil ({match_score:.2f} < {LIQUIDITY_MIN_MATCH_SCORE})"
+        )
+    if not _selection_match_exists(stake_event, bovada_event):
+        return bovada_event, match_score, "bovada_seleccion_no_emparejada", (
+            "el evento coincide, pero ninguna selección principal de Stake "
+            "tiene contraparte identificable en Bovada"
+        )
+
+    fresh, freshness_status, freshness_detail = market_freshness_status(bovada_event)
+    if not fresh:
+        return bovada_event, match_score, "bovada_observacion_vencida", (
+            f"{freshness_status}: {freshness_detail}"
+        )
+    return bovada_event, match_score, "valido", f"{freshness_status}: {freshness_detail}"
+
+
 def liquidity_status(bovada_event: Optional[NormalizedEvent], match_score: float) -> Tuple[bool, str]:
+    """Compatibilidad para consumidores anteriores; reutiliza frescura v7.6."""
     if not bovada_event:
         return False, "sin referencia secundaria disponible (Bovada)"
     if match_score < LIQUIDITY_MIN_MATCH_SCORE:
@@ -2537,42 +2591,42 @@ class BlindadoEngine:
         promotions: List[Dict[str, Any]],
         physical_registry: PhysicalStatusRegistry,
         movement_history: Dict[str, Any],
-    ) -> Tuple[List[Candidate], Dict[str, str]]:
+    ) -> Tuple[List[Candidate], Dict[str, str], List[Dict[str, Any]]]:
         reasons: Dict[str, str] = {}
+        diagnostics: List[Dict[str, Any]] = []
         market = next((m for m in event.markets if m.key in ("moneyline", "draw_no_bet")), None)
         if not market:
             reasons["sin_mercado"] = "sin mercado moneyline/DNB"
-            return [], reasons
+            return [], reasons, diagnostics
 
         # --- Gate 1: modelo independiente calibrado (Elo o MLB especializado) ---
         if not model_active or not model_probs:
             reasons["modelo_no_aprobado"] = "modelo estadístico no disponible o no aprobado"
-            return [], reasons
+            return [], reasons, diagnostics
 
         # --- Gate 2: frescura de mercado ---
         fresh_ok, fresh_status, fresh_reason = market_freshness_status(event)
         if not fresh_ok:
             reasons[fresh_status] = fresh_reason
-            return [], reasons
+            return [], reasons, diagnostics
 
         # --- Gate 3: liquidez real (evento emparejado en Bovada, fresco) ---
         liquid_ok, liquid_reason = liquidity_status(bovada_event, bovada_score)
         if not liquid_ok:
             reasons["liquidez"] = liquid_reason
-            return [], reasons
+            return [], reasons, diagnostics
 
         # --- Gate 4: estado físico (solo tenis/MMA/boxeo) ---
         if event.sport in PHYSICAL_STATUS_SPORTS:
             physical_ok, physical_reason = physical_registry.is_verified_ok(event.event_id)
             if not physical_ok:
                 reasons["estado_fisico"] = physical_reason
-                return [], reasons
+                return [], reasons, diagnostics
 
         ref_probs = devig(market_odds(bovada_event))
-
-        out: List[Candidate] = []
+        rows: List[Dict[str, Any]] = []
         for o in market.outcomes:
-            if not o.active or not (self.MIN_ODDS <= o.odds <= self.MAX_ODDS):
+            if not o.active:
                 continue
             p = model_probs.get(o.selection)
             if p is None:
@@ -2583,38 +2637,122 @@ class BlindadoEngine:
                 p = model_probs.get(model_name) if name_similarity(o.selection, model_name) >= 0.5 else None
             if p is None or not (0 < p < 1):
                 continue
-
-            promo = select_promotion(event, o.selection, market.key, promotions)
-            eff_odds, ev, promo_label = promo_expected_value(p, o.odds, promo)
-            if not (self.MIN_ODDS <= eff_odds <= self.MAX_ODDS):
-                continue
-            if ev < self.MIN_EV:
-                continue
-
             ref_name = max(ref_probs, key=lambda x: name_similarity(o.selection, x), default="")
             ref_p = ref_probs.get(ref_name) if name_similarity(o.selection, ref_name) >= 0.5 else None
-            if ref_p is None:
-                # El evento pasó liquidez (existe Bovada emparejado), pero
-                # esta selección puntual no tiene contraparte identificable
-                # -> no se puede validar divergencia (Regla 6): se descarta.
-                continue
-            if abs(p - ref_p) > self.MAX_DIVERGENCE:
-                continue
+            rows.append({"outcome": o, "model_prob": p, "reference_prob": ref_p})
 
-            mv = movement_status(event, o.selection, movement_history)
-            conf = self._confidence(ev, ref_p, p, mv)
-            if conf < self.MIN_CONFIDENCE:
-                continue
+        if not rows:
+            reasons["variables_prepartido_incompletas"] = (
+                "el modelo activo no produjo una probabilidad utilizable para las selecciones de Stake"
+            )
+            return [], reasons, diagnostics
 
-            out.append(Candidate(
-                event=event, selection=o.selection, stake_odds=o.odds,
-                model_prob=p, reference_prob=ref_p, ev=ev, confidence=conf,
-                promotion=promo, effective_odds=eff_odds, reason=promo_label,
-                movement=mv,
-            ))
-        if not out:
-            reasons["ev_confianza_divergencia"] = "ningún outcome superó EV/confianza/divergencia"
-        return out, reasons
+        # La cascada conserva una sola causa por evento. Cada etapa opera
+        # únicamente sobre las selecciones que superaron la anterior.
+        matched = [row for row in rows if row["reference_prob"] is not None]
+        if not matched:
+            reasons["seleccion_referencia_no_encontrada"] = (
+                "ninguna selección de Stake tiene contraparte identificable en Bovada"
+            )
+            diagnostics.extend(self._gate_diagnostics(event, rows, "seleccion_referencia_no_encontrada"))
+            return [], reasons, diagnostics
+
+        for row in matched:
+            outcome = row["outcome"]
+            promotion = select_promotion(event, outcome.selection, market.key, promotions)
+            effective, ev, promo_label = promo_expected_value(
+                row["model_prob"], outcome.odds, promotion
+            )
+            row.update({
+                "promotion": promotion, "effective_odds": effective,
+                "ev": ev, "promo_label": promo_label,
+                "divergence": abs(row["model_prob"] - row["reference_prob"]),
+            })
+
+        odds_ok = [
+            row for row in matched
+            if self.MIN_ODDS <= row["effective_odds"] <= self.MAX_ODDS
+        ]
+        if not odds_ok:
+            reasons["cuota_fuera_de_rango"] = (
+                f"ninguna cuota efectiva quedó entre {self.MIN_ODDS:.2f} y {self.MAX_ODDS:.2f}"
+            )
+            diagnostics.extend(self._gate_diagnostics(event, matched, "cuota_fuera_de_rango"))
+            return [], reasons, diagnostics
+
+        ev_ok = [row for row in odds_ok if row["ev"] >= self.MIN_EV]
+        if not ev_ok:
+            reasons["ev_menor_4"] = "ninguna selección alcanzó EV mínimo de 4%"
+            diagnostics.extend(self._gate_diagnostics(event, odds_ok, "ev_menor_4"))
+            return [], reasons, diagnostics
+
+        divergence_ok = [
+            row for row in ev_ok if row["divergence"] <= self.MAX_DIVERGENCE
+        ]
+        if not divergence_ok:
+            reasons["divergencia_mayor_9"] = (
+                "toda selección con EV suficiente divergió más de 9 puntos de Bovada"
+            )
+            diagnostics.extend(self._gate_diagnostics(event, ev_ok, "divergencia_mayor_9"))
+            return [], reasons, diagnostics
+
+        for row in divergence_ok:
+            outcome = row["outcome"]
+            movement = movement_status(event, outcome.selection, movement_history)
+            row["movement"] = movement
+            row["confidence"] = self._confidence(
+                row["ev"], row["reference_prob"], row["model_prob"], movement
+            )
+
+        confidence_ok = [
+            row for row in divergence_ok if row["confidence"] >= self.MIN_CONFIDENCE
+        ]
+        if not confidence_ok:
+            reasons["confianza_menor_8"] = (
+                "toda selección que pasó EV y divergencia quedó bajo confianza 8/10"
+            )
+            diagnostics.extend(self._gate_diagnostics(event, divergence_ok, "confianza_menor_8"))
+            return [], reasons, diagnostics
+
+        out = [
+            Candidate(
+                event=event,
+                selection=row["outcome"].selection,
+                stake_odds=row["outcome"].odds,
+                model_prob=row["model_prob"],
+                reference_prob=row["reference_prob"],
+                ev=row["ev"],
+                confidence=row["confidence"],
+                promotion=row["promotion"],
+                effective_odds=row["effective_odds"],
+                reason=row["promo_label"],
+                movement=row["movement"],
+            )
+            for row in confidence_ok
+        ]
+        return out, reasons, diagnostics
+
+    @staticmethod
+    def _gate_diagnostics(
+        event: NormalizedEvent,
+        rows: List[Dict[str, Any]],
+        failure_reason: str,
+    ) -> List[Dict[str, Any]]:
+        return [{
+            "event_id": event.event_id,
+            "deporte": event.sport,
+            "liga": event.league,
+            "evento": f"{event.home} vs {event.away}",
+            "seleccion": row["outcome"].selection,
+            "motivo": failure_reason,
+            "cuota_stake": row["outcome"].odds,
+            "cuota_efectiva": row.get("effective_odds"),
+            "probabilidad_modelo": row.get("model_prob"),
+            "probabilidad_referencia": row.get("reference_prob"),
+            "ev_calculado": row.get("ev"),
+            "divergencia_calculada": row.get("divergence"),
+            "confianza_calculada": row.get("confidence"),
+        } for row in rows]
 
     def choose_one(self, candidates: List[Candidate]) -> Optional[Candidate]:
         if not candidates:
@@ -2648,6 +2786,8 @@ def prepare_candidates(
         "descartes_por_deporte": {},
         "descartes_por_namespace": {},
         "detalle_modelo": {},
+        "detalle_liquidez": [],
+        "metricas_descartes_finales": [],
         "qualified": 0,
         "eventos_calificados": 0,
         "observabilidad_mercados": summarize_market_observability(stake_events + bovada_events),
@@ -2697,11 +2837,33 @@ def prepare_candidates(
             bump(model_result.reason_code, e, model_result.reason_detail)
             continue
         model, model_active = model_result.probabilities, model_result.active
-        bov, score = match_event_scored(e, bovada_events)
 
-        cs, reasons = engine.evaluate_event(
+        stake_fresh, stake_freshness_code, stake_freshness_detail = market_freshness_status(e)
+        if not stake_fresh:
+            bump(stake_freshness_code, e, stake_freshness_detail)
+            continue
+
+        bov, score, liquidity_code, liquidity_detail = classify_bovada_liquidity(
+            e, bovada_events
+        )
+        if liquidity_code != "valido":
+            bump(liquidity_code, e, liquidity_detail)
+            audit["detalle_liquidez"].append({
+                "event_id": e.event_id,
+                "deporte": e.sport,
+                "liga": e.league,
+                "evento": f"{e.home} vs {e.away}",
+                "motivo": liquidity_code,
+                "match_score": round(score, 4),
+                "bovada_event_id": bov.event_id if bov else None,
+                "detalle": liquidity_detail,
+            })
+            continue
+
+        cs, reasons, gate_diagnostics = engine.evaluate_event(
             e, model, model_active, bov, score, promotions, physical_registry, movement_history,
         )
+        audit["metricas_descartes_finales"].extend(gate_diagnostics)
         for reason_key, detail in reasons.items():
             bump(reason_key, e, detail)
         if cs:

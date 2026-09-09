@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.6 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.7 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -477,7 +477,7 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.6 — Observabilidad de mercados", layout="wide")
+    st.set_page_config(page_title="Blindado v7.7 — Diagnóstico de gates", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
@@ -495,7 +495,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.6 — Observabilidad de mercados")
+    st.title("🎯 Blindado v7.7 — Diagnóstico de gates")
     st.caption(
         "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -640,7 +640,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.6", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.7", type="primary"):
                 candidates, audit = core.prepare_candidates(
                     stake_events, bovada_events, promotions, float(bankroll),
                     st.session_state.get("mlb_model_payload"),
@@ -663,10 +663,20 @@ def main():
                         "frescura": "cuota desactualizada",
                         "carried_forward_stale": "consulta fallida y última cuota válida vencida",
                         "market_observation_expired": "última observación exitosa vencida",
-                        "liquidez": "sin coincidencia Bovada fresca",
+                        "liquidez": "sin coincidencia Bovada válida (compatibilidad)",
+                        "bovada_sin_eventos_para_liga": "Bovada sin eventos para la liga",
+                        "bovada_evento_no_emparejado": "evento Stake no emparejado con Bovada",
+                        "bovada_match_score_bajo": "emparejamiento Bovada con score insuficiente",
+                        "bovada_seleccion_no_emparejada": "selección Stake no emparejada con Bovada",
+                        "bovada_observacion_vencida": "observación Bovada vencida",
                         "estado_fisico": "estado físico no verificado",
                         "deporte_o_liga_no_compatible": "deporte o liga sin circuito completo",
-                        "ev_confianza_divergencia": "falló EV, confianza o divergencia",
+                        "ev_confianza_divergencia": "falló EV, confianza o divergencia (compatibilidad)",
+                        "seleccion_referencia_no_encontrada": "selección de referencia no encontrada",
+                        "cuota_fuera_de_rango": "cuota efectiva fuera de 1.40–2.00",
+                        "ev_menor_4": "EV menor de 4%",
+                        "divergencia_mayor_9": "divergencia mayor de 9 puntos",
+                        "confianza_menor_8": "confianza menor de 8/10",
                         "en_vivo_o_sin_hora_valida": "en vivo, iniciado o sin hora válida",
                         "riesgo_empate_sin_dnb": "riesgo de empate sin DNB",
                     }
@@ -704,6 +714,24 @@ def main():
                 if model_details:
                     with st.expander("Detalle técnico de modelos no disponibles"):
                         st.json(model_details)
+
+                liquidity_details = audit.get("detalle_liquidez", [])
+                if liquidity_details:
+                    st.subheader("Diagnóstico de emparejamiento y liquidez Bovada")
+                    st.caption(
+                        "La observación vencida reutiliza exactamente la máquina de frescura v7.6; "
+                        "las demás causas describen estructura o matching."
+                    )
+                    st.dataframe(liquidity_details, use_container_width=True, hide_index=True)
+
+                final_gate_metrics = audit.get("metricas_descartes_finales", [])
+                if final_gate_metrics:
+                    st.subheader("Métricas crudas de descartes en gates finales")
+                    st.caption(
+                        "EV y divergencia se guardan como proporciones (0.04 = 4%); "
+                        "confianza usa escala 0–10."
+                    )
+                    st.dataframe(final_gate_metrics, use_container_width=True, hide_index=True)
 
                 observability = audit.get("observabilidad_mercados", {})
                 provider_sports = observability.get("por_proveedor_deporte", {})

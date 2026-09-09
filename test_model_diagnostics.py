@@ -233,5 +233,116 @@ class SnapshotSchemaCompatibilityTests(unittest.TestCase):
         self.assertIsNone(stake[0].source_last_update_at)
 
 
+class LiquiditySplitTests(unittest.TestCase):
+    def _event(self, source="stake", league="NBA", home="Alpha United", away="Beta City",
+               start_time=None, fetched_minutes=1, selections=None):
+        now = datetime.now(UTC)
+        return core.NormalizedEvent(
+            event_id=f"{source}:{home}:{away}", source=source,
+            sport="basketball", league=league, home=home, away=away,
+            start_time=start_time, is_live=False, status="active",
+            last_update=now.isoformat(), market_fetched_at=(now - timedelta(minutes=fetched_minutes)).isoformat(),
+            markets=[core.NormalizedMarket("moneyline", "Moneyline", [
+                core.NormalizedOutcome(name, odds)
+                for name, odds in (selections or [(home, 1.80), (away, 1.95)])
+            ])], raw={},
+        )
+
+    def test_liquidity_cascade_distinguishes_missing_league_and_event(self):
+        stake = self._event()
+        _, _, code, _ = core.classify_bovada_liquidity(stake, [])
+        self.assertEqual(code, "bovada_sin_eventos_para_liga")
+
+        unrelated = self._event(
+            source="bovada", league="basketball_nba", home="Gamma", away="Delta"
+        )
+        _, _, code, _ = core.classify_bovada_liquidity(stake, [unrelated])
+        self.assertEqual(code, "bovada_evento_no_emparejado")
+
+    def test_liquidity_cascade_exposes_low_score_and_selection_failure(self):
+        stake = self._event(start_time=None)
+        weak = self._event(
+            source="bovada", league="basketball_nba",
+            home="Alpha", away="Beta North Town", start_time=None,
+        )
+        _, score, code, _ = core.classify_bovada_liquidity(stake, [weak])
+        self.assertGreaterEqual(score, 0.35)
+        self.assertLess(score, core.LIQUIDITY_MIN_MATCH_SCORE)
+        self.assertEqual(code, "bovada_match_score_bajo")
+
+        matched_names_wrong_selections = self._event(
+            source="bovada", league="basketball_nba",
+            selections=[("Choice One", 1.9), ("Choice Two", 1.9)],
+        )
+        _, _, code, _ = core.classify_bovada_liquidity(
+            stake, [matched_names_wrong_selections]
+        )
+        self.assertEqual(code, "bovada_seleccion_no_emparejada")
+
+    def test_bovada_expiration_reuses_v76_freshness_state(self):
+        now = datetime.now(UTC)
+        start = (now + timedelta(hours=3)).isoformat()
+        stake = self._event(start_time=start)
+        stale = self._event(
+            source="bovada", league="basketball_nba", start_time=start, fetched_minutes=40
+        )
+        _, _, code, detail = core.classify_bovada_liquidity(stake, [stale])
+        self.assertEqual(code, "bovada_observacion_vencida")
+        self.assertIn("market_observation_expired", detail)
+
+
+class FinalGateSplitTests(unittest.TestCase):
+    def _event_pair(self):
+        now = datetime.now(UTC)
+        start = (now + timedelta(hours=3)).isoformat()
+        common = dict(
+            sport="basketball", league="NBA", home="Home Team", away="Away Team",
+            start_time=start, is_live=False, status="active", last_update=now.isoformat(),
+            market_fetched_at=now.isoformat(), raw={},
+        )
+        stake = core.NormalizedEvent(
+            event_id="stake-final", source="stake", markets=[core.NormalizedMarket(
+                "moneyline", "Moneyline", [
+                    core.NormalizedOutcome("Home Team", 1.80),
+                    core.NormalizedOutcome("Away Team", 1.80),
+                ],
+            )], **common,
+        )
+        bovada = core.NormalizedEvent(
+            event_id="bovada-final", source="bovada", markets=[core.NormalizedMarket(
+                "moneyline", "Moneyline", [
+                    core.NormalizedOutcome("Home Team", 1.90),
+                    core.NormalizedOutcome("Away Team", 1.90),
+                ],
+            )], **common,
+        )
+        return stake, bovada
+
+    def test_confidence_failure_keeps_raw_ev_divergence_and_confidence(self):
+        stake, bovada = self._event_pair()
+        engine = core.BlindadoEngine()
+        candidates, reasons, metrics = engine.evaluate_event(
+            stake, {"Home Team": 0.58, "Away Team": 0.42}, True,
+            bovada, 1.0, [], core.PhysicalStatusRegistry(), {},
+        )
+        self.assertEqual(candidates, [])
+        self.assertEqual(list(reasons), ["confianza_menor_8"])
+        self.assertTrue(metrics)
+        self.assertTrue(all(row["motivo"] == "confianza_menor_8" for row in metrics))
+        self.assertIsNotNone(metrics[0]["ev_calculado"])
+        self.assertIsNotNone(metrics[0]["divergencia_calculada"])
+        self.assertIsNotNone(metrics[0]["confianza_calculada"])
+
+    def test_ev_failure_precedes_composite_confidence(self):
+        stake, bovada = self._event_pair()
+        engine = core.BlindadoEngine()
+        _, reasons, metrics = engine.evaluate_event(
+            stake, {"Home Team": 0.54, "Away Team": 0.46}, True,
+            bovada, 1.0, [], core.PhysicalStatusRegistry(), {},
+        )
+        self.assertEqual(list(reasons), ["ev_menor_4"])
+        self.assertTrue(all(row["confianza_calculada"] is None for row in metrics))
+
+
 if __name__ == "__main__":
     unittest.main()
