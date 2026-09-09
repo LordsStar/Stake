@@ -11006,6 +11006,26 @@
         "elo": 1500.0,
         "games": 1
       }
+    },
+    "soccer:uefa-champions-league-srl": {
+      "beveren": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "oud heverlee leuven": {
+        "elo": 1491.569935046895,
+        "games": 1
+      }
+    },
+    "soccer:the-fa-women-apos-s-super-league": {
+      "iraklis 1908": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "asteras tripolis": {
+        "elo": 1511.569935046895,
+        "games": 1
+      }
     }
   },
   "brier": {
@@ -57038,6 +57058,12 @@
       "thesportsdb:2572370",
       "thesportsdb:2572245",
       "thesportsdb:2572246"
+    ],
+    "soccer:uefa-champions-league-srl": [
+      "thesportsdb:2496734"
+    ],
+    "soccer:the-fa-women-apos-s-super-league": [
+      "thesportsdb:2539939"
     ]
   },
   "draw_stats": {
@@ -57196,6 +57222,14 @@
     "futsal:primera-division": {
       "total": 5,
       "draws": 3
+    },
+    "soccer:uefa-champions-league-srl": {
+      "total": 1,
+      "draws": 0
+    },
+    "soccer:the-fa-women-apos-s-super-league": {
+      "total": 1,
+      "draws": 0
     }
   },
   "activation_state": {
@@ -57504,6 +57538,22 @@
       "last_brier": null
     },
     "futsal:primera-division": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:uefa-champions-league-srl": {
+      "policy_version": 1,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 1,
+      "last_skill": null,
+      "last_brier": null
+    },
+    "soccer:the-fa-women-apos-s-super-league": {
       "policy_version": 1,
       "active": false,
       "pass_streak": 0,

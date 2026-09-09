@@ -211932,5 +211932,29 @@
     "status": "final",
     "source": "espn",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "soccer",
+    "league": "the-fa-women-apos-s-super-league",
+    "event_id": "thesportsdb:2539939",
+    "start_time": "2026-09-07T15:00:00",
+    "home_name": "Iraklis 1908",
+    "away_name": "Asteras Tripolis",
+    "home_score": "0",
+    "away_score": "2",
+    "status": "final",
+    "source": "thesportsdb"
+  },
+  {
+    "sport": "soccer",
+    "league": "uefa-champions-league-srl",
+    "event_id": "thesportsdb:2496734",
+    "start_time": "2026-09-06T17:15:00",
+    "home_name": "Beveren",
+    "away_name": "Oud-Heverlee Leuven",
+    "home_score": "3",
+    "away_score": "0",
+    "status": "final",
+    "source": "thesportsdb"
   }
 ]
