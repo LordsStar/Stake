@@ -19,8 +19,8 @@
     "home_name": "Athletics",
     "away_id": "141",
     "away_name": "Toronto Blue Jays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669620",
+    "home_starter_name": "Brady Basso",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -151,8 +151,8 @@
     "away_name": "Arizona Diamondbacks",
     "home_starter_id": "663738",
     "home_starter_name": "Daniel Lynch IV",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "668678",
+    "away_starter_name": "Zac Gallen",
     "lineups_confirmed": false
   },
   {
@@ -164,8 +164,8 @@
     "away_name": "Pittsburgh Pirates",
     "home_starter_id": "663436",
     "home_starter_name": "Davis Martin",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669199",
+    "away_starter_name": "Lake Bachar",
     "lineups_confirmed": false
   },
   {
@@ -422,8 +422,8 @@
     "home_name": "Athletics",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605488",
+    "home_starter_name": "Jeffrey Springs",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -643,8 +643,8 @@
     "home_name": "Athletics",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "695611",
+    "home_starter_name": "Gage Jump",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
