@@ -62,7 +62,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.4-schema4-mlb-prospective"
+APP_VERSION = "7.5-schema4-model-diagnostics"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -253,8 +253,14 @@ BRIER_MAX = 0.245
 BRIER_MULTICLASS_MAX = 0.60
 BRIER_MIN = 30
 BRIER_WINDOW = 200
-BRIER_SKILL_MIN = 0.02
-BRIER_GATE_MODE = "either"
+# Un modelo no puede activarse solo por tener un Brier absoluto aceptable:
+# tambien debe superar al baseline. El umbral de entrada de 2.5% evita que
+# modelos marginales (por ejemplo, skill 2.42%) entren por ruido de muestra.
+BRIER_SKILL_MIN = 0.025
+BRIER_SKILL_EXIT = 0.015
+BRIER_HYSTERESIS_RUNS = 3
+BRIER_ACTIVATION_POLICY_VERSION = 1
+BRIER_GATE_MODE = "all"
 ELO_HOME_BY_SPORT = {
     "american-football": 50.0,
     "basketball": 60.0,
@@ -278,7 +284,7 @@ ELO_HOME_BY_SPORT = {
 }
 
 BLINDADO_PROMPT = """
-PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.4 — Stake First, Gated)
+PROMPT — Analista Cuantitativo de Apuesta Única (Blindado v7.5 — Stake First, Gated)
 
 OBJETIVO:
 Seleccionar COMO MÁXIMO UNA sola apuesta ejecutable en Stake.com.
@@ -1446,6 +1452,7 @@ class EloModel:
         self.state = load_json(path, {
             "schema_version": ELO_SCHEMA_VERSION,
             "ratings": {}, "brier": {}, "processed": {}, "draw_stats": {},
+            "activation_state": {},
         })
 
     def schema_is_current(self) -> bool:
@@ -1466,7 +1473,9 @@ class EloModel:
         # domina progresivamente y los extremos quedan acotados.
         return min(0.40, max(0.08, (draws + 2.6) / (total + 10.0)))
 
-    def evaluation_metrics(self, namespace: str) -> Dict[str, Any]:
+    def evaluation_metrics(
+        self, namespace: str, use_persisted_activation: bool = True
+    ) -> Dict[str, Any]:
         """Métricas walk-forward sobre una ventana reciente y un baseline.
 
         Solo entran observaciones generadas cuando ambos participantes ya
@@ -1507,30 +1516,96 @@ class EloModel:
         beats_baseline = skill is not None and skill >= BRIER_SKILL_MIN
         absolute_limit = BRIER_MULTICLASS_MAX if kind == "multiclass" else BRIER_MAX
         absolute_ok = brier <= absolute_limit
-        # Schema 4: los dos caminos son alternativos. Esto evita rechazar un
-        # Brier absoluto excelente solo porque el baseline de una competición
-        # muy desigual también sea excepcionalmente bajo.
-        active = enough and (beats_baseline or absolute_ok)
+        # v7.5: ambos criterios son obligatorios. Un skill negativo significa
+        # que el modelo pierde contra el baseline aunque el Brier absoluto
+        # parezca bueno; permitirlo produciria falsa confianza estadistica.
+        strict_pass = enough and beats_baseline and absolute_ok
+        active = strict_pass
+        activation_state = self.state.get("activation_state", {}).get(namespace)
+        if (
+            use_persisted_activation
+            and isinstance(activation_state, dict)
+            and activation_state.get("policy_version") == BRIER_ACTIVATION_POLICY_VERSION
+        ):
+            active = bool(activation_state.get("active"))
         if not enough:
             reason = f"{len(hist)}/{BRIER_MIN} predicciones maduras"
         elif absolute_ok and beats_baseline:
             reason = "calibración aprobada por Brier absoluto y skill"
         elif absolute_ok:
-            reason = f"calibración aprobada por Brier absoluto <= {absolute_limit:.3f}"
+            reason = (
+                f"Brier absoluto aprobado, pero skill "
+                f"{skill if skill is not None else 'N/D'} < {BRIER_SKILL_MIN:.1%}"
+            )
         elif beats_baseline:
-            reason = f"calibración aprobada por skill >= {BRIER_SKILL_MIN:.0%}"
+            reason = (
+                f"skill aprobado, pero Brier {brier:.4f} > "
+                f"{absolute_limit:.3f}"
+            )
         else:
             reason = (
                 f"Brier {brier:.4f} > {absolute_limit:.3f} y skill "
                 f"{skill if skill is not None else 'N/D'} < {BRIER_SKILL_MIN:.0%}"
+            )
+        if active and not strict_pass:
+            reason = (
+                f"modelo activo en banda de histéresis; skill >= {BRIER_SKILL_EXIT:.1%} "
+                f"pero < {BRIER_SKILL_MIN:.1%}"
             )
         return {
             "kind": kind, "samples": len(hist), "total_samples": len(full_hist),
             "brier": brier, "baseline_brier": baseline, "skill": skill,
             "absolute_limit": absolute_limit, "absolute_ok": absolute_ok,
             "beats_baseline": beats_baseline, "gate_mode": BRIER_GATE_MODE,
+            "strict_pass": strict_pass,
+            "activation_state": activation_state,
             "active": active, "reason": reason,
         }
+
+    def refresh_activation_state(self, namespace: str) -> Dict[str, Any]:
+        """Actualiza la histéresis una vez por corrida de entrenamiento.
+
+        La primera migración conserva activos únicamente los modelos que ya
+        cumplen el nuevo gate estricto. Después exige tres corridas para los
+        cambios de estado y evita oscilaciones por ruido alrededor del umbral.
+        """
+        metrics = self.evaluation_metrics(namespace, use_persisted_activation=False)
+        states = self.state.setdefault("activation_state", {})
+        previous = states.get(namespace)
+        strict_pass = bool(metrics.get("strict_pass"))
+        skill = metrics.get("skill")
+        retention_pass = bool(
+            metrics.get("samples", 0) >= BRIER_MIN
+            and metrics.get("absolute_ok")
+            and skill is not None
+            and skill >= BRIER_SKILL_EXIT
+        )
+
+        if not isinstance(previous, dict) or previous.get("policy_version") != BRIER_ACTIVATION_POLICY_VERSION:
+            state = {
+                "policy_version": BRIER_ACTIVATION_POLICY_VERSION,
+                "active": strict_pass,
+                "pass_streak": BRIER_HYSTERESIS_RUNS if strict_pass else 0,
+                "fail_streak": 0 if strict_pass else 1,
+            }
+        else:
+            state = dict(previous)
+            if state.get("active"):
+                state["pass_streak"] = 0
+                state["fail_streak"] = 0 if retention_pass else int(state.get("fail_streak", 0)) + 1
+                if state["fail_streak"] >= BRIER_HYSTERESIS_RUNS:
+                    state["active"] = False
+                    state["fail_streak"] = 0
+            else:
+                state["fail_streak"] = 0
+                state["pass_streak"] = int(state.get("pass_streak", 0)) + 1 if strict_pass else 0
+                if state["pass_streak"] >= BRIER_HYSTERESIS_RUNS:
+                    state["active"] = True
+                    state["pass_streak"] = 0
+        state["last_skill"] = skill
+        state["last_brier"] = metrics.get("brier")
+        states[namespace] = state
+        return state
 
     def probability_for(self, sport: str, home_id: str, away_id: str) -> Optional[float]:
         ratings = self.state.get("ratings", {}).get(sport, {})
@@ -1619,23 +1694,37 @@ class EloModel:
                 "tipo_brier": metrics["kind"],
                 "limite_brier_absoluto": metrics.get("absolute_limit"),
                 "modo_gate_brier": BRIER_GATE_MODE,
+                "criterios_gate_brier": "brier_absoluto_y_skill",
+                "skill_activacion": BRIER_SKILL_MIN,
+                "skill_desactivacion": BRIER_SKILL_EXIT,
+                "corridas_confirmacion": BRIER_HYSTERESIS_RUNS,
                 "brier": None if metrics["brier"] is None else round(metrics["brier"], 4),
                 "baseline_brier": None if metrics["baseline_brier"] is None else round(metrics["baseline_brier"], 4),
                 "brier_skill_score": None if metrics["skill"] is None else round(metrics["skill"], 4),
                 "ventaja_local_elo": self.home_advantage(sport),
                 "motivo_calibracion": calibration_reason,
+                "estado_histeresis": metrics.get("activation_state"),
                 "modelo_activo": bool(calibrados >= 2 and metrics["active"]),
             }
         return out
 
 
-def build_elo_model(
+@dataclass
+class ModelBuildResult:
+    probabilities: Dict[str, float]
+    active: bool
+    reason_code: str
+    reason_detail: str
+    namespace: str
+
+
+def build_elo_model_detailed(
     event: NormalizedEvent,
     elo: EloModel,
     aliases: TeamAliasRegistry,
     mlb_model: Any = None,
     mlb_pregame: Optional[List[Dict[str, Any]]] = None,
-) -> Tuple[Dict[str, float], bool]:
+) -> ModelBuildResult:
     """Punto de entrada del modelo independiente.
 
     MLB usa su modelo prepartido especializado cuando esta calibrado. El
@@ -1647,27 +1736,88 @@ def build_elo_model(
             try:
                 from mlb_model import MLBPregameModel
                 mlb_model = MLBPregameModel()
-            except Exception:
-                return {}, False
-        probability, _ = mlb_model.probability_for_event(event, mlb_pregame or [])
+            except Exception as exc:
+                return ModelBuildResult(
+                    {}, False, "modelo_no_implementado",
+                    f"modelo MLB especializado no disponible: {exc}", namespace,
+                )
+        coverage = mlb_model.coverage()
+        if not coverage.get("modelo_activo"):
+            return ModelBuildResult(
+                {}, False, "modelo_no_aprobado",
+                str(coverage.get("motivo", "modelo MLB no aprobado")), namespace,
+            )
+        probability, detail = mlb_model.probability_for_event(event, mlb_pregame or [])
         if probability is None:
-            return {}, False
-        return {event.home: probability, event.away: 1.0 - probability}, True
+            return ModelBuildResult(
+                {}, False, "variables_prepartido_incompletas", str(detail), namespace,
+            )
+        return ModelBuildResult(
+            {event.home: probability, event.away: 1.0 - probability},
+            True, "elegible", "modelo MLB especializado disponible", namespace,
+        )
     if not elo.schema_is_current():
-        return {}, False
+        return ModelBuildResult(
+            {}, False, "estado_modelo_incompatible",
+            f"estado Elo no usa schema {ELO_SCHEMA_VERSION}", namespace,
+        )
     home_id = aliases.canonical_id(namespace, event.home)
     away_id = aliases.canonical_id(namespace, event.away)
+    ratings = elo.state.get("ratings", {}).get(namespace, {})
+    home_rating, away_rating = ratings.get(home_id), ratings.get(away_id)
+    if not home_rating or not away_rating:
+        return ModelBuildResult(
+            {}, False, "historial_insuficiente",
+            "uno o ambos participantes todavía no tienen historial Elo", namespace,
+        )
+    if (
+        int(home_rating.get("games", 0)) < ELO_MIN_GAMES
+        or int(away_rating.get("games", 0)) < ELO_MIN_GAMES
+    ):
+        return ModelBuildResult(
+            {}, False, "historial_insuficiente",
+            f"uno o ambos participantes tienen menos de {ELO_MIN_GAMES} partidos", namespace,
+        )
+    metrics = elo.evaluation_metrics(namespace)
+    if not metrics.get("active"):
+        return ModelBuildResult(
+            {}, False, "modelo_no_aprobado", str(metrics.get("reason")), namespace,
+        )
     principal = next((m for m in event.markets if m.key in ("moneyline", "draw_no_bet")), None)
     has_draw = bool(principal and any(normalize_name(o.selection) in {"draw", "tie", "empate"} for o in principal.outcomes))
     if has_draw:
         probs = elo.probabilities_three_way(namespace, home_id, away_id)
         if not probs:
-            return {}, False
-        return {event.home: probs["home"], "Draw": probs["draw"], "Empate": probs["draw"], event.away: probs["away"]}, True
+            return ModelBuildResult(
+                {}, False, "historial_insuficiente",
+                f"historial de empates menor de {BRIER_MIN} partidos", namespace,
+            )
+        return ModelBuildResult(
+            {event.home: probs["home"], "Draw": probs["draw"], "Empate": probs["draw"], event.away: probs["away"]},
+            True, "elegible", "Elo 1X2 calibrado", namespace,
+        )
     p_home = elo.probability_for(namespace, home_id, away_id)
     if p_home is None:
-        return {}, False
-    return {event.home: p_home, event.away: 1 - p_home}, True
+        return ModelBuildResult(
+            {}, False, "variables_prepartido_incompletas",
+            "no fue posible generar la probabilidad Elo del evento", namespace,
+        )
+    return ModelBuildResult(
+        {event.home: p_home, event.away: 1 - p_home},
+        True, "elegible", "Elo calibrado", namespace,
+    )
+
+
+def build_elo_model(
+    event: NormalizedEvent,
+    elo: EloModel,
+    aliases: TeamAliasRegistry,
+    mlb_model: Any = None,
+    mlb_pregame: Optional[List[Dict[str, Any]]] = None,
+) -> Tuple[Dict[str, float], bool]:
+    """Interfaz retrocompatible; el motor usa la variante detallada."""
+    result = build_elo_model_detailed(event, elo, aliases, mlb_model, mlb_pregame)
+    return result.probabilities, result.active
 
 
 def market_consensus_info(stake_event: NormalizedEvent, bovada_event: Optional[NormalizedEvent]) -> Dict[str, float]:
@@ -1769,6 +1919,8 @@ def train_elo_from_results(elo: EloModel, aliases: TeamAliasRegistry, results: L
         home_win = 1.0 if hs > aw else (0.5 if hs == aw else 0.0)
         if elo.update(namespace, home_id, away_id, home_win, r["event_id"]):
             updated += 1
+    for namespace in elo.state.get("ratings", {}):
+        elo.refresh_activation_state(namespace)
     elo.save()
     return updated
 
@@ -2128,7 +2280,7 @@ class BlindadoEngine:
 
         # --- Gate 1: modelo independiente calibrado (Elo o MLB especializado) ---
         if not model_active or not model_probs:
-            reasons["sin_modelo"] = "sin modelo estadístico independiente calibrado o sin variables prepartido"
+            reasons["modelo_no_aprobado"] = "modelo estadístico no disponible o no aprobado"
             return [], reasons
 
         # --- Gate 2: frescura de mercado ---
@@ -2224,40 +2376,80 @@ def prepare_candidates(
     movement_history = append_movement_history(stake_events)
 
     candidates: List[Candidate] = []
-    audit: Dict[str, Any] = {"stake_events": len(stake_events), "descartes": {}, "qualified": 0}
+    audit: Dict[str, Any] = {
+        "stake_events": len(stake_events),
+        "descartes": {},
+        "descartes_por_deporte": {},
+        "descartes_por_namespace": {},
+        "detalle_modelo": {},
+        "qualified": 0,
+        "eventos_calificados": 0,
+    }
 
-    def bump(reason: str):
+    def bump(reason: str, event: NormalizedEvent, detail: Optional[str] = None):
         audit["descartes"][reason] = audit["descartes"].get(reason, 0) + 1
+        sport = event.sport or "desconocido"
+        namespace = elo_namespace(event.sport, event.league)
+        by_sport = audit["descartes_por_deporte"].setdefault(sport, {})
+        by_sport[reason] = by_sport.get(reason, 0) + 1
+        by_namespace = audit["descartes_por_namespace"].setdefault(namespace, {})
+        by_namespace[reason] = by_namespace.get(reason, 0) + 1
+        if detail:
+            details = audit["detalle_modelo"].setdefault(reason, {})
+            details[detail] = details.get(detail, 0) + 1
 
     for e in stake_events:
         start = parse_dt(e.start_time)
         if not start or start <= utc_now() or e.is_live:
-            bump("en_vivo_o_sin_hora_valida")
+            bump("en_vivo_o_sin_hora_valida", e)
             continue
 
         capable, _ = pick_capability(e)
         if not capable:
-            bump("deporte_o_liga_no_compatible")
+            bump("deporte_o_liga_no_compatible", e)
+            continue
+
+        # Conserva el orden de gates del motor: un evento sin mercado
+        # principal no debe inflar artificialmente los fallos de modelo.
+        principal_market = next(
+            (m for m in e.markets if m.key in ("moneyline", "draw_no_bet")), None
+        )
+        if principal_market is None:
+            bump("sin_mercado", e)
             continue
 
         if sport_family(e) == "soccer":
             odds = market_odds(e)
             p_draw = next((p for n, p in devig(odds).items() if normalize_name(n) == "draw"), None)
             if p_draw is not None and p_draw >= 0.30 and not any(m.key == "draw_no_bet" for m in e.markets):
-                bump("riesgo_empate_sin_dnb")
+                bump("riesgo_empate_sin_dnb", e)
                 continue
 
-        model, model_active = build_elo_model(e, elo, aliases, mlb_model, mlb_pregame)
+        model_result = build_elo_model_detailed(e, elo, aliases, mlb_model, mlb_pregame)
+        if not model_result.active:
+            bump(model_result.reason_code, e, model_result.reason_detail)
+            continue
+        model, model_active = model_result.probabilities, model_result.active
         bov, score = match_event_scored(e, bovada_events)
 
         cs, reasons = engine.evaluate_event(
             e, model, model_active, bov, score, promotions, physical_registry, movement_history,
         )
-        for reason_key in reasons:
-            bump(reason_key)
+        for reason_key, detail in reasons.items():
+            bump(reason_key, e, detail)
+        if cs:
+            audit["eventos_calificados"] += 1
         candidates.extend(cs)
 
     audit["qualified"] = len(candidates)
+    discarded_events = sum(audit["descartes"].values())
+    audit["consistencia_auditoria"] = {
+        "eventos_descartados": discarded_events,
+        "eventos_calificados": audit["eventos_calificados"],
+        "total_reconciliado": discarded_events + audit["eventos_calificados"],
+        "total_entrada": len(stake_events),
+        "cuadra": discarded_events + audit["eventos_calificados"] == len(stake_events),
+    }
     audit["elo_coverage"] = elo.coverage()
     if mlb_model is not None:
         audit["mlb_model"] = mlb_model.coverage()

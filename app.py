@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.4 / Elo schema 4 + MLB prospectivo. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.5 / Elo schema 4 + MLB prospectivo. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -120,8 +120,11 @@ def render_health_panel(
     active_namespaces = sum(1 for info in coverage.values() if info.get("modelo_activo"))
     st.caption(
         f"Histórico Elo: {len(results)} resultados. Calibración: >= {core.BRIER_MIN} predicciones maduras, "
-        f"ventana {core.BRIER_WINDOW}; se activa por Brier absoluto (binario <= {core.BRIER_MAX:.3f}, "
-        f"1X2 <= {core.BRIER_MULTICLASS_MAX:.3f}) O por skill >= {core.BRIER_SKILL_MIN:.0%} frente al baseline."
+        f"ventana {core.BRIER_WINDOW}; exige simultáneamente Brier absoluto "
+        f"(binario <= {core.BRIER_MAX:.3f}, 1X2 <= {core.BRIER_MULTICLASS_MAX:.3f}) "
+        f"Y skill >= {core.BRIER_SKILL_MIN:.1%} frente al baseline. Histéresis: "
+        f"no se desactiva hasta caer bajo {core.BRIER_SKILL_EXIT:.1%} durante "
+        f"{core.BRIER_HYSTERESIS_RUNS} corridas."
     )
     if downloaded_markets and downloaded_markets == evaluable_markets:
         st.info(
@@ -474,11 +477,12 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.4 — Stake / MLB prospectivo", layout="wide")
+    st.set_page_config(page_title="Blindado v7.5 — Diagnóstico de modelos", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
-        "BRIER_WINDOW", "BRIER_SKILL_MIN", "BRIER_MULTICLASS_MAX",
+        "BRIER_WINDOW", "BRIER_SKILL_MIN", "BRIER_SKILL_EXIT",
+        "BRIER_HYSTERESIS_RUNS", "BRIER_MULTICLASS_MAX",
         "BRIER_GATE_MODE", "is_esport_slug",
     )
     missing_core = [name for name in required_core if not hasattr(core, name)]
@@ -489,7 +493,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.4 — Stake completo / MLB prospectivo")
+    st.title("🎯 Blindado v7.5 — Diagnóstico de modelos")
     st.caption(
         "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -634,7 +638,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.4", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.5", type="primary"):
                 candidates, audit = core.prepare_candidates(
                     stake_events, bovada_events, promotions, float(bankroll),
                     st.session_state.get("mlb_model_payload"),
@@ -648,7 +652,11 @@ def main():
                     st.error("PICK DEL DÍA: NINGUNO")
                     st.write("Ningún evento superó simultáneamente todos los gates. Las causas exactas de esta ejecución son:")
                     labels = {
-                        "sin_modelo": "modelo ausente/no calibrado o variables prepartido incompletas",
+                        "modelo_no_implementado": "modelo estadístico no implementado o no disponible",
+                        "historial_insuficiente": "participantes o liga con historial insuficiente",
+                        "modelo_no_aprobado": "modelo existente, pero todavía no aprobado por sus gates",
+                        "variables_prepartido_incompletas": "modelo activo, pero faltan variables prepartido",
+                        "estado_modelo_incompatible": "estado del modelo incompatible con el schema actual",
                         "sin_mercado": "sin moneyline/DNB",
                         "frescura": "cuota desactualizada",
                         "liquidez": "sin coincidencia Bovada fresca",
@@ -666,6 +674,32 @@ def main():
 
                 st.subheader("Auditoría (por qué se descartó cada evento)")
                 st.json(audit)
+                consistency = audit.get("consistencia_auditoria", {})
+                if consistency and not consistency.get("cuadra"):
+                    st.error("La auditoría no reconcilia todos los eventos de entrada; revisa el pipeline.")
+                elif consistency:
+                    st.success(
+                        f"Auditoría reconciliada: {consistency.get('total_reconciliado')} / "
+                        f"{consistency.get('total_entrada')} eventos."
+                    )
+
+                by_sport = audit.get("descartes_por_deporte", {})
+                if by_sport:
+                    st.subheader("Diagnóstico de descartes por deporte")
+                    rows = []
+                    for sport, reasons in sorted(by_sport.items()):
+                        for reason, count in sorted(reasons.items(), key=lambda item: item[1], reverse=True):
+                            rows.append({
+                                "deporte": sport,
+                                "motivo": labels.get(reason, reason),
+                                "eventos": count,
+                            })
+                    st.dataframe(rows, use_container_width=True, hide_index=True)
+
+                model_details = audit.get("detalle_modelo", {})
+                if model_details:
+                    with st.expander("Detalle técnico de modelos no disponibles"):
+                        st.json(model_details)
 
             if st.button("📋 Generar prompt Blindado para IA"):
                 movements = core.movements_summary(movement_history)
