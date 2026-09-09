@@ -23,7 +23,7 @@
     "home_starter_name": "Brady Basso",
     "away_starter_id": "680755",
     "away_starter_name": "Braydon Fisher",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823172",
@@ -49,7 +49,7 @@
     "home_starter_name": "Walker Buehler",
     "away_starter_id": "800600",
     "away_starter_name": "Jackson Kent",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823090",
@@ -88,7 +88,7 @@
     "home_starter_name": "Cristopher Sánchez",
     "away_starter_id": "686613",
     "away_starter_name": "Hunter Brown",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823818",
@@ -114,7 +114,7 @@
     "home_starter_name": "Jake Bennett",
     "away_starter_id": "696270",
     "away_starter_name": "Ryan Johnson",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823497",
@@ -136,8 +136,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "139",
     "away_name": "Tampa Bay Rays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "625643",
+    "home_starter_name": "Reynaldo López",
     "away_starter_id": "643377",
     "away_starter_name": "Griffin Jax",
     "lineups_confirmed": false
@@ -292,10 +292,10 @@
     "home_name": "Washington Nationals",
     "away_id": "108",
     "away_name": "Los Angeles Angels",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "676917",
+    "home_starter_name": "Cade Cavalli",
+    "away_starter_id": "579328",
+    "away_starter_name": "Yusei Kikuchi",
     "lineups_confirmed": false
   },
   {
@@ -448,10 +448,10 @@
     "home_name": "San Francisco Giants",
     "away_id": "135",
     "away_name": "San Diego Padres",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "683627",
+    "home_starter_name": "Anthony Molina",
+    "away_starter_id": "592662",
+    "away_starter_name": "Robbie Ray",
     "lineups_confirmed": false
   },
   {
@@ -513,10 +513,10 @@
     "home_name": "Washington Nationals",
     "away_id": "108",
     "away_name": "Los Angeles Angels",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "674841",
+    "home_starter_name": "Andrew Alvarez",
+    "away_starter_id": "700712",
+    "away_starter_name": "Walbert Ureña",
     "lineups_confirmed": false
   },
   {
@@ -526,10 +526,10 @@
     "home_name": "San Francisco Giants",
     "away_id": "135",
     "away_name": "San Diego Padres",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "702885",
+    "home_starter_name": "Cesar Perdomo",
+    "away_starter_id": "650633",
+    "away_starter_name": "Michael King",
     "lineups_confirmed": false
   },
   {

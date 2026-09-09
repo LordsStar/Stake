@@ -1,78 +1,58 @@
 {
-  "generated_at": "2026-09-09T16:48:43.384993+00:00",
-  "targets_in_snapshot": 239,
+  "generated_at": "2026-09-09T19:54:11.549231+00:00",
+  "targets_in_snapshot": 234,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "soccer",
-      "stake_league": "the-fa-women-apos-s-super-league",
-      "source_league": "Greek Super League 1",
-      "similarity": 0.577
+      "sport": "volleyball",
+      "stake_league": "asian-championship",
+      "source_league": "Mens European Volleyball Championship",
+      "similarity": 0.582
     },
     {
-      "sport": "soccer",
-      "stake_league": "u20-carioca-serie-a2",
-      "source_league": "Italian Serie A",
-      "similarity": 0.629
+      "sport": "volleyball",
+      "stake_league": "european-championship",
+      "source_league": "Mens European Volleyball Championship",
+      "similarity": 0.724
     },
     {
-      "sport": "soccer",
-      "stake_league": "uefa-champions-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.615
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "uefa-champions-league-srl",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.558
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "uefa-europa-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.667
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "uefa-nations-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.595
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "uefa-youth-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.629
+      "sport": "aussie-rules",
+      "stake_league": "afl-women",
+      "source_league": "AFL Womens",
+      "similarity": 0.947
     }
   ],
   "unmatched": [
-    "soccer/u20-copa-do-brasil: sin liga equivalente segura",
-    "soccer/u20-womens-world-cup: sin liga equivalente segura",
-    "soccer/uefa-europa-conference-league: sin liga equivalente segura",
-    "soccer/ukraine-cup: sin liga equivalente segura",
-    "soccer/urvalsdeild: sin liga equivalente segura",
-    "soccer/v-league: sin liga equivalente segura",
-    "soccer/victoria-npl-women: sin liga equivalente segura",
-    "soccer/virsliga: sin liga equivalente segura",
-    "table-tennis/czech-liga-pro: sin liga equivalente segura",
-    "tennis/atp-challenger-cassis-france-men-double: sin liga equivalente segura",
-    "tennis/atp-challenger-cassis-france-men-singles: sin liga equivalente segura",
-    "tennis/atp-challenger-genoa-italy-men-double: sin liga equivalente segura",
-    "tennis/atp-challenger-genoa-italy-men-singles: sin liga equivalente segura",
-    "tennis/atp-challenger-istanbul-3-turkiye-men-singles: sin liga equivalente segura",
-    "tennis/atp-challenger-phan-thiet-3-vietnam-men-singles: sin liga equivalente segura",
-    "tennis/atp-challenger-seville-spain-men-double: sin liga equivalente segura",
-    "tennis/atp-challenger-seville-spain-men-singles: sin liga equivalente segura"
+    "tennis/atp-challenger-tulln-austria-men-singles: sin liga equivalente segura",
+    "tennis/srl-summer-invitational-shymkent-kaz: sin liga equivalente segura",
+    "tennis/srl-summer-invitational-shymkent-kaz-women: sin liga equivalente segura",
+    "tennis/us-open-men-double: sin liga equivalente segura",
+    "tennis/us-open-men-singles: sin liga equivalente segura",
+    "tennis/us-open-women-double: sin liga equivalente segura",
+    "tennis/us-open-women-singles: sin liga equivalente segura",
+    "tennis/wta-125k-antalya-4-turkiye-women-singles: sin liga equivalente segura",
+    "tennis/wta-125k-barranquilla-colombia-women-singles: sin liga equivalente segura",
+    "tennis/wta-125k-montreux-switzerland-women-singles: sin liga equivalente segura",
+    "valorant/valorant-china-evolution-series-2026-act-3-t8: sin liga equivalente segura",
+    "valorant/vct-2026-game-changers-brazil-final-stage-t10: sin liga equivalente segura",
+    "valorant/vct-2026-game-changers-latam-final-t10: sin liga equivalente segura",
+    "valorant/vct-2026-game-changers-north-america-stage-2-t10: sin liga equivalente segura",
+    "volleyball/ncaa-women-regular-season: sin liga equivalente segura",
+    "volleyball/south-american-championship-women: sin liga equivalente segura",
+    "aussie-rules/afl: sin liga equivalente segura",
+    "badminton/vietnam-open-gp-singles: sin liga equivalente segura",
+    "boxing/bkfc-93: sin liga equivalente segura",
+    "boxing/international-matchups: sin liga equivalente segura",
+    "counter-strike/cct-europe-2026-series-9-play-in-t10: sin liga equivalente segura"
   ],
-  "rows_collected": 183,
-  "rows_added": 2,
+  "rows_collected": 397,
+  "rows_added": 87,
   "schema_rejections": [],
   "auxiliary_sources": {
-    "Cricsheet": "error: Cricsheet no devolvió ZIP después de 3 intentos (tipo=text/html, bytes=12139)",
+    "Cricsheet": 322,
     "OpenDota": 0,
     "League of Legends": 0
   },
-  "next_league_cursor": 216,
+  "next_league_cursor": 6,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
