@@ -84,8 +84,8 @@
     "home_name": "New York Yankees",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "607074",
+    "home_starter_name": "Carlos Rodón",
     "away_starter_id": "690997",
     "away_starter_name": "Nolan McLean",
     "lineups_confirmed": false
@@ -253,8 +253,8 @@
     "home_name": "New York Yankees",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "543037",
+    "home_starter_name": "Gerrit Cole",
     "away_starter_id": "804267",
     "away_starter_name": "Zac Thornton",
     "lineups_confirmed": false
@@ -487,8 +487,8 @@
     "home_name": "New York Yankees",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "693645",
+    "home_starter_name": "Cam Schlittler",
     "away_starter_id": "681035",
     "away_starter_name": "Christian Scott",
     "lineups_confirmed": false
