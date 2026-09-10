@@ -10,7 +10,7 @@
     "home_starter_name": "Martín Pérez",
     "away_starter_id": "607259",
     "away_starter_name": "Nick Martinez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823413",
@@ -23,7 +23,7 @@
     "home_starter_name": "Zack Wheeler",
     "away_starter_id": "664299",
     "away_starter_name": "Cristian Javier",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823088",
@@ -409,8 +409,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "641816",
+    "home_starter_name": "Tyler Mahle",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -500,8 +500,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656550",
+    "home_starter_name": "Grant Holmes",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false

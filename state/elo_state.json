@@ -1305,6 +1305,160 @@
         "games": 1
       }
     },
+    "soccer:chinese-super-league": {
+      "celtic": {
+        "elo": 1539.8657025970838,
+        "games": 5
+      },
+      "ross county": {
+        "elo": 1501.2417956796774,
+        "games": 5
+      },
+      "hamilton": {
+        "elo": 1481.6431484334914,
+        "games": 5
+      },
+      "partick": {
+        "elo": 1501.0998743379453,
+        "games": 4
+      },
+      "inverness c": {
+        "elo": 1463.1907047847321,
+        "games": 5
+      },
+      "motherwell": {
+        "elo": 1490.7841504132373,
+        "games": 5
+      },
+      "kilmarnock": {
+        "elo": 1481.5667512816178,
+        "games": 4
+      },
+      "dundee fc": {
+        "elo": 1498.9155951359671,
+        "games": 6
+      },
+      "hearts": {
+        "elo": 1524.9567904675673,
+        "games": 6
+      },
+      "st johnstone": {
+        "elo": 1489.1767056755687,
+        "games": 6
+      },
+      "dundee united": {
+        "elo": 1499.051522179823,
+        "games": 3
+      },
+      "aberdeen": {
+        "elo": 1518.3760564891027,
+        "games": 4
+      },
+      "kalloni lekanopedio": {
+        "elo": 1480.6419425630693,
+        "games": 2
+      },
+      "iraklis": {
+        "elo": 1489.668193041258,
+        "games": 4
+      },
+      "panthrakikos": {
+        "elo": 1477.1420551482968,
+        "games": 2
+      },
+      "asteras tripolis": {
+        "elo": 1502.9180658853677,
+        "games": 2
+      },
+      "aek": {
+        "elo": 1509.8068424849805,
+        "games": 2
+      },
+      "platanias": {
+        "elo": 1511.4042984336006,
+        "games": 3
+      },
+      "paok": {
+        "elo": 1490.0880180373094,
+        "games": 2
+      },
+      "xanthi": {
+        "elo": 1480.7704926679874,
+        "games": 4
+      },
+      "veria": {
+        "elo": 1509.7180747579134,
+        "games": 2
+      },
+      "giannina": {
+        "elo": 1509.9119819626906,
+        "games": 2
+      },
+      "atromitos": {
+        "elo": 1487.9634520729178,
+        "games": 3
+      },
+      "levadeiakos": {
+        "elo": 1480.476569732828,
+        "games": 2
+      },
+      "olympiakos": {
+        "elo": 1519.523430267172,
+        "games": 2
+      },
+      "panionios": {
+        "elo": 1523.3347376103861,
+        "games": 4
+      },
+      "panetolikos": {
+        "elo": 1488.430064953105,
+        "games": 1
+      },
+      "panathinaikos": {
+        "elo": 1538.2075553082361,
+        "games": 4
+      },
+      "rangers": {
+        "elo": 1510.1312025241862,
+        "games": 2
+      },
+      "aok kerkyra": {
+        "elo": 1496.9125735344048,
+        "games": 2
+      },
+      "levadiakos": {
+        "elo": 1480.9490100330972,
+        "games": 2
+      },
+      "aek athens": {
+        "elo": 1519.5286990149452,
+        "games": 2
+      },
+      "pas giannina": {
+        "elo": 1500.8403557402228,
+        "games": 2
+      },
+      "paok thessaloniki fc": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "panaitolikos": {
+        "elo": 1503.3689683175378,
+        "games": 2
+      },
+      "olympiacos": {
+        "elo": 1519.7915851275968,
+        "games": 2
+      },
+      "veria fc": {
+        "elo": 1480.4767239527264,
+        "games": 2
+      },
+      "ae larissa": {
+        "elo": 1489.696244399245,
+        "games": 2
+      }
+    },
     "soccer:ligue-1": {
       "lille": {
         "elo": 1482.4734164031308,
@@ -1519,108 +1673,6 @@
       "twente": {
         "elo": 1491.7688834137753,
         "games": 1
-      }
-    },
-    "soccer:chinese-super-league": {
-      "kalloni lekanopedio": {
-        "elo": 1480.6419425630693,
-        "games": 2
-      },
-      "iraklis": {
-        "elo": 1489.668193041258,
-        "games": 4
-      },
-      "panthrakikos": {
-        "elo": 1477.1420551482968,
-        "games": 2
-      },
-      "asteras tripolis": {
-        "elo": 1502.9180658853677,
-        "games": 2
-      },
-      "aek": {
-        "elo": 1509.8068424849805,
-        "games": 2
-      },
-      "platanias": {
-        "elo": 1511.4042984336006,
-        "games": 3
-      },
-      "paok": {
-        "elo": 1490.0880180373094,
-        "games": 2
-      },
-      "xanthi": {
-        "elo": 1480.7704926679874,
-        "games": 4
-      },
-      "veria": {
-        "elo": 1509.7180747579134,
-        "games": 2
-      },
-      "giannina": {
-        "elo": 1509.9119819626906,
-        "games": 2
-      },
-      "atromitos": {
-        "elo": 1487.9634520729178,
-        "games": 3
-      },
-      "levadeiakos": {
-        "elo": 1480.476569732828,
-        "games": 2
-      },
-      "olympiakos": {
-        "elo": 1519.523430267172,
-        "games": 2
-      },
-      "panionios": {
-        "elo": 1523.3347376103861,
-        "games": 4
-      },
-      "panetolikos": {
-        "elo": 1488.430064953105,
-        "games": 1
-      },
-      "panathinaikos": {
-        "elo": 1538.2075553082361,
-        "games": 4
-      },
-      "aok kerkyra": {
-        "elo": 1496.9125735344048,
-        "games": 2
-      },
-      "levadiakos": {
-        "elo": 1480.9490100330972,
-        "games": 2
-      },
-      "aek athens": {
-        "elo": 1519.5286990149452,
-        "games": 2
-      },
-      "pas giannina": {
-        "elo": 1500.8403557402228,
-        "games": 2
-      },
-      "paok thessaloniki fc": {
-        "elo": 1508.430064953105,
-        "games": 1
-      },
-      "panaitolikos": {
-        "elo": 1503.3689683175378,
-        "games": 2
-      },
-      "olympiacos": {
-        "elo": 1519.7915851275968,
-        "games": 2
-      },
-      "veria fc": {
-        "elo": 1480.4767239527264,
-        "games": 2
-      },
-      "ae larissa": {
-        "elo": 1489.696244399245,
-        "games": 2
       }
     },
     "rugby:rfl-championship": {
@@ -5809,8 +5861,8 @@
         "games": 33
       },
       "maria lourdes carle": {
-        "elo": 1517.2999674481957,
-        "games": 19
+        "elo": 1526.7384296242685,
+        "games": 20
       },
       "maria timofeeva": {
         "elo": 1592.7764054651875,
@@ -6409,8 +6461,8 @@
         "games": 10
       },
       "francesca jones": {
-        "elo": 1607.123036070208,
-        "games": 36
+        "elo": 1594.918658245887,
+        "games": 37
       },
       "sebastian baez": {
         "elo": 1486.0253010424467,
@@ -7189,8 +7241,8 @@
         "games": 8
       },
       "eva vedder": {
-        "elo": 1497.7695998672536,
-        "games": 8
+        "elo": 1488.3311376911809,
+        "games": 9
       },
       "aoi ito": {
         "elo": 1437.6262440139847,
@@ -7265,8 +7317,8 @@
         "games": 8
       },
       "alicia herrero linana": {
-        "elo": 1530.8544476354386,
-        "games": 7
+        "elo": 1540.221168555659,
+        "games": 8
       },
       "carol zhao": {
         "elo": 1442.2685170558852,
@@ -7377,8 +7429,8 @@
         "games": 9
       },
       "ane mintegi del olmo": {
-        "elo": 1508.8225949267062,
-        "games": 11
+        "elo": 1499.4558740064858,
+        "games": 12
       },
       "carmen gallardo guevara": {
         "elo": 1489.55304076046,
@@ -7509,8 +7561,8 @@
         "games": 8
       },
       "barbora palicova": {
-        "elo": 1482.3417218817617,
-        "games": 12
+        "elo": 1474.0483904032892,
+        "games": 13
       },
       "gabriela lee": {
         "elo": 1500.0,
@@ -7549,8 +7601,8 @@
         "games": 8
       },
       "fiona ferro": {
-        "elo": 1542.2234407457358,
-        "games": 23
+        "elo": 1550.5167722242084,
+        "games": 24
       },
       "beatriz castro": {
         "elo": 1491.264696885719,
@@ -9621,8 +9673,8 @@
         "games": 1
       },
       "rositsa dencheva": {
-        "elo": 1529.2570913643153,
-        "games": 3
+        "elo": 1541.4614691886363,
+        "games": 4
       },
       "adrienn nagy": {
         "elo": 1489.727859399778,
@@ -10329,8 +10381,8 @@
         "games": 16
       },
       "gamerlegion": {
-        "elo": 1509.6082346035873,
-        "games": 14
+        "elo": 1502.8768071365598,
+        "games": 15
       },
       "vici gaming": {
         "elo": 1462.7138756883492,
@@ -10381,8 +10433,8 @@
         "games": 30
       },
       "klim sani4": {
-        "elo": 1627.4950475447163,
-        "games": 32
+        "elo": 1634.2264750117438,
+        "games": 33
       },
       "haters verusya": {
         "elo": 1510.0,
@@ -10779,6 +10831,14 @@
       "the house esports": {
         "elo": 1471.9275388460012,
         "games": 5
+      },
+      "recrent club": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "daxak club": {
+        "elo": 1510.0,
+        "games": 1
       }
     },
     "soccer:prva-liga": {
@@ -33202,24 +33262,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.46665319714163384,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:178952"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5952190626267618,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179022"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4487108956767061,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:178953"
-      },
-      {
-        "kind": "binary",
         "p": 0.5261322565145263,
         "y": 1.0,
         "match_id": "espn:tennis:wta:178963"
@@ -39199,6 +39241,24 @@
         "p": 0.4805279399032106,
         "y": 0.0,
         "match_id": "espn:tennis:wta:183628"
+      },
+      {
+        "kind": "binary",
+        "p": 0.585333426076371,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183599"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5280768911963608,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183541"
+      },
+      {
+        "kind": "binary",
+        "p": 0.468336046011021,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183547"
       }
     ],
     "tennis:atp": [
@@ -46489,6 +46549,12 @@
         "p": 0.501979737284149,
         "y": 0.0,
         "match_id": "opendota:8991215664"
+      },
+      {
+        "kind": "binary",
+        "p": 0.33657137335137427,
+        "y": 0.0,
+        "match_id": "opendota:8991632572"
       }
     ],
     "aussie-rules:afl-women": [
@@ -47098,6 +47164,67 @@
       "thesportsdb:2494019",
       "thesportsdb:2494013"
     ],
+    "soccer:chinese-super-league": [
+      "thesportsdb:486688",
+      "thesportsdb:486690",
+      "thesportsdb:486692",
+      "thesportsdb:486693",
+      "thesportsdb:486691",
+      "thesportsdb:486689",
+      "thesportsdb:486694",
+      "thesportsdb:486695",
+      "thesportsdb:486697",
+      "thesportsdb:486698",
+      "thesportsdb:486696",
+      "thesportsdb:486699",
+      "thesportsdb:486700",
+      "thesportsdb:486704",
+      "thesportsdb:486701",
+      "thesportsdb:490449",
+      "thesportsdb:490451",
+      "thesportsdb:490448",
+      "thesportsdb:490452",
+      "thesportsdb:491047",
+      "thesportsdb:491119",
+      "thesportsdb:490450",
+      "thesportsdb:490447",
+      "thesportsdb:491050",
+      "thesportsdb:491120",
+      "thesportsdb:490453",
+      "thesportsdb:490454",
+      "thesportsdb:490456",
+      "thesportsdb:490457",
+      "thesportsdb:511655",
+      "thesportsdb:511656",
+      "thesportsdb:511657",
+      "thesportsdb:511658",
+      "thesportsdb:511659",
+      "thesportsdb:511660",
+      "thesportsdb:511661",
+      "thesportsdb:511662",
+      "thesportsdb:511663",
+      "thesportsdb:511664",
+      "thesportsdb:511665",
+      "thesportsdb:511666",
+      "thesportsdb:511667",
+      "thesportsdb:511668",
+      "thesportsdb:511669",
+      "thesportsdb:514471",
+      "thesportsdb:514472",
+      "thesportsdb:514473",
+      "thesportsdb:514474",
+      "thesportsdb:514475",
+      "thesportsdb:514476",
+      "thesportsdb:514477",
+      "thesportsdb:514478",
+      "thesportsdb:514479",
+      "thesportsdb:514480",
+      "thesportsdb:514481",
+      "thesportsdb:514482",
+      "thesportsdb:514483",
+      "thesportsdb:514484",
+      "thesportsdb:514485"
+    ],
     "soccer:ligue-1": [
       "thesportsdb:485450",
       "thesportsdb:485452",
@@ -47181,37 +47308,6 @@
       "thesportsdb:2489078",
       "thesportsdb:2489079",
       "thesportsdb:2489080"
-    ],
-    "soccer:chinese-super-league": [
-      "thesportsdb:490449",
-      "thesportsdb:490451",
-      "thesportsdb:490448",
-      "thesportsdb:490452",
-      "thesportsdb:491047",
-      "thesportsdb:491119",
-      "thesportsdb:490450",
-      "thesportsdb:490447",
-      "thesportsdb:491050",
-      "thesportsdb:491120",
-      "thesportsdb:490453",
-      "thesportsdb:490454",
-      "thesportsdb:490456",
-      "thesportsdb:490457",
-      "thesportsdb:514471",
-      "thesportsdb:514472",
-      "thesportsdb:514473",
-      "thesportsdb:514474",
-      "thesportsdb:514475",
-      "thesportsdb:514476",
-      "thesportsdb:514477",
-      "thesportsdb:514478",
-      "thesportsdb:514479",
-      "thesportsdb:514480",
-      "thesportsdb:514481",
-      "thesportsdb:514482",
-      "thesportsdb:514483",
-      "thesportsdb:514484",
-      "thesportsdb:514485"
     ],
     "rugby:rfl-championship": [
       "thesportsdb:655871",
@@ -62877,7 +62973,11 @@
       "espn:tennis:wta:183626",
       "espn:tennis:wta:182772",
       "espn:tennis:wta:183630",
-      "espn:tennis:wta:183628"
+      "espn:tennis:wta:183628",
+      "espn:tennis:wta:183543",
+      "espn:tennis:wta:183599",
+      "espn:tennis:wta:183541",
+      "espn:tennis:wta:183547"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -63556,7 +63656,9 @@
       "opendota:8991070592",
       "opendota:8991124629",
       "opendota:8991156446",
-      "opendota:8991215664"
+      "opendota:8991215664",
+      "opendota:8991632572",
+      "opendota:8991677504"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -63684,6 +63786,10 @@
       "total": 40,
       "draws": 7
     },
+    "soccer:chinese-super-league": {
+      "total": 59,
+      "draws": 13
+    },
     "soccer:ligue-1": {
       "total": 35,
       "draws": 8
@@ -63691,10 +63797,6 @@
     "soccer:eredivisie": {
       "total": 45,
       "draws": 11
-    },
-    "soccer:chinese-super-league": {
-      "total": 29,
-      "draws": 4
     },
     "rugby:rfl-championship": {
       "total": 45,
@@ -63753,7 +63855,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5182,
+      "total": 5186,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -63777,7 +63879,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 376,
+      "total": 378,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -64157,11 +64259,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "e6778692d256698b4484be6c03345560da12472834e448ee51d93e7f5a5d1e49",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "8ff726ea6a54326b74e5d006483750c8cc4aed7cb54b33d170fab9f92f4a8dc7",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.09189099517720345,
-      "last_brier": 0.22645968307768516,
+      "last_skill": 0.08829142171003523,
+      "last_brier": 0.22735732671106024,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64233,15 +64335,15 @@
     "dota-2:all": {
       "policy_version": 2,
       "active": false,
-      "pass_streak": 1,
+      "pass_streak": 2,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "aacc21e55178916d8bc15789dd6c489e0a4075a1c76b20857999cc4a268754ca",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "c10fe4e24c41b31092d804f3feed06c0ae94b189d7a9d95841dcee17550c6f53",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.02556588424767614,
-      "last_brier": 0.2435777741686149,
-      "evidence_samples": 178,
-      "evidence_total_samples": 178
+      "last_skill": 0.028570260629740107,
+      "last_brier": 0.2428498552590675,
+      "evidence_samples": 179,
+      "evidence_total_samples": 179
     },
     "soccer:prva-liga": {
       "policy_version": 2,
@@ -64354,7 +64456,7 @@
       "fail_streak": 0,
       "last_evidence_fingerprint": "f473edf3418d06e6f7d477c33c197fb7bd1cfa38dc60cc0e47c40c0618cb9ca3",
       "evidence_changed": false,
-      "migration_baseline": true,
+      "migration_baseline": false,
       "last_skill": 0.13686196240437498,
       "last_brier": 0.1975627063829986,
       "evidence_samples": 15,
