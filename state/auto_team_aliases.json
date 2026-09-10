@@ -113,5 +113,8 @@
   },
   "soccer:eredivisie": {
     "heerenveen": "sc heerenveen"
+  },
+  "soccer:women-bundesliga": {
+    "fc union berlin": "union berlin"
   }
 }
