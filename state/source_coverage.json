@@ -1,48 +1,63 @@
 {
-  "generated_at": "2026-09-10T11:24:18.640484+00:00",
-  "targets_in_snapshot": 272,
+  "generated_at": "2026-09-10T11:32:49.884356+00:00",
+  "targets_in_snapshot": 296,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "mma",
-      "stake_league": "oktagon-93",
-      "source_league": "Oktagon MMA",
-      "similarity": 0.762
+      "sport": "rugby",
+      "stake_league": "rfl-championship",
+      "source_league": "Australian National Rugby Championship",
+      "similarity": 0.556
+    },
+    {
+      "sport": "rugby",
+      "stake_league": "super-league",
+      "source_league": "Super Liga Americana",
+      "similarity": 0.562
+    },
+    {
+      "sport": "rugby",
+      "stake_league": "top-14",
+      "source_league": "URBA Top 13",
+      "similarity": 0.588
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "1st-division",
+      "source_league": "Dutch Eredivisie",
+      "similarity": 0.571
     }
   ],
   "unmatched": [
-    "handball/lnh-proligue: sin liga equivalente segura",
-    "handball/urvalsdeild: sin liga equivalente segura",
-    "kings-of-glory/king-pro-league-summer-2026-t9: sin liga equivalente segura",
-    "kings-of-glory/kpl-growth-league-2027-promotion-t10: sin liga equivalente segura",
-    "kings-of-glory/kpl-growth-league-summer-2026-t10: sin liga equivalente segura",
-    "league-of-legends/cblol-2026-split-2-playoffs-t5: sin liga equivalente segura",
-    "league-of-legends/circuito-desafiante-2026-split-2-t8: sin liga equivalente segura",
-    "league-of-legends/lck-2026-season-playoffs-t3: sin liga equivalente segura",
-    "league-of-legends/lck-cl-2026-season-playoffs-t5: sin liga equivalente segura",
-    "league-of-legends/lcs-2026-summer-playoffs-t4: sin liga equivalente segura",
-    "league-of-legends/lec-2026-summer-playoffs-t3: sin liga equivalente segura",
-    "league-of-legends/lpl-2026-grand-finals-t3: sin liga equivalente segura",
-    "league-of-legends/lpl-2026-regional-finals-t3: sin liga equivalente segura",
-    "league-of-legends/prm-1st-division-2026-summer-playoffs-t6: sin liga equivalente segura",
-    "league-of-legends/road-of-legends-2026-summer-playoffs-t8: sin liga equivalente segura",
-    "mma/efc-137: sin liga equivalente segura",
-    "mma/immu-fight-night: sin liga equivalente segura",
-    "mma/ksw-121: sin liga equivalente segura",
-    "mma/lfa-241: sin liga equivalente segura",
-    "mma/one-samurai-3: sin liga equivalente segura",
-    "mma/super-rizin-5: sin liga equivalente segura",
-    "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
-    "mma/ufc-332: sin liga equivalente segura"
+    "mobile-legends/mpl-malaysia-season-18-t10: sin liga equivalente segura",
+    "mobile-legends/mpl-philippines-season-18-t9: sin liga equivalente segura",
+    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura",
+    "pesapallo/superpesis: sin liga equivalente segura",
+    "rainbow-six/asia-pacific-league-2026-asia-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/asia-pacific-league-2026-north-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/cn-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/europe-mena-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/north-america-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/south-america-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
+    "rugby/currie-cup: sin liga equivalente segura",
+    "rugby/mitre-10-cup: sin liga equivalente segura",
+    "rugby/nrl: sin liga equivalente segura",
+    "rugby/nrl-women: sin liga equivalente segura",
+    "rugby/pro-d2: sin liga equivalente segura",
+    "rugby/super-rugby-aus: sin liga equivalente segura",
+    "snooker/english-open: sin liga equivalente segura",
+    "soccer/1-lig: sin liga equivalente segura",
+    "soccer/1-liga: sin liga equivalente segura"
   ],
-  "rows_collected": 669,
-  "rows_added": 0,
+  "rows_collected": 831,
+  "rows_added": 45,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 102,
+  "next_league_cursor": 126,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

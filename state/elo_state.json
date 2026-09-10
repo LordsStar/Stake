@@ -1623,6 +1623,52 @@
         "games": 2
       }
     },
+    "rugby:rfl-championship": {
+      "brisbane city": {
+        "elo": 1522.821232886285,
+        "games": 11
+      },
+      "fijian drua": {
+        "elo": 1518.2860740642273,
+        "games": 9
+      },
+      "university of canberra vikings": {
+        "elo": 1527.7222125925275,
+        "games": 11
+      },
+      "queensland country": {
+        "elo": 1510.1525552849905,
+        "games": 9
+      },
+      "greater sydney rams": {
+        "elo": 1500.0692412088765,
+        "games": 4
+      },
+      "nsw country eagles": {
+        "elo": 1509.0896983227094,
+        "games": 11
+      },
+      "perth spirit": {
+        "elo": 1500.5973365466305,
+        "games": 4
+      },
+      "melbourne rising": {
+        "elo": 1435.6561336433397,
+        "games": 11
+      },
+      "sydney rays": {
+        "elo": 1424.9614902724709,
+        "games": 10
+      },
+      "western force": {
+        "elo": 1559.2572482814421,
+        "games": 8
+      },
+      "fiji rugby": {
+        "elo": 1491.3867768965006,
+        "games": 2
+      }
+    },
     "futsal:superliga": {
       "kukesi": {
         "elo": 1451.4882307405176,
@@ -11433,6 +11479,98 @@
         "p": 0.4605477776734754,
         "y": 1.0,
         "match_id": "cricsheet:1513600"
+      }
+    ],
+    "rugby:rfl-championship": [
+      {
+        "kind": "binary",
+        "p": 0.5276437674532495,
+        "y": 0.0,
+        "match_id": "thesportsdb:655821"
+      },
+      {
+        "kind": "binary",
+        "p": 0.51405158898798,
+        "y": 0.0,
+        "match_id": "thesportsdb:655819"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4724925327717019,
+        "y": 0.0,
+        "match_id": "thesportsdb:655818"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5755785664335346,
+        "y": 1.0,
+        "match_id": "thesportsdb:1831382"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5992582595530686,
+        "y": 1.0,
+        "match_id": "thesportsdb:655802"
+      },
+      {
+        "kind": "binary",
+        "p": 0.48567970775600305,
+        "y": 0.0,
+        "match_id": "thesportsdb:1831383"
+      },
+      {
+        "kind": "binary",
+        "p": 0.45781831989556915,
+        "y": 0.0,
+        "match_id": "thesportsdb:655801"
+      },
+      {
+        "kind": "binary",
+        "p": 0.523435823157455,
+        "y": 0.5,
+        "match_id": "thesportsdb:655800"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5814226598877901,
+        "y": 1.0,
+        "match_id": "thesportsdb:655799"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5214083712364277,
+        "y": 0.0,
+        "match_id": "thesportsdb:655798"
+      },
+      {
+        "kind": "binary",
+        "p": 0.500674575436581,
+        "y": 0.0,
+        "match_id": "thesportsdb:1831387"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4718831242471266,
+        "y": 0.0,
+        "match_id": "thesportsdb:655797"
+      },
+      {
+        "kind": "binary",
+        "p": 0.6471481585727276,
+        "y": 1.0,
+        "match_id": "thesportsdb:1831388"
+      },
+      {
+        "kind": "binary",
+        "p": 0.6654715912856947,
+        "y": 1.0,
+        "match_id": "thesportsdb:655796"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4960761727697815,
+        "y": 1.0,
+        "match_id": "thesportsdb:655795"
       }
     ],
     "futsal:superliga": [
@@ -47075,6 +47213,53 @@
       "thesportsdb:514484",
       "thesportsdb:514485"
     ],
+    "rugby:rfl-championship": [
+      "thesportsdb:655871",
+      "thesportsdb:655872",
+      "thesportsdb:655870",
+      "thesportsdb:655869",
+      "thesportsdb:655868",
+      "thesportsdb:655867",
+      "thesportsdb:655866",
+      "thesportsdb:655865",
+      "thesportsdb:655864",
+      "thesportsdb:655863",
+      "thesportsdb:655862",
+      "thesportsdb:655861",
+      "thesportsdb:655860",
+      "thesportsdb:655859",
+      "thesportsdb:655857",
+      "thesportsdb:655832",
+      "thesportsdb:655831",
+      "thesportsdb:655830",
+      "thesportsdb:655829",
+      "thesportsdb:655827",
+      "thesportsdb:655828",
+      "thesportsdb:655825",
+      "thesportsdb:655826",
+      "thesportsdb:655824",
+      "thesportsdb:655823",
+      "thesportsdb:655822",
+      "thesportsdb:655821",
+      "thesportsdb:655820",
+      "thesportsdb:655819",
+      "thesportsdb:655818",
+      "thesportsdb:1831382",
+      "thesportsdb:655802",
+      "thesportsdb:1831383",
+      "thesportsdb:655801",
+      "thesportsdb:1831384",
+      "thesportsdb:655800",
+      "thesportsdb:1831385",
+      "thesportsdb:655799",
+      "thesportsdb:1831386",
+      "thesportsdb:655798",
+      "thesportsdb:1831387",
+      "thesportsdb:655797",
+      "thesportsdb:1831388",
+      "thesportsdb:655796",
+      "thesportsdb:655795"
+    ],
     "futsal:superliga": [
       "thesportsdb:1631300",
       "thesportsdb:1631301",
@@ -63511,6 +63696,10 @@
       "total": 29,
       "draws": 4
     },
+    "rugby:rfl-championship": {
+      "total": 45,
+      "draws": 2
+    },
     "futsal:superliga": {
       "total": 30,
       "draws": 8
@@ -64157,6 +64346,19 @@
       "last_brier": null,
       "evidence_samples": 0,
       "evidence_total_samples": 0
+    },
+    "rugby:rfl-championship": {
+      "policy_version": 2,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 0,
+      "last_evidence_fingerprint": "f473edf3418d06e6f7d477c33c197fb7bd1cfa38dc60cc0e47c40c0618cb9ca3",
+      "evidence_changed": false,
+      "migration_baseline": true,
+      "last_skill": 0.13686196240437498,
+      "last_brier": 0.1975627063829986,
+      "evidence_samples": 15,
+      "evidence_total_samples": 15
     }
   }
 }
