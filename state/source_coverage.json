@@ -1,63 +1,48 @@
 {
-  "generated_at": "2026-09-10T04:56:32.069029+00:00",
-  "targets_in_snapshot": 245,
+  "generated_at": "2026-09-10T11:24:18.640484+00:00",
+  "targets_in_snapshot": 272,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "futsal",
-      "stake_league": "superliga",
-      "source_league": "Albanian Superliga",
-      "similarity": 0.667
-    },
-    {
-      "sport": "handball",
-      "stake_league": "champions-league",
-      "source_league": "EHF Champions League",
-      "similarity": 0.889
-    },
-    {
-      "sport": "handball",
-      "stake_league": "damehandboldligaen",
-      "source_league": "Danish Mens Handball League",
-      "similarity": 0.578
-    },
-    {
-      "sport": "handball",
-      "stake_league": "lnh-division-1",
-      "source_league": "French LNH Division 1",
-      "similarity": 0.8
+      "sport": "mma",
+      "stake_league": "oktagon-93",
+      "source_league": "Oktagon MMA",
+      "similarity": 0.762
     }
   ],
   "unmatched": [
-    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-5-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-6-2026-week-37-t6: sin liga equivalente segura",
-    "etouchdown/valhalla-league-2026-week-37-t9: sin liga equivalente segura",
-    "fifa/valhalla-cup-2026-week-37-t3: sin liga equivalente segura",
-    "floorball/eliteserien: sin liga equivalente segura",
-    "floorball/extraliga: sin liga equivalente segura",
-    "floorball/national-league: sin liga equivalente segura",
-    "floorball/unihockey-prime-league-women: sin liga equivalente segura",
-    "handball/bundesliga: sin liga equivalente segura",
-    "handball/eliteserien-women: sin liga equivalente segura",
-    "handball/handboldligaen: sin liga equivalente segura",
-    "handball/hla: sin liga equivalente segura",
     "handball/lnh-proligue: sin liga equivalente segura",
     "handball/urvalsdeild: sin liga equivalente segura",
     "kings-of-glory/king-pro-league-summer-2026-t9: sin liga equivalente segura",
     "kings-of-glory/kpl-growth-league-2027-promotion-t10: sin liga equivalente segura",
+    "kings-of-glory/kpl-growth-league-summer-2026-t10: sin liga equivalente segura",
+    "league-of-legends/cblol-2026-split-2-playoffs-t5: sin liga equivalente segura",
+    "league-of-legends/circuito-desafiante-2026-split-2-t8: sin liga equivalente segura",
+    "league-of-legends/lck-2026-season-playoffs-t3: sin liga equivalente segura",
+    "league-of-legends/lck-cl-2026-season-playoffs-t5: sin liga equivalente segura",
+    "league-of-legends/lcs-2026-summer-playoffs-t4: sin liga equivalente segura",
+    "league-of-legends/lec-2026-summer-playoffs-t3: sin liga equivalente segura",
+    "league-of-legends/lpl-2026-grand-finals-t3: sin liga equivalente segura",
+    "league-of-legends/lpl-2026-regional-finals-t3: sin liga equivalente segura",
+    "league-of-legends/prm-1st-division-2026-summer-playoffs-t6: sin liga equivalente segura",
+    "league-of-legends/road-of-legends-2026-summer-playoffs-t8: sin liga equivalente segura",
     "mma/efc-137: sin liga equivalente segura",
     "mma/immu-fight-night: sin liga equivalente segura",
-    "mma/ksw-121: sin liga equivalente segura"
+    "mma/ksw-121: sin liga equivalente segura",
+    "mma/lfa-241: sin liga equivalente segura",
+    "mma/one-samurai-3: sin liga equivalente segura",
+    "mma/super-rizin-5: sin liga equivalente segura",
+    "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
+    "mma/ufc-332: sin liga equivalente segura"
   ],
-  "rows_collected": 833,
-  "rows_added": 30,
+  "rows_collected": 669,
+  "rows_added": 0,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 78,
+  "next_league_cursor": 102,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
