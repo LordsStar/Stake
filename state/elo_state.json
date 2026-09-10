@@ -2689,24 +2689,24 @@
         "games": 176
       },
       "tampa bay rays": {
-        "elo": 1569.0504915473268,
-        "games": 175
-      },
-      "atlanta braves": {
-        "elo": 1537.3545821693576,
+        "elo": 1558.7139833195693,
         "games": 176
       },
+      "atlanta braves": {
+        "elo": 1547.6910903971152,
+        "games": 177
+      },
       "houston astros": {
-        "elo": 1519.253534765156,
-        "games": 174
+        "elo": 1531.4149736744087,
+        "games": 175
       },
       "toronto blue jays": {
         "elo": 1540.4399945267157,
         "games": 175
       },
       "philadelphia phillies": {
-        "elo": 1575.5529808186282,
-        "games": 175
+        "elo": 1563.3915419093755,
+        "games": 176
       },
       "new york mets": {
         "elo": 1546.472645553597,
@@ -5889,8 +5889,8 @@
         "games": 4
       },
       "martina trevisan": {
-        "elo": 1506.705187580731,
-        "games": 17
+        "elo": 1497.001373295162,
+        "games": 18
       },
       "darja vidmanova": {
         "elo": 1557.4536168680922,
@@ -6969,8 +6969,8 @@
         "games": 41
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1516.998744037889,
-        "games": 15
+        "elo": 1526.702558323458,
+        "games": 16
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -7481,8 +7481,8 @@
         "games": 5
       },
       "eva bennemann": {
-        "elo": 1502.850903124859,
-        "games": 4
+        "elo": 1512.3120551425009,
+        "games": 5
       },
       "manon leonard": {
         "elo": 1471.1480904089565,
@@ -7865,8 +7865,8 @@
         "games": 7
       },
       "cagla buyukakcay": {
-        "elo": 1484.1112553318776,
-        "games": 4
+        "elo": 1474.6501033142358,
+        "games": 5
       },
       "ksenia zaytseva": {
         "elo": 1489.7039814439618,
@@ -27260,18 +27260,6 @@
     "baseball:mlb": [
       {
         "kind": "binary",
-        "p": 0.34351015850063393,
-        "y": 0.0,
-        "match_id": "espn:401815885"
-      },
-      {
-        "kind": "binary",
-        "p": 0.3549032125249181,
-        "y": 0.0,
-        "match_id": "espn:401815892"
-      },
-      {
-        "kind": "binary",
         "p": 0.5585718803549805,
         "y": 0.0,
         "match_id": "espn:401815890"
@@ -33257,15 +33245,21 @@
         "p": 0.6329222190416756,
         "y": 1.0,
         "match_id": "espn:401816878"
+      },
+      {
+        "kind": "binary",
+        "p": 0.483174588612125,
+        "y": 1.0,
+        "match_id": "espn:401816885"
+      },
+      {
+        "kind": "binary",
+        "p": 0.6080719454626363,
+        "y": 0.0,
+        "match_id": "espn:401816884"
       }
     ],
     "tennis:wta": [
-      {
-        "kind": "binary",
-        "p": 0.5261322565145263,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:178963"
-      },
       {
         "kind": "binary",
         "p": 0.5043366448491712,
@@ -39259,6 +39253,12 @@
         "p": 0.468336046011021,
         "y": 0.0,
         "match_id": "espn:tennis:wta:183547"
+      },
+      {
+        "kind": "binary",
+        "p": 0.48519071427845545,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183582"
       }
     ],
     "tennis:atp": [
@@ -53835,7 +53835,9 @@
       "espn:401816875",
       "espn:401816876",
       "espn:401816877",
-      "espn:401816878"
+      "espn:401816878",
+      "espn:401816885",
+      "espn:401816884"
     ],
     "tennis:atp": [
       "espn:tennis:atp:173654",
@@ -62977,7 +62979,9 @@
       "espn:tennis:wta:183543",
       "espn:tennis:wta:183599",
       "espn:tennis:wta:183541",
-      "espn:tennis:wta:183547"
+      "espn:tennis:wta:183547",
+      "espn:tennis:wta:183582",
+      "espn:tennis:wta:183545"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -63847,7 +63851,7 @@
       "draws": 0
     },
     "baseball:mlb": {
-      "total": 2644,
+      "total": 2646,
       "draws": 21
     },
     "tennis:atp": {
@@ -63855,7 +63859,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5186,
+      "total": 5188,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -64233,11 +64237,11 @@
       "active": false,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "e18fedc46160de4b7a34e6a27a923865792e40a9ef4ce6e7b02ea86cea3f77c1",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "a06e398001ae6173846b046b5c4e3a0cc7c8ac86724d5296f81e53cd5662bf13",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": -0.00810907276841677,
-      "last_brier": 0.25111997002661307,
+      "last_skill": -0.0069079137012657554,
+      "last_brier": 0.25082076130298575,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64259,11 +64263,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "8ff726ea6a54326b74e5d006483750c8cc4aed7cb54b33d170fab9f92f4a8dc7",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "04eecb63f5fef0cedd6facad8ba5819d1bec65abb5b1a20abffd46a8335e2344",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.08829142171003523,
-      "last_brier": 0.22735732671106024,
+      "last_skill": 0.08950416427277552,
+      "last_brier": 0.22680451267965204,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },

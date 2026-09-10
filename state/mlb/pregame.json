@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "823413",
-    "start_time": "2026-09-10T17:05:00Z",
-    "home_id": "143",
-    "home_name": "Philadelphia Phillies",
-    "away_id": "117",
-    "away_name": "Houston Astros",
-    "home_starter_id": "554430",
-    "home_starter_name": "Zack Wheeler",
-    "away_starter_id": "664299",
-    "away_starter_name": "Cristian Javier",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "823088",
     "start_time": "2026-09-10T20:10:00Z",
     "home_id": "136",
@@ -23,7 +10,7 @@
     "home_starter_name": "Logan Gilbert",
     "away_starter_id": "594798",
     "away_starter_name": "Jacob deGrom",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823499",
@@ -36,7 +23,7 @@
     "home_starter_name": "Max Fried",
     "away_starter_id": "663372",
     "away_starter_name": "Ryan Feltner",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824550",
@@ -49,7 +36,7 @@
     "home_starter_name": "Hagen Smith",
     "away_starter_id": "683003",
     "away_starter_name": "Jared Jones",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824631",
@@ -138,8 +125,8 @@
     "away_name": "Houston Astros",
     "home_starter_id": "656876",
     "home_starter_name": "Drew Rasmussen",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "699044",
+    "away_starter_name": "Miguel Ullola",
     "lineups_confirmed": false
   },
   {
@@ -203,8 +190,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "669461",
     "home_starter_name": "Matthew Liberatore",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "641743",
+    "away_starter_name": "Anthony Kay",
     "lineups_confirmed": false
   },
   {
@@ -411,8 +398,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "681517",
     "home_starter_name": "Kyle Leahy",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "622491",
+    "away_starter_name": "Luis Castillo",
     "lineups_confirmed": false
   },
   {
