@@ -58,8 +58,8 @@
     "home_name": "Chicago White Sox",
     "away_id": "134",
     "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "696146",
+    "home_starter_name": "Hagen Smith",
     "away_starter_id": "683003",
     "away_starter_name": "Jared Jones",
     "lineups_confirmed": false
@@ -138,8 +138,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "543243",
     "home_starter_name": "Sonny Gray",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "607625",
+    "away_starter_name": "Seth Lugo",
     "lineups_confirmed": false
   },
   {
@@ -162,8 +162,8 @@
     "home_name": "Miami Marlins",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "687473",
+    "home_starter_name": "Ryan Gusto",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -188,8 +188,8 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "675660",
+    "home_starter_name": "Shane Drohan",
     "away_starter_id": "671096",
     "away_starter_name": "Andrew Abbott",
     "lineups_confirmed": false
@@ -346,8 +346,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "624133",
     "home_starter_name": "Ranger Suarez",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "677976",
+    "away_starter_name": "Randy Dobnak",
     "lineups_confirmed": false
   },
   {
@@ -370,8 +370,8 @@
     "home_name": "Miami Marlins",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663969",
+    "home_starter_name": "Tyler Phillips",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -476,8 +476,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "801139",
     "home_starter_name": "Payton Tolle",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "702070",
+    "away_starter_name": "Noah Cameron",
     "lineups_confirmed": false
   },
   {
@@ -552,8 +552,8 @@
     "home_name": "Miami Marlins",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "691587",
+    "home_starter_name": "Eury Pérez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false

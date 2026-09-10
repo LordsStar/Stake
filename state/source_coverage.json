@@ -1,58 +1,63 @@
 {
-  "generated_at": "2026-09-09T21:02:05.397611+00:00",
-  "targets_in_snapshot": 248,
+  "generated_at": "2026-09-10T04:56:32.069029+00:00",
+  "targets_in_snapshot": 245,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "cricket",
-      "stake_league": "european-t20-premier-league",
-      "source_league": "Caribbean Premier League",
-      "similarity": 0.745
-    },
-    {
-      "sport": "cricket",
-      "stake_league": "pakistan-super-league-srl",
-      "source_league": "Caribbean Premier League",
-      "similarity": 0.612
-    },
-    {
-      "sport": "cricket",
-      "stake_league": "premier-league-srl",
-      "source_league": "Caribbean Premier League",
+      "sport": "futsal",
+      "stake_league": "superliga",
+      "source_league": "Albanian Superliga",
       "similarity": 0.667
+    },
+    {
+      "sport": "handball",
+      "stake_league": "champions-league",
+      "source_league": "EHF Champions League",
+      "similarity": 0.889
+    },
+    {
+      "sport": "handball",
+      "stake_league": "damehandboldligaen",
+      "source_league": "Danish Mens Handball League",
+      "similarity": 0.578
+    },
+    {
+      "sport": "handball",
+      "stake_league": "lnh-division-1",
+      "source_league": "French LNH Division 1",
+      "similarity": 0.8
     }
   ],
   "unmatched": [
-    "cricket/european-cricket-series-t10-belgium-edition: sin liga equivalente segura",
-    "cricket/list-a-series-south-africa-a-vs-bangladesh-a: sin liga equivalente segura",
-    "cricket/major-clubs-t20-tournament: sin liga equivalente segura",
-    "cricket/odi-series-namibia-vs-south-africa: sin liga equivalente segura",
-    "cricket/odi-series-zimbabwe-vs-australia: sin liga equivalente segura",
-    "cricket/sa-t20-league-srl: sin liga equivalente segura",
-    "cricket/super-smash-srl: sin liga equivalente segura",
-    "cricket/t20-afghanistan-vs-india: sin liga equivalente segura",
-    "cricket/t20-africa-continent-cup: sin liga equivalente segura",
-    "cricket/t20-asia-cup-women: sin liga equivalente segura",
-    "cricket/t20-international-srl: sin liga equivalente segura",
-    "cricket/t20-series-india-a-vs-australia-a-women: sin liga equivalente segura",
-    "cricket/t20-series-zimbabwe-vs-south-africa-women: sin liga equivalente segura",
-    "cricket/t20-sher-e-punjab-cup: sin liga equivalente segura",
-    "darts/pdc-world-series-of-darts-finals: sin liga equivalente segura",
-    "dota-2-duels/berserk-dota-2-league-2026-week-37-t7: sin liga equivalente segura",
-    "ecricket/yodha-premier-league-super-over-2026-week-37-t8: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-1-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-2-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-3-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura"
+    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-5-2026-week-37-t6: sin liga equivalente segura",
+    "efootball-bots/absolute-legends-efootball-6-2026-week-37-t6: sin liga equivalente segura",
+    "etouchdown/valhalla-league-2026-week-37-t9: sin liga equivalente segura",
+    "fifa/valhalla-cup-2026-week-37-t3: sin liga equivalente segura",
+    "floorball/eliteserien: sin liga equivalente segura",
+    "floorball/extraliga: sin liga equivalente segura",
+    "floorball/national-league: sin liga equivalente segura",
+    "floorball/unihockey-prime-league-women: sin liga equivalente segura",
+    "handball/bundesliga: sin liga equivalente segura",
+    "handball/eliteserien-women: sin liga equivalente segura",
+    "handball/handboldligaen: sin liga equivalente segura",
+    "handball/hla: sin liga equivalente segura",
+    "handball/lnh-proligue: sin liga equivalente segura",
+    "handball/urvalsdeild: sin liga equivalente segura",
+    "kings-of-glory/king-pro-league-summer-2026-t9: sin liga equivalente segura",
+    "kings-of-glory/kpl-growth-league-2027-promotion-t10: sin liga equivalente segura",
+    "mma/efc-137: sin liga equivalente segura",
+    "mma/immu-fight-night: sin liga equivalente segura",
+    "mma/ksw-121: sin liga equivalente segura"
   ],
-  "rows_collected": 457,
-  "rows_added": 0,
+  "rows_collected": 833,
+  "rows_added": 30,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
-    "OpenDota": 0,
+    "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 54,
+  "next_league_cursor": 78,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
