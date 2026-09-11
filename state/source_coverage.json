@@ -1,62 +1,8 @@
 {
-  "generated_at": "2026-09-11T16:40:09.150566+00:00",
-  "targets_in_snapshot": 330,
+  "generated_at": "2026-09-11T21:06:03.677518+00:00",
+  "targets_in_snapshot": 342,
   "targets_processed": 24,
   "matched": [
-    {
-      "sport": "soccer",
-      "stake_league": "superliga",
-      "source_league": "Albanian Superliga",
-      "similarity": 0.667
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "superligaen",
-      "source_league": "Albanian Superliga",
-      "similarity": 0.621
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "tasmania-super-league-women",
-      "source_league": "Greek Super League 1",
-      "similarity": 0.596
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "thai-league-1",
-      "source_league": "Algerian Ligue 1",
-      "similarity": 0.621
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "thai-league-2",
-      "source_league": "Scottish Premier League",
-      "similarity": 0.556
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "the-fa-women-apos-s-super-league",
-      "source_league": "Greek Super League 1",
-      "similarity": 0.577
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "turkey-super-lig-srl",
-      "source_league": "Greek Super League 1",
-      "similarity": 0.6
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "tweede-divisie",
-      "source_league": "Dutch Eredivisie",
-      "similarity": 0.667
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "u20-carioca-serie-a",
-      "source_league": "Italian Serie A",
-      "similarity": 0.647
-    },
     {
       "sport": "soccer",
       "stake_league": "u23-pro-league",
@@ -92,27 +38,51 @@
       "stake_league": "usl-super-league-women",
       "source_league": "Greek Super League 1",
       "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "vysshaya-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.643
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "we-league-cup-women",
+      "source_league": "English League Championship",
+      "similarity": 0.565
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "women-bundesliga",
+      "source_league": "German Bundesliga",
+      "similarity": 0.788
     }
   ],
   "unmatched": [
-    "soccer/toppserien-women: sin liga equivalente segura",
-    "soccer/u19-division-de-honor-juvenil: sin liga equivalente segura",
-    "soccer/u20-womens-world-cup: sin liga equivalente segura",
     "soccer/u21-liga-mx: sin liga equivalente segura",
     "soccer/uefa-europa-conference-league: sin liga equivalente segura",
     "soccer/urvalsdeild: sin liga equivalente segura",
     "soccer/usl-league-one: sin liga equivalente segura",
     "soccer/v-league: sin liga equivalente segura",
-    "soccer/veikkausliiga: sin liga equivalente segura"
+    "soccer/veikkausliiga: sin liga equivalente segura",
+    "soccer/victoria-npl-women: sin liga equivalente segura",
+    "soccer/virsliga: sin liga equivalente segura",
+    "soccer/ykkonen: sin liga equivalente segura",
+    "squash/qatar-classic: sin liga equivalente segura",
+    "squash/qatar-classic-women: sin liga equivalente segura",
+    "table-tennis/czech-liga-pro: sin liga equivalente segura",
+    "tennis/atp-challenger-cassis-france-men-singles: sin liga equivalente segura",
+    "tennis/atp-challenger-genoa-italy-men-double: sin liga equivalente segura",
+    "tennis/atp-challenger-genoa-italy-men-singles: sin liga equivalente segura"
   ],
-  "rows_collected": 1270,
-  "rows_added": 2,
+  "rows_collected": 716,
+  "rows_added": 10,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
-    "OpenDota": 347,
+    "OpenDota": 0,
     "League of Legends": 0
   },
-  "next_league_cursor": 294,
+  "next_league_cursor": 318,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

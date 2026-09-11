@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "824631",
-    "start_time": "2026-09-11T18:20:00Z",
-    "home_id": "112",
-    "home_name": "Chicago Cubs",
-    "away_id": "134",
-    "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "684007",
-    "home_starter_name": "Shota Imanaga",
-    "away_starter_id": "696062",
-    "away_starter_name": "Wilber Dotel",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824227",
     "start_time": "2026-09-11T22:40:00Z",
     "home_id": "116",
@@ -49,7 +36,7 @@
     "home_starter_name": "Carlos Rodón",
     "away_starter_id": "690997",
     "away_starter_name": "Nolan McLean",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822767",
@@ -75,7 +62,7 @@
     "home_starter_name": "Sonny Gray",
     "away_starter_id": "607625",
     "away_starter_name": "Seth Lugo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822930",
@@ -88,7 +75,7 @@
     "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "699044",
     "away_starter_name": "Miguel Ullola",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823817",
@@ -114,7 +101,7 @@
     "home_starter_name": "Chris Sale",
     "away_starter_id": "605400",
     "away_starter_name": "Aaron Nola",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823736",
@@ -127,7 +114,7 @@
     "home_starter_name": "Dustin May",
     "away_starter_id": "671096",
     "away_starter_name": "Andrew Abbott",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823659",
@@ -175,8 +162,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "518876",
+    "home_starter_name": "Merrill Kelly",
     "away_starter_id": "669022",
     "away_starter_name": "MacKenzie Gore",
     "lineups_confirmed": false
