@@ -2051,40 +2051,40 @@
         "games": 2
       },
       "north macedonia volleyball": {
-        "elo": 1508.379991065723,
-        "games": 3
+        "elo": 1489.860590216767,
+        "games": 5
       },
       "kosovo volleyball": {
         "elo": 1488.9960129349292,
         "games": 1
       },
       "latvia volleyball": {
-        "elo": 1519.6875702352427,
-        "games": 2
+        "elo": 1519.9444378971652,
+        "games": 4
       },
       "estonia volleyball": {
-        "elo": 1517.418903433012,
-        "games": 2
+        "elo": 1525.92151056779,
+        "games": 3
       },
       "israel volleyball": {
-        "elo": 1502.2635686910203,
-        "games": 2
+        "elo": 1513.2030204252374,
+        "games": 3
       },
       "sweden volleyball": {
-        "elo": 1488.9960129349292,
-        "games": 1
+        "elo": 1480.3124297647573,
+        "games": 2
       },
       "switzerland volleyball": {
-        "elo": 1519.6875702352427,
-        "games": 2
+        "elo": 1520.543146808764,
+        "games": 4
       },
       "hungary volleyball": {
         "elo": 1488.9960129349292,
         "games": 1
       },
       "denmark volleyball": {
-        "elo": 1519.6875702352427,
-        "games": 2
+        "elo": 1510.1280122564335,
+        "games": 3
       },
       "austria volleyball": {
         "elo": 1508.9960129349292,
@@ -2107,16 +2107,16 @@
         "games": 2
       },
       "belgium volleyball": {
-        "elo": 1510.7470604599273,
-        "games": 1
+        "elo": 1521.4439845458749,
+        "games": 2
       },
       "czech republic volleyball": {
         "elo": 1510.7470604599273,
         "games": 1
       },
       "turkey volleyball": {
-        "elo": 1491.316416829828,
-        "games": 1
+        "elo": 1502.5671476735406,
+        "games": 2
       },
       "slovakia volleyball": {
         "elo": 1491.316416829828,
@@ -2128,6 +2128,50 @@
       },
       "greece volleyball": {
         "elo": 1511.316416829828,
+        "games": 1
+      },
+      "bulgaria volleyball": {
+        "elo": 1497.7150664659716,
+        "games": 2
+      },
+      "romania volleyball": {
+        "elo": 1479.1444234264786,
+        "games": 2
+      },
+      "poland volleyball": {
+        "elo": 1508.9960129349292,
+        "games": 1
+      },
+      "portugal volleyball": {
+        "elo": 1502.5242309121074,
+        "games": 2
+      },
+      "france volleyball": {
+        "elo": 1509.5595579788092,
+        "games": 1
+      },
+      "ukraine volleyball": {
+        "elo": 1498.3446388017308,
+        "games": 2
+      },
+      "finland volleyball": {
+        "elo": 1509.5595579788092,
+        "games": 1
+      },
+      "germany volleyball": {
+        "elo": 1498.9328435155558,
+        "games": 2
+      },
+      "italy volleyball": {
+        "elo": 1508.683583170172,
+        "games": 1
+      },
+      "netherlands volleyball": {
+        "elo": 1489.3030759140524,
+        "games": 1
+      },
+      "serbia volleyball": {
+        "elo": 1491.497392865222,
         "games": 1
       }
     },
@@ -47667,7 +47711,21 @@
       "thesportsdb:2257310",
       "thesportsdb:2257311",
       "thesportsdb:2257312",
-      "thesportsdb:2257330"
+      "thesportsdb:2257330",
+      "thesportsdb:2368148",
+      "thesportsdb:2368115",
+      "thesportsdb:2368118",
+      "thesportsdb:2368165",
+      "thesportsdb:2368173",
+      "thesportsdb:2368162",
+      "thesportsdb:2368166",
+      "thesportsdb:2368169",
+      "thesportsdb:2368119",
+      "thesportsdb:2368132",
+      "thesportsdb:2368146",
+      "thesportsdb:2368151",
+      "thesportsdb:2368129",
+      "thesportsdb:2368143"
     ],
     "aussie-rules:afl-women": [
       "thesportsdb:2064088",
@@ -63960,7 +64018,7 @@
       "draws": 0
     },
     "volleyball:asian-championship": {
-      "total": 16,
+      "total": 30,
       "draws": 0
     },
     "aussie-rules:afl-women": {
@@ -64367,7 +64425,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "447dcd19cfa3dfb0686656b292c70b9ae15bb94ab2229fdba668a85a1eb0b7f8",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": -0.006271967457524674,
       "last_brier": 0.25066234709366986,
@@ -64393,7 +64451,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "935a0cf7c89ef59ba869f10b9a6afa8d810580c0d60c0daf3c46b785e40b0b84",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.08844546440308187,
       "last_brier": 0.22731891231448167,

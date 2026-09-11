@@ -49,7 +49,7 @@
     "home_starter_name": "Max Scherzer",
     "away_starter_id": "605135",
     "away_starter_name": "Chris Bassitt",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824711",
@@ -88,7 +88,7 @@
     "home_starter_name": "Ryan Gusto",
     "away_starter_id": "",
     "away_starter_name": null,
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824873",
@@ -127,7 +127,7 @@
     "home_starter_name": "Taj Bradley",
     "away_starter_id": "800048",
     "away_starter_name": "Parker Messick",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823012",
@@ -140,7 +140,7 @@
     "home_starter_name": "Matthew Liberatore",
     "away_starter_id": "641743",
     "away_starter_name": "Anthony Kay",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824954",
@@ -448,8 +448,8 @@
     "home_name": "Toronto Blue Jays",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656302",
+    "home_starter_name": "Dylan Cease",
     "away_starter_id": "669432",
     "away_starter_name": "Trevor Rogers",
     "lineups_confirmed": false
@@ -604,8 +604,8 @@
     "home_name": "Toronto Blue Jays",
     "away_id": "116",
     "away_name": "Detroit Tigers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "667755",
+    "home_starter_name": "José Soriano",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -617,8 +617,8 @@
     "home_name": "New York Mets",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "804636",
+    "home_starter_name": "Jonah Tong",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
