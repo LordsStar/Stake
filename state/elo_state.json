@@ -10381,8 +10381,8 @@
         "games": 16
       },
       "gamerlegion": {
-        "elo": 1502.8768071365598,
-        "games": 15
+        "elo": 1496.486976373921,
+        "games": 16
       },
       "vici gaming": {
         "elo": 1462.7138756883492,
@@ -10433,8 +10433,8 @@
         "games": 30
       },
       "klim sani4": {
-        "elo": 1634.2264750117438,
-        "games": 33
+        "elo": 1606.708604103885,
+        "games": 37
       },
       "haters verusya": {
         "elo": 1510.0,
@@ -10573,8 +10573,8 @@
         "games": 8
       },
       "natus vincere": {
-        "elo": 1571.4849749703162,
-        "games": 9
+        "elo": 1605.392676640814,
+        "games": 12
       },
       "ice cream men": {
         "elo": 1509.9668998109685,
@@ -10833,12 +10833,28 @@
         "games": 5
       },
       "recrent club": {
-        "elo": 1490.0,
-        "games": 1
+        "elo": 1480.5750112778453,
+        "games": 2
       },
       "daxak club": {
-        "elo": 1510.0,
-        "games": 1
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "ybn club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "rostikfacekid club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "ns club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "voodoosh club": {
+        "elo": 1519.4249887221547,
+        "games": 2
       }
     },
     "soccer:prva-liga": {
@@ -46561,6 +46577,30 @@
         "p": 0.33657137335137427,
         "y": 0.0,
         "match_id": "opendota:8991632572"
+      },
+      {
+        "kind": "binary",
+        "p": 0.3194915381319426,
+        "y": 0.0,
+        "match_id": "opendota:8991817744"
+      },
+      {
+        "kind": "binary",
+        "p": 0.40180451015732904,
+        "y": 1.0,
+        "match_id": "opendota:8992034384"
+      },
+      {
+        "kind": "binary",
+        "p": 0.43531151407166596,
+        "y": 1.0,
+        "match_id": "opendota:8992196498"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4674988922461104,
+        "y": 1.0,
+        "match_id": "opendota:8992269821"
       }
     ],
     "aussie-rules:afl-women": [
@@ -63681,7 +63721,16 @@
       "opendota:8991156446",
       "opendota:8991215664",
       "opendota:8991632572",
-      "opendota:8991677504"
+      "opendota:8991677504",
+      "opendota:8991817744",
+      "opendota:8991822559",
+      "opendota:8992034384",
+      "opendota:8992097404",
+      "opendota:8992196498",
+      "opendota:8992218434",
+      "opendota:8992269821",
+      "opendota:8992284302",
+      "opendota:8992390628"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -63902,7 +63951,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 378,
+      "total": 387,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -64218,7 +64267,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "f7475226b74afc0486a4e50da1e4bacfcfa1a9c4ab2dd86bee246df2f1dc54e8",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.03144876451022527,
       "last_brier": 0.23969221700283191,
@@ -64257,7 +64306,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "2876313b7f123f2178e65dbbfabc3619cd6ac2857618e800a499856492e352dd",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": -0.006148016109090104,
       "last_brier": 0.25063147081277476,
@@ -64270,7 +64319,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "3027531929b2e10462261177479af7689fb20e40d5759b1e96652e096ba2079c",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.14008266694403948,
       "last_brier": 0.21489334153068437,
@@ -64283,7 +64332,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "7f890bd868b15fcf43aea67b9c14460b4711ea2425e0be3553646ba3aaa20522",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.08992563516813468,
       "last_brier": 0.22669952427961804,
@@ -64357,16 +64406,16 @@
     },
     "dota-2:all": {
       "policy_version": 2,
-      "active": false,
-      "pass_streak": 2,
+      "active": true,
+      "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "c10fe4e24c41b31092d804f3feed06c0ae94b189d7a9d95841dcee17550c6f53",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "270ae389a8c41377e8a4678a115cce3a669f9d8b9a45705be2a7fb98734c61a7",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.028570260629740107,
-      "last_brier": 0.2428498552590675,
-      "evidence_samples": 179,
-      "evidence_total_samples": 179
+      "last_skill": 0.02635107349427579,
+      "last_brier": 0.24334681581572826,
+      "evidence_samples": 183,
+      "evidence_total_samples": 183
     },
     "soccer:prva-liga": {
       "policy_version": 2,

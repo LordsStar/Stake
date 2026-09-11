@@ -1,26 +1,8 @@
 {
-  "generated_at": "2026-09-11T04:53:01.712318+00:00",
-  "targets_in_snapshot": 300,
+  "generated_at": "2026-09-11T11:27:09.563327+00:00",
+  "targets_in_snapshot": 313,
   "targets_processed": 24,
   "matched": [
-    {
-      "sport": "soccer",
-      "stake_league": "northern-territory-premier-league",
-      "source_league": "Scottish Premier League",
-      "similarity": 0.643
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "nsw-premier-league-2",
-      "source_league": "English Premier League",
-      "similarity": 0.81
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "omani-league",
-      "source_league": "Scottish Premier League",
-      "similarity": 0.571
-    },
     {
       "sport": "soccer",
       "stake_league": "premier-league",
@@ -36,38 +18,91 @@
     {
       "sport": "soccer",
       "stake_league": "premier-soccer-league",
+      "source_league": "Greek Super League 1",
+      "similarity": 0.683
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "premijer-liga",
       "source_league": "English Premier League",
-      "similarity": 0.651
+      "similarity": 0.571
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "primeira-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.571
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "primera-division",
+      "source_league": "Andorran 1a Divisió",
+      "similarity": 0.588
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "pro-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.714
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "prva-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.583
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "reserve-league",
+      "source_league": "Greek Super League 1",
+      "similarity": 0.706
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "saudi-prof-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.686
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "second-division-b",
+      "source_league": "Andorran Segona Divisió",
+      "similarity": 0.564
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "segunda-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.593
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "serie-a",
+      "source_league": "Italian Serie A",
+      "similarity": 0.667
     }
   ],
   "unmatched": [
-    "soccer/magyar-kupa: sin liga equivalente segura",
-    "soccer/major-league-soccer: sin liga equivalente segura",
-    "soccer/national: sin liga equivalente segura",
-    "soccer/national-2: sin liga equivalente segura",
-    "soccer/national-league: sin liga equivalente segura",
-    "soccer/national-womens-soccer-league: sin liga equivalente segura",
-    "soccer/npl-2-victoria: sin liga equivalente segura",
-    "soccer/npl-new-south-wales: sin liga equivalente segura",
-    "soccer/npl-northern-new-south: sin liga equivalente segura",
-    "soccer/npl-queensland: sin liga equivalente segura",
-    "soccer/npl-south-australia: sin liga equivalente segura",
-    "soccer/npl-victoria: sin liga equivalente segura",
-    "soccer/npl-western-australia: sin liga equivalente segura",
-    "soccer/pfl: sin liga equivalente segura",
-    "soccer/premier-division: sin liga equivalente segura",
     "soccer/premiership: sin liga equivalente segura",
     "soccer/premium-liiga: sin liga equivalente segura",
-    "soccer/primeira-liga: sin liga equivalente segura"
+    "soccer/primera-a-apertura: sin liga equivalente segura",
+    "soccer/primera-b: sin liga equivalente segura",
+    "soccer/primera-division-apertura: sin liga equivalente segura",
+    "soccer/primera-division-rfef: sin liga equivalente segura",
+    "soccer/primera-division-women: sin liga equivalente segura",
+    "soccer/primera-nacional: sin liga equivalente segura",
+    "soccer/prvaliga: sin liga equivalente segura",
+    "soccer/scotland-league-one: sin liga equivalente segura",
+    "soccer/serie-b: sin liga equivalente segura"
   ],
-  "rows_collected": 552,
-  "rows_added": 0,
+  "rows_collected": 1202,
+  "rows_added": 9,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
-    "OpenDota": 0,
+    "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 222,
+  "next_league_cursor": 246,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
