@@ -5861,8 +5861,8 @@
         "games": 33
       },
       "maria lourdes carle": {
-        "elo": 1526.7384296242685,
-        "games": 20
+        "elo": 1517.161939291306,
+        "games": 21
       },
       "maria timofeeva": {
         "elo": 1592.7764054651875,
@@ -6969,8 +6969,8 @@
         "games": 41
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1526.702558323458,
-        "games": 16
+        "elo": 1536.1225987401017,
+        "games": 17
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -7141,8 +7141,8 @@
         "games": 2
       },
       "noma noha akugue": {
-        "elo": 1493.2685064510608,
-        "games": 26
+        "elo": 1504.5603054101916,
+        "games": 27
       },
       "min liu": {
         "elo": 1480.2861569395889,
@@ -7341,8 +7341,8 @@
         "games": 5
       },
       "irene burillo": {
-        "elo": 1521.2033930864243,
-        "games": 12
+        "elo": 1531.18399563555,
+        "games": 13
       },
       "mariana isabel higuita barraza": {
         "elo": 1490.0,
@@ -7601,20 +7601,20 @@
         "games": 8
       },
       "fiona ferro": {
-        "elo": 1550.5167722242084,
-        "games": 24
+        "elo": 1559.4358054914658,
+        "games": 25
       },
       "beatriz castro": {
         "elo": 1491.264696885719,
         "games": 1
       },
       "elizara yaneva": {
-        "elo": 1520.5294557709542,
-        "games": 22
+        "elo": 1510.5488532218285,
+        "games": 23
       },
       "lucie havlickova": {
-        "elo": 1512.8128253320751,
-        "games": 15
+        "elo": 1503.8937920648177,
+        "games": 16
       },
       "kika lima": {
         "elo": 1490.0,
@@ -7909,8 +7909,8 @@
         "games": 3
       },
       "alevtina ibragimova": {
-        "elo": 1552.3778463773021,
-        "games": 16
+        "elo": 1561.6162089352495,
+        "games": 17
       },
       "shi han": {
         "elo": 1492.120815253549,
@@ -7933,8 +7933,8 @@
         "games": 4
       },
       "clara burel": {
-        "elo": 1506.5300613183679,
-        "games": 14
+        "elo": 1497.1100209017243,
+        "games": 15
       },
       "dalila spiteri": {
         "elo": 1456.9198032748654,
@@ -8821,8 +8821,8 @@
         "games": 5
       },
       "anastasiia sobolieva": {
-        "elo": 1538.402382661604,
-        "games": 8
+        "elo": 1527.1105837024731,
+        "games": 9
       },
       "yuliana lizarazo": {
         "elo": 1488.353937372876,
@@ -9041,8 +9041,8 @@
         "games": 1
       },
       "aurora zantedeschi": {
-        "elo": 1525.864504543693,
-        "games": 7
+        "elo": 1516.6261419857458,
+        "games": 8
       },
       "olivia lincer": {
         "elo": 1490.9583225604247,
@@ -9673,8 +9673,8 @@
         "games": 1
       },
       "rositsa dencheva": {
-        "elo": 1541.4614691886363,
-        "games": 4
+        "elo": 1551.0379595215989,
+        "games": 5
       },
       "adrienn nagy": {
         "elo": 1489.727859399778,
@@ -10853,6 +10853,14 @@
         "games": 2
       },
       "voodoosh club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "rostik999 club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "stray club": {
         "elo": 1519.4249887221547,
         "games": 2
       }
@@ -33284,36 +33292,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.4795604289292164,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179459"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5316920144818761,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179544"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4476959675163757,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179452"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4127881944465805,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179465"
-      },
-      {
-        "kind": "binary",
-        "p": 0.48950360630013984,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179538"
-      },
-      {
-        "kind": "binary",
         "p": 0.4403947299280947,
         "y": 1.0,
         "match_id": "espn:tennis:wta:179578"
@@ -39281,6 +39259,36 @@
         "p": 0.5495562968943954,
         "y": 0.0,
         "match_id": "espn:tennis:wta:182551"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5645899479565448,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183602"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5009698725437132,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183555"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4710020208321796,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183601"
+      },
+      {
+        "kind": "binary",
+        "p": 0.46191812789736625,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183554"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5540483366371322,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183603"
       }
     ],
     "tennis:atp": [
@@ -63040,7 +63048,13 @@
       "espn:tennis:wta:183638",
       "espn:tennis:wta:182553",
       "espn:tennis:wta:183643",
-      "espn:tennis:wta:182551"
+      "espn:tennis:wta:182551",
+      "espn:tennis:wta:183602",
+      "espn:tennis:wta:183555",
+      "espn:tennis:wta:183556",
+      "espn:tennis:wta:183601",
+      "espn:tennis:wta:183554",
+      "espn:tennis:wta:183603"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -63730,7 +63744,9 @@
       "opendota:8992218434",
       "opendota:8992269821",
       "opendota:8992284302",
-      "opendota:8992390628"
+      "opendota:8992390628",
+      "opendota:8993325783",
+      "opendota:8993476358"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -63927,7 +63943,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5195,
+      "total": 5201,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -63951,7 +63967,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 387,
+      "total": 389,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -64331,11 +64347,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "7f890bd868b15fcf43aea67b9c14460b4711ea2425e0be3553646ba3aaa20522",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "72df30c9b805b6b3445b435fca7649033d1a4487fb1c65b33b102f20e5b67d6c",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.08992563516813468,
-      "last_brier": 0.22669952427961804,
+      "last_skill": 0.08569587260689338,
+      "last_brier": 0.22775315813362326,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
