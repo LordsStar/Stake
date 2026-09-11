@@ -10,7 +10,7 @@
     "home_starter_name": "Shota Imanaga",
     "away_starter_id": "696062",
     "away_starter_name": "Wilber Dotel",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824227",
@@ -23,7 +23,7 @@
     "home_starter_name": "Framber Valdez",
     "away_starter_id": "690279",
     "away_starter_name": "Mason Adams",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822684",
@@ -36,7 +36,7 @@
     "home_starter_name": "Cade Cavalli",
     "away_starter_id": "579328",
     "away_starter_name": "Yusei Kikuchi",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823498",
@@ -177,8 +177,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669022",
+    "away_starter_name": "MacKenzie Gore",
     "lineups_confirmed": false
   },
   {
@@ -372,8 +372,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "677958",
+    "away_starter_name": "Kumar Rocker",
     "lineups_confirmed": false
   },
   {
