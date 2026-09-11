@@ -1,14 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:59:57.630127+00:00",
-  "targets_in_snapshot": 275,
+  "generated_at": "2026-09-11T04:53:01.712318+00:00",
+  "targets_in_snapshot": 300,
   "targets_processed": 24,
   "matched": [
-    {
-      "sport": "soccer",
-      "stake_league": "ligue-1",
-      "source_league": "Algerian Ligue 1",
-      "similarity": 0.667
-    },
     {
       "sport": "soccer",
       "stake_league": "northern-territory-premier-league",
@@ -47,14 +41,15 @@
     }
   ],
   "unmatched": [
-    "soccer/ligue-1-srl: sin liga equivalente segura",
-    "soccer/ligue-2: sin liga equivalente segura",
     "soccer/magyar-kupa: sin liga equivalente segura",
     "soccer/major-league-soccer: sin liga equivalente segura",
     "soccer/national: sin liga equivalente segura",
+    "soccer/national-2: sin liga equivalente segura",
     "soccer/national-league: sin liga equivalente segura",
     "soccer/national-womens-soccer-league: sin liga equivalente segura",
+    "soccer/npl-2-victoria: sin liga equivalente segura",
     "soccer/npl-new-south-wales: sin liga equivalente segura",
+    "soccer/npl-northern-new-south: sin liga equivalente segura",
     "soccer/npl-queensland: sin liga equivalente segura",
     "soccer/npl-south-australia: sin liga equivalente segura",
     "soccer/npl-victoria: sin liga equivalente segura",
@@ -65,7 +60,7 @@
     "soccer/premium-liiga: sin liga equivalente segura",
     "soccer/primeira-liga: sin liga equivalente segura"
   ],
-  "rows_collected": 627,
+  "rows_collected": 552,
   "rows_added": 0,
   "schema_rejections": [],
   "auxiliary_sources": {
@@ -73,6 +68,6 @@
     "OpenDota": 0,
     "League of Legends": 0
   },
-  "next_league_cursor": 198,
+  "next_league_cursor": 222,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
