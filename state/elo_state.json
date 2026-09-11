@@ -64410,7 +64410,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "270ae389a8c41377e8a4678a115cce3a669f9d8b9a45705be2a7fb98734c61a7",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.02635107349427579,
       "last_brier": 0.24334681581572826,
