@@ -1,31 +1,5 @@
 [
   {
-    "game_pk": "824224",
-    "start_time": "2026-09-12T17:10:00Z",
-    "home_id": "116",
-    "home_name": "Detroit Tigers",
-    "away_id": "115",
-    "away_name": "Colorado Rockies",
-    "home_starter_id": "808825",
-    "home_starter_name": "Andrew Sears",
-    "away_starter_id": "685299",
-    "away_starter_name": "Tanner Gordon",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823496",
-    "start_time": "2026-09-12T17:35:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "121",
-    "away_name": "New York Mets",
-    "home_starter_id": "543037",
-    "home_starter_name": "Gerrit Cole",
-    "away_starter_id": "804267",
-    "away_starter_name": "Zac Thornton",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824630",
     "start_time": "2026-09-12T18:20:00Z",
     "home_id": "112",
@@ -36,7 +10,7 @@
     "home_starter_name": "Clay Holmes",
     "away_starter_id": "694973",
     "away_starter_name": "Paul Skenes",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822768",
@@ -49,7 +23,7 @@
     "home_starter_name": "Spencer Miles",
     "away_starter_id": "680694",
     "away_starter_name": "Kyle Bradish",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822685",
@@ -62,7 +36,7 @@
     "home_starter_name": "Andrew Alvarez",
     "away_starter_id": "700712",
     "away_starter_name": "Walbert Ureña",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823170",
@@ -75,7 +49,7 @@
     "home_starter_name": "Cesar Perdomo",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824712",
@@ -88,7 +62,7 @@
     "home_starter_name": "Ranger Suarez",
     "away_starter_id": "677976",
     "away_starter_name": "Randy Dobnak",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823657",
@@ -101,7 +75,7 @@
     "home_starter_name": "Connor Prielipp",
     "away_starter_id": "682982",
     "away_starter_name": "Daniel Espino",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823819",
@@ -114,7 +88,7 @@
     "home_starter_name": "Tyler Phillips",
     "away_starter_id": "607192",
     "away_starter_name": "Tyler Glasnow",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822927",
@@ -127,7 +101,7 @@
     "home_starter_name": "Ian Seymour",
     "away_starter_id": "663567",
     "away_starter_name": "Peter Lambert",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823737",
@@ -140,7 +114,7 @@
     "home_starter_name": "Shane Drohan",
     "away_starter_id": "663903",
     "away_starter_name": "Brady Singer",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824870",
@@ -151,9 +125,9 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "641816",
     "home_starter_name": "Tyler Mahle",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "away_starter_id": "641835",
+    "away_starter_name": "Tim Mayza",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823009",
@@ -166,7 +140,7 @@
     "home_starter_name": "Kyle Leahy",
     "away_starter_id": "656794",
     "away_starter_name": "Sean Newcomb",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825035",
@@ -294,8 +268,8 @@
     "away_name": "Los Angeles Dodgers",
     "home_starter_id": "691587",
     "home_starter_name": "Eury Pérez",
-    "away_starter_id": "680736",
-    "away_starter_name": "Justin Wrobleski",
+    "away_starter_id": "",
+    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {

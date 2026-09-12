@@ -1,68 +1,48 @@
 {
-  "generated_at": "2026-09-12T15:39:20.917230+00:00",
-  "targets_in_snapshot": 333,
+  "generated_at": "2026-09-12T20:41:19.758787+00:00",
+  "targets_in_snapshot": 285,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "futsal",
-      "stake_league": "1a-divisao",
-      "source_league": "Andorran 1a Divisió",
-      "similarity": 0.571
-    },
-    {
-      "sport": "futsal",
-      "stake_league": "gaucho-serie-a",
-      "source_league": "Italian Serie A",
-      "similarity": 0.621
-    },
-    {
-      "sport": "futsal",
-      "stake_league": "primera-division",
-      "source_league": "Andorran 1a Divisió",
-      "similarity": 0.588
-    },
-    {
-      "sport": "futsal",
-      "stake_league": "superliga",
-      "source_league": "Albanian Superliga",
-      "similarity": 0.667
-    },
-    {
       "sport": "handball",
-      "stake_league": "1-division",
+      "stake_league": "lnh-division-1",
       "source_league": "French LNH Division 1",
-      "similarity": 0.581
+      "similarity": 0.8
     }
   ],
   "unmatched": [
-    "efootball-bots/absolute-legends-efootball-4-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-5-2026-week-37-t6: sin liga equivalente segura",
-    "efootball-bots/absolute-legends-efootball-6-2026-week-37-t6: sin liga equivalente segura",
-    "etouchdown/valhalla-league-2026-week-37-t9: sin liga equivalente segura",
-    "fifa/valhalla-cup-2026-week-37-t3: sin liga equivalente segura",
-    "fifa/valhalla-cup-3-2026-week-37-t3: sin liga equivalente segura",
-    "fifa/valkyrie-cup-2026-week-37-t4: sin liga equivalente segura",
-    "floorball/eliteserien: sin liga equivalente segura",
-    "floorball/extraliga: sin liga equivalente segura",
-    "floorball/national-league: sin liga equivalente segura",
-    "floorball/unihockey-prime-league-women: sin liga equivalente segura",
-    "futsal/f-league: sin liga equivalente segura",
-    "futsal/liga-futsal: sin liga equivalente segura",
-    "handball/1-divisao-women: sin liga equivalente segura",
-    "handball/1-division-women: sin liga equivalente segura",
-    "handball/1-liga: sin liga equivalente segura",
-    "handball/1a-divisao: sin liga equivalente segura",
-    "handball/2-bundesliga-women: sin liga equivalente segura",
-    "handball/2nd-bundesliga: sin liga equivalente segura"
+    "handball/extraliga: sin liga equivalente segura",
+    "handball/handboldligaen: sin liga equivalente segura",
+    "handball/liga-asobal: sin liga equivalente segura",
+    "handball/liga-nationala-women: sin liga equivalente segura",
+    "handball/nb-i: sin liga equivalente segura",
+    "handball/premijer-liga: sin liga equivalente segura",
+    "handball/superliga: sin liga equivalente segura",
+    "handball/superliga-women: sin liga equivalente segura",
+    "handball/women-bundesliga: sin liga equivalente segura",
+    "kings-of-glory/kpl-growth-league-2027-promotion-t10: sin liga equivalente segura",
+    "kings-of-glory/kpl-growth-league-summer-2026-t10: sin liga equivalente segura",
+    "mma/dana-whites-contender-series-season-10-week-6: sin liga equivalente segura",
+    "mma/ice-cage-8: sin liga equivalente segura",
+    "mma/ksw-121: sin liga equivalente segura",
+    "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
+    "mma/ufc-332: sin liga equivalente segura",
+    "mma/ufc-333-volkanovski-vs-evloev: sin liga equivalente segura",
+    "mma/ufc-fight-night-silva-vs-delgado: sin liga equivalente segura",
+    "mobile-legends/mlbb-continental-championships-season-8-t10: sin liga equivalente segura",
+    "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura",
+    "mobile-legends/mpl-malaysia-season-18-t10: sin liga equivalente segura",
+    "mobile-legends/mpl-philippines-season-18-t9: sin liga equivalente segura",
+    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura"
   ],
-  "rows_collected": 507,
-  "rows_added": 0,
+  "rows_collected": 710,
+  "rows_added": 31,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
-    "OpenDota": 0,
+    "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 72,
+  "next_league_cursor": 96,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

@@ -79,7 +79,14 @@
     "misolic filip": "filip misolic",
     "olivieri genaro alberto": "genaro alberto olivieri",
     "hemery calvin": "calvin hemery",
-    "loof thijmen": "thijmen loof"
+    "loof thijmen": "thijmen loof",
+    "slavic nikola": "nikola slavic",
+    "galan daniel elahi": "daniel elahi galan",
+    "schoenhaus max": "max schoenhaus",
+    "zahraj patrick": "patrick zahraj",
+    "purtseladze saba": "saba purtseladze",
+    "cecchinato marco": "marco cecchinato",
+    "michalski daniel": "daniel michalski"
   },
   "tennis:wta": {
     "feistel gina": "gina feistel",
@@ -98,7 +105,9 @@
     "granwehr alina": "alina granwehr",
     "noma akugue noha": "noma noha akugue",
     "rodriguez victoria": "victoria rodriguez",
-    "vergara rivera antonia": "antonia vergara rivera"
+    "vergara rivera antonia": "antonia vergara rivera",
+    "sieg madison": "madison sieg",
+    "maria aran teixido garcia": "aran teixido garcia"
   },
   "handball:champions-league": {
     "veszprem kc": "veszpr m kc",
@@ -119,7 +128,8 @@
     "heerenveen": "sc heerenveen"
   },
   "soccer:women-bundesliga": {
-    "fc union berlin": "union berlin"
+    "fc union berlin": "union berlin",
+    "fc bayern munich": "bayern munich"
   },
   "soccer:super-league-1": {
     "panaitolikos": "panetolikos"
