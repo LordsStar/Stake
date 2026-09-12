@@ -36,7 +36,7 @@
     "home_starter_name": "Clay Holmes",
     "away_starter_id": "694973",
     "away_starter_name": "Paul Skenes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822768",
@@ -49,7 +49,7 @@
     "home_starter_name": "Spencer Miles",
     "away_starter_id": "680694",
     "away_starter_name": "Kyle Bradish",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822685",
@@ -424,8 +424,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "667755",
     "home_starter_name": "José Soriano",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "675512",
+    "away_starter_name": "Troy Melton",
     "lineups_confirmed": false
   },
   {
@@ -593,8 +593,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "623454",
+    "away_starter_name": "Drew Anderson",
     "lineups_confirmed": false
   },
   {
