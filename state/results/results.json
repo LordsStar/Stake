@@ -215927,5 +215927,44 @@
     "source": "espn",
     "sport": "baseball",
     "league": "mlb"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183604",
+    "start_time": "2026-09-12T12:45Z",
+    "home_name": "Noma Noha Akugue",
+    "away_name": "Guiomar Maristany Zuleta De Reales",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183559",
+    "start_time": "2026-09-12T10:05Z",
+    "home_name": "Rositsa Dencheva",
+    "away_name": "Irene Burillo",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183558",
+    "start_time": "2026-09-12T12:50Z",
+    "home_name": "Alevtina Ibragimova",
+    "away_name": "Alicia Herrero Linana",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "score_encoding": "winner_indicator"
   }
 ]

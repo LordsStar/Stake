@@ -7013,8 +7013,8 @@
         "games": 41
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1536.1225987401017,
-        "games": 17
+        "elo": 1525.216653664537,
+        "games": 18
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -7185,8 +7185,8 @@
         "games": 2
       },
       "noma noha akugue": {
-        "elo": 1504.5603054101916,
-        "games": 27
+        "elo": 1515.4662504857563,
+        "games": 28
       },
       "min liu": {
         "elo": 1480.2861569395889,
@@ -7361,8 +7361,8 @@
         "games": 8
       },
       "alicia herrero linana": {
-        "elo": 1549.419603053361,
-        "games": 9
+        "elo": 1539.770505458007,
+        "games": 10
       },
       "carol zhao": {
         "elo": 1442.2685170558852,
@@ -7385,8 +7385,8 @@
         "games": 5
       },
       "irene burillo": {
-        "elo": 1531.18399563555,
-        "games": 13
+        "elo": 1521.7548174527128,
+        "games": 14
       },
       "mariana isabel higuita barraza": {
         "elo": 1490.0,
@@ -7953,8 +7953,8 @@
         "games": 3
       },
       "alevtina ibragimova": {
-        "elo": 1561.6162089352495,
-        "games": 17
+        "elo": 1571.2653065306035,
+        "games": 18
       },
       "shi han": {
         "elo": 1492.120815253549,
@@ -9717,8 +9717,8 @@
         "games": 1
       },
       "rositsa dencheva": {
-        "elo": 1551.0379595215989,
-        "games": 5
+        "elo": 1560.467137704436,
+        "games": 6
       },
       "adrienn nagy": {
         "elo": 1489.727859399778,
@@ -33372,24 +33372,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.42348840782882924,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:179462"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4857321675094691,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:178965"
-      },
-      {
-        "kind": "binary",
-        "p": 0.47969590792109773,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:179551"
-      },
-      {
-        "kind": "binary",
         "p": 0.5272529281320719,
         "y": 1.0,
         "match_id": "espn:tennis:wta:178968"
@@ -39369,6 +39351,24 @@
         "p": 0.5660971582352997,
         "y": 0.0,
         "match_id": "espn:tennis:wta:182766"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5285410908581388,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183559"
+      },
+      {
+        "kind": "binary",
+        "p": 0.45470274622176343,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183604"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5175451202322963,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183558"
       }
     ],
     "tennis:atp": [
@@ -63183,7 +63183,10 @@
       "espn:tennis:wta:182768",
       "espn:tennis:wta:183642",
       "espn:tennis:wta:183641",
-      "espn:tennis:wta:182766"
+      "espn:tennis:wta:182766",
+      "espn:tennis:wta:183559",
+      "espn:tennis:wta:183604",
+      "espn:tennis:wta:183558"
     ],
     "volleyball:premier-volleyball-league-women": [
       "thesportsdb:2446402",
@@ -64088,7 +64091,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5207,
+      "total": 5210,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -64467,7 +64470,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "91d883ca35f77c8c4fcd25277dced02a9bfdf74346b52dabe59d1a67e4a9b317",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.012225159515427464,
       "last_brier": 0.24536327037636746,
@@ -64492,11 +64495,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "423158e193a52eddcc7bedc9bb0bfe10cfdfa9d5fe7dc2cda7affa5855ae969b",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "160db859feda310c9e22bf68ebae4bf293107500b5b6809fe66884748b7155d6",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.08486752204299453,
-      "last_brier": 0.22821116169052846,
+      "last_skill": 0.08730891957967979,
+      "last_brier": 0.22780769367291256,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
