@@ -1,83 +1,5 @@
 [
   {
-    "game_pk": "822768",
-    "start_time": "2026-09-12T19:07:00Z",
-    "home_id": "141",
-    "home_name": "Toronto Blue Jays",
-    "away_id": "110",
-    "away_name": "Baltimore Orioles",
-    "home_starter_id": "693686",
-    "home_starter_name": "Spencer Miles",
-    "away_starter_id": "680694",
-    "away_starter_name": "Kyle Bradish",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822685",
-    "start_time": "2026-09-12T20:05:00Z",
-    "home_id": "120",
-    "home_name": "Washington Nationals",
-    "away_id": "108",
-    "away_name": "Los Angeles Angels",
-    "home_starter_id": "674841",
-    "home_starter_name": "Andrew Alvarez",
-    "away_starter_id": "700712",
-    "away_starter_name": "Walbert Ureña",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823170",
-    "start_time": "2026-09-12T20:05:00Z",
-    "home_id": "137",
-    "home_name": "San Francisco Giants",
-    "away_id": "135",
-    "away_name": "San Diego Padres",
-    "home_starter_id": "702885",
-    "home_starter_name": "Cesar Perdomo",
-    "away_starter_id": "650633",
-    "away_starter_name": "Michael King",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824712",
-    "start_time": "2026-09-12T20:10:00Z",
-    "home_id": "111",
-    "home_name": "Boston Red Sox",
-    "away_id": "118",
-    "away_name": "Kansas City Royals",
-    "home_starter_id": "624133",
-    "home_starter_name": "Ranger Suarez",
-    "away_starter_id": "677976",
-    "away_starter_name": "Randy Dobnak",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823657",
-    "start_time": "2026-09-12T20:10:00Z",
-    "home_id": "142",
-    "home_name": "Minnesota Twins",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "687570",
-    "home_starter_name": "Connor Prielipp",
-    "away_starter_id": "682982",
-    "away_starter_name": "Daniel Espino",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823819",
-    "start_time": "2026-09-12T20:10:00Z",
-    "home_id": "146",
-    "home_name": "Miami Marlins",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "663969",
-    "home_starter_name": "Tyler Phillips",
-    "away_starter_id": "607192",
-    "away_starter_name": "Tyler Glasnow",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822927",
     "start_time": "2026-09-12T22:10:00Z",
     "home_id": "139",
@@ -88,7 +10,7 @@
     "home_starter_name": "Ian Seymour",
     "away_starter_id": "663567",
     "away_starter_name": "Peter Lambert",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823737",
@@ -153,7 +75,7 @@
     "home_starter_name": "Gage Jump",
     "away_starter_id": "693433",
     "away_starter_name": "Bryan Woo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824225",
@@ -166,19 +88,6 @@
     "home_starter_name": "Jackson Jobe",
     "away_starter_id": "687312",
     "away_starter_name": "Gabriel Hughes",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824708",
-    "start_time": "2026-09-13T17:35:00Z",
-    "home_id": "111",
-    "home_name": "Boston Red Sox",
-    "away_id": "118",
-    "away_name": "Kansas City Royals",
-    "home_starter_id": "801139",
-    "home_starter_name": "Payton Tolle",
-    "away_starter_id": "702070",
-    "away_starter_name": "Noah Cameron",
     "lineups_confirmed": false
   },
   {
@@ -309,6 +218,19 @@
     "home_starter_name": "Matthew Boyd",
     "away_starter_id": "696149",
     "away_starter_name": "Bubba Chandler",
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "824708",
+    "start_time": "2026-09-13T19:05:00Z",
+    "home_id": "111",
+    "home_name": "Boston Red Sox",
+    "away_id": "118",
+    "away_name": "Kansas City Royals",
+    "home_starter_id": "801139",
+    "home_starter_name": "Payton Tolle",
+    "away_starter_id": "702070",
+    "away_starter_name": "Noah Cameron",
     "lineups_confirmed": false
   },
   {
