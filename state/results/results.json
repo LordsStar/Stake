@@ -215903,5 +215903,29 @@
     "status": "final",
     "source": "opendota",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "event_id": "espn:401816901",
+    "start_time": "2026-09-12T01:40Z",
+    "home_name": "Athletics",
+    "away_name": "Seattle Mariners",
+    "home_score": "6",
+    "away_score": "5",
+    "status": "final",
+    "source": "espn",
+    "sport": "baseball",
+    "league": "mlb"
+  },
+  {
+    "event_id": "espn:401816900",
+    "start_time": "2026-09-12T02:15Z",
+    "home_name": "San Francisco Giants",
+    "away_name": "San Diego Padres",
+    "home_score": "5",
+    "away_score": "7",
+    "status": "final",
+    "source": "espn",
+    "sport": "baseball",
+    "league": "mlb"
   }
 ]

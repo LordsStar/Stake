@@ -205146,5 +205146,208 @@
         "pitches": 24
       }
     ]
+  },
+  {
+    "game_pk": "824954",
+    "start_time": "2026-09-12T01:40:00Z",
+    "home_id": "133",
+    "home_name": "Athletics",
+    "away_id": "136",
+    "away_name": "Seattle Mariners",
+    "home_score": 6,
+    "away_score": 5,
+    "home_starter_id": "605488",
+    "away_starter_id": "669923",
+    "home_pitchers": [
+      {
+        "id": "605488",
+        "outs": 15,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 94
+      },
+      {
+        "id": "656240",
+        "outs": 3,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 12
+      },
+      {
+        "id": "665622",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 12
+      },
+      {
+        "id": "663687",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 17
+      },
+      {
+        "id": "665660",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 17
+      },
+      {
+        "id": "688297",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 11
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "669923",
+        "outs": 18,
+        "hr": 1,
+        "bb": 2,
+        "hbp": 0,
+        "k": 5,
+        "pitches": 101
+      },
+      {
+        "id": "678606",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 6
+      },
+      {
+        "id": "622554",
+        "outs": 5,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 25
+      },
+      {
+        "id": "672841",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 18
+      },
+      {
+        "id": "660825",
+        "outs": 0,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 3
+      }
+    ]
+  },
+  {
+    "game_pk": "823173",
+    "start_time": "2026-09-12T02:15:00Z",
+    "home_id": "137",
+    "home_name": "San Francisco Giants",
+    "away_id": "135",
+    "away_name": "San Diego Padres",
+    "home_score": 5,
+    "away_score": 7,
+    "home_starter_id": "683627",
+    "away_starter_id": "592662",
+    "home_pitchers": [
+      {
+        "id": "683627",
+        "outs": 9,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 72
+      },
+      {
+        "id": "805074",
+        "outs": 15,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 77
+      },
+      {
+        "id": "691769",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 9
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "592662",
+        "outs": 15,
+        "hr": 1,
+        "bb": 4,
+        "hbp": 0,
+        "k": 5,
+        "pitches": 94
+      },
+      {
+        "id": "673513",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 16
+      },
+      {
+        "id": "670970",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 12
+      },
+      {
+        "id": "699134",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 18
+      },
+      {
+        "id": "695243",
+        "outs": 3,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 27
+      }
+    ]
   }
 ]

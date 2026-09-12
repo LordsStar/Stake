@@ -2701,12 +2701,12 @@
         "games": 179
       },
       "seattle mariners": {
-        "elo": 1469.6867741167166,
-        "games": 178
+        "elo": 1458.954566189556,
+        "games": 179
       },
       "san diego padres": {
-        "elo": 1550.1131719285188,
-        "games": 177
+        "elo": 1558.3015435426628,
+        "games": 178
       },
       "pittsburgh pirates": {
         "elo": 1524.9141034752818,
@@ -2761,8 +2761,8 @@
         "games": 175
       },
       "athletics": {
-        "elo": 1424.2016555061923,
-        "games": 178
+        "elo": 1434.9338634333528,
+        "games": 179
       },
       "cleveland guardians": {
         "elo": 1500.3829943876535,
@@ -2777,8 +2777,8 @@
         "games": 178
       },
       "san francisco giants": {
-        "elo": 1466.4682796225966,
-        "games": 176
+        "elo": 1458.2799080084526,
+        "games": 177
       },
       "los angeles angels": {
         "elo": 1407.076095576234,
@@ -27370,18 +27370,6 @@
     "baseball:mlb": [
       {
         "kind": "binary",
-        "p": 0.3964660791065681,
-        "y": 1.0,
-        "match_id": "espn:401815909"
-      },
-      {
-        "kind": "binary",
-        "p": 0.3283552747897253,
-        "y": 0.0,
-        "match_id": "espn:401815910"
-      },
-      {
-        "kind": "binary",
         "p": 0.5418854850576654,
         "y": 0.0,
         "match_id": "espn:401815911"
@@ -33364,9 +33352,21 @@
       },
       {
         "kind": "binary",
+        "p": 0.463389603641973,
+        "y": 1.0,
+        "match_id": "espn:401816901"
+      },
+      {
+        "kind": "binary",
         "p": 0.6461209557936356,
         "y": 1.0,
         "match_id": "espn:401816902"
+      },
+      {
+        "kind": "binary",
+        "p": 0.40941858070719994,
+        "y": 0.0,
+        "match_id": "espn:401816900"
       }
     ],
     "tennis:wta": [
@@ -54014,7 +54014,9 @@
       "espn:401816897",
       "espn:401816898",
       "espn:401816896",
-      "espn:401816902"
+      "espn:401816901",
+      "espn:401816902",
+      "espn:401816900"
     ],
     "tennis:atp": [
       "espn:tennis:atp:173654",
@@ -64078,7 +64080,7 @@
       "draws": 0
     },
     "baseball:mlb": {
-      "total": 2662,
+      "total": 2664,
       "draws": 21
     },
     "tennis:atp": {
@@ -64464,11 +64466,11 @@
       "active": false,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "71ad69a543a058a204bd03d7b7621892dd56d9f98080c3a806e8ca01be3637ca",
+      "last_evidence_fingerprint": "91d883ca35f77c8c4fcd25277dced02a9bfdf74346b52dabe59d1a67e4a9b317",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.008007405210842866,
-      "last_brier": 0.24641096054562628,
+      "last_skill": 0.012225159515427464,
+      "last_brier": 0.24536327037636746,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64478,7 +64480,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "70a1df24781095c4b5eddbbce281c29433706f8560a043333c508eacc44fbc22",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.1407714873913829,
       "last_brier": 0.2146138017368175,
@@ -64491,7 +64493,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "423158e193a52eddcc7bedc9bb0bfe10cfdfa9d5fe7dc2cda7affa5855ae969b",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.08486752204299453,
       "last_brier": 0.22821116169052846,
@@ -64569,7 +64571,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "d7248874cc403528acca8557e42157a49c4d2f11477e8bac241803c19baed79c",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.02422774409932893,
       "last_brier": 0.2438789153243049,
