@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "824630",
-    "start_time": "2026-09-12T18:20:00Z",
-    "home_id": "112",
-    "home_name": "Chicago Cubs",
-    "away_id": "134",
-    "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "605280",
-    "home_starter_name": "Clay Holmes",
-    "away_starter_id": "694973",
-    "away_starter_name": "Paul Skenes",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822768",
     "start_time": "2026-09-12T19:07:00Z",
     "home_id": "141",
@@ -153,7 +140,7 @@
     "home_starter_name": "Brandon Pfaadt",
     "away_starter_id": "677958",
     "away_starter_name": "Kumar Rocker",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824955",
