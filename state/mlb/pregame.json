@@ -10,7 +10,7 @@
     "home_starter_name": "Andrew Sears",
     "away_starter_id": "685299",
     "away_starter_name": "Tanner Gordon",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823496",
@@ -23,7 +23,7 @@
     "home_starter_name": "Gerrit Cole",
     "away_starter_id": "804267",
     "away_starter_name": "Zac Thornton",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824630",
@@ -62,7 +62,7 @@
     "home_starter_name": "Andrew Alvarez",
     "away_starter_id": "700712",
     "away_starter_name": "Walbert Ureña",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823170",
@@ -75,7 +75,7 @@
     "home_starter_name": "Cesar Perdomo",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824712",
@@ -88,7 +88,7 @@
     "home_starter_name": "Ranger Suarez",
     "away_starter_id": "677976",
     "away_starter_name": "Randy Dobnak",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823657",
@@ -101,7 +101,7 @@
     "home_starter_name": "Connor Prielipp",
     "away_starter_id": "682982",
     "away_starter_name": "Daniel Espino",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823819",
@@ -114,7 +114,7 @@
     "home_starter_name": "Tyler Phillips",
     "away_starter_id": "607192",
     "away_starter_name": "Tyler Glasnow",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822927",
@@ -136,8 +136,8 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "675660",
+    "home_starter_name": "Shane Drohan",
     "away_starter_id": "663903",
     "away_starter_name": "Brady Singer",
     "lineups_confirmed": false
@@ -658,8 +658,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663776",
+    "away_starter_name": "Patrick Sandoval",
     "lineups_confirmed": false
   },
   {
