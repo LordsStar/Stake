@@ -6,8 +6,8 @@
     "home_name": "Detroit Tigers",
     "away_id": "115",
     "away_name": "Colorado Rockies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "808825",
+    "home_starter_name": "Andrew Sears",
     "away_starter_id": "685299",
     "away_starter_name": "Tanner Gordon",
     "lineups_confirmed": false
@@ -45,8 +45,8 @@
     "home_name": "Toronto Blue Jays",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "693686",
+    "home_starter_name": "Spencer Miles",
     "away_starter_id": "680694",
     "away_starter_name": "Kyle Bradish",
     "lineups_confirmed": false
@@ -99,8 +99,8 @@
     "away_name": "Cleveland Guardians",
     "home_starter_id": "687570",
     "home_starter_name": "Connor Prielipp",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "682982",
+    "away_starter_name": "Daniel Espino",
     "lineups_confirmed": false
   },
   {
@@ -151,8 +151,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "641816",
     "home_starter_name": "Tyler Mahle",
-    "away_starter_id": "666200",
-    "away_starter_name": "Jesús Luzardo",
+    "away_starter_id": "",
+    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {

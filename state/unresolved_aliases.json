@@ -1,70 +1,14 @@
 {
-  "generated_at": "2026-09-11T22:13:26.405439+00:00",
+  "generated_at": "2026-09-12T04:45:34.830831+00:00",
   "aliases_created": 0,
-  "unresolved_count": 403,
+  "unresolved_count": 414,
   "unresolved": [
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Cusco FC",
-      "best_candidate": "UE Santa Coloma",
-      "best_score": 0.348,
-      "second_score": 0.348
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "FBC Melgar",
-      "best_candidate": "FC Santa Coloma",
-      "best_score": 0.4,
-      "second_score": 0.375
-    },
-    {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Coritiba",
-      "best_candidate": "Fiorentina",
-      "best_score": 0.556,
-      "second_score": 0.471
-    },
-    {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Paranaense",
-      "best_candidate": "Parma",
-      "best_score": 0.533,
-      "second_score": 0.471
-    },
-    {
-      "namespace": "soccer:segunda-division",
-      "stake_name": "Club Oriental de Football",
-      "best_candidate": "UE Santa Coloma B",
-      "best_score": 0.381,
-      "second_score": 0.368
-    },
-    {
-      "namespace": "soccer:segunda-division",
-      "stake_name": "Miramar Misiones",
-      "best_candidate": "La Massana",
-      "best_score": 0.385,
-      "second_score": 0.353
-    },
     {
       "namespace": "soccer:women-bundesliga",
       "stake_name": "1. FC Nuremberg",
       "best_candidate": "Elversberg",
       "best_score": 0.417,
       "second_score": 0.37
-    },
-    {
-      "namespace": "soccer:2nd-bundesliga",
-      "stake_name": "Braunschweig",
-      "best_candidate": "Bayern Munich",
-      "best_score": 0.48,
-      "second_score": 0.4
-    },
-    {
-      "namespace": "soccer:2nd-bundesliga",
-      "stake_name": "Dynamo Dresden",
-      "best_candidate": "Werder Bremen",
-      "best_score": 0.444,
-      "second_score": 0.333
     },
     {
       "namespace": "soccer:2nd-bundesliga",
@@ -102,6 +46,20 @@
       "second_score": 0.353
     },
     {
+      "namespace": "soccer:2nd-bundesliga",
+      "stake_name": "Braunschweig",
+      "best_candidate": "Bayern Munich",
+      "best_score": 0.48,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "soccer:2nd-bundesliga",
+      "stake_name": "Dynamo Dresden",
+      "best_candidate": "Werder Bremen",
+      "best_score": 0.444,
+      "second_score": 0.333
+    },
+    {
       "namespace": "soccer:championship",
       "stake_name": "Bolton",
       "best_candidate": "Bolton Wanderers",
@@ -114,6 +72,20 @@
       "best_candidate": "Cardiff City",
       "best_score": 0.737,
       "second_score": 0.429
+    },
+    {
+      "namespace": "soccer:chinese-super-league",
+      "stake_name": "Wuhan Three Towns",
+      "best_candidate": "AEK Athens",
+      "best_score": 0.519,
+      "second_score": 0.483
+    },
+    {
+      "namespace": "soccer:chinese-super-league",
+      "stake_name": "Henan Songshan",
+      "best_candidate": "Panionios",
+      "best_score": 0.435,
+      "second_score": 0.417
     },
     {
       "namespace": "soccer:the-fa-women-apos-s-super-league",
@@ -165,67 +137,11 @@
       "second_score": 0.273
     },
     {
-      "namespace": "soccer:chinese-super-league",
-      "stake_name": "Wuhan Three Towns",
-      "best_candidate": "AEK Athens",
-      "best_score": 0.519,
-      "second_score": 0.483
-    },
-    {
-      "namespace": "soccer:chinese-super-league",
-      "stake_name": "Henan Songshan",
-      "best_candidate": "Panionios",
-      "best_score": 0.435,
-      "second_score": 0.417
-    },
-    {
       "namespace": "soccer:championship",
       "stake_name": "Preston",
       "best_candidate": "Preston North End",
       "best_score": 0.583,
       "second_score": 0.471
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Dunfermline Athletic FC",
-      "best_candidate": "Charlton Athletic",
-      "best_score": 0.5,
-      "second_score": 0.375
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Queens Park FC",
-      "best_candidate": "Queens Park Rangers",
-      "best_score": 0.727,
-      "second_score": 0.435
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Raith Rovers FC",
-      "best_candidate": "Burton Wanderers FC",
-      "best_score": 0.529,
-      "second_score": 0.516
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Arbroath FC",
-      "best_candidate": "Loughborough FC",
-      "best_score": 0.538,
-      "second_score": 0.5
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Ayr United FC",
-      "best_candidate": "Manchester United",
-      "best_score": 0.6,
-      "second_score": 0.571
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Inverness Caledonian Thistle FC",
-      "best_candidate": "Newcastle",
-      "best_score": 0.4,
-      "second_score": 0.375
     },
     {
       "namespace": "soccer:championship",
@@ -256,18 +172,46 @@
       "second_score": 0.474
     },
     {
-      "namespace": "soccer:la-liga-2",
-      "stake_name": "Cadiz",
-      "best_candidate": "CR Belouizdad",
-      "best_score": 0.333,
-      "second_score": 0.316
+      "namespace": "soccer:championship",
+      "stake_name": "Raith Rovers FC",
+      "best_candidate": "Burton Wanderers FC",
+      "best_score": 0.529,
+      "second_score": 0.516
     },
     {
-      "namespace": "soccer:la-liga-2",
-      "stake_name": "Las Palmas",
-      "best_candidate": "USM Alger",
-      "best_score": 0.421,
-      "second_score": 0.421
+      "namespace": "soccer:championship",
+      "stake_name": "Arbroath FC",
+      "best_candidate": "Loughborough FC",
+      "best_score": 0.538,
+      "second_score": 0.5
+    },
+    {
+      "namespace": "soccer:championship",
+      "stake_name": "Dunfermline Athletic FC",
+      "best_candidate": "Charlton Athletic",
+      "best_score": 0.5,
+      "second_score": 0.375
+    },
+    {
+      "namespace": "soccer:championship",
+      "stake_name": "Queens Park FC",
+      "best_candidate": "Queens Park Rangers",
+      "best_score": 0.727,
+      "second_score": 0.435
+    },
+    {
+      "namespace": "soccer:championship",
+      "stake_name": "Ayr United FC",
+      "best_candidate": "Manchester United",
+      "best_score": 0.6,
+      "second_score": 0.571
+    },
+    {
+      "namespace": "soccer:championship",
+      "stake_name": "Inverness Caledonian Thistle FC",
+      "best_candidate": "Newcastle",
+      "best_score": 0.4,
+      "second_score": 0.375
     },
     {
       "namespace": "soccer:prva-liga",
@@ -282,6 +226,20 @@
       "best_candidate": "Barcelona",
       "best_score": 0.357,
       "second_score": 0.353
+    },
+    {
+      "namespace": "soccer:la-liga-2",
+      "stake_name": "Cadiz",
+      "best_candidate": "CR Belouizdad",
+      "best_score": 0.333,
+      "second_score": 0.316
+    },
+    {
+      "namespace": "soccer:la-liga-2",
+      "stake_name": "Las Palmas",
+      "best_candidate": "USM Alger",
+      "best_score": 0.421,
+      "second_score": 0.421
     },
     {
       "namespace": "soccer:ligue-1",
@@ -313,6 +271,20 @@
     },
     {
       "namespace": "soccer:ligue-1",
+      "stake_name": "Avenir S Marsa",
+      "best_candidate": "Angers",
+      "best_score": 0.4,
+      "second_score": 0.381
+    },
+    {
+      "namespace": "soccer:ligue-1",
+      "stake_name": "Etoile Sportive du Sahel",
+      "best_candidate": "Stade de Reims",
+      "best_score": 0.316,
+      "second_score": 0.294
+    },
+    {
+      "namespace": "soccer:ligue-1",
       "stake_name": "AS Monaco",
       "best_candidate": "Monaco",
       "best_score": 0.8,
@@ -331,20 +303,6 @@
       "best_candidate": "Esperança d-Andorra",
       "best_score": 0.524,
       "second_score": 0.421
-    },
-    {
-      "namespace": "soccer:ligue-1",
-      "stake_name": "Avenir S Marsa",
-      "best_candidate": "Angers",
-      "best_score": 0.4,
-      "second_score": 0.381
-    },
-    {
-      "namespace": "soccer:ligue-1",
-      "stake_name": "Etoile Sportive du Sahel",
-      "best_candidate": "Stade de Reims",
-      "best_score": 0.316,
-      "second_score": 0.294
     },
     {
       "namespace": "soccer:primera-division",
@@ -501,20 +459,6 @@
       "second_score": 0.467
     },
     {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Comerciantes Unidos",
-      "best_candidate": "Sant Julià",
-      "best_score": 0.429,
-      "second_score": 0.421
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Sport Huancayo",
-      "best_candidate": "Engordany",
-      "best_score": 0.435,
-      "second_score": 0.4
-    },
-    {
       "namespace": "soccer:iraqi-league",
       "stake_name": "AL Shorta SC (IRQ)",
       "best_candidate": "Standard",
@@ -529,11 +473,18 @@
       "second_score": 0.348
     },
     {
-      "namespace": "soccer:ligue-1",
-      "stake_name": "Le Havre",
-      "best_candidate": "Auxerre",
-      "best_score": 0.4,
-      "second_score": 0.364
+      "namespace": "soccer:primera-division",
+      "stake_name": "Comerciantes Unidos",
+      "best_candidate": "Sant Julià",
+      "best_score": 0.429,
+      "second_score": 0.421
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Sport Huancayo",
+      "best_candidate": "Engordany",
+      "best_score": 0.435,
+      "second_score": 0.4
     },
     {
       "namespace": "soccer:ligue-1",
@@ -543,11 +494,11 @@
       "second_score": 0.364
     },
     {
-      "namespace": "soccer:la-liga",
-      "stake_name": "Rayo Vallecano",
-      "best_candidate": "Valencia",
-      "best_score": 0.545,
-      "second_score": 0.5
+      "namespace": "soccer:ligue-1",
+      "stake_name": "Le Havre",
+      "best_candidate": "Auxerre",
+      "best_score": 0.4,
+      "second_score": 0.364
     },
     {
       "namespace": "soccer:la-liga-2",
@@ -564,18 +515,11 @@
       "second_score": 0.375
     },
     {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Gremio",
-      "best_candidate": "Genoa",
+      "namespace": "soccer:la-liga",
+      "stake_name": "Rayo Vallecano",
+      "best_candidate": "Valencia",
       "best_score": 0.545,
       "second_score": 0.5
-    },
-    {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Vasco da Gama",
-      "best_candidate": "Atalanta",
-      "best_score": 0.381,
-      "second_score": 0.381
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -592,18 +536,32 @@
       "second_score": 0.444
     },
     {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Montevideo Wanderers",
-      "best_candidate": "Esperança d-Andorra",
-      "best_score": 0.41,
-      "second_score": 0.4
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "Gremio",
+      "best_candidate": "Genoa",
+      "best_score": 0.545,
+      "second_score": 0.5
     },
     {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Club Nacional de Football",
-      "best_candidate": "Inter Club d'Escaldes",
-      "best_score": 0.435,
-      "second_score": 0.36
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "Vasco da Gama",
+      "best_candidate": "Atalanta",
+      "best_score": 0.381,
+      "second_score": 0.381
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "FC Supra Du Quebec",
+      "best_candidate": "Sunderland",
+      "best_score": 0.357,
+      "second_score": 0.24
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "HFX Wanderers FC",
+      "best_candidate": "Sheffield Weds",
+      "best_score": 0.4,
+      "second_score": 0.387
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -618,6 +576,34 @@
       "best_candidate": "Inter",
       "best_score": 0.556,
       "second_score": 0.526
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Montevideo Wanderers",
+      "best_candidate": "Esperança d-Andorra",
+      "best_score": 0.41,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Club Nacional de Football",
+      "best_candidate": "Inter Club d'Escaldes",
+      "best_score": 0.435,
+      "second_score": 0.36
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Ucv Moquegua",
+      "best_candidate": "FC Santa Coloma",
+      "best_score": 0.296,
+      "second_score": 0.296
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Sporting Cristal",
+      "best_candidate": "Atlètic Amèrica",
+      "best_score": 0.387,
+      "second_score": 0.378
     },
     {
       "namespace": "soccer:primera-division",
@@ -648,34 +634,6 @@
       "second_score": 0.359
     },
     {
-      "namespace": "soccer:canadian-premier-league",
-      "stake_name": "FC Supra Du Quebec",
-      "best_candidate": "Sunderland",
-      "best_score": 0.357,
-      "second_score": 0.24
-    },
-    {
-      "namespace": "soccer:canadian-premier-league",
-      "stake_name": "HFX Wanderers FC",
-      "best_candidate": "Sheffield Weds",
-      "best_score": 0.4,
-      "second_score": 0.387
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Ucv Moquegua",
-      "best_candidate": "FC Santa Coloma",
-      "best_score": 0.296,
-      "second_score": 0.296
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Sporting Cristal",
-      "best_candidate": "Atlètic Amèrica",
-      "best_score": 0.387,
-      "second_score": 0.378
-    },
-    {
       "namespace": "soccer:primera-division",
       "stake_name": "Estudiantes de Merida",
       "best_candidate": "Esperança d-Andorra",
@@ -688,6 +646,34 @@
       "best_candidate": "Pas de la Casa",
       "best_score": 0.387,
       "second_score": 0.375
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Champs Academy Guatemala",
+      "best_candidate": "Pas de la Casa",
+      "best_score": 0.368,
+      "second_score": 0.308
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Nueva Santa Rosa Cdf",
+      "best_candidate": "UE Santa Coloma",
+      "best_score": 0.629,
+      "second_score": 0.514
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Cerro Largo FC",
+      "best_candidate": "Pas de la Casa",
+      "best_score": 0.429,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Central Espanol FC",
+      "best_candidate": "Inter Club d'Escaldes",
+      "best_score": 0.462,
+      "second_score": 0.424
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -716,34 +702,6 @@
       "best_candidate": "Atlètic Amèrica",
       "best_score": 0.286,
       "second_score": 0.25
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Cerro Largo FC",
-      "best_candidate": "Pas de la Casa",
-      "best_score": 0.429,
-      "second_score": 0.4
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Central Espanol FC",
-      "best_candidate": "Inter Club d'Escaldes",
-      "best_score": 0.462,
-      "second_score": 0.424
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Champs Academy Guatemala",
-      "best_candidate": "Pas de la Casa",
-      "best_score": 0.368,
-      "second_score": 0.308
-    },
-    {
-      "namespace": "soccer:primera-division",
-      "stake_name": "Nueva Santa Rosa Cdf",
-      "best_candidate": "UE Santa Coloma",
-      "best_score": 0.629,
-      "second_score": 0.514
     },
     {
       "namespace": "soccer:canadian-premier-league",
@@ -830,6 +788,13 @@
       "second_score": 0.4
     },
     {
+      "namespace": "soccer:championship",
+      "stake_name": "Wolverhampton",
+      "best_candidate": "Wolverhampton Wanderers",
+      "best_score": 0.722,
+      "second_score": 0.667
+    },
+    {
       "namespace": "soccer:the-fa-women-apos-s-super-league",
       "stake_name": "Manchester United WFC",
       "best_candidate": "Asteras Tripolis",
@@ -842,13 +807,6 @@
       "best_candidate": "Iraklis 1908",
       "best_score": 0.214,
       "second_score": 0.188
-    },
-    {
-      "namespace": "soccer:championship",
-      "stake_name": "Wolverhampton",
-      "best_candidate": "Wolverhampton Wanderers",
-      "best_score": 0.722,
-      "second_score": 0.667
     },
     {
       "namespace": "soccer:2nd-bundesliga",
@@ -893,6 +851,13 @@
       "second_score": 0.348
     },
     {
+      "namespace": "soccer:la-liga",
+      "stake_name": "Celta Vigo",
+      "best_candidate": "Recreativo",
+      "best_score": 0.5,
+      "second_score": 0.421
+    },
+    {
       "namespace": "soccer:la-liga-2",
       "stake_name": "Sporting Gijon",
       "best_candidate": "CS Constantine",
@@ -905,13 +870,6 @@
       "best_candidate": "CS Constantine",
       "best_score": 0.333,
       "second_score": 0.286
-    },
-    {
-      "namespace": "soccer:la-liga",
-      "stake_name": "Celta Vigo",
-      "best_candidate": "Recreativo",
-      "best_score": 0.5,
-      "second_score": 0.421
     },
     {
       "namespace": "soccer:the-fa-women-apos-s-super-league",
@@ -1019,20 +977,6 @@
       "second_score": 0.462
     },
     {
-      "namespace": "soccer:prva-liga",
-      "stake_name": "FK Bor 1919",
-      "best_candidate": "Atlético Madrid",
-      "best_score": 0.231,
-      "second_score": 0.231
-    },
-    {
-      "namespace": "soccer:prva-liga",
-      "stake_name": "FK Borac Cacak",
-      "best_candidate": "Racing de Santander",
-      "best_score": 0.364,
-      "second_score": 0.357
-    },
-    {
       "namespace": "soccer:primera-division",
       "stake_name": "CA Juventud de Las Piedras",
       "best_candidate": "Pas de la Casa",
@@ -1059,6 +1003,20 @@
       "best_candidate": "JS Kabylie",
       "best_score": 0.381,
       "second_score": 0.333
+    },
+    {
+      "namespace": "soccer:prva-liga",
+      "stake_name": "FK Bor 1919",
+      "best_candidate": "Atlético Madrid",
+      "best_score": 0.231,
+      "second_score": 0.231
+    },
+    {
+      "namespace": "soccer:prva-liga",
+      "stake_name": "FK Borac Cacak",
+      "best_candidate": "Racing de Santander",
+      "best_score": 0.364,
+      "second_score": 0.357
     },
     {
       "namespace": "soccer:la-liga",
@@ -1180,27 +1138,6 @@
       "second_score": 0.417
     },
     {
-      "namespace": "soccer:super-league-1",
-      "stake_name": "Panathinaikos Athens",
-      "best_candidate": "Panathinaikos",
-      "best_score": 0.788,
-      "second_score": 0.6
-    },
-    {
-      "namespace": "soccer:la-liga",
-      "stake_name": "Real Sociedad",
-      "best_candidate": "Real Madrid",
-      "best_score": 0.583,
-      "second_score": 0.476
-    },
-    {
-      "namespace": "soccer:la-liga",
-      "stake_name": "Atletico Madrid",
-      "best_candidate": "Ath Madrid",
-      "best_score": 0.72,
-      "second_score": 0.692
-    },
-    {
       "namespace": "soccer:ligue-1",
       "stake_name": "Brest",
       "best_candidate": "Troyes",
@@ -1215,32 +1152,11 @@
       "second_score": 0.444
     },
     {
-      "namespace": "soccer:la-liga-2",
-      "stake_name": "Tenerife CD",
-      "best_candidate": "ES Sétif",
-      "best_score": 0.316,
-      "second_score": 0.3
-    },
-    {
-      "namespace": "soccer:la-liga-2",
-      "stake_name": "Leganes",
-      "best_candidate": "CS Constantine",
-      "best_score": 0.286,
-      "second_score": 0.273
-    },
-    {
-      "namespace": "soccer:canadian-premier-league",
-      "stake_name": "York 9 FC",
-      "best_candidate": "Wimbledon FC",
-      "best_score": 0.381,
-      "second_score": 0.286
-    },
-    {
-      "namespace": "soccer:canadian-premier-league",
-      "stake_name": "Vancouver FC",
-      "best_candidate": "Manchester City",
-      "best_score": 0.519,
-      "second_score": 0.5
+      "namespace": "soccer:super-league-1",
+      "stake_name": "Panathinaikos Athens",
+      "best_candidate": "Panathinaikos",
+      "best_score": 0.788,
+      "second_score": 0.6
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -1257,6 +1173,48 @@
       "second_score": 0.588
     },
     {
+      "namespace": "soccer:la-liga",
+      "stake_name": "Real Sociedad",
+      "best_candidate": "Real Madrid",
+      "best_score": 0.583,
+      "second_score": 0.476
+    },
+    {
+      "namespace": "soccer:la-liga",
+      "stake_name": "Atletico Madrid",
+      "best_candidate": "Ath Madrid",
+      "best_score": 0.72,
+      "second_score": 0.692
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "York 9 FC",
+      "best_candidate": "Wimbledon FC",
+      "best_score": 0.381,
+      "second_score": 0.286
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "Vancouver FC",
+      "best_candidate": "Manchester City",
+      "best_score": 0.519,
+      "second_score": 0.5
+    },
+    {
+      "namespace": "soccer:la-liga-2",
+      "stake_name": "Tenerife CD",
+      "best_candidate": "ES Sétif",
+      "best_score": 0.316,
+      "second_score": 0.3
+    },
+    {
+      "namespace": "soccer:la-liga-2",
+      "stake_name": "Leganes",
+      "best_candidate": "CS Constantine",
+      "best_score": 0.286,
+      "second_score": 0.273
+    },
+    {
       "namespace": "soccer:primera-division",
       "stake_name": "Rayo Zuliano",
       "best_candidate": "Sant Julià",
@@ -1269,6 +1227,90 @@
       "best_candidate": "UE Santa Coloma",
       "best_score": 0.429,
       "second_score": 0.296
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Zamora FC",
+      "best_candidate": "Pas de la Casa",
+      "best_score": 0.348,
+      "second_score": 0.333
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Trujillanos FC",
+      "best_candidate": "Ordino",
+      "best_score": 0.4,
+      "second_score": 0.286
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Colo-Colo",
+      "best_candidate": "FC Santa Coloma",
+      "best_score": 0.5,
+      "second_score": 0.417
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Deportes Concepcion",
+      "best_candidate": "UE Santa Coloma",
+      "best_score": 0.353,
+      "second_score": 0.294
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Atletico Grau",
+      "best_candidate": "Atlètic Amèrica",
+      "best_score": 0.643,
+      "second_score": 0.516
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Alianza Atletico",
+      "best_candidate": "UE Santa Coloma",
+      "best_score": 0.387,
+      "second_score": 0.387
+    },
+    {
+      "namespace": "soccer:segunda-division",
+      "stake_name": "CD USMP",
+      "best_candidate": "Encamp",
+      "best_score": 0.462,
+      "second_score": 0.353
+    },
+    {
+      "namespace": "soccer:segunda-division",
+      "stake_name": "Academia Cantolao",
+      "best_candidate": "Pas de la Casa",
+      "best_score": 0.516,
+      "second_score": 0.412
+    },
+    {
+      "namespace": "soccer:segunda-division",
+      "stake_name": "Club Ada Jaen",
+      "best_candidate": "La Massana",
+      "best_score": 0.435,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "soccer:segunda-division",
+      "stake_name": "Union Comercio",
+      "best_candidate": "UE Santa Coloma B",
+      "best_score": 0.387,
+      "second_score": 0.375
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "Pacific FC",
+      "best_candidate": "Wimbledon FC",
+      "best_score": 0.364,
+      "second_score": 0.273
+    },
+    {
+      "namespace": "soccer:canadian-premier-league",
+      "stake_name": "Cavalry FC",
+      "best_candidate": "Coventry",
+      "best_score": 0.444,
+      "second_score": 0.364
     },
     {
       "namespace": "soccer:primera-division",
@@ -1311,6 +1353,20 @@
       "best_candidate": "Atlètic Amèrica",
       "best_score": 0.417,
       "second_score": 0.348
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "Audax Italiano",
+      "best_candidate": "Pas de la Casa",
+      "best_score": 0.429,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "soccer:primera-division",
+      "stake_name": "CD O´Higgins",
+      "best_candidate": "Ordino",
+      "best_score": 0.333,
+      "second_score": 0.333
     },
     {
       "namespace": "soccer:la-liga-2",
@@ -1405,13 +1461,6 @@
     },
     {
       "namespace": "soccer:la-liga",
-      "stake_name": "Deportivo La Coruna",
-      "best_candidate": "La Coruna",
-      "best_score": 0.667,
-      "second_score": 0.414
-    },
-    {
-      "namespace": "soccer:la-liga",
       "stake_name": "Atletico Madrid",
       "best_candidate": "Ath Madrid",
       "best_score": 0.72,
@@ -1419,10 +1468,10 @@
     },
     {
       "namespace": "soccer:la-liga",
-      "stake_name": "Athletic Bilbao",
-      "best_candidate": "Ath Bilbao",
-      "best_score": 0.8,
-      "second_score": 0.455
+      "stake_name": "Deportivo La Coruna",
+      "best_candidate": "La Coruna",
+      "best_score": 0.667,
+      "second_score": 0.414
     },
     {
       "namespace": "soccer:la-liga",
@@ -1430,6 +1479,13 @@
       "best_candidate": "Santander",
       "best_score": 0.72,
       "second_score": 0.364
+    },
+    {
+      "namespace": "soccer:la-liga",
+      "stake_name": "Athletic Bilbao",
+      "best_candidate": "Ath Bilbao",
+      "best_score": 0.8,
+      "second_score": 0.455
     },
     {
       "namespace": "soccer:la-liga",
@@ -1488,13 +1544,6 @@
       "second_score": 0.364
     },
     {
-      "namespace": "soccer:eredivisie",
-      "stake_name": "Willem II Tilburg",
-      "best_candidate": "Willem II",
-      "best_score": 0.692,
-      "second_score": 0.333
-    },
-    {
       "namespace": "soccer:ligue-1",
       "stake_name": "Le Mans",
       "best_candidate": "Lens",
@@ -1509,17 +1558,10 @@
       "second_score": 0.364
     },
     {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Mirassol",
-      "best_candidate": "Sassuolo",
-      "best_score": 0.625,
-      "second_score": 0.462
-    },
-    {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Botafogo",
-      "best_candidate": "Bologna",
-      "best_score": 0.533,
+      "namespace": "soccer:eredivisie",
+      "stake_name": "Willem II Tilburg",
+      "best_candidate": "Willem II",
+      "best_score": 0.692,
       "second_score": 0.333
     },
     {
@@ -1542,6 +1584,20 @@
       "best_candidate": "Chievo",
       "best_score": 0.471,
       "second_score": 0.471
+    },
+    {
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "Mirassol",
+      "best_candidate": "Sassuolo",
+      "best_score": 0.625,
+      "second_score": 0.462
+    },
+    {
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "Botafogo",
+      "best_candidate": "Bologna",
+      "best_score": 0.533,
+      "second_score": 0.333
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -1586,13 +1642,6 @@
       "second_score": 0.526
     },
     {
-      "namespace": "soccer:ligue-1",
-      "stake_name": "Brest",
-      "best_candidate": "Troyes",
-      "best_score": 0.545,
-      "second_score": 0.545
-    },
-    {
       "namespace": "soccer:brasileiro-serie-a",
       "stake_name": "Gremio",
       "best_candidate": "Genoa",
@@ -1607,18 +1656,11 @@
       "second_score": 0.5
     },
     {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "Flamengo",
-      "best_candidate": "Milan",
-      "best_score": 0.462,
-      "second_score": 0.462
-    },
-    {
-      "namespace": "soccer:brasileiro-serie-a",
-      "stake_name": "RB Bragantino",
-      "best_candidate": "Fiorentina",
-      "best_score": 0.435,
-      "second_score": 0.421
+      "namespace": "soccer:ligue-1",
+      "stake_name": "Brest",
+      "best_candidate": "Troyes",
+      "best_score": 0.545,
+      "second_score": 0.545
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
@@ -1663,6 +1705,20 @@
       "second_score": 0.462
     },
     {
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "Flamengo",
+      "best_candidate": "Milan",
+      "best_score": 0.462,
+      "second_score": 0.462
+    },
+    {
+      "namespace": "soccer:brasileiro-serie-a",
+      "stake_name": "RB Bragantino",
+      "best_candidate": "Fiorentina",
+      "best_score": 0.435,
+      "second_score": 0.421
+    },
+    {
       "namespace": "soccer:ligue-1",
       "stake_name": "Olympique Marseille",
       "best_candidate": "Marseille",
@@ -1675,13 +1731,6 @@
       "best_candidate": "Paris SG",
       "best_score": 0.593,
       "second_score": 0.444
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Purcell, Max",
-      "best_candidate": "Miguel Damas",
-      "best_score": 0.522,
-      "second_score": 0.5
     },
     {
       "namespace": "tennis:atp",
@@ -1699,10 +1748,17 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Mika Brunold",
-      "best_candidate": "Nikola Bartunkova",
-      "best_score": 0.621,
-      "second_score": 0.593
+      "stake_name": "Friend, Jay Dylan Hara",
+      "best_candidate": "Andy Andrade",
+      "best_score": 0.485,
+      "second_score": 0.474
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Masur, Daniel",
+      "best_candidate": "Taro Daniel",
+      "best_score": 0.783,
+      "second_score": 0.667
     },
     {
       "namespace": "tennis:wta",
@@ -1727,45 +1783,10 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Arthur Weber",
-      "best_candidate": "Arthur Fery",
-      "best_score": 0.783,
-      "second_score": 0.727
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Yuta Shimizu",
-      "best_candidate": "Sayaka Ishii",
-      "best_score": 0.583,
-      "second_score": 0.522
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Pavel Kotov",
-      "best_candidate": "Alex Rybakov",
-      "best_score": 0.522,
-      "second_score": 0.519
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Sharipov, Marat",
-      "best_candidate": "Harriet Dart",
-      "best_score": 0.615,
-      "second_score": 0.615
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Masur, Daniel",
-      "best_candidate": "Taro Daniel",
-      "best_score": 0.783,
-      "second_score": 0.667
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Friend, Jay Dylan Hara",
-      "best_candidate": "Andy Andrade",
-      "best_score": 0.485,
-      "second_score": 0.474
+      "stake_name": "Mika Brunold",
+      "best_candidate": "Nikola Bartunkova",
+      "best_score": 0.621,
+      "second_score": 0.593
     },
     {
       "namespace": "tennis:atp",
@@ -1796,46 +1817,18 @@
       "second_score": 0.444
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "Islamabad United Srl",
-      "best_candidate": "Melbourne Stars",
-      "best_score": 0.457,
-      "second_score": 0.432
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Quetta Gladiators Srl",
-      "best_candidate": "Badureliya Sports Club",
-      "best_score": 0.419,
-      "second_score": 0.408
+      "namespace": "cricket:t20",
+      "stake_name": "Japan",
+      "best_candidate": "Spain",
+      "best_score": 0.6,
+      "second_score": 0.545
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "New Zealand SRL",
-      "best_candidate": "Galle Gallants",
-      "best_score": 0.483,
-      "second_score": 0.455
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "West Indies Srl",
-      "best_candidate": "Welsh Fire",
-      "best_score": 0.48,
-      "second_score": 0.476
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Wellington Srl",
-      "best_candidate": "Singapore",
-      "best_score": 0.435,
-      "second_score": 0.414
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Auckland Srl",
-      "best_candidate": "Adelaide Strikers",
-      "best_score": 0.483,
-      "second_score": 0.471
+      "stake_name": "Malaysia",
+      "best_candidate": "Malawi",
+      "best_score": 0.714,
+      "second_score": 0.533
     },
     {
       "namespace": "cricket:all",
@@ -1866,18 +1859,18 @@
       "second_score": 0.375
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "Markhor It Solutions",
-      "best_candidate": "Saint Lucia Kings",
-      "best_score": 0.486,
-      "second_score": 0.432
+      "namespace": "cricket:t20",
+      "stake_name": "Joburg Super Kings Srl",
+      "best_candidate": "Manchester Super Giants",
+      "best_score": 0.489,
+      "second_score": 0.489
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "Kingsmen Academy",
-      "best_candidate": "Jamaica Kingsmen",
-      "best_score": 0.5,
-      "second_score": 0.4
+      "namespace": "cricket:t20",
+      "stake_name": "Pretoria Capitals Srl",
+      "best_candidate": "Ace Capital Cricket Club",
+      "best_score": 0.533,
+      "second_score": 0.414
     },
     {
       "namespace": "cricket:all",
@@ -1895,87 +1888,17 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Mumbai Indians SRL",
-      "best_candidate": "Uganda",
-      "best_score": 0.417,
-      "second_score": 0.412
+      "stake_name": "Markhor It Solutions",
+      "best_candidate": "Saint Lucia Kings",
+      "best_score": 0.486,
+      "second_score": 0.432
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Delhi Capitals SRL",
-      "best_candidate": "Ace Capital Cricket Club",
-      "best_score": 0.571,
+      "stake_name": "Kingsmen Academy",
+      "best_candidate": "Jamaica Kingsmen",
+      "best_score": 0.5,
       "second_score": 0.4
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Joburg Super Kings Srl",
-      "best_candidate": "Manchester Super Giants",
-      "best_score": 0.489,
-      "second_score": 0.489
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Pretoria Capitals Srl",
-      "best_candidate": "Ace Capital Cricket Club",
-      "best_score": 0.533,
-      "second_score": 0.414
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "State Bank",
-      "best_candidate": "The Blaze",
-      "best_score": 0.526,
-      "second_score": 0.444
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Sui Northern Gas Pipelines Limited",
-      "best_candidate": "Nugegoda Sports Welfare Club",
-      "best_score": 0.355,
-      "second_score": 0.353
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Pakistan Television",
-      "best_candidate": "St Kitts and Nevis Patriots",
-      "best_score": 0.522,
-      "second_score": 0.476
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Oil And Gas Development Company Limited",
-      "best_candidate": "Bloomfield Cricket and Athletic Club",
-      "best_score": 0.373,
-      "second_score": 0.364
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Durban Super Giants Srl",
-      "best_candidate": "Manchester Super Giants",
-      "best_score": 0.652,
-      "second_score": 0.564
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Sunrisers Eastern Cape Srl",
-      "best_candidate": "Sunrisers Leeds",
-      "best_score": 0.585,
-      "second_score": 0.49
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "South Africa SRL",
-      "best_candidate": "South Africa",
-      "best_score": 0.857,
-      "second_score": 0.467
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Australia SRL",
-      "best_candidate": "Austria",
-      "best_score": 0.7,
-      "second_score": 0.571
     },
     {
       "namespace": "cricket:all",
@@ -1993,31 +1916,59 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "South Africa A",
-      "best_candidate": "Kurunegala Youth Cricket Club",
-      "best_score": 0.419,
-      "second_score": 0.387
+      "stake_name": "State Bank",
+      "best_candidate": "The Blaze",
+      "best_score": 0.526,
+      "second_score": 0.444
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Bangladesh A",
-      "best_candidate": "Barbados Royals",
-      "best_score": 0.519,
-      "second_score": 0.455
+      "stake_name": "Sui Northern Gas Pipelines Limited",
+      "best_candidate": "Nugegoda Sports Welfare Club",
+      "best_score": 0.355,
+      "second_score": 0.353
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Sunrisers Hyderabad SRL",
-      "best_candidate": "Brisbane Heat",
-      "best_score": 0.444,
-      "second_score": 0.391
+      "stake_name": "Mumbai Indians SRL",
+      "best_candidate": "Uganda",
+      "best_score": 0.417,
+      "second_score": 0.412
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Gujarat Titans Srl",
-      "best_candidate": "Hobart Hurricanes",
-      "best_score": 0.457,
-      "second_score": 0.457
+      "stake_name": "Delhi Capitals SRL",
+      "best_candidate": "Ace Capital Cricket Club",
+      "best_score": 0.571,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Pakistan Television",
+      "best_candidate": "St Kitts and Nevis Patriots",
+      "best_score": 0.522,
+      "second_score": 0.476
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Oil And Gas Development Company Limited",
+      "best_candidate": "Bloomfield Cricket and Athletic Club",
+      "best_score": 0.373,
+      "second_score": 0.364
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "South Africa SRL",
+      "best_candidate": "South Africa",
+      "best_score": 0.857,
+      "second_score": 0.467
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Australia SRL",
+      "best_candidate": "Austria",
+      "best_score": 0.7,
+      "second_score": 0.571
     },
     {
       "namespace": "cricket:t20",
@@ -2032,6 +1983,48 @@
       "best_candidate": "Isle of Man",
       "best_score": 0.444,
       "second_score": 0.41
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Durban Super Giants Srl",
+      "best_candidate": "Manchester Super Giants",
+      "best_score": 0.652,
+      "second_score": 0.564
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Sunrisers Eastern Cape Srl",
+      "best_candidate": "Sunrisers Leeds",
+      "best_score": 0.585,
+      "second_score": 0.49
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Central Districts Srl",
+      "best_candidate": "Ace Capital Cricket Club",
+      "best_score": 0.533,
+      "second_score": 0.488
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Otago Srl",
+      "best_candidate": "Northamptonshire",
+      "best_score": 0.48,
+      "second_score": 0.462
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Sunrisers Hyderabad SRL",
+      "best_candidate": "Brisbane Heat",
+      "best_score": 0.444,
+      "second_score": 0.391
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Gujarat Titans Srl",
+      "best_candidate": "Hobart Hurricanes",
+      "best_score": 0.457,
+      "second_score": 0.457
     },
     {
       "namespace": "cricket:all",
@@ -2049,17 +2042,59 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Central Districts Srl",
-      "best_candidate": "Ace Capital Cricket Club",
-      "best_score": 0.533,
-      "second_score": 0.488
+      "stake_name": "Beveren Cc",
+      "best_candidate": "Burgher Recreation Club",
+      "best_score": 0.424,
+      "second_score": 0.353
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Otago Srl",
-      "best_candidate": "Northamptonshire",
-      "best_score": 0.48,
-      "second_score": 0.462
+      "stake_name": "Lokeren Super Giants",
+      "best_candidate": "Hobart Hurricanes",
+      "best_score": 0.486,
+      "second_score": 0.439
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "South Africa A",
+      "best_candidate": "Kurunegala Youth Cricket Club",
+      "best_score": 0.419,
+      "second_score": 0.387
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Bangladesh A",
+      "best_candidate": "Barbados Royals",
+      "best_score": 0.519,
+      "second_score": 0.455
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Bangladesh Srl",
+      "best_candidate": "Bangladesh",
+      "best_score": 0.833,
+      "second_score": 0.471
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Afghanistan Srl",
+      "best_candidate": "Pakistan",
+      "best_score": 0.522,
+      "second_score": 0.435
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "India A",
+      "best_candidate": "India",
+      "best_score": 0.833,
+      "second_score": 0.625
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Australia A",
+      "best_candidate": "Austria",
+      "best_score": 0.778,
+      "second_score": 0.519
     },
     {
       "namespace": "cricket:t20",
@@ -2076,20 +2111,6 @@
       "second_score": 0.4
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Ludhiana Lion",
-      "best_candidate": "Sierra Leone",
-      "best_score": 0.48,
-      "second_score": 0.48
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Jalandhar Warriors",
-      "best_candidate": "Guyana Amazon Warriors",
-      "best_score": 0.6,
-      "second_score": 0.444
-    },
-    {
       "namespace": "cricket:all",
       "stake_name": "Zwijndrecht Challengers",
       "best_candidate": "Saint Lucia Kings",
@@ -2102,6 +2123,20 @@
       "best_candidate": "Trinbago Knight Riders",
       "best_score": 0.732,
       "second_score": 0.429
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Ludhiana Lion",
+      "best_candidate": "Sierra Leone",
+      "best_score": 0.48,
+      "second_score": 0.48
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Jalandhar Warriors",
+      "best_candidate": "Guyana Amazon Warriors",
+      "best_score": 0.6,
+      "second_score": 0.444
     },
     {
       "namespace": "cricket:all",
@@ -2167,32 +2202,32 @@
       "second_score": 0.562
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Bangladesh Srl",
-      "best_candidate": "Bangladesh",
-      "best_score": 0.833,
-      "second_score": 0.471
+      "namespace": "cricket:all",
+      "stake_name": "Rajasthan Royals SRL",
+      "best_candidate": "Barbados Royals",
+      "best_score": 0.571,
+      "second_score": 0.39
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Lucknow Super Giants Srl",
+      "best_candidate": "Police Sports Club",
+      "best_score": 0.476,
+      "second_score": 0.439
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Afghanistan Srl",
-      "best_candidate": "Pakistan",
-      "best_score": 0.522,
-      "second_score": 0.435
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "India A",
-      "best_candidate": "India",
-      "best_score": 0.833,
-      "second_score": 0.625
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Australia A",
+      "stake_name": "Australia SRL",
       "best_candidate": "Austria",
-      "best_score": 0.778,
-      "second_score": 0.519
+      "best_score": 0.7,
+      "second_score": 0.571
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "West Indies Srl",
+      "best_candidate": "Welsh Fire",
+      "best_score": 0.48,
+      "second_score": 0.476
     },
     {
       "namespace": "cricket:t20",
@@ -2209,18 +2244,18 @@
       "second_score": 0.5
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Japan",
-      "best_candidate": "Spain",
-      "best_score": 0.6,
-      "second_score": 0.545
+      "namespace": "cricket:all",
+      "stake_name": "Rawalpindiz Srl",
+      "best_candidate": "Adelaide Strikers",
+      "best_score": 0.438,
+      "second_score": 0.375
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Malaysia",
-      "best_candidate": "Malawi",
-      "best_score": 0.714,
-      "second_score": 0.533
+      "namespace": "cricket:all",
+      "stake_name": "Islamabad United Srl",
+      "best_candidate": "Melbourne Stars",
+      "best_score": 0.457,
+      "second_score": 0.432
     },
     {
       "namespace": "cricket:all",
@@ -2238,17 +2273,17 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Rajasthan Royals SRL",
-      "best_candidate": "Barbados Royals",
-      "best_score": 0.571,
-      "second_score": 0.39
+      "stake_name": "Limpopo",
+      "best_candidate": "Singapore",
+      "best_score": 0.375,
+      "second_score": 0.375
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Lucknow Super Giants Srl",
-      "best_candidate": "Police Sports Club",
+      "stake_name": "Border",
+      "best_candidate": "Melbourne Stars",
       "best_score": 0.476,
-      "second_score": 0.439
+      "second_score": 0.435
     },
     {
       "namespace": "cricket:all",
@@ -2266,20 +2301,6 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Limpopo",
-      "best_candidate": "Singapore",
-      "best_score": 0.375,
-      "second_score": 0.375
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Border",
-      "best_candidate": "Melbourne Stars",
-      "best_score": 0.476,
-      "second_score": 0.435
-    },
-    {
-      "namespace": "cricket:all",
       "stake_name": "Northamptonshire Steelbacks",
       "best_candidate": "Northamptonshire",
       "best_score": 0.744,
@@ -2294,10 +2315,10 @@
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Afghanistan",
-      "best_candidate": "Pakistan",
-      "best_score": 0.632,
-      "second_score": 0.526
+      "stake_name": "England Lions",
+      "best_candidate": "Bangladesh",
+      "best_score": 0.522,
+      "second_score": 0.5
     },
     {
       "namespace": "cricket:odi",
@@ -2314,6 +2335,13 @@
       "second_score": 0.4
     },
     {
+      "namespace": "cricket:t20",
+      "stake_name": "Afghanistan",
+      "best_candidate": "Pakistan",
+      "best_score": 0.632,
+      "second_score": 0.526
+    },
+    {
       "namespace": "cricket:all",
       "stake_name": "Yorkshire Vikings",
       "best_candidate": "Yorkshire",
@@ -2321,39 +2349,53 @@
       "second_score": 0.529
     },
     {
-      "namespace": "aussie-rules:afl-women",
-      "stake_name": "West Coast Eagles",
-      "best_candidate": "West Coast Eagles Women",
-      "best_score": 0.85,
-      "second_score": 0.421
+      "namespace": "dota-2:all",
+      "stake_name": "InterActive Philippines",
+      "best_candidate": "Inner Circle x Insanity",
+      "best_score": 0.478,
+      "second_score": 0.474
     },
     {
-      "namespace": "aussie-rules:afl-women",
-      "stake_name": "Brisbane Lions",
-      "best_candidate": "Brisbane Lions Women",
-      "best_score": 0.824,
-      "second_score": 0.444
+      "namespace": "dota-2:all",
+      "stake_name": "ЯЧЁ123",
+      "best_candidate": "动物驾到",
+      "best_score": 0.0,
+      "second_score": 0.0
     },
     {
-      "namespace": "aussie-rules:afl-women",
-      "stake_name": "Melbourne Demons",
-      "best_candidate": "Melbourne Demons Women",
-      "best_score": 0.842,
-      "second_score": 0.511
+      "namespace": "dota-2:all",
+      "stake_name": "Carstensz Esports",
+      "best_candidate": "Arch Esports",
+      "best_score": 0.69,
+      "second_score": 0.6
     },
     {
-      "namespace": "aussie-rules:afl-women",
-      "stake_name": "Hawthorn Hawks",
-      "best_candidate": "Hawthorn Hawks Women",
-      "best_score": 0.824,
-      "second_score": 0.364
+      "namespace": "dota-2:all",
+      "stake_name": "Dawn Bulls",
+      "best_candidate": "Santiago + 4 burros",
+      "best_score": 0.444,
+      "second_score": 0.435
     },
     {
-      "namespace": "aussie-rules:afl-women",
-      "stake_name": "Western Bulldogs",
-      "best_candidate": "Western Bulldogs Bulldogs Women",
-      "best_score": 0.681,
-      "second_score": 0.421
+      "namespace": "dota-2:all",
+      "stake_name": "ЯЧЁ123",
+      "best_candidate": "动物驾到",
+      "best_score": 0.0,
+      "second_score": 0.0
+    },
+    {
+      "namespace": "dota-2:all",
+      "stake_name": "Xipto Esports",
+      "best_candidate": "UF Esports",
+      "best_score": 0.696,
+      "second_score": 0.667
+    },
+    {
+      "namespace": "dota-2:all",
+      "stake_name": "Team Bored",
+      "best_candidate": "TeamDk",
+      "best_score": 0.625,
+      "second_score": 0.6
     },
     {
       "namespace": "aussie-rules:afl-women",
@@ -2375,6 +2417,41 @@
       "best_candidate": "Geelong Cats Women",
       "best_score": 0.8,
       "second_score": 0.424
+    },
+    {
+      "namespace": "aussie-rules:afl-women",
+      "stake_name": "Hawthorn Hawks",
+      "best_candidate": "Hawthorn Hawks Women",
+      "best_score": 0.824,
+      "second_score": 0.364
+    },
+    {
+      "namespace": "aussie-rules:afl-women",
+      "stake_name": "Western Bulldogs",
+      "best_candidate": "Western Bulldogs Bulldogs Women",
+      "best_score": 0.681,
+      "second_score": 0.421
+    },
+    {
+      "namespace": "aussie-rules:afl-women",
+      "stake_name": "West Coast Eagles",
+      "best_candidate": "West Coast Eagles Women",
+      "best_score": 0.85,
+      "second_score": 0.421
+    },
+    {
+      "namespace": "aussie-rules:afl-women",
+      "stake_name": "Brisbane Lions",
+      "best_candidate": "Brisbane Lions Women",
+      "best_score": 0.824,
+      "second_score": 0.444
+    },
+    {
+      "namespace": "aussie-rules:afl-women",
+      "stake_name": "Melbourne Demons",
+      "best_candidate": "Melbourne Demons Women",
+      "best_score": 0.842,
+      "second_score": 0.511
     },
     {
       "namespace": "aussie-rules:afl-women",
@@ -2433,20 +2510,6 @@
       "second_score": 0.308
     },
     {
-      "namespace": "futsal:primera-division",
-      "stake_name": "Glorias",
-      "best_candidate": "Ordino",
-      "best_score": 0.462,
-      "second_score": 0.385
-    },
-    {
-      "namespace": "futsal:primera-division",
-      "stake_name": "San Lorenzo de Almagro",
-      "best_candidate": "Sporting d'Escaldes",
-      "best_score": 0.439,
-      "second_score": 0.432
-    },
-    {
       "namespace": "futsal:superliga",
       "stake_name": "Iraero Irkutsk",
       "best_candidate": "Kukesi",
@@ -2461,18 +2524,18 @@
       "second_score": 0.276
     },
     {
-      "namespace": "futsal:superliga",
-      "stake_name": "MFK Viz Sinara Yekaterinburg",
-      "best_candidate": "Skenderbeu",
-      "best_score": 0.316,
-      "second_score": 0.298
+      "namespace": "futsal:primera-division",
+      "stake_name": "Glorias",
+      "best_candidate": "Ordino",
+      "best_score": 0.462,
+      "second_score": 0.385
     },
     {
-      "namespace": "futsal:superliga",
-      "stake_name": "Sibiryak",
-      "best_candidate": "SK Tirana",
-      "best_score": 0.471,
-      "second_score": 0.381
+      "namespace": "futsal:primera-division",
+      "stake_name": "San Lorenzo de Almagro",
+      "best_candidate": "Sporting d'Escaldes",
+      "best_score": 0.439,
+      "second_score": 0.432
     },
     {
       "namespace": "futsal:superliga",
@@ -2503,6 +2566,20 @@
       "second_score": 0.333
     },
     {
+      "namespace": "futsal:superliga",
+      "stake_name": "MFK Viz Sinara Yekaterinburg",
+      "best_candidate": "Skenderbeu",
+      "best_score": 0.316,
+      "second_score": 0.298
+    },
+    {
+      "namespace": "futsal:superliga",
+      "stake_name": "Sibiryak",
+      "best_candidate": "SK Tirana",
+      "best_score": 0.471,
+      "second_score": 0.381
+    },
+    {
       "namespace": "handball:damehandboldligaen",
       "stake_name": "Sonderjyske HK",
       "best_candidate": "SønderjyskE Håndbold",
@@ -2515,13 +2592,6 @@
       "best_candidate": "Cesson Rennes MHB",
       "best_score": 0.791,
       "second_score": 0.618
-    },
-    {
-      "namespace": "handball:damehandboldligaen",
-      "stake_name": "Skanderborg",
-      "best_candidate": "Skanderborg Aarhus Håndbold",
-      "best_score": 0.579,
-      "second_score": 0.467
     },
     {
       "namespace": "handball:champions-league",
@@ -2587,6 +2657,13 @@
       "second_score": 0.4
     },
     {
+      "namespace": "handball:damehandboldligaen",
+      "stake_name": "Skanderborg",
+      "best_candidate": "Skanderborg Aarhus Håndbold",
+      "best_score": 0.579,
+      "second_score": 0.467
+    },
+    {
       "namespace": "handball:champions-league",
       "stake_name": "FC Porto",
       "best_candidate": "FC Porto Handball",
@@ -2630,20 +2707,6 @@
     },
     {
       "namespace": "rugby:top-14",
-      "stake_name": "USA Perpignan",
-      "best_candidate": "San Luis",
-      "best_score": 0.381,
-      "second_score": 0.381
-    },
-    {
-      "namespace": "rugby:top-14",
-      "stake_name": "Castres Olympique",
-      "best_candidate": "Alumni",
-      "best_score": 0.348,
-      "second_score": 0.323
-    },
-    {
-      "namespace": "rugby:top-14",
       "stake_name": "Rugby Club Vannes",
       "best_candidate": "CUBA",
       "best_score": 0.381,
@@ -2655,6 +2718,20 @@
       "best_candidate": "Belgrano",
       "best_score": 0.242,
       "second_score": 0.2
+    },
+    {
+      "namespace": "rugby:top-14",
+      "stake_name": "USA Perpignan",
+      "best_candidate": "San Luis",
+      "best_score": 0.381,
+      "second_score": 0.381
+    },
+    {
+      "namespace": "rugby:top-14",
+      "stake_name": "Castres Olympique",
+      "best_candidate": "Alumni",
+      "best_score": 0.348,
+      "second_score": 0.323
     },
     {
       "namespace": "rugby:top-14",
@@ -2784,20 +2861,6 @@
     },
     {
       "namespace": "volleyball:asian-championship",
-      "stake_name": "Japan",
-      "best_candidate": "Spain Volleyball",
-      "best_score": 0.286,
-      "second_score": 0.273
-    },
-    {
-      "namespace": "volleyball:asian-championship",
-      "stake_name": "Republic of Korea",
-      "best_candidate": "Czech Republic Volleyball",
-      "best_score": 0.571,
-      "second_score": 0.286
-    },
-    {
-      "namespace": "volleyball:asian-championship",
       "stake_name": "Iran",
       "best_candidate": "Switzerland Volleyball",
       "best_score": 0.308,
@@ -2809,6 +2872,20 @@
       "best_candidate": "Austria Volleyball",
       "best_score": 0.519,
       "second_score": 0.385
+    },
+    {
+      "namespace": "volleyball:asian-championship",
+      "stake_name": "Japan",
+      "best_candidate": "Spain Volleyball",
+      "best_score": 0.286,
+      "second_score": 0.273
+    },
+    {
+      "namespace": "volleyball:asian-championship",
+      "stake_name": "Republic of Korea",
+      "best_candidate": "Czech Republic Volleyball",
+      "best_score": 0.571,
+      "second_score": 0.286
     },
     {
       "namespace": "soccer:brasileiro-serie-a",
