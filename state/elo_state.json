@@ -1995,6 +1995,108 @@
         "games": 4
       }
     },
+    "soccer:kategoria-superiore": {
+      "vora": {
+        "elo": 1517.3070222702588,
+        "games": 4
+      },
+      "besa": {
+        "elo": 1530.3169117409573,
+        "games": 5
+      },
+      "tomori": {
+        "elo": 1508.791236876455,
+        "games": 3
+      },
+      "korabi": {
+        "elo": 1481.046014533554,
+        "games": 6
+      },
+      "kf luzi i vog l 2008": {
+        "elo": 1488.4379804236871,
+        "games": 3
+      },
+      "flamurtari vlor": {
+        "elo": 1492.655544499071,
+        "games": 7
+      },
+      "kf bylis": {
+        "elo": 1517.8757355147357,
+        "games": 3
+      },
+      "burreli": {
+        "elo": 1500.7646798862907,
+        "games": 7
+      },
+      "lushnja": {
+        "elo": 1491.1644155459212,
+        "games": 4
+      },
+      "apolonia": {
+        "elo": 1522.7795148468501,
+        "games": 5
+      },
+      "kastrioti": {
+        "elo": 1491.8355022870269,
+        "games": 5
+      },
+      "af elbasani": {
+        "elo": 1510.1931575150195,
+        "games": 2
+      },
+      "kukesi": {
+        "elo": 1488.7679907152703,
+        "games": 3
+      },
+      "erzeni": {
+        "elo": 1479.6883931494788,
+        "games": 2
+      },
+      "pogradeci": {
+        "elo": 1498.8482670734527,
+        "games": 5
+      },
+      "valbona": {
+        "elo": 1490.3708999438752,
+        "games": 2
+      },
+      "kuk si": {
+        "elo": 1499.7087461333208,
+        "games": 2
+      },
+      "bes lidhja": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "bylis": {
+        "elo": 1498.430064953105,
+        "games": 1
+      },
+      "sopoti": {
+        "elo": 1489.9059475269664,
+        "games": 2
+      },
+      "iliria fush kruj": {
+        "elo": 1506.821846737904,
+        "games": 2
+      },
+      "besa kavaj": {
+        "elo": 1509.8784465093368,
+        "games": 2
+      },
+      "kastrioti kruj": {
+        "elo": 1492.8417462705677,
+        "games": 2
+      },
+      "korabi peshkopi": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "oriku": {
+        "elo": 1491.569935046895,
+        "games": 1
+      }
+    },
     "rugby:top-14": {
       "cuba": {
         "elo": 1441.2613441993176,
@@ -10529,8 +10631,8 @@
         "games": 30
       },
       "klim sani4": {
-        "elo": 1618.484722240941,
-        "games": 39
+        "elo": 1605.7253510336752,
+        "games": 40
       },
       "haters verusya": {
         "elo": 1510.0,
@@ -10985,8 +11087,8 @@
         "games": 4
       },
       "dawn bulls": {
-        "elo": 1520.0635264211207,
-        "games": 2
+        "elo": 1532.8228976283865,
+        "games": 3
       }
     },
     "soccer:prva-liga": {
@@ -46920,6 +47022,18 @@
         "y": 1.0,
         "match_id": "thesportsdb:2527519"
       }
+    ],
+    "soccer:kategoria-superiore": [
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.35258517996596933,
+          "draw": 0.3826086956521739,
+          "away": 0.26480612438185674
+        },
+        "y": "draw",
+        "match_id": "thesportsdb:2578081"
+      }
     ]
   },
   "processed": {
@@ -47863,6 +47977,48 @@
       "thesportsdb:2396060",
       "thesportsdb:2396061",
       "thesportsdb:2396062"
+    ],
+    "soccer:kategoria-superiore": [
+      "thesportsdb:1882802",
+      "thesportsdb:1882799",
+      "thesportsdb:1882800",
+      "thesportsdb:1882801",
+      "thesportsdb:1882803",
+      "thesportsdb:1882909",
+      "thesportsdb:1882804",
+      "thesportsdb:1882805",
+      "thesportsdb:1882806",
+      "thesportsdb:1882807",
+      "thesportsdb:1882808",
+      "thesportsdb:1882910",
+      "thesportsdb:1882809",
+      "thesportsdb:1882810",
+      "thesportsdb:1882811",
+      "thesportsdb:2135207",
+      "thesportsdb:2135208",
+      "thesportsdb:2135209",
+      "thesportsdb:2135210",
+      "thesportsdb:2135211",
+      "thesportsdb:2139749",
+      "thesportsdb:2135213",
+      "thesportsdb:2135212",
+      "thesportsdb:2135215",
+      "thesportsdb:2135216",
+      "thesportsdb:2139750",
+      "thesportsdb:2135214",
+      "thesportsdb:2135217",
+      "thesportsdb:2135219",
+      "thesportsdb:2135220",
+      "thesportsdb:2578075",
+      "thesportsdb:2578078",
+      "thesportsdb:2578079",
+      "thesportsdb:2578076",
+      "thesportsdb:2578077",
+      "thesportsdb:2578080",
+      "thesportsdb:2578081",
+      "thesportsdb:2578083",
+      "thesportsdb:2578085",
+      "thesportsdb:2578086"
     ],
     "rugby:top-14": [
       "thesportsdb:1950427",
@@ -64165,7 +64321,8 @@
       "opendota:8996581680",
       "opendota:8996644979",
       "opendota:8996676912",
-      "opendota:8996772760"
+      "opendota:8996772760",
+      "opendota:8996835842"
     ],
     "soccer:prva-liga": [
       "thesportsdb:2506176",
@@ -64339,6 +64496,10 @@
       "total": 27,
       "draws": 0
     },
+    "soccer:kategoria-superiore": {
+      "total": 40,
+      "draws": 16
+    },
     "rugby:top-14": {
       "total": 45,
       "draws": 0
@@ -64396,7 +64557,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 437,
+      "total": 438,
       "draws": 0
     },
     "soccer:prva-liga": {
@@ -64855,7 +65016,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "f253d019fb4bc77ca270d3aa611a2178ef5c465ef38e54426083d01056940122",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.04478226717109557,
       "last_brier": 0.238708911433943,
@@ -64978,6 +65139,19 @@
       "last_brier": 0.1975627063829986,
       "evidence_samples": 15,
       "evidence_total_samples": 15
+    },
+    "soccer:kategoria-superiore": {
+      "policy_version": 2,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 0,
+      "last_evidence_fingerprint": "9e9490cfb5d5c203dc20f1025eb4005b04acb6525215db140a28542ca7299051",
+      "evidence_changed": false,
+      "migration_baseline": true,
+      "last_skill": null,
+      "last_brier": 0.5756106153260844,
+      "evidence_samples": 1,
+      "evidence_total_samples": 1
     }
   }
 }

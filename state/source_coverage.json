@@ -1,93 +1,93 @@
 {
-  "generated_at": "2026-09-13T11:43:22.311896+00:00",
-  "targets_in_snapshot": 294,
+  "generated_at": "2026-09-13T12:08:03.047611+00:00",
+  "targets_in_snapshot": 278,
   "targets_processed": 24,
   "matched": [
     {
       "sport": "soccer",
-      "stake_league": "afc-champions-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.579
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "brasileiro-serie-a",
-      "source_league": "Italian Serie A",
-      "similarity": 0.606
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "bundesliga",
-      "source_league": "German Bundesliga",
-      "similarity": 0.741
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "bundesliga-srl",
-      "source_league": "German Bundesliga",
-      "similarity": 0.645
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "caf-champions-league",
-      "source_league": "Belgian Pro League",
-      "similarity": 0.579
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "cambodian-premier-league",
-      "source_league": "Scottish Premier League",
-      "similarity": 0.766
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "canadian-premier-league",
+      "stake_league": "first-professional-league",
       "source_league": "English Premier League",
-      "similarity": 0.756
+      "similarity": 0.596
     },
     {
       "sport": "soccer",
-      "stake_league": "championship",
-      "source_league": "English League Championship",
-      "similarity": 0.615
+      "stake_league": "i-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.571
     },
     {
       "sport": "soccer",
-      "stake_league": "china-league",
+      "stake_league": "indonesian-super-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.683
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "iraqi-league",
       "source_league": "Belgian Pro League",
       "similarity": 0.6
     },
     {
       "sport": "soccer",
-      "stake_league": "chinese-super-league",
+      "stake_league": "k-league-1",
       "source_league": "Greek Super League 1",
-      "similarity": 0.75
+      "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "kategoria-superiore",
+      "source_league": "Albanian Kategoria e Parë",
+      "similarity": 0.558
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "la-liga",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.667
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "la-liga-2",
+      "source_league": "Spanish La Liga",
+      "similarity": 0.583
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "laliga-srl",
+      "source_league": "Italian Serie A",
+      "similarity": 0.56
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "lebanon-cup",
+      "source_league": "Albanian Superliga",
+      "similarity": 0.552
     }
   ],
   "unmatched": [
-    "soccer/allsvenskan: sin liga equivalente segura",
-    "soccer/asian-games-women: sin liga equivalente segura",
-    "soccer/brasileiro-serie-a2-women: sin liga equivalente segura",
-    "soccer/brasileiro-serie-b: sin liga equivalente segura",
-    "soccer/brasileiro-serie-c: sin liga equivalente segura",
-    "soccer/caf-confederations-cup: sin liga equivalente segura",
-    "soccer/campionato-sammarinese: sin liga equivalente segura",
-    "soccer/championship-women: sin liga equivalente segura",
-    "soccer/copa-argentina: sin liga equivalente segura",
-    "soccer/copa-do-brasil: sin liga equivalente segura",
-    "soccer/copa-libertadores: sin liga equivalente segura",
-    "soccer/copa-paulista: sin liga equivalente segura",
-    "soccer/copa-sudamericana: sin liga equivalente segura",
-    "soccer/damallsvenskan: sin liga equivalente segura"
+    "soccer/erste-liga: sin liga equivalente segura",
+    "soccer/ffa-cup: sin liga equivalente segura",
+    "soccer/first-division-a: sin liga equivalente segura",
+    "soccer/first-division-b: sin liga equivalente segura",
+    "soccer/football-national-league: sin liga equivalente segura",
+    "soccer/ii-liga: sin liga equivalente segura",
+    "soccer/j-league: sin liga equivalente segura",
+    "soccer/j-league-2: sin liga equivalente segura",
+    "soccer/j-league-3: sin liga equivalente segura",
+    "soccer/league-one: sin liga equivalente segura",
+    "soccer/league-two: sin liga equivalente segura",
+    "soccer/liga-2: sin liga equivalente segura",
+    "soccer/liga-de-expansion-mx-apertura: sin liga equivalente segura",
+    "soccer/liga-i: sin liga equivalente segura"
   ],
-  "rows_collected": 786,
-  "rows_added": 7,
+  "rows_collected": 1013,
+  "rows_added": 41,
   "schema_rejections": [],
   "auxiliary_sources": {
-    "Cricsheet": "error: Cricsheet no devolvió ZIP después de 3 intentos (tipo=text/html, bytes=12195)",
+    "Cricsheet": 322,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 144,
+  "next_league_cursor": 168,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
