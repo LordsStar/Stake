@@ -8055,8 +8055,8 @@
         "games": 3
       },
       "alevtina ibragimova": {
-        "elo": 1571.2653065306035,
-        "games": 18
+        "elo": 1560.9546102803467,
+        "games": 19
       },
       "shi han": {
         "elo": 1492.120815253549,
@@ -9819,8 +9819,8 @@
         "games": 1
       },
       "rositsa dencheva": {
-        "elo": 1560.467137704436,
-        "games": 6
+        "elo": 1570.7778339546928,
+        "games": 7
       },
       "adrienn nagy": {
         "elo": 1489.727859399778,
@@ -11492,6 +11492,32 @@
       },
       "asteras tripolis": {
         "elo": 1511.569935046895,
+        "games": 1
+      }
+    },
+    "soccer:primera-divisio": {
+      "atl tic d escaldes": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "sporting d escaldes": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "ordino": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "casa de portugal": {
+        "elo": 1491.569935046895,
+        "games": 1
+      },
+      "inter club d escaldes": {
+        "elo": 1508.430064953105,
+        "games": 1
+      },
+      "carroi": {
+        "elo": 1491.569935046895,
         "games": 1
       }
     }
@@ -33556,12 +33582,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.5734936953941782,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:179532"
-      },
-      {
-        "kind": "binary",
         "p": 0.5737492200252744,
         "y": 0.0,
         "match_id": "espn:tennis:wta:179550"
@@ -39553,6 +39573,12 @@
         "p": 0.544227090594323,
         "y": 1.0,
         "match_id": "espn:tennis:wta:183644"
+      },
+      {
+        "kind": "binary",
+        "p": 0.484465187487165,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183560"
       }
     ],
     "tennis:atp": [
@@ -63581,6 +63607,7 @@
       "espn:tennis:wta:185989",
       "espn:tennis:wta:185991",
       "espn:tennis:wta:185984",
+      "espn:tennis:wta:183560",
       "espn:tennis:wta:185996"
     ],
     "volleyball:premier-volleyball-league-women": [
@@ -64417,6 +64444,11 @@
     ],
     "soccer:the-fa-women-apos-s-super-league": [
       "thesportsdb:2539939"
+    ],
+    "soccer:primera-divisio": [
+      "thesportsdb:2572247",
+      "thesportsdb:2572371",
+      "thesportsdb:2572248"
     ]
   },
   "draw_stats": {
@@ -64533,7 +64565,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5233,
+      "total": 5234,
       "draws": 0
     },
     "volleyball:premier-volleyball-league-women": {
@@ -64590,6 +64622,10 @@
     },
     "soccer:the-fa-women-apos-s-super-league": {
       "total": 1,
+      "draws": 0
+    },
+    "soccer:primera-divisio": {
+      "total": 3,
       "draws": 0
     }
   },
@@ -64937,11 +64973,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "b66a8a4be94c4e51908fb3454e6efbca968c414892e6d458293b73c84b0c69c1",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "eaaa33d31297b81779995118b394fc62439eef59e5a50a75cb1c1164247ea8e5",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.08789229838826018,
-      "last_brier": 0.22782170117007244,
+      "last_skill": 0.08662470533205813,
+      "last_brier": 0.22825248613751842,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -65147,11 +65183,24 @@
       "fail_streak": 0,
       "last_evidence_fingerprint": "9e9490cfb5d5c203dc20f1025eb4005b04acb6525215db140a28542ca7299051",
       "evidence_changed": false,
-      "migration_baseline": true,
+      "migration_baseline": false,
       "last_skill": null,
       "last_brier": 0.5756106153260844,
       "evidence_samples": 1,
       "evidence_total_samples": 1
+    },
+    "soccer:primera-divisio": {
+      "policy_version": 2,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 0,
+      "last_evidence_fingerprint": null,
+      "evidence_changed": false,
+      "migration_baseline": true,
+      "last_skill": null,
+      "last_brier": null,
+      "evidence_samples": 0,
+      "evidence_total_samples": 0
     }
   }
 }
