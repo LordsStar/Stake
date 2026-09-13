@@ -1,53 +1,93 @@
 {
-  "generated_at": "2026-09-13T04:59:49.099903+00:00",
-  "targets_in_snapshot": 308,
+  "generated_at": "2026-09-13T11:43:22.311896+00:00",
+  "targets_in_snapshot": 294,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "rugby",
-      "stake_league": "rfl-championship",
-      "source_league": "Australian National Rugby Championship",
-      "similarity": 0.556
+      "sport": "soccer",
+      "stake_league": "afc-champions-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.579
     },
     {
-      "sport": "rugby",
-      "stake_league": "top-14",
-      "source_league": "URBA Top 13",
-      "similarity": 0.588
+      "sport": "soccer",
+      "stake_league": "brasileiro-serie-a",
+      "source_league": "Italian Serie A",
+      "similarity": 0.606
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "bundesliga",
+      "source_league": "German Bundesliga",
+      "similarity": 0.741
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "bundesliga-srl",
+      "source_league": "German Bundesliga",
+      "similarity": 0.645
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "caf-champions-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.579
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "cambodian-premier-league",
+      "source_league": "Scottish Premier League",
+      "similarity": 0.766
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "canadian-premier-league",
+      "source_league": "English Premier League",
+      "similarity": 0.756
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "championship",
+      "source_league": "English League Championship",
+      "similarity": 0.615
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "china-league",
+      "source_league": "Belgian Pro League",
+      "similarity": 0.6
+    },
+    {
+      "sport": "soccer",
+      "stake_league": "chinese-super-league",
+      "source_league": "Greek Super League 1",
+      "similarity": 0.75
     }
   ],
   "unmatched": [
-    "league-of-legends/world-star-challengers-invitational-americas-2026-qualifier-t10: sin liga equivalente segura",
-    "mma/dana-whites-contender-series-season-10-week-6: sin liga equivalente segura",
-    "mma/ice-cage-8: sin liga equivalente segura",
-    "mma/ksw-121: sin liga equivalente segura",
-    "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
-    "mma/ufc-332: sin liga equivalente segura",
-    "mma/ufc-333-volkanovski-vs-evloev: sin liga equivalente segura",
-    "mobile-legends/mlbb-continental-championships-season-8-t10: sin liga equivalente segura",
-    "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura",
-    "mobile-legends/mpl-malaysia-season-18-t10: sin liga equivalente segura",
-    "mobile-legends/mpl-philippines-season-18-t9: sin liga equivalente segura",
-    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura",
-    "rainbow-six/asia-pacific-league-2026-oceania-stage-2-t10: sin liga equivalente segura",
-    "rainbow-six/europe-mena-league-2026-stage-2-t10: sin liga equivalente segura",
-    "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
-    "rugby/mitre-10-cup: sin liga equivalente segura",
-    "rugby/nrl: sin liga equivalente segura",
-    "rugby/nrl-women: sin liga equivalente segura",
-    "rugby/super-rugby-aus: sin liga equivalente segura",
-    "snooker/english-open: sin liga equivalente segura",
-    "snooker/northern-ireland-open: sin liga equivalente segura",
-    "soccer/1-hnl: sin liga equivalente segura"
+    "soccer/allsvenskan: sin liga equivalente segura",
+    "soccer/asian-games-women: sin liga equivalente segura",
+    "soccer/brasileiro-serie-a2-women: sin liga equivalente segura",
+    "soccer/brasileiro-serie-b: sin liga equivalente segura",
+    "soccer/brasileiro-serie-c: sin liga equivalente segura",
+    "soccer/caf-confederations-cup: sin liga equivalente segura",
+    "soccer/campionato-sammarinese: sin liga equivalente segura",
+    "soccer/championship-women: sin liga equivalente segura",
+    "soccer/copa-argentina: sin liga equivalente segura",
+    "soccer/copa-do-brasil: sin liga equivalente segura",
+    "soccer/copa-libertadores: sin liga equivalente segura",
+    "soccer/copa-paulista: sin liga equivalente segura",
+    "soccer/copa-sudamericana: sin liga equivalente segura",
+    "soccer/damallsvenskan: sin liga equivalente segura"
   ],
-  "rows_collected": 759,
-  "rows_added": 8,
+  "rows_collected": 786,
+  "rows_added": 7,
   "schema_rejections": [],
   "auxiliary_sources": {
-    "Cricsheet": 322,
+    "Cricsheet": "error: Cricsheet no devolvió ZIP después de 3 intentos (tipo=text/html, bytes=12195)",
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 120,
+  "next_league_cursor": 144,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
