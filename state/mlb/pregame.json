@@ -23,7 +23,7 @@
     "home_starter_name": "Riley Cornelio",
     "away_starter_id": "680570",
     "away_starter_name": "Grayson Rodriguez",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824869",
@@ -36,7 +36,7 @@
     "home_starter_name": "Grant Holmes",
     "away_starter_id": "691725",
     "away_starter_name": "Andrew Painter",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823495",
@@ -49,7 +49,7 @@
     "home_starter_name": "Cam Schlittler",
     "away_starter_id": "681035",
     "away_starter_name": "Christian Scott",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822764",
@@ -62,7 +62,7 @@
     "home_starter_name": "Dylan Cease",
     "away_starter_id": "669432",
     "away_starter_name": "Trevor Rogers",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822928",
@@ -75,7 +75,7 @@
     "home_starter_name": "Freddy Peralta",
     "away_starter_id": "669713",
     "away_starter_name": "Hayden Wesneski",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823815",
@@ -88,7 +88,7 @@
     "home_starter_name": "Eury Pérez",
     "away_starter_id": "686218",
     "away_starter_name": "Emmet Sheehan",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823658",
@@ -153,7 +153,7 @@
     "home_starter_name": "Payton Tolle",
     "away_starter_id": "702070",
     "away_starter_name": "Noah Cameron",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824952",
@@ -166,7 +166,7 @@
     "home_starter_name": "Jacob Lopez",
     "away_starter_id": "682243",
     "away_starter_name": "Bryce Miller",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825033",
@@ -179,7 +179,7 @@
     "home_starter_name": "Eduardo Rodriguez",
     "away_starter_id": "615698",
     "away_starter_name": "Cal Quantrill",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823171",
@@ -253,8 +253,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "592332",
-    "home_starter_name": "Kevin Gausman",
+    "home_starter_id": "656849",
+    "home_starter_name": "David Peterson",
     "away_starter_id": "625643",
     "away_starter_name": "Reynaldo López",
     "lineups_confirmed": false
@@ -320,8 +320,8 @@
     "away_name": "Miami Marlins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "645261",
+    "away_starter_name": "Sandy Alcantara",
     "lineups_confirmed": false
   },
   {
@@ -476,8 +476,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "686613",
     "home_starter_name": "Hunter Brown",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "608379",
+    "away_starter_name": "Michael Wacha",
     "lineups_confirmed": false
   },
   {
@@ -515,8 +515,8 @@
     "away_name": "Miami Marlins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "676083",
+    "away_starter_name": "Janson Junk",
     "lineups_confirmed": false
   },
   {
@@ -643,8 +643,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "684007",
+    "home_starter_name": "Shota Imanaga",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -671,8 +671,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "664299",
     "home_starter_name": "Cristian Javier",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663738",
+    "away_starter_name": "Daniel Lynch IV",
     "lineups_confirmed": false
   },
   {
@@ -710,8 +710,8 @@
     "away_name": "Miami Marlins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "687473",
+    "away_starter_name": "Ryan Gusto",
     "lineups_confirmed": false
   }
 ]
