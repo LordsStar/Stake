@@ -262,10 +262,18 @@ class AuditDiagnosticTests(unittest.TestCase):
         )
 
     def test_sin_modelo_is_split_and_audit_reconciles(self):
-        with patch.object(core, "append_movement_history", return_value={}):
-            candidates, audit = core.prepare_candidates(
-                [self._event()], [], [], 100.0,
-            )
+        # La prueba debe ser independiente del estado Elo incluido en el repo.
+        # Durante una migración ese archivo puede tener deliberadamente el
+        # esquema anterior hasta que termine el workflow de reconstrucción.
+        with tempfile.TemporaryDirectory() as tmp:
+            empty_elo = core.EloModel(Path(tmp) / "elo.json")
+            with (
+                patch.object(core, "EloModel", return_value=empty_elo),
+                patch.object(core, "append_movement_history", return_value={}),
+            ):
+                candidates, audit = core.prepare_candidates(
+                    [self._event()], [], [], 100.0,
+                )
         self.assertEqual(candidates, [])
         self.assertEqual(audit["descartes"], {"historial_insuficiente": 1})
         self.assertNotIn("sin_modelo", audit["descartes"])
