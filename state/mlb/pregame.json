@@ -88,7 +88,7 @@
     "home_starter_name": "Eury Pérez",
     "away_starter_id": "686218",
     "away_starter_name": "Emmet Sheehan",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823658",
@@ -242,8 +242,8 @@
     "away_name": "Baltimore Orioles",
     "home_starter_id": "804636",
     "home_starter_name": "Jonah Tong",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "687064",
+    "away_starter_name": "Brandon Young",
     "lineups_confirmed": false
   },
   {
@@ -253,8 +253,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "592332",
+    "home_starter_name": "Kevin Gausman",
     "away_starter_id": "625643",
     "away_starter_name": "Reynaldo López",
     "lineups_confirmed": false
@@ -266,8 +266,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "665152",
+    "home_starter_name": "Dean Kremer",
     "away_starter_id": "701542",
     "away_starter_name": "Will Warren",
     "lineups_confirmed": false
@@ -305,8 +305,8 @@
     "home_name": "Los Angeles Angels",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "672282",
+    "home_starter_name": "Reid Detmers",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -385,8 +385,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "800600",
     "home_starter_name": "Jackson Kent",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "650911",
+    "away_starter_name": "Cristopher Sánchez",
     "lineups_confirmed": false
   },
   {
@@ -411,8 +411,8 @@
     "away_name": "Baltimore Orioles",
     "home_starter_id": "640455",
     "home_starter_name": "Sean Manaea",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669358",
+    "away_starter_name": "Shane Baz",
     "lineups_confirmed": false
   },
   {
@@ -422,8 +422,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "592332",
+    "home_starter_name": "Kevin Gausman",
     "away_starter_id": "527048",
     "away_starter_name": "Martín Pérez",
     "lineups_confirmed": false
@@ -435,8 +435,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "641927",
+    "home_starter_name": "Bailey Ober",
     "away_starter_id": "608331",
     "away_starter_name": "Max Fried",
     "lineups_confirmed": false
@@ -500,8 +500,8 @@
     "home_name": "Los Angeles Angels",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "696270",
+    "home_starter_name": "Ryan Johnson",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -552,8 +552,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "805673",
+    "home_starter_name": "Zebby Matthews",
     "away_starter_id": "607074",
     "away_starter_name": "Carlos Rodón",
     "lineups_confirmed": false
@@ -565,8 +565,8 @@
     "home_name": "Toronto Blue Jays",
     "away_id": "116",
     "away_name": "Detroit Tigers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "453286",
+    "home_starter_name": "Max Scherzer",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -604,8 +604,8 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "683003",
+    "home_starter_name": "Jared Jones",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -619,8 +619,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "676917",
     "home_starter_name": "Cade Cavalli",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "554430",
+    "away_starter_name": "Zack Wheeler",
     "lineups_confirmed": false
   },
   {
@@ -632,8 +632,8 @@
     "away_name": "Baltimore Orioles",
     "home_starter_id": "476594",
     "home_starter_name": "Robert Stock",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "605135",
+    "away_starter_name": "Chris Bassitt",
     "lineups_confirmed": false
   },
   {
@@ -695,8 +695,8 @@
     "home_name": "Los Angeles Angels",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "579328",
+    "home_starter_name": "Yusei Kikuchi",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
