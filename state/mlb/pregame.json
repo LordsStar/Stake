@@ -1,83 +1,5 @@
 [
   {
-    "game_pk": "822682",
-    "start_time": "2026-09-13T17:35:00Z",
-    "home_id": "120",
-    "home_name": "Washington Nationals",
-    "away_id": "108",
-    "away_name": "Los Angeles Angels",
-    "home_starter_id": "683000",
-    "home_starter_name": "Riley Cornelio",
-    "away_starter_id": "680570",
-    "away_starter_name": "Grayson Rodriguez",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824869",
-    "start_time": "2026-09-13T17:35:00Z",
-    "home_id": "144",
-    "home_name": "Atlanta Braves",
-    "away_id": "143",
-    "away_name": "Philadelphia Phillies",
-    "home_starter_id": "656550",
-    "home_starter_name": "Grant Holmes",
-    "away_starter_id": "691725",
-    "away_starter_name": "Andrew Painter",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823495",
-    "start_time": "2026-09-13T17:35:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "121",
-    "away_name": "New York Mets",
-    "home_starter_id": "693645",
-    "home_starter_name": "Cam Schlittler",
-    "away_starter_id": "681035",
-    "away_starter_name": "Christian Scott",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822764",
-    "start_time": "2026-09-13T17:37:00Z",
-    "home_id": "141",
-    "home_name": "Toronto Blue Jays",
-    "away_id": "110",
-    "away_name": "Baltimore Orioles",
-    "home_starter_id": "656302",
-    "home_starter_name": "Dylan Cease",
-    "away_starter_id": "669432",
-    "away_starter_name": "Trevor Rogers",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822928",
-    "start_time": "2026-09-13T17:40:00Z",
-    "home_id": "139",
-    "home_name": "Tampa Bay Rays",
-    "away_id": "117",
-    "away_name": "Houston Astros",
-    "home_starter_id": "642547",
-    "home_starter_name": "Freddy Peralta",
-    "away_starter_id": "669713",
-    "away_starter_name": "Hayden Wesneski",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823815",
-    "start_time": "2026-09-13T17:40:00Z",
-    "home_id": "146",
-    "home_name": "Miami Marlins",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "691587",
-    "home_starter_name": "Eury Pérez",
-    "away_starter_id": "686218",
-    "away_starter_name": "Emmet Sheehan",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "823658",
     "start_time": "2026-09-13T18:10:00Z",
     "home_id": "142",
@@ -88,32 +10,6 @@
     "home_starter_name": "Joe Ryan",
     "away_starter_id": "676440",
     "away_starter_name": "Tanner Bibee",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823734",
-    "start_time": "2026-09-13T18:10:00Z",
-    "home_id": "158",
-    "home_name": "Milwaukee Brewers",
-    "away_id": "113",
-    "away_name": "Cincinnati Reds",
-    "home_starter_id": "688107",
-    "home_starter_name": "Robert Gasser",
-    "away_starter_id": "695505",
-    "away_starter_name": "Chase Burns",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823008",
-    "start_time": "2026-09-13T18:15:00Z",
-    "home_id": "138",
-    "home_name": "St. Louis Cardinals",
-    "away_id": "145",
-    "away_name": "Chicago White Sox",
-    "home_starter_id": "700241",
-    "home_starter_name": "Michael McGreevy",
-    "away_starter_id": "689818",
-    "away_starter_name": "David Sandlin",
     "lineups_confirmed": false
   },
   {
@@ -140,7 +36,7 @@
     "home_starter_name": "Payton Tolle",
     "away_starter_id": "702070",
     "away_starter_name": "Noah Cameron",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824952",
@@ -153,7 +49,7 @@
     "home_starter_name": "Jacob Lopez",
     "away_starter_id": "682243",
     "away_starter_name": "Bryce Miller",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "825033",
@@ -166,7 +62,7 @@
     "home_starter_name": "Eduardo Rodriguez",
     "away_starter_id": "615698",
     "away_starter_name": "Cal Quantrill",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823171",
@@ -179,7 +75,7 @@
     "home_starter_name": "Logan Webb",
     "away_starter_id": "601713",
     "away_starter_name": "Nick Pivetta",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824465",
@@ -294,8 +190,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "672282",
     "home_starter_name": "Reid Detmers",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "807739",
+    "away_starter_name": "Kade Anderson",
     "lineups_confirmed": false
   },
   {
@@ -305,8 +201,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669203",
+    "home_starter_name": "Corbin Burnes",
     "away_starter_id": "645261",
     "away_starter_name": "Sandy Alcantara",
     "lineups_confirmed": false
@@ -333,8 +229,8 @@
     "away_name": "Athletics",
     "home_starter_id": "643377",
     "home_starter_name": "Griffin Jax",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "678022",
+    "away_starter_name": "Jack Perkins",
     "lineups_confirmed": false
   },
   {
@@ -489,8 +385,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "696270",
     "home_starter_name": "Ryan Johnson",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669302",
+    "away_starter_name": "Logan Gilbert",
     "lineups_confirmed": false
   },
   {
@@ -500,8 +396,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "647336",
+    "home_starter_name": "Michael Soroka",
     "away_starter_id": "676083",
     "away_starter_name": "Janson Junk",
     "lineups_confirmed": false
@@ -580,8 +476,8 @@
     "away_name": "Athletics",
     "home_starter_id": "607259",
     "home_starter_name": "Nick Martinez",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669620",
+    "away_starter_name": "Brady Basso",
     "lineups_confirmed": false
   },
   {
@@ -684,8 +580,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "579328",
     "home_starter_name": "Yusei Kikuchi",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "669923",
+    "away_starter_name": "George Kirby",
     "lineups_confirmed": false
   },
   {
@@ -695,8 +591,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "518876",
+    "home_starter_name": "Merrill Kelly",
     "away_starter_id": "687473",
     "away_starter_name": "Ryan Gusto",
     "lineups_confirmed": false
