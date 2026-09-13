@@ -4821,8 +4821,8 @@
         "games": 12
       },
       "reese brantmeier": {
-        "elo": 1471.7516008684643,
-        "games": 5
+        "elo": 1481.9417384491298,
+        "games": 6
       },
       "arthur fery": {
         "elo": 1537.6664123967978,
@@ -5173,8 +5173,8 @@
         "games": 20
       },
       "oceane dodin": {
-        "elo": 1478.3584532884313,
-        "games": 13
+        "elo": 1468.1683157077657,
+        "games": 14
       },
       "carlota corte": {
         "elo": 1489.9839125296767,
@@ -5773,8 +5773,8 @@
         "games": 10
       },
       "diletta cherubini": {
-        "elo": 1470.3394113112709,
-        "games": 5
+        "elo": 1481.1092202000702,
+        "games": 6
       },
       "alice tubello": {
         "elo": 1457.2259775360262,
@@ -5797,8 +5797,8 @@
         "games": 1
       },
       "isabella shinikova": {
-        "elo": 1497.1383327441256,
-        "games": 8
+        "elo": 1486.3685238553262,
+        "games": 9
       },
       "sude ulueren": {
         "elo": 1490.0,
@@ -6169,8 +6169,8 @@
         "games": 1
       },
       "margaux rouvroy": {
-        "elo": 1496.1245048814037,
-        "games": 6
+        "elo": 1486.1965531437677,
+        "games": 7
       },
       "luisina giovannini": {
         "elo": 1499.5771118172972,
@@ -6657,8 +6657,8 @@
         "games": 1
       },
       "sofia johnson": {
-        "elo": 1498.627761218316,
-        "games": 4
+        "elo": 1508.555712955952,
+        "games": 5
       },
       "ivan ivanov": {
         "elo": 1489.7348838429941,
@@ -7569,6 +7569,14 @@
         "games": 1
       },
       "stephanie judith visscher": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "joelle lilly sophie steur": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "neus torner sensano": {
         "elo": 1490.0,
         "games": 1
       }
@@ -30126,18 +30134,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.66735191926562,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:179455"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5548860941476041,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:178970"
-      },
-      {
-        "kind": "binary",
         "p": 0.425690218816792,
         "y": 0.0,
         "match_id": "espn:tennis:wta:179535"
@@ -36123,6 +36119,18 @@
         "p": 0.48351620410503343,
         "y": 0.0,
         "match_id": "espn:tennis:wta:185995"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5095068790332741,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:185992"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4615095555600306,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:185981"
       }
     ],
     "tennis:atp": [
@@ -59190,7 +59198,11 @@
       "espn:tennis:wta:185978",
       "espn:tennis:wta:185979",
       "espn:tennis:wta:183606",
-      "espn:tennis:wta:185995"
+      "espn:tennis:wta:185995",
+      "espn:tennis:wta:185980",
+      "espn:tennis:wta:185994",
+      "espn:tennis:wta:185992",
+      "espn:tennis:wta:185981"
     ],
     "cricket:test": [
       "cricsheet:1538631",
@@ -60042,7 +60054,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5239,
+      "total": 5243,
       "draws": 0
     },
     "cricket:test": {
@@ -60073,7 +60085,7 @@
       "pass_streak": 0,
       "fail_streak": 1,
       "last_evidence_fingerprint": "da604eb816e44c6e80407829ff49e314c3dc1a350e08bc6cdcfe3796430eaf2a",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.011313649627403666,
       "last_brier": 0.21689968090813785,
@@ -60150,11 +60162,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "ea18ac921bc16f2d08a16898b33ef252b969fad9a9aa0a94b13b598a5cc40071",
+      "last_evidence_fingerprint": "7235ce7243b37b5569446022b18eb055ebeb24e310d9482dca285c6a9f3c4b06",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.08749962936981492,
-      "last_brier": 0.228033842620483,
+      "last_skill": 0.08564000813500927,
+      "last_brier": 0.22849856196706095,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
