@@ -10,7 +10,7 @@
     "home_starter_name": "Jackson Jobe",
     "away_starter_id": "687312",
     "away_starter_name": "Gabriel Hughes",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822682",
@@ -216,8 +216,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "680732",
+    "away_starter_name": "Sean Burke",
     "lineups_confirmed": false
   },
   {
@@ -268,8 +268,8 @@
     "away_name": "New York Yankees",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "701542",
+    "away_starter_name": "Will Warren",
     "lineups_confirmed": false
   },
   {
@@ -359,8 +359,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663436",
+    "away_starter_name": "Davis Martin",
     "lineups_confirmed": false
   },
   {
@@ -437,8 +437,8 @@
     "away_name": "New York Yankees",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "608331",
+    "away_starter_name": "Max Fried",
     "lineups_confirmed": false
   },
   {
@@ -554,8 +554,8 @@
     "away_name": "New York Yankees",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "607074",
+    "away_starter_name": "Carlos Rodón",
     "lineups_confirmed": false
   },
   {
