@@ -418,6 +418,20 @@ def render_private_state_manager():
             st.error(f"No se pudo restaurar: {exc}")
 
 
+def resolve_event_elo_namespace(event: core.NormalizedEvent) -> str:
+    """Resuelve el namespace aun durante una actualización gradual en Cloud.
+
+    Streamlit puede mantener ``blindado_core`` en memoria mientras ya ejecuta una
+    versión más reciente de ``app.py``. La función específica conserva la nueva
+    identidad segura cuando está disponible; el fallback evita que una instancia
+    todavía cargada con el núcleo v7.7 falle antes de poder reiniciarse.
+    """
+    resolver = getattr(core, "event_elo_namespace", None)
+    if callable(resolver):
+        return resolver(event)
+    return core.elo_namespace(event.sport, event.league)
+
+
 def render_capability_matrix(stake_events: List[core.NormalizedEvent], elo: "core.EloModel"):
     rows = []
     seen = set()
@@ -428,7 +442,7 @@ def render_capability_matrix(stake_events: List[core.NormalizedEvent], elo: "cor
             continue
         seen.add(key)
         ok, reason = core.pick_capability(event)
-        namespace = core.event_elo_namespace(event)
+        namespace = resolve_event_elo_namespace(event)
         elo_info = coverage.get(namespace, {})
         rows.append({
             "deporte": event.sport,
