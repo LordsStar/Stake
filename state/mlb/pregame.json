@@ -110,8 +110,8 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "688107",
+    "home_starter_name": "Robert Gasser",
     "away_starter_id": "695505",
     "away_starter_name": "Chase Burns",
     "lineups_confirmed": false
@@ -177,8 +177,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "593958",
     "home_starter_name": "Eduardo Rodriguez",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "615698",
+    "away_starter_name": "Cal Quantrill",
     "lineups_confirmed": false
   },
   {

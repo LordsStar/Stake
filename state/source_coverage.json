@@ -1,48 +1,53 @@
 {
-  "generated_at": "2026-09-12T20:41:19.758787+00:00",
-  "targets_in_snapshot": 285,
+  "generated_at": "2026-09-13T04:59:49.099903+00:00",
+  "targets_in_snapshot": 308,
   "targets_processed": 24,
   "matched": [
     {
-      "sport": "handball",
-      "stake_league": "lnh-division-1",
-      "source_league": "French LNH Division 1",
-      "similarity": 0.8
+      "sport": "rugby",
+      "stake_league": "rfl-championship",
+      "source_league": "Australian National Rugby Championship",
+      "similarity": 0.556
+    },
+    {
+      "sport": "rugby",
+      "stake_league": "top-14",
+      "source_league": "URBA Top 13",
+      "similarity": 0.588
     }
   ],
   "unmatched": [
-    "handball/extraliga: sin liga equivalente segura",
-    "handball/handboldligaen: sin liga equivalente segura",
-    "handball/liga-asobal: sin liga equivalente segura",
-    "handball/liga-nationala-women: sin liga equivalente segura",
-    "handball/nb-i: sin liga equivalente segura",
-    "handball/premijer-liga: sin liga equivalente segura",
-    "handball/superliga: sin liga equivalente segura",
-    "handball/superliga-women: sin liga equivalente segura",
-    "handball/women-bundesliga: sin liga equivalente segura",
-    "kings-of-glory/kpl-growth-league-2027-promotion-t10: sin liga equivalente segura",
-    "kings-of-glory/kpl-growth-league-summer-2026-t10: sin liga equivalente segura",
+    "league-of-legends/world-star-challengers-invitational-americas-2026-qualifier-t10: sin liga equivalente segura",
     "mma/dana-whites-contender-series-season-10-week-6: sin liga equivalente segura",
     "mma/ice-cage-8: sin liga equivalente segura",
     "mma/ksw-121: sin liga equivalente segura",
     "mma/ufc-331-van-vs-pantoja-2: sin liga equivalente segura",
     "mma/ufc-332: sin liga equivalente segura",
     "mma/ufc-333-volkanovski-vs-evloev: sin liga equivalente segura",
-    "mma/ufc-fight-night-silva-vs-delgado: sin liga equivalente segura",
     "mobile-legends/mlbb-continental-championships-season-8-t10: sin liga equivalente segura",
     "mobile-legends/mpl-indonesia-season-18-t9: sin liga equivalente segura",
     "mobile-legends/mpl-malaysia-season-18-t10: sin liga equivalente segura",
     "mobile-legends/mpl-philippines-season-18-t9: sin liga equivalente segura",
-    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura"
+    "nba2k/valhalla-league-2026-week-37-t5: sin liga equivalente segura",
+    "rainbow-six/asia-pacific-league-2026-oceania-stage-2-t10: sin liga equivalente segura",
+    "rainbow-six/europe-mena-league-2026-stage-2-t10: sin liga equivalente segura",
+    "rocket-league/rlcs-2026-world-championship-t10: sin liga equivalente segura",
+    "rugby/mitre-10-cup: sin liga equivalente segura",
+    "rugby/nrl: sin liga equivalente segura",
+    "rugby/nrl-women: sin liga equivalente segura",
+    "rugby/super-rugby-aus: sin liga equivalente segura",
+    "snooker/english-open: sin liga equivalente segura",
+    "snooker/northern-ireland-open: sin liga equivalente segura",
+    "soccer/1-hnl: sin liga equivalente segura"
   ],
-  "rows_collected": 710,
-  "rows_added": 31,
+  "rows_collected": 759,
+  "rows_added": 8,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 322,
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 96,
+  "next_league_cursor": 120,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
