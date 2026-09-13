@@ -1,31 +1,5 @@
 [
   {
-    "game_pk": "823658",
-    "start_time": "2026-09-13T18:10:00Z",
-    "home_id": "142",
-    "home_name": "Minnesota Twins",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "657746",
-    "home_starter_name": "Joe Ryan",
-    "away_starter_id": "676440",
-    "away_starter_name": "Tanner Bibee",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824628",
-    "start_time": "2026-09-13T18:20:00Z",
-    "home_id": "112",
-    "home_name": "Chicago Cubs",
-    "away_id": "134",
-    "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "571510",
-    "home_starter_name": "Matthew Boyd",
-    "away_starter_id": "696149",
-    "away_starter_name": "Bubba Chandler",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824708",
     "start_time": "2026-09-13T19:05:00Z",
     "home_id": "111",
@@ -177,8 +151,8 @@
     "away_name": "San Diego Padres",
     "home_starter_id": "608372",
     "home_starter_name": "Tomoyuki Sugano",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663554",
+    "away_starter_name": "Casey Mize",
     "lineups_confirmed": false
   },
   {
@@ -372,8 +346,8 @@
     "away_name": "San Diego Padres",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "621111",
+    "away_starter_name": "Walker Buehler",
     "lineups_confirmed": false
   },
   {
@@ -567,8 +541,8 @@
     "away_name": "San Diego Padres",
     "home_starter_id": "690279",
     "home_starter_name": "Mason Adams",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "592662",
+    "away_starter_name": "Robbie Ray",
     "lineups_confirmed": false
   },
   {
