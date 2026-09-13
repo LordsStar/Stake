@@ -1,18 +1,42 @@
 {
-  "generated_at": "2026-09-13T13:29:58Z",
+  "generated_at": "2026-09-13T13:58:44.594839+00:00",
   "targets_in_snapshot": 260,
-  "targets_processed": 0,
+  "targets_processed": 24,
   "matched": [],
-  "unmatched": [],
-  "rows_collected": 0,
+  "unmatched": [
+    "aussie-rules/aussie-rules/unknown-category/afl: sin liga equivalente segura (missing_stake_category_identity)",
+    "basketball-3x3/basketball-3x3/unknown-category/europe-cup: sin liga equivalente segura (missing_stake_category_identity)",
+    "boxing/boxing/unknown-category/international-matchups: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/cis-lan-championship-7-t6: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/logitech-g-play-connect-2026-t3: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/nodwin-clutch-series-12-play-in-t10: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/private-club-1-t6: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/roman-imperium-cup-viii-t10: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/stake-pulse-beat-ii-t6: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/stake-ranked-episode-4-t3: sin liga equivalente segura (missing_stake_category_identity)",
+    "counter-strike/counter-strike/unknown-category/starladder-starseries-fall-2026-t10: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/big-bash-league-srl: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/caribbean-premier-league: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/caribbean-premier-league-women: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/county-championship: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/european-t20-premier-league: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/ilt20-development-tournament: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/major-clubs-t20-tournament: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/odi-series-zimbabwe-vs-australia: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/oman-d50-league: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/one-day-cup-women: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/pakistan-super-league-srl: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/premier-league-srl: sin liga equivalente segura (missing_stake_category_identity)",
+    "cricket/cricket/unknown-category/sa-t20-league-srl: sin liga equivalente segura (missing_stake_category_identity)"
+  ],
+  "rows_collected": 322,
   "rows_added": 0,
   "schema_rejections": [],
-  "auxiliary_sources": {},
-  "next_league_cursor": 0,
-  "migration": {
-    "version": 1,
-    "removed_legacy_thesportsdb_rows": 1056,
-    "reason": "Las filas heredadas no guardaban identidad de competición ni procedencia verificable"
+  "auxiliary_sources": {
+    "Cricsheet": 322,
+    "OpenDota": 0,
+    "League of Legends": 0
   },
-  "note": "TheSportsDB queda cerrado por defecto: solo mapping verified=true o match exacto, único y compatible con categoría."
+  "next_league_cursor": 24,
+  "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
