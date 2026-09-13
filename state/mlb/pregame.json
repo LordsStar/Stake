@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "824225",
-    "start_time": "2026-09-13T16:10:00Z",
-    "home_id": "116",
-    "home_name": "Detroit Tigers",
-    "away_id": "115",
-    "away_name": "Colorado Rockies",
-    "home_starter_id": "695549",
-    "home_starter_name": "Jackson Jobe",
-    "away_starter_id": "687312",
-    "away_starter_name": "Gabriel Hughes",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822682",
     "start_time": "2026-09-13T17:35:00Z",
     "home_id": "120",
@@ -101,7 +88,7 @@
     "home_starter_name": "Joe Ryan",
     "away_starter_id": "676440",
     "away_starter_name": "Tanner Bibee",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823734",
@@ -114,7 +101,7 @@
     "home_starter_name": "Robert Gasser",
     "away_starter_id": "695505",
     "away_starter_name": "Chase Burns",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823008",
@@ -127,7 +114,7 @@
     "home_starter_name": "Michael McGreevy",
     "away_starter_id": "689818",
     "away_starter_name": "David Sandlin",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824628",
@@ -140,7 +127,7 @@
     "home_starter_name": "Matthew Boyd",
     "away_starter_id": "696149",
     "away_starter_name": "Bubba Chandler",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824708",
