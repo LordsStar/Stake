@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 
 import blindado_core as core
@@ -74,19 +75,19 @@ class CollectorTests(unittest.TestCase):
         self.assertNotEqual(core.stake_market_key("Map 1 Winner"), "moneyline")
         self.assertNotEqual(core.stake_market_key("1st Set Winner"), "moneyline")
 
-    def test_schema_four_records_only_mature_predictions(self):
+    def test_current_schema_records_only_mature_predictions(self):
         with tempfile.TemporaryDirectory() as tmp:
             elo = core.EloModel(Path(tmp) / "elo.json")
             for i in range(8):
                 elo.update("demo:league", "a", "b", float(i % 2 == 0), f"g{i}")
-            self.assertEqual(elo.state["schema_version"], 4)
+            self.assertEqual(elo.state["schema_version"], core.ELO_SCHEMA_VERSION)
             self.assertEqual(len(elo.state["brier"]["demo:league"]), 3)
 
     def test_schema_four_uses_sport_home_advantage(self):
         self.assertEqual(core.EloModel.home_advantage("basketball:nba"), 60.0)
         self.assertEqual(core.EloModel.home_advantage("tennis:atp"), 0.0)
 
-    def test_schema_four_accepts_absolute_brier_or_skill(self):
+    def test_current_schema_requires_absolute_brier_and_skill(self):
         with tempfile.TemporaryDirectory() as tmp:
             elo = core.EloModel(Path(tmp) / "elo.json")
             # Excelente en términos absolutos, aunque ligeramente peor que
@@ -97,7 +98,46 @@ class CollectorTests(unittest.TestCase):
             metrics = elo.evaluation_metrics("demo:league")
             self.assertLess(metrics["skill"], 0.0)
             self.assertTrue(metrics["absolute_ok"])
-            self.assertTrue(metrics["active"])
+            self.assertFalse(metrics["active"])
+
+    def test_competition_identity_separates_same_league_slug(self):
+        england = core.elo_namespace(
+            "soccer", "premier-league", category="england", tournament_id="100"
+        )
+        nigeria = core.elo_namespace(
+            "soccer", "premier-league", category="nigeria", tournament_id="200"
+        )
+        self.assertNotEqual(england, nigeria)
+
+    def test_stake_event_serializes_competition_identity(self):
+        listing = {
+            "id": "1", "name": "A - B", "competitors": ["A", "B"],
+            "startTime": 4102444800000,
+            "_stake_category": {"id": "10", "slug": "england"},
+            "_stake_tournament": {"id": "20", "slug": "premier-league"},
+        }
+        detail = {
+            "fixture": {"id": "1", "name": "A - B", "status": "active", "startTime": 4102444800000},
+            "groups": [{"markets": [{
+                "id": "m", "name": "Winner", "status": "active",
+                "outcomes": [{"name": "A", "odds": 1.8}, {"name": "B", "odds": 2.1}],
+            }]}],
+        }
+        event = core.StakeSportsDataCollector.normalize_api_event("soccer", listing, detail)
+        payload = core.event_to_dict_pick_markets(event)
+        self.assertEqual(payload["category"], "england")
+        self.assertEqual(payload["category_id"], "10")
+        self.assertEqual(payload["tournament_id"], "20")
+        self.assertEqual(payload["competition_key"], "soccer/10/20")
+
+    def test_snapshot_delay_does_not_change_scheduled_interval(self):
+        now = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
+        timing = core.snapshot_timing(
+            {"generado_utc": "2026-01-01T09:00:00Z"}, now
+        )
+        self.assertEqual(timing["expected_interval_minutes"], 30.0)
+        self.assertEqual(timing["actual_gap_minutes"], 180.0)
+        self.assertTrue(timing["schedule_delayed"])
 
     def test_never_matches_different_esports_or_residual_sports(self):
         stake = self._event("stake", "fifa")

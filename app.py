@@ -1,7 +1,7 @@
 """
 app.py
 =========================
-UI de Streamlit para Blindado v7.7.2 / snapshot schema 5 + MLB prospectivo. Toda la lógica pesada vive en
+UI de Streamlit para Blindado v7.8.0 / snapshot schema 6 + MLB prospectivo. Toda la lógica pesada vive en
 blindado_core.py (sin dependencia de Streamlit) — este archivo solo arma
 la interfaz, botones y el flujo de datos.
 """
@@ -428,7 +428,7 @@ def render_capability_matrix(stake_events: List[core.NormalizedEvent], elo: "cor
             continue
         seen.add(key)
         ok, reason = core.pick_capability(event)
-        namespace = core.elo_namespace(event.sport, event.league)
+        namespace = core.event_elo_namespace(event)
         elo_info = coverage.get(namespace, {})
         rows.append({
             "deporte": event.sport,
@@ -551,7 +551,7 @@ def render_promotions_manager(promotions: List[Dict[str, Any]]):
 # main()
 # ============================================================
 def main():
-    st.set_page_config(page_title="Blindado v7.7.2 — Histéresis persistente", layout="wide")
+    st.set_page_config(page_title="Blindado v7.8.0 — Identidad segura", layout="wide")
     required_core = (
         "load_public_promotions", "pick_capability", "elo_namespace",
         "merge_movement_history", "export_private_state", "import_private_state",
@@ -570,7 +570,7 @@ def main():
             f"Funciones ausentes: {', '.join(missing_core)}"
         )
         st.stop()
-    st.title("🎯 Blindado v7.7.2 — Histéresis persistente")
+    st.title("🎯 Blindado v7.8.0 — Identidad segura")
     st.caption(
         "Elo o modelo MLB especializado = modelo independiente · Bovada = solo referencia/liquidez · "
         "Stake = mercado ejecutable · ningún gate obligatorio se compensa con confianza alta"
@@ -603,7 +603,7 @@ def main():
         st.divider()
         st.write("### Fuentes gratuitas")
         st.caption(
-            "Resultados: ESPN + TheSportsDB + Cricsheet + OpenDota. "
+            "Resultados: ESPN + TheSportsDB verificado + Cricsheet + OpenDota. "
             "Mercado secundario: Bovada. No se usa ninguna fuente de pago."
         )
 
@@ -715,7 +715,7 @@ def main():
         if not stake_events:
             st.info("Carga eventos primero con el botón de arriba.")
         else:
-            if st.button("🧠 Ejecutar Blindado v7.7.2", type="primary"):
+            if st.button("🧠 Ejecutar Blindado v7.8.0", type="primary"):
                 candidates, audit = core.prepare_candidates(
                     stake_events, bovada_events, promotions, float(bankroll),
                     st.session_state.get("mlb_model_payload"),

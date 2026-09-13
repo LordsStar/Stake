@@ -153,19 +153,5 @@
   "handball:lnh-division-1": {
     "chartres metropole handball": "c chartres m tropole handball",
     "usam nimes gard": "usam n mes gard"
-  },
-  "soccer:la-liga": {
-    "espanyol": "espanol",
-    "villareal": "villarreal"
-  },
-  "soccer:eredivisie": {
-    "heerenveen": "sc heerenveen"
-  },
-  "soccer:women-bundesliga": {
-    "fc union berlin": "union berlin",
-    "fc bayern munich": "bayern munich"
-  },
-  "soccer:super-league-1": {
-    "panaitolikos": "panetolikos"
   }
 }

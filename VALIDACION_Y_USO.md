@@ -1,4 +1,4 @@
-# Validación y uso — Blindado v6.2
+# Validación y uso — Blindado v7.8
 
 ## Qué usa como base
 
@@ -12,8 +12,8 @@ El motor cuenta cada descarte y lo presenta en la interfaz. Las causas más
 comunes son:
 
 1. No existe moneyline o draw-no-bet en el evento de Stake.
-2. El Elo no tiene cinco resultados por participante y ocho predicciones para
-   esa competición, o su Brier es mayor que 0.23.
+2. El Elo no tiene cinco resultados por participante y 30 predicciones maduras
+   para esa competición, o no supera simultáneamente Brier y skill del baseline.
 3. Bovada no respondió, no contiene el mismo evento o la referencia está vieja.
 4. La cuota Stake está desactualizada o el evento ya comenzó.
 5. En tenis/MMA/boxeo falta verificar estado físico.
@@ -21,22 +21,20 @@ comunes son:
    menor que 8/10.
 7. En fútbol hay riesgo de empate y Stake no ofrece DNB real.
 
-El estado incluido fue reentrenado con 1,076 resultados. En esta reconstrucción
-NFL obtuvo Brier 0.2359 y MLB 0.2516; ambos superan el máximo 0.23, por lo que
-no están activos todavía. Esto es una decisión del gate, no un fallo al cargar
-cuotas. Los workflows seguirán añadiendo resultados y recalculándolo.
+El estado incluido se reconstruye únicamente con resultados de procedencia
+auditable. Las filas TheSportsDB anteriores a schema 6 fueron retiradas porque
+no guardaban identidad de competición suficiente para validarlas.
 
 ## Qué cubre
 
-- El snapshot solicita 16 slugs de Stake: fútbol, baloncesto, béisbol, hockey,
-  fútbol americano, tenis, MMA, boxeo, cricket, rugby, voleibol, tenis de mesa,
-  Counter-Strike, Dota 2, League of Legends y Valorant.
-- Guarda todos los mercados activos devueltos por Stake.
+- El snapshot descubre dinámicamente todos los deportes habilitados por Stake.
+- Guarda moneyline y DNB, los únicos mercados que el motor actual modela.
 - El motor de picks evalúa moneyline y DNB. Los demás mercados quedan visibles
   en la pestaña de eventos, pero no se modelan como si fueran equivalentes.
 - Hay endpoint secundario Bovada para cada grupo solicitado, incluido un único
   endpoint de esports que después se empareja por participantes y horario.
-- Resultados gratuitos: ESPN, TheSportsDB, Cricsheet y OpenDota.
+- Resultados gratuitos: ESPN, TheSportsDB verificado, Cricsheet, OpenDota y
+  Oracle's Elixir.
 
 La cobertura es verificable por evento, no una promesa universal: una liga
 ausente en las fuentes gratuitas quedará marcada como Elo no calibrado.

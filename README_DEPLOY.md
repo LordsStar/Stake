@@ -1,4 +1,4 @@
-# Blindado v7.2 — instalación en GitHub y Streamlit Cloud
+# Blindado v7.8 — instalación en GitHub y Streamlit Cloud
 
 ## Qué queda automatizado
 
@@ -40,7 +40,7 @@ resultados, Elo, alias seguros, pendientes de alias y cobertura de fuentes.
 
 El modelo se reconstruye completo en cada corrida. Esto mantiene el orden
 cronológico cuando una fuente descubre tarde un resultado histórico anterior.
-Blindado v7.2 conserva Elo schema 4 con ventaja local por deporte. Una
+Blindado v7.8 usa Elo schema 6 con identidad estable por categoría/torneo. Una
 instalación anterior se reconstruye automáticamente en la primera corrida.
 
 Después de instalar v7, ejecuta el entrenamiento manualmente una vez. Detectará
@@ -126,7 +126,8 @@ apuestas deportivas, no los juegos de casino/slots. Para resultados se usan
 exclusivamente fuentes gratuitas:
 
 - ESPN para NBA, NFL, NHL y MLB.
-- TheSportsDB (API v1 pública) como ingesta multideporte por liga.
+- TheSportsDB (API v1 pública) únicamente mediante mapping humano verificado
+  o coincidencia exacta, única y compatible con país/categoría.
 - Cricsheet JSON para cricket reciente.
 - OpenDota para partidos profesionales de Dota 2.
 
@@ -162,7 +163,9 @@ respaldo en tu dispositivo y no lo subas al repositorio público.
 - `.github/workflows/elo_training.yml`: ejecución automática cada 6 horas.
 - `.github/workflows/market_snapshot.yml`: snapshot público cada 30 minutos.
 - `.github/workflows/elo_backtest.yml`: reporte semanal de calibración, sin cambiar parámetros.
+- `.github/workflows/ci.yml`: pruebas automáticas en pushes y pull requests.
 - `market_snapshot_job.py`: genera el snapshot sin login ni datos personales.
 - `elo_backtest.py`: genera el reporte que usa el workflow semanal.
 - `state/public_promotions.json`: catálogo público persistente, sin datos personales.
+- `state/source_league_mappings.json`: mappings TheSportsDB revisados; nunca usa similitud difusa.
 - `results_schema_example.csv`: plantilla para otros deportes.

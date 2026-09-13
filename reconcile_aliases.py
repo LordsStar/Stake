@@ -12,7 +12,12 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from blindado_core import AUTO_TEAM_ALIASES_FILE, elo_namespace, load_results, normalize_team_name
+from blindado_core import (
+    AUTO_TEAM_ALIASES_FILE,
+    load_results,
+    normalize_team_name,
+    result_elo_namespace,
+)
 
 
 def similarity(a: str, b: str) -> float:
@@ -50,7 +55,7 @@ def main() -> int:
 
     history_names = defaultdict(set)
     for row in load_results():
-        namespace = elo_namespace(row.get("sport", ""), row.get("league", ""))
+        namespace = result_elo_namespace(row)
         for field in ("home_name", "away_name"):
             name = str(row.get(field) or "").strip()
             if name:
@@ -64,7 +69,7 @@ def main() -> int:
     unresolved, created = [], 0
 
     for event in snapshot.get("stake_events", []):
-        namespace = elo_namespace(event.get("sport", ""), event.get("league", ""))
+        namespace = result_elo_namespace(event)
         candidates = history_names.get(namespace, set())
         if not candidates:
             continue

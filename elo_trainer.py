@@ -17,6 +17,7 @@ from blindado_core import (
     TeamAliasRegistry,
     fresh_elo_state,
     load_results,
+    result_elo_namespace,
     train_elo_from_results,
 )
 
@@ -50,6 +51,11 @@ def main() -> int:
             reason = "solicitud --reset con histéresis preservada"
         else:
             reason = "migración del esquema de calibración Elo"
+        valid_namespaces = {result_elo_namespace(row) for row in results}
+        previous_activation = {
+            namespace: state for namespace, state in previous_activation.items()
+            if namespace in valid_namespaces
+        }
         print(f"Reentrenamiento completo: {reason}.")
         elo.state = fresh_elo_state(previous_activation)
         print(f"Namespaces de histéresis preservados: {len(previous_activation)}")

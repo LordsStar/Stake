@@ -1,7 +1,7 @@
 """
 blindado_core.py
 =================
-Lógica pura de Blindado v7.1 / Elo schema 4 — SIN dependencia de Streamlit.
+Lógica pura de Blindado v7.8 / Elo schema 6 — SIN dependencia de Streamlit.
 
 Se separó del archivo de la app para que tanto la UI (Streamlit) como los
 scripts de línea de comandos (elo_trainer.py, fetch_results_espn.py, y el
@@ -51,7 +51,6 @@ import hashlib
 import io
 import json
 import re
-import statistics
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -64,7 +63,7 @@ from urllib.parse import quote
 import requests
 
 UTC = timezone.utc
-APP_VERSION = "7.7.2-persistent-evidence-hysteresis"
+APP_VERSION = "7.8.0-safe-competition-identity"
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_DIR = BASE_DIR / "state"
@@ -80,7 +79,8 @@ TEAM_ALIASES_FILE = STATE_DIR / "team_aliases.json"
 AUTO_TEAM_ALIASES_FILE = STATE_DIR / "auto_team_aliases.json"
 MOVEMENT_HISTORY_FILE = STATE_DIR / "movement_history.json"
 RESULTS_FILE = RESULTS_DIR / "results.json"
-ELO_SCHEMA_VERSION = 5
+ELO_SCHEMA_VERSION = 6
+SNAPSHOT_SCHEMA_VERSION = 6
 
 STAKE_ODDS_DATA_URL = "https://odds-data.stake.com"
 DEFAULT_TIMEOUT = 20
@@ -664,6 +664,10 @@ class NormalizedEvent:
     carried_forward: bool = False
     unchanged_fetches: int = 0
     audit_flags: List[str] = field(default_factory=list)
+    category: str = ""
+    category_id: str = ""
+    tournament_id: str = ""
+    competition_key: str = ""
 
 
 def stake_market_key(name: str) -> str:
@@ -699,6 +703,10 @@ def event_to_dict(e: NormalizedEvent, markets_filter: Optional[Iterable[str]] = 
         "source": e.source,
         "sport": e.sport,
         "league": e.league,
+        "category": e.category,
+        "category_id": e.category_id,
+        "tournament_id": e.tournament_id,
+        "competition_key": e.competition_key,
         "home": e.home,
         "away": e.away,
         "start_time": e.start_time,
@@ -754,6 +762,10 @@ def normalized_event_from_dict(data: Dict[str, Any], schema_version: int = 4) ->
         carried_forward=bool(data.get("carried_forward", False)),
         unchanged_fetches=int(data.get("unchanged_fetches", 0) or 0),
         audit_flags=list(data.get("audit_flags", []) or []),
+        category=str(data.get("category", "") or ""),
+        category_id=str(data.get("category_id", "") or ""),
+        tournament_id=str(data.get("tournament_id", "") or ""),
+        competition_key=str(data.get("competition_key", "") or ""),
     )
 
 
@@ -939,8 +951,11 @@ class StakeSportsDataCollector:
                 if not isinstance(fixture, dict) or not fixture.get("slug"):
                     continue
                 item = dict(fixture)
-                item.setdefault("category", category.get("slug") or category.get("name"))
-                item.setdefault("tournament", tournament.get("slug") or tournament.get("name"))
+                # Conservar el contexto jerárquico completo. `category` y
+                # `tournament` del fixture no siempre incluyen país/ID y sus
+                # slugs se repiten entre países (p. ej. premier-league).
+                item["_stake_category"] = dict(category)
+                item["_stake_tournament"] = dict(tournament)
                 key = str(item.get("id") or item["slug"])
                 fixtures_by_key[key] = item
         fixtures = list(fixtures_by_key.values())
@@ -1075,9 +1090,22 @@ class StakeSportsDataCollector:
                 if market_update and (not newest_update or market_update > newest_update):
                     newest_update = market_update
 
-        tournament = listing_fixture.get("tournament") or {}
+        category = listing_fixture.get("_stake_category") or listing_fixture.get("category") or {}
+        tournament = listing_fixture.get("_stake_tournament") or listing_fixture.get("tournament") or {}
+        category_slug = (
+            category.get("slug") or category.get("name")
+            if isinstance(category, dict) else str(category)
+        )
+        category_id = category.get("id") if isinstance(category, dict) else ""
         league = tournament.get("slug") or tournament.get("name") if isinstance(tournament, dict) else str(tournament)
         league = league or listing_fixture.get("tournamentId", "")
+        tournament_id = (
+            tournament.get("id") if isinstance(tournament, dict) else ""
+        ) or listing_fixture.get("tournamentId", "")
+        competition_key = stable_competition_key(
+            sport_slug, str(league or ""), str(category_slug or ""), str(category_id or ""),
+            str(tournament_id or ""),
+        )
         start = parse_dt(node.get("startTime") or listing_fixture.get("startTime"))
         raw_status = str(node.get("status") or listing_fixture.get("status") or "unknown")
         is_live = raw_status.lower() in {"live", "inplay", "in-play", "in_play"}
@@ -1094,6 +1122,10 @@ class StakeSportsDataCollector:
             raw={"fixture": node, "listing": listing_fixture, "groups": detail.get("groups", [])},
             market_fetched_at=fetched_at,
             source_last_update_at=source_updated_at,
+            category=str(category_slug or ""),
+            category_id=str(category_id or ""),
+            tournament_id=str(tournament_id or ""),
+            competition_key=competition_key,
         )
 
 
@@ -1352,7 +1384,38 @@ def league_code(raw_league: str) -> str:
     return value
 
 
-def elo_namespace(sport: str, league: str) -> str:
+def _identity_slug(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", str(value or "").lower()).strip("-")
+
+
+def stable_competition_key(
+    sport: str,
+    league: str,
+    category: str = "",
+    category_id: str = "",
+    tournament_id: str = "",
+) -> str:
+    """Identidad pública estable de una competición de Stake.
+
+    Los IDs tienen prioridad. Los slugs sirven de respaldo explícito para
+    snapshots antiguos o para endpoints que no publiquen ID. Incluir la
+    categoría impide mezclar ligas homónimas de países distintos.
+    """
+    sport_key = _identity_slug(sport) or "other"
+    category_key = _identity_slug(category_id) or _identity_slug(category) or "unknown-category"
+    tournament_key = _identity_slug(tournament_id) or _identity_slug(league) or "unknown-tournament"
+    return f"{sport_key}/{category_key}/{tournament_key}"
+
+
+def elo_namespace(
+    sport: str,
+    league: str,
+    *,
+    competition_key: str = "",
+    category: str = "",
+    category_id: str = "",
+    tournament_id: str = "",
+) -> str:
     """Agrupa resultados en una competencia estable y comparable.
 
     Stake puede usar el nombre del torneo puntual como liga. Eso sirve para
@@ -1372,7 +1435,38 @@ def elo_namespace(sport: str, league: str) -> str:
         return f"cricket:{cricket_format}"
     if is_esport_slug(sport):
         return f"{sport}:all"
+    if code in {"mlb", "nba", "nhl", "nfl", "ncaaf"}:
+        return f"{sport}:{code}"
+    # Las ligas de fútbol y demás torneos no globales necesitan país/categoría
+    # e ID de torneo. Un slug como `premier-league` no identifica una liga.
+    if competition_key or category or category_id or tournament_id:
+        identity = competition_key or stable_competition_key(
+            sport, league, category, category_id, tournament_id
+        )
+        return f"{sport}:{_identity_slug(identity) or 'unknown'}"
     return f"{sport}:{code or 'all'}"
+
+
+def event_elo_namespace(event: NormalizedEvent) -> str:
+    return elo_namespace(
+        event.sport,
+        event.league,
+        competition_key=event.competition_key,
+        category=event.category,
+        category_id=event.category_id,
+        tournament_id=event.tournament_id,
+    )
+
+
+def result_elo_namespace(row: Dict[str, Any]) -> str:
+    return elo_namespace(
+        str(row.get("sport", "")),
+        str(row.get("league", "")),
+        competition_key=str(row.get("competition_key", "") or ""),
+        category=str(row.get("category", "") or ""),
+        category_id=str(row.get("category_id", "") or ""),
+        tournament_id=str(row.get("tournament_id", "") or ""),
+    )
 
 
 def pick_capability(event: NormalizedEvent) -> Tuple[bool, str]:
@@ -1937,7 +2031,7 @@ def build_elo_model_detailed(
     MLB usa su modelo prepartido especializado cuando esta calibrado. El
     resto conserva Elo. Nunca existe fallback al precio de Stake/Bovada.
     """
-    namespace = elo_namespace(event.sport, event.league)
+    namespace = event_elo_namespace(event)
     if namespace == "baseball:mlb":
         if mlb_model is None:
             try:
@@ -2068,6 +2162,15 @@ def validate_result(row: Dict[str, Any]) -> Optional[str]:
         return "marcador no numérico"
     if not parse_dt(row.get("start_time")):
         return "start_time inválido"
+    if str(row.get("source", "")).lower() == "thesportsdb":
+        required_provenance = (
+            "competition_key", "source_league_id", "source_league_name", "mapping_method"
+        )
+        missing = [field for field in required_provenance if not row.get(field)]
+        if missing:
+            return "TheSportsDB sin procedencia segura: " + ", ".join(missing)
+        if row.get("mapping_method") not in {"verified_mapping", "exact_name_and_category"}:
+            return "TheSportsDB con método de mapping no aprobado"
     return None
 
 
@@ -2080,25 +2183,49 @@ def save_results(rows: List[Dict[str, Any]]) -> None:
 
 
 def merge_results(new_rows: List[Dict[str, Any]]) -> Tuple[int, List[str]]:
-    """Agrega resultados evitando duplicados por event_id. Nunca rellena
-    campos faltantes: las filas inválidas se rechazan con motivo explícito
-    (anti-fabricación aplicado también a los datos de entrenamiento)."""
+    """Inserta o corrige resultados por event_id con trazabilidad.
+
+    Una fuente puede corregir metadatos o un marcador. El comportamiento
+    anterior ignoraba silenciosamente la corrección por existir el ID. El
+    upsert conserva hasta cinco revisiones y nunca acepta una fila inválida.
+    """
     existing = load_results()
-    seen_ids = {r.get("event_id") for r in existing}
-    added = 0
+    by_id = {str(row.get("event_id")): index for index, row in enumerate(existing)}
+    merged = 0
     errors: List[str] = []
     for row in new_rows:
+        row = dict(row)
         err = validate_result(row)
         if err:
             errors.append(f"{row.get('event_id', '?')}: {err}")
             continue
-        if row["event_id"] in seen_ids:
+        event_id = str(row["event_id"])
+        if event_id not in by_id:
+            existing.append(row)
+            by_id[event_id] = len(existing) - 1
+            merged += 1
             continue
-        existing.append(row)
-        seen_ids.add(row["event_id"])
-        added += 1
+        index = by_id[event_id]
+        previous = existing[index]
+        ignored = {"correction_history", "result_updated_at", "revision"}
+        previous_core = {key: value for key, value in previous.items() if key not in ignored}
+        incoming_core = {key: value for key, value in row.items() if key not in ignored}
+        if previous_core == incoming_core:
+            continue
+        changed = {
+            key: {"before": previous_core.get(key), "after": incoming_core.get(key)}
+            for key in sorted(set(previous_core) | set(incoming_core))
+            if previous_core.get(key) != incoming_core.get(key)
+        }
+        history = list(previous.get("correction_history", []) or [])[-4:]
+        history.append({"corrected_at": utc_now().isoformat(), "changed": changed})
+        row["correction_history"] = history
+        row["result_updated_at"] = utc_now().isoformat()
+        row["revision"] = int(previous.get("revision", 1) or 1) + 1
+        existing[index] = row
+        merged += 1
     save_results(existing)
-    return added, errors
+    return merged, errors
 
 
 def parse_results_csv(file_bytes: bytes) -> List[Dict[str, Any]]:
@@ -2113,13 +2240,13 @@ def train_elo_from_results(elo: EloModel, aliases: TeamAliasRegistry, results: L
     generando 'predicciones' con ratings que en la realidad todavía no
     existían en ese momento — fuga de información)."""
     ordered = sorted(
-        (r for r in results if parse_dt(r.get("start_time"))),
+        (r for r in results if parse_dt(r.get("start_time")) and validate_result(r) is None),
         key=lambda r: (parse_dt(r["start_time"]), str(r.get("event_id", ""))),
     )
     updated = 0
     for r in ordered:
         sport = r["sport"]
-        namespace = elo_namespace(sport, r.get("league", ""))
+        namespace = result_elo_namespace(r)
         home_id = aliases.canonical_id(namespace, r["home_name"])
         away_id = aliases.canonical_id(namespace, r["away_name"])
         hs, aw = float(r["home_score"]), float(r["away_score"])
@@ -2244,15 +2371,23 @@ def snapshot_timing(previous: Dict[str, Any], now: Optional[datetime] = None) ->
     if isinstance(previous, dict) and previous.get("generado_utc"):
         candidates.append(previous["generado_utc"])
     parsed = sorted({parse_dt(value) for value in candidates if parse_dt(value)})
-    intervals = [
-        (b - a).total_seconds() / 60.0 for a, b in zip(parsed, parsed[1:])
-        if 0 < (b - a).total_seconds() / 60.0 <= 360
-    ]
-    expected = statistics.median(intervals[-SNAPSHOT_HISTORY_MAX:]) if intervals else EXPECTED_FETCH_INTERVAL_MIN
-    expected = max(15.0, min(float(expected), 60.0))
+    last_snapshot = parsed[-1] if parsed else None
+    actual_gap = (
+        (current - last_snapshot).total_seconds() / 60.0 if last_snapshot else None
+    )
+    # La cadencia esperada es configuración, no una estimación de retrasos.
+    # Inferirla de gaps de GitHub Actions convertía una avería de 2-5 horas
+    # en una falsa frecuencia "normal" de 60 minutos.
+    expected = EXPECTED_FETCH_INTERVAL_MIN
     history = [dt.isoformat() for dt in parsed[-(SNAPSHOT_HISTORY_MAX - 1):]]
     history.append(current.isoformat())
-    return {"expected_interval_minutes": expected, "snapshot_history": history[-SNAPSHOT_HISTORY_MAX:]}
+    return {
+        "expected_interval_minutes": expected,
+        "scheduled_interval_minutes": expected,
+        "actual_gap_minutes": actual_gap,
+        "schedule_delayed": bool(actual_gap is not None and actual_gap > expected * 2),
+        "snapshot_history": history[-SNAPSHOT_HISTORY_MAX:],
+    }
 
 
 def annotate_market_observations(
@@ -2741,8 +2876,8 @@ class BlindadoEngine:
     def _confidence(self, ev: float, ref_p: float, model_prob: float, movement: Dict[str, Any]) -> float:
         """La confianza YA NO compensa gates faltantes — esos se verifican
         antes en evaluate_event() y descartan el evento sin llegar aquí.
-        Este score solo sirve para ORDENAR entre candidatos que ya
-        pasaron todos los gates obligatorios."""
+        El score ordena candidatos y también debe alcanzar MIN_CONFIDENCE;
+        esa barrera compuesta es deliberada y no reemplaza ningún gate."""
         return self._confidence_breakdown(ev, ref_p, model_prob, movement)["total"]
 
     @staticmethod
@@ -2995,10 +3130,7 @@ def prepare_candidates(
                 "divergencia_mas_de_7pp": -1.0,
                 "movimiento_verificado": 0.5,
             },
-            "nota": (
-                "Se conserva sin cambios desde v7.7.1; su docstring histórico decía "
-                "solo ordenamiento, pero evaluate_event la aplica como gate."
-            ),
+            "nota": "Gate compuesto deliberado; además ordena los candidatos que lo superan.",
         },
         "qualified": 0,
         "eventos_calificados": 0,
@@ -3008,7 +3140,7 @@ def prepare_candidates(
     def bump(reason: str, event: NormalizedEvent, detail: Optional[str] = None):
         audit["descartes"][reason] = audit["descartes"].get(reason, 0) + 1
         sport = event.sport or "desconocido"
-        namespace = elo_namespace(event.sport, event.league)
+        namespace = event_elo_namespace(event)
         by_sport = audit["descartes_por_deporte"].setdefault(sport, {})
         by_sport[reason] = by_sport.get(reason, 0) + 1
         by_namespace = audit["descartes_por_namespace"].setdefault(namespace, {})
@@ -3114,7 +3246,7 @@ def candidate_report(c: Candidate, bankroll: float) -> Dict[str, Any]:
         "Promoción": c.reason,
         "Fuente mercado": "Stake",
         "Modelo estadístico": (
-            "MLB especializado calibrado" if elo_namespace(c.event.sport, c.event.league) == "baseball:mlb"
+            "MLB especializado calibrado" if event_elo_namespace(c.event) == "baseball:mlb"
             else "Elo interno calibrado"
         ),
         "Referencia": "Bovada de-vigged",

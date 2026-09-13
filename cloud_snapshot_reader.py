@@ -23,8 +23,6 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Tuple
 
 import requests
-import streamlit as st
-
 from blindado_core import (
     NormalizedEvent,
     normalized_event_from_dict,
@@ -95,6 +93,9 @@ def snapshot_a_normalized_events(snapshot: Dict[str, Any]) -> Tuple[List[Normali
 
 
 def render_estado_snapshot(snapshot: Dict[str, Any], max_age_minutes: float = 120.0) -> None:
+    # Importación diferida: descargar/validar snapshots es lógica pura y sus
+    # tests no deben necesitar toda la interfaz Streamlit.
+    import streamlit as st
     antiguedad = snapshot_antiguedad_minutos(snapshot)
     if antiguedad == float("inf"):
         st.error("⚠️ El snapshot no trae `snapshot_generated_at`/`generado_utc` — no se puede evaluar frescura.")

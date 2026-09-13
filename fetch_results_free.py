@@ -7,7 +7,6 @@ débil se rechaza: ampliar cobertura nunca significa mezclar ligas.
 
 import argparse
 import csv
-import difflib
 import io
 import json
 import re
@@ -28,6 +27,7 @@ LOL_DATA = (
     "{year}_LoL_esports_match_data_from_OraclesElixir.csv"
 )
 DEFAULT_STATE = Path("state/result_source_state.json")
+DEFAULT_LEAGUE_MAPPINGS = Path("state/source_league_mappings.json")
 _LAST_THESPORTSDB_CALL = 0.0
 SPORT_NAMES = {
     "soccer": {"soccer"},
@@ -74,16 +74,6 @@ def norm(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (value or "").lower()).strip()
 
 
-def score(a: str, b: str) -> float:
-    a, b = norm(a), norm(b)
-    if not a or not b:
-        return 0.0
-    seq = difflib.SequenceMatcher(None, a, b).ratio()
-    ta, tb = set(a.split()), set(b.split())
-    jac = len(ta & tb) / len(ta | tb) if ta and tb else 0.0
-    return max(seq, jac)
-
-
 def get_json(path: str, **params):
     global _LAST_THESPORTSDB_CALL
     # El nivel gratuito publica 30 solicitudes/minuto. Mantener 2.1 s entre
@@ -104,12 +94,96 @@ def get_json(path: str, **params):
 
 def load_targets(snapshot_path: Path):
     payload = json.loads(snapshot_path.read_text(encoding="utf-8"))
-    targets = set()
+    targets = {}
     for event in payload.get("stake_events", []):
         sport, league = event.get("sport", ""), event.get("league", "")
         if sport in SPORT_NAMES and league:
-            targets.add((sport, league))
-    return sorted(targets)
+            category = str(event.get("category", "") or "")
+            category_id = str(event.get("category_id", "") or "")
+            tournament_id = str(event.get("tournament_id", "") or "")
+            competition_key = str(event.get("competition_key", "") or "")
+            if not competition_key:
+                # Compatibilidad de lectura solamente. Los snapshots nuevos
+                # siempre traen la identidad creada por blindado_core.
+                from blindado_core import stable_competition_key
+                competition_key = stable_competition_key(
+                    sport, league, category, category_id, tournament_id
+                )
+            targets[competition_key] = {
+                "sport": sport,
+                "league": league,
+                "category": category,
+                "category_id": category_id,
+                "tournament_id": tournament_id,
+                "competition_key": competition_key,
+            }
+    return [targets[key] for key in sorted(targets)]
+
+
+def target_pairs(targets):
+    """Vista retrocompatible para conectores que agrupan por deporte/torneo."""
+    return [(target["sport"], target["league"]) for target in targets]
+
+
+def load_verified_mappings(path: Path):
+    payload = load_state(path)
+    rows = payload.get("mappings", []) if isinstance(payload, dict) else []
+    return [row for row in rows if isinstance(row, dict) and row.get("verified") is True]
+
+
+def _league_names(league):
+    values = [league.get("strLeague", "")]
+    values.extend(re.split(r"[,;/|]", str(league.get("strLeagueAlternate") or "")))
+    return {norm(value) for value in values if norm(value)}
+
+
+def _category_matches_source(target, league):
+    category = norm(target.get("category") or "")
+    country = norm(league.get("strCountry") or league.get("strCountryCode") or "")
+    if not category:
+        return True
+    if not country:
+        return False
+    return category == country or category in country or country in category
+
+
+def resolve_source_league(target, candidates, mappings):
+    """Resuelve una liga sin aproximaciones.
+
+    Se acepta únicamente un mapping humano marcado `verified: true`, o una
+    coincidencia textual exacta y única con país/categoría compatible.
+    SequenceMatcher/Jaccard nunca decide qué datos entran al entrenamiento.
+    """
+    explicit = [
+        row for row in mappings
+        if row.get("sport") == target["sport"]
+        and (
+            row.get("competition_key") == target["competition_key"]
+            or (
+                not row.get("competition_key")
+                and row.get("stake_league") == target["league"]
+                and str(row.get("stake_category", "")) == target.get("category", "")
+            )
+        )
+    ]
+    if len(explicit) == 1:
+        source_id = str(explicit[0].get("source_league_id", ""))
+        found = [row for row in candidates if str(row.get("idLeague", "")) == source_id]
+        return (found[0], "verified_mapping") if len(found) == 1 else (None, "mapping_source_id_missing")
+    if len(explicit) > 1:
+        return None, "duplicate_verified_mapping"
+
+    if not target.get("category"):
+        return None, "missing_stake_category_identity"
+
+    wanted = norm(target["league"])
+    exact = [
+        row for row in candidates
+        if wanted in _league_names(row) and _category_matches_source(target, row)
+    ]
+    if len(exact) == 1:
+        return exact[0], "exact_name_and_category"
+    return None, "ambiguous_exact_match" if exact else "no_exact_match"
 
 
 def load_state(path: Path):
@@ -285,6 +359,7 @@ def main() -> int:
     )
     parser.add_argument("--coverage-output", default="state/source_coverage.json")
     parser.add_argument("--state", default=str(DEFAULT_STATE))
+    parser.add_argument("--league-mappings", default=str(DEFAULT_LEAGUE_MAPPINGS))
     parser.add_argument("--opendota-pages", type=int, default=5)
     args = parser.parse_args()
     snapshot = Path(args.snapshot)
@@ -296,6 +371,7 @@ def main() -> int:
     state_path = Path(args.state)
     source_state = load_state(state_path)
     targets = rotating_targets(all_targets, args.max_leagues, source_state)
+    mappings = load_verified_mappings(Path(args.league_mappings))
     rows, rejected, matched = [], [], []
     try:
         all_leagues = get_json("all_leagues.php").get("leagues") or []
@@ -310,7 +386,7 @@ def main() -> int:
     # Se amplía por deporte y se deduplica por id.
     by_id = {l.get("idLeague"): l for l in all_leagues if l.get("idLeague")}
     catalog_sports = (
-        sorted({name for sport, _ in targets for name in SPORT_NAMES[sport]})
+        sorted({name for target in targets for name in SPORT_NAMES[target["sport"]]})
         if thesportsdb_available else []
     )
     for sport_name in catalog_sports:
@@ -321,17 +397,24 @@ def main() -> int:
         except Exception as exc:
             print(f"[aviso] catálogo {sport_name}: {exc}")
     all_leagues = list(by_id.values())
-    for sport, stake_league in targets:
+    for target in targets:
+        sport, stake_league = target["sport"], target["league"]
         allowed = SPORT_NAMES[sport]
         candidates = [l for l in all_leagues if norm(l.get("strSport", "")) in allowed]
-        ranked = sorted(((score(stake_league, l.get("strLeague", "")), l) for l in candidates), reverse=True, key=lambda x: x[0])
-        if not ranked or ranked[0][0] < 0.55:
-            rejected.append(f"{sport}/{stake_league}: sin liga equivalente segura")
+        league, match_method = resolve_source_league(target, candidates, mappings)
+        if not league:
+            rejected.append(
+                f"{sport}/{target['competition_key']}: sin liga equivalente segura ({match_method})"
+            )
             continue
-        similarity, league = ranked[0]
         matched.append({
             "sport": sport, "stake_league": stake_league,
-            "source_league": league.get("strLeague"), "similarity": round(similarity, 3),
+            "stake_category": target.get("category", ""),
+            "competition_key": target["competition_key"],
+            "source_league_id": league.get("idLeague"),
+            "source_league": league.get("strLeague"),
+            "source_country": league.get("strCountry"),
+            "match_method": match_method,
         })
         events = []
         try:
@@ -375,6 +458,10 @@ def main() -> int:
             rows.append({
                 "sport": sport,
                 "league": stake_league,
+                "category": target.get("category", ""),
+                "category_id": target.get("category_id", ""),
+                "tournament_id": target.get("tournament_id", ""),
+                "competition_key": target["competition_key"],
                 "event_id": f"thesportsdb:{event['idEvent']}",
                 "start_time": start,
                 "home_name": home,
@@ -383,14 +470,20 @@ def main() -> int:
                 "away_score": aw,
                 "status": "final",
                 "source": "thesportsdb",
+                "source_league_id": str(league.get("idLeague") or ""),
+                "source_league_name": str(league.get("strLeague") or ""),
+                "source_country": str(league.get("strCountry") or ""),
+                "home_team_id": str(event.get("idHomeTeam") or ""),
+                "away_team_id": str(event.get("idAwayTeam") or ""),
+                "mapping_method": match_method,
             })
             accepted += 1
-        print(f"{sport}/{stake_league} -> {league['strLeague']} ({similarity:.2f}): {accepted}")
+        print(f"{sport}/{target['competition_key']} -> {league['strLeague']} ({match_method}): {accepted}")
 
     auxiliary = (
-        ("Cricsheet", lambda: cricsheet_rows(all_targets)),
-        ("OpenDota", lambda: opendota_rows(all_targets, args.opendota_pages)),
-        ("League of Legends", lambda: lol_rows(all_targets)),
+        ("Cricsheet", lambda: cricsheet_rows(target_pairs(all_targets))),
+        ("OpenDota", lambda: opendota_rows(target_pairs(all_targets), args.opendota_pages)),
+        ("League of Legends", lambda: lol_rows(target_pairs(all_targets))),
     )
     source_counts = {}
     for source_name, loader in auxiliary:

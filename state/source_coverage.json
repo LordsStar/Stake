@@ -1,83 +1,18 @@
 {
-  "generated_at": "2026-09-13T13:04:20.060270+00:00",
+  "generated_at": "2026-09-13T13:29:58Z",
   "targets_in_snapshot": 260,
-  "targets_processed": 24,
-  "matched": [
-    {
-      "sport": "soccer",
-      "stake_league": "premier-league",
-      "source_league": "English Premier League",
-      "similarity": 0.778
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "premier-league-cup-women",
-      "source_league": "English Premier League",
-      "similarity": 0.609
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "premier-league-srl",
-      "source_league": "English Premier League",
-      "similarity": 0.7
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "premier-soccer-league",
-      "source_league": "Greek Super League 1",
-      "similarity": 0.683
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "premijer-liga",
-      "source_league": "English Premier League",
-      "similarity": 0.571
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "primeira-liga",
-      "source_league": "Spanish La Liga",
-      "similarity": 0.571
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "primera-divisio",
-      "source_league": "Andorran 1a Divisió",
-      "similarity": 0.606
-    },
-    {
-      "sport": "soccer",
-      "stake_league": "primera-division",
-      "source_league": "Andorran 1a Divisió",
-      "similarity": 0.588
-    }
-  ],
-  "unmatched": [
-    "soccer/mls-next-pro: sin liga equivalente segura",
-    "soccer/mocambola: sin liga equivalente segura",
-    "soccer/national-first-division: sin liga equivalente segura",
-    "soccer/national-league: sin liga equivalente segura",
-    "soccer/national-womens-soccer-league: sin liga equivalente segura",
-    "soccer/nla-women: sin liga equivalente segura",
-    "soccer/premier-division: sin liga equivalente segura",
-    "soccer/premiership: sin liga equivalente segura",
-    "soccer/premium-liiga: sin liga equivalente segura",
-    "soccer/primera-a-apertura: sin liga equivalente segura",
-    "soccer/primera-b: sin liga equivalente segura",
-    "soccer/primera-division-apertura: sin liga equivalente segura",
-    "soccer/primera-division-rfef: sin liga equivalente segura",
-    "soccer/primera-division-women: sin liga equivalente segura",
-    "soccer/primera-federacion-women: sin liga equivalente segura",
-    "soccer/primera-nacional: sin liga equivalente segura"
-  ],
-  "rows_collected": 627,
-  "rows_added": 3,
+  "targets_processed": 0,
+  "matched": [],
+  "unmatched": [],
+  "rows_collected": 0,
+  "rows_added": 0,
   "schema_rejections": [],
-  "auxiliary_sources": {
-    "Cricsheet": 322,
-    "OpenDota": 0,
-    "League of Legends": 0
+  "auxiliary_sources": {},
+  "next_league_cursor": 0,
+  "migration": {
+    "version": 1,
+    "removed_legacy_thesportsdb_rows": 1056,
+    "reason": "Las filas heredadas no guardaban identidad de competición ni procedencia verificable"
   },
-  "next_league_cursor": 192,
-  "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
+  "note": "TheSportsDB queda cerrado por defecto: solo mapping verified=true o match exacto, único y compatible con categoría."
 }

@@ -67,6 +67,10 @@ def fetch_espn_scoreboard(espn_path: str, date_str: str) -> list:
             "away_score": away_score,
             "status": "final",
             "source": "espn",
+            "source_league_id": espn_path,
+            "source_league_name": safe_get(event, "league", "name") or espn_path,
+            "home_team_id": str(safe_get(home, "team", "id") or ""),
+            "away_team_id": str(safe_get(away, "team", "id") or ""),
         })
     return rows
 
@@ -109,6 +113,10 @@ def fetch_espn_tennis_scoreboard(circuit: str, date_str: str) -> list:
                     "home_score": 1 if home.get("winner") else 0,
                     "away_score": 1 if away.get("winner") else 0,
                     "status": "final", "source": "espn",
+                    "source_league_id": f"tennis/{circuit}",
+                    "source_league_name": circuit.upper(),
+                    "home_team_id": str(safe_get(home, "athlete", "id") or ""),
+                    "away_team_id": str(safe_get(away, "athlete", "id") or ""),
                     "score_encoding": "winner_indicator",
                 })
                 seen.add(comp.get("id"))

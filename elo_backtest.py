@@ -54,9 +54,9 @@ from blindado_core import (
     ELO_K,
     ELO_MIN_GAMES,
     TeamAliasRegistry,
-    elo_namespace,
     load_results,
     parse_dt,
+    result_elo_namespace,
 )
 
 
@@ -211,7 +211,7 @@ def main() -> int:
 
     by_namespace: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in ordered:
-        by_namespace[elo_namespace(row["sport"], row.get("league", ""))].append(row)
+        by_namespace[result_elo_namespace(row)].append(row)
 
     targets = args.namespace or [
         ns for ns, rows in by_namespace.items() if len(rows) >= args.brier_min

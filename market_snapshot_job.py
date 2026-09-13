@@ -13,6 +13,7 @@ from blindado_core import (
     annotate_market_observations,
     BovadaCollector,
     StakeSportsDataCollector,
+    SNAPSHOT_SCHEMA_VERSION,
     append_movement_history,
     bovada_key_for_event,
     dedupe_events,
@@ -115,11 +116,14 @@ def main() -> int:
     bovada_observability["carried_forward"] = len(carried_bovada)
 
     payload = {
-        "schema_version": 5,
+        "schema_version": SNAPSHOT_SCHEMA_VERSION,
         "generado_utc": generated_at.isoformat(),
         "snapshot_generated_at": generated_at.isoformat(),
         "snapshot_history": timing["snapshot_history"],
         "expected_fetch_interval_minutes": expected_interval,
+        "scheduled_interval_minutes": timing["scheduled_interval_minutes"],
+        "actual_gap_minutes": timing["actual_gap_minutes"],
+        "schedule_delayed": timing["schedule_delayed"],
         "stake_sports": stake.sports_catalog,
         "stake_coverage": stake.audit,
         # Solo moneyline/draw_no_bet: son las únicas claves que el motor de

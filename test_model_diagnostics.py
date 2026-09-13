@@ -191,7 +191,10 @@ class TrainerMigrationTests(unittest.TestCase):
 
         with (
             patch.object(elo_trainer, "EloModel", return_value=elo),
-            patch.object(elo_trainer, "load_results", return_value=[{"event_id": "one"}]),
+            patch.object(
+                elo_trainer, "load_results",
+                return_value=[{"event_id": "one", "sport": "basketball", "league": "nba"}],
+            ),
             patch.object(elo_trainer, "train_elo_from_results", side_effect=inspect_rebuilt_state),
             patch("sys.argv", ["elo_trainer.py"]),
         ):
