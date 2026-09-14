@@ -28,6 +28,7 @@ on:
     paths:
       - "live_stake_scan.py"
       - ".github/workflows/live_stake_scan.yml"
+      - "state/live_scan_request.txt"
 
 permissions:
   contents: read
