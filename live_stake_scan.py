@@ -250,7 +250,7 @@ def main() -> int:
                 audit["excluded_simulations"] += 1
             elif disabled or status in {"live", "ended", "inactive", "inplay", "in-play"} or not start_utc:
                 audit["excluded_started_live_disabled"] += 1
-            elif start_rd <= start_utc.astimezone(RD) <= end_rd:
+            elif start_rd <= start_utc.astimezone(RD) < end_rd:
                 eligible.append(fixture)
         audit["fixtures_in_window"] += len(eligible)
 
