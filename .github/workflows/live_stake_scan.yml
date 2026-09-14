@@ -44,7 +44,7 @@ jobs:
     timeout-minutes: 25
     env:
       STAKE_ODDS_API_KEY: ${{ secrets.STAKE_ODDS_API_KEY }}
-      SCAN_WINDOW: ${{ inputs.window || 'remaining_today' }}
+      SCAN_WINDOW: ${{ inputs.window || 'auto' }}
       MIN_ODDS: ${{ inputs.min_odds || '1.40' }}
       MAX_ODDS: ${{ inputs.max_odds || '2.00' }}
 
