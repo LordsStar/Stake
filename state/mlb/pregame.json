@@ -10,7 +10,7 @@
     "home_starter_name": "Nick Lodolo",
     "away_starter_id": "669373",
     "away_starter_name": "Tarik Skubal",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824386",
@@ -23,7 +23,7 @@
     "home_starter_name": "Gavin Williams",
     "away_starter_id": "656794",
     "away_starter_name": "Sean Newcomb",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822765",
@@ -36,7 +36,7 @@
     "home_starter_name": "José Soriano",
     "away_starter_id": "675512",
     "away_starter_name": "Troy Melton",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823575",
@@ -49,7 +49,7 @@
     "home_starter_name": "Jonah Tong",
     "away_starter_id": "687064",
     "away_starter_name": "Brandon Young",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824629",
@@ -385,8 +385,8 @@
     "away_name": "Los Angeles Dodgers",
     "home_starter_id": "671096",
     "home_starter_name": "Andrew Abbott",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "605483",
+    "away_starter_name": "Blake Snell",
     "lineups_confirmed": false
   },
   {
@@ -565,8 +565,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "135",
     "away_name": "San Diego Padres",
-    "home_starter_id": "685299",
-    "home_starter_name": "Tanner Gordon",
+    "home_starter_id": "687312",
+    "home_starter_name": "Gabriel Hughes",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
