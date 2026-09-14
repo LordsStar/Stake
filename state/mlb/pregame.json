@@ -19,8 +19,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "668909",
+    "home_starter_name": "Gavin Williams",
     "away_starter_id": "656794",
     "away_starter_name": "Sean Newcomb",
     "lineups_confirmed": false
@@ -162,8 +162,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656492",
+    "home_starter_name": "Foster Griffin",
     "away_starter_id": "663436",
     "away_starter_name": "Davis Martin",
     "lineups_confirmed": false
@@ -331,8 +331,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "800048",
+    "home_starter_name": "Parker Messick",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
