@@ -40,9 +40,26 @@ def slug(value: Any) -> str:
 
 
 def parse_dt(value: Any) -> datetime | None:
-    if not value:
+    if value is None or value == "":
         return None
-    raw = str(value).strip().replace("Z", "+00:00")
+    if isinstance(value, (int, float)):
+        stamp = float(value)
+        if stamp > 10_000_000_000:
+            stamp /= 1000.0
+        try:
+            return datetime.fromtimestamp(stamp, tz=UTC)
+        except (OverflowError, OSError, ValueError):
+            return None
+    raw = str(value).strip()
+    if raw.isdigit():
+        stamp = float(raw)
+        if stamp > 10_000_000_000:
+            stamp /= 1000.0
+        try:
+            return datetime.fromtimestamp(stamp, tz=UTC)
+        except (OverflowError, OSError, ValueError):
+            return None
+    raw = raw.replace("Z", "+00:00")
     try:
         parsed = datetime.fromisoformat(raw)
     except ValueError:
