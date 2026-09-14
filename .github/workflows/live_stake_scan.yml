@@ -1,0 +1,105 @@
+name: Corrida directa Stake
+
+on:
+  workflow_dispatch:
+    inputs:
+      window:
+        description: "Ventana desde la hora actual en República Dominicana"
+        required: true
+        default: remaining_today
+        type: choice
+        options:
+          - remaining_today
+          - next_6_hours
+          - next_24_hours
+          - morning
+      min_odds:
+        description: "Cuota mínima"
+        required: true
+        default: "1.40"
+        type: string
+      max_odds:
+        description: "Cuota máxima"
+        required: true
+        default: "2.00"
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - "live_stake_scan.py"
+      - ".github/workflows/live_stake_scan.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-stake-scan
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      STAKE_ODDS_API_KEY: ${{ secrets.STAKE_ODDS_API_KEY }}
+      SCAN_WINDOW: ${{ inputs.window || 'remaining_today' }}
+      MIN_ODDS: ${{ inputs.min_odds || '1.40' }}
+      MAX_ODDS: ${{ inputs.max_odds || '2.00' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencia
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Consultar Stake directamente
+        run: |
+          python live_stake_scan.py \
+            --window "$SCAN_WINDOW" \
+            --min-odds "$MIN_ODDS" \
+            --max-odds "$MAX_ODDS"
+
+      - name: Resumen de cobertura
+        if: always() && hashFiles('live_stake_scan.json') != ''
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          result = json.loads(Path("live_stake_scan.json").read_text(encoding="utf-8"))
+          audit = result["audit"]
+          lines = [
+              "# Corrida directa Stake",
+              "",
+              f"- Generada RD: {result['generated_at_rd']}",
+              f"- Ventana RD: {result['window_start_rd']} — {result['window_end_rd']}",
+              f"- Deportes: {audit['sports_scanned']}/{audit['sports_discovered']}",
+              f"- Fixtures catalogados: {audit['fixtures_listed']}",
+              f"- Fixtures en ventana: {audit['fixtures_in_window']}",
+              f"- Eventos con candidatos: {audit['fixtures_with_candidates']}",
+              f"- Selecciones candidatas: {sum(len(x['markets']) for x in result['candidates'])}",
+              f"- Errores parciales: {len(result['errors'])}",
+              "- Snapshot: no",
+              "- Blindado: no",
+          ]
+          Path("live_stake_scan_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          with open(__import__("os").environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+              handle.write("\n".join(lines) + "\n")
+          PY
+
+      - name: Publicar resultado temporal
+        if: always() && hashFiles('live_stake_scan.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: stake-direct-${{ github.run_id }}
+          path: |
+            live_stake_scan.json
+            live_stake_scan_summary.md
+          retention-days: 1
+          if-no-files-found: error
