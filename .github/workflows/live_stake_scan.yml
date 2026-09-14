@@ -10,6 +10,7 @@ on:
         type: choice
         options:
           - auto
+          - afternoon
           - remaining_today
           - next_6_hours
           - next_24_hours
@@ -44,7 +45,7 @@ jobs:
     timeout-minutes: 25
     env:
       STAKE_ODDS_API_KEY: ${{ secrets.STAKE_ODDS_API_KEY }}
-      SCAN_WINDOW: ${{ inputs.window || 'auto' }}
+      SCAN_WINDOW: ${{ inputs.window || 'afternoon' }}
       MIN_ODDS: ${{ inputs.min_odds || '1.40' }}
       MAX_ODDS: ${{ inputs.max_odds || '2.00' }}
 
