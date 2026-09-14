@@ -1,0 +1,20 @@
+{
+  "active": false,
+  "reason": "validacion prospectiva: 70/100 partidos nuevos",
+  "samples": 1569,
+  "test_samples": 70,
+  "features": [
+    "elo_diff",
+    "starter_fip_diff"
+  ],
+  "selected_l2": 0.1,
+  "metrics": {
+    "brier": 0.24095973249114466,
+    "baseline_brier": 0.24562249861037008,
+    "elo_brier": 0.24758024977916443,
+    "skill": 0.01898346505554427,
+    "elo_gain": 0.006620517288019767
+  },
+  "validation": "prospective_frozen_v2",
+  "prospective_start_after": "2026-09-08T02:05:00Z"
+}
