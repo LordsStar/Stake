@@ -6,9 +6,10 @@ on:
       window:
         description: "Ventana desde la hora actual en República Dominicana"
         required: true
-        default: remaining_today
+        default: auto
         type: choice
         options:
+          - auto
           - remaining_today
           - next_6_hours
           - next_24_hours
