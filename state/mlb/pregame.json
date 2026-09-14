@@ -62,7 +62,7 @@
     "home_starter_name": "David Peterson",
     "away_starter_id": "625643",
     "away_starter_name": "Reynaldo López",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823656",
@@ -75,7 +75,7 @@
     "home_starter_name": "Dean Kremer",
     "away_starter_id": "701542",
     "away_starter_name": "Will Warren",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823006",
@@ -88,7 +88,7 @@
     "home_starter_name": "Quinn Mathews",
     "away_starter_id": "694738",
     "away_starter_name": "Landen Roupp",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824308",
@@ -101,7 +101,7 @@
     "home_starter_name": "Tomoyuki Sugano",
     "away_starter_id": "663554",
     "away_starter_name": "Casey Mize",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823981",
@@ -175,8 +175,8 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669199",
+    "home_starter_name": "Lake Bachar",
     "away_starter_id": "694819",
     "away_starter_name": "Jacob Misiorowski",
     "lineups_confirmed": false
