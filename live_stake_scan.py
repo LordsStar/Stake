@@ -120,7 +120,14 @@ class StakeDirect:
 
 def window(kind: str, now_rd: datetime) -> tuple[datetime, datetime]:
     start = now_rd
-    if kind == "next_6_hours":
+    if kind == "auto":
+        if now_rd.hour < 12:
+            end = datetime.combine(now_rd.date(), dt_time(12, 0), RD)
+        elif now_rd.hour < 18:
+            end = datetime.combine(now_rd.date(), dt_time(18, 0), RD)
+        else:
+            end = datetime.combine(now_rd.date(), dt_time(23, 59, 59), RD)
+    elif kind == "next_6_hours":
         end = now_rd + timedelta(hours=6)
     elif kind == "next_24_hours":
         end = now_rd + timedelta(hours=24)
@@ -154,8 +161,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--window",
-        choices=("remaining_today", "next_6_hours", "next_24_hours", "morning"),
-        default="remaining_today",
+        choices=("auto", "remaining_today", "next_6_hours", "next_24_hours", "morning"),
+        default="auto",
     )
     parser.add_argument("--min-odds", type=float, default=1.40)
     parser.add_argument("--max-odds", type=float, default=2.00)
