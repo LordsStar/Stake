@@ -10,7 +10,7 @@
     "home_starter_name": "Nick Lodolo",
     "away_starter_id": "669373",
     "away_starter_name": "Tarik Skubal",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824386",
@@ -23,7 +23,7 @@
     "home_starter_name": "Gavin Williams",
     "away_starter_id": "656794",
     "away_starter_name": "Sean Newcomb",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822765",
@@ -114,7 +114,7 @@
     "home_starter_name": "Reid Detmers",
     "away_starter_id": "807739",
     "away_starter_name": "Kade Anderson",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825034",
@@ -127,7 +127,7 @@
     "home_starter_name": "Corbin Burnes",
     "away_starter_id": "645261",
     "away_starter_name": "Sandy Alcantara",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824466",
@@ -372,8 +372,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "453286",
     "home_starter_name": "Max Scherzer",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "672456",
+    "away_starter_name": "Keider Montero",
     "lineups_confirmed": false
   },
   {
