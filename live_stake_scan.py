@@ -322,6 +322,7 @@ def main() -> int:
     }
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"audit": audit, "errors": len(api.errors), "candidates": len(candidates)}, ensure_ascii=False))
+    print("LIVE_SCAN_RESULT=" + json.dumps(result, ensure_ascii=False, separators=(",", ":")))
     if audit["sports_discovered"] == 0:
         raise RuntimeError("La API no devolvió deportes; la corrida no es válida.")
     return 0
