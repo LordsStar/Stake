@@ -126,9 +126,11 @@ def window(kind: str, now_rd: datetime) -> tuple[datetime, datetime]:
     elif kind == "auto":
         if now_rd.hour < 12:
             end = datetime.combine(now_rd.date(), dt_time(12, 0), RD)
-        elif now_rd.hour < 18:
+        elif now_rd.hour < 16:
             end = datetime.combine(now_rd.date(), dt_time(18, 0), RD)
         else:
+            # Desde las 4:00 p. m. RD incluye la cartelera nocturna,
+            # especialmente MLB, sin recuperar eventos ya iniciados.
             end = datetime.combine(now_rd.date(), dt_time(23, 59, 59), RD)
     elif kind == "next_6_hours":
         end = now_rd + timedelta(hours=6)
