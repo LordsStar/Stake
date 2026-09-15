@@ -34,8 +34,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "656492",
     "home_starter_name": "Foster Griffin",
-    "away_starter_id": "663436",
-    "away_starter_name": "Davis Martin",
+    "away_starter_id": "669684",
+    "away_starter_name": "Chris Murphy",
     "lineups_confirmed": false
   },
   {
@@ -136,8 +136,8 @@
     "home_name": "Texas Rangers",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "594798",
+    "home_starter_name": "Jacob deGrom",
     "away_starter_id": "663776",
     "away_starter_name": "Patrick Sandoval",
     "lineups_confirmed": false
@@ -331,8 +331,8 @@
     "home_name": "Texas Rangers",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669022",
+    "home_starter_name": "MacKenzie Gore",
     "away_starter_id": "687562",
     "away_starter_name": "Jake Bennett",
     "lineups_confirmed": false
