@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-15T11:54:17.056937+00:00",
-  "aliases_created": 4,
-  "unresolved_count": 222,
+  "generated_at": "2026-09-15T13:09:17.979649+00:00",
+  "aliases_created": 1,
+  "unresolved_count": 221,
   "unresolved": [
     {
       "namespace": "tennis:atp",
@@ -79,13 +79,6 @@
       "best_candidate": "Ayla Aksu",
       "best_score": 0.583,
       "second_score": 0.552
-    },
-    {
-      "namespace": "tennis:wta",
-      "stake_name": "Senica, Alja",
-      "best_candidate": "Selina Atay",
-      "best_score": 0.636,
-      "second_score": 0.615
     },
     {
       "namespace": "tennis:atp",

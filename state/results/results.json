@@ -240093,7 +240093,7 @@
     "sport": "tennis",
     "league": "wta",
     "event_id": "espn:tennis:wta:183707",
-    "start_time": "2026-09-15T10:30Z",
+    "start_time": "2026-09-15T10:15Z",
     "home_name": "Katherine Sebov",
     "away_name": "Victoria Jimenez Kasintseva",
     "home_score": 0,
@@ -240104,7 +240104,20 @@
     "source_league_name": "WTA",
     "home_team_id": "",
     "away_team_id": "",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-15T13:09:00.466538+00:00",
+        "changed": {
+          "start_time": {
+            "before": "2026-09-15T10:30Z",
+            "after": "2026-09-15T10:15Z"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-15T13:09:00.466555+00:00",
+    "revision": 2
   },
   {
     "sport": "tennis",
@@ -240166,6 +240179,74 @@
     "away_name": "Laura Samson",
     "home_score": 0,
     "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183754",
+    "start_time": "2026-09-15T09:45Z",
+    "home_name": "Alicia Herrero Linana",
+    "away_name": "Lucia Cortez Llorca",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183753",
+    "start_time": "2026-09-15T10:00Z",
+    "home_name": "Jennifer Ruggeri",
+    "away_name": "Eva Vedder",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183661",
+    "start_time": "2026-09-15T10:10Z",
+    "home_name": "Martina Colmegna",
+    "away_name": "Mia Ristic",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183663",
+    "start_time": "2026-09-15T10:15Z",
+    "home_name": "Francesca Jones",
+    "away_name": "Alja Senica",
+    "home_score": 1,
+    "away_score": 0,
     "status": "final",
     "source": "espn",
     "source_league_id": "tennis/wta",
