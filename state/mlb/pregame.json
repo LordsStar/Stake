@@ -10,7 +10,7 @@
     "home_starter_name": "Rhett Lowder",
     "away_starter_id": "808967",
     "away_starter_name": "Yoshinobu Yamamoto",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822925",
@@ -23,7 +23,7 @@
     "home_starter_name": "Griffin Jax",
     "away_starter_id": "678022",
     "away_starter_name": "Jack Perkins",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824384",
@@ -36,7 +36,7 @@
     "home_starter_name": "Foster Griffin",
     "away_starter_id": "669684",
     "away_starter_name": "Chris Murphy",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823333",
@@ -49,7 +49,7 @@
     "home_starter_name": "Lake Bachar",
     "away_starter_id": "694819",
     "away_starter_name": "Jacob Misiorowski",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822683",
@@ -62,7 +62,7 @@
     "home_starter_name": "Jackson Kent",
     "away_starter_id": "650911",
     "away_starter_name": "Cristopher Sánchez",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822762",
@@ -75,7 +75,7 @@
     "home_starter_name": "Braydon Fisher",
     "away_starter_id": "623454",
     "away_starter_name": "Drew Anderson",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823574",
@@ -101,7 +101,7 @@
     "home_starter_name": "Kevin Gausman",
     "away_starter_id": "527048",
     "away_starter_name": "Martín Pérez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823654",
@@ -166,7 +166,7 @@
     "home_starter_name": "Kyle Freeland",
     "away_starter_id": "621111",
     "away_starter_name": "Walker Buehler",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823980",
@@ -179,7 +179,7 @@
     "home_starter_name": "Ryan Johnson",
     "away_starter_id": "669302",
     "away_starter_name": "Logan Gilbert",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825030",
@@ -216,8 +216,8 @@
     "away_name": "San Francisco Giants",
     "home_starter_id": "669461",
     "home_starter_name": "Matthew Liberatore",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "683627",
+    "away_starter_name": "Anthony Molina",
     "lineups_confirmed": false
   },
   {
@@ -461,8 +461,8 @@
     "home_name": "New York Mets",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "690997",
+    "home_starter_name": "Nolan McLean",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -578,8 +578,8 @@
     "home_name": "New York Mets",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "804267",
+    "home_starter_name": "Zac Thornton",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
