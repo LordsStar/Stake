@@ -1,31 +1,5 @@
 [
   {
-    "game_pk": "823655",
-    "start_time": "2026-09-16T17:40:00Z",
-    "home_id": "142",
-    "home_name": "Minnesota Twins",
-    "away_id": "147",
-    "away_name": "New York Yankees",
-    "home_starter_id": "805673",
-    "home_starter_name": "Zebby Matthews",
-    "away_starter_id": "607074",
-    "away_starter_name": "Carlos Rodón",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822763",
-    "start_time": "2026-09-16T19:07:00Z",
-    "home_id": "141",
-    "home_name": "Toronto Blue Jays",
-    "away_id": "116",
-    "away_name": "Detroit Tigers",
-    "home_starter_id": "453286",
-    "home_starter_name": "Max Scherzer",
-    "away_starter_id": "672456",
-    "away_starter_name": "Keider Montero",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824467",
     "start_time": "2026-09-16T22:40:00Z",
     "home_id": "113",
@@ -88,7 +62,7 @@
     "home_starter_name": "Xzavion Curry",
     "away_starter_id": "605135",
     "away_starter_name": "Chris Bassitt",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824626",
@@ -140,7 +114,7 @@
     "home_starter_name": "Mason Adams",
     "away_starter_id": "592662",
     "away_starter_name": "Robbie Ray",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823979",
