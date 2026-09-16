@@ -10,7 +10,7 @@
     "home_starter_name": "Parker Messick",
     "away_starter_id": "641743",
     "away_starter_name": "Anthony Kay",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823004",
@@ -23,7 +23,7 @@
     "home_starter_name": "Matthew Liberatore",
     "away_starter_id": "683627",
     "away_starter_name": "Anthony Molina",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823655",
@@ -502,8 +502,8 @@
     "away_name": "San Francisco Giants",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "702885",
+    "away_starter_name": "Cesar Perdomo",
     "lineups_confirmed": false
   },
   {
