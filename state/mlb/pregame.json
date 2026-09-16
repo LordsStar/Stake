@@ -10,7 +10,7 @@
     "home_starter_name": "Parker Messick",
     "away_starter_id": "641743",
     "away_starter_name": "Anthony Kay",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823004",
@@ -23,7 +23,7 @@
     "home_starter_name": "Matthew Liberatore",
     "away_starter_id": "683627",
     "away_starter_name": "Anthony Molina",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823655",
@@ -36,7 +36,7 @@
     "home_starter_name": "Zebby Matthews",
     "away_starter_id": "607074",
     "away_starter_name": "Carlos Rodón",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822763",
@@ -110,8 +110,8 @@
     "home_name": "New York Mets",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "476594",
-    "home_starter_name": "Robert Stock",
+    "home_starter_id": "675540",
+    "home_starter_name": "Xzavion Curry",
     "away_starter_id": "605135",
     "away_starter_name": "Chris Bassitt",
     "lineups_confirmed": false
@@ -554,8 +554,8 @@
     "away_name": "Athletics",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "682052",
+    "away_starter_name": "Jacob Lopez",
     "lineups_confirmed": false
   },
   {
