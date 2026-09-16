@@ -36,7 +36,7 @@
     "home_starter_name": "Zebby Matthews",
     "away_starter_id": "607074",
     "away_starter_name": "Carlos Rodón",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822763",
@@ -49,7 +49,7 @@
     "home_starter_name": "Max Scherzer",
     "away_starter_id": "672456",
     "away_starter_name": "Keider Montero",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824467",
@@ -281,8 +281,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "664285",
+    "away_starter_name": "Framber Valdez",
     "lineups_confirmed": false
   },
   {
@@ -307,8 +307,8 @@
     "away_name": "Minnesota Twins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "671737",
+    "away_starter_name": "Taj Bradley",
     "lineups_confirmed": false
   },
   {
@@ -398,8 +398,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "808825",
+    "away_starter_name": "Andrew Sears",
     "lineups_confirmed": false
   },
   {
@@ -463,8 +463,8 @@
     "away_name": "Minnesota Twins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "687570",
+    "away_starter_name": "Connor Prielipp",
     "lineups_confirmed": false
   },
   {
@@ -489,8 +489,8 @@
     "away_name": "New York Yankees",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "543037",
+    "away_starter_name": "Gerrit Cole",
     "lineups_confirmed": false
   },
   {
@@ -619,8 +619,8 @@
     "away_name": "Detroit Tigers",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "695549",
+    "away_starter_name": "Jackson Jobe",
     "lineups_confirmed": false
   },
   {
@@ -658,8 +658,8 @@
     "away_name": "New York Yankees",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "693645",
+    "away_starter_name": "Cam Schlittler",
     "lineups_confirmed": false
   },
   {
@@ -697,8 +697,8 @@
     "away_name": "Minnesota Twins",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "657746",
+    "away_starter_name": "Joe Ryan",
     "lineups_confirmed": false
   }
 ]
