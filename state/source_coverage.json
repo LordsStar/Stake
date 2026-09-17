@@ -1,20 +1,9 @@
 {
-  "generated_at": "2026-09-16T21:26:46.466624+00:00",
-  "targets_in_snapshot": 246,
+  "generated_at": "2026-09-17T05:01:37.042220+00:00",
+  "targets_in_snapshot": 262,
   "targets_processed": 24,
   "matched": [],
   "unmatched": [
-    "soccer/soccer/0a3f042a-4b9e-4a82-9313-6fb5eaabbce0/12fb6975-8678-4998-a43e-8446edd97a77: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0a3f042a-4b9e-4a82-9313-6fb5eaabbce0/8b4e1ce4-a243-433c-9f95-adff8d0e27c7: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0a3f042a-4b9e-4a82-9313-6fb5eaabbce0/b0c707bb-e461-4d62-b3fa-0156ce96f1ee: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0a3f042a-4b9e-4a82-9313-6fb5eaabbce0/e26e0154-d9c7-4f6c-a569-61bea7d7abd8: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0a3f042a-4b9e-4a82-9313-6fb5eaabbce0/f5cf4991-3811-4832-9116-8b44def9cff3: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0cc568b2-00bf-4c90-a367-9ed4aec4c136/2f472194-50f0-47c6-ab91-401e49fb5427: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0cc568b2-00bf-4c90-a367-9ed4aec4c136/4eb324e7-6819-4895-b031-ee9002357305: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/0cc568b2-00bf-4c90-a367-9ed4aec4c136/6c0e5b4d-5c4d-447c-ab66-ee9083b89ecc: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/1ce02773-f56a-4d7c-8204-3e683919c49d/22278cf1-25d0-42b4-86ee-1c029a55afea: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/1ce02773-f56a-4d7c-8204-3e683919c49d/230db08d-f963-44b3-b8be-a21a71e7a204: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/280d07c5-faff-4f3f-923c-afff8d22d573/31dce966-314f-4fee-8d52-c83876d9512c: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/2b4b95e5-ef93-4d72-8ea2-f0c138c9632a/2e9076c8-f077-4cb4-9d3d-eaff1387182a: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/2b4b95e5-ef93-4d72-8ea2-f0c138c9632a/4ec37b6b-a7f8-456a-b18b-e127f06d52b7: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/2b4b95e5-ef93-4d72-8ea2-f0c138c9632a/cefacd98-71bb-4a91-b4ab-1ce502ceb330: sin liga equivalente segura (no_exact_match)",
@@ -27,7 +16,18 @@
     "soccer/soccer/47466691-38f9-4401-8677-d669e5cf18f6/33fe1526-9bb5-4777-b9f1-445c4e5b8951: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/47466691-38f9-4401-8677-d669e5cf18f6/beb6a287-7b34-4f11-bbd3-eda77b1c2c57: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/47466691-38f9-4401-8677-d669e5cf18f6/f7df455f-875f-464f-a924-618bbb266216: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/49806aa7-a5ca-44d4-b153-858e790b9ea2/2779935e-aa90-4e7a-90c7-f7ded05d112a: sin liga equivalente segura (no_exact_match)"
+    "soccer/soccer/49806aa7-a5ca-44d4-b153-858e790b9ea2/2779935e-aa90-4e7a-90c7-f7ded05d112a: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/50723a59-a29f-428d-b2ff-ad9cba206fe8/1c791c35-4ec0-4e08-88b2-f6fb73c00932: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5745e289-c7a7-4d51-9881-9b27d4874336/6fe69359-20de-4d01-bf24-7ecd1609d708: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5745e289-c7a7-4d51-9881-9b27d4874336/bb951fcb-940a-4ef7-95af-9794c43b4a6b: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/576e7268-e7ca-44a7-9d83-84753b5d8bab/b6a79b80-4fb6-4d9d-9177-28cd6ecc76c9: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5cb1d329-9e74-4205-b8ee-aa706a0afa8a/656ef645-5872-4645-ae8c-001d74d9ce58: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5cb1d329-9e74-4205-b8ee-aa706a0afa8a/94838e16-fa48-45c8-9f0a-c092799496d9: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5cb1d329-9e74-4205-b8ee-aa706a0afa8a/e9a30c04-4f8f-4548-b3cf-aed23e1b1996: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5e0b4615-0c02-48e4-9d4e-e95c62336e26/118c993d-1294-4f73-9afb-c97213bcfab0: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/5e0b4615-0c02-48e4-9d4e-e95c62336e26/f84a89b6-39cf-4282-9d35-b53ade5039de: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/6229a78f-606b-4887-8b10-92891dab2a65/d6e3038f-6945-497f-93e4-91f44831d8d3: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/6229a78f-606b-4887-8b10-92891dab2a65/faa4536e-2aa1-479c-b230-3d6efc9d851e: sin liga equivalente segura (no_exact_match)"
   ],
   "rows_collected": 669,
   "rows_added": 0,
@@ -37,6 +37,6 @@
     "OpenDota": 347,
     "League of Legends": 0
   },
-  "next_league_cursor": 125,
+  "next_league_cursor": 149,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

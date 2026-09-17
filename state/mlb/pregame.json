@@ -6,8 +6,8 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "696062",
+    "home_starter_name": "Wilber Dotel",
     "away_starter_id": "690986",
     "away_starter_name": "Kyle Harrison",
     "lineups_confirmed": false
@@ -21,8 +21,8 @@
     "away_name": "Los Angeles Dodgers",
     "home_starter_id": "663903",
     "home_starter_name": "Brady Singer",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "680736",
+    "away_starter_name": "Justin Wrobleski",
     "lineups_confirmed": false
   },
   {
@@ -97,8 +97,8 @@
     "home_name": "Texas Rangers",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "641302",
+    "home_starter_name": "Tyler Alexander",
     "away_starter_id": "543243",
     "away_starter_name": "Sonny Gray",
     "lineups_confirmed": false
@@ -229,8 +229,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "693433",
+    "away_starter_name": "Bryan Woo",
     "lineups_confirmed": false
   },
   {
@@ -450,8 +450,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "682243",
+    "away_starter_name": "Bryce Miller",
     "lineups_confirmed": false
   },
   {
@@ -632,8 +632,8 @@
     "away_name": "Seattle Mariners",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "807739",
+    "away_starter_name": "Kade Anderson",
     "lineups_confirmed": false
   },
   {
