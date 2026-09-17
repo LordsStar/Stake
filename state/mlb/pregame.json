@@ -10,7 +10,7 @@
     "home_starter_name": "Wilber Dotel",
     "away_starter_id": "690986",
     "away_starter_name": "Kyle Harrison",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824464",
@@ -23,7 +23,7 @@
     "home_starter_name": "Brady Singer",
     "away_starter_id": "680736",
     "away_starter_name": "Justin Wrobleski",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822924",
@@ -36,7 +36,7 @@
     "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "605488",
     "away_starter_name": "Jeffrey Springs",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824305",
@@ -136,10 +136,10 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "694973",
+    "home_starter_name": "Paul Skenes",
+    "away_starter_id": "677976",
+    "away_starter_name": "Randy Dobnak",
     "lineups_confirmed": false
   },
   {
@@ -383,10 +383,10 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "696149",
+    "home_starter_name": "Bubba Chandler",
+    "away_starter_id": "702070",
+    "away_starter_name": "Noah Cameron",
     "lineups_confirmed": false
   },
   {
@@ -528,8 +528,8 @@
     "away_name": "Kansas City Royals",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "608379",
+    "away_starter_name": "Michael Wacha",
     "lineups_confirmed": false
   },
   {
