@@ -10,7 +10,7 @@
     "home_starter_name": "Wilber Dotel",
     "away_starter_id": "690986",
     "away_starter_name": "Kyle Harrison",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824464",
@@ -49,7 +49,7 @@
     "home_starter_name": "Tanner Gordon",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824141",
@@ -175,8 +175,8 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "693855",
+    "home_starter_name": "Ian Seymour",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -305,8 +305,8 @@
     "home_name": "Los Angeles Dodgers",
     "away_id": "137",
     "away_name": "San Francisco Giants",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "607192",
+    "home_starter_name": "Tyler Glasnow",
     "away_starter_id": "702885",
     "away_starter_name": "Cesar Perdomo",
     "lineups_confirmed": false
@@ -331,8 +331,8 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "642547",
+    "home_starter_name": "Freddy Peralta",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -487,8 +487,8 @@
     "home_name": "Los Angeles Dodgers",
     "away_id": "137",
     "away_name": "San Francisco Giants",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669373",
+    "home_starter_name": "Tarik Skubal",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -565,8 +565,8 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "111",
     "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "643377",
+    "home_starter_name": "Griffin Jax",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
