@@ -292,8 +292,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "593958",
+    "home_starter_name": "Eduardo Rodriguez",
     "away_starter_id": "543037",
     "away_starter_name": "Gerrit Cole",
     "lineups_confirmed": false
@@ -461,8 +461,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "694297",
+    "home_starter_name": "Brandon Pfaadt",
     "away_starter_id": "693645",
     "away_starter_name": "Cam Schlittler",
     "lineups_confirmed": false
@@ -682,8 +682,8 @@
     "home_name": "Arizona Diamondbacks",
     "away_id": "147",
     "away_name": "New York Yankees",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669203",
+    "home_starter_name": "Corbin Burnes",
     "away_starter_id": "701542",
     "away_starter_name": "Will Warren",
     "lineups_confirmed": false
