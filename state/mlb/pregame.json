@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "824305",
-    "start_time": "2026-09-17T19:10:00Z",
-    "home_id": "115",
-    "home_name": "Colorado Rockies",
-    "away_id": "135",
-    "away_name": "San Diego Padres",
-    "home_starter_id": "685299",
-    "home_starter_name": "Tanner Gordon",
-    "away_starter_id": "650633",
-    "away_starter_name": "Michael King",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824141",
     "start_time": "2026-09-17T23:15:00Z",
     "home_id": "117",
