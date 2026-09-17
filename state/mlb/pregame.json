@@ -23,7 +23,7 @@
     "home_starter_name": "Brady Singer",
     "away_starter_id": "680736",
     "away_starter_name": "Justin Wrobleski",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822924",
@@ -36,7 +36,7 @@
     "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "605488",
     "away_starter_name": "Jeffrey Springs",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824305",
@@ -58,8 +58,8 @@
     "home_name": "Houston Astros",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "699044",
+    "home_starter_name": "Miguel Ullola",
     "away_starter_id": "607625",
     "away_starter_name": "Seth Lugo",
     "lineups_confirmed": false
@@ -177,8 +177,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "693855",
     "home_starter_name": "Ian Seymour",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "624133",
+    "away_starter_name": "Ranger Suarez",
     "lineups_confirmed": false
   },
   {
@@ -240,8 +240,8 @@
     "home_name": "Houston Astros",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663567",
+    "home_starter_name": "Peter Lambert",
     "away_starter_id": "641816",
     "away_starter_name": "Tyler Mahle",
     "lineups_confirmed": false
@@ -279,8 +279,8 @@
     "home_name": "San Diego Padres",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "601713",
+    "home_starter_name": "Nick Pivetta",
     "away_starter_id": "663969",
     "away_starter_name": "Tyler Phillips",
     "lineups_confirmed": false
@@ -409,8 +409,8 @@
     "home_name": "Houston Astros",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669713",
+    "home_starter_name": "Hayden Wesneski",
     "away_starter_id": "656550",
     "away_starter_name": "Grant Holmes",
     "lineups_confirmed": false
@@ -448,8 +448,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "687312",
+    "home_starter_name": "Gabriel Hughes",
     "away_starter_id": "682243",
     "away_starter_name": "Bryce Miller",
     "lineups_confirmed": false
@@ -474,8 +474,8 @@
     "home_name": "San Diego Padres",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663554",
+    "home_starter_name": "Casey Mize",
     "away_starter_id": "691587",
     "away_starter_name": "Eury Pérez",
     "lineups_confirmed": false
@@ -578,8 +578,8 @@
     "home_name": "Houston Astros",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "686613",
+    "home_starter_name": "Hunter Brown",
     "away_starter_id": "527048",
     "away_starter_name": "Martín Pérez",
     "lineups_confirmed": false
@@ -630,8 +630,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "608372",
+    "home_starter_name": "Tomoyuki Sugano",
     "away_starter_id": "807739",
     "away_starter_name": "Kade Anderson",
     "lineups_confirmed": false
@@ -669,8 +669,8 @@
     "home_name": "San Diego Padres",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "621111",
+    "home_starter_name": "Walker Buehler",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
