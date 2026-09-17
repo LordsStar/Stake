@@ -1,44 +1,5 @@
 [
   {
-    "game_pk": "823334",
-    "start_time": "2026-09-17T16:35:00Z",
-    "home_id": "134",
-    "home_name": "Pittsburgh Pirates",
-    "away_id": "158",
-    "away_name": "Milwaukee Brewers",
-    "home_starter_id": "696062",
-    "home_starter_name": "Wilber Dotel",
-    "away_starter_id": "690986",
-    "away_starter_name": "Kyle Harrison",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824464",
-    "start_time": "2026-09-17T16:40:00Z",
-    "home_id": "113",
-    "home_name": "Cincinnati Reds",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "663903",
-    "home_starter_name": "Brady Singer",
-    "away_starter_id": "680736",
-    "away_starter_name": "Justin Wrobleski",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822924",
-    "start_time": "2026-09-17T17:10:00Z",
-    "home_id": "139",
-    "home_name": "Tampa Bay Rays",
-    "away_id": "133",
-    "away_name": "Athletics",
-    "home_starter_id": "656876",
-    "home_starter_name": "Drew Rasmussen",
-    "away_starter_id": "605488",
-    "away_starter_name": "Jeffrey Springs",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "824305",
     "start_time": "2026-09-17T19:10:00Z",
     "home_id": "115",
@@ -49,7 +10,7 @@
     "home_starter_name": "Tanner Gordon",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824141",
@@ -62,7 +23,7 @@
     "home_starter_name": "Miguel Ullola",
     "away_starter_id": "607625",
     "away_starter_name": "Seth Lugo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823573",
@@ -75,7 +36,7 @@
     "home_starter_name": "Nolan McLean",
     "away_starter_id": "605400",
     "away_starter_name": "Aaron Nola",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824548",
@@ -88,7 +49,7 @@
     "home_starter_name": "Erick Fedde",
     "away_starter_id": "664285",
     "away_starter_name": "Framber Valdez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822845",
@@ -101,7 +62,7 @@
     "home_starter_name": "Tyler Alexander",
     "away_starter_id": "543243",
     "away_starter_name": "Sonny Gray",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823978",
@@ -164,8 +125,8 @@
     "away_name": "Athletics",
     "home_starter_id": "682982",
     "home_starter_name": "Daniel Espino",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "686930",
+    "away_starter_name": "Mason Barnett",
     "lineups_confirmed": false
   },
   {
@@ -201,8 +162,8 @@
     "home_name": "Chicago White Sox",
     "away_id": "116",
     "away_name": "Detroit Tigers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "689818",
+    "home_starter_name": "David Sandlin",
     "away_starter_id": "808825",
     "away_starter_name": "Andrew Sears",
     "lineups_confirmed": false
@@ -422,8 +383,8 @@
     "home_name": "Chicago White Sox",
     "away_id": "116",
     "away_name": "Detroit Tigers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "680732",
+    "home_starter_name": "Sean Burke",
     "away_starter_id": "695549",
     "away_starter_name": "Jackson Jobe",
     "lineups_confirmed": false
@@ -591,8 +552,8 @@
     "home_name": "Chicago White Sox",
     "away_id": "116",
     "away_name": "Detroit Tigers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663436",
+    "home_starter_name": "Davis Martin",
     "away_starter_id": "675512",
     "away_starter_name": "Troy Melton",
     "lineups_confirmed": false
