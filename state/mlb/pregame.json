@@ -101,7 +101,7 @@
     "home_starter_name": "Kumar Rocker",
     "away_starter_id": "656302",
     "away_starter_name": "Dylan Cease",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824303",
@@ -114,7 +114,7 @@
     "home_starter_name": "Gabriel Hughes",
     "away_starter_id": "693433",
     "away_starter_name": "Bryan Woo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824138",
@@ -127,7 +127,7 @@
     "home_starter_name": "Peter Lambert",
     "away_starter_id": "641816",
     "away_starter_name": "Tyler Mahle",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823005",
