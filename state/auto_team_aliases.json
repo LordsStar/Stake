@@ -167,7 +167,10 @@
     "magdelena frech": "magdalena frech",
     "senica alja": "alja senica",
     "barros victoria luiza": "victoria luiza barros",
-    "lovric pia": "pia lovric"
+    "lovric pia": "pia lovric",
+    "astakhova darya": "darya astakhova",
+    "yexin ma": "ma yexin",
+    "xinxin yao": "yao xinxin"
   },
   "handball:champions-league": {
     "veszprem kc": "veszpr m kc",
@@ -179,5 +182,9 @@
   "handball:lnh-division-1": {
     "chartres metropole handball": "c chartres m tropole handball",
     "usam nimes gard": "usam n mes gard"
+  },
+  "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": {
+    "kf vllaznia shkoder": "kf vllaznia shkod r",
+    "kf teuta": "ks teuta"
   }
 }

@@ -1,6 +1,92 @@
 {
   "schema_version": 6,
   "ratings": {
+    "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": {
+      "kukesi": {
+        "elo": 1451.63727709487,
+        "games": 6
+      },
+      "sk tirana": {
+        "elo": 1522.0746148367718,
+        "games": 6
+      },
+      "erzeni": {
+        "elo": 1506.4915765409226,
+        "games": 7
+      },
+      "kf vllaznia shkod r": {
+        "elo": 1519.7118511851486,
+        "games": 6
+      },
+      "partizani": {
+        "elo": 1536.6751591816733,
+        "games": 5
+      },
+      "egnatia": {
+        "elo": 1528.7557825604097,
+        "games": 9
+      },
+      "laci": {
+        "elo": 1488.3380277073582,
+        "games": 6
+      },
+      "ks teuta": {
+        "elo": 1482.800704157419,
+        "games": 5
+      },
+      "kf bylis": {
+        "elo": 1498.1601120443702,
+        "games": 3
+      },
+      "kastrioti": {
+        "elo": 1502.027697914064,
+        "games": 3
+      },
+      "skenderbeu": {
+        "elo": 1510.5610743345728,
+        "games": 3
+      },
+      "dinamo tirana": {
+        "elo": 1480.3480594062548,
+        "games": 4
+      },
+      "vllaznia shkod r": {
+        "elo": 1488.1491212009385,
+        "games": 3
+      },
+      "sk nderbeu kor": {
+        "elo": 1482.0746691999132,
+        "games": 3
+      },
+      "partizani tirana": {
+        "elo": 1498.7990267425812,
+        "games": 3
+      },
+      "teuta durr s": {
+        "elo": 1521.299277635054,
+        "games": 3
+      },
+      "la i": {
+        "elo": 1498.4222483607195,
+        "games": 3
+      },
+      "elbasani": {
+        "elo": 1491.4946746901403,
+        "games": 3
+      },
+      "dinamo city": {
+        "elo": 1508.7838308167925,
+        "games": 3
+      },
+      "vora": {
+        "elo": 1491.0477490612818,
+        "games": 3
+      },
+      "tirana": {
+        "elo": 1492.3474653287442,
+        "games": 3
+      }
+    },
     "american-football:nfl": {
       "san francisco 49ers": {
         "elo": 1556.9440925443018,
@@ -4677,8 +4763,8 @@
         "games": 20
       },
       "mia ristic": {
-        "elo": 1530.4789823272383,
-        "games": 28
+        "elo": 1519.7469185676534,
+        "games": 29
       },
       "lisa pigato": {
         "elo": 1517.8195400758068,
@@ -4729,8 +4815,8 @@
         "games": 14
       },
       "ekaterine gorgodze": {
-        "elo": 1499.5925713681293,
-        "games": 24
+        "elo": 1490.5035331295037,
+        "games": 25
       },
       "elina avanesyan": {
         "elo": 1538.3657181956912,
@@ -5233,8 +5319,8 @@
         "games": 1
       },
       "laura samson": {
-        "elo": 1536.2503103537583,
-        "games": 23
+        "elo": 1546.5108756495508,
+        "games": 24
       },
       "maria garcia cid": {
         "elo": 1491.0381881338851,
@@ -5529,8 +5615,8 @@
         "games": 8
       },
       "mona barthel": {
-        "elo": 1504.998899604833,
-        "games": 19
+        "elo": 1515.730963364418,
+        "games": 20
       },
       "irina camelia begu": {
         "elo": 1495.4931015560105,
@@ -5865,8 +5951,8 @@
         "games": 1
       },
       "noemi basiletti": {
-        "elo": 1531.3306126450511,
-        "games": 18
+        "elo": 1540.4196508836767,
+        "games": 19
       },
       "polina iatcenko": {
         "elo": 1504.2880141639503,
@@ -6617,8 +6703,8 @@
         "games": 5
       },
       "anastasiia sobolieva": {
-        "elo": 1545.3053256149046,
-        "games": 11
+        "elo": 1535.0447603191121,
+        "games": 12
       },
       "yuliana lizarazo": {
         "elo": 1488.353937372876,
@@ -8753,6 +8839,18 @@
     }
   },
   "brier": {
+    "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": [
+      {
+        "kind": "multiclass",
+        "probs": {
+          "home": 0.4000935858313619,
+          "draw": 0.2823529411764706,
+          "away": 0.3175534729921675
+        },
+        "y": "home",
+        "match_id": "thesportsdb:1882463"
+      }
+    ],
     "american-football:nfl": [
       {
         "kind": "binary",
@@ -30280,24 +30378,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.577846844178941,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:181798"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4206942717862749,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:182244"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4182355116608466,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:181794"
-      },
-      {
-        "kind": "binary",
         "p": 0.42002800331382173,
         "y": 1.0,
         "match_id": "espn:tennis:wta:181801"
@@ -36277,6 +36357,24 @@
         "p": 0.4694125831782524,
         "y": 1.0,
         "match_id": "espn:tennis:wta:183808"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5455480880687186,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183676"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4633968120207552,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:183677"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5130282647896213,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183679"
       }
     ],
     "tennis:atp": [
@@ -44221,6 +44319,53 @@
     ]
   },
   "processed": {
+    "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": [
+      "thesportsdb:1631300",
+      "thesportsdb:1631301",
+      "thesportsdb:1631302",
+      "thesportsdb:1631303",
+      "thesportsdb:1631304",
+      "thesportsdb:1631307",
+      "thesportsdb:1631308",
+      "thesportsdb:1631309",
+      "thesportsdb:1631306",
+      "thesportsdb:1631305",
+      "thesportsdb:1631314",
+      "thesportsdb:1631312",
+      "thesportsdb:1631313",
+      "thesportsdb:1631310",
+      "thesportsdb:1631311",
+      "thesportsdb:1882454",
+      "thesportsdb:1882453",
+      "thesportsdb:1882451",
+      "thesportsdb:1882455",
+      "thesportsdb:1882459",
+      "thesportsdb:1882457",
+      "thesportsdb:1882460",
+      "thesportsdb:1882458",
+      "thesportsdb:1882456",
+      "thesportsdb:1882463",
+      "thesportsdb:1882464",
+      "thesportsdb:1882465",
+      "thesportsdb:1882462",
+      "thesportsdb:1882461",
+      "thesportsdb:1882469",
+      "thesportsdb:2533262",
+      "thesportsdb:2533258",
+      "thesportsdb:2533259",
+      "thesportsdb:2533260",
+      "thesportsdb:2533261",
+      "thesportsdb:2533264",
+      "thesportsdb:2533267",
+      "thesportsdb:2533265",
+      "thesportsdb:2533266",
+      "thesportsdb:2533263",
+      "thesportsdb:2533271",
+      "thesportsdb:2533269",
+      "thesportsdb:2533272",
+      "thesportsdb:2533268",
+      "thesportsdb:2533270"
+    ],
     "american-football:nfl": [
       "espn:401671696",
       "espn:401671807",
@@ -59886,7 +60031,10 @@
       "espn:tennis:wta:183806",
       "espn:tennis:wta:183828",
       "espn:tennis:wta:183809",
-      "espn:tennis:wta:183808"
+      "espn:tennis:wta:183808",
+      "espn:tennis:wta:183676",
+      "espn:tennis:wta:183677",
+      "espn:tennis:wta:183679"
     ],
     "cricket:test": [
       "cricsheet:1538631",
@@ -60803,6 +60951,10 @@
     ]
   },
   "draw_stats": {
+    "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": {
+      "total": 45,
+      "draws": 12
+    },
     "american-football:nfl": {
       "total": 672,
       "draws": 6
@@ -60824,7 +60976,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5383,
+      "total": 5386,
       "draws": 0
     },
     "cricket:test": {
@@ -60855,7 +61007,7 @@
       "pass_streak": 0,
       "fail_streak": 2,
       "last_evidence_fingerprint": "d47ede4335a6e5b4c3952b5a143103ab98df516a115480407e4ce80d25f935ab",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": -0.010790112503499039,
       "last_brier": 0.22502610459142974,
@@ -60868,7 +61020,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "37c9b1211d46eaa59efd43c59fdb27db3961beb24b8af20d943444aaab824d28",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.03122651919375119,
       "last_brier": 0.23977143649954658,
@@ -60907,7 +61059,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "6090680a3743a19809399393e256858dfb5cb4b86264bfd17251eaaabbdc2361",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.011859316309456136,
       "last_brier": 0.24456481921341003,
@@ -60932,11 +61084,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "a5511566accc98d9947b33a5370700f6c84a93f7aaa6c81b04a18e0d20fc9b51",
+      "last_evidence_fingerprint": "d1b02523470fc3bc7ef675567407cc841e57af9ec5cffbe12804d6e9b3e7e9ad",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.017000452326315196,
-      "last_brier": 0.24375931283438237,
+      "last_skill": 0.01971877946213474,
+      "last_brier": 0.24350185518160558,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -60959,7 +61111,7 @@
       "pass_streak": 1,
       "fail_streak": 0,
       "last_evidence_fingerprint": "5379b19f6fb3d1b283947196b07706940792d4182aa1e3150b747d2a75327e62",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.053378618671092504,
       "last_brier": 0.22862756035864787,
@@ -60991,6 +61143,19 @@
       "last_brier": 0.23733479410334737,
       "evidence_samples": 200,
       "evidence_total_samples": 207
+    },
+    "soccer:soccer-c45bc014-c1d2-4c38-9e4a-c07757c4cb16-ad19536e-09f6-4db9-af55-cfe1ba18b42f": {
+      "policy_version": 2,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 0,
+      "last_evidence_fingerprint": "f3f7e5f3e55b1997283b8e88f82b2c953f298ba8e7b077f518801f4889e529d6",
+      "evidence_changed": false,
+      "migration_baseline": true,
+      "last_skill": null,
+      "last_brier": 0.5404510973610643,
+      "evidence_samples": 1,
+      "evidence_total_samples": 1
     }
   }
 }
