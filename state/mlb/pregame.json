@@ -10,7 +10,7 @@
     "home_starter_name": "Chase Burns",
     "away_starter_id": "605280",
     "away_starter_name": "Clay Holmes",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823331",
@@ -23,7 +23,7 @@
     "home_starter_name": "Paul Skenes",
     "away_starter_id": "677976",
     "away_starter_name": "Randy Dobnak",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824790",
@@ -140,7 +140,7 @@
     "home_starter_name": "Kyle Leahy",
     "away_starter_id": "676917",
     "away_starter_name": "Cade Cavalli",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823977",
@@ -153,7 +153,7 @@
     "home_starter_name": "Grayson Rodriguez",
     "away_starter_id": "687570",
     "away_starter_name": "Connor Prielipp",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823252",
@@ -166,7 +166,7 @@
     "home_starter_name": "Nick Pivetta",
     "away_starter_id": "663969",
     "away_starter_name": "Tyler Phillips",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825032",
@@ -179,7 +179,7 @@
     "home_starter_name": "Eduardo Rodriguez",
     "away_starter_id": "543037",
     "away_starter_name": "Gerrit Cole",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823898",
@@ -192,7 +192,7 @@
     "home_starter_name": "Tyler Glasnow",
     "away_starter_id": "702885",
     "away_starter_name": "Cesar Perdomo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824788",
@@ -580,8 +580,8 @@
     "away_name": "Milwaukee Brewers",
     "home_starter_id": "687064",
     "home_starter_name": "Brandon Young",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "694819",
+    "away_starter_name": "Jacob Misiorowski",
     "lineups_confirmed": false
   },
   {
