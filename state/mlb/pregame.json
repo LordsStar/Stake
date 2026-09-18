@@ -10,7 +10,7 @@
     "home_starter_name": "Chase Burns",
     "away_starter_id": "605280",
     "away_starter_name": "Clay Holmes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823331",
@@ -23,7 +23,7 @@
     "home_starter_name": "Paul Skenes",
     "away_starter_id": "677976",
     "away_starter_name": "Randy Dobnak",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824790",
@@ -36,7 +36,7 @@
     "home_starter_name": "Cade Povich",
     "away_starter_id": "669160",
     "away_starter_name": "Dustin May",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824383",
@@ -49,7 +49,7 @@
     "home_starter_name": "Daniel Espino",
     "away_starter_id": "686930",
     "away_starter_name": "Mason Barnett",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822923",
@@ -62,7 +62,7 @@
     "home_starter_name": "Ian Seymour",
     "away_starter_id": "624133",
     "away_starter_name": "Ranger Suarez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823572",
@@ -73,9 +73,9 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "804267",
     "home_starter_name": "Zac Thornton",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "away_starter_id": "641835",
+    "away_starter_name": "Tim Mayza",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824547",
@@ -88,7 +88,7 @@
     "home_starter_name": "David Sandlin",
     "away_starter_id": "808825",
     "away_starter_name": "Andrew Sears",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822847",
@@ -110,8 +110,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "687312",
+    "home_starter_name": "Gabriel Hughes",
     "away_starter_id": "693433",
     "away_starter_name": "Bryan Woo",
     "lineups_confirmed": false
@@ -201,8 +201,8 @@
     "home_name": "Baltimore Orioles",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669432",
+    "home_starter_name": "Trevor Rogers",
     "away_starter_id": "688107",
     "away_starter_name": "Robert Gasser",
     "lineups_confirmed": false
@@ -331,8 +331,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "687312",
-    "home_starter_name": "Gabriel Hughes",
+    "home_starter_id": "",
+    "home_starter_name": null,
     "away_starter_id": "682243",
     "away_starter_name": "Bryce Miller",
     "lineups_confirmed": false
@@ -513,8 +513,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "608372",
-    "home_starter_name": "Tomoyuki Sugano",
+    "home_starter_id": "",
+    "home_starter_name": null,
     "away_starter_id": "807739",
     "away_starter_name": "Kade Anderson",
     "lineups_confirmed": false
@@ -578,8 +578,8 @@
     "home_name": "Baltimore Orioles",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "687064",
+    "home_starter_name": "Brandon Young",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
