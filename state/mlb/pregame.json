@@ -73,8 +73,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "804267",
     "home_starter_name": "Zac Thornton",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "691725",
+    "away_starter_name": "Andrew Painter",
     "lineups_confirmed": false
   },
   {
@@ -229,8 +229,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "681035",
     "home_starter_name": "Christian Scott",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "691725",
+    "away_starter_name": "Andrew Painter",
     "lineups_confirmed": false
   },
   {
