@@ -1,31 +1,5 @@
 [
   {
-    "game_pk": "824545",
-    "start_time": "2026-09-19T18:10:00Z",
-    "home_id": "145",
-    "home_name": "Chicago White Sox",
-    "away_id": "116",
-    "away_name": "Detroit Tigers",
-    "home_starter_id": "680732",
-    "home_starter_name": "Sean Burke",
-    "away_starter_id": "695549",
-    "away_starter_name": "Jackson Jobe",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824788",
-    "start_time": "2026-09-19T20:05:00Z",
-    "home_id": "110",
-    "home_name": "Baltimore Orioles",
-    "away_id": "158",
-    "away_name": "Milwaukee Brewers",
-    "home_starter_id": "669432",
-    "home_starter_name": "Trevor Rogers",
-    "away_starter_id": "688107",
-    "away_starter_name": "Robert Gasser",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822921",
     "start_time": "2026-09-19T20:10:00Z",
     "home_id": "139",
@@ -140,7 +114,7 @@
     "home_starter_name": "Jose Quintana",
     "away_starter_id": "682243",
     "away_starter_name": "Bryce Miller",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "825029",
@@ -153,7 +127,7 @@
     "home_starter_name": "Brandon Pfaadt",
     "away_starter_id": "693645",
     "away_starter_name": "Cam Schlittler",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823249",
@@ -166,7 +140,7 @@
     "home_starter_name": "Casey Mize",
     "away_starter_id": "691587",
     "away_starter_name": "Eury Pérez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823899",
@@ -179,7 +153,7 @@
     "home_starter_name": "Tarik Skubal",
     "away_starter_id": "805074",
     "away_starter_name": "Yunior Marte",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823976",
@@ -398,8 +372,8 @@
     "away_name": "Toronto Blue Jays",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "702056",
+    "away_starter_name": "Trey Yesavage",
     "lineups_confirmed": false
   },
   {
