@@ -23,7 +23,7 @@
     "home_starter_name": "Trevor Rogers",
     "away_starter_id": "688107",
     "away_starter_name": "Robert Gasser",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822921",
@@ -36,7 +36,7 @@
     "home_starter_name": "Freddy Peralta",
     "away_starter_id": "678394",
     "away_starter_name": "Brayan Bello",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823571",
@@ -49,7 +49,7 @@
     "home_starter_name": "Christian Scott",
     "away_starter_id": "691725",
     "away_starter_name": "Andrew Painter",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824380",
@@ -127,7 +127,7 @@
     "home_starter_name": "Michael McGreevy",
     "away_starter_id": "674841",
     "away_starter_name": "Andrew Alvarez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824304",
