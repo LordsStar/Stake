@@ -34,9 +34,9 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "642547",
     "home_starter_name": "Freddy Peralta",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "away_starter_id": "678394",
+    "away_starter_name": "Brayan Bello",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823571",
@@ -49,7 +49,7 @@
     "home_starter_name": "Christian Scott",
     "away_starter_id": "691725",
     "away_starter_name": "Andrew Painter",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824380",
@@ -177,8 +177,8 @@
     "away_name": "San Francisco Giants",
     "home_starter_id": "669373",
     "home_starter_name": "Tarik Skubal",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "805074",
+    "away_starter_name": "Yunior Marte",
     "lineups_confirmed": false
   },
   {
