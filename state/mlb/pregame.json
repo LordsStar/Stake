@@ -10,7 +10,7 @@
     "home_starter_name": "Sean Burke",
     "away_starter_id": "695549",
     "away_starter_name": "Jackson Jobe",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824788",
@@ -23,7 +23,7 @@
     "home_starter_name": "Trevor Rogers",
     "away_starter_id": "688107",
     "away_starter_name": "Robert Gasser",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822921",
@@ -62,7 +62,7 @@
     "home_starter_name": "Tanner Bibee",
     "away_starter_id": "682052",
     "away_starter_name": "Jacob Lopez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824461",
@@ -75,7 +75,7 @@
     "home_starter_name": "Nick Lodolo",
     "away_starter_id": "571510",
     "away_starter_name": "Matthew Boyd",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823330",
@@ -88,7 +88,7 @@
     "home_starter_name": "Bubba Chandler",
     "away_starter_id": "702070",
     "away_starter_name": "Noah Cameron",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822843",
@@ -101,7 +101,7 @@
     "home_starter_name": "Cal Quantrill",
     "away_starter_id": "667755",
     "away_starter_name": "José Soriano",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824137",
@@ -114,7 +114,7 @@
     "home_starter_name": "Hayden Wesneski",
     "away_starter_id": "656550",
     "away_starter_name": "Grant Holmes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823003",
@@ -255,8 +255,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "643377",
     "home_starter_name": "Griffin Jax",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663776",
+    "away_starter_name": "Patrick Sandoval",
     "lineups_confirmed": false
   },
   {
