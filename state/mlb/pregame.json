@@ -153,7 +153,7 @@
     "home_starter_name": null,
     "away_starter_id": "683363",
     "away_starter_name": "Matt Wilkinson",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823247",
@@ -214,8 +214,8 @@
     "home_name": "Detroit Tigers",
     "away_id": "120",
     "away_name": "Washington Nationals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "689981",
+    "home_starter_name": "River Ryan",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -242,8 +242,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "607259",
+    "away_starter_name": "Nick Martinez",
     "lineups_confirmed": false
   },
   {
@@ -255,8 +255,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "656876",
+    "away_starter_name": "Drew Rasmussen",
     "lineups_confirmed": false
   },
   {
@@ -279,10 +279,10 @@
     "home_name": "Detroit Tigers",
     "away_id": "120",
     "away_name": "Washington Nationals",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "623454",
+    "home_starter_name": "Drew Anderson",
+    "away_starter_id": "800600",
+    "away_starter_name": "Jackson Kent",
     "lineups_confirmed": false
   },
   {
@@ -305,8 +305,8 @@
     "home_name": "Philadelphia Phillies",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "554430",
+    "home_starter_name": "Zack Wheeler",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -318,10 +318,10 @@
     "home_name": "Boston Red Sox",
     "away_id": "114",
     "away_name": "Cleveland Guardians",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "801139",
+    "home_starter_name": "Payton Tolle",
+    "away_starter_id": "800048",
+    "away_starter_name": "Parker Messick",
     "lineups_confirmed": false
   },
   {
@@ -331,8 +331,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "702275",
+    "home_starter_name": "JR Ritchie",
     "away_starter_id": "682227",
     "away_starter_name": "Brandon Williamson",
     "lineups_confirmed": false
@@ -346,8 +346,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "641743",
+    "away_starter_name": "Anthony Kay",
     "lineups_confirmed": false
   },
   {
@@ -411,8 +411,8 @@
     "away_name": "Houston Astros",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "664299",
+    "away_starter_name": "Cristian Javier",
     "lineups_confirmed": false
   },
   {
@@ -448,8 +448,8 @@
     "home_name": "Detroit Tigers",
     "away_id": "120",
     "away_name": "Washington Nationals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "664285",
+    "home_starter_name": "Framber Valdez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -500,8 +500,8 @@
     "home_name": "Philadelphia Phillies",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605400",
+    "home_starter_name": "Aaron Nola",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -526,10 +526,10 @@
     "home_name": "Boston Red Sox",
     "away_id": "114",
     "away_name": "Cleveland Guardians",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "543243",
+    "home_starter_name": "Sonny Gray",
+    "away_starter_id": "656492",
+    "away_starter_name": "Foster Griffin",
     "lineups_confirmed": false
   },
   {
@@ -539,8 +539,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "113",
     "away_name": "Cincinnati Reds",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "519242",
+    "home_starter_name": "Chris Sale",
     "away_starter_id": "671096",
     "away_starter_name": "Andrew Abbott",
     "lineups_confirmed": false
@@ -554,8 +554,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "607200",
+    "away_starter_name": "Erick Fedde",
     "lineups_confirmed": false
   },
   {
