@@ -39,19 +39,6 @@
     "lineups_confirmed": false
   },
   {
-    "game_pk": "823001",
-    "start_time": "2026-09-20T18:15:00Z",
-    "home_id": "138",
-    "home_name": "St. Louis Cardinals",
-    "away_id": "120",
-    "away_name": "Washington Nationals",
-    "home_starter_id": "687273",
-    "home_starter_name": "Quinn Mathews",
-    "away_starter_id": "663623",
-    "away_starter_name": "Jake Irvin",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822844",
     "start_time": "2026-09-20T18:35:00Z",
     "home_id": "140",
