@@ -19,8 +19,8 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "118",
     "away_name": "Kansas City Royals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669199",
+    "home_starter_name": "Lake Bachar",
     "away_starter_id": "608379",
     "away_starter_name": "Michael Wacha",
     "lineups_confirmed": false
@@ -123,8 +123,8 @@
     "home_name": "Colorado Rockies",
     "away_id": "136",
     "away_name": "Seattle Mariners",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "608372",
+    "home_starter_name": "Tomoyuki Sugano",
     "away_starter_id": "807739",
     "away_starter_name": "Kade Anderson",
     "lineups_confirmed": false
@@ -151,8 +151,8 @@
     "away_name": "San Francisco Giants",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "683363",
+    "away_starter_name": "Matt Wilkinson",
     "lineups_confirmed": false
   },
   {
