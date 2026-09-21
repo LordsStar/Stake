@@ -10,7 +10,7 @@
     "home_starter_name": "Shane Baz",
     "away_starter_id": "702056",
     "away_starter_name": "Trey Yesavage",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824221",
@@ -23,7 +23,7 @@
     "home_starter_name": "River Ryan",
     "away_starter_id": "687792",
     "away_starter_name": "DJ Herz",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823169",
