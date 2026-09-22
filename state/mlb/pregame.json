@@ -88,7 +88,7 @@
     "home_starter_name": "Daniel Lynch IV",
     "away_starter_id": "641743",
     "away_starter_name": "Anthony Kay",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824624",
@@ -101,7 +101,7 @@
     "home_starter_name": "Shota Imanaga",
     "away_starter_id": "676083",
     "away_starter_name": "Janson Junk",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822840",
@@ -201,10 +201,10 @@
     "home_name": "Baltimore Orioles",
     "away_id": "141",
     "away_name": "Toronto Blue Jays",
-    "home_starter_id": "605135",
-    "home_starter_name": "Chris Bassitt",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "453286",
+    "away_starter_name": "Max Scherzer",
     "lineups_confirmed": false
   },
   {

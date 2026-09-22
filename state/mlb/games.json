@@ -217587,5 +217587,57 @@
         "pitches": 20
       }
     ]
+  },
+  {
+    "game_pk": "823543",
+    "start_time": "2026-09-22T17:05:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 2,
+    "away_score": 0,
+    "home_starter_id": "607074",
+    "away_starter_id": "607259",
+    "home_pitchers": [
+      {
+        "id": "607074",
+        "outs": 24,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 8,
+        "pitches": 96
+      },
+      {
+        "id": "670280",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 11
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "607259",
+        "outs": 18,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 7,
+        "pitches": 94
+      },
+      {
+        "id": "694494",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 23
+      }
+    ]
   }
 ]
