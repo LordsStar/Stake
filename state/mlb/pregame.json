@@ -10,7 +10,7 @@
     "home_starter_name": "Carlos Rodón",
     "away_starter_id": "607259",
     "away_starter_name": "Nick Martinez",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823494",
@@ -47,8 +47,8 @@
     "away_name": "Washington Nationals",
     "home_starter_id": "623454",
     "home_starter_name": "Drew Anderson",
-    "away_starter_id": "800600",
-    "away_starter_name": "Jackson Kent",
+    "away_starter_id": "683000",
+    "away_starter_name": "Riley Cornelio",
     "lineups_confirmed": false
   },
   {
@@ -123,8 +123,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "684007",
+    "home_starter_name": "Shota Imanaga",
     "away_starter_id": "676083",
     "away_starter_name": "Janson Junk",
     "lineups_confirmed": false
@@ -281,8 +281,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "543037",
     "home_starter_name": "Gerrit Cole",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "693855",
+    "away_starter_name": "Ian Seymour",
     "lineups_confirmed": false
   },
   {
@@ -331,8 +331,8 @@
     "home_name": "Chicago Cubs",
     "away_id": "146",
     "away_name": "Miami Marlins",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "592332",
+    "home_starter_name": "Kevin Gausman",
     "away_starter_id": "687473",
     "away_starter_name": "Ryan Gusto",
     "lineups_confirmed": false
@@ -502,8 +502,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "693645",
     "home_starter_name": "Cam Schlittler",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "642547",
+    "away_starter_name": "Freddy Peralta",
     "lineups_confirmed": false
   },
   {
@@ -684,8 +684,8 @@
     "away_name": "St. Louis Cardinals",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "700241",
+    "away_starter_name": "Michael McGreevy",
     "lineups_confirmed": false
   },
   {
