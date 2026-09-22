@@ -10,7 +10,7 @@
     "home_starter_name": "Max Fried",
     "away_starter_id": "656876",
     "away_starter_name": "Drew Rasmussen",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824222",
@@ -23,7 +23,7 @@
     "home_starter_name": "Drew Anderson",
     "away_starter_id": "683000",
     "away_starter_name": "Riley Cornelio",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823328",
@@ -36,7 +36,7 @@
     "home_starter_name": "Jared Jones",
     "away_starter_id": "669467",
     "away_starter_name": "Andre Pallante",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823412",
@@ -49,7 +49,7 @@
     "home_starter_name": "Zack Wheeler",
     "away_starter_id": "669160",
     "away_starter_name": "Dustin May",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824709",
@@ -114,7 +114,7 @@
     "home_starter_name": "MacKenzie Gore",
     "away_starter_id": "640455",
     "away_starter_name": "Sean Manaea",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824302",
@@ -127,7 +127,7 @@
     "home_starter_name": "Kyle Freeland",
     "away_starter_id": "647336",
     "away_starter_name": "Michael Soroka",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824953",
@@ -140,7 +140,7 @@
     "home_starter_name": "Brady Basso",
     "away_starter_id": "579328",
     "away_starter_name": "Yusei Kikuchi",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823089",
@@ -153,7 +153,7 @@
     "home_starter_name": "Logan Gilbert",
     "away_starter_id": "664299",
     "away_starter_name": "Cristian Javier",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823166",
@@ -166,7 +166,7 @@
     "home_starter_name": "Anthony Molina",
     "away_starter_id": "671737",
     "away_starter_name": "Taj Bradley",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823897",
@@ -175,11 +175,11 @@
     "home_name": "Los Angeles Dodgers",
     "away_id": "135",
     "away_name": "San Diego Padres",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "592779",
+    "home_starter_name": "Brock Stewart",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824223",
