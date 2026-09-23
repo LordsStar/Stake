@@ -10,7 +10,7 @@
     "home_starter_name": "Framber Valdez",
     "away_starter_id": "663992",
     "away_starter_name": "Richard Lovelady",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824785",
@@ -86,8 +86,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "543037",
     "home_starter_name": "Gerrit Cole",
-    "away_starter_id": "693855",
-    "away_starter_name": "Ian Seymour",
+    "away_starter_id": "669438",
+    "away_starter_name": "Mason Englert",
     "lineups_confirmed": false
   },
   {
