@@ -219024,5 +219024,208 @@
         "pitches": 42
       }
     ]
+  },
+  {
+    "game_pk": "824223",
+    "start_time": "2026-09-23T17:10:00Z",
+    "home_id": "116",
+    "home_name": "Detroit Tigers",
+    "away_id": "120",
+    "away_name": "Washington Nationals",
+    "home_score": 2,
+    "away_score": 4,
+    "home_starter_id": "664285",
+    "away_starter_id": "663992",
+    "home_pitchers": [
+      {
+        "id": "664285",
+        "outs": 16,
+        "hr": 0,
+        "bb": 3,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 87
+      },
+      {
+        "id": "641755",
+        "outs": 2,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 13
+      },
+      {
+        "id": "621097",
+        "outs": 6,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 28
+      },
+      {
+        "id": "445276",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 9
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "663992",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 19
+      },
+      {
+        "id": "695418",
+        "outs": 10,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 49
+      },
+      {
+        "id": "702021",
+        "outs": 6,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 41
+      },
+      {
+        "id": "695378",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 4
+      },
+      {
+        "id": "680899",
+        "outs": 2,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 20
+      },
+      {
+        "id": "672442",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 22
+      }
+    ]
+  },
+  {
+    "game_pk": "824785",
+    "start_time": "2026-09-23T17:35:00Z",
+    "home_id": "110",
+    "home_name": "Baltimore Orioles",
+    "away_id": "141",
+    "away_name": "Toronto Blue Jays",
+    "home_score": 4,
+    "away_score": 2,
+    "home_starter_id": "605135",
+    "away_starter_id": "453286",
+    "home_pitchers": [
+      {
+        "id": "605135",
+        "outs": 15,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 90
+      },
+      {
+        "id": "801725",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 12
+      },
+      {
+        "id": "689296",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 14
+      },
+      {
+        "id": "670329",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 7
+      },
+      {
+        "id": "552640",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 13
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "453286",
+        "outs": 15,
+        "hr": 1,
+        "bb": 3,
+        "hbp": 0,
+        "k": 7,
+        "pitches": 93
+      },
+      {
+        "id": "692064",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 18
+      },
+      {
+        "id": "663893",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 10
+      },
+      {
+        "id": "623149",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 17
+      }
+    ]
   }
 ]

@@ -421,8 +421,8 @@
     },
     "baseball:mlb": {
       "baltimore orioles": {
-        "elo": 1503.0556763326142,
-        "games": 186
+        "elo": 1512.6572184717668,
+        "games": 187
       },
       "new york yankees": {
         "elo": 1560.5370149033297,
@@ -473,16 +473,16 @@
         "games": 186
       },
       "detroit tigers": {
-        "elo": 1463.2884597508257,
-        "games": 186
+        "elo": 1452.4411289484276,
+        "games": 187
       },
       "st louis cardinals": {
         "elo": 1436.7402282893531,
         "games": 185
       },
       "washington nationals": {
-        "elo": 1453.7784122983358,
-        "games": 186
+        "elo": 1464.6257431007339,
+        "games": 187
       },
       "tampa bay rays": {
         "elo": 1603.0757213807462,
@@ -497,8 +497,8 @@
         "games": 185
       },
       "toronto blue jays": {
-        "elo": 1509.2044987641596,
-        "games": 185
+        "elo": 1499.602956625007,
+        "games": 186
       },
       "philadelphia phillies": {
         "elo": 1559.2553084478184,
@@ -4733,8 +4733,8 @@
         "games": 21
       },
       "mia ristic": {
-        "elo": 1528.9061471477378,
-        "games": 30
+        "elo": 1539.2222069941547,
+        "games": 31
       },
       "lisa pigato": {
         "elo": 1550.6337519220083,
@@ -4821,8 +4821,8 @@
         "games": 42
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1539.9285884733329,
-        "games": 22
+        "elo": 1548.491870751172,
+        "games": 23
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -5889,8 +5889,8 @@
         "games": 1
       },
       "marta lombardini": {
-        "elo": 1489.6641317224316,
-        "games": 3
+        "elo": 1481.1008494445925,
+        "games": 4
       },
       "aliona falei": {
         "elo": 1474.3070594378596,
@@ -5921,8 +5921,8 @@
         "games": 1
       },
       "noemi basiletti": {
-        "elo": 1539.8908495824633,
-        "games": 21
+        "elo": 1529.5747897360463,
+        "games": 22
       },
       "polina iatcenko": {
         "elo": 1524.5380272739558,
@@ -8451,8 +8451,8 @@
         "games": 19
       },
       "lgd gaming": {
-        "elo": 1506.2671185780769,
-        "games": 17
+        "elo": 1525.8941500444555,
+        "games": 19
       },
       "nigma galaxy": {
         "elo": 1523.4123716000818,
@@ -8603,8 +8603,8 @@
         "games": 3
       },
       "team nemesis": {
-        "elo": 1567.4158516954071,
-        "games": 24
+        "elo": 1573.5255442891155,
+        "games": 27
       },
       "team 6seven": {
         "elo": 1490.5419110888138,
@@ -8639,8 +8639,8 @@
         "games": 4
       },
       "mouz": {
-        "elo": 1509.8859124206172,
-        "games": 27
+        "elo": 1490.2588809542385,
+        "games": 29
       },
       "yellow submarine": {
         "elo": 1480.5750112778453,
@@ -8659,8 +8659,8 @@
         "games": 1
       },
       "pipsqueak 4": {
-        "elo": 1521.0791893570308,
-        "games": 37
+        "elo": 1501.6993905492714,
+        "games": 39
       },
       "level up esports": {
         "elo": 1509.7556667296085,
@@ -8947,8 +8947,8 @@
         "games": 4
       },
       "1w": {
-        "elo": 1521.888832745849,
-        "games": 11
+        "elo": 1541.2686315536084,
+        "games": 13
       },
       "hokori": {
         "elo": 1471.9358964782432,
@@ -8959,8 +8959,8 @@
         "games": 8
       },
       "conventus stellarum": {
-        "elo": 1512.718143851874,
-        "games": 11
+        "elo": 1506.6084512581656,
+        "games": 14
       },
       "team cobra": {
         "elo": 1465.7747140912725,
@@ -8971,36 +8971,40 @@
         "games": 4
       },
       "team daxak": {
-        "elo": 1528.883077633341,
-        "games": 5
+        "elo": 1535.236753106437,
+        "games": 8
       },
       "team ns": {
-        "elo": 1518.6286769090227,
-        "games": 4
+        "elo": 1485.389855461455,
+        "games": 9
       },
       "team ybn": {
-        "elo": 1490.5419110888138,
-        "games": 3
+        "elo": 1501.8530922781893,
+        "games": 6
       },
       "team cake": {
-        "elo": 1490.5419110888138,
-        "games": 3
+        "elo": 1484.1882356157178,
+        "games": 6
       },
       "team avice": {
-        "elo": 1490.0331001890315,
-        "games": 5
+        "elo": 1499.466345375715,
+        "games": 8
       },
       "team tpabomah": {
-        "elo": 1471.4044232800088,
-        "games": 3
+        "elo": 1493.4599798800878,
+        "games": 5
       },
       "rostik team": {
         "elo": 1519.4249887221547,
         "games": 2
       },
       "team gpk": {
-        "elo": 1489.7278415443172,
-        "games": 1
+        "elo": 1480.2945963576337,
+        "games": 4
+      },
+      "team stray": {
+        "elo": 1499.8720836581133,
+        "games": 6
       }
     }
   },
@@ -24620,18 +24624,6 @@
     "baseball:mlb": [
       {
         "kind": "binary",
-        "p": 0.6064687200637526,
-        "y": 1.0,
-        "match_id": "espn:401816053"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5580132205378862,
-        "y": 1.0,
-        "match_id": "espn:401816054"
-      },
-      {
-        "kind": "binary",
         "p": 0.5909558196877817,
         "y": 1.0,
         "match_id": "espn:401816058"
@@ -30617,15 +30609,21 @@
         "p": 0.513766246626346,
         "y": 1.0,
         "match_id": "espn:401817044"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5423665401199099,
+        "y": 0.0,
+        "match_id": "espn:401817051"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5199228930423718,
+        "y": 1.0,
+        "match_id": "espn:401923610"
       }
     ],
     "tennis:wta": [
-      {
-        "kind": "binary",
-        "p": 0.531541174647324,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:181764"
-      },
       {
         "kind": "binary",
         "p": 0.5462559047171337,
@@ -36619,6 +36617,12 @@
         "p": 0.6727845946405101,
         "y": 1.0,
         "match_id": "espn:tennis:wta:183949"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5158029923208467,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:183876"
       }
     ],
     "tennis:atp": [
@@ -44623,6 +44627,60 @@
         "p": 0.486038328277181,
         "y": 0.0,
         "match_id": "opendota:9011229961"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4988348316105604,
+        "y": 0.0,
+        "match_id": "opendota:9012123019"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4701551087774075,
+        "y": 0.0,
+        "match_id": "opendota:9012167647"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4219276166474195,
+        "y": 1.0,
+        "match_id": "opendota:9012243731"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5453151223991068,
+        "y": 1.0,
+        "match_id": "opendota:9012316577"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5711278645628871,
+        "y": 1.0,
+        "match_id": "opendota:9012384862"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4947923253481245,
+        "y": 1.0,
+        "match_id": "opendota:9012488967"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4761438986670503,
+        "y": 0.0,
+        "match_id": "opendota:9012612710"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5472614847961653,
+        "y": 1.0,
+        "match_id": "opendota:9012647646"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5084248901458938,
+        "y": 0.0,
+        "match_id": "opendota:9012811297"
       }
     ],
     "cricket:all": [
@@ -51323,7 +51381,9 @@
       "espn:401817041",
       "espn:401817042",
       "espn:401817043",
-      "espn:401817044"
+      "espn:401817044",
+      "espn:401817051",
+      "espn:401923610"
     ],
     "tennis:atp": [
       "espn:tennis:atp:173654",
@@ -60876,7 +60936,9 @@
       "espn:tennis:wta:183890",
       "espn:tennis:wta:184006",
       "espn:tennis:wta:183949",
-      "espn:tennis:wta:184004"
+      "espn:tennis:wta:184004",
+      "espn:tennis:wta:183880",
+      "espn:tennis:wta:183876"
     ],
     "cricket:test": [
       "cricsheet:1538631",
@@ -61877,7 +61939,28 @@
       "opendota:9011114952",
       "opendota:9011222435",
       "opendota:9011229961",
-      "opendota:9011316167"
+      "opendota:9011316167",
+      "opendota:9011451271",
+      "opendota:9011594588",
+      "opendota:9011726846",
+      "opendota:9011805832",
+      "opendota:9011851189",
+      "opendota:9012123019",
+      "opendota:9012167647",
+      "opendota:9012243731",
+      "opendota:9012316577",
+      "opendota:9012384862",
+      "opendota:9012407166",
+      "opendota:9012488967",
+      "opendota:9012505973",
+      "opendota:9012515422",
+      "opendota:9012612710",
+      "opendota:9012647646",
+      "opendota:9012686867",
+      "opendota:9012811297",
+      "opendota:9012838188",
+      "opendota:9012935030",
+      "opendota:9013108339"
     ]
   },
   "draw_stats": {
@@ -61894,7 +61977,7 @@
       "draws": 0
     },
     "baseball:mlb": {
-      "total": 2806,
+      "total": 2808,
       "draws": 21
     },
     "tennis:atp": {
@@ -61902,7 +61985,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5563,
+      "total": 5565,
       "draws": 0
     },
     "cricket:test": {
@@ -61922,7 +62005,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 534,
+      "total": 555,
       "draws": 0
     }
   },
@@ -61981,14 +62064,14 @@
     },
     "baseball:mlb": {
       "policy_version": 2,
-      "active": false,
-      "pass_streak": 2,
+      "active": true,
+      "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "a78ab326e02a4ad2e8e3f95c4498ac59b410dad3ad1ff61cab5dd56d7242d82b",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "3af42932c972d0434ece9e04a5e5c3f3e8c2a565e4934c4aa44703b0c269a2c1",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.028887397103077306,
-      "last_brier": 0.23928214535380138,
+      "last_skill": 0.027860048536135107,
+      "last_brier": 0.2395352840406959,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -61998,7 +62081,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "0b7e0f5b091e09cf094790fa71cf097c4adf5debdbf9c90d5f903d6068662ac8",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.14020240252286242,
       "last_brier": 0.2149279044293475,
@@ -62007,14 +62090,14 @@
     },
     "tennis:wta": {
       "policy_version": 2,
-      "active": false,
-      "pass_streak": 2,
+      "active": true,
+      "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "5dae9de4fa42670ca79a25bb431bbbb2331fcb1944d8b162220738ab1c726637",
+      "last_evidence_fingerprint": "482699b217a2b5a9255b59787acad317bdc18a7a567b6ee7acad55da4cb7149e",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.03487312442352075,
-      "last_brier": 0.24067851459688483,
+      "last_skill": 0.03249797148977007,
+      "last_brier": 0.2410047553018987,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -62062,13 +62145,13 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "73312a44f4a89fea95f3c7812ac9c813c9d16d740e6ce50ec2a79e381a05cef2",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "75c77f8a269dd591e864a717f745e5de8a59c075e8cf30234a56ba0652886f51",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.04334721004184061,
-      "last_brier": 0.23878053637355726,
+      "last_skill": 0.03919940208117989,
+      "last_brier": 0.23981582924053818,
       "evidence_samples": 200,
-      "evidence_total_samples": 262
+      "evidence_total_samples": 271
     }
   }
 }

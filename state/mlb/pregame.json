@@ -8,9 +8,9 @@
     "away_name": "Toronto Blue Jays",
     "home_starter_id": "694346",
     "home_starter_name": "Trey Gibson",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "away_starter_id": "669310",
+    "away_starter_name": "CJ Van Eyk",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823168",
