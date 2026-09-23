@@ -8,8 +8,8 @@
     "away_name": "Washington Nationals",
     "home_starter_id": "664285",
     "home_starter_name": "Framber Valdez",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "663992",
+    "away_starter_name": "Richard Lovelady",
     "lineups_confirmed": false
   },
   {
@@ -58,8 +58,8 @@
     "home_name": "Pittsburgh Pirates",
     "away_id": "138",
     "away_name": "St. Louis Cardinals",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "669199",
+    "home_starter_name": "Lake Bachar",
     "away_starter_id": "669461",
     "away_starter_name": "Matthew Liberatore",
     "lineups_confirmed": false
@@ -125,8 +125,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "607625",
     "home_starter_name": "Seth Lugo",
-    "away_starter_id": "607200",
-    "away_starter_name": "Erick Fedde",
+    "away_starter_id": "663542",
+    "away_starter_name": "Bryan Hudson",
     "lineups_confirmed": false
   },
   {
