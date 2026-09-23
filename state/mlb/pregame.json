@@ -10,7 +10,7 @@
     "home_starter_name": "Framber Valdez",
     "away_starter_id": "663992",
     "away_starter_name": "Richard Lovelady",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824785",
@@ -19,11 +19,11 @@
     "home_name": "Baltimore Orioles",
     "away_id": "141",
     "away_name": "Toronto Blue Jays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605135",
+    "home_starter_name": "Chris Bassitt",
     "away_starter_id": "453286",
     "away_starter_name": "Max Scherzer",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824784",
@@ -49,7 +49,7 @@
     "home_starter_name": "Cesar Perdomo",
     "away_starter_id": "687570",
     "away_starter_name": "Connor Prielipp",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823327",
@@ -149,8 +149,8 @@
     "home_name": "Texas Rangers",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "674003",
+    "home_starter_name": "Cody Bradford",
     "away_starter_id": "690997",
     "away_starter_name": "Nolan McLean",
     "lineups_confirmed": false
@@ -396,8 +396,8 @@
     "home_name": "Washington Nationals",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "674841",
+    "home_starter_name": "Andrew Alvarez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -500,8 +500,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "657746",
+    "home_starter_name": "Joe Ryan",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -552,8 +552,8 @@
     "home_name": "San Francisco Giants",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "805074",
+    "home_starter_name": "Yunior Marte",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -591,8 +591,8 @@
     "home_name": "Washington Nationals",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663623",
+    "home_starter_name": "Jake Irvin",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -604,8 +604,8 @@
     "home_name": "San Francisco Giants",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "683363",
+    "home_starter_name": "Matt Wilkinson",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
@@ -617,8 +617,8 @@
     "home_name": "Minnesota Twins",
     "away_id": "140",
     "away_name": "Texas Rangers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "641927",
+    "home_starter_name": "Bailey Ober",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
