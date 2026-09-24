@@ -220409,5 +220409,235 @@
         "pitches": 30
       }
     ]
+  },
+  {
+    "game_pk": "823086",
+    "start_time": "2026-09-24T02:10:00Z",
+    "home_id": "136",
+    "home_name": "Seattle Mariners",
+    "away_id": "117",
+    "away_name": "Houston Astros",
+    "home_score": 6,
+    "away_score": 5,
+    "home_starter_id": "669923",
+    "away_starter_id": "814490",
+    "home_pitchers": [
+      {
+        "id": "669923",
+        "outs": 15,
+        "hr": 1,
+        "bb": 3,
+        "hbp": 0,
+        "k": 5,
+        "pitches": 96
+      },
+      {
+        "id": "678606",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 13
+      },
+      {
+        "id": "642100",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 12
+      },
+      {
+        "id": "672841",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 17
+      },
+      {
+        "id": "622554",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 19
+      },
+      {
+        "id": "681867",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 15
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "814490",
+        "outs": 8,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 51
+      },
+      {
+        "id": "681973",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 31
+      },
+      {
+        "id": "701121",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 6
+      },
+      {
+        "id": "805123",
+        "outs": 6,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 24
+      },
+      {
+        "id": "650556",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 18
+      },
+      {
+        "id": "623352",
+        "outs": 4,
+        "hr": 0,
+        "bb": 4,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 44
+      }
+    ]
+  },
+  {
+    "game_pk": "823894",
+    "start_time": "2026-09-24T02:10:00Z",
+    "home_id": "119",
+    "home_name": "Los Angeles Dodgers",
+    "away_id": "135",
+    "away_name": "San Diego Padres",
+    "home_score": 1,
+    "away_score": 5,
+    "home_starter_id": "808967",
+    "away_starter_id": "592662",
+    "home_pitchers": [
+      {
+        "id": "808967",
+        "outs": 18,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 1,
+        "k": 4,
+        "pitches": 88
+      },
+      {
+        "id": "663460",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 1,
+        "k": 0,
+        "pitches": 12
+      },
+      {
+        "id": "676263",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 11
+      },
+      {
+        "id": "595014",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 21
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "592662",
+        "outs": 10,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 84
+      },
+      {
+        "id": "688158",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 13
+      },
+      {
+        "id": "673513",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 20
+      },
+      {
+        "id": "699134",
+        "outs": 6,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 37
+      },
+      {
+        "id": "670970",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 6
+      },
+      {
+        "id": "695243",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 18
+      }
+    ]
   }
 ]
