@@ -123,8 +123,8 @@
     "home_name": "Athletics",
     "away_id": "117",
     "away_name": "Houston Astros",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "686930",
+    "home_starter_name": "Mason Barnett",
     "away_starter_id": "663567",
     "away_starter_name": "Peter Lambert",
     "lineups_confirmed": false
