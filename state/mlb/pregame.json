@@ -1,57 +1,5 @@
 [
   {
-    "game_pk": "823326",
-    "start_time": "2026-09-24T16:35:00Z",
-    "home_id": "134",
-    "home_name": "Pittsburgh Pirates",
-    "away_id": "138",
-    "away_name": "St. Louis Cardinals",
-    "home_starter_id": "694973",
-    "home_starter_name": "Paul Skenes",
-    "away_starter_id": "681517",
-    "away_starter_name": "Kyle Leahy",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "824059",
-    "start_time": "2026-09-24T18:10:00Z",
-    "home_id": "118",
-    "home_name": "Kansas City Royals",
-    "away_id": "145",
-    "away_name": "Chicago White Sox",
-    "home_starter_id": "677976",
-    "home_starter_name": "Randy Dobnak",
-    "away_starter_id": "689818",
-    "away_starter_name": "David Sandlin",
-    "lineups_confirmed": true
-  },
-  {
-    "game_pk": "824623",
-    "start_time": "2026-09-24T18:20:00Z",
-    "home_id": "112",
-    "home_name": "Chicago Cubs",
-    "away_id": "146",
-    "away_name": "Miami Marlins",
-    "home_starter_id": "571510",
-    "home_starter_name": "Matthew Boyd",
-    "away_starter_id": "663969",
-    "away_starter_name": "Tyler Phillips",
-    "lineups_confirmed": true
-  },
-  {
-    "game_pk": "822842",
-    "start_time": "2026-09-24T18:35:00Z",
-    "home_id": "140",
-    "home_name": "Texas Rangers",
-    "away_id": "121",
-    "away_name": "New York Mets",
-    "home_starter_id": "677958",
-    "home_starter_name": "Kumar Rocker",
-    "away_starter_id": "804267",
-    "away_starter_name": "Zac Thornton",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "824298",
     "start_time": "2026-09-24T19:10:00Z",
     "home_id": "115",
@@ -62,7 +10,7 @@
     "home_starter_name": "Tanner Gordon",
     "away_starter_id": "593958",
     "away_starter_name": "Eduardo Rodriguez",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823411",
@@ -75,7 +23,7 @@
     "home_starter_name": "Andrew Painter",
     "away_starter_id": "675660",
     "away_starter_name": "Shane Drohan",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824707",
@@ -88,7 +36,7 @@
     "home_starter_name": "Ranger Suarez",
     "away_starter_id": "682982",
     "away_starter_name": "Daniel Espino",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823493",
@@ -101,7 +49,7 @@
     "home_starter_name": "Cam Schlittler",
     "away_starter_id": "693855",
     "away_starter_name": "Ian Seymour",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824866",
@@ -114,7 +62,7 @@
     "home_starter_name": "Tyler Mahle",
     "away_starter_id": "663903",
     "away_starter_name": "Brady Singer",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824950",
@@ -268,8 +216,8 @@
     "away_name": "Cleveland Guardians",
     "home_starter_id": "702070",
     "home_starter_name": "Noah Cameron",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "668909",
+    "away_starter_name": "Gavin Williams",
     "lineups_confirmed": false
   },
   {
@@ -307,8 +255,8 @@
     "away_name": "Texas Rangers",
     "home_starter_id": "657746",
     "home_starter_name": "Joe Ryan",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "594798",
+    "away_starter_name": "Jacob deGrom",
     "lineups_confirmed": false
   },
   {
@@ -604,8 +552,8 @@
     "home_name": "Philadelphia Phillies",
     "away_id": "139",
     "away_name": "Tampa Bay Rays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "554430",
+    "home_starter_name": "Zack Wheeler",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
