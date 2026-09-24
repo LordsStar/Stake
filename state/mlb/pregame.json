@@ -10,7 +10,7 @@
     "home_starter_name": "Paul Skenes",
     "away_starter_id": "681517",
     "away_starter_name": "Kyle Leahy",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824059",
@@ -73,8 +73,8 @@
     "away_name": "Milwaukee Brewers",
     "home_starter_id": "691725",
     "home_starter_name": "Andrew Painter",
-    "away_starter_id": "669060",
-    "away_starter_name": "Bryse Wilson",
+    "away_starter_id": "",
+    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {
@@ -190,8 +190,8 @@
     "away_name": "Pittsburgh Pirates",
     "home_starter_id": "695549",
     "home_starter_name": "Jackson Jobe",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "696149",
+    "away_starter_name": "Bubba Chandler",
     "lineups_confirmed": false
   },
   {
@@ -645,8 +645,8 @@
     "away_name": "Pittsburgh Pirates",
     "home_starter_id": "689981",
     "home_starter_name": "River Ryan",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "683003",
+    "away_starter_name": "Jared Jones",
     "lineups_confirmed": false
   },
   {
