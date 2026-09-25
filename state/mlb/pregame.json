@@ -10,11 +10,11 @@
     "home_starter_name": "Alec Gamboa",
     "away_starter_id": "605280",
     "away_starter_name": "Clay Holmes",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824706",
-    "start_time": "2026-09-25T22:05:00Z",
+    "start_time": "2026-09-25T21:35:00Z",
     "home_id": "111",
     "home_name": "Boston Red Sox",
     "away_id": "112",
@@ -32,10 +32,10 @@
     "home_name": "New York Yankees",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "687064",
-    "away_starter_name": "Brandon Young",
+    "home_starter_id": "694341",
+    "home_starter_name": "Brendan Beck",
+    "away_starter_id": "669432",
+    "away_starter_name": "Trevor Rogers",
     "lineups_confirmed": false
   },
   {
@@ -45,10 +45,10 @@
     "home_name": "New York Yankees",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "694341",
-    "home_starter_name": "Brendan Beck",
-    "away_starter_id": "669432",
-    "away_starter_name": "Trevor Rogers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "687064",
+    "away_starter_name": "Brandon Young",
     "lineups_confirmed": false
   },
   {
