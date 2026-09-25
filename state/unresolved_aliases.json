@@ -1,43 +1,8 @@
 {
-  "generated_at": "2026-09-24T21:37:06.907557+00:00",
+  "generated_at": "2026-09-25T05:06:48.851173+00:00",
   "aliases_created": 0,
-  "unresolved_count": 143,
+  "unresolved_count": 142,
   "unresolved": [
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Legout, Timo",
-      "best_candidate": "Lorenzo Musetti",
-      "best_score": 0.538,
-      "second_score": 0.519
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Andres Andrade",
-      "best_candidate": "Andy Andrade",
-      "best_score": 0.846,
-      "second_score": 0.667
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Hance, Keaton",
-      "best_candidate": "Janae Preston",
-      "best_score": 0.64,
-      "second_score": 0.609
-    },
-    {
-      "namespace": "tennis:wta",
-      "stake_name": "Chong E / Hozumi E",
-      "best_candidate": "Eri Hozumi",
-      "best_score": 0.615,
-      "second_score": 0.519
-    },
-    {
-      "namespace": "tennis:wta",
-      "stake_name": "Lee Y / Ye Q Y",
-      "best_candidate": "Ye Qiu Yu",
-      "best_score": 0.571,
-      "second_score": 0.429
-    },
     {
       "namespace": "tennis:atp",
       "stake_name": "Peers J / Venus M",
@@ -51,20 +16,6 @@
       "best_candidate": "Venus Williams",
       "best_score": 0.647,
       "second_score": 0.629
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Johnson L / Zielinski J",
-      "best_candidate": "Jan Choinski",
-      "best_score": 0.485,
-      "second_score": 0.444
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Doumbia S / Reboul F",
-      "best_candidate": "Thomas Faurel",
-      "best_score": 0.516,
-      "second_score": 0.485
     },
     {
       "namespace": "tennis:atp",
@@ -82,31 +33,17 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Borges N / Cerundolo J M",
-      "best_candidate": "Francisco Cerundolo",
-      "best_score": 0.537,
-      "second_score": 0.512
+      "stake_name": "Johnson L / Zielinski J",
+      "best_candidate": "Jan Choinski",
+      "best_score": 0.485,
+      "second_score": 0.444
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Schnaitter J / Wallner M",
-      "best_candidate": "Simona Waltert",
-      "best_score": 0.5,
-      "second_score": 0.5
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Gonzalez M / Molteni A",
-      "best_candidate": "Gonzalo Bueno",
-      "best_score": 0.545,
-      "second_score": 0.516
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Gonzalez S / Jebens H",
-      "best_candidate": "Gonzalo Bueno",
-      "best_score": 0.625,
-      "second_score": 0.529
+      "stake_name": "Doumbia S / Reboul F",
+      "best_candidate": "Thomas Faurel",
+      "best_score": 0.516,
+      "second_score": 0.485
     },
     {
       "namespace": "tennis:atp",
@@ -124,6 +61,20 @@
     },
     {
       "namespace": "tennis:atp",
+      "stake_name": "Borges N / Cerundolo J M",
+      "best_candidate": "Francisco Cerundolo",
+      "best_score": 0.537,
+      "second_score": 0.512
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Schnaitter J / Wallner M",
+      "best_candidate": "Simona Waltert",
+      "best_score": 0.5,
+      "second_score": 0.5
+    },
+    {
+      "namespace": "tennis:atp",
       "stake_name": "Hu J / Lu H",
       "best_candidate": "Hu Jia",
       "best_score": 0.533,
@@ -135,6 +86,20 @@
       "best_candidate": "Zhou Yi",
       "best_score": 0.6,
       "second_score": 0.545
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Gonzalez M / Molteni A",
+      "best_candidate": "Gonzalo Bueno",
+      "best_score": 0.545,
+      "second_score": 0.516
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Gonzalez S / Jebens H",
+      "best_candidate": "Gonzalo Bueno",
+      "best_score": 0.625,
+      "second_score": 0.529
     },
     {
       "namespace": "tennis:atp",
@@ -152,17 +117,31 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Arribage T / Olivetti A",
-      "best_candidate": "Maria Timofeeva",
-      "best_score": 0.5,
-      "second_score": 0.5
+      "stake_name": "Liutarevich I / Safiullin R",
+      "best_candidate": "Roman Safiullin",
+      "best_score": 0.55,
+      "second_score": 0.465
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Escobar G / Kaliyanda Poonacha N",
-      "best_candidate": "Despina Papamichail",
-      "best_score": 0.449,
-      "second_score": 0.444
+      "stake_name": "Nouza P / Oberleitner N",
+      "best_candidate": "Neil Oberleitner",
+      "best_score": 0.703,
+      "second_score": 0.474
+    },
+    {
+      "namespace": "tennis:wta",
+      "stake_name": "Chong E / Hozumi E",
+      "best_candidate": "Eri Hozumi",
+      "best_score": 0.615,
+      "second_score": 0.519
+    },
+    {
+      "namespace": "tennis:wta",
+      "stake_name": "Lee Y / Ye Q Y",
+      "best_candidate": "Ye Qiu Yu",
+      "best_score": 0.571,
+      "second_score": 0.429
     },
     {
       "namespace": "tennis:atp",
@@ -180,38 +159,17 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Liutarevich I / Safiullin R",
-      "best_candidate": "Roman Safiullin",
-      "best_score": 0.55,
-      "second_score": 0.465
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Nouza P / Oberleitner N",
-      "best_candidate": "Neil Oberleitner",
-      "best_score": 0.703,
-      "second_score": 0.474
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Masur, Daniel",
-      "best_candidate": "Taro Daniel",
-      "best_score": 0.783,
-      "second_score": 0.667
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Cabral F / Tracy J",
-      "best_candidate": "Clara Tauson",
+      "stake_name": "Arribage T / Olivetti A",
+      "best_candidate": "Maria Timofeeva",
       "best_score": 0.5,
-      "second_score": 0.462
+      "second_score": 0.5
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Sun F / Zhang Zhi",
-      "best_candidate": "Zhang Zhizhen",
-      "best_score": 0.643,
-      "second_score": 0.64
+      "stake_name": "Escobar G / Kaliyanda Poonacha N",
+      "best_candidate": "Despina Papamichail",
+      "best_score": 0.449,
+      "second_score": 0.444
     },
     {
       "namespace": "tennis:atp",
@@ -240,6 +198,27 @@
       "best_candidate": "Tatiana Prozorova",
       "best_score": 0.632,
       "second_score": 0.514
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Cabral F / Tracy J",
+      "best_candidate": "Clara Tauson",
+      "best_score": 0.5,
+      "second_score": 0.462
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Sun F / Zhang Zhi",
+      "best_candidate": "Zhang Zhizhen",
+      "best_score": 0.643,
+      "second_score": 0.64
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Masur, Daniel",
+      "best_candidate": "Taro Daniel",
+      "best_score": 0.783,
+      "second_score": 0.667
     },
     {
       "namespace": "tennis:atp",
@@ -306,24 +285,17 @@
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Mena, Facundo",
-      "best_candidate": "Petra Marcinko",
-      "best_score": 0.538,
-      "second_score": 0.538
+      "stake_name": "Bittoun Kouzmine C / Masur D",
+      "best_candidate": "Titouan Droguet",
+      "best_score": 0.439,
+      "second_score": 0.429
     },
     {
       "namespace": "tennis:atp",
-      "stake_name": "Kicker, Nicolas",
-      "best_candidate": "Kimmer Coppejans",
-      "best_score": 0.6,
-      "second_score": 0.552
-    },
-    {
-      "namespace": "tennis:atp",
-      "stake_name": "Aguilar Cardozo, Joaquin",
-      "best_candidate": "Paula Badosa",
-      "best_score": 0.514,
-      "second_score": 0.5
+      "stake_name": "Arneodo R / Kittay B",
+      "best_candidate": "Angela Fita Boluda",
+      "best_score": 0.5,
+      "second_score": 0.471
     },
     {
       "namespace": "tennis:wta",
@@ -354,6 +326,41 @@
       "second_score": 0.457
     },
     {
+      "namespace": "tennis:atp",
+      "stake_name": "Ribeiro, Eduardo",
+      "best_candidate": "Igor Ribeiro Marcondes",
+      "best_score": 0.595,
+      "second_score": 0.593
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Caniato, Carlo Alberto",
+      "best_candidate": "Carlos Taberner",
+      "best_score": 0.556,
+      "second_score": 0.55
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Mena, Facundo",
+      "best_candidate": "Petra Marcinko",
+      "best_score": 0.538,
+      "second_score": 0.538
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Kicker, Nicolas",
+      "best_candidate": "Kimmer Coppejans",
+      "best_score": 0.6,
+      "second_score": 0.552
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Aguilar Cardozo, Joaquin",
+      "best_candidate": "Paula Badosa",
+      "best_score": 0.514,
+      "second_score": 0.5
+    },
+    {
       "namespace": "tennis:wta",
       "stake_name": "Chan H-C / Wu F-H",
       "best_candidate": "Zhang Shuai",
@@ -365,6 +372,13 @@
       "stake_name": "Liang E S / Yuan Y",
       "best_candidate": "Elina Avanesyan",
       "best_score": 0.581,
+      "second_score": 0.519
+    },
+    {
+      "namespace": "tennis:atp",
+      "stake_name": "Legout, Timo",
+      "best_candidate": "Lorenzo Musetti",
+      "best_score": 0.538,
       "second_score": 0.519
     },
     {
@@ -390,45 +404,17 @@
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Cayman",
-      "best_candidate": "Japan",
-      "best_score": 0.545,
-      "second_score": 0.5
+      "stake_name": "Afghanistan Srl",
+      "best_candidate": "Pakistan",
+      "best_score": 0.522,
+      "second_score": 0.435
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Bahamas",
-      "best_candidate": "Panama",
-      "best_score": 0.615,
-      "second_score": 0.462
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Hong Kong, China",
-      "best_candidate": "Hong Kong",
-      "best_score": 0.75,
-      "second_score": 0.429
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Oman",
-      "best_candidate": "Romania",
-      "best_score": 0.727,
-      "second_score": 0.545
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Guyana Amazon Warriors Srl",
-      "best_candidate": "Moors Sports Club",
-      "best_score": 0.419,
-      "second_score": 0.391
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "St Kitts And Nevis Patriots Srl",
-      "best_candidate": "Tamil Union Cricket and Athletic Club",
-      "best_score": 0.412,
-      "second_score": 0.357
+      "stake_name": "Sri Lanka Srl",
+      "best_candidate": "Sri Lanka",
+      "best_score": 0.818,
+      "second_score": 0.444
     },
     {
       "namespace": "cricket:all",
@@ -443,104 +429,6 @@
       "best_candidate": "Panadura Sports Club",
       "best_score": 0.359,
       "second_score": 0.341
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Sunrisers Eastern Cape Srl",
-      "best_candidate": "Sunrisers Leeds",
-      "best_score": 0.585,
-      "second_score": 0.49
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Paarl Royals Srl",
-      "best_candidate": "Kandy Royals",
-      "best_score": 0.571,
-      "second_score": 0.5
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Australia SRL",
-      "best_candidate": "Austria",
-      "best_score": 0.7,
-      "second_score": 0.571
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "India SRL",
-      "best_candidate": "India",
-      "best_score": 0.714,
-      "second_score": 0.556
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Victoria",
-      "best_candidate": "Italy",
-      "best_score": 0.462,
-      "second_score": 0.455
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "New South Wales Blues",
-      "best_candidate": "Nugegoda Sports Welfare Club",
-      "best_score": 0.531,
-      "second_score": 0.48
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Northern Districts Srl",
-      "best_candidate": "Nondescripts Cricket Club",
-      "best_score": 0.468,
-      "second_score": 0.45
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Central Districts Srl",
-      "best_candidate": "Ace Capital Cricket Club",
-      "best_score": 0.533,
-      "second_score": 0.488
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Haridwar Spring Elmas",
-      "best_candidate": "Badureliya Sports Club",
-      "best_score": 0.465,
-      "second_score": 0.444
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Tehri Titans",
-      "best_candidate": "Thailand",
-      "best_score": 0.5,
-      "second_score": 0.476
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Durban Super Giants Srl",
-      "best_candidate": "Manchester Super Giants",
-      "best_score": 0.652,
-      "second_score": 0.564
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Joburg Super Kings Srl",
-      "best_candidate": "Manchester Super Giants",
-      "best_score": 0.489,
-      "second_score": 0.489
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Afghanistan",
-      "best_candidate": "Pakistan",
-      "best_score": 0.632,
-      "second_score": 0.526
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Nepal",
-      "best_candidate": "Portugal",
-      "best_score": 0.462,
-      "second_score": 0.429
     },
     {
       "namespace": "cricket:all",
@@ -558,6 +446,62 @@
     },
     {
       "namespace": "cricket:all",
+      "stake_name": "Quetta Gladiators Srl",
+      "best_candidate": "Badureliya Sports Club",
+      "best_score": 0.419,
+      "second_score": 0.408
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Lahore Qalanders Srl",
+      "best_candidate": "Glamorgan",
+      "best_score": 0.414,
+      "second_score": 0.412
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Victoria",
+      "best_candidate": "Italy",
+      "best_score": 0.462,
+      "second_score": 0.455
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "New South Wales Blues",
+      "best_candidate": "Nugegoda Sports Welfare Club",
+      "best_score": 0.531,
+      "second_score": 0.48
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Afghanistan",
+      "best_candidate": "Pakistan",
+      "best_score": 0.632,
+      "second_score": 0.526
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Nepal",
+      "best_candidate": "Portugal",
+      "best_score": 0.462,
+      "second_score": 0.429
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Haridwar Spring Elmas",
+      "best_candidate": "Badureliya Sports Club",
+      "best_score": 0.465,
+      "second_score": 0.444
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Tehri Titans",
+      "best_candidate": "Thailand",
+      "best_score": 0.5,
+      "second_score": 0.476
+    },
+    {
+      "namespace": "cricket:all",
       "stake_name": "9Oft Cricket Club",
       "best_candidate": "Colts Cricket Club",
       "best_score": 0.857,
@@ -572,31 +516,31 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Quetta Gladiators Srl",
-      "best_candidate": "Badureliya Sports Club",
-      "best_score": 0.419,
-      "second_score": 0.408
+      "stake_name": "Wellington Srl",
+      "best_candidate": "Singapore",
+      "best_score": 0.435,
+      "second_score": 0.4
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Lahore Qalanders Srl",
-      "best_candidate": "Glamorgan",
-      "best_score": 0.414,
-      "second_score": 0.412
+      "stake_name": "Otago Srl",
+      "best_candidate": "Northamptonshire",
+      "best_score": 0.48,
+      "second_score": 0.462
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Afghanistan Srl",
-      "best_candidate": "Pakistan",
-      "best_score": 0.522,
-      "second_score": 0.435
+      "stake_name": "Durban Super Giants Srl",
+      "best_candidate": "Manchester Super Giants",
+      "best_score": 0.652,
+      "second_score": 0.564
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Sri Lanka Srl",
-      "best_candidate": "Sri Lanka",
-      "best_score": 0.818,
-      "second_score": 0.444
+      "stake_name": "Joburg Super Kings Srl",
+      "best_candidate": "Manchester Super Giants",
+      "best_score": 0.489,
+      "second_score": 0.489
     },
     {
       "namespace": "cricket:t20",
@@ -642,6 +586,27 @@
     },
     {
       "namespace": "cricket:t20",
+      "stake_name": "Ghana",
+      "best_candidate": "Uganda",
+      "best_score": 0.727,
+      "second_score": 0.545
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "India A",
+      "best_candidate": "Uganda",
+      "best_score": 0.462,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Australia A",
+      "best_candidate": "Bahrain",
+      "best_score": 0.444,
+      "second_score": 0.424
+    },
+    {
+      "namespace": "cricket:t20",
       "stake_name": "Rourkela Steelers",
       "best_candidate": "Badureliya Sports Club",
       "best_score": 0.462,
@@ -656,10 +621,31 @@
     },
     {
       "namespace": "cricket:t20",
-      "stake_name": "Ghana",
-      "best_candidate": "Uganda",
-      "best_score": 0.727,
-      "second_score": 0.545
+      "stake_name": "Pithoragarh Hurricanes",
+      "best_candidate": "Dublin Guardians",
+      "best_score": 0.421,
+      "second_score": 0.412
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Usn Indians",
+      "best_candidate": "India",
+      "best_score": 0.625,
+      "second_score": 0.593
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Rawalpindiz Srl",
+      "best_candidate": "Warwickshire",
+      "best_score": 0.37,
+      "second_score": 0.364
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Hyderabad Kingsmen Srl",
+      "best_candidate": "Derbyshire",
+      "best_score": 0.375,
+      "second_score": 0.372
     },
     {
       "namespace": "cricket:all",
@@ -704,20 +690,6 @@
       "second_score": 0.421
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "Wellington Srl",
-      "best_candidate": "Singapore",
-      "best_score": 0.435,
-      "second_score": 0.4
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Otago Srl",
-      "best_candidate": "Northamptonshire",
-      "best_score": 0.48,
-      "second_score": 0.462
-    },
-    {
       "namespace": "cricket:t20",
       "stake_name": "Rayalaseema Xen Stars",
       "best_candidate": "Guyana Amazon Warriors",
@@ -730,34 +702,6 @@
       "best_candidate": "Jamaica Empress",
       "best_score": 0.5,
       "second_score": 0.421
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Pithoragarh Hurricanes",
-      "best_candidate": "Dublin Guardians",
-      "best_score": 0.421,
-      "second_score": 0.412
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Usn Indians",
-      "best_candidate": "India",
-      "best_score": 0.625,
-      "second_score": 0.593
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Rawalpindiz Srl",
-      "best_candidate": "Warwickshire",
-      "best_score": 0.37,
-      "second_score": 0.364
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Hyderabad Kingsmen Srl",
-      "best_candidate": "Derbyshire",
-      "best_score": 0.375,
-      "second_score": 0.372
     },
     {
       "namespace": "cricket:t20",
@@ -788,6 +732,20 @@
       "second_score": 0.5
     },
     {
+      "namespace": "cricket:t20",
+      "stake_name": "Puri Titans",
+      "best_candidate": "Pakistan",
+      "best_score": 0.526,
+      "second_score": 0.5
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Keonjhar Miners",
+      "best_candidate": "United Arab Emirates",
+      "best_score": 0.457,
+      "second_score": 0.4
+    },
+    {
       "namespace": "cricket:all",
       "stake_name": "Lucknow Super Giants Srl",
       "best_candidate": "Police Sports Club",
@@ -802,18 +760,18 @@
       "second_score": 0.373
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Puri Titans",
-      "best_candidate": "Pakistan",
-      "best_score": 0.526,
-      "second_score": 0.5
+      "namespace": "cricket:all",
+      "stake_name": "Auckland Srl",
+      "best_candidate": "Badureliya Sports Club",
+      "best_score": 0.471,
+      "second_score": 0.455
     },
     {
-      "namespace": "cricket:t20",
-      "stake_name": "Keonjhar Miners",
-      "best_candidate": "United Arab Emirates",
-      "best_score": 0.457,
-      "second_score": 0.4
+      "namespace": "cricket:all",
+      "stake_name": "Northern Districts Srl",
+      "best_candidate": "Nondescripts Cricket Club",
+      "best_score": 0.468,
+      "second_score": 0.45
     },
     {
       "namespace": "cricket:t20",
@@ -830,18 +788,18 @@
       "second_score": 0.485
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "India A",
-      "best_candidate": "Uganda",
-      "best_score": 0.462,
-      "second_score": 0.4
+      "namespace": "cricket:t20",
+      "stake_name": "Bahamas",
+      "best_candidate": "Panama",
+      "best_score": 0.615,
+      "second_score": 0.462
     },
     {
-      "namespace": "cricket:all",
-      "stake_name": "Australia A",
-      "best_candidate": "Bahrain",
-      "best_score": 0.444,
-      "second_score": 0.424
+      "namespace": "cricket:t20",
+      "stake_name": "Bermuda",
+      "best_candidate": "Germany",
+      "best_score": 0.571,
+      "second_score": 0.545
     },
     {
       "namespace": "cricket:t20",
@@ -859,17 +817,108 @@
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Auckland Srl",
+      "stake_name": "Islamabad United Srl",
       "best_candidate": "Badureliya Sports Club",
-      "best_score": 0.471,
-      "second_score": 0.455
+      "best_score": 0.429,
+      "second_score": 0.4
     },
     {
       "namespace": "cricket:all",
-      "stake_name": "Northern Districts Srl",
-      "best_candidate": "Nondescripts Cricket Club",
-      "best_score": 0.468,
-      "second_score": 0.45
+      "stake_name": "Peshawar Zalmi SRL",
+      "best_candidate": "Panadura Sports Club",
+      "best_score": 0.474,
+      "second_score": 0.4
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Pakistan SRL",
+      "best_candidate": "Pakistan",
+      "best_score": 0.8,
+      "second_score": 0.471
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Australia SRL",
+      "best_candidate": "Austria",
+      "best_score": 0.7,
+      "second_score": 0.571
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Trinbago Knight Riders SRL",
+      "best_candidate": "Singapore",
+      "best_score": 0.343,
+      "second_score": 0.343
+    },
+    {
+      "namespace": "cricket:all",
+      "stake_name": "Guyana Amazon Warriors Srl",
+      "best_candidate": "Moors Sports Club",
+      "best_score": 0.419,
+      "second_score": 0.391
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Pretoria Capitals Srl",
+      "best_candidate": "Ace Capital Cricket Club",
+      "best_score": 0.533,
+      "second_score": 0.414
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Sunrisers Eastern Cape Srl",
+      "best_candidate": "Sunrisers Leeds",
+      "best_score": 0.585,
+      "second_score": 0.49
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Northern Cape",
+      "best_candidate": "Southern Brave",
+      "best_score": 0.667,
+      "second_score": 0.48
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Border",
+      "best_candidate": "Denmark",
+      "best_score": 0.462,
+      "second_score": 0.435
+    },
+    {
+      "namespace": "cricket:odi",
+      "stake_name": "India",
+      "best_candidate": "Canada",
+      "best_score": 0.545,
+      "second_score": 0.5
+    },
+    {
+      "namespace": "cricket:odi",
+      "stake_name": "West Indies",
+      "best_candidate": "Netherlands",
+      "best_score": 0.455,
+      "second_score": 0.421
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Dolphins",
+      "best_candidate": "Spain",
+      "best_score": 0.462,
+      "second_score": 0.417
+    },
+    {
+      "namespace": "cricket:t20",
+      "stake_name": "Lions",
+      "best_candidate": "Indonesia",
+      "best_score": 0.571,
+      "second_score": 0.444
+    },
+    {
+      "namespace": "cricket:odi",
+      "stake_name": "Sri Lanka",
+      "best_candidate": "Ireland",
+      "best_score": 0.5,
+      "second_score": 0.471
     },
     {
       "namespace": "cricket:t20",
@@ -898,62 +947,6 @@
       "best_candidate": "Police Sports Club",
       "best_score": 0.439,
       "second_score": 0.419
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Islamabad United Srl",
-      "best_candidate": "Badureliya Sports Club",
-      "best_score": 0.429,
-      "second_score": 0.4
-    },
-    {
-      "namespace": "cricket:all",
-      "stake_name": "Peshawar Zalmi SRL",
-      "best_candidate": "Panadura Sports Club",
-      "best_score": 0.474,
-      "second_score": 0.4
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Northern Cape",
-      "best_candidate": "Southern Brave",
-      "best_score": 0.667,
-      "second_score": 0.48
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Border",
-      "best_candidate": "Denmark",
-      "best_score": 0.462,
-      "second_score": 0.435
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Dolphins",
-      "best_candidate": "Spain",
-      "best_score": 0.462,
-      "second_score": 0.417
-    },
-    {
-      "namespace": "cricket:t20",
-      "stake_name": "Lions",
-      "best_candidate": "Indonesia",
-      "best_score": 0.571,
-      "second_score": 0.444
-    },
-    {
-      "namespace": "cricket:odi",
-      "stake_name": "India",
-      "best_candidate": "Canada",
-      "best_score": 0.545,
-      "second_score": 0.5
-    },
-    {
-      "namespace": "cricket:odi",
-      "stake_name": "West Indies",
-      "best_candidate": "Netherlands",
-      "best_score": 0.455,
-      "second_score": 0.421
     },
     {
       "namespace": "dota-2:all",
@@ -992,17 +985,17 @@
     },
     {
       "namespace": "dota-2:all",
-      "stake_name": "Aurora",
-      "best_candidate": "Aurora Gaming",
-      "best_score": 0.632,
-      "second_score": 0.5
-    },
-    {
-      "namespace": "dota-2:all",
       "stake_name": "BetBoom Team",
       "best_candidate": "focus team",
       "best_score": 0.545,
       "second_score": 0.522
+    },
+    {
+      "namespace": "dota-2:all",
+      "stake_name": "Aurora",
+      "best_candidate": "Aurora Gaming",
+      "best_score": 0.632,
+      "second_score": 0.5
     }
   ],
   "policy": "score >= 0.86 y margen >= 0.08"

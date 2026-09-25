@@ -6,8 +6,8 @@
     "home_name": "Boston Red Sox",
     "away_id": "112",
     "away_name": "Chicago Cubs",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "687941",
+    "home_starter_name": "Alec Gamboa",
     "away_starter_id": "605280",
     "away_starter_name": "Clay Holmes",
     "lineups_confirmed": false
@@ -19,8 +19,8 @@
     "home_name": "Boston Red Sox",
     "away_id": "112",
     "away_name": "Chicago Cubs",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "678394",
+    "home_starter_name": "Brayan Bello",
     "away_starter_id": "656849",
     "away_starter_name": "David Peterson",
     "lineups_confirmed": false
@@ -32,8 +32,8 @@
     "home_name": "New York Yankees",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "694341",
+    "home_starter_name": "Brendan Beck",
     "away_starter_id": "669432",
     "away_starter_name": "Trevor Rogers",
     "lineups_confirmed": false
@@ -175,8 +175,8 @@
     "home_name": "Athletics",
     "away_id": "117",
     "away_name": "Houston Astros",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "682052",
+    "home_starter_name": "Jacob Lopez",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
