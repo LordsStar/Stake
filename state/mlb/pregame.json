@@ -10,19 +10,6 @@
     "home_starter_name": "Brayan Bello",
     "away_starter_id": "656849",
     "away_starter_name": "David Peterson",
-    "lineups_confirmed": true
-  },
-  {
-    "game_pk": "823491",
-    "start_time": "2026-09-25T20:05:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "110",
-    "away_name": "Baltimore Orioles",
-    "home_starter_id": "694341",
-    "home_starter_name": "Brendan Beck",
-    "away_starter_id": "669432",
-    "away_starter_name": "Trevor Rogers",
     "lineups_confirmed": false
   },
   {
@@ -32,8 +19,8 @@
     "home_name": "New York Yankees",
     "away_id": "110",
     "away_name": "Baltimore Orioles",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "642232",
+    "home_starter_name": "Ryan Yarbrough",
     "away_starter_id": "687064",
     "away_starter_name": "Brandon Young",
     "lineups_confirmed": false
@@ -49,7 +36,7 @@
     "home_starter_name": "Jackson Jobe",
     "away_starter_id": "696149",
     "away_starter_name": "Bubba Chandler",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823409",
@@ -62,7 +49,7 @@
     "home_starter_name": "Cristopher Sánchez",
     "away_starter_id": "642547",
     "away_starter_name": "Freddy Peralta",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822681",
@@ -73,9 +60,9 @@
     "away_name": "New York Mets",
     "home_starter_id": "674841",
     "home_starter_name": "Andrew Alvarez",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": true
+    "away_starter_id": "642376",
+    "away_starter_name": "Jefry Yan",
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822760",
@@ -166,7 +153,7 @@
     "home_starter_name": "Jacob Lopez",
     "away_starter_id": "686613",
     "away_starter_name": "Hunter Brown",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823248",
@@ -175,11 +162,11 @@
     "home_name": "San Diego Padres",
     "away_id": "109",
     "away_name": "Arizona Diamondbacks",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "663554",
+    "home_starter_name": "Casey Mize",
     "away_starter_id": "694297",
     "away_starter_name": "Brandon Pfaadt",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823085",
@@ -192,7 +179,7 @@
     "home_starter_name": "Bryce Miller",
     "away_starter_id": "672282",
     "away_starter_name": "Reid Detmers",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823167",
@@ -205,7 +192,7 @@
     "home_starter_name": "Yunior Marte",
     "away_starter_id": "669373",
     "away_starter_name": "Tarik Skubal",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824219",
@@ -325,19 +312,6 @@
     "lineups_confirmed": false
   },
   {
-    "game_pk": "824705",
-    "start_time": "2026-09-26T23:15:00Z",
-    "home_id": "111",
-    "home_name": "Boston Red Sox",
-    "away_id": "112",
-    "away_name": "Chicago Cubs",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "823407",
     "start_time": "2026-09-26T23:15:00Z",
     "home_id": "143",
@@ -357,8 +331,8 @@
     "home_name": "San Diego Padres",
     "away_id": "109",
     "away_name": "Arizona Diamondbacks",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "621111",
+    "home_starter_name": "Walker Buehler",
     "away_starter_id": "669203",
     "away_starter_name": "Corbin Burnes",
     "lineups_confirmed": false
@@ -387,6 +361,19 @@
     "home_starter_name": "Kade Anderson",
     "away_starter_id": "696270",
     "away_starter_name": "Ryan Johnson",
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "824705",
+    "start_time": "2026-09-27T19:05:00Z",
+    "home_id": "111",
+    "home_name": "Boston Red Sox",
+    "away_id": "112",
+    "away_name": "Chicago Cubs",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {
@@ -541,8 +528,8 @@
     "away_name": "Atlanta Braves",
     "home_starter_id": "676083",
     "home_starter_name": "Janson Junk",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "702275",
+    "away_starter_name": "JR Ritchie",
     "lineups_confirmed": false
   },
   {
