@@ -221794,5 +221794,84 @@
         "pitches": 17
       }
     ]
+  },
+  {
+    "game_pk": "824703",
+    "start_time": "2026-09-25T17:05:00Z",
+    "home_id": "111",
+    "home_name": "Boston Red Sox",
+    "away_id": "112",
+    "away_name": "Chicago Cubs",
+    "home_score": 4,
+    "away_score": 3,
+    "home_starter_id": "687941",
+    "away_starter_id": "605280",
+    "home_pitchers": [
+      {
+        "id": "687941",
+        "outs": 6,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 40
+      },
+      {
+        "id": "687562",
+        "outs": 11,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 65
+      },
+      {
+        "id": "669711",
+        "outs": 4,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 1,
+        "k": 1,
+        "pitches": 22
+      },
+      {
+        "id": "670103",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 33
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "605280",
+        "outs": 13,
+        "hr": 0,
+        "bb": 3,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 78
+      },
+      {
+        "id": "573204",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 13
+      },
+      {
+        "id": "650644",
+        "outs": 7,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 38
+      }
+    ]
   }
 ]

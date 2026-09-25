@@ -23,7 +23,7 @@
     "home_starter_name": "Brendan Beck",
     "away_starter_id": "669432",
     "away_starter_name": "Trevor Rogers",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823489",
@@ -114,7 +114,7 @@
     "home_starter_name": "Noah Cameron",
     "away_starter_id": "668909",
     "away_starter_name": "Gavin Williams",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824544",
@@ -127,7 +127,7 @@
     "home_starter_name": "Sean Burke",
     "away_starter_id": "608372",
     "away_starter_name": "Tomoyuki Sugano",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823735",
@@ -140,7 +140,7 @@
     "home_starter_name": "Robert Gasser",
     "away_starter_id": "700241",
     "away_starter_name": "Michael McGreevy",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823652",
@@ -153,7 +153,7 @@
     "home_starter_name": "Joe Ryan",
     "away_starter_id": "594798",
     "away_starter_name": "Jacob deGrom",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824947",
@@ -240,8 +240,8 @@
     "home_name": "Washington Nationals",
     "away_id": "121",
     "away_name": "New York Mets",
-    "home_starter_id": "663623",
-    "home_starter_name": "Jake Irvin",
+    "home_starter_id": "813349",
+    "home_starter_name": "Connelly Early",
     "away_starter_id": "804636",
     "away_starter_name": "Jonah Tong",
     "lineups_confirmed": false
