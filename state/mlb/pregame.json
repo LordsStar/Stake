@@ -26,21 +26,8 @@
     "lineups_confirmed": false
   },
   {
-    "game_pk": "823489",
-    "start_time": "2026-09-25T20:05:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "110",
-    "away_name": "Baltimore Orioles",
-    "home_starter_id": "694341",
-    "home_starter_name": "Brendan Beck",
-    "away_starter_id": "669432",
-    "away_starter_name": "Trevor Rogers",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "823491",
-    "start_time": "2026-09-25T20:10:00Z",
+    "start_time": "2026-09-25T20:05:00Z",
     "home_id": "147",
     "home_name": "New York Yankees",
     "away_id": "110",
@@ -49,6 +36,19 @@
     "home_starter_name": null,
     "away_starter_id": "687064",
     "away_starter_name": "Brandon Young",
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "823489",
+    "start_time": "2026-09-25T20:10:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "110",
+    "away_name": "Baltimore Orioles",
+    "home_starter_id": "694341",
+    "home_starter_name": "Brendan Beck",
+    "away_starter_id": "669432",
+    "away_starter_name": "Trevor Rogers",
     "lineups_confirmed": false
   },
   {
