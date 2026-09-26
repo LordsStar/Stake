@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "822678",
-    "start_time": "2026-09-26T16:35:00Z",
-    "home_id": "120",
-    "home_name": "Washington Nationals",
-    "away_id": "121",
-    "away_name": "New York Mets",
-    "home_starter_id": "813349",
-    "home_starter_name": "Connelly Early",
-    "away_starter_id": "804636",
-    "away_starter_name": "Jonah Tong",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "824219",
     "start_time": "2026-09-26T17:10:00Z",
     "home_id": "116",
@@ -23,7 +10,7 @@
     "home_starter_name": "Justin Verlander",
     "away_starter_id": "489446",
     "away_starter_name": "Kirby Yates",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "822759",
@@ -36,7 +23,7 @@
     "home_starter_name": "Trey Yesavage",
     "away_starter_id": "695076",
     "away_starter_name": "Rhett Lowder",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823165",
@@ -49,7 +36,7 @@
     "home_starter_name": "Matt Wilkinson",
     "away_starter_id": "605483",
     "away_starter_name": "Blake Snell",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823653",
@@ -62,7 +49,7 @@
     "home_starter_name": "Bailey Ober",
     "away_starter_id": "543135",
     "away_starter_name": "Nathan Eovaldi",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823813",
@@ -75,7 +62,7 @@
     "home_starter_name": "Jack Ralston",
     "away_starter_id": "608718",
     "away_starter_name": "Brent Suter",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824057",
