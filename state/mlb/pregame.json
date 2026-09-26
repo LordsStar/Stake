@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "824219",
-    "start_time": "2026-09-26T17:10:00Z",
-    "home_id": "116",
-    "home_name": "Detroit Tigers",
-    "away_id": "134",
-    "away_name": "Pittsburgh Pirates",
-    "home_starter_id": "434378",
-    "home_starter_name": "Justin Verlander",
-    "away_starter_id": "489446",
-    "away_starter_name": "Kirby Yates",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "822759",
     "start_time": "2026-09-26T19:07:00Z",
     "home_id": "141",
@@ -36,7 +23,7 @@
     "home_starter_name": "Matt Wilkinson",
     "away_starter_id": "605483",
     "away_starter_name": "Blake Snell",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823653",
@@ -49,7 +36,7 @@
     "home_starter_name": "Bailey Ober",
     "away_starter_id": "543135",
     "away_starter_name": "Nathan Eovaldi",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "823813",
@@ -62,7 +49,7 @@
     "home_starter_name": "Jack Ralston",
     "away_starter_id": "608718",
     "away_starter_name": "Brent Suter",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "824057",
@@ -75,7 +62,7 @@
     "home_starter_name": "Michael Wacha",
     "away_starter_id": "676440",
     "away_starter_name": "Tanner Bibee",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824543",
@@ -88,7 +75,7 @@
     "home_starter_name": "Davis Martin",
     "away_starter_id": "500779",
     "away_starter_name": "Jose Quintana",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823733",
@@ -101,7 +88,7 @@
     "home_starter_name": "Dustin May",
     "away_starter_id": "687273",
     "away_starter_name": "Quinn Mathews",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823407",
@@ -110,11 +97,11 @@
     "home_name": "Philadelphia Phillies",
     "away_id": "139",
     "away_name": "Tampa Bay Rays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605400",
+    "home_starter_name": "Aaron Nola",
     "away_starter_id": "643377",
     "away_starter_name": "Griffin Jax",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823245",
@@ -156,6 +143,32 @@
     "lineups_confirmed": false
   },
   {
+    "game_pk": "822679",
+    "start_time": "2026-09-27T17:05:00Z",
+    "home_id": "120",
+    "home_name": "Washington Nationals",
+    "away_id": "121",
+    "away_name": "New York Mets",
+    "home_starter_id": "687792",
+    "home_starter_name": "DJ Herz",
+    "away_starter_id": "640455",
+    "away_starter_name": "Sean Manaea",
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "823490",
+    "start_time": "2026-09-27T17:05:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "110",
+    "away_name": "Baltimore Orioles",
+    "home_starter_id": "695684",
+    "home_starter_name": "Elmer Rodríguez",
+    "away_starter_id": "669358",
+    "away_starter_name": "Shane Baz",
+    "lineups_confirmed": false
+  },
+  {
     "game_pk": "824705",
     "start_time": "2026-09-27T19:05:00Z",
     "home_id": "111",
@@ -166,19 +179,6 @@
     "home_starter_name": null,
     "away_starter_id": "",
     "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "822679",
-    "start_time": "2026-09-27T19:05:00Z",
-    "home_id": "120",
-    "home_name": "Washington Nationals",
-    "away_id": "121",
-    "away_name": "New York Mets",
-    "home_starter_id": "687792",
-    "home_starter_name": "DJ Herz",
-    "away_starter_id": "640455",
-    "away_starter_name": "Sean Manaea",
     "lineups_confirmed": false
   },
   {
@@ -335,19 +335,6 @@
     "home_starter_name": "Jacob Misiorowski",
     "away_starter_id": "669467",
     "away_starter_name": "Andre Pallante",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823490",
-    "start_time": "2026-09-27T19:20:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "110",
-    "away_name": "Baltimore Orioles",
-    "home_starter_id": "695684",
-    "home_starter_name": "Elmer Rodríguez",
-    "away_starter_id": "669358",
-    "away_starter_name": "Shane Baz",
     "lineups_confirmed": false
   },
   {
