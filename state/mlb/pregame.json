@@ -10,7 +10,7 @@
     "home_starter_name": "Connelly Early",
     "away_starter_id": "804636",
     "away_starter_name": "Jonah Tong",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824219",
@@ -23,7 +23,7 @@
     "home_starter_name": "Justin Verlander",
     "away_starter_id": "489446",
     "away_starter_name": "Kirby Yates",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822759",
@@ -36,7 +36,7 @@
     "home_starter_name": "Trey Yesavage",
     "away_starter_id": "695076",
     "away_starter_name": "Rhett Lowder",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823165",
