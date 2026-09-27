@@ -34,8 +34,8 @@
     "away_name": "Chicago Cubs",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "684007",
+    "away_starter_name": "Shota Imanaga",
     "lineups_confirmed": false
   },
   {
@@ -226,7 +226,7 @@
     "home_id": "144",
     "home_name": "Atlanta Braves",
     "away_id": "4947",
-    "away_name": "NL Wild Card #3",
+    "away_name": "PHI/ARI",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
@@ -278,7 +278,7 @@
     "home_id": "144",
     "home_name": "Atlanta Braves",
     "away_id": "4947",
-    "away_name": "NL Wild Card #3",
+    "away_name": "PHI/ARI",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
