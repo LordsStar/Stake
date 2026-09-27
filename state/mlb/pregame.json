@@ -10,7 +10,7 @@
     "home_starter_name": "DJ Herz",
     "away_starter_id": "640455",
     "away_starter_name": "Sean Manaea",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823490",
@@ -26,17 +26,30 @@
     "lineups_confirmed": false
   },
   {
+    "game_pk": "823408",
+    "start_time": "2026-09-27T18:30:00Z",
+    "home_id": "143",
+    "home_name": "Philadelphia Phillies",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_starter_id": "554430",
+    "home_starter_name": "Zack Wheeler",
+    "away_starter_id": "607259",
+    "away_starter_name": "Nick Martinez",
+    "lineups_confirmed": true
+  },
+  {
     "game_pk": "824705",
     "start_time": "2026-09-27T19:05:00Z",
     "home_id": "111",
     "home_name": "Boston Red Sox",
     "away_id": "112",
     "away_name": "Chicago Cubs",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656557",
+    "home_starter_name": "Tanner Houck",
     "away_starter_id": "684007",
     "away_starter_name": "Shota Imanaga",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824948",
@@ -60,22 +73,9 @@
     "away_name": "Los Angeles Dodgers",
     "home_starter_id": "693313",
     "home_starter_name": "Carson Seymour",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "823408",
-    "start_time": "2026-09-27T19:05:00Z",
-    "home_id": "143",
-    "home_name": "Philadelphia Phillies",
-    "away_id": "139",
-    "away_name": "Tampa Bay Rays",
-    "home_starter_id": "554430",
-    "home_starter_name": "Zack Wheeler",
-    "away_starter_id": "607259",
-    "away_starter_name": "Nick Martinez",
-    "lineups_confirmed": false
+    "away_starter_id": "676263",
+    "away_starter_name": "Jack Dreyer",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "822761",
@@ -88,7 +88,7 @@
     "home_starter_name": "Max Scherzer",
     "away_starter_id": "682227",
     "away_starter_name": "Brandon Williamson",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824055",
@@ -101,7 +101,7 @@
     "home_starter_name": "Daniel Lynch IV",
     "away_starter_id": "800048",
     "away_starter_name": "Parker Messick",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824217",
@@ -127,7 +127,7 @@
     "home_starter_name": "Randy Vásquez",
     "away_starter_id": "647336",
     "away_starter_name": "Michael Soroka",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823084",
@@ -153,7 +153,7 @@
     "home_starter_name": "Dean Kremer",
     "away_starter_id": "669022",
     "away_starter_name": "MacKenzie Gore",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "824542",
@@ -166,7 +166,7 @@
     "home_starter_name": "Anthony Kay",
     "away_starter_id": "607536",
     "away_starter_name": "Kyle Freeland",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823814",
@@ -179,7 +179,7 @@
     "home_starter_name": "Janson Junk",
     "away_starter_id": "702275",
     "away_starter_name": "JR Ritchie",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "823731",
@@ -192,37 +192,11 @@
     "home_starter_name": "Jacob Misiorowski",
     "away_starter_id": "669467",
     "away_starter_name": "Andre Pallante",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "849851",
-    "start_time": "2026-09-29T07:33:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "111",
-    "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "849849",
-    "start_time": "2026-09-29T07:33:00Z",
-    "home_id": "4614",
-    "home_name": "HOU/TEX",
-    "away_id": "145",
-    "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849845",
-    "start_time": "2026-09-29T07:33:00Z",
+    "start_time": "2026-09-29T18:00:00Z",
     "home_id": "144",
     "home_name": "Atlanta Braves",
     "away_id": "4947",
@@ -234,8 +208,34 @@
     "lineups_confirmed": false
   },
   {
+    "game_pk": "849849",
+    "start_time": "2026-09-29T21:00:00Z",
+    "home_id": "4614",
+    "home_name": "HOU/TEX",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849851",
+    "start_time": "2026-09-30T00:00:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "111",
+    "away_name": "Boston Red Sox",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
     "game_pk": "849843",
-    "start_time": "2026-09-29T10:33:00Z",
+    "start_time": "2026-09-30T02:00:00Z",
     "home_id": "135",
     "home_name": "San Diego Padres",
     "away_id": "112",
@@ -247,34 +247,8 @@
     "lineups_confirmed": false
   },
   {
-    "game_pk": "849848",
-    "start_time": "2026-09-30T07:33:00Z",
-    "home_id": "147",
-    "home_name": "New York Yankees",
-    "away_id": "111",
-    "away_name": "Boston Red Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "849846",
-    "start_time": "2026-09-30T07:33:00Z",
-    "home_id": "4614",
-    "home_name": "HOU/TEX",
-    "away_id": "145",
-    "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849841",
-    "start_time": "2026-09-30T07:33:00Z",
+    "start_time": "2026-09-30T18:00:00Z",
     "home_id": "144",
     "home_name": "Atlanta Braves",
     "away_id": "4947",
@@ -286,8 +260,34 @@
     "lineups_confirmed": false
   },
   {
+    "game_pk": "849846",
+    "start_time": "2026-09-30T21:00:00Z",
+    "home_id": "4614",
+    "home_name": "HOU/TEX",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849848",
+    "start_time": "2026-10-01T00:00:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "111",
+    "away_name": "Boston Red Sox",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
     "game_pk": "849842",
-    "start_time": "2026-09-30T10:33:00Z",
+    "start_time": "2026-10-01T02:00:00Z",
     "home_id": "135",
     "home_name": "San Diego Padres",
     "away_id": "112",
