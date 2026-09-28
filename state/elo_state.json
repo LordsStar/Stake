@@ -9147,12 +9147,12 @@
         "games": 11
       },
       "team ybn": {
-        "elo": 1508.1991992192313,
-        "games": 16
+        "elo": 1498.8571835977482,
+        "games": 17
       },
       "team cake": {
-        "elo": 1531.0929952945125,
-        "games": 15
+        "elo": 1540.4350109159957,
+        "games": 16
       },
       "team avice": {
         "elo": 1489.169254432151,
@@ -45317,6 +45317,12 @@
         "p": 0.5044187563345831,
         "y": 1.0,
         "match_id": "opendota:9019438969"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5328992189258435,
+        "y": 1.0,
+        "match_id": "opendota:9019521053"
       }
     ],
     "cricket:all": [
@@ -62986,7 +62992,8 @@
       "opendota:9019137960",
       "opendota:9019294204",
       "opendota:9019333057",
-      "opendota:9019438969"
+      "opendota:9019438969",
+      "opendota:9019521053"
     ]
   },
   "draw_stats": {
@@ -63031,7 +63038,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 623,
+      "total": 624,
       "draws": 0
     }
   },
@@ -63107,7 +63114,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "f3ebb1126c3373f57173ef7980fa9cf1d7947ae0d4bfdf28c478a426faf5e585",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.12302196600351223,
       "last_brier": 0.21904718844147286,
@@ -63120,7 +63127,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "361715de82baabdbde65064a3f121f2eae163617335b3cc6b1b4285de7757f54",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.026359378447638804,
       "last_brier": 0.24302069913947005,
@@ -63171,13 +63178,13 @@
       "active": false,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "77e03f96c6d1390d530ab9f69be62588126ade00c5ba509ac850d3a3b4c3d57d",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "a7aac6b679509127394be73cedbab0efb5111ee3d5d0566c116b8487d507afef",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": -0.022600600158031448,
-      "last_brier": 0.24826186070336534,
+      "last_skill": -0.021462813808999615,
+      "last_brier": 0.2488283414438724,
       "evidence_samples": 200,
-      "evidence_total_samples": 334
+      "evidence_total_samples": 335
     }
   }
 }

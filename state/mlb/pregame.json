@@ -19,8 +19,8 @@
     "home_name": "Houston Astros",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "805123",
+    "home_starter_name": "AJ Blubaugh",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false

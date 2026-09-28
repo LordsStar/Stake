@@ -256340,5 +256340,18 @@
     "home_team_id": "",
     "away_team_id": "",
     "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9019521053",
+    "start_time": "2026-09-27T20:51:16+00:00",
+    "home_name": "Team Cake",
+    "away_name": "TEAM YBN",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
   }
 ]
