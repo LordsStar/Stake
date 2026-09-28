@@ -6,8 +6,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "519242",
+    "home_starter_name": "Chris Sale",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
