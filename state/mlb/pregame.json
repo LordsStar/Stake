@@ -8,8 +8,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "519242",
     "home_starter_name": "Chris Sale",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "666200",
+    "away_starter_name": "Jesús Luzardo",
     "lineups_confirmed": false
   },
   {
@@ -34,8 +34,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "693645",
     "home_starter_name": "Cam Schlittler",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "801139",
+    "away_starter_name": "Payton Tolle",
     "lineups_confirmed": false
   },
   {
@@ -86,8 +86,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "608331",
     "home_starter_name": "Max Fried",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "543243",
+    "away_starter_name": "Sonny Gray",
     "lineups_confirmed": false
   },
   {
@@ -138,8 +138,8 @@
     "away_name": "Boston Red Sox",
     "home_starter_id": "543037",
     "home_starter_name": "Gerrit Cole",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "624133",
+    "away_starter_name": "Ranger Suarez",
     "lineups_confirmed": false
   },
   {
