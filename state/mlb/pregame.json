@@ -21,8 +21,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "805123",
     "home_starter_name": "AJ Blubaugh",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "696146",
+    "away_starter_name": "Hagen Smith",
     "lineups_confirmed": false
   },
   {
@@ -47,8 +47,8 @@
     "away_name": "Chicago Cubs",
     "home_starter_id": "650633",
     "home_starter_name": "Michael King",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "571510",
+    "away_starter_name": "Matthew Boyd",
     "lineups_confirmed": false
   },
   {
