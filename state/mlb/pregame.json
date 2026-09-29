@@ -60,8 +60,8 @@
     "away_name": "Philadelphia Phillies",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "650911",
+    "away_starter_name": "Cristopher Sánchez",
     "lineups_confirmed": false
   },
   {
