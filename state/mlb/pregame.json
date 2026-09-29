@@ -10,7 +10,7 @@
     "home_starter_name": "Chris Sale",
     "away_starter_id": "666200",
     "away_starter_name": "Jesús Luzardo",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849849",
@@ -58,8 +58,8 @@
     "home_name": "Atlanta Braves",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "641816",
+    "home_starter_name": "Tyler Mahle",
     "away_starter_id": "650911",
     "away_starter_name": "Cristopher Sánchez",
     "lineups_confirmed": false
