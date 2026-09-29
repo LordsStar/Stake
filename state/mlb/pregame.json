@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849845",
-    "start_time": "2026-09-29T18:00:00Z",
-    "home_id": "144",
-    "home_name": "Atlanta Braves",
-    "away_id": "143",
-    "away_name": "Philadelphia Phillies",
-    "home_starter_id": "519242",
-    "home_starter_name": "Chris Sale",
-    "away_starter_id": "666200",
-    "away_starter_name": "Jesús Luzardo",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849849",
     "start_time": "2026-09-29T21:00:00Z",
     "home_id": "117",
@@ -23,7 +10,7 @@
     "home_starter_name": "AJ Blubaugh",
     "away_starter_id": "696146",
     "away_starter_name": "Hagen Smith",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849851",
@@ -36,7 +23,7 @@
     "home_starter_name": "Cam Schlittler",
     "away_starter_id": "801139",
     "away_starter_name": "Payton Tolle",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849843",
@@ -71,8 +58,8 @@
     "home_name": "Houston Astros",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "686613",
+    "home_starter_name": "Hunter Brown",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
