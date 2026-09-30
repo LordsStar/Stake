@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849841",
-    "start_time": "2026-09-30T18:00:00Z",
-    "home_id": "144",
-    "home_name": "Atlanta Braves",
-    "away_id": "143",
-    "away_name": "Philadelphia Phillies",
-    "home_starter_id": "641816",
-    "home_starter_name": "Tyler Mahle",
-    "away_starter_id": "650911",
-    "away_starter_name": "Cristopher Sánchez",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849846",
     "start_time": "2026-09-30T21:00:00Z",
     "home_id": "117",
@@ -36,7 +23,7 @@
     "home_starter_name": "Max Fried",
     "away_starter_id": "543243",
     "away_starter_name": "Sonny Gray",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849842",
@@ -123,8 +110,8 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "5529",
     "away_name": "NYY/BOS",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656876",
+    "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false

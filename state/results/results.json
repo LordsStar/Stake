@@ -244288,12 +244288,25 @@
     "event_id": "opendota:9006060043",
     "start_time": "2026-09-19T09:38:10+00:00",
     "home_name": "Team Nemesis",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892324+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892326+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -244314,12 +244327,25 @@
     "event_id": "opendota:9005981988",
     "start_time": "2026-09-19T08:36:06+00:00",
     "home_name": "Team Nemesis",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892339+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892341+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -244353,12 +244379,25 @@
     "event_id": "opendota:9005874165",
     "start_time": "2026-09-19T07:00:37+00:00",
     "home_name": "Team Nemesis",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892357+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892358+00:00",
+    "revision": 2
   },
   {
     "sport": "tennis",
@@ -245577,12 +245616,25 @@
     "event_id": "opendota:9007989894",
     "start_time": "2026-09-20T12:05:45+00:00",
     "home_name": "Hokori",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892216+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892218+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -245603,12 +245655,25 @@
     "event_id": "opendota:9007874144",
     "start_time": "2026-09-20T10:45:38+00:00",
     "home_name": "Hokori",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892230+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892232+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401872933",
@@ -246694,13 +246759,26 @@
     "league": "professional",
     "event_id": "opendota:9009436210",
     "start_time": "2026-09-21T10:28:15+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Conventus Stellarum",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892135+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892137+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -246734,12 +246812,25 @@
     "event_id": "opendota:9009368871",
     "start_time": "2026-09-21T09:20:16+00:00",
     "home_name": "Conventus Stellarum",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892152+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892154+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -248369,13 +248460,26 @@
     "league": "professional",
     "event_id": "opendota:9010993339",
     "start_time": "2026-09-22T12:29:20+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Natus Vincere",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891988+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891990+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -248395,13 +248499,26 @@
     "league": "professional",
     "event_id": "opendota:9010913001",
     "start_time": "2026-09-22T11:22:04+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Natus Vincere",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892004+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892006+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -248422,12 +248539,25 @@
     "event_id": "opendota:9010847796",
     "start_time": "2026-09-22T10:20:34+00:00",
     "home_name": "Natus Vincere",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892018+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892020+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -248760,12 +248890,25 @@
     "event_id": "opendota:9009540955",
     "start_time": "2026-09-21T12:04:15+00:00",
     "home_name": "Conventus Stellarum",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.892121+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.892123+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401873648",
@@ -249999,12 +250142,25 @@
     "event_id": "opendota:9012167647",
     "start_time": "2026-09-23T08:06:18+00:00",
     "home_name": "Pipsqueak + 4",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891916+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891918+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -250012,12 +250168,25 @@
     "event_id": "opendota:9012123019",
     "start_time": "2026-09-23T07:00:18+00:00",
     "home_name": "Pipsqueak + 4",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891927+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891928+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -251036,13 +251205,26 @@
     "league": "professional",
     "event_id": "opendota:9014106505",
     "start_time": "2026-09-24T15:24:52+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Team Yandex",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891801+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891802+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -251352,12 +251534,25 @@
     "event_id": "opendota:9014237664",
     "start_time": "2026-09-24T16:43:41+00:00",
     "home_name": "Team Yandex",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891786+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891788+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401872948",
@@ -251889,12 +252084,25 @@
     "event_id": "opendota:9015175653",
     "start_time": "2026-09-25T10:34:32+00:00",
     "home_name": "GamerLegion",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891752+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891754+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -252159,12 +252367,25 @@
     "event_id": "opendota:9015395119",
     "start_time": "2026-09-25T13:26:32+00:00",
     "home_name": "GamerLegion",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891726+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891728+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -252185,12 +252406,25 @@
     "event_id": "opendota:9015251447",
     "start_time": "2026-09-25T11:44:10+00:00",
     "home_name": "GamerLegion",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891741+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891743+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401817104",
@@ -257456,13 +257690,26 @@
     "league": "professional",
     "event_id": "opendota:9021799787",
     "start_time": "2026-09-29T15:12:27+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Natus Vincere",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891479+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891497+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -257496,12 +257743,25 @@
     "event_id": "opendota:9021632842",
     "start_time": "2026-09-29T13:30:00+00:00",
     "home_name": "Natus Vincere",
-    "away_name": "1w",
+    "away_name": "1win",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891519+00:00",
+        "changed": {
+          "away_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891522+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -257521,13 +257781,26 @@
     "league": "professional",
     "event_id": "opendota:9021540875",
     "start_time": "2026-09-29T12:14:40+00:00",
-    "home_name": "1w",
+    "home_name": "1win",
     "away_name": "Natus Vincere",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-09-30T22:23:45.891536+00:00",
+        "changed": {
+          "home_name": {
+            "before": "1w",
+            "after": "1win"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-09-30T22:23:45.891538+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401891773",
@@ -258454,6 +258727,374 @@
     "source_league_name": "WTA",
     "home_team_id": "",
     "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "event_id": "espn:401907972",
+    "start_time": "2026-09-30T18:00Z",
+    "home_name": "Atlanta Braves",
+    "away_name": "Philadelphia Phillies",
+    "home_score": "3",
+    "away_score": "4",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "baseball/mlb",
+    "source_league_name": "baseball/mlb",
+    "home_team_id": "15",
+    "away_team_id": "22",
+    "sport": "baseball",
+    "league": "mlb"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:183455",
+    "start_time": "2026-09-30T11:05Z",
+    "home_name": "Nuno Borges",
+    "away_name": "Novak Djokovic",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184289",
+    "start_time": "2026-09-30T11:50Z",
+    "home_name": "Elsa Jacquemot",
+    "away_name": "Magdalena Frech",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184288",
+    "start_time": "2026-09-30T13:20Z",
+    "home_name": "Anna Bondar",
+    "away_name": "Renata Zarazua",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184146",
+    "start_time": "2026-09-30T11:00Z",
+    "home_name": "Fiona Crawley",
+    "away_name": "Elena Pridankina",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184135",
+    "start_time": "2026-09-30T12:05Z",
+    "home_name": "Teodora Kostovic",
+    "away_name": "Dalma Galfi",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184133",
+    "start_time": "2026-09-30T15:10Z",
+    "home_name": "Leolia Jeanjean",
+    "away_name": "Melisa Ercan",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184131",
+    "start_time": "2026-09-30T18:35Z",
+    "home_name": "Cagla Buyukakcay",
+    "away_name": "Lucrezia Stefanini",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:183455",
+    "start_time": "2026-09-30T11:05Z",
+    "home_name": "Nuno Borges",
+    "away_name": "Novak Djokovic",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184289",
+    "start_time": "2026-09-30T11:50Z",
+    "home_name": "Elsa Jacquemot",
+    "away_name": "Magdalena Frech",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184288",
+    "start_time": "2026-09-30T13:20Z",
+    "home_name": "Anna Bondar",
+    "away_name": "Renata Zarazua",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023462170",
+    "start_time": "2026-09-30T18:11:31+00:00",
+    "home_name": "Xtreme Gaming",
+    "away_name": "Level UP esports",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023339084",
+    "start_time": "2026-09-30T16:56:52+00:00",
+    "home_name": "Xtreme Gaming",
+    "away_name": "Level UP esports",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023297641",
+    "start_time": "2026-09-30T16:29:01+00:00",
+    "home_name": "Team Nemesis",
+    "away_name": "Natus Vincere",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023210947",
+    "start_time": "2026-09-30T15:33:37+00:00",
+    "home_name": "LGD Gaming",
+    "away_name": "PARIVISION",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023195630",
+    "start_time": "2026-09-30T15:25:01+00:00",
+    "home_name": "Team Nemesis",
+    "away_name": "Natus Vincere",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023104480",
+    "start_time": "2026-09-30T14:27:29+00:00",
+    "home_name": "PARIVISION",
+    "away_name": "LGD Gaming",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023089203",
+    "start_time": "2026-09-30T14:19:03+00:00",
+    "home_name": "Team Nemesis",
+    "away_name": "Natus Vincere",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9023007039",
+    "start_time": "2026-09-30T13:28:06+00:00",
+    "home_name": "1win",
+    "away_name": "Team Spirit",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022908356",
+    "start_time": "2026-09-30T12:12:45+00:00",
+    "home_name": "OG",
+    "away_name": "BETBOOM TEAM",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022904766",
+    "start_time": "2026-09-30T12:12:56+00:00",
+    "home_name": "Team Spirit",
+    "away_name": "1win",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022834804",
+    "start_time": "2026-09-30T11:10:03+00:00",
+    "home_name": "OG",
+    "away_name": "BETBOOM TEAM",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022828432",
+    "start_time": "2026-09-30T11:04:11+00:00",
+    "home_name": "MOUZ",
+    "away_name": "Team Yandex",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022768633",
+    "start_time": "2026-09-30T09:58:36+00:00",
+    "home_name": "MOUZ",
+    "away_name": "Team Yandex",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9022767300",
+    "start_time": "2026-09-30T09:56:06+00:00",
+    "home_name": "OG",
+    "away_name": "BETBOOM TEAM",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
     "score_encoding": "winner_indicator"
   }
 ]
