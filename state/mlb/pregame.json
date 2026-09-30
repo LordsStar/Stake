@@ -21,8 +21,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "686613",
     "home_starter_name": "Hunter Brown",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "680732",
+    "away_starter_name": "Sean Burke",
     "lineups_confirmed": false
   },
   {
@@ -45,10 +45,10 @@
     "home_name": "San Diego Padres",
     "away_id": "112",
     "away_name": "Chicago Cubs",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "601713",
+    "home_starter_name": "Nick Pivetta",
+    "away_starter_id": "592332",
+    "away_starter_name": "Kevin Gausman",
     "lineups_confirmed": false
   },
   {
