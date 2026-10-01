@@ -6,10 +6,10 @@
     "home_name": "Atlanta Braves",
     "away_id": "143",
     "away_name": "Philadelphia Phillies",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "678061",
+    "home_starter_name": "Ray Kerr",
+    "away_starter_id": "605400",
+    "away_starter_name": "Aaron Nola",
     "lineups_confirmed": false
   },
   {
@@ -19,8 +19,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "800048",
+    "home_starter_name": "Parker Messick",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
