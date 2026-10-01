@@ -226556,5 +226556,314 @@
         "pitches": 37
       }
     ]
+  },
+  {
+    "game_pk": "849846",
+    "start_time": "2026-09-30T21:00:00Z",
+    "home_id": "117",
+    "home_name": "Houston Astros",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_score": 3,
+    "away_score": 7,
+    "home_starter_id": "686613",
+    "away_starter_id": "680732",
+    "home_pitchers": [
+      {
+        "id": "686613",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 36
+      },
+      {
+        "id": "805123",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 15
+      },
+      {
+        "id": "663567",
+        "outs": 9,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 48
+      },
+      {
+        "id": "650556",
+        "outs": 8,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 44
+      },
+      {
+        "id": "623352",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 22
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "680732",
+        "outs": 12,
+        "hr": 3,
+        "bb": 0,
+        "hbp": 0,
+        "k": 8,
+        "pitches": 72
+      },
+      {
+        "id": "623211",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 1,
+        "k": 1,
+        "pitches": 16
+      },
+      {
+        "id": "641743",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 11
+      },
+      {
+        "id": "663855",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 21
+      },
+      {
+        "id": "607200",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 1,
+        "k": 3,
+        "pitches": 34
+      }
+    ]
+  },
+  {
+    "game_pk": "849848",
+    "start_time": "2026-10-01T00:00:00Z",
+    "home_id": "147",
+    "home_name": "New York Yankees",
+    "away_id": "111",
+    "away_name": "Boston Red Sox",
+    "home_score": 9,
+    "away_score": 2,
+    "home_starter_id": "608331",
+    "away_starter_id": "543243",
+    "home_pitchers": [
+      {
+        "id": "608331",
+        "outs": 18,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 98
+      },
+      {
+        "id": "701542",
+        "outs": 5,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 19
+      },
+      {
+        "id": "687396",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 3
+      },
+      {
+        "id": "670280",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 22
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "543243",
+        "outs": 14,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 5,
+        "pitches": 70
+      },
+      {
+        "id": "669062",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 5
+      },
+      {
+        "id": "676979",
+        "outs": 0,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 16
+      },
+      {
+        "id": "676477",
+        "outs": 4,
+        "hr": 1,
+        "bb": 3,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 35
+      },
+      {
+        "id": "687941",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 7
+      },
+      {
+        "id": "547973",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 14
+      }
+    ]
+  },
+  {
+    "game_pk": "849842",
+    "start_time": "2026-10-01T02:00:00Z",
+    "home_id": "135",
+    "home_name": "San Diego Padres",
+    "away_id": "112",
+    "away_name": "Chicago Cubs",
+    "home_score": 4,
+    "away_score": 1,
+    "home_starter_id": "601713",
+    "away_starter_id": "592332",
+    "home_pitchers": [
+      {
+        "id": "601713",
+        "outs": 10,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 66
+      },
+      {
+        "id": "699134",
+        "outs": 5,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 1,
+        "k": 2,
+        "pitches": 21
+      },
+      {
+        "id": "592094",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 11
+      },
+      {
+        "id": "670970",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 29
+      },
+      {
+        "id": "695243",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 19
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "592332",
+        "outs": 10,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 54
+      },
+      {
+        "id": "694037",
+        "outs": 5,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 1,
+        "k": 2,
+        "pitches": 28
+      },
+      {
+        "id": "656849",
+        "outs": 5,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 28
+      },
+      {
+        "id": "666171",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 30
+      }
+    ]
   }
 ]
