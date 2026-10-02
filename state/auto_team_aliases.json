@@ -273,5 +273,8 @@
   "handball:lnh-division-1": {
     "chartres metropole handball": "c chartres m tropole handball",
     "usam nimes gard": "usam n mes gard"
+  },
+  "cricket:odi": {
+    "australia a": "australia"
   }
 }
