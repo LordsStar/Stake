@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849844",
-    "start_time": "2026-10-02T00:00:00Z",
-    "home_id": "144",
-    "home_name": "Atlanta Braves",
-    "away_id": "143",
-    "away_name": "Philadelphia Phillies",
-    "home_starter_id": "678061",
-    "home_starter_name": "Ray Kerr",
-    "away_starter_id": "605400",
-    "away_starter_name": "Aaron Nola",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849829",
     "start_time": "2026-10-03T17:00:00Z",
     "home_id": "114",
@@ -88,6 +75,32 @@
     "home_starter_name": null,
     "away_starter_id": "",
     "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849834",
+    "start_time": "2026-10-05T21:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_starter_id": "668909",
+    "home_starter_name": "Gavin Williams",
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849839",
+    "start_time": "2026-10-06T00:00:00Z",
+    "home_id": "139",
+    "home_name": "Tampa Bay Rays",
+    "away_id": "147",
+    "away_name": "New York Yankees",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "693645",
+    "away_starter_name": "Cam Schlittler",
     "lineups_confirmed": false
   }
 ]
