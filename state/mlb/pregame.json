@@ -102,5 +102,31 @@
     "away_starter_id": "693645",
     "away_starter_name": "Cam Schlittler",
     "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849819",
+    "start_time": "2026-10-06T22:00:00Z",
+    "home_id": "144",
+    "home_name": "Atlanta Braves",
+    "away_id": "119",
+    "away_name": "Los Angeles Dodgers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849826",
+    "start_time": "2026-10-07T01:30:00Z",
+    "home_id": "135",
+    "home_name": "San Diego Padres",
+    "away_id": "158",
+    "away_name": "Milwaukee Brewers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
   }
 ]
