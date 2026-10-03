@@ -10,7 +10,7 @@
     "home_starter_name": "Parker Messick",
     "away_starter_id": "696146",
     "away_starter_name": "Hagen Smith",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "849828",
@@ -21,9 +21,9 @@
     "away_name": "Atlanta Braves",
     "home_starter_id": "669373",
     "home_starter_name": "Tarik Skubal",
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
+    "away_starter_id": "689266",
+    "away_starter_name": "Dylan Dodd",
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849835",
@@ -36,7 +36,7 @@
     "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "543037",
     "away_starter_name": "Gerrit Cole",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849830",
