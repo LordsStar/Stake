@@ -1,16 +1,9 @@
 {
-  "generated_at": "2026-10-03T11:50:12.004768+00:00",
-  "targets_in_snapshot": 308,
+  "generated_at": "2026-10-03T16:31:53.697270+00:00",
+  "targets_in_snapshot": 327,
   "targets_processed": 24,
   "matched": [],
   "unmatched": [
-    "soccer/soccer/f7cd8c25-0fbe-4553-b1fb-3dfad78cf226/e8b779a8-60e3-44bf-9f6f-b7f98fab62b3: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/f7cd8c25-0fbe-4553-b1fb-3dfad78cf226/ed7f9a16-9118-43d2-b089-24f4890c5969: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/f7cd8c25-0fbe-4553-b1fb-3dfad78cf226/f993ed90-a361-4b67-8958-23c8c56e21c1: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/fad34360-a769-4058-aafe-01e6a6ad5fff/c47b9496-871d-42f4-8442-c24e5729a9c5: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/fad34360-a769-4058-aafe-01e6a6ad5fff/fd956bc5-b65c-4d61-ab99-f324275cd300: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/faf132ff-e63e-475c-9cc6-5be05e88bf08/d7cebc4a-a25f-4e7c-8511-3ed7f37eaeb8: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/fb103517-c590-414b-bddc-8f575d9887c3/0ddca5d6-4a84-4cd3-9963-6d404d3a9423: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/fcc2c9fb-80e4-4b74-bb3e-752981e19308/084a7296-134f-4e5d-89b9-3fb2a8a55302: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/451881c2-8c79-44e9-91fe-af1921b3dcc1: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/88c5718f-e1ee-47d1-b5f1-2a42734a5e60: sin liga equivalente segura (no_exact_match)",
@@ -25,18 +18,25 @@
     "tennis/tennis/5102f1bc-58c5-435e-aff4-d9c71c0ad30c/fd1d3eb4-a4a8-4285-89f9-e10ac22cfaf1: sin liga equivalente segura (no_exact_match)",
     "tennis/tennis/71a98070-c267-4885-93a2-7c912702f1d1/2ebe038b-a8dc-4023-86e7-c5d310a150f2: sin liga equivalente segura (no_exact_match)",
     "tennis/tennis/71a98070-c267-4885-93a2-7c912702f1d1/d412ab09-f849-489b-8e9c-ebebe38be591: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/88edf3ab-d124-43bb-8f5a-6bca34064201/3f9e7a84-eccf-4d0c-aec8-f698aa9b2835: sin liga equivalente segura (no_exact_match)",
     "tennis/tennis/88edf3ab-d124-43bb-8f5a-6bca34064201/4f240bd9-bc75-4c25-8acc-7ddf79a891e5: sin liga equivalente segura (no_exact_match)",
     "tennis/tennis/88edf3ab-d124-43bb-8f5a-6bca34064201/a44d5edb-87c3-4334-babd-3db6cbd18778: sin liga equivalente segura (no_exact_match)",
-    "tennis/tennis/88edf3ab-d124-43bb-8f5a-6bca34064201/ae5b2607-7e0b-46bb-a77c-4baa0cb60825: sin liga equivalente segura (no_exact_match)"
+    "tennis/tennis/88edf3ab-d124-43bb-8f5a-6bca34064201/ae5b2607-7e0b-46bb-a77c-4baa0cb60825: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/bf9bedea-647d-49ec-b135-1969dcf1d3ba/2a4c1ff1-4132-4c7e-adfb-5642098e7aed: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/bf9bedea-647d-49ec-b135-1969dcf1d3ba/43f3a4bb-33ac-4c08-977f-958cc0af27cd: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/bf9bedea-647d-49ec-b135-1969dcf1d3ba/9d59bdb8-bb61-45e6-99f8-2b81f6297c51: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/bf9bedea-647d-49ec-b135-1969dcf1d3ba/a8ce0059-a4be-46aa-a98d-0dad2f80bc72: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/bf9bedea-647d-49ec-b135-1969dcf1d3ba/f1bc2f75-52f9-4e4a-ac9a-65e234668b51: sin liga equivalente segura (no_exact_match)",
+    "tennis/tennis/d274916b-d7f9-455e-8f02-b4727d50d0e8/37602519-b01d-4c05-b82b-2d88028402c5: sin liga equivalente segura (no_exact_match)"
   ],
-  "rows_collected": 763,
-  "rows_added": 1,
+  "rows_collected": 770,
+  "rows_added": 7,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 309,
-    "OpenDota": 454,
+    "OpenDota": 461,
     "League of Legends": 0
   },
-  "next_league_cursor": 274,
+  "next_league_cursor": 298,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }

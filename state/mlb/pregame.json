@@ -10,7 +10,7 @@
     "home_starter_name": "Parker Messick",
     "away_starter_id": "696146",
     "away_starter_name": "Hagen Smith",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849828",
@@ -71,8 +71,8 @@
     "home_name": "Los Angeles Dodgers",
     "away_id": "144",
     "away_name": "Atlanta Braves",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "605483",
+    "home_starter_name": "Blake Snell",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
