@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849829",
-    "start_time": "2026-10-03T17:00:00Z",
-    "home_id": "114",
-    "home_name": "Cleveland Guardians",
-    "away_id": "145",
-    "away_name": "Chicago White Sox",
-    "home_starter_id": "800048",
-    "home_starter_name": "Parker Messick",
-    "away_starter_id": "696146",
-    "away_starter_name": "Hagen Smith",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849828",
     "start_time": "2026-10-03T20:00:00Z",
     "home_id": "119",
@@ -23,7 +10,7 @@
     "home_starter_name": "Tarik Skubal",
     "away_starter_id": "689266",
     "away_starter_name": "Dylan Dodd",
-    "lineups_confirmed": true
+    "lineups_confirmed": false
   },
   {
     "game_pk": "849835",

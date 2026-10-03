@@ -226980,5 +226980,120 @@
         "pitches": 15
       }
     ]
+  },
+  {
+    "game_pk": "849829",
+    "start_time": "2026-10-03T17:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_score": 0,
+    "away_score": 3,
+    "home_starter_id": "800048",
+    "away_starter_id": "696146",
+    "home_pitchers": [
+      {
+        "id": "800048",
+        "outs": 13,
+        "hr": 1,
+        "bb": 2,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 87
+      },
+      {
+        "id": "682982",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 12
+      },
+      {
+        "id": "681870",
+        "outs": 5,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 20
+      },
+      {
+        "id": "683769",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 4
+      },
+      {
+        "id": "682120",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 14
+      },
+      {
+        "id": "671922",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 12
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "696146",
+        "outs": 8,
+        "hr": 0,
+        "bb": 3,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 51
+      },
+      {
+        "id": "663542",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 6
+      },
+      {
+        "id": "663855",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 17
+      },
+      {
+        "id": "641743",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 22
+      },
+      {
+        "id": "691799",
+        "outs": 12,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 42
+      }
+    ]
   }
 ]
