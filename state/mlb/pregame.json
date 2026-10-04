@@ -10,7 +10,7 @@
     "home_starter_name": "Logan Henderson",
     "away_starter_id": "650633",
     "away_starter_name": "Michael King",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849823",
@@ -21,8 +21,8 @@
     "away_name": "Atlanta Braves",
     "home_starter_id": "605483",
     "home_starter_name": "Blake Snell",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "678061",
+    "away_starter_name": "Ray Kerr",
     "lineups_confirmed": false
   },
   {
@@ -34,8 +34,8 @@
     "away_name": "Chicago White Sox",
     "home_starter_id": "668909",
     "home_starter_name": "Gavin Williams",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "641743",
+    "away_starter_name": "Anthony Kay",
     "lineups_confirmed": false
   },
   {
@@ -71,10 +71,10 @@
     "home_name": "San Diego Padres",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "601713",
+    "home_starter_name": "Nick Pivetta",
+    "away_starter_id": "669160",
+    "away_starter_name": "Dustin May",
     "lineups_confirmed": false
   },
   {
