@@ -60,8 +60,8 @@
     "away_name": "Cleveland Guardians",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "800048",
+    "away_starter_name": "Parker Messick",
     "lineups_confirmed": false
   },
   {
