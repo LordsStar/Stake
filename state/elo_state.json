@@ -141,8 +141,8 @@
     },
     "basketball:nba": {
       "oklahoma city thunder": {
-        "elo": 1732.1965484555803,
-        "games": 106
+        "elo": 1714.0939523611169,
+        "games": 107
       },
       "indiana pacers": {
         "elo": 1324.9890800893872,
@@ -157,24 +157,24 @@
         "games": 99
       },
       "new orleans pelicans": {
-        "elo": 1400.3641199132217,
-        "games": 86
+        "elo": 1418.4667160076851,
+        "games": 87
       },
       "melbourne united": {
         "elo": 1491.7099735734362,
         "games": 1
       },
       "los angeles lakers": {
-        "elo": 1598.9788687791918,
-        "games": 99
+        "elo": 1585.8915784310016,
+        "games": 100
       },
       "phoenix suns": {
         "elo": 1493.109182118626,
         "games": 93
       },
       "brooklyn nets": {
-        "elo": 1308.623452188249,
-        "games": 86
+        "elo": 1326.0646160628885,
+        "games": 87
       },
       "hapoel jerusalem": {
         "elo": 1491.7099735734362,
@@ -189,8 +189,8 @@
         "games": 95
       },
       "denver nuggets": {
-        "elo": 1591.2901595098324,
-        "games": 94
+        "elo": 1595.9696169905947,
+        "games": 95
       },
       "minnesota timberwolves": {
         "elo": 1593.9545072847648,
@@ -201,12 +201,12 @@
         "games": 1
       },
       "charlotte hornets": {
-        "elo": 1582.0366478949186,
-        "games": 89
+        "elo": 1564.5954840202792,
+        "games": 90
       },
       "golden state warriors": {
-        "elo": 1428.098300151234,
-        "games": 90
+        "elo": 1441.1855904994243,
+        "games": 91
       },
       "milwaukee bucks": {
         "elo": 1396.2137371617591,
@@ -253,8 +253,8 @@
         "games": 87
       },
       "utah jazz": {
-        "elo": 1325.258703911334,
-        "games": 87
+        "elo": 1320.5792464305716,
+        "games": 88
       },
       "boston celtics": {
         "elo": 1627.610376743594,
@@ -291,8 +291,8 @@
     },
     "ice-hockey:nhl": {
       "florida panthers": {
-        "elo": 1493.8139466387124,
-        "games": 97
+        "elo": 1502.5176552524538,
+        "games": 98
       },
       "edmonton oilers": {
         "elo": 1511.7981827739472,
@@ -303,28 +303,28 @@
         "games": 101
       },
       "st louis blues": {
-        "elo": 1499.1397392217843,
-        "games": 94
+        "elo": 1486.5371212371122,
+        "games": 95
       },
       "new jersey devils": {
-        "elo": 1513.659264322158,
-        "games": 95
-      },
-      "new york rangers": {
-        "elo": 1476.8987878627154,
+        "elo": 1502.6633153856715,
         "games": 96
       },
+      "new york rangers": {
+        "elo": 1485.9458851620345,
+        "games": 97
+      },
       "nashville predators": {
-        "elo": 1479.304183804764,
-        "games": 94
+        "elo": 1467.980143778422,
+        "games": 95
       },
       "ottawa senators": {
-        "elo": 1516.855899859756,
-        "games": 99
+        "elo": 1505.5426595248844,
+        "games": 100
       },
       "toronto maple leafs": {
-        "elo": 1408.0306413932228,
-        "games": 95
+        "elo": 1419.354681419565,
+        "games": 96
       },
       "columbus blue jackets": {
         "elo": 1509.5304963080196,
@@ -343,28 +343,28 @@
         "games": 95
       },
       "minnesota wild": {
-        "elo": 1535.05602265539,
-        "games": 105
+        "elo": 1526.5175882616818,
+        "games": 106
       },
       "los angeles kings": {
-        "elo": 1423.5213293164588,
-        "games": 99
+        "elo": 1414.8176207027175,
+        "games": 100
       },
       "anaheim ducks": {
         "elo": 1485.5757641133148,
         "games": 107
       },
       "new york islanders": {
-        "elo": 1468.6908004266656,
-        "games": 94
+        "elo": 1459.6437031273465,
+        "games": 95
       },
       "philadelphia flyers": {
         "elo": 1484.1354940199258,
         "games": 107
       },
       "utah mammoth": {
-        "elo": 1503.9413582882055,
-        "games": 102
+        "elo": 1514.937307224692,
+        "games": 103
       },
       "colorado avalanche": {
         "elo": 1587.2361386931445,
@@ -375,48 +375,48 @@
         "games": 95
       },
       "vegas golden knights": {
-        "elo": 1574.4441494419098,
-        "games": 118
+        "elo": 1581.3753798971018,
+        "games": 119
       },
       "calgary flames": {
         "elo": 1399.097609893015,
         "games": 97
       },
       "seattle kraken": {
-        "elo": 1439.2744051213383,
-        "games": 95
+        "elo": 1432.3431746661463,
+        "games": 96
       },
       "vancouver canucks": {
         "elo": 1359.6282402619881,
         "games": 96
       },
       "buffalo sabres": {
-        "elo": 1561.2023021966943,
-        "games": 107
+        "elo": 1569.7407365904025,
+        "games": 108
       },
       "montreal canadiens": {
-        "elo": 1592.8016974947172,
-        "games": 114
+        "elo": 1584.2687166006808,
+        "games": 115
       },
       "pittsburgh penguins": {
         "elo": 1513.9813072508548,
         "games": 102
       },
       "carolina hurricanes": {
-        "elo": 1669.1416026541701,
-        "games": 114
+        "elo": 1677.6745835482066,
+        "games": 115
       },
       "tampa bay lightning": {
         "elo": 1563.7739411786915,
         "games": 103
       },
       "detroit red wings": {
-        "elo": 1445.9642170206914,
-        "games": 96
+        "elo": 1457.277457355563,
+        "games": 97
       },
       "chicago blackhawks": {
-        "elo": 1381.5866492786479,
-        "games": 95
+        "elo": 1394.18926726332,
+        "games": 96
       }
     },
     "baseball:mlb": {
@@ -457,8 +457,8 @@
         "games": 193
       },
       "san diego padres": {
-        "elo": 1605.3403462249535,
-        "games": 197
+        "elo": 1616.0931357883323,
+        "games": 198
       },
       "pittsburgh pirates": {
         "elo": 1530.459714827883,
@@ -489,8 +489,8 @@
         "games": 194
       },
       "atlanta braves": {
-        "elo": 1551.109397052567,
-        "games": 197
+        "elo": 1541.5739426807243,
+        "games": 198
       },
       "houston astros": {
         "elo": 1477.724472309038,
@@ -525,8 +525,8 @@
         "games": 193
       },
       "milwaukee brewers": {
-        "elo": 1651.5445084972341,
-        "games": 194
+        "elo": 1640.7917189338552,
+        "games": 195
       },
       "san francisco giants": {
         "elo": 1408.3463312098627,
@@ -537,8 +537,8 @@
         "games": 195
       },
       "los angeles dodgers": {
-        "elo": 1587.2609905000897,
-        "games": 195
+        "elo": 1596.7964448719324,
+        "games": 196
       },
       "national all stars": {
         "elo": 1489.4249887221547,
@@ -691,8 +691,8 @@
         "games": 12
       },
       "sho shimabukuro": {
-        "elo": 1457.5158558664525,
-        "games": 24
+        "elo": 1446.850196473424,
+        "games": 25
       },
       "alexander blockx": {
         "elo": 1585.0738744856694,
@@ -1355,8 +1355,8 @@
         "games": 40
       },
       "miomir kecmanovic": {
-        "elo": 1434.3542293423618,
-        "games": 26
+        "elo": 1445.0198887353904,
+        "games": 27
       },
       "alexander zverev": {
         "elo": 1719.997780220173,
@@ -3821,8 +3821,8 @@
         "games": 34
       },
       "linda fruhvirtova": {
-        "elo": 1447.0397886465214,
-        "games": 32
+        "elo": 1439.1761793432563,
+        "games": 33
       },
       "lulu sun": {
         "elo": 1468.1921775658038,
@@ -3893,8 +3893,8 @@
         "games": 27
       },
       "aliaksandra sasnovich": {
-        "elo": 1522.4268370771051,
-        "games": 36
+        "elo": 1530.2904463803702,
+        "games": 37
       },
       "mary stoiana": {
         "elo": 1547.6819050211773,
@@ -5025,8 +5025,8 @@
         "games": 19
       },
       "rebecca sramkova": {
-        "elo": 1496.797672084684,
-        "games": 28
+        "elo": 1508.7690733357795,
+        "games": 29
       },
       "benjamin willwerth": {
         "elo": 1489.71225631668,
@@ -5609,8 +5609,8 @@
         "games": 9
       },
       "claire liu": {
-        "elo": 1566.1997657211944,
-        "games": 28
+        "elo": 1554.228364470099,
+        "games": 29
       },
       "andrea pellegrino": {
         "elo": 1526.5294056530752,
@@ -8855,8 +8855,8 @@
         "games": 4
       },
       "mouz": {
-        "elo": 1465.8657832714428,
-        "games": 36
+        "elo": 1448.91372688593,
+        "games": 38
       },
       "yellow submarine": {
         "elo": 1484.9437411152076,
@@ -9239,8 +9239,8 @@
         "games": 5
       },
       "legion": {
-        "elo": 1510.5419110888138,
-        "games": 3
+        "elo": 1527.4939674743266,
+        "games": 5
       }
     }
   },
@@ -13046,60 +13046,6 @@
       }
     ],
     "ice-hockey:nhl": [
-      {
-        "kind": "binary",
-        "p": 0.39774997906719317,
-        "y": 1.0,
-        "match_id": "espn:401802854"
-      },
-      {
-        "kind": "binary",
-        "p": 0.45067811164298527,
-        "y": 0.0,
-        "match_id": "espn:401802855"
-      },
-      {
-        "kind": "binary",
-        "p": 0.6641108822188273,
-        "y": 0.0,
-        "match_id": "espn:401802856"
-      },
-      {
-        "kind": "binary",
-        "p": 0.7138171417837746,
-        "y": 1.0,
-        "match_id": "espn:401802857"
-      },
-      {
-        "kind": "binary",
-        "p": 0.6038903534827074,
-        "y": 0.0,
-        "match_id": "espn:401802858"
-      },
-      {
-        "kind": "binary",
-        "p": 0.6364187078021717,
-        "y": 0.0,
-        "match_id": "espn:401802859"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5795664624683168,
-        "y": 0.0,
-        "match_id": "espn:401802860"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5786900081331129,
-        "y": 1.0,
-        "match_id": "espn:401802861"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5160994761149895,
-        "y": 1.0,
-        "match_id": "espn:401802862"
-      },
       {
         "kind": "binary",
         "p": 0.5472490408104425,
@@ -19045,33 +18991,63 @@
         "p": 0.6267807259989255,
         "y": 1.0,
         "match_id": "espn:401892448"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4266490447018252,
+        "y": 0.0,
+        "match_id": "espn:401891815"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4337979986828996,
+        "y": 1.0,
+        "match_id": "espn:401892449"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4343379832564201,
+        "y": 1.0,
+        "match_id": "espn:401892450"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5497974468243244,
+        "y": 0.0,
+        "match_id": "espn:401892451"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5730782803145826,
+        "y": 1.0,
+        "match_id": "espn:401892453"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5476451350340386,
+        "y": 1.0,
+        "match_id": "espn:401892452"
+      },
+      {
+        "kind": "binary",
+        "p": 0.36986910076638985,
+        "y": 1.0,
+        "match_id": "espn:401891779"
+      },
+      {
+        "kind": "binary",
+        "p": 0.34656152275960167,
+        "y": 0.0,
+        "match_id": "espn:401892454"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4351854306870674,
+        "y": 0.0,
+        "match_id": "espn:401891806"
       }
     ],
     "basketball:nba": [
-      {
-        "kind": "binary",
-        "p": 0.5265434877479426,
-        "y": 0.0,
-        "match_id": "espn:401810195"
-      },
-      {
-        "kind": "binary",
-        "p": 0.45009220555033047,
-        "y": 1.0,
-        "match_id": "espn:401810196"
-      },
-      {
-        "kind": "binary",
-        "p": 0.7313892936181178,
-        "y": 1.0,
-        "match_id": "espn:401810197"
-      },
-      {
-        "kind": "binary",
-        "p": 0.7187557170886759,
-        "y": 1.0,
-        "match_id": "espn:401810198"
-      },
       {
         "kind": "binary",
         "p": 0.7602043273833627,
@@ -25047,21 +25023,33 @@
         "p": 0.2613414306440985,
         "y": 0.0,
         "match_id": "espn:401898716"
+      },
+      {
+        "kind": "binary",
+        "p": 0.8720581937319682,
+        "y": 0.0,
+        "match_id": "espn:401901820"
+      },
+      {
+        "kind": "binary",
+        "p": 0.9051298047231789,
+        "y": 0.0,
+        "match_id": "espn:401898389"
+      },
+      {
+        "kind": "binary",
+        "p": 0.23397287403810813,
+        "y": 0.0,
+        "match_id": "espn:401914128"
+      },
+      {
+        "kind": "binary",
+        "p": 0.34563548259049026,
+        "y": 1.0,
+        "match_id": "espn:401898390"
       }
     ],
     "baseball:mlb": [
-      {
-        "kind": "binary",
-        "p": 0.439055447005228,
-        "y": 0.0,
-        "match_id": "espn:401816142"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5976884646699684,
-        "y": 1.0,
-        "match_id": "espn:401816145"
-      },
       {
         "kind": "binary",
         "p": 0.4637684209267096,
@@ -31049,21 +31037,21 @@
         "p": 0.5496487077875306,
         "y": 1.0,
         "match_id": "espn:401907986"
+      },
+      {
+        "kind": "binary",
+        "p": 0.47677271859213627,
+        "y": 0.0,
+        "match_id": "espn:401908015"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4623605218310557,
+        "y": 1.0,
+        "match_id": "espn:401908004"
       }
     ],
     "tennis:wta": [
-      {
-        "kind": "binary",
-        "p": 0.48750635456407754,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:181890"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5274524148900742,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:182340"
-      },
       {
         "kind": "binary",
         "p": 0.6324755709346083,
@@ -37051,15 +37039,21 @@
         "p": 0.4861201447476181,
         "y": 1.0,
         "match_id": "espn:tennis:wta:185231"
+      },
+      {
+        "kind": "binary",
+        "p": 0.40142993744523525,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:185285"
+      },
+      {
+        "kind": "binary",
+        "p": 0.3931804651632538,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:185278"
       }
     ],
     "tennis:atp": [
-      {
-        "kind": "binary",
-        "p": 0.5353883202857339,
-        "y": 1.0,
-        "match_id": "espn:tennis:atp:183334"
-      },
       {
         "kind": "binary",
         "p": 0.6193441093551746,
@@ -43053,6 +43047,12 @@
         "p": 0.4998779381675883,
         "y": 0.0,
         "match_id": "espn:tennis:atp:184348"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5332829696514335,
+        "y": 0.0,
+        "match_id": "espn:tennis:atp:184889"
       }
     ],
     "cricket:t20": [
@@ -48264,7 +48264,11 @@
       "espn:401908947",
       "espn:401914101",
       "espn:401914102",
-      "espn:401898716"
+      "espn:401898716",
+      "espn:401901820",
+      "espn:401898389",
+      "espn:401914128",
+      "espn:401898390"
     ],
     "ice-hockey:nhl": [
       "espn:401777460",
@@ -49873,7 +49877,16 @@
       "espn:401892445",
       "espn:401892446",
       "espn:401892447",
-      "espn:401892448"
+      "espn:401892448",
+      "espn:401891815",
+      "espn:401892449",
+      "espn:401892450",
+      "espn:401892451",
+      "espn:401892453",
+      "espn:401892452",
+      "espn:401891779",
+      "espn:401892454",
+      "espn:401891806"
     ],
     "baseball:mlb": [
       "espn:401832869",
@@ -52770,7 +52783,9 @@
       "espn:401908003",
       "espn:401908014",
       "espn:401907991",
-      "espn:401907986"
+      "espn:401907986",
+      "espn:401908015",
+      "espn:401908004"
     ],
     "tennis:atp": [
       "espn:tennis:atp:173654",
@@ -57041,7 +57056,8 @@
       "espn:tennis:atp:186322",
       "espn:tennis:atp:183514",
       "espn:tennis:atp:184348",
-      "espn:tennis:atp:186323"
+      "espn:tennis:atp:186323",
+      "espn:tennis:atp:184889"
     ],
     "tennis:wta": [
       "espn:tennis:wta:173654",
@@ -62946,7 +62962,9 @@
       "espn:tennis:wta:185240",
       "espn:tennis:wta:185237",
       "espn:tennis:wta:185231",
-      "espn:tennis:wta:185241"
+      "espn:tennis:wta:185241",
+      "espn:tennis:wta:185285",
+      "espn:tennis:wta:185278"
     ],
     "cricket:test": [
       "cricsheet:1538631",
@@ -64120,7 +64138,9 @@
       "opendota:9031923491",
       "opendota:9032007166",
       "opendota:9032112877",
-      "opendota:9032252060"
+      "opendota:9032252060",
+      "opendota:9032390265",
+      "opendota:9032516247"
     ]
   },
   "draw_stats": {
@@ -64129,23 +64149,23 @@
       "draws": 6
     },
     "basketball:nba": {
-      "total": 1408,
+      "total": 1412,
       "draws": 0
     },
     "ice-hockey:nhl": {
-      "total": 1607,
+      "total": 1616,
       "draws": 0
     },
     "baseball:mlb": {
-      "total": 2895,
+      "total": 2897,
       "draws": 21
     },
     "tennis:atp": {
-      "total": 4269,
+      "total": 4270,
       "draws": 0
     },
     "tennis:wta": {
-      "total": 5903,
+      "total": 5905,
       "draws": 0
     },
     "cricket:test": {
@@ -64165,7 +64185,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 707,
+      "total": 709,
       "draws": 0
     }
   },
@@ -64201,11 +64221,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "c79670c777eb81968ab5ee1beb7de30a213786abb2dc52e200c3cffee0d23c99",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "cd9f8e728751a8e2dce367080410f317f77fd45f702db7c372054e08f57615f5",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.18027593865967861,
-      "last_brier": 0.20032006749004055,
+      "last_skill": 0.1573329081146695,
+      "last_brier": 0.2076331714405451,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64214,11 +64234,11 @@
       "active": false,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "209e51cb58c0291d83a32d4f610853a79f3209fac053eb80b5bab2ad6643bef8",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "9a097f59dce9ae60a1204954cfe1a9369333e34dbc1842852046b30e02ebc70e",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.017334204670455433,
-      "last_brier": 0.24151468584711935,
+      "last_skill": 0.016266166969563955,
+      "last_brier": 0.24239201645869898,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64227,11 +64247,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "b3afe5e6f6c5e82a98078b2bf5b2ca9885f500780d27615a3a758099a8de71b5",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "cba0569d324db679b431a6df1bbc3075ac91029cb617e4ff662d8fe5ebb244ba",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.049760195374368266,
-      "last_brier": 0.23696605127851714,
+      "last_skill": 0.050158499286714564,
+      "last_brier": 0.23660551782767986,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64240,11 +64260,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "1e54b474082ffdbded852c9f4974f5141392e8a75c047891119d8a6ea5d67bb6",
+      "last_evidence_fingerprint": "870a2da222f86507e706d9f82a14b4995d42a287e8373e3f269c18540e2e04b7",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.049283728290732465,
-      "last_brier": 0.23651444049447398,
+      "last_skill": 0.05054066155246484,
+      "last_brier": 0.23620174692228652,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64253,11 +64273,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "8365891de918f84ea0f898ec3cfa2e3bf954ee9cd88177ab4e0dfa595098d6da",
+      "last_evidence_fingerprint": "645b5746ec242160d46ca9a75f9129ceddf064b500bed3ef022dc6a479e9681e",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.031436606795916644,
-      "last_brier": 0.24211663421619062,
+      "last_skill": 0.03280209928741973,
+      "last_brier": 0.24170275538807354,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -64306,7 +64326,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "bb426aea7308fb1ddc489eb21cc23de11bb3ce6c39a6ac9d1c1b50e37cd43619",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.0005558251757846744,
       "last_brier": 0.2468377250772112,
