@@ -23,7 +23,7 @@
     "home_starter_name": "Tyler Mahle",
     "away_starter_id": "607192",
     "away_starter_name": "Tyler Glasnow",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849838",
@@ -84,8 +84,8 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "135",
     "away_name": "San Diego Padres",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "694819",
+    "home_starter_name": "Jacob Misiorowski",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
