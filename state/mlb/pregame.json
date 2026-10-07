@@ -45,8 +45,8 @@
     "home_name": "San Diego Padres",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "621111",
+    "home_starter_name": "Walker Buehler",
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
