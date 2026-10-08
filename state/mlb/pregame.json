@@ -10,7 +10,7 @@
     "home_starter_name": "Hagen Smith",
     "away_starter_id": "800048",
     "away_starter_name": "Parker Messick",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849831",
@@ -27,7 +27,7 @@
   },
   {
     "game_pk": "849809",
-    "start_time": "2026-10-11T07:33:00Z",
+    "start_time": "2026-10-12T00:00:00Z",
     "home_id": "158",
     "home_name": "Milwaukee Brewers",
     "away_id": "119",
