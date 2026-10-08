@@ -18326,12 +18326,25 @@
     "event_id": "opendota:8988091750",
     "start_time": "2026-09-07T21:11:08+00:00",
     "home_name": "GIOR DOTA",
-    "away_name": "The House Esports",
+    "away_name": "PIZZA HOOK",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-08T13:45:17.594209+00:00",
+        "changed": {
+          "away_name": {
+            "before": "The House Esports",
+            "after": "PIZZA HOOK"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-08T13:45:17.594211+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -32386,13 +32399,26 @@
     "league": "professional",
     "event_id": "opendota:8988152817",
     "start_time": "2026-09-07T22:18:58+00:00",
-    "home_name": "The House Esports",
+    "home_name": "PIZZA HOOK",
     "away_name": "GIOR DOTA",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-08T13:45:17.594194+00:00",
+        "changed": {
+          "home_name": {
+            "before": "The House Esports",
+            "after": "PIZZA HOOK"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-08T13:45:17.594196+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -233599,12 +233625,25 @@
     "event_id": "opendota:8990899968",
     "start_time": "2026-09-09T19:39:22+00:00",
     "home_name": "Rebeldes",
-    "away_name": "The House Esports",
+    "away_name": "PIZZA HOOK",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-08T13:45:17.594021+00:00",
+        "changed": {
+          "away_name": {
+            "before": "The House Esports",
+            "after": "PIZZA HOOK"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-08T13:45:17.594047+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -233612,12 +233651,25 @@
     "event_id": "opendota:8990822175",
     "start_time": "2026-09-09T18:37:24+00:00",
     "home_name": "Rebeldes",
-    "away_name": "The House Esports",
+    "away_name": "PIZZA HOOK",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-08T13:45:17.594064+00:00",
+        "changed": {
+          "away_name": {
+            "before": "The House Esports",
+            "after": "PIZZA HOOK"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-08T13:45:17.594070+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -233637,13 +233689,26 @@
     "league": "professional",
     "event_id": "opendota:8990727638",
     "start_time": "2026-09-09T17:33:10+00:00",
-    "home_name": "The House Esports",
+    "home_name": "PIZZA HOOK",
     "away_name": "Rebeldes",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-08T13:45:17.594089+00:00",
+        "changed": {
+          "home_name": {
+            "before": "The House Esports",
+            "after": "PIZZA HOOK"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-08T13:45:17.594090+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -268613,6 +268678,381 @@
     "source_league_name": "WTA",
     "home_team_id": "",
     "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184351",
+    "start_time": "2026-10-08T07:05Z",
+    "home_name": "Karolina Muchova",
+    "away_name": "Nikola Bartunkova",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184352",
+    "start_time": "2026-10-08T11:05Z",
+    "home_name": "Ekaterina Alexandrova",
+    "away_name": "Mirra Andreeva",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184864",
+    "start_time": "2026-10-08T04:10Z",
+    "home_name": "Camilo Ugo Carabelli",
+    "away_name": "Ilia Simakin",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184869",
+    "start_time": "2026-10-08T05:45Z",
+    "home_name": "Hubert Hurkacz",
+    "away_name": "James Duckworth",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184843",
+    "start_time": "2026-10-08T06:00Z",
+    "home_name": "Bernard Tomic",
+    "away_name": "Matteo Arnaldi",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184858",
+    "start_time": "2026-10-08T06:05Z",
+    "home_name": "Thiago Agustin Tirante",
+    "away_name": "Hamad Medjedovic",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184863",
+    "start_time": "2026-10-08T06:20Z",
+    "home_name": "Mariano Navone",
+    "away_name": "Pablo Carreno Busta",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184850",
+    "start_time": "2026-10-08T06:50Z",
+    "home_name": "Adolfo Daniel Vallejo",
+    "away_name": "Valentin Royer",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184882",
+    "start_time": "2026-10-08T07:10Z",
+    "home_name": "Marcos Giron",
+    "away_name": "Sebastian Baez",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184867",
+    "start_time": "2026-10-08T07:30Z",
+    "home_name": "Fabian Marozsan",
+    "away_name": "Zachary Svajda",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184893",
+    "start_time": "2026-10-08T08:10Z",
+    "home_name": "Juan Manuel Cerundolo",
+    "away_name": "Nicolas Mejia",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184875",
+    "start_time": "2026-10-08T09:30Z",
+    "home_name": "Botic Van De Zandschulp",
+    "away_name": "Daniel Merida",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184841",
+    "start_time": "2026-10-08T09:35Z",
+    "home_name": "Martin Landaluce",
+    "away_name": "Jan-Lennard Struff",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184868",
+    "start_time": "2026-10-08T10:05Z",
+    "home_name": "Luca Van Assche",
+    "away_name": "Bu Yunchaokete",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "atp",
+    "event_id": "espn:tennis:atp:184892",
+    "start_time": "2026-10-08T11:30Z",
+    "home_name": "Vit Kopriva",
+    "away_name": "Zizou Bergs",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/atp",
+    "source_league_name": "ATP",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184351",
+    "start_time": "2026-10-08T07:05Z",
+    "home_name": "Karolina Muchova",
+    "away_name": "Nikola Bartunkova",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:184352",
+    "start_time": "2026-10-08T11:05Z",
+    "home_name": "Ekaterina Alexandrova",
+    "away_name": "Mirra Andreeva",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:185225",
+    "start_time": "2026-10-08T08:05Z",
+    "home_name": "Alicia Dudeney",
+    "away_name": "Ayla Aksu",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:185227",
+    "start_time": "2026-10-08T10:30Z",
+    "home_name": "Simona Waltert",
+    "away_name": "Linda Klimovicova",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9034789047",
+    "start_time": "2026-10-08T12:00:56+00:00",
+    "home_name": "Team Synapse",
+    "away_name": "Blasterbl",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9034768910",
+    "start_time": "2026-10-08T11:43:53+00:00",
+    "home_name": "LGD Gaming",
+    "away_name": "Team Yandex",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9034674416",
+    "start_time": "2026-10-08T10:15:59+00:00",
+    "home_name": "LGD Gaming",
+    "away_name": "Team Yandex",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9034607477",
+    "start_time": "2026-10-08T09:00:26+00:00",
+    "home_name": "LGD Gaming",
+    "away_name": "Team Yandex",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
     "score_encoding": "winner_indicator"
   }
 ]
