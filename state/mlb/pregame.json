@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849832",
-    "start_time": "2026-10-09T00:00:00Z",
-    "home_id": "145",
-    "home_name": "Chicago White Sox",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "696146",
-    "home_starter_name": "Hagen Smith",
-    "away_starter_id": "800048",
-    "away_starter_name": "Parker Messick",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849831",
     "start_time": "2026-10-11T00:00:00Z",
     "home_id": "114",
@@ -32,6 +19,32 @@
     "home_name": "Milwaukee Brewers",
     "away_id": "119",
     "away_name": "Los Angeles Dodgers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849812",
+    "start_time": "2026-10-12T21:00:00Z",
+    "home_id": "158",
+    "home_name": "Milwaukee Brewers",
+    "away_id": "119",
+    "away_name": "Los Angeles Dodgers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849820",
+    "start_time": "2026-10-13T00:00:00Z",
+    "home_id": "139",
+    "home_name": "Tampa Bay Rays",
+    "away_id": "5521",
+    "away_name": "CLE/CWS",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
