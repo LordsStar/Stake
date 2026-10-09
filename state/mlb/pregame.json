@@ -6,8 +6,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "145",
     "away_name": "Chicago White Sox",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "668909",
+    "home_starter_name": "Gavin Williams",
     "away_starter_id": "680732",
     "away_starter_name": "Sean Burke",
     "lineups_confirmed": false
