@@ -1,15 +1,9 @@
 {
-  "generated_at": "2026-10-09T22:45:47.734026+00:00",
-  "targets_in_snapshot": 327,
+  "generated_at": "2026-10-10T06:03:45.354081+00:00",
+  "targets_in_snapshot": 358,
   "targets_processed": 24,
   "matched": [],
   "unmatched": [
-    "soccer/soccer/87e311a1-2ce8-40b8-8aa2-626268f72c8c/09e546f8-8174-4e2d-a824-6fcc28d3f418: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/039aab21-3551-463f-b5aa-905064044d39: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/09aa3dea-3264-467e-bf3a-c22bc8eea447: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/34a24033-8156-46fa-8ec6-213f289d10ee: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/5dca0446-70b8-42fd-a466-65a396d7927c: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/6c09baf2-319b-4494-a056-5bc5034510ea: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/8b76899e-a283-4dd1-b248-7c844d31b6a3: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/9cced39a-c646-4c57-995b-1171a2100fcc: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/8cf4f75b-8dbf-4674-8975-463f5bc531cb/ab61e1ed-c5c6-4787-b394-09f4ab49bec8: sin liga equivalente segura (no_exact_match)",
@@ -22,21 +16,27 @@
     "soccer/soccer/92c38c7a-12a7-4477-8454-7b151196f68c/dd0299ce-a315-48ab-b89e-4f3e5333f4dc: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9389f0c6-d946-42d6-b230-bb8b1270ee6f/ba2b72c8-9f28-44ef-9a0b-1df43c500485: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9389f0c6-d946-42d6-b230-bb8b1270ee6f/bd85c761-37f7-42a3-bc7f-41333e2aa81e: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/2c29c341-dd35-4da4-b9d8-1b7d6d0381a7: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/9a3393e5-76d2-4592-8def-7cd94f4492b9: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/d8f7fea0-5016-459a-b659-b48dcb0ec821: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/da8a75b9-403d-4104-ae21-402b5fd62e9a: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/daa70614-dd3f-4702-844c-20aa7b9eb945: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/fd438a8b-fbcf-468e-b41e-f81c948f2d2b: sin liga equivalente segura (no_exact_match)"
+    "soccer/soccer/9db110ab-073c-4aa5-a325-120ab317ba03/fd438a8b-fbcf-468e-b41e-f81c948f2d2b: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/9e9d74c8-e557-49da-b6bc-e777c7121c47/2fafdcf0-b1fd-48bc-8a2e-22ef8e9d0232: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/9f8e2daf-58d2-4470-b864-7c98355be8f4/a7ca677e-b673-4b8a-9e5e-83dcb7cade37: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/a0d1b20d-906c-4d69-b407-19adfa5c46b3/f0bbfad0-0059-4c6f-8a87-3ecaf592fc3e: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/a119c448-176d-43e2-844e-34e84777a971/f00175c1-2b09-4300-98e1-9454be395358: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/a12c3c98-a585-4ac6-ae8b-064f8cdbe5c9/05499b4a-467a-4427-b7d1-cf35581567c0: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/a12c3c98-a585-4ac6-ae8b-064f8cdbe5c9/278999cd-a15b-4d9c-8d94-86da3b8770a4: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/a12c3c98-a585-4ac6-ae8b-064f8cdbe5c9/e3d021e4-2dd4-41c7-95c0-538cc1c5dd13: sin liga equivalente segura (no_exact_match)"
   ],
-  "rows_collected": 193,
-  "rows_added": 0,
+  "rows_collected": 665,
+  "rows_added": 22,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 193,
-    "OpenDota": "error: HTTPSConnectionPool(host='api.opendota.com', port=443): Read timed out. (read timeout=30)",
+    "OpenDota": 472,
     "League of Legends": 0
   },
-  "next_league_cursor": 214,
+  "next_league_cursor": 238,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
