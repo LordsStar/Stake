@@ -50,5 +50,18 @@
     "away_starter_id": "",
     "away_starter_name": null,
     "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849813",
+    "start_time": "2026-10-14T00:00:00Z",
+    "home_id": "139",
+    "home_name": "Tampa Bay Rays",
+    "away_id": "5521",
+    "away_name": "CLE/CWS",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
   }
 ]
