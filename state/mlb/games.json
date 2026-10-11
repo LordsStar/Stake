@@ -228615,5 +228615,84 @@
         "pitches": 18
       }
     ]
+  },
+  {
+    "game_pk": "849831",
+    "start_time": "2026-10-11T00:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "145",
+    "away_name": "Chicago White Sox",
+    "home_score": 2,
+    "away_score": 0,
+    "home_starter_id": "668909",
+    "away_starter_id": "680732",
+    "home_pitchers": [
+      {
+        "id": "668909",
+        "outs": 17,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 1,
+        "k": 12,
+        "pitches": 94
+      },
+      {
+        "id": "681870",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 5
+      },
+      {
+        "id": "683769",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 24
+      },
+      {
+        "id": "671922",
+        "outs": 5,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 27
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "680732",
+        "outs": 15,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 71
+      },
+      {
+        "id": "656794",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 23
+      },
+      {
+        "id": "691799",
+        "outs": 3,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 13
+      }
+    ]
   }
 ]
