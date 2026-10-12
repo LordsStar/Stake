@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849809",
-    "start_time": "2026-10-12T00:00:00Z",
-    "home_id": "158",
-    "home_name": "Milwaukee Brewers",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "694819",
-    "home_starter_name": "Jacob Misiorowski",
-    "away_starter_id": "669373",
-    "away_starter_name": "Tarik Skubal",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849812",
     "start_time": "2026-10-12T21:00:00Z",
     "home_id": "158",
@@ -54,6 +41,32 @@
   {
     "game_pk": "849811",
     "start_time": "2026-10-15T00:00:00Z",
+    "home_id": "119",
+    "home_name": "Los Angeles Dodgers",
+    "away_id": "158",
+    "away_name": "Milwaukee Brewers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849818",
+    "start_time": "2026-10-15T22:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849810",
+    "start_time": "2026-10-16T01:00:00Z",
     "home_id": "119",
     "home_name": "Los Angeles Dodgers",
     "away_id": "158",
