@@ -1,41 +1,15 @@
 [
   {
-    "game_pk": "849812",
-    "start_time": "2026-10-12T21:00:00Z",
-    "home_id": "158",
-    "home_name": "Milwaukee Brewers",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
-    "home_starter_id": "701656",
-    "home_starter_name": "Logan Henderson",
-    "away_starter_id": "808967",
-    "away_starter_name": "Yoshinobu Yamamoto",
-    "lineups_confirmed": true
-  },
-  {
-    "game_pk": "849820",
-    "start_time": "2026-10-13T00:00:00Z",
-    "home_id": "139",
-    "home_name": "Tampa Bay Rays",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "656876",
-    "home_starter_name": "Drew Rasmussen",
-    "away_starter_id": "656492",
-    "away_starter_name": "Foster Griffin",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849813",
     "start_time": "2026-10-14T00:00:00Z",
     "home_id": "139",
     "home_name": "Tampa Bay Rays",
     "away_id": "114",
     "away_name": "Cleveland Guardians",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "642547",
+    "home_starter_name": "Freddy Peralta",
+    "away_starter_id": "800048",
+    "away_starter_name": "Parker Messick",
     "lineups_confirmed": false
   },
   {
@@ -67,6 +41,32 @@
   {
     "game_pk": "849810",
     "start_time": "2026-10-16T01:00:00Z",
+    "home_id": "119",
+    "home_name": "Los Angeles Dodgers",
+    "away_id": "158",
+    "away_name": "Milwaukee Brewers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849817",
+    "start_time": "2026-10-16T22:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849808",
+    "start_time": "2026-10-17T01:00:00Z",
     "home_id": "119",
     "home_name": "Los Angeles Dodgers",
     "away_id": "158",
