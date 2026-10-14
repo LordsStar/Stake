@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849813",
-    "start_time": "2026-10-14T00:00:00Z",
-    "home_id": "139",
-    "home_name": "Tampa Bay Rays",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "642547",
-    "home_starter_name": "Freddy Peralta",
-    "away_starter_id": "800048",
-    "away_starter_name": "Parker Messick",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849811",
     "start_time": "2026-10-15T00:00:00Z",
     "home_id": "119",
@@ -71,6 +58,19 @@
     "home_name": "Los Angeles Dodgers",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
+    "home_starter_id": "",
+    "home_starter_name": null,
+    "away_starter_id": "",
+    "away_starter_name": null,
+    "lineups_confirmed": false
+  },
+  {
+    "game_pk": "849816",
+    "start_time": "2026-10-18T00:00:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
