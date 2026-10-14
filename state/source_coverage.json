@@ -1,20 +1,15 @@
 {
-  "generated_at": "2026-10-14T05:04:22.030203+00:00",
-  "targets_in_snapshot": 245,
+  "generated_at": "2026-10-14T12:08:10.836769+00:00",
+  "targets_in_snapshot": 267,
   "targets_processed": 24,
   "matched": [],
   "unmatched": [
-    "soccer/soccer/d020a36e-bbf8-4561-8caa-058c2e02f952/62699282-5557-4952-875c-f9f48b5a8827: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/d5474c5f-6387-4e97-bf4c-adca82fb71eb/ab805a62-45a9-48dc-aac7-27bddbad08c2: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/d80ddfff-3071-4913-9b0c-542cf52bffb6/5eb05022-718f-4987-a585-e82f0a5be95d: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/d80ddfff-3071-4913-9b0c-542cf52bffb6/7c8f1f6c-af86-4a06-89bd-f4aed659837b: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/e273792f-05e3-4f75-8d57-36c873eae969/425e9e11-1e7e-440f-afde-338219a4c5aa: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/e5f16c8c-5835-46e8-910d-e8e9acf86216/7017e14e-e570-4ccc-8f4b-a5f80420a27a: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/0ec0353d-27ac-4893-93e3-7b7c14edf285: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/0f3153b4-d598-4618-813b-5686ae7702d3: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/4c1fa946-99f7-45c7-adfb-b6f1f2cd0583: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/920c964d-fe2b-4eaf-9eb2-764bca10ea7c: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/aa7c4669-5742-400c-8657-64e1f725ec00: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/b0e69f09-0099-4b21-8c48-a44aff1eb246: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/c7822d6f-b769-4e11-8e04-2e2cfaf11689: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/eaadf307-ea04-4f94-85a4-73a2e0716227/cb4c5c61-41be-4514-b93c-8a2bf7a340f2: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/f124f5cb-043a-4925-b27a-a12750fcf0c9/7006784c-537f-40ac-b04f-ec0bcb2bd73e: sin liga equivalente segura (no_exact_match)",
@@ -27,16 +22,21 @@
     "soccer/soccer/fcc2c9fb-80e4-4b74-bb3e-752981e19308/f5c7015e-ce2e-4901-bd4b-7f563bb6fba3: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/451881c2-8c79-44e9-91fe-af1921b3dcc1: sin liga equivalente segura (no_exact_match)",
     "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/88c5718f-e1ee-47d1-b5f1-2a42734a5e60: sin liga equivalente segura (no_exact_match)",
-    "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/bc8d0d08-8fd6-4fbb-b30e-2379901fd569: sin liga equivalente segura (no_exact_match)"
+    "soccer/soccer/fdb02332-fde1-491b-aa0c-463f00683399/bc8d0d08-8fd6-4fbb-b30e-2379901fd569: sin liga equivalente segura (no_exact_match)",
+    "soccer/soccer/fe380688-c45f-4250-b88a-315ff6e3ae8b/29897a3b-0a09-4f0d-86cd-2b9213e04544: sin liga equivalente segura (no_exact_match)",
+    "squash/squash/af802bab-3184-4cbe-9c4b-8ee9c567e28a/3944c330-da5d-4743-a56f-682ccc94a87c: sin liga equivalente segura (no_exact_match)",
+    "squash/squash/af802bab-3184-4cbe-9c4b-8ee9c567e28a/a5586395-70c5-435a-88fe-2b0af99e1e14: sin liga equivalente segura (no_exact_match)",
+    "table-tennis/table-tennis/3873b67e-53fb-42d8-9229-77533927949c/0ff7b9ac-f67e-4688-80a9-6f5943d1a4fb: sin liga equivalente segura (no_exact_match)",
+    "table-tennis/table-tennis/766639e0-8098-47ad-8e33-85e9717746e3/a3d9f661-5f51-45b0-b2bb-d2721b977390: sin liga equivalente segura (no_exact_match)"
   ],
   "rows_collected": 629,
-  "rows_added": 10,
+  "rows_added": 15,
   "schema_rejections": [],
   "auxiliary_sources": {
     "Cricsheet": 193,
     "OpenDota": 436,
     "League of Legends": 0
   },
-  "next_league_cursor": 207,
+  "next_league_cursor": 231,
   "note": "Cobertura de fuentes gratuitas; una liga sin match no se aproxima ni se fabrica."
 }
