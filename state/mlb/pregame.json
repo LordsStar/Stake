@@ -1,20 +1,7 @@
 [
   {
-    "game_pk": "849810",
-    "start_time": "2026-10-16T00:00:00Z",
-    "home_id": "119",
-    "home_name": "Los Angeles Dodgers",
-    "away_id": "158",
-    "away_name": "Milwaukee Brewers",
-    "home_starter_id": "607192",
-    "home_starter_name": "Tyler Glasnow",
-    "away_starter_id": "675660",
-    "away_starter_name": "Shane Drohan",
-    "lineups_confirmed": true
-  },
-  {
     "game_pk": "849817",
-    "start_time": "2026-10-16T22:00:00Z",
+    "start_time": "2026-10-17T00:00:00Z",
     "home_id": "114",
     "home_name": "Cleveland Guardians",
     "away_id": "139",
@@ -23,19 +10,6 @@
     "home_starter_name": null,
     "away_starter_id": "607259",
     "away_starter_name": "Nick Martinez",
-    "lineups_confirmed": false
-  },
-  {
-    "game_pk": "849808",
-    "start_time": "2026-10-17T01:00:00Z",
-    "home_id": "119",
-    "home_name": "Los Angeles Dodgers",
-    "away_id": "158",
-    "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
     "lineups_confirmed": false
   },
   {
@@ -52,12 +26,12 @@
     "lineups_confirmed": false
   },
   {
-    "game_pk": "849806",
-    "start_time": "2026-10-19T00:00:00Z",
-    "home_id": "158",
-    "home_name": "Milwaukee Brewers",
-    "away_id": "119",
-    "away_name": "Los Angeles Dodgers",
+    "game_pk": "849815",
+    "start_time": "2026-10-20T00:00:00Z",
+    "home_id": "139",
+    "home_name": "Tampa Bay Rays",
+    "away_id": "114",
+    "away_name": "Cleveland Guardians",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
