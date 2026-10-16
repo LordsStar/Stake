@@ -319,5 +319,8 @@
   },
   "cricket:odi": {
     "australia a": "australia"
+  },
+  "cricket:t20": {
+    "australia": "austria"
   }
 }
