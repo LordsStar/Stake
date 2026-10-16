@@ -6,8 +6,8 @@
     "home_name": "Cleveland Guardians",
     "away_id": "139",
     "away_name": "Tampa Bay Rays",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "542888",
+    "home_starter_name": "Shawn Armstrong",
     "away_starter_id": "607259",
     "away_starter_name": "Nick Martinez",
     "lineups_confirmed": false
