@@ -1,7 +1,7 @@
 [
   {
     "game_pk": "849816",
-    "start_time": "2026-10-18T00:00:00Z",
+    "start_time": "2026-10-18T00:08:00Z",
     "home_id": "114",
     "home_name": "Cleveland Guardians",
     "away_id": "139",
@@ -14,7 +14,7 @@
   },
   {
     "game_pk": "849817",
-    "start_time": "2026-10-18T21:00:00Z",
+    "start_time": "2026-10-18T21:08:00Z",
     "home_id": "114",
     "home_name": "Cleveland Guardians",
     "away_id": "139",
@@ -27,7 +27,7 @@
   },
   {
     "game_pk": "849815",
-    "start_time": "2026-10-20T00:00:00Z",
+    "start_time": "2026-10-20T00:08:00Z",
     "home_id": "139",
     "home_name": "Tampa Bay Rays",
     "away_id": "114",
@@ -40,7 +40,7 @@
   },
   {
     "game_pk": "849814",
-    "start_time": "2026-10-21T00:00:00Z",
+    "start_time": "2026-10-21T00:08:00Z",
     "home_id": "139",
     "home_name": "Tampa Bay Rays",
     "away_id": "114",
