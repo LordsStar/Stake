@@ -229409,5 +229409,138 @@
         "pitches": 39
       }
     ]
+  },
+  {
+    "game_pk": "849816",
+    "start_time": "2026-10-18T00:08:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 3,
+    "away_score": 7,
+    "home_starter_id": "542888",
+    "away_starter_id": "607259",
+    "home_pitchers": [
+      {
+        "id": "542888",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 13
+      },
+      {
+        "id": "656492",
+        "outs": 11,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 5,
+        "pitches": 44
+      },
+      {
+        "id": "682982",
+        "outs": 1,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 22
+      },
+      {
+        "id": "682120",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 14
+      },
+      {
+        "id": "677944",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 22
+      },
+      {
+        "id": "670036",
+        "outs": 4,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 21
+      },
+      {
+        "id": "676282",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 15
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "607259",
+        "outs": 16,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 79
+      },
+      {
+        "id": "642547",
+        "outs": 2,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 9
+      },
+      {
+        "id": "693855",
+        "outs": 3,
+        "hr": 1,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 29
+      },
+      {
+        "id": "687330",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 16
+      },
+      {
+        "id": "592155",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 4
+      },
+      {
+        "id": "641329",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 12
+      }
+    ]
   }
 ]

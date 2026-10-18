@@ -280662,13 +280662,26 @@
     "league": "professional",
     "event_id": "opendota:9048020519",
     "start_time": "2026-10-16T18:37:52+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Yellow Submarine",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814549+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814552+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -280714,13 +280727,26 @@
     "league": "professional",
     "event_id": "opendota:9047870623",
     "start_time": "2026-10-16T17:00:03+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Yellow Submarine",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814574+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814579+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -280780,12 +280806,25 @@
     "event_id": "opendota:9047766227",
     "start_time": "2026-10-16T16:02:18+00:00",
     "home_name": "Yellow Submarine",
-    "away_name": "LFO",
+    "away_name": "looking for org",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814605+00:00",
+        "changed": {
+          "away_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814607+00:00",
+    "revision": 2
   },
   {
     "event_id": "espn:401898406",
@@ -281490,12 +281529,25 @@
     "event_id": "opendota:9048749977",
     "start_time": "2026-10-17T08:08:26+00:00",
     "home_name": "Nemiga Gaming",
-    "away_name": "LFO",
+    "away_name": "looking for org",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814479+00:00",
+        "changed": {
+          "away_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814481+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -281515,13 +281567,26 @@
     "league": "professional",
     "event_id": "opendota:9048684915",
     "start_time": "2026-10-17T07:04:18+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Nemiga Gaming",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814499+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814502+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -281908,13 +281973,26 @@
     "league": "professional",
     "event_id": "opendota:9049094334",
     "start_time": "2026-10-17T12:42:56+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Team Spirit Academy",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814372+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814387+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -281999,13 +282077,26 @@
     "league": "professional",
     "event_id": "opendota:9048983711",
     "start_time": "2026-10-17T11:25:43+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Team Spirit Academy",
     "home_score": 0,
     "away_score": 1,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814429+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814432+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -282051,13 +282142,26 @@
     "league": "professional",
     "event_id": "opendota:9048877833",
     "start_time": "2026-10-17T10:04:56+00:00",
-    "home_name": "LFO",
+    "home_name": "looking for org",
     "away_name": "Team Spirit Academy",
     "home_score": 1,
     "away_score": 0,
     "status": "final",
     "source": "opendota",
-    "score_encoding": "winner_indicator"
+    "score_encoding": "winner_indicator",
+    "correction_history": [
+      {
+        "corrected_at": "2026-10-18T04:47:22.814456+00:00",
+        "changed": {
+          "home_name": {
+            "before": "LFO",
+            "after": "looking for org"
+          }
+        }
+      }
+    ],
+    "result_updated_at": "2026-10-18T04:47:22.814459+00:00",
+    "revision": 2
   },
   {
     "sport": "dota-2",
@@ -282334,6 +282438,316 @@
     "away_name": "Team Spirit Academy",
     "home_score": 0,
     "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "event_id": "espn:401892520",
+    "start_time": "2026-10-17T19:30Z",
+    "home_name": "Winnipeg Jets",
+    "away_name": "Carolina Hurricanes",
+    "home_score": "2",
+    "away_score": "3",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "28",
+    "away_team_id": "7",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892521",
+    "start_time": "2026-10-17T20:00Z",
+    "home_name": "Tampa Bay Lightning",
+    "away_name": "Vancouver Canucks",
+    "home_score": "4",
+    "away_score": "2",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "20",
+    "away_team_id": "22",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892522",
+    "start_time": "2026-10-17T22:00Z",
+    "home_name": "Florida Panthers",
+    "away_name": "Seattle Kraken",
+    "home_score": "8",
+    "away_score": "3",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "26",
+    "away_team_id": "124292",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892523",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Toronto Maple Leafs",
+    "away_name": "New York Islanders",
+    "home_score": "1",
+    "away_score": "4",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "21",
+    "away_team_id": "12",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892524",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Montreal Canadiens",
+    "away_name": "Buffalo Sabres",
+    "home_score": "4",
+    "away_score": "3",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "10",
+    "away_team_id": "2",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892525",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Detroit Red Wings",
+    "away_name": "San Jose Sharks",
+    "home_score": "4",
+    "away_score": "3",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "5",
+    "away_team_id": "18",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892526",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Philadelphia Flyers",
+    "away_name": "Ottawa Senators",
+    "home_score": "3",
+    "away_score": "1",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "15",
+    "away_team_id": "14",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892527",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Columbus Blue Jackets",
+    "away_name": "New York Rangers",
+    "home_score": "1",
+    "away_score": "0",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "29",
+    "away_team_id": "13",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892528",
+    "start_time": "2026-10-17T23:00Z",
+    "home_name": "Chicago Blackhawks",
+    "away_name": "Dallas Stars",
+    "home_score": "0",
+    "away_score": "4",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "4",
+    "away_team_id": "9",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892529",
+    "start_time": "2026-10-18T00:00Z",
+    "home_name": "Nashville Predators",
+    "away_name": "St. Louis Blues",
+    "home_score": "5",
+    "away_score": "2",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "27",
+    "away_team_id": "19",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892530",
+    "start_time": "2026-10-18T01:00Z",
+    "home_name": "Los Angeles Kings",
+    "away_name": "Boston Bruins",
+    "home_score": "1",
+    "away_score": "4",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "8",
+    "away_team_id": "1",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892531",
+    "start_time": "2026-10-18T02:00Z",
+    "home_name": "Utah Mammoth",
+    "away_name": "Edmonton Oilers",
+    "home_score": "2",
+    "away_score": "6",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "129764",
+    "away_team_id": "6",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401892532",
+    "start_time": "2026-10-18T02:00Z",
+    "home_name": "Vegas Golden Knights",
+    "away_name": "Pittsburgh Penguins",
+    "home_score": "6",
+    "away_score": "2",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "hockey/nhl",
+    "source_league_name": "hockey/nhl",
+    "home_team_id": "37",
+    "away_team_id": "16",
+    "sport": "ice-hockey",
+    "league": "nhl"
+  },
+  {
+    "event_id": "espn:401908027",
+    "start_time": "2026-10-18T00:00Z",
+    "home_name": "Cleveland Guardians",
+    "away_name": "Tampa Bay Rays",
+    "home_score": "3",
+    "away_score": "7",
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "baseball/mlb",
+    "source_league_name": "baseball/mlb",
+    "home_team_id": "5",
+    "away_team_id": "30",
+    "sport": "baseball",
+    "league": "mlb"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:186941",
+    "start_time": "2026-10-18T02:35Z",
+    "home_name": "Mary Stoiana",
+    "away_name": "Sayaka Ishii",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "tennis",
+    "league": "wta",
+    "event_id": "espn:tennis:wta:186959",
+    "start_time": "2026-10-18T03:05Z",
+    "home_name": "Anastasia Zakharova",
+    "away_name": "Polina Kudermetova",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "espn",
+    "source_league_id": "tennis/wta",
+    "source_league_name": "WTA",
+    "home_team_id": "",
+    "away_team_id": "",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9050011537",
+    "start_time": "2026-10-17T21:57:50+00:00",
+    "home_name": "CyberHero",
+    "away_name": "Inner Circle x Insanity",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9049970296",
+    "start_time": "2026-10-17T21:21:52+00:00",
+    "home_name": "stariy_bog Team",
+    "away_name": "Nix Team",
+    "home_score": 1,
+    "away_score": 0,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9049945108",
+    "start_time": "2026-10-17T20:58:42+00:00",
+    "home_name": "CyberHero",
+    "away_name": "Inner Circle x Insanity",
+    "home_score": 0,
+    "away_score": 1,
+    "status": "final",
+    "source": "opendota",
+    "score_encoding": "winner_indicator"
+  },
+  {
+    "sport": "dota-2",
+    "league": "professional",
+    "event_id": "opendota:9049879128",
+    "start_time": "2026-10-17T20:14:38+00:00",
+    "home_name": "Nix Team",
+    "away_name": "stariy_bog Team",
+    "home_score": 1,
+    "away_score": 0,
     "status": "final",
     "source": "opendota",
     "score_encoding": "winner_indicator"
