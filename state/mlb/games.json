@@ -229542,5 +229542,111 @@
         "pitches": 12
       }
     ]
+  },
+  {
+    "game_pk": "849817",
+    "start_time": "2026-10-18T21:08:00Z",
+    "home_id": "114",
+    "home_name": "Cleveland Guardians",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 1,
+    "away_score": 3,
+    "home_starter_id": "800048",
+    "away_starter_id": "656876",
+    "home_pitchers": [
+      {
+        "id": "800048",
+        "outs": 6,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 57
+      },
+      {
+        "id": "682120",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 18
+      },
+      {
+        "id": "542888",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 13
+      },
+      {
+        "id": "681870",
+        "outs": 5,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 18
+      },
+      {
+        "id": "683769",
+        "outs": 5,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 19
+      },
+      {
+        "id": "671922",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 22
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "656876",
+        "outs": 21,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 6,
+        "pitches": 95
+      },
+      {
+        "id": "592155",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 10
+      },
+      {
+        "id": "669330",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 5
+      },
+      {
+        "id": "641329",
+        "outs": 3,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 14
+      }
+    ]
   }
 ]
