@@ -1,18 +1,5 @@
 [
   {
-    "game_pk": "849817",
-    "start_time": "2026-10-18T21:08:00Z",
-    "home_id": "114",
-    "home_name": "Cleveland Guardians",
-    "away_id": "139",
-    "away_name": "Tampa Bay Rays",
-    "home_starter_id": "800048",
-    "home_starter_name": "Parker Messick",
-    "away_starter_id": "656876",
-    "away_starter_name": "Drew Rasmussen",
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849815",
     "start_time": "2026-10-20T00:08:00Z",
     "home_id": "139",
