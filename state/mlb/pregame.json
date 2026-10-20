@@ -1,24 +1,11 @@
 [
   {
-    "game_pk": "849814",
-    "start_time": "2026-10-21T00:08:00Z",
-    "home_id": "139",
-    "home_name": "Tampa Bay Rays",
-    "away_id": "114",
-    "away_name": "Cleveland Guardians",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
-    "lineups_confirmed": false
-  },
-  {
     "game_pk": "849805",
     "start_time": "2026-10-24T00:00:00Z",
     "home_id": "158",
     "home_name": "Milwaukee Brewers",
-    "away_id": "21",
-    "away_name": "TB/CLE",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
     "home_starter_id": "",
     "home_starter_name": null,
     "away_starter_id": "",
