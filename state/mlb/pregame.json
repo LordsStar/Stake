@@ -8,8 +8,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "694819",
     "home_starter_name": "Jacob Misiorowski",
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "607259",
+    "away_starter_name": "Nick Martinez",
     "lineups_confirmed": false
   },
   {
@@ -21,8 +21,8 @@
     "away_name": "Tampa Bay Rays",
     "home_starter_id": "",
     "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "away_starter_id": "656876",
+    "away_starter_name": "Drew Rasmussen",
     "lineups_confirmed": false
   }
 ]
