@@ -19,10 +19,10 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
-    "away_starter_id": "",
-    "away_starter_name": null,
+    "home_starter_id": "642547",
+    "home_starter_name": "Freddy Peralta",
+    "away_starter_id": "688107",
+    "away_starter_name": "Robert Gasser",
     "lineups_confirmed": false
   },
   {
