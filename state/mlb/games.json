@@ -229887,5 +229887,129 @@
         "pitches": 4
       }
     ]
+  },
+  {
+    "game_pk": "849802",
+    "start_time": "2026-10-25T00:00:00Z",
+    "home_id": "158",
+    "home_name": "Milwaukee Brewers",
+    "away_id": "139",
+    "away_name": "Tampa Bay Rays",
+    "home_score": 5,
+    "away_score": 4,
+    "home_starter_id": "701656",
+    "away_starter_id": "656876",
+    "home_pitchers": [
+      {
+        "id": "701656",
+        "outs": 9,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 64
+      },
+      {
+        "id": "668941",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 16
+      },
+      {
+        "id": "669160",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 12
+      },
+      {
+        "id": "669084",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 1,
+        "k": 1,
+        "pitches": 11
+      },
+      {
+        "id": "682842",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 26
+      },
+      {
+        "id": "676879",
+        "outs": 5,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 28
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "656876",
+        "outs": 11,
+        "hr": 0,
+        "bb": 2,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 89
+      },
+      {
+        "id": "592155",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 13
+      },
+      {
+        "id": "693855",
+        "outs": 2,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 0,
+        "k": 2,
+        "pitches": 34
+      },
+      {
+        "id": "669330",
+        "outs": 2,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 8
+      },
+      {
+        "id": "687330",
+        "outs": 4,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 32
+      },
+      {
+        "id": "571927",
+        "outs": 1,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 8
+      }
+    ]
   }
 ]
