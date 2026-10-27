@@ -230011,5 +230011,102 @@
         "pitches": 8
       }
     ]
+  },
+  {
+    "game_pk": "849804",
+    "start_time": "2026-10-27T00:00:00Z",
+    "home_id": "139",
+    "home_name": "Tampa Bay Rays",
+    "away_id": "158",
+    "away_name": "Milwaukee Brewers",
+    "home_score": 1,
+    "away_score": 10,
+    "home_starter_id": "642547",
+    "away_starter_id": "688107",
+    "home_pitchers": [
+      {
+        "id": "642547",
+        "outs": 14,
+        "hr": 0,
+        "bb": 3,
+        "hbp": 0,
+        "k": 4,
+        "pitches": 87
+      },
+      {
+        "id": "592155",
+        "outs": 0,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 0,
+        "pitches": 12
+      },
+      {
+        "id": "642121",
+        "outs": 4,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 32
+      },
+      {
+        "id": "664076",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 11
+      },
+      {
+        "id": "669330",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 16
+      },
+      {
+        "id": "571927",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 1,
+        "k": 0,
+        "pitches": 17
+      }
+    ],
+    "away_pitchers": [
+      {
+        "id": "688107",
+        "outs": 18,
+        "hr": 0,
+        "bb": 1,
+        "hbp": 0,
+        "k": 3,
+        "pitches": 75
+      },
+      {
+        "id": "622608",
+        "outs": 6,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 26
+      },
+      {
+        "id": "605540",
+        "outs": 3,
+        "hr": 0,
+        "bb": 0,
+        "hbp": 0,
+        "k": 1,
+        "pitches": 18
+      }
+    ]
   }
 ]
