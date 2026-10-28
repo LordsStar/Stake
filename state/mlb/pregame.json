@@ -6,11 +6,11 @@
     "home_name": "Tampa Bay Rays",
     "away_id": "158",
     "away_name": "Milwaukee Brewers",
-    "home_starter_id": "",
-    "home_starter_name": null,
+    "home_starter_id": "656876",
+    "home_starter_name": "Drew Rasmussen",
     "away_starter_id": "694819",
     "away_starter_name": "Jacob Misiorowski",
-    "lineups_confirmed": false
+    "lineups_confirmed": true
   },
   {
     "game_pk": "849801",
