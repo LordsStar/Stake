@@ -1,6 +1,72 @@
 {
   "schema_version": 6,
   "ratings": {
+    "aussie-rules:aussie-rules-20a4582f-59be-49a2-a992-74ae1687e25f-6a106945-5f2d-4eba-a195-5cbc45fbac31": {
+      "north melbourne football club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "adelaide football club": {
+        "elo": 1480.0,
+        "games": 2
+      },
+      "richmond football club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "fremantle football club": {
+        "elo": 1481.1500225556906,
+        "games": 4
+      },
+      "hawthorn football club": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "brisbane bears": {
+        "elo": 1500.0,
+        "games": 2
+      },
+      "geelong football club": {
+        "elo": 1510.0,
+        "games": 1
+      },
+      "melbourne football club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "fitzroy": {
+        "elo": 1480.0,
+        "games": 4
+      },
+      "essendon football club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "carlton football club": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "collingwood football club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      },
+      "western bulldogs": {
+        "elo": 1520.0,
+        "games": 2
+      },
+      "sydney swans": {
+        "elo": 1490.0,
+        "games": 1
+      },
+      "west coast eagles": {
+        "elo": 1519.4249887221547,
+        "games": 2
+      },
+      "st kilda football club": {
+        "elo": 1480.5750112778453,
+        "games": 2
+      }
+    },
     "american-football:nfl": {
       "san francisco 49ers": {
         "elo": 1602.2364908061807,
@@ -75,8 +141,8 @@
         "games": 49
       },
       "detroit lions": {
-        "elo": 1593.2639959406445,
-        "games": 51
+        "elo": 1581.3065026882425,
+        "games": 52
       },
       "tampa bay buccaneers": {
         "elo": 1466.2820297414598,
@@ -119,8 +185,8 @@
         "games": 53
       },
       "chicago bears": {
-        "elo": 1574.3645117292306,
-        "games": 51
+        "elo": 1586.3220049816325,
+        "games": 52
       },
       "philadelphia eagles": {
         "elo": 1506.6104861812335,
@@ -3881,8 +3947,8 @@
         "games": 36
       },
       "varvara lepchenko": {
-        "elo": 1443.4754787126758,
-        "games": 37
+        "elo": 1454.2924576328694,
+        "games": 38
       },
       "linda fruhvirtova": {
         "elo": 1422.6132291555762,
@@ -5017,8 +5083,8 @@
         "games": 53
       },
       "guiomar maristany zuleta de reales": {
-        "elo": 1584.5628595216308,
-        "games": 34
+        "elo": 1591.1968323956557,
+        "games": 35
       },
       "kaja juvan": {
         "elo": 1490.5507909217831,
@@ -5057,8 +5123,8 @@
         "games": 51
       },
       "nuria brancaccio": {
-        "elo": 1462.8714008025256,
-        "games": 30
+        "elo": 1456.2374279285007,
+        "games": 31
       },
       "veronika erjavec": {
         "elo": 1488.2247160191419,
@@ -5389,8 +5455,8 @@
         "games": 8
       },
       "irene burillo": {
-        "elo": 1547.123457646693,
-        "games": 29
+        "elo": 1537.4539470115776,
+        "games": 30
       },
       "mariana isabel higuita barraza": {
         "elo": 1490.0,
@@ -5421,8 +5487,8 @@
         "games": 23
       },
       "sofia costoulas": {
-        "elo": 1471.92363956012,
-        "games": 29
+        "elo": 1461.1066606399263,
+        "games": 30
       },
       "oceane dodin": {
         "elo": 1471.4340281513512,
@@ -5485,8 +5551,8 @@
         "games": 1
       },
       "laura samson": {
-        "elo": 1558.610017462057,
-        "games": 41
+        "elo": 1568.2795280971723,
+        "games": 42
       },
       "maria garcia cid": {
         "elo": 1490.7451835837135,
@@ -9523,16 +9589,16 @@
     },
     "dota-2:all": {
       "team liquid": {
-        "elo": 1552.6811269446728,
-        "games": 60
+        "elo": 1570.3007061049645,
+        "games": 62
       },
       "team spirit": {
         "elo": 1667.6888392787753,
         "games": 87
       },
       "og": {
-        "elo": 1522.9719033012407,
-        "games": 59
+        "elo": 1509.716495487678,
+        "games": 60
       },
       "team resilience": {
         "elo": 1575.907991061767,
@@ -9555,20 +9621,20 @@
         "games": 87
       },
       "gamerlegion": {
-        "elo": 1586.1757557058029,
-        "games": 95
+        "elo": 1591.6244137828771,
+        "games": 99
       },
       "vici gaming": {
         "elo": 1462.7138756883492,
         "games": 8
       },
       "team yandex": {
-        "elo": 1706.477060228122,
-        "games": 85
+        "elo": 1720.4524533757005,
+        "games": 87
       },
       "aurora gaming": {
-        "elo": 1586.1589601011283,
-        "games": 67
+        "elo": 1566.7349088764754,
+        "games": 69
       },
       "lgd gaming": {
         "elo": 1517.033839202516,
@@ -9627,8 +9693,8 @@
         "games": 7
       },
       "": {
-        "elo": 1405.596943848206,
-        "games": 13
+        "elo": 1411.1464052888775,
+        "games": 15
       },
       "dead inside": {
         "elo": 1510.0,
@@ -10067,8 +10133,8 @@
         "games": 44
       },
       "1win": {
-        "elo": 1520.170872031693,
-        "games": 53
+        "elo": 1502.5512928714013,
+        "games": 55
       },
       "hokori": {
         "elo": 1482.8403130126771,
@@ -10476,6 +10542,10 @@
       },
       "ii": {
         "elo": 1510.9739428526816,
+        "games": 1
+      },
+      "psg lgd": {
+        "elo": 1507.705946372891,
         "games": 1
       }
     }
@@ -14879,6 +14949,12 @@
         "p": 0.6379501982276741,
         "y": 1.0,
         "match_id": "espn:401873079"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5978746626200949,
+        "y": 0.0,
+        "match_id": "espn:401873081"
       }
     ],
     "ice-hockey:nhl": [
@@ -32890,24 +32966,6 @@
     "tennis:wta": [
       {
         "kind": "binary",
-        "p": 0.4639230774800316,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:183656"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5725560912022605,
-        "y": 1.0,
-        "match_id": "espn:tennis:wta:183660"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5437218704184579,
-        "y": 0.0,
-        "match_id": "espn:tennis:wta:183762"
-      },
-      {
-        "kind": "binary",
         "p": 0.5364845681932251,
         "y": 0.0,
         "match_id": "espn:tennis:wta:183658"
@@ -38887,6 +38945,24 @@
         "p": 0.4565508034884865,
         "y": 0.0,
         "match_id": "espn:tennis:wta:186840"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5408489460096824,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:186834"
+      },
+      {
+        "kind": "binary",
+        "p": 0.6683013562987579,
+        "y": 1.0,
+        "match_id": "espn:tennis:wta:186836"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4834755317557718,
+        "y": 0.0,
+        "match_id": "espn:tennis:wta:186833"
       }
     ],
     "tennis:atp": [
@@ -45898,48 +45974,6 @@
     "dota-2:all": [
       {
         "kind": "binary",
-        "p": 0.5515098418807588,
-        "y": 0.0,
-        "match_id": "opendota:8996056879"
-      },
-      {
-        "kind": "binary",
-        "p": 0.48006479519843953,
-        "y": 1.0,
-        "match_id": "opendota:8996151836"
-      },
-      {
-        "kind": "binary",
-        "p": 0.564445576876978,
-        "y": 1.0,
-        "match_id": "opendota:8996209200"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4110771389483473,
-        "y": 0.0,
-        "match_id": "opendota:8996248245"
-      },
-      {
-        "kind": "binary",
-        "p": 0.5667477077128314,
-        "y": 0.0,
-        "match_id": "opendota:8996259155"
-      },
-      {
-        "kind": "binary",
-        "p": 0.46553087513452207,
-        "y": 0.0,
-        "match_id": "opendota:8996322528"
-      },
-      {
-        "kind": "binary",
-        "p": 0.4389836235384571,
-        "y": 0.0,
-        "match_id": "opendota:8996384883"
-      },
-      {
-        "kind": "binary",
         "p": 0.3971284740317662,
         "y": 0.0,
         "match_id": "opendota:8996581680"
@@ -51895,6 +51929,48 @@
         "p": 0.4509776411152818,
         "y": 0.0,
         "match_id": "opendota:9104260611"
+      },
+      {
+        "kind": "binary",
+        "p": 0.5000241708180758,
+        "y": 1.0,
+        "match_id": "opendota:9106031971"
+      },
+      {
+        "kind": "binary",
+        "p": 0.47122673205072235,
+        "y": 0.0,
+        "match_id": "opendota:9106095670"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4533500542630662,
+        "y": 0.0,
+        "match_id": "opendota:9106185090"
+      },
+      {
+        "kind": "binary",
+        "p": 0.3372296093218612,
+        "y": 1.0,
+        "match_id": "opendota:9106247229"
+      },
+      {
+        "kind": "binary",
+        "p": 0.4276289037515211,
+        "y": 0.0,
+        "match_id": "opendota:9106299101"
+      },
+      {
+        "kind": "binary",
+        "p": 0.6412275745125752,
+        "y": 1.0,
+        "match_id": "opendota:9106419982"
+      },
+      {
+        "kind": "binary",
+        "p": 0.33999723189150993,
+        "y": 0.0,
+        "match_id": "opendota:9106504478"
       }
     ],
     "cricket:all": [
@@ -52419,6 +52495,25 @@
     ]
   },
   "processed": {
+    "aussie-rules:aussie-rules-20a4582f-59be-49a2-a992-74ae1687e25f-6a106945-5f2d-4eba-a195-5cbc45fbac31": [
+      "thesportsdb:2059486",
+      "thesportsdb:2059487",
+      "thesportsdb:2059488",
+      "thesportsdb:2059489",
+      "thesportsdb:2059490",
+      "thesportsdb:2059492",
+      "thesportsdb:2059493",
+      "thesportsdb:2059491",
+      "thesportsdb:2059494",
+      "thesportsdb:2059495",
+      "thesportsdb:2059496",
+      "thesportsdb:2059497",
+      "thesportsdb:2059498",
+      "thesportsdb:2059499",
+      "thesportsdb:2059500",
+      "thesportsdb:2032053",
+      "thesportsdb:2032054"
+    ],
     "american-football:nfl": [
       "espn:401671696",
       "espn:401671807",
@@ -53238,7 +53333,8 @@
       "espn:401873075",
       "espn:401873077",
       "espn:401873078",
-      "espn:401873079"
+      "espn:401873079",
+      "espn:401873081"
     ],
     "basketball:nba": [
       "espn:401766126",
@@ -71248,7 +71344,10 @@
       "espn:tennis:wta:186828",
       "espn:tennis:wta:186838",
       "espn:tennis:wta:186837",
-      "espn:tennis:wta:186840"
+      "espn:tennis:wta:186840",
+      "espn:tennis:wta:186834",
+      "espn:tennis:wta:186836",
+      "espn:tennis:wta:186833"
     ],
     "cricket:test": [
       "cricsheet:1538631",
@@ -73894,12 +73993,24 @@
       "opendota:9104185540",
       "opendota:9104215841",
       "opendota:9104260611",
-      "opendota:9105042538"
+      "opendota:9105042538",
+      "opendota:9106031971",
+      "opendota:9106095670",
+      "opendota:9106185090",
+      "opendota:9106247229",
+      "opendota:9106299101",
+      "opendota:9106386404",
+      "opendota:9106419982",
+      "opendota:9106504478"
     ]
   },
   "draw_stats": {
+    "aussie-rules:aussie-rules-20a4582f-59be-49a2-a992-74ae1687e25f-6a106945-5f2d-4eba-a195-5cbc45fbac31": {
+      "total": 17,
+      "draws": 0
+    },
     "american-football:nfl": {
-      "total": 819,
+      "total": 820,
       "draws": 7
     },
     "basketball:nba": {
@@ -73919,7 +74030,7 @@
       "draws": 0
     },
     "tennis:wta": {
-      "total": 6691,
+      "total": 6694,
       "draws": 0
     },
     "cricket:test": {
@@ -73939,7 +74050,7 @@
       "draws": 0
     },
     "dota-2:all": {
-      "total": 1693,
+      "total": 1701,
       "draws": 0
     }
   },
@@ -73962,13 +74073,13 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "f6c81c987cba1c9d81e0ed1105a76240e08812d630ab964755da43549c8075fb",
+      "last_evidence_fingerprint": "4614bb7e356f7a03c32a7f724335e735363a89b2bec93544a5cedd7eac20cd4a",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.06377591318837161,
-      "last_brier": 0.23169205588370775,
+      "last_skill": 0.060150627422957625,
+      "last_brier": 0.23258922347850358,
       "evidence_samples": 200,
-      "evidence_total_samples": 733
+      "evidence_total_samples": 734
     },
     "basketball:nba": {
       "policy_version": 2,
@@ -73976,7 +74087,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "3102fec29a93ef3dc8a25e9c87ca0cb590eea1c7685e9b6f3d2a7ad31502de95",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.13848337769160446,
       "last_brier": 0.21484070768815633,
@@ -73989,7 +74100,7 @@
       "pass_streak": 0,
       "fail_streak": 0,
       "last_evidence_fingerprint": "2c22d5194e7f1052e130702187b616ed5b0c293d87c3cd9e28ba350d54e32054",
-      "evidence_changed": true,
+      "evidence_changed": false,
       "migration_baseline": false,
       "last_skill": 0.03735478785055246,
       "last_brier": 0.24027624495250277,
@@ -74027,11 +74138,11 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "51f7e1c7b8d3dccae91c242998cc87dfce67b40cbfa1b529bee8edd39aa8fb37",
+      "last_evidence_fingerprint": "bd60cd9adb77374489d39f300102f507d3a503a7961c1fd7feda9748385ff4e9",
       "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.07903145560843339,
-      "last_brier": 0.22987374868013558,
+      "last_skill": 0.08037225119305158,
+      "last_brier": 0.22907927222781135,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
     },
@@ -74079,13 +74190,26 @@
       "active": true,
       "pass_streak": 0,
       "fail_streak": 0,
-      "last_evidence_fingerprint": "78683edabc05ab8648708f24633a3f3fa6ad4b0912cf3ae06c84435520d680e6",
-      "evidence_changed": false,
+      "last_evidence_fingerprint": "03b3dd42775aac093cf6aaebe501da2e5ccf9705783c3370443607620524cd46",
+      "evidence_changed": true,
       "migration_baseline": false,
-      "last_skill": 0.01939567979108925,
-      "last_brier": 0.2426995692517058,
+      "last_skill": 0.028382225569192343,
+      "last_brier": 0.24134985516861263,
       "evidence_samples": 200,
       "evidence_total_samples": 1000
+    },
+    "aussie-rules:aussie-rules-20a4582f-59be-49a2-a992-74ae1687e25f-6a106945-5f2d-4eba-a195-5cbc45fbac31": {
+      "policy_version": 2,
+      "active": false,
+      "pass_streak": 0,
+      "fail_streak": 0,
+      "last_evidence_fingerprint": null,
+      "evidence_changed": false,
+      "migration_baseline": true,
+      "last_skill": null,
+      "last_brier": null,
+      "evidence_samples": 0,
+      "evidence_total_samples": 0
     }
   }
 }
